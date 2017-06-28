@@ -3,9 +3,9 @@ all:
 	make notebooks-html
 	make notebooks-pdf
 
-notebooks-pdf: *-*.ipynb templates/latex_template.tplx
+notebooks-pdf: *-*.ipynb static/latex_template.tplx
 	@echo "Attempting to create combined.pdf from notebooks"
-	python3 -m bookbook.latex --pdf --template templates/latex_template.tplx
+	python3 -m bookbook.latex --pdf --template static/latex_template.tplx
 	@mkdir -p pdf
 	mv -v combined.pdf pdf/Introduction-to-Python-for-Computational-Science-and-Engineering.pdf
 

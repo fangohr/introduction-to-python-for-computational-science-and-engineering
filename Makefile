@@ -14,14 +14,6 @@ notebooks-html: check-py35
 	python3 -m bookbook.html
 	@echo "Output stored in html/*html; start with html/index.html"
 
-install-conversion-deps: check-py35
-	# for html
-	pip install bookbook
-	# for lalex/pdf
-	pip install pandocfilters
-	# for nbval
-	pip install nbval
-
 check-py35:
 	@echo "Checking Python version is >= 3.5"
 	@python3 -c "import sys; assert sys.version_info[0] >= 3"

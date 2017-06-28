@@ -3,6 +3,14 @@ all:
 	make notebooks-html
 	make notebooks-pdf
 
+docker-all:
+	make docker-build
+	make docker-check-py35
+	make docker-html
+	make docker-pdf
+	make docker-nbval
+
+
 notebooks-pdf: *-*.ipynb static/latex_template.tplx
 	@echo "Attempting to create combined.pdf from notebooks"
 	python3 -m bookbook.latex --pdf --template static/latex_template.tplx
@@ -42,3 +50,6 @@ docker-pdf:
 
 docker-nbval:
 	docker run -v `pwd`:/io python4compscience make nbval
+
+docker-check-py35:
+	docker run -v `pwd`:/io python4compscience make check-py35

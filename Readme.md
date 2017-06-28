@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/fangohr/introduction-to-python-for-computational-science-and-engineering.svg?style=svg)](https://circleci.com/gh/fangohr/introduction-to-python-for-computational-science-and-engineering)
+
 # Introduction to Python for Computational Science and Engineering
 
 An introduction to Python for Computational Science an

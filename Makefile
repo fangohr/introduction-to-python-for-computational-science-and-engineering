@@ -29,7 +29,7 @@ check-py35:
 	@echo "        (ok)"
 
 nbval:
-	py.test -v --nbval-lax *.ipynb
+	py.test -v --nbval --sanitize-with static/nbval_sanitize.cfg *.ipynb
 
 clean:
 	rm -rf *.aux *.out *.log combined_files

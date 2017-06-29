@@ -32,7 +32,7 @@ nbval:
 	py.test -v --nbval --sanitize-with static/nbval_sanitize.cfg *.ipynb
 
 clean:
-	rm -rf *.aux *.out *.log combined_files hello.txt hello.py pylabimshow* myplot* myfile* data.mat test.txt
+	rm -rf *.aux *.out *.log combined_files hello.txt hello.py pylabimshow* myplot* myfile* data.mat test.txt vectools.py module1.py
 
 
 # To use Docker container for building and testing

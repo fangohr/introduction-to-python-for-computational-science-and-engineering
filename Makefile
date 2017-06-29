@@ -32,7 +32,7 @@ nbval:
 	py.test -v --nbval --sanitize-with static/nbval_sanitize.cfg *.ipynb
 
 clean:
-	rm -rf *.aux *.out *.log combined_files
+	rm -rf *.aux *.out *.log combined_files hello.txt hello.py pylabimshow* myplot* myfile* data.mat test.txt
 
 
 # To use Docker container for building and testing

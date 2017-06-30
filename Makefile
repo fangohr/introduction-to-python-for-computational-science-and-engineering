@@ -16,17 +16,25 @@ notebooks-pdf: *-*.ipynb static/latex_template.tplx
 	python3 -m bookbook.latex --pdf --template static/latex_template.tplx
 	@mkdir -p pdf
 	mv -v combined.pdf pdf/Introduction-to-Python-for-Computational-Science-and-Engineering.pdf
+	make version && mv -v version.txt pdf
 
 notebooks-html: check-py35
 	@echo "Attempting to create html version (in ./html)"
 	python3 -m bookbook.html
 	@echo "Output stored in html/*html; start with html/index.html"
+	make version && mv -v version.txt html
 
 check-py35:
 	@echo "Checking Python version is >= 3.5"
 	@python3 -c "import sys; assert sys.version_info[0] >= 3"
 	@python3 -c "import sys; assert sys.version_info[1] >= 5"
 	@echo "        (ok)"
+
+version:
+	echo "Last compiled: `date`" > version.txt
+	echo " " >> version.txt
+	echo "Last commit:" >> version.txt
+	git log HEAD -1	 >> version.txt
 
 nbval:
 	py.test -v --nbval --sanitize-with static/nbval_sanitize.cfg *.ipynb

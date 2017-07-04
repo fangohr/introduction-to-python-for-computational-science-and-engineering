@@ -11,8 +11,10 @@ The book is available as
 - pdf
 - downloadable ipynb files
 
-The book is based on Python 3.
+It might be easiest to [download a zip file](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/raw/master/pdf/Introduction-to-Python-for-Computational-Science-and-Engineering.pdf) that contains all sources, and the html and the pdf in the corresponding subdirectors.
 
+
+The book is based on Python 3.
 
 (A Python 2.7 version
 is

@@ -8,10 +8,10 @@ Engineering, developed by Hans Fangohr (2003-2017 University of Southampton)
 The book is available as
 
 - html
-- pdf
-- downloadable ipynb files
+- [pdf](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/raw/master/pdf/Introduction-to-Python-for-Computational-Science-and-Engineering.pdf)
+- downloadable [ipynb files]()
 
-It might be easiest to [download a zip file](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/raw/master/pdf/Introduction-to-Python-for-Computational-Science-and-Engineering.pdf) that contains all sources, and the html and the pdf in the corresponding subdirectors.
+It might be easiest to [download a zip file](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/archive/master.zip) that contains all sources, and the html and the pdf in the corresponding subdirectors.
 
 
 The book is based on Python 3.

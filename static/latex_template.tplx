@@ -80,10 +80,20 @@
 
 \author{
 \centerline{\Oldincludegraphics[width=0.4\textwidth]{static/images/mayavi/mayavi-samp.png}}\\[1cm]
-\sffamily Hans Fangohr \\
-\sffamily Faculty of Engineering and the Environment\\
-\sffamily University of Southampton}
-\date{ \sffamily \today }
+\sffamily Prof Hans Fangohr \\[0.3cm]
+Faculty of Engineering and the Environment\\
+University of Southampton\\
+United Kingdom\\[0.3cm]
+and\\[0.3cm]
+European XFEL GmbH\\
+Schenefeld\\
+Germany\\[0.3cm]
+}
+
+\date{ \sffamily \today \\[3cm]
+Download Juptyer Notebook files, pdf and html files of this book from\\
+\href{https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/blob/master/Readme.md}{https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering}
+} % end of \date
 \maketitle
 \newpage
 \tableofcontents

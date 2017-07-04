@@ -35,6 +35,11 @@ We acknowledge support from EPSRC (GR/T09156/01 and EP/G03690X/1) and
 from the OpenDreamKit Horizon 2020 European Research Infrastructures
 project (#676541).
 
+# Feedback?
+
+If you have used these materials and have some feedback, please get in
+touch (hans.fangohr@xfel.eu or fangohr@soton.ac.uk).
+
 # License
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.

@@ -1,8 +1,8 @@
-Last compiled: Tue Jul  4 16:24:25 UTC 2017
+Last compiled: Tue Jul  4 18:13:57 UTC 2017
  
 Last commit:
-commit 1aae03710bbc02d4159474c453c9e37c3ddd7673
+commit 41d279e8bb08561b65ef4cc93364130c36cbb684
 Author: Hans Fangohr iota <fangohr@soton.ac.uk>
-Date:   Tue Jul 4 17:23:29 2017 +0100
+Date:   Tue Jul 4 19:06:03 2017 +0100
 
-    Add title page bitmap
+    fix font on title page

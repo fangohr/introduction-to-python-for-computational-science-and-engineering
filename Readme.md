@@ -9,9 +9,9 @@ The book is available as
 
 - html
 - [pdf](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/raw/master/pdf/Introduction-to-Python-for-Computational-Science-and-Engineering.pdf)
-- downloadable [ipynb files]()
+- downloadable Jupyter Notebook files (`*.ipynb`)
 
-It might be easiest to [download a zip file](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/archive/master.zip) that contains all sources, and the html and the pdf in the corresponding subdirectors.
+It might be easiest to [download this zip file](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/archive/master.zip) that contains all notebooks, and the html and the pdf in the corresponding subdirectors.
 
 
 The book is based on Python 3.

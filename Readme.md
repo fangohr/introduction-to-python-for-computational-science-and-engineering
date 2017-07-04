@@ -2,6 +2,8 @@
 
 # Introduction to Python for Computational Science and Engineering
 
+<img src="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/raw/master/static/images/titlepage.png" style="float" align="right" width="30%">
+
 An introduction to Python for Computational Science an
 Engineering, developed by Hans Fangohr (2003-2017 University of Southampton)
 

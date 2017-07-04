@@ -61,3 +61,10 @@ docker-nbval:
 
 docker-check-py35:
 	docker run -v `pwd`:/io python4compscience make check-py35
+
+
+# to update the title page:
+# - screenshot first page of pdf
+# - (edit out date if desired)
+# - add border around bitmap, for example using
+#   "convert titlepage.png -shave 1x1 -bordercolor black -border 1 titlepage-with-border.png"

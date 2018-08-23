@@ -12530,7 +12530,8 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NBVAL_IGNORE_OUTPUT</span>
+<span class="n">help</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13180,7 +13181,8 @@ exp(...)
 </li>
 </ol>
 <p>Some computer science literature uses the following notation to express assignments and to avoid the confusion with mathematical equations:</p>
-$$x \leftarrow x + 1$$<p>Let’s apply our two-step rule to the assignment <code>x = x + 1</code> given above:</p>
+<p>$$x \leftarrow x + 1$$</p>
+<p>Let’s apply our two-step rule to the assignment <code>x = x + 1</code> given above:</p>
 <ol>
 <li><p>Evaluate the value on the right hand side of the equal sign: for this we need to know what the current value of <code>x</code> is. Let’s assume <code>x</code> is currently <code>4</code>. In that case, the right hand side <code>x+1</code> evaluates to <code>5</code>.</p>
 </li>

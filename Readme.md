@@ -1,3 +1,5 @@
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/master)
+
 [![CircleCI](https://circleci.com/gh/fangohr/introduction-to-python-for-computational-science-and-engineering.svg?style=svg)](https://circleci.com/gh/fangohr/introduction-to-python-for-computational-science-and-engineering)
 
 # Introduction to Python for Computational Science and Engineering
@@ -11,12 +13,13 @@ Engineering, developed by Hans Fangohr (2003-2017 University of Southampton)
 
 The book is available as
 
-- html
+- interactively in [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/master); probably the most attractive version of the book as any code examples can be executed and modified immediately to explore the language and improve one's understanding
+
+- html ([in this zip file](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/archive/master.zip))
 - [pdf](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/raw/master/pdf/Introduction-to-Python-for-Computational-Science-and-Engineering.pdf)
-- downloadable Jupyter Notebook files (`*.ipynb`)
+- downloadable Jupyter Notebook files (`*.ipynb`) ([in this zip file](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/archive/master.zip))
 
 It might be easiest to [download this zip file](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/archive/master.zip) that contains all notebooks, and the html and the pdf in the corresponding subdirectors.
-
 
 The book is based on Python 3.
 
@@ -46,9 +49,8 @@ touch (hans.fangohr@xfel.eu or fangohr@soton.ac.uk).
 
 # License
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is 
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is
 <a href="https://raw.githubusercontent.com/fangohr/introduction-to-python-for-computational-science-and-engineering/master/LICENSE.TXT">licensed</a> under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
 
 The book can be downloaded, used and re-distributed for non-commercial
 purposes, i.e in particular for education purposes at universities, research institutes and schools.
-

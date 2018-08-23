@@ -13,8 +13,7 @@ Engineering, developed by Hans Fangohr (2003-2017 University of Southampton)
 The book is available as
 
 - interactively [as Jupyter Notebooks on MyBinder](https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/master?filepath=index.ipynb); probably the most attractive version of the book as any code examples can be executed and modified immediately to explore the language and improve one's understanding.
-
-  [Use JupyterLab instead of the traditional Notebook](https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/master?filepath=index.ipynb?urlpath=lab).
+  ([Use JupyterLab](https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/master?urlpath=lab/tree/index.ipynb) instead of the traditional Notebook.)
 
 - html ([in this zip file](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/archive/master.zip))
 - [pdf](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/raw/master/pdf/Introduction-to-Python-for-Computational-Science-and-Engineering.pdf)

@@ -1,8 +1,8 @@
-Last compiled: Tue Jul  4 18:13:57 UTC 2017
+Last compiled: Thu Aug 23 16:38:22 UTC 2018
  
 Last commit:
-commit 41d279e8bb08561b65ef4cc93364130c36cbb684
-Author: Hans Fangohr iota <fangohr@soton.ac.uk>
-Date:   Tue Jul 4 19:06:03 2017 +0100
+commit ed7794343d11d78a7c67eecde7c6bb3a2dd636f0
+Author: Hans Fangohr <fangohr@soton.ac.uk>
+Date:   Thu Aug 23 12:37:06 2018 -0400
 
-    fix font on title page
+    Rerun creation of html and pdf (after minor updates)

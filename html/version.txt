@@ -1,8 +1,8 @@
-Last compiled: Tue Jul  4 16:23:52 UTC 2017
+Last compiled: Thu Aug 23 16:37:56 UTC 2018
  
 Last commit:
-commit 1aae03710bbc02d4159474c453c9e37c3ddd7673
-Author: Hans Fangohr iota <fangohr@soton.ac.uk>
-Date:   Tue Jul 4 17:23:29 2017 +0100
+commit ed7794343d11d78a7c67eecde7c6bb3a2dd636f0
+Author: Hans Fangohr <fangohr@soton.ac.uk>
+Date:   Thu Aug 23 12:37:06 2018 -0400
 
-    Add title page bitmap
+    Rerun creation of html and pdf (after minor updates)

@@ -47,7 +47,8 @@ clean:
 
 # build docker image locally, needs to be done first
 docker-build:
-	cd tools/docker && docker build -t python4compscience .
+	docker build -t python4compscience -f tools/docker/Dockerfile .
+
 
 # build pdf and html through container
 docker-html:

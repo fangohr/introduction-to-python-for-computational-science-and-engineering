@@ -1,4 +1,4 @@
-[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/master)
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/master?filepath=index.ipynb)
 [![CircleCI](https://circleci.com/gh/fangohr/introduction-to-python-for-computational-science-and-engineering.svg?style=svg)](https://circleci.com/gh/fangohr/introduction-to-python-for-computational-science-and-engineering)
 
 # Introduction to Python for Computational Science and Engineering

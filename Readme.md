@@ -1,5 +1,5 @@
 [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/master?filepath=index.ipynb)
-[![CircleCI](https://circleci.com/gh/fangohr/introduction-to-python-for-computational-science-and-engineering.svg?style=svg)](https://circleci.com/gh/fangohr/introduction-to-python-for-computational-science-and-engineering)
+[![Build Status](https://travis-ci.org/fangohr/introduction-to-python-for-computational-science-and-engineering.svg?branch=master)](https://travis-ci.org/fangohr/introduction-to-python-for-computational-science-and-engineering)
 
 # Introduction to Python for Computational Science and Engineering
 
@@ -54,3 +54,11 @@ touch (hans.fangohr@xfel.eu or fangohr@soton.ac.uk).
 
 The book can be downloaded, used and re-distributed for non-commercial
 purposes, i.e in particular for education purposes at universities, research institutes and schools.
+
+
+----
+
+Historical note: CI was done on [Circle
+CI](https://circleci.com/gh/fangohr/introduction-to-python-for-computational-science-and-engineering)
+until 23 August, then switched to [Travis
+CI](https://travis-ci.org/fangohr/introduction-to-python-for-computational-science-and-engineering).

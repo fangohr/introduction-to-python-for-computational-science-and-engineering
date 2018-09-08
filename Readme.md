@@ -15,7 +15,9 @@ The book is available as
 - interactively [as Jupyter Notebooks on MyBinder](https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/master?filepath=index.ipynb); probably the most attractive version of the book as any code examples can be executed and modified immediately to explore the language and improve one's understanding.
   ([Use JupyterLab](https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/master?urlpath=lab/tree/index.ipynb) instead of the traditional Notebook.)
 
-- html ([in this zip file](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/archive/master.zip) or [here for online browsing](doc/index.html))
+- html ([online](https://fangohr.github.io/introduction-to-python-for-computational-science-and-engineering/)
+  or [in this zip file in the docs folder](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/archive/master.zip) or
+  [here for online browsing](docs/index.html))
 - [pdf](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/raw/master/pdf/Introduction-to-Python-for-Computational-Science-and-Engineering.pdf)
 - downloadable Jupyter Notebook files (`*.ipynb`) ([in this zip file](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/archive/master.zip))
 

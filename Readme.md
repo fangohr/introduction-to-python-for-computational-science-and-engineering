@@ -10,6 +10,11 @@
 An [Introduction to Python for Computational Science and
 Engineering](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/blob/review-readme-2018-09-08/Readme.md), developed by Hans Fangohr (2003-2018).
 
+The content and methods taught are intended for a target audience of
+scientists and engineers who need to use computational methods and
+data processing in their work, but typically have no prior programming
+experience or formal computer science training.
+
 The book is available
 - [pdf](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/raw/master/pdf/Introduction-to-Python-for-Computational-Science-and-Engineering.pdf) ([version](pdf/version.txt))
 - interactively [as Jupyter Notebooks on MyBinder](https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/master?filepath=index.ipynb); probably the most attractive version of the book as any code examples can be executed and modified immediately to explore the language and improve one's understanding.

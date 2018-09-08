@@ -28,7 +28,7 @@ is
 
 # Translation
 
-The book is available in Portuguese from https://github.com/gcpeixoto/lecture-ipynb/blob/master/README.md ([pdf](https://github.com/gcpeixoto/lecture-ipynb/raw/master/pdf/Introducao-Python-para-Ciencias-Computacionais-Engenharia.pdf))
+The [book is available in Portuguese](https://github.com/gcpeixoto/lecture-ipynb/blob/master/README.md) ([pdf](https://github.com/gcpeixoto/lecture-ipynb/raw/master/pdf/Introducao-Python-para-Ciencias-Computacionais-Engenharia.pdf)).
 
 # Acknowledgments
 

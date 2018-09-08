@@ -29,9 +29,9 @@ is
 
 # Translation
 
-The book is available in portugese from https://github.com/gcpeixoto/lecture-ipynb ([pdf](https://github.com/gcpeixoto/lecture-ipynb/raw/master/pdf/Introducao-Python-para-Ciencias-Computacionais-Engenharia.pdf))
+The book is available in Portuguese from https://github.com/gcpeixoto/lecture-ipynb ([pdf](https://github.com/gcpeixoto/lecture-ipynb/raw/master/pdf/Introducao-Python-para-Ciencias-Computacionais-Engenharia.pdf))
 
-# Ackwnowledgements
+# Acknowledgments
 
 Thanks go to Thomas Kluyver, Neil O'Brien, Jacek Generowicz, and Mark
 Molinari for various contributions (see last chapter for

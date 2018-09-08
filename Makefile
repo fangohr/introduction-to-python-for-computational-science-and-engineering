@@ -23,6 +23,10 @@ notebooks-html: check-py35
 	python3 -m bookbook.html
 	@echo "Output stored in html/*html; start with html/index.html"
 	make version && mv -v version.txt html
+	@echo "Move files to 'docs' (for github pages)"
+	mkdir -p docs
+	mv html/*.html html/version.txt docs
+	@echo "If this version should be hosted on github, you need to 'cd docs && git commit .' or similar."
 
 check-py35:
 	@echo "Checking Python version is >= 3.5"

@@ -11,12 +11,11 @@ An introduction to Python for Computational Science and
 Engineering, developed by Hans Fangohr (2003-2018).
 
 The book is available
-
+- [pdf](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/raw/master/pdf/Introduction-to-Python-for-Computational-Science-and-Engineering.pdf) ([version](pdf/version.txt))
 - interactively [as Jupyter Notebooks on MyBinder](https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/master?filepath=index.ipynb); probably the most attractive version of the book as any code examples can be executed and modified immediately to explore the language and improve one's understanding.
   ([Use JupyterLab](https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/master?urlpath=lab/tree/index.ipynb) instead of the traditional Notebook.)
 - html ([online](https://fangohr.github.io/introduction-to-python-for-computational-science-and-engineering/)
   or [in this zip file in the docs folder](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/archive/master.zip)) ([version](docs/version.txt))
-- [pdf](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/raw/master/pdf/Introduction-to-Python-for-Computational-Science-and-Engineering.pdf) ([version](pdf/version.txt))
 - downloadable Jupyter Notebook files (`*.ipynb`) ([in this zip file](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/archive/master.zip))
 
 

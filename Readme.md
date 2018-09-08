@@ -17,6 +17,7 @@ The book is available
 - html ([online](https://fangohr.github.io/introduction-to-python-for-computational-science-and-engineering/)
   or [in this zip file in the docs folder](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/archive/master.zip)) ([version](docs/version.txt))
 - downloadable Jupyter Notebook files (`*.ipynb`) ([in this zip file](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/archive/master.zip))
+- [most recent sources and materials on Github (this page)](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/blob/review-readme-2018-09-08/Readme.md)
 
 
 

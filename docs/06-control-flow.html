@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>13-numeric-computation</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>06-control-flow</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11726,7 +11726,9 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
-}@media print {
+}
+
+@media print {
   div.cell {
     display: block;
     page-break-inside: avoid;
@@ -11747,7 +11749,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -11771,175 +11773,28 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Numerical-Computation">Numerical Computation<a class="anchor-link" href="#Numerical-Computation">&#182;</a></h1><h2 id="Numbers-and-numbers">Numbers and numbers<a class="anchor-link" href="#Numbers-and-numbers">&#182;</a></h2><p>We have already seen (<a href="03-data-types-structures.html#Numbers">Numbers</a>) that Python knows different <em>types</em> of numbers:</p>
-<ul>
-<li><p><code>float</code>ing point numbers such as 3.14</p>
-</li>
-<li><p><code>int</code>egers such as 42</p>
-</li>
-<li><p><code>complex</code> numbers such as 3.14 + 1<em>j</em></p>
-</li>
-</ul>
-<h3 id="Limitations-of-number-types">Limitations of number types<a class="anchor-link" href="#Limitations-of-number-types">&#182;</a></h3><h4 id="Limitations-of-ints">Limitations of <code>int</code>s<a class="anchor-link" href="#Limitations-of-ints">&#182;</a></h4><p>Mathematics provides the infinite set of natural numbers ℕ = {1, 2, 3, …}. Because the computer has <em>finite</em> size, it is impossible to represent all of these numbers in the computer. Instead, only a small subset of numbers is represented.</p>
-<p>The <code>int</code>-type can (usually[3]) represent numbers between -2147483648 and +2147483647 and corresponds to 4 bytes (that’s 4*8 bit, and 2<sup>32</sup> = 4294967296 which is the range from -2147483648 and +2147483647).</p>
-<p>You can imagine that the hardware uses a table like this to encode integers using bits (suppose for simplicity we use only 8 bits for this):</p>
-<table>
-<thead><tr>
-<th style="text-align:right">natural number</th>
-<th style="text-align:right">bit-representation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right">0</td>
-<td style="text-align:right">00000000</td>
-</tr>
-<tr>
-<td style="text-align:right">1</td>
-<td style="text-align:right">00000001</td>
-</tr>
-<tr>
-<td style="text-align:right">2</td>
-<td style="text-align:right">00000010</td>
-</tr>
-<tr>
-<td style="text-align:right">3</td>
-<td style="text-align:right">00000011</td>
-</tr>
-<tr>
-<td style="text-align:right">4</td>
-<td style="text-align:right">00000100</td>
-</tr>
-<tr>
-<td style="text-align:right">5</td>
-<td style="text-align:right">00000101</td>
-</tr>
-<tr>
-<td style="text-align:right">⋮</td>
-<td style="text-align:right">⋮</td>
-</tr>
-<tr>
-<td style="text-align:right">254</td>
-<td style="text-align:right">11111110</td>
-</tr>
-<tr>
-<td style="text-align:right">255</td>
-<td style="text-align:right">11111111</td>
-</tr>
-</tbody>
-</table>
-<p>Using 8 bit we can represent 256 natural numbers (for example from 0 to 255) because we have 2<sup>8</sup> = 256 different ways of combining eight 0s and 1s.</p>
-<p>We could also use a slightly different table to describe 256 integer numbers ranging, for example, from -127 to +128.</p>
-<p>This is <em>in principle</em> how integers are represented in the computer. Depending on the number of bytes used, only integer numbers between a minimum and a maximum value can be represented. On today’s hardware, it is common to use 4 or 8 bytes to represent one integer, which leads exactly to the minimum and maximum values of -2147483648 and +2147483647 as shown above for 4 bytes, and +9223372036854775807 as the maximum integer for 8 bytes (that’s ≈9.2 ⋅ 10<sup>18</sup>).</p>
-<h4 id="Limitations-of-floats">Limitations of <code>float</code>s<a class="anchor-link" href="#Limitations-of-floats">&#182;</a></h4><p>The floating point numbers in a computer are not the same as the mathematical floating point numbers. (This is exactly the same as the (mathematical) integer numbers not being the same as the integer numbers in a computer: only a <em>subset</em> of the infinite set of integer numbers can be represented by the <code>int</code> data type as shown in <a href="#Numbers-and-numbers">Numbers and numbers</a>). So how are floating point numbers represented in the computer?</p>
-<ul>
-<li><p>Any real number <em>x</em> can be written as
-<em>x</em> = <em>a</em> ⋅ 10<sup>*b*</sup>
- where <em>a</em> is the mantissa and <em>b</em> the exponent.</p>
-</li>
-<li><p>Examples:</p>
-</li>
-</ul>
-<table>
-<thead><tr>
-<th>x</th>
-<th>a</th>
-<th>b</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>123.45 = 1.23456 ⋅ 10<sup>2</sup></td>
-<td>1.23456</td>
-<td>2</td>
-</tr>
-<tr>
-<td>1000000 = 1.0 ⋅ 10<sup>6</sup></td>
-<td>1.00000</td>
-<td>6</td>
-</tr>
-<tr>
-<td>0.0000024 = 2.4 ⋅ 10<sup>-6</sup></td>
-<td>2.40000</td>
-<td>-6</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><p>Therefore, we can use 2 integers to encode one floating point number!</p>
-<p><em>x</em> = <em>a</em> ⋅ 10<sup>*b*</sup></p>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><p>Following (roughly) the IEEE-754 standard, one uses 8 bytes for one float <em>x</em>: these 64 bits are split as</p>
-<ul>
-<li><p>10 bit for the exponent <em>b</em> and</p>
-</li>
-<li><p>54 bit for the mantissa <em>a</em>.</p>
-</li>
-</ul>
-</li>
-</ul>
-<p>This results in</p>
-<ul>
-<li><p>largest possible float ≈10<sup>308</sup> (quality measure for <em>b</em>)</p>
-</li>
-<li><p>smallest possible (positive) float ≈10<sup>−308</sup> (quality measure for <em>b</em>)</p>
-</li>
-<li><p>distance between 1.0 and next larger number ≈10<sup>−16</sup> (quality measure for <em>a</em>)</p>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Note that this is <em>in principle</em> how floating point numbers are stored (it is actually a bit more complicated).</p>
-<h4 id="Limitations-of-complex-numbers">Limitations of <code>complex</code> numbers<a class="anchor-link" href="#Limitations-of-complex-numbers">&#182;</a></h4><p>The <code>complex</code> number type has essentially the same limitations as the <code>float</code> data type (see <a href="#Limitations-of-floats">limitations of floats</a>) because a complex number consists of two <code>floats</code>: one represents the real part, the other one the imaginary part.</p>
-<h4 id="&#8230;are-these-number-types-of-practical-value?">&#8230;are these number types of practical value?<a class="anchor-link" href="#&#8230;are-these-number-types-of-practical-value?">&#182;</a></h4><p>In practice, we do not usually find numbers in our daily life that exceed 10<sup>300</sup> (this is a number with 300 zeros!), and therefore the floating point numbers cover the range of numbers we usually need.</p>
-<p>However, be warned that in scientific computation small and large numbers are used which may (often in intermediate results) exceed the range of floating point numbers.</p>
-<ul>
-<li><p>Imagine for example, that we have to take the fourth power of the constant ℏ = 1.0545716 ⋅ 10<sup>−34</sup><em>k<strong>g</strong>m</em><sup>2</sup>/<em>s</em>:</p>
-</li>
-<li><p>ℏ<sup>4</sup> = 1.2368136958909421 ⋅ 10<sup>−136</sup><em>k**g</em><sup>4</sup><em>m</em><sup>8</sup>/<em>s</em><sup>4</sup> which is “halfway” to our representable smallest positive float of the order of 10<sup>−308</sup>.</p>
-</li>
-</ul>
-<p>If there is any danger that we might exceed the range of the floating point numbers, we have to <em>rescale</em> our equations so that (ideally) all numbers are of order unity. Rescaling our equations so that all relevant numbers are approximately 1 is also useful in debugging our code: if numbers much greater or smaller than 1 appear, this may be an indication of an error.</p>
-<h3 id="Using-floating-point-numbers-(carelessly)">Using floating point numbers (carelessly)<a class="anchor-link" href="#Using-floating-point-numbers-(carelessly)">&#182;</a></h3><p>We know already that we need to take care that our floating point values do not exceed the range of floating point numbers that can be represented in the computer.</p>
-<p>There is another complication due to the way floating point numbers have to be represented internally: not all floating point numbers can be represented exactly in the computer. The number 1.0 can be represented exactly but the numbers 0.1, 0.2 and 0.3 cannot:</p>
+<h1 id="Control-Flow">Control Flow<a class="anchor-link" href="#Control-Flow">&#182;</a></h1><h2 id="Basics">Basics<a class="anchor-link" href="#Basics">&#182;</a></h2><p>For a given file with a python program, the python interpreter will start at the top and then process the file. We demonstrate this with a simple program, for example:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;</span><span class="si">%.20f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="mf">1.0</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;function that computes and returns x*x&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Main program starts here&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;4 * 4 = </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">f</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;In last line of program -- bye&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -11951,14 +11806,354 @@ div#notebook {
 
 
 <div class="output_area">
+<div class="prompt"></div>
 
-<div class="prompt output_prompt">Out[11]:</div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Main program starts here
+4 * 4 = 16
+In last line of program -- bye
+</pre>
+</div>
+</div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The basic rule is that commands in a file (or function or any sequence of commands) is processed from top to bottom. If several commands are given in the same line (separated by <span>`;`</span>), then these are processed from left to right (although it is discouraged to have multiple statements per line to maintain good readability of the code.)</p>
+<p>In this example, the interpreter starts at the top (line 1). It finds the <span>`def`</span> keyword and remembers for the future that the function <span>`f`</span> is defined here. (It will not yet execute the function body, i.e. line 3 – this only happens when we call the function.) The interpreter can see from the indentation where the body of the function stops: the indentation in line 5 is different from that of the first line in the function body (line2), and thus the function body has ended, and execution should carry on with that line. (Empty lines do not matter for this analysis.)</p>
+<p>In line 5 the interpreter will print the output <code>Main program starts here</code>. Then line 6 is executed. This contains the expression <span>`f(4)`</span> which will call the function <span>`f(x)`</span> which is defined in line 1 where <span>`x`</span> will take the value <span>`4`</span>. [Actually <span>`x`</span> is a reference to the object <span>`4`</span>.] The function <span>`f`</span> is then executed and computes and returns <span>`4*4`</span> in line 3. This value <span>`16`</span> is used in line 6 to replace <span>`f(4)`</span> and then the string representation <span>`%s`</span> of the object 16 is printed as part of the print command in line 6.</p>
+<p>The interpreter then moves on to line 7 before the program ends.</p>
+<p>We will now learn about different possibilities to direct this control flow further.</p>
+<h3 id="Conditionals">Conditionals<a class="anchor-link" href="#Conditionals">&#182;</a></h3><p>The python values <span>`True`</span> and <span>`False`</span> are special inbuilt objects:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>True
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[3]:</div>
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;1.00000000000000000000&#39;</pre>
+<pre>bool</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>False
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[5]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>bool</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can operate with these two logical values using boolean logic, for example the logical and operation (<span>`and`</span>):</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kc">True</span> <span class="ow">and</span> <span class="kc">True</span>          <span class="c1">#logical and operation</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[6]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kc">True</span> <span class="ow">and</span> <span class="kc">False</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[7]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kc">False</span> <span class="ow">and</span> <span class="kc">True</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[8]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kc">True</span> <span class="ow">and</span> <span class="kc">True</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[9]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="ow">and</span> <span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>False
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There is also logical or (<span>`or`</span>) and the negation (<span>`not`</span>):</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[11]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
 </div>
 
 </div>
@@ -11972,7 +12167,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;</span><span class="si">%.20f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="mf">0.1</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="ow">not</span> <span class="kc">True</span>
 </pre></div>
 
 </div>
@@ -11984,14 +12179,12 @@ div#notebook {
 
 
 <div class="output_area">
-
 <div class="prompt output_prompt">Out[12]:</div>
 
 
 
-
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;0.10000000000000000555&#39;</pre>
+<pre>False</pre>
 </div>
 
 </div>
@@ -12005,7 +12198,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;</span><span class="si">%.20f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="mf">0.2</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="ow">not</span> <span class="kc">False</span>
 </pre></div>
 
 </div>
@@ -12017,14 +12210,12 @@ div#notebook {
 
 
 <div class="output_area">
-
 <div class="prompt output_prompt">Out[13]:</div>
 
 
 
-
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;0.20000000000000001110&#39;</pre>
+<pre>True</pre>
 </div>
 
 </div>
@@ -12038,7 +12229,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;</span><span class="si">%.20f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="mf">0.3</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kc">True</span> <span class="ow">and</span> <span class="ow">not</span> <span class="kc">False</span>
 </pre></div>
 
 </div>
@@ -12050,14 +12241,12 @@ div#notebook {
 
 
 <div class="output_area">
-
 <div class="prompt output_prompt">Out[14]:</div>
 
 
 
-
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;0.29999999999999998890&#39;</pre>
+<pre>True</pre>
 </div>
 
 </div>
@@ -12066,57 +12255,12 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Instead, the floating point number “nearest” to the real number is chosen.</p>
-<p>This can cause problems. Suppose we need a loop where x takes values 0.1, 0.2, 0.3, …, 0.9, 1.0. We might be tempted to write something like this:</p>
-<div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.0</span>
-<span class="k">while</span> <span class="ow">not</span> <span class="n">x</span> <span class="o">==</span> <span class="mf">1.0</span><span class="p">:</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">0.1</span>
-    <span class="k">print</span> <span class="p">(</span> <span class="s2">&quot; x =</span><span class="si">%19.17f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span> <span class="n">x</span> <span class="p">))</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>However, this loop will never terminate. Here are the first 11 lines of output of the program:</p>
-
-<pre><code>x=0.10000000000000001
-x=0.20000000000000001
-x=0.30000000000000004
-x=0.40000000000000002
-x=                0.5
-x=0.59999999999999998
-x=0.69999999999999996
-x=0.79999999999999993
-x=0.89999999999999991
-x=0.99999999999999989
-x=1.09999999999999987</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Because the variable <code>x</code> never takes exactly the value 1.0, the while loop will continue forever.</p>
-<p>Thus: <em>Never compare two floating point numbers for equality.</em></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Using-floating-point-numbers-carefully-1">Using floating point numbers carefully 1<a class="anchor-link" href="#Using-floating-point-numbers-carefully-1">&#182;</a></h3><p>There are a number of alternative ways to solve this problem. For example, we can compare the distance between two floating point numbers:</p>
+<p>In computer code, we often need to evaluate some expression that is either true or false (sometimes called a “predicate”). For example:</p>
 
 </div>
 </div>
@@ -12126,10 +12270,8 @@ x=1.09999999999999987</code></pre>
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.0</span>
-<span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">1e-8</span><span class="p">:</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">0.1</span>
-    <span class="nb">print</span> <span class="p">(</span> <span class="s2">&quot; x =</span><span class="si">%19.17f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span> <span class="n">x</span> <span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">30</span>          <span class="c1"># assign 30 to x</span>
+<span class="n">x</span> <span class="o">&gt;</span> <span class="mi">15</span>          <span class="c1"># is x greater than 15</span>
 </pre></div>
 
 </div>
@@ -12141,46 +12283,26 @@ x=1.09999999999999987</code></pre>
 
 
 <div class="output_area">
+<div class="prompt output_prompt">Out[15]:</div>
 
-<div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre> x =0.10000000000000001
- x =0.20000000000000001
- x =0.30000000000000004
- x =0.40000000000000002
- x =0.50000000000000000
- x =0.59999999999999998
- x =0.69999999999999996
- x =0.79999999999999993
- x =0.89999999999999991
- x =0.99999999999999989
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
 </div>
+
 </div>
 
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Using-floating-point-numbers-carefully-2">Using floating point numbers carefully 2<a class="anchor-link" href="#Using-floating-point-numbers-carefully-2">&#182;</a></h3><p>Alternatively, we can (for this example) iterate over a sequence of integers and compute the floating point number from the integer:</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span> <span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="mf">0.1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; x =</span><span class="si">%19.17f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span> <span class="n">x</span> <span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">42</span>
 </pre></div>
 
 </div>
@@ -12192,23 +12314,14 @@ x=1.09999999999999987</code></pre>
 
 
 <div class="output_area">
+<div class="prompt output_prompt">Out[16]:</div>
 
-<div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre> x =0.10000000000000001
- x =0.20000000000000001
- x =0.30000000000000004
- x =0.40000000000000002
- x =0.50000000000000000
- x =0.60000000000000009
- x =0.70000000000000007
- x =0.80000000000000004
- x =0.90000000000000002
- x =1.00000000000000000
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
 </div>
+
 </div>
 
 </div>
@@ -12220,53 +12333,38 @@ x=1.09999999999999987</code></pre>
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="mf">0.10000000000000001</span>
-<span class="n">x</span><span class="o">=</span><span class="mf">0.20000000000000001</span>
-<span class="n">x</span><span class="o">=</span><span class="mf">0.30000000000000004</span>
-<span class="n">x</span><span class="o">=</span><span class="mf">0.40000000000000002</span>
-<span class="n">x</span><span class="o">=</span>                <span class="mf">0.5</span>
-<span class="n">x</span><span class="o">=</span><span class="mf">0.60000000000000009</span>
-<span class="n">x</span><span class="o">=</span><span class="mf">0.70000000000000007</span>
-<span class="n">x</span><span class="o">=</span><span class="mf">0.80000000000000004</span>
-<span class="n">x</span><span class="o">=</span><span class="mf">0.90000000000000002</span>
-<span class="n">x</span><span class="o">=</span>                  <span class="mi">1</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">==</span> <span class="mi">30</span>         <span class="c1"># is x the same as 30?</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[17]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+
 </div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>If we compare this with the output from the program in <a href="#Using-floating-point-numbers-&amp;#40;carelessly&amp;#41;">Using floating point numbers (carelessly)</a>, we can see that the floating point numbers differ. This means that – in a numerical calculation – it is not true that 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 = 1.0.</p>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Symbolic-calculation">Symbolic calculation<a class="anchor-link" href="#Symbolic-calculation">&#182;</a></h3><p>Using the sympy package we have arbitrary precision. Using <span>`sympy.Rational`</span>, we can define the fraction 1/10 exactly symbolically. Adding this 10 times will lead exactly to the value 1, as demonstrated by this script</p>
 
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="k">import</span> <span class="n">Rational</span>
-<span class="n">dx</span> <span class="o">=</span> <span class="n">Rational</span> <span class="p">(</span><span class="mi">1</span> <span class="p">,</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">x</span> <span class="o">!=</span> <span class="mf">1.0</span><span class="p">:</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Current x=</span><span class="si">%4s</span><span class="s2"> = </span><span class="si">%3.1f</span><span class="s2"> &quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">x</span> <span class="p">,</span> <span class="n">x</span> <span class="o">.</span> <span class="n">evalf</span> <span class="p">()))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; Reached x=</span><span class="si">%s</span><span class="s2"> &quot;</span> <span class="o">%</span> <span class="n">x</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">==</span> <span class="mi">42</span>
 </pre></div>
 
 </div>
@@ -12278,86 +12376,26 @@ x=1.09999999999999987</code></pre>
 
 
 <div class="output_area">
+<div class="prompt output_prompt">Out[18]:</div>
 
-<div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Current x=1/10 = 0.1 
- Reached x=1/10 
-Current x= 1/5 = 0.2 
- Reached x=1/5 
-Current x=3/10 = 0.3 
- Reached x=3/10 
-Current x= 2/5 = 0.4 
- Reached x=2/5 
-Current x= 1/2 = 0.5 
- Reached x=1/2 
-Current x= 3/5 = 0.6 
- Reached x=3/5 
-Current x=7/10 = 0.7 
- Reached x=7/10 
-Current x= 4/5 = 0.8 
- Reached x=4/5 
-Current x=9/10 = 0.9 
- Reached x=9/10 
-Current x=   1 = 1.0 
- Reached x=1 
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
 </div>
+
 </div>
 
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>However, this symbolic calculation is much slower as it is done through software rather than the CPU-based floating point operations. The next program approximates the relative performances:</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NBVAL_IGNORE_OUTPUT</span>
-<span class="kn">from</span> <span class="nn">sympy</span> <span class="k">import</span> <span class="n">Rational</span>
-<span class="n">dx_symbolic</span> <span class="o">=</span> <span class="n">Rational</span> <span class="p">(</span><span class="mi">1</span> <span class="p">,</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">dx</span> <span class="o">=</span> <span class="mf">0.1</span>
-
-<span class="k">def</span> <span class="nf">loop_sympy</span> <span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx_symbolic</span>
-    <span class="k">return</span> <span class="n">x</span>
-
-<span class="k">def</span> <span class="nf">loop_float</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">x</span> <span class="o">=</span><span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx</span>
-    <span class="k">return</span> <span class="n">x</span>
-
-<span class="k">def</span> <span class="nf">time_this</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-    <span class="kn">import</span> <span class="nn">time</span>
-    <span class="n">starttime</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-    <span class="n">stoptime</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; deviation is </span><span class="si">%16.15g</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span> <span class="n">n</span> <span class="o">*</span> <span class="n">dx_symbolic</span> <span class="o">-</span> <span class="n">result</span> <span class="p">))</span>
-    <span class="k">return</span> <span class="n">stoptime</span> <span class="o">-</span> <span class="n">starttime</span>
-
-<span class="n">n</span> <span class="o">=</span> <span class="mi">100000</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;loop using float dx:&quot;</span><span class="p">)</span>
-<span class="n">time_float</span> <span class="o">=</span> <span class="n">time_this</span><span class="p">(</span><span class="n">loop_float</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;float loop n=</span><span class="si">%d</span><span class="s2"> takes </span><span class="si">%6.5f</span><span class="s2"> seconds&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">time_float</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;loop using sympy symbolic dx:&quot;</span><span class="p">)</span>
-<span class="n">time_sympy</span> <span class="o">=</span> <span class="n">time_this</span> <span class="p">(</span><span class="n">loop_sympy</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;sympy loop n =</span><span class="si">% d</span><span class="s2"> takes </span><span class="si">%6.5f</span><span class="s2"> seconds&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">n</span> <span class="p">,</span> <span class="n">time_sympy</span> <span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Symbolic loop is a factor </span><span class="si">%.1f</span><span class="s2"> slower.&quot;</span> <span class="o">%</span> <span class="p">(</span> <span class="n">time_sympy</span> <span class="o">/</span> <span class="n">time_float</span> <span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="ow">not</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">42</span>     <span class="c1"># is x not the same as 42?</span>
 </pre></div>
 
 </div>
@@ -12369,18 +12407,149 @@ Current x=   1 = 1.0
 
 
 <div class="output_area">
+<div class="prompt output_prompt">Out[19]:</div>
 
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">!=</span> <span class="mi">42</span>         <span class="c1"># is x not the same as 42?</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[20]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">30</span>          <span class="c1"># is x greater than 30?</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[21]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">30</span>  <span class="c1"># is x greater than or equal to 30?</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[22]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="If-then-else">If-then-else<a class="anchor-link" href="#If-then-else">&#182;</a></h2><h5 id="Further-information">Further information<a class="anchor-link" href="#Further-information">&#182;</a></h5><ul>
+<li>Introduction to If-then in <a href="http://docs.python.org/tutorial/controlflow.html#if-statements">Python tutorial, section 4.1</a></li>
+</ul>
+<p>The <span>`if`</span> statement allows conditional execution of code, for example:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">34</span>
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a is positive&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
 <div class="prompt"></div>
 
-
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>loop using float dx:
- deviation is -1.88483681995422e-08
-float loop n=100000 takes 0.00778 seconds
-loop using sympy symbolic dx:
- deviation is                0
-sympy loop n = 100000 takes 1.61389 seconds
-Symbolic loop is a factor 207.4 slower.
+<pre>a is positive
 </pre>
 </div>
 </div>
@@ -12389,56 +12558,877 @@ Symbolic loop is a factor 207.4 slower.
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is of course an artificial example: we have added the symbolic code to demonstrate that these round off errors originate from the approximative representation of floating point numbers in the hardware (and thus programming languages). We can, in principle, avoid these complications by computing using symbolic expressions, but this is in practice too slow.[4]</p>
+<p>The if-statement can also have an <span>`else`</span> branch which is executed if the condition is wrong:</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Summary">Summary<a class="anchor-link" href="#Summary">&#182;</a></h3><p>In summary, we have learned that</p>
-<ul>
-<li><p>floating point numbers and integers used in numeric computation are generally quite different from “mathematical numbers” (symbolic calculations are exact and use the “mathematical numbers”):</p>
-<ul>
-<li><p>there is a maximum number and a minimum number that can be represented (for both integers and floating point numbers)</p>
-</li>
-<li><p>within this range, not every floating point number can be represented in the computer.</p>
-</li>
-</ul>
-</li>
-<li><p>We deal with this limitation by:</p>
-<ul>
-<li><p>never comparing two floating point numbers for equality (instead we compute the absolute value of the difference)</p>
-</li>
-<li><p>use of algorithms that are <em>stable</em> (this means that small deviations from correct numbers can be corrected by the algorithm. We have not yet shown any such examples this document.)</p>
-</li>
-</ul>
-</li>
-<li><p>Note that there is a lot more to be said about numerical and algorithmic tricks and methods to make numeric computation as accurate as possible but this is outside the scope of this section.</p>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Exercise:-infinite-or-finite-loop">Exercise: infinite or finite loop<a class="anchor-link" href="#Exercise:-infinite-or-finite-loop">&#182;</a></h3><ol>
-<li>What does the following piece of code compute? Will the loop ever finish? Why?</li>
-</ol>
-<div class="highlight"><pre><span></span><span class="n">eps</span> <span class="o">=</span> <span class="mf">1.0</span>
-<span class="k">while</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="n">eps</span> <span class="o">&gt;</span> <span class="mf">1.0</span><span class="p">:</span>
-    <span class="n">eps</span> <span class="o">=</span> <span class="n">eps</span> <span class="o">/</span> <span class="mf">2.0</span>
-<span class="k">print</span><span class="p">(</span><span class="n">eps</span><span class="p">)</span>
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">34</span>
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a is positive&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a is non-positive (i.e. negative or zero)&quot;</span><span class="p">)</span>
 </pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>a is positive
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Finally, there is the <span>`elif`</span> (read as “else if”) keyword that allows checking for several (exclusive) possibilities:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">17</span>
+<span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a is zero&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a is negative&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a is positive&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>a is positive
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="For-loop">For loop<a class="anchor-link" href="#For-loop">&#182;</a></h2><h5 id="Further-information">Further information<a class="anchor-link" href="#Further-information">&#182;</a></h5><ul>
+<li>Introduction to for-loops in <a href="http://docs.python.org/tutorial/controlflow.html#for-statements">Python tutorial, section 4.2</a></li>
+</ul>
+<p>The <span>`for`</span>-loop allows to iterate over a sequence (this could be a string or a list, for example). Here is an example:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">animal</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="s1">&#39;mouse&#39;</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">animal</span><span class="p">,</span> <span class="n">animal</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>dog DOG
+cat CAT
+mouse MOUSE
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Together with the <code>range()</code> command (<a href="03-data-types-structures.html#The-range&amp;#40;&amp;#41;-command">in chapter 3</a>), one can iterate over increasing integers:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>5
+6
+7
+8
+9
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="While-loop">While loop<a class="anchor-link" href="#While-loop">&#182;</a></h2><p>The <span>`while`</span> keyword allows to repeat an operation while a condition is true. Suppose we’d like to know for how many years we have to keep 100 pounds on a savings account to reach 200 pounds simply due to annual payment of interest at a rate of 5%. Here is a program to compute that this will take 15 years:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mymoney</span> <span class="o">=</span> <span class="mi">100</span>         <span class="c1"># in GBP</span>
+<span class="n">rate</span> <span class="o">=</span> <span class="mf">1.05</span>           <span class="c1"># 5% interest</span>
+<span class="n">years</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">mymoney</span> <span class="o">&lt;</span> <span class="mi">200</span><span class="p">:</span>  <span class="c1"># repeat until 20 pounds reached</span>
+    <span class="n">mymoney</span> <span class="o">=</span> <span class="n">mymoney</span> <span class="o">*</span> <span class="n">rate</span>
+    <span class="n">years</span> <span class="o">=</span> <span class="n">years</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;We need&#39;</span><span class="p">,</span> <span class="n">years</span><span class="p">,</span> <span class="s1">&#39;years to reach&#39;</span><span class="p">,</span> <span class="n">mymoney</span><span class="p">,</span> <span class="s1">&#39;pounds.&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>We need 15 years to reach 207.89281794113688 pounds.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Relational-operators-(comparisons)-in-`if`-and-`while`-statements">Relational operators (comparisons) in <span>`if`</span> and <span>`while`</span> statements<a class="anchor-link" href="#Relational-operators-(comparisons)-in-`if`-and-`while`-statements">&#182;</a></h2><p>The general form of <span>`if`</span> statements and <span>`while`</span> loops is the same: following the keyword <span>`if`</span> or <span>`while`</span>, there is a <em>condition</em> followed by a colon. In the next line, a new (and thus indented!) block of commands starts that is executed if the condition is True).</p>
+<p>For example, the condition could be equality of two variables <span>`a1`</span> and <span>`a2`</span> which is expressed as <span>`a1==a2`</span>:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="n">a2</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="k">if</span> <span class="n">a1</span> <span class="o">==</span> <span class="n">a2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a1 and a2 are the same&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>a1 and a2 are the same
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Another example is to test whether <span>`a1`</span> and <span>`a2`</span> are not the same. For this, we have two possibilities. Option number 1 uses the <em>inequality operator</em> <span>`!=`</span>:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">a1</span> <span class="o">!=</span> <span class="n">a2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a1 and a2 are different&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Option two uses the keyword <span>`not`</span> in front of the condition:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">a1</span> <span class="o">==</span> <span class="n">a2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a1 and a2 are different&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Comparisons for “greater” (<span>`>`</span>), “smaller” (<span>`<`</span>) and “greater equal” (<span>`>=`</span>) and “smaller equal” (<span>`<=`</span>) are straightforward.</p>
+<p>Finally, we can use the logical operators “<span>`and`</span>” and “<span>`or`</span>” to combine conditions:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">10</span> <span class="ow">and</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A is greater than 10 and b is greater than 20&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">10</span> <span class="ow">or</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Either a is greater than 10, or &quot;</span>
+          <span class="s2">&quot;b is smaller than -5, or both.&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Either a is greater than 10, or b is smaller than -5, or both.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Use the Python prompt to experiment with these comparisons and logical expressions. For example:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="o">-</span><span class="mf">12.5</span>
+<span class="k">if</span> <span class="n">T</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">20</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;very cold&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">T</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;quite cold&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>quite cold
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">T</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">20</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[34]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">T</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">10</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[35]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exceptions">Exceptions<a class="anchor-link" href="#Exceptions">&#182;</a></h2><p>Even if a statement or expression is syntactically correct, it may cause an error when an attempt is made to execute it. Errors detected during execution are called <em>exceptions</em> and are not necessarily fatal: exceptions can be <em>caught</em> and dealt with within the program. Most exceptions are not handled by programs, however, and result in error messages as shown here</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NBVAL_RAISES_EXCEPTION</span>
+<span class="mi">10</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ZeroDivisionError</span>                         Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-36-9ce172bd90a7&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-cyan-fg">10</span> <span class="ansi-blue-fg">*</span> <span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">/</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">ZeroDivisionError</span>: division by zero</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NBVAL_RAISES_EXCEPTION</span>
+<span class="mi">4</span> <span class="o">+</span> <span class="n">spam</span><span class="o">*</span><span class="mi">3</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-8-dc7ecd1cc0aa&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg"># NBVAL_RAISES_EXCEPTION</span>
+<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span><span class="ansi-cyan-fg">4</span> <span class="ansi-blue-fg">+</span> spam<span class="ansi-blue-fg">*</span><span class="ansi-cyan-fg">3</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;spam&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NBVAL_SKIP</span>
+<span class="s1">&#39;2&#39;</span> <span class="o">+</span> <span class="mi">2</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-9-3e373c48d944&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg"># NBVAL_RAISES_EXCEPTION</span>
+<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span><span class="ansi-blue-fg">&#39;2&#39;</span> <span class="ansi-blue-fg">+</span> <span class="ansi-cyan-fg">2</span>
+
+<span class="ansi-red-fg">TypeError</span>: must be str, not int</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Schematic exception catching with all options</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="c1"># code body</span>
+    <span class="k">pass</span>
+<span class="k">except</span> <span class="ne">ArithmeticError</span><span class="p">:</span>
+    <span class="c1"># what to do if arithmetic error</span>
+    <span class="k">pass</span>
+<span class="k">except</span> <span class="ne">IndexError</span> <span class="k">as</span> <span class="n">the_exception</span><span class="p">:</span>
+    <span class="c1"># the_exception refers to the exeption in this block</span>
+    <span class="k">pass</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="c1"># what to do for ANY other exception</span>
+    <span class="k">pass</span>
+<span class="k">else</span><span class="p">:</span>  <span class="c1"># optional</span>
+    <span class="c1"># what to do if no exception raised</span>
+    <span class="k">pass</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="c1"># code body</span>
+    <span class="k">pass</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="c1"># what to do ALWAYS</span>
+    <span class="k">pass</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Starting with Python 2.5, you can use the with statement to simplify the writing of code for some predefined functions, in particular the <span>`open`</span> function to open files: see <a href="http://docs.python.org/tutorial/errors.html#predefined-clean-up-actions">http://docs.python.org/tutorial/errors.html#predefined-clean-up-actions</a>.</p>
+<p>Example: We try to open a file that does not exist, and Python will raise an exception of type <span>`IOError`</span> which stands for Input Output Error:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NBVAL_RAISES_EXCEPTION</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;filenamethatdoesnotexist&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">FileNotFoundError</span>                         Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-7-1fcefadfdaf6&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg"># NBVAL_RAISES_EXCEPTION</span>
+<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>f <span class="ansi-blue-fg">=</span> open<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;filenamethatdoesnotexist&#34;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#34;r&#34;</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;filenamethatdoesnotexist&#39;</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If we were writing an application with a userinterface where the user has to type or select a filename, we would not want to application to stop if the file does not exist. Instead, we need to catch this exception and act accordingly (for example by informing the user that a file with this filename does not exist and ask whether they want to try another file name). Here is the skeleton for catching this exception:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;filenamethatdoesnotexist&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Could not open that file&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Could not open that file
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There is a lot more to be said about exceptions and their use in larger programs. Start reading <a href="http://docs.python.org/tutorial/errors.html#errors-and-exceptions">Python Tutorial Chapter 8: Errors and Exceptions</a> if you are interested.</p>
+<h3 id="Raising-Exceptions">Raising Exceptions<a class="anchor-link" href="#Raising-Exceptions">&#182;</a></h3><p>Raising exception is also referred to as ’throwing an exception’.</p>
+<p>Possibilities of raising an Exception</p>
+<ul>
+<li><p><code>raise OverflowError</code></p>
+</li>
+<li><p><code>raise OverflowError, Bath is full</code> (Old style, now discouraged)</p>
+</li>
+<li><p><code>raise OverflowError(Bath is full)</code></p>
+</li>
+<li><p><code>e = OverflowError(Bath is full); raise e</code></p>
+</li>
+</ul>
+<h4 id="Exception-hierarchy">Exception hierarchy<a class="anchor-link" href="#Exception-hierarchy">&#182;</a></h4><p>The standard exceptions are organized in an inheritance hierarchy e.g. OverflowError is a subclass of ArithmeticError (not BathroomError); this can be seen when looking at <span>`help(’exceptions’)`</span> for example.</p>
+<p>You can derive your own exceptions from any of the standard ones. It is good style to have each module define its own base exception.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Creating-our-own-exceptions">Creating our own exceptions<a class="anchor-link" href="#Creating-our-own-exceptions">&#182;</a></h3><ul>
+<li><p>You can and should derive your own exceptions from the built-in Exception.</p>
+</li>
+<li><p>To see what built-in exceptions exist, look in the module exceptions (try <span>`help(’exceptions’)`</span>), or go to <a href="http://docs.python.org/library/exceptions.html#bltin-exceptions">http://docs.python.org/library/exceptions.html#bltin-exceptions</a>.</p>
+</li>
+</ul>
+<h3 id="LBYL-vs-EAFP">LBYL vs EAFP<a class="anchor-link" href="#LBYL-vs-EAFP">&#182;</a></h3><ul>
+<li><p>LBYL (Look Before You Leap) vs</p>
+</li>
+<li><p>EAFP (Easer to ask forgiveness than permission)</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">numerator</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">denominator</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Example for LBYL:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">denominator</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Oops&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">numerator</span><span class="o">/</span><span class="n">denominator</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Oops
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Easier to Ask for Forgiveness than Permission:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">numerator</span><span class="o">/</span><span class="n">denominator</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Oops&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Oops
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The Python documentation says about EAFP:</p>
+<blockquote><p>Easier to ask for forgiveness than permission. This common Python coding style assumes the existence of valid keys or attributes and catches exceptions if the assumption proves false. This clean and fast style is characterized by the presence of many try and except statements. The technique contrasts with the LBYL style common to many other languages such as C.</p>
+</blockquote>
+<p>Source: <a href="http://docs.python.org/glossary.html#term-eafp">http://docs.python.org/glossary.html#term-eafp</a></p>
+<p>The Python documentation says about LBYL:</p>
+<blockquote><p>Look before you leap. This coding style explicitly tests for pre-conditions before making calls or lookups. This style contrasts with the EAFP approach and is characterized by the presence of many if statements.</p>
+<p>In a multi-threaded environment, the LBYL approach can risk introducing a race condition between “the looking” and “the leaping”. For example, the code, if key in mapping: return mapping[key] can fail if another thread removes key from mapping after the test, but before the lookup. This issue can be solved with locks or by using the EAFP approach.</p>
+</blockquote>
+<p>Source: <a href="http://docs.python.org/glossary.html#term-lbyl">http://docs.python.org/glossary.html#term-lbyl</a></p>
+<p>EAFP is the Pythonic way.</p>
 
 </div>
 </div>

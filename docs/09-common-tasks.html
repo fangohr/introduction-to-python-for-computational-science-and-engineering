@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>11-python-shells</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>09-common-tasks</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11726,7 +11726,9 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
-}@media print {
+}
+
+@media print {
   div.cell {
     display: block;
     page-break-inside: avoid;
@@ -11747,7 +11749,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -11771,50 +11773,185 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Python-shells">Python shells<a class="anchor-link" href="#Python-shells">&#182;</a></h1><h2 id="IDLE">IDLE<a class="anchor-link" href="#IDLE">&#182;</a></h2><p>IDLE comes with every Python distribution and is a useful tool for everyday programming. Its editor provides syntax highlighting.</p>
-<p>There are two reasons why you might want to use another Python shell, for example:</p>
-<ul>
-<li>While working with the Python prompt, you like auto-completion of variable names, filenames and commands. In that case <em>IPython</em> is your tool of choice (see below). IPython does not provide an editor, but you can carry on using the IDLE editor to edit files, or any other editor you like.</li>
-</ul>
-<p>IPython provides a number of nice features for the more experienced Python programmer, including convenient profiling of code (see <a href="http://ipython.scipy.org">http://ipython.scipy.org</a>).</p>
-<p>Recently, some auto-completion has been added to Idle as well (press tab after having typed the first few letters of object names and keywords).</p>
+<h1 id="Common-tasks">Common tasks<a class="anchor-link" href="#Common-tasks">&#182;</a></h1><p>Here we provide a selection of small example programs addressing some common tasks and just providing some more Python code that can be read if seeking inspiration how to address a given problem.</p>
+<h2 id="Many-ways-to-compute-a-series">Many ways to compute a series<a class="anchor-link" href="#Many-ways-to-compute-a-series">&#182;</a></h2><p>As an example, we compute the sum of odd numbers in different ways.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Python-(command-line)">Python (command line)<a class="anchor-link" href="#Python-(command-line)">&#182;</a></h2><p>This is the most basic face of the Python shell. It is very similar to the Python prompt in IDLE but there are no menus to click on and no facilities to edit files.</p>
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">compute_sum1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;computes and returns the sum of 2,4,6, ..., m</span>
+<span class="sd">    where m is the largest even number smaller than n.</span>
+
+<span class="sd">    For example, with n = 7, we compute 0+2+4+6 = 12.</span>
+
+<span class="sd">    This implementation uses a variable &#39;mysum&#39; that is</span>
+<span class="sd">    increased in every iteration of the for-loop.&quot;&quot;&quot;</span>
+
+    <span class="n">mysum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+        <span class="n">mysum</span> <span class="o">=</span> <span class="n">mysum</span> <span class="o">+</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="n">mysum</span>
+
+
+<span class="k">def</span> <span class="nf">compute_sum2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;computes and returns ...</span>
+
+<span class="sd">    This implementation uses a while-loop:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">mysum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">counter</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">mysum</span> <span class="o">=</span> <span class="n">mysum</span> <span class="o">+</span> <span class="n">counter</span>
+        <span class="n">counter</span> <span class="o">=</span> <span class="n">counter</span> <span class="o">+</span> <span class="mi">2</span>
+
+    <span class="k">return</span> <span class="n">mysum</span>
+
+
+<span class="k">def</span> <span class="nf">compute_sum3</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">startfrom</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;computes and returns ...</span>
+
+<span class="sd">    This is a recursive implementation:&quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="n">startfrom</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">startfrom</span> <span class="o">+</span> <span class="n">compute_sum3</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">startfrom</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">compute_sum4a</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A functional approach ... this seems to be</span>
+<span class="sd">    the shortest and most concise code.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+
+<span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">reduce</span>
+<span class="k">def</span> <span class="nf">compute_sum4b</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A functional approach ... not making use of &#39;sum&#39; which</span>
+<span class="sd">    happens to exist and is of course convenient here.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">compute_sum4c</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A functional approach ... a bit faster than compute_sum4b</span>
+<span class="sd">    as we avoid using lambda.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">operator</span>
+    <span class="k">return</span> <span class="n">reduce</span><span class="p">(</span><span class="n">operator</span><span class="o">.</span><span class="fm">__add__</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">compute_sum4d</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Using list comprehension.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">([</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">2</span><span class="p">)])</span>
+
+
+<span class="k">def</span> <span class="nf">compute_sum4e</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Using another variation of list comprehension.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">([</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="k">if</span> <span class="n">k</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">])</span>
+
+
+<span class="k">def</span> <span class="nf">compute_sum5</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Using numerical python (numpy). This is very fast</span>
+<span class="sd">    (but would only pay off if n &gt;&gt; 10).&quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">numpy</span>
+    <span class="k">return</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">test_consistency</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Check that all compute_sum?? functions in this file produce</span>
+<span class="sd">    the same answer for all n&gt;=2 and &lt;N.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">check_one_n</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Compare the output of compute_sum1 with all other functions</span>
+<span class="sd">        for a given n&gt;=2. Raise AssertionError if outputs disagree.&quot;&quot;&quot;</span>
+        <span class="n">funcs</span> <span class="o">=</span> <span class="p">[</span><span class="n">compute_sum1</span><span class="p">,</span> <span class="n">compute_sum2</span><span class="p">,</span> <span class="n">compute_sum3</span><span class="p">,</span>
+                 <span class="n">compute_sum4a</span><span class="p">,</span> <span class="n">compute_sum4b</span><span class="p">,</span> <span class="n">compute_sum4c</span><span class="p">,</span>
+                 <span class="n">compute_sum4d</span><span class="p">,</span> <span class="n">compute_sum4e</span><span class="p">,</span> <span class="n">compute_sum5</span><span class="p">]</span>
+        <span class="n">ans1</span> <span class="o">=</span> <span class="n">compute_sum1</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">funcs</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+            <span class="k">assert</span> <span class="n">ans1</span> <span class="o">==</span> <span class="n">f</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">(n)=</span><span class="si">%d</span><span class="s2"> not the same as </span><span class="si">%s</span><span class="s2">(n)=</span><span class="si">%d</span><span class="s2"> &quot;</span> \
+                                  <span class="o">%</span> <span class="p">(</span><span class="n">funcs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">funcs</span><span class="p">[</span><span class="mi">0</span><span class="p">](</span><span class="n">n</span><span class="p">),</span> <span class="n">f</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+
+    <span class="c1">#main testing loop in test_consistency function</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1000</span><span class="p">):</span>
+        <span class="n">check_one_n</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span> 
+    <span class="n">m</span> <span class="o">=</span> <span class="mi">7</span>
+    <span class="n">correct_result</span> <span class="o">=</span> <span class="mi">12</span>
+    <span class="n">thisresult</span> <span class="o">=</span> <span class="n">compute_sum1</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;this result is </span><span class="si">{}</span><span class="s2">, expected to be </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">thisresult</span><span class="p">,</span> <span class="n">correct_result</span><span class="p">))</span>
+    <span class="c1"># compare with correct result</span>
+    <span class="k">assert</span> <span class="n">thisresult</span> <span class="o">==</span> <span class="n">correct_result</span>
+    <span class="c1"># also check all other methods</span>
+    <span class="k">assert</span> <span class="n">compute_sum2</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">==</span> <span class="n">correct_result</span>
+    <span class="k">assert</span> <span class="n">compute_sum3</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">==</span> <span class="n">correct_result</span>
+    <span class="k">assert</span> <span class="n">compute_sum4a</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">==</span> <span class="n">correct_result</span>
+    <span class="k">assert</span> <span class="n">compute_sum4b</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">==</span> <span class="n">correct_result</span>
+    <span class="k">assert</span> <span class="n">compute_sum4c</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">==</span> <span class="n">correct_result</span>
+    <span class="k">assert</span> <span class="n">compute_sum4d</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">==</span> <span class="n">correct_result</span>
+    <span class="k">assert</span> <span class="n">compute_sum4e</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">==</span> <span class="n">correct_result</span>
+    <span class="k">assert</span> <span class="n">compute_sum5</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">==</span> <span class="n">correct_result</span>
+
+    <span class="c1"># a more systematic check for many values</span>
+    <span class="n">test_consistency</span><span class="p">()</span>
+</pre></div>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>this result is 12, expected to be 12
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Interactive-Python-(IPython)">Interactive Python (IPython)<a class="anchor-link" href="#Interactive-Python-(IPython)">&#182;</a></h2><h3 id="IPython-console">IPython console<a class="anchor-link" href="#IPython-console">&#182;</a></h3><p>IPython is an improved version of the Python command line. It is a valuable tool and worth exploring it’s capabilities (see <a href="http://ipython.org/ipython-doc/stable/interactive/qtconsole.html">http://ipython.org/ipython-doc/stable/interactive/qtconsole.html</a>)</p>
-<p>You will find the following features very useful:</p>
+<p>All the different implementations shown above compute the same result. There are a number of things to be learned from this:</p>
 <ul>
-<li><p>auto completion
-Suppose you want to type <span>`a = range(10)`</span>. Instead of typing all the letters, just type <span>`a = ra`</span> and the press the “Tab” key. Ipython will now show all the possible commands (and variable names) that start with <span>`ra`</span>. If you type a third letter, here <span>`n`</span> and press “Tab” again, Ipython will auto complete and append <span>`ge`</span> automatically.
-This works also for variable names and modules.</p>
+<li><p>There are a large (probably an infinite) number of solutions for one given problem. (This means that writing programs is a task that requires creativity!)</p>
 </li>
-<li><p>To obtain help on a command, we can use Python’s help command. For example: <span>`help(range)`</span>. Ipython provides a shortcut. To achieve the same, it is sufficient to just type the command followed by a question mark: <span>`range?`</span></p>
+<li><p>These may achieve the same ’result’ (in this case computation of a number).</p>
 </li>
-<li><p>You can relatively easily navigate directories on your computer. For example,</p>
+<li><p>Different solutions may have different characteristics. They might:</p>
 <ul>
-<li><p><span>`!dir`</span> lists the content of the current directory (same as <span>`ls`</span>)</p>
+<li><p>be faster or slower</p>
 </li>
-<li><p><span>`pwd`</span> shows the current working directory</p>
+<li><p>use less or more memory</p>
 </li>
-<li><p><span>`cd`</span> allows to change directories</p>
+<li><p>are easier or more difficult to understand (when reading the source code)</p>
+</li>
+<li><p>can be considered more or less elegant.</p>
 </li>
 </ul>
 </li>
@@ -11823,102 +11960,383 @@ This works also for variable names and modules.</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><p>In general, using an exclamation mark before the command will pass the command to the shell (not to the Python interpreter).</p>
-</li>
-<li><p>You can execute Python programs from ipython using <span>``%run</span>. Suppose you have a file <code>hello.py</code> in the current directory. You can then execute it by typing: <span>``%run hello</span></p>
-<p>Note that this differs from executing a python program in IDLE: IDLE restarts the Python interpreter session and thus deletes all existing objects before the execution starts. This is not the case with the <span>`run`</span> command in ipython (and neither when executing chunks of Python code from Emacs using the Emacs Python mode). In particular this can be very useful if one needs to setup a few objects which are needed to test the code one is working on. Using ipython’s <span>`run`</span> or Emacs instead of IDLE allows to keep these objects in the interpreter session and to only update the function/classes/... etc that are being developed.</p>
-</li>
-<li><p>allows multi-line editing of command history</p>
-</li>
-<li><p>provides on-the-fly syntax highlighting</p>
-</li>
-<li><p>displays doc-strings on-the-fly</p>
-</li>
-<li><p>can inline matplotlib figures (activate mode with if started with <code>%matplotlib inline</code>)</p>
-</li>
-<li><p><code>%load</code> loads file from disk or form URL for editing</p>
-</li>
-<li><p><code>%timeit</code> measures execution time for a given statement</p>
-</li>
-<li><p>…and a lot more.</p>
-</li>
-<li><p>Read more at <a href="http://ipython.org/ipython-doc/dev/interactive/qtconsole.html">http://ipython.org/ipython-doc/dev/interactive/qtconsole.html</a></p>
-</li>
-</ul>
-<p>If you have access to this shell, you may want to consider it as your default Python prompt.</p>
+<h2 id="Sorting">Sorting<a class="anchor-link" href="#Sorting">&#182;</a></h2><p>Suppose we need to sort a list of 2-tuples of user-ids and names, i.e.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Jupyter-Notebook">Jupyter Notebook<a class="anchor-link" href="#Jupyter-Notebook">&#182;</a></h3><p>The Jupyter Notebook (formerly IPython Notebook) allows you to execute, store, load, re-execute a sequence of Python commands, and to include explanatory text, images and other media in between.</p>
-<p>This is a recent and exciting development that has the potential to develop into a tool of great significance, for example for</p>
-<ul>
-<li><p>documenting calculations and data processing</p>
-</li>
-<li><p>support learning and teaching of</p>
-<ul>
-<li><p>Python itself</p>
-</li>
-<li><p>statistical methods</p>
-</li>
-<li><p>general data post-processing</p>
-</li>
-<li><p>…</p>
-</li>
-</ul>
-</li>
-<li><p>documentation new code</p>
-</li>
-<li><p>automatic regression testing by re-running ipython notebook and comparing stored output with computed output</p>
-</li>
-</ul>
-<p><strong>Further reading</strong></p>
-<ul>
-<li><p>Jupyter Notebook (<a href="http://jupyter-notebook.readthedocs.io/en/latest/">http://jupyter-notebook.readthedocs.io/en/latest/</a>).</p>
-</li>
-<li><p>IPython (<a href="http://ipython.org">http://ipython.org</a>).</p>
-</li>
-</ul>
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;fangohr&quot;</span><span class="p">,</span> <span class="s2">&quot;Hans Fangohr&quot;</span><span class="p">,),</span>
+          <span class="p">(</span><span class="s2">&quot;admin&quot;</span><span class="p">,</span> <span class="s2">&quot;The Administrator&quot;</span><span class="p">),</span>
+          <span class="p">(</span><span class="s2">&quot;guest&quot;</span><span class="p">,</span> <span class="s2">&quot;The Guest&quot;</span><span class="p">)]</span>
+</pre></div>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Spyder">Spyder<a class="anchor-link" href="#Spyder">&#182;</a></h2><p>Spyder is the Scientific PYthon Development EnviRonment: a powerful interactive development environment for the Python language with advanced editing, interactive testing, debugging and introspection features and a numerical computing environment thanks to the support of IPython (enhanced interactive Python interpreter) and popular Python libraries such as NumPy (linear algebra), SciPy (signal and image processing) or matplotlib (interactive 2D/3D plotting). See <a href="http://pythonhosted.org/spyder/">http://pythonhosted.org/spyder/</a> for more.</p>
-<p>Some important features of Spyder:</p>
-<ul>
-<li><p>Within Spyder, the IPython console is the default Python interpreter, and</p>
-</li>
-<li><p>code in the editor can be fully or partially be executed in this buffer.</p>
-</li>
-<li><p>The editor supports automatic checking for Python erros using pyflakes, and</p>
-</li>
-<li><p>the editor warns (if desired) if the code formatting deviates from the PEP8 style guide.</p>
-</li>
-<li><p>The Ipython Debugger can be activated, and</p>
-</li>
-<li><p>a profiler is provided.</p>
-</li>
-<li><p>An object explorer shows documentation for functions, methods etc on the fly and a</p>
-</li>
-<li><p>variable explorer displays names, size and values for numerical variables.</p>
-</li>
-</ul>
-<p>Spyder is currently (as of 2014) on the way to develop into a powerful and robust multi-platform integrated environment for Python development, with particular emphasis on Python for scientific computing and engineering.</p>
-<h2 id="Editors">Editors<a class="anchor-link" href="#Editors">&#182;</a></h2><p>All major editors that are used for programming, provide Python modes (such as Emacs, Vim, Sublime Text), some Integrated Development Enviroments (IDEs) come with their own editor (Spyder, Eclipse). Which of these is best, is partly a matter of choice.</p>
-<p>For beginners, Spyder seems a sensible choice as it provides an IDE, allows execution of chunks of code in an interpreter session and is easy to pick up.</p>
+<p>which we want to sort in increasing order of user-ids. If there are two or more identical user-ids, they should be ordered by the order of the names associated with these user-ids. This behaviour is just the default behaviour of sort (which goes back to how to sequences are compared).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">stuff</span> <span class="o">=</span> <span class="n">mylist</span> <span class="c1"># collect your data</span>
+<span class="n">stuff</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>   <span class="c1"># sort the data in place</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">stuff</span><span class="p">)</span>   <span class="c1"># inspect the sorted data</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[(&#39;admin&#39;, &#39;The Administrator&#39;), (&#39;fangohr&#39;, &#39;Hans Fangohr&#39;), (&#39;guest&#39;, &#39;The Guest&#39;)]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Sequences are compared by initially comparing the first elements only. If they differ, then a decision is reached on the basis of those elements only. If the elements are equal, only then are the next elements in the sequence compared ... and so on, until a difference is found, or we run out of elements. For example:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[4]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[5]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[6]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="o">&gt;</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[7]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It is also possible to do:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">stuff</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">stuff</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Where the list is not particularly large, it is generally advisable to use the <code>sorted</code> function (which <em>returns a sorted copy</em> of the list) over the <code>sort</code> method of a list (which changes the list into sorted order of elements, and returns None).</p>
+<p>However, what if the data we have is stored such that in each tuple in the list, the name comes first, followed by the id, i.e.:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mylist2</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;Hans Fangohr&quot;</span><span class="p">,</span> <span class="s2">&quot;fangohr&quot;</span><span class="p">),</span>
+           <span class="p">(</span><span class="s2">&quot;The Administrator&quot;</span><span class="p">,</span> <span class="s2">&quot;admin&quot;</span><span class="p">),</span>
+           <span class="p">(</span><span class="s2">&quot;The Guest&quot;</span><span class="p">,</span> <span class="s2">&quot;guest&quot;</span><span class="p">)]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We want to sort with the id as the primary key. The first approach to do this is to change the order of <code>mylist2</code> to that of <code>mylist</code>, and use <code>sort</code> as shown above.</p>
+<p>The second, neater approach relies on being able to decypher the cryptic help for the sorted function. <code>list.sort()</code> has the same options, but its help is less helpful.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NBVAL_IGNORE_OUTPUT</span>
+<span class="n">help</span><span class="p">(</span><span class="nb">sorted</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Help on built-in function sorted in module builtins:
+
+sorted(iterable, key=None, reverse=False)
+    Return a new list containing all items from the iterable in ascending order.
+    
+    A custom key function can be supplied to customize the sort order, and the
+    reverse flag can be set to request the result in descending order.
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You should notice that <code>sorted</code> and <code>list.sort</code> have two keyword parameters. The first of these is called key. You can use this to supply a <em>key function</em>, which will be used to transform the items for sort to compare.</p>
+<p>Let’s illustrate this in the context of our exercise, by assuming that we have stored a list of pairs like this</p>
+
+<pre><code>pair = name, id</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>(i.e. as in <code>mylist2</code>) and that we want to sort according to id and ignore name. We can achieve this by writing a function that retrieves only the second element of the pair it receives:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">my_key</span><span class="p">(</span><span class="n">pair</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">pair</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mylist2</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">my_key</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This also works with an anonymous function:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mylist2</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Efficiency">Efficiency<a class="anchor-link" href="#Efficiency">&#182;</a></h3><p>The <code>key</code> function will be called exactly once for every element in the list. This is much more efficient than calling a function on every <em>comparison</em> (which was how you customised sorting in older versions of Python). But if you have a large list to sort, the overhead of calling a Python function (which is relatively large compared to the C function overhead) might be noticeable.</p>
+<p>If efficiency is really important (and you have proven that a significant proportion of time is spent in these functions) then you have the option of re-coding them in C (or another low-level language).</p>
 
 </div>
 </div>

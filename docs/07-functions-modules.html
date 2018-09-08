@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>01-introduction</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>07-functions-modules</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11726,7 +11726,9 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
-}@media print {
+}
+
+@media print {
   div.cell {
     display: block;
     page-break-inside: avoid;
@@ -11747,7 +11749,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -11771,187 +11773,17 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h1><p>This text summarises a number of core ideas relevant to Computational Engineering and Scientific Computing using Python. The emphasis is on introducing some basic Python (programming) concepts that are relevant for numerical algorithms. The later chapters touch upon numerical libraries such as <span>`numpy`</span> and <span>`scipy`</span> each of which deserves much more space than provided here. We aim to enable the reader to learn independently how to use other functionality of these libraries using the available documentation (online and through the packages itself).</p>
-<h2 id="Computational-Modelling">Computational Modelling<a class="anchor-link" href="#Computational-Modelling">&#182;</a></h2><h3 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h3><p>Increasingly, processes and systems are researched or developed through computer simulations: new aircraft prototypes such as for the recent A380 are first designed and tested virtually through computer simulations. With the ever increasing computational power available through supercomputers, clusters of computers and even desktop and laptop machines, this trend is likely to continue.</p>
-<p>Computer simulations are routinely used in fundamental research to help understand experimental measurements, and to replace – for example – growth and fabrication of expensive samples/experiments where possible. In an industrial context, product and device design can often be done much more cost effectively if carried out virtually through simulation rather than through building and testing prototypes. This is in particular so in areas where samples are expensive such as nanoscience (where it is expensive to create small things) and aerospace industry (where it is expensive to build large things). There are also situations where certain experiments can only be carried out virtually (ranging from astrophysics to study of effects of large scale nuclear or chemical accidents). Computational modelling, including use of computational tools to post-process, analyse and visualise data, has been used in engineering, physics and chemistry for many decades but is becoming more important due to the cheap availability of computational resources. Computational Modelling is also starting to play a more important role in studies of biological systems, the economy, archeology, medicine, health care, and many other domains.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Computational-Modelling">Computational Modelling<a class="anchor-link" href="#Computational-Modelling">&#182;</a></h3><p>To study a process with a computer simulation we distinguish two steps: the first one is to develop a <em>model</em> of the real system. When studying the motion of a small object, such as a penny, say, under the influence of gravity, we may be able to ignore friction of air: our model — which might only consider the gravitational force and the penny’s inertia, i.e. $a(t) = F/m = -9.81\mathrm{m}/\mathrm{s}^2$ — is an approximation of the real system. The model will normally allow us to express the behaviour of the system (in some approximated form) through mathematical equations, which often involve ordinary differential equations (ODEs) or partial differential equatons (PDEs).</p>
-<p>In the natural sciences such as physics, chemistry and related engineering, it is often not so difficult to find a suitable model, although the resulting equations tend to be very difficult to solve, and can in most cases not be solved analytically at all.</p>
-<p>On the other hand, in subjects that are not as well described through a mathematical framework and depend on behaviour of objects whose actions are impossible to predict deterministically (such as humans), it is much more difficult to find a good model to describe reality. As a rule of thumb, in these disciplines the resulting equations are easier to solve, but they are harder to find and the validity of a model needs to be questioned much more. Typical examples are attempts to simulate the economy, the use of global resources, the behaviour of a panicking crowd, etc.</p>
-<p>So far, we have just discussed the development of <em>models</em> to describe reality, and using these models does not necessarily involve any computers or numerical work at all. In fact, if a model’s equation can be solved analytically, then one should do this and write down the solution to the equation.</p>
-<p>In practice, hardly any model equations of systems of interest can be solved analytically, and this is where the computer comes in: using numerical methods, we can at least study the model <em>for a particular set of boundary conditions</em>. For the example considered above, we may not be able to easily see from a numerical solution that the penny’s velocity under the influence of gravity will change linearly with time (which we can read easily from the analytical solution that is available for this simple system: $v(t) = t\cdot 9.81 \mathrm{m}/\mathrm{s}^2+v_0$)).</p>
-<p>The numerical solution that can be computed using a computer would consist of data that shows how the velocity changes over time for a particular initial velocity <em>v</em><sub>0</sub> (<em>v</em><sub>0</sub> is a boundary condition here). The computer program would report a long lists of two numbers keeping the (i) value of time <em>t</em><sub>*i*</sub> for which a particular (ii) value of the velocity <em>v</em><sub>*i*</sub> has been computed. By plotting all <em>v</em><sub>*i*</sub> against <em>t</em><sub>*i*</sub>, or by fitting a curve through the data, we may be able to understand the trend from the data (which we can just see from the analytical solution of course).</p>
-<p>It is clearly desirable to find an analytical solutions wherever possible but the number of problems where this is possible is small. Usually, the obtaining numerical result of a computer simulation is very useful (despite the shortcomings of the numerical results in comparison to an analytical expression) because it is the only possible way to study the system at all.</p>
-<p>The name <em>computational modelling</em> derives from the two steps: (i) <em>modelling</em>, i.e. finding a model description of a real system, and (ii) solving the resulting model equations using <em>computational</em> methods because this is the only way the equations can be solved at all.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Programming-to-support-computational-modelling">Programming to support computational modelling<a class="anchor-link" href="#Programming-to-support-computational-modelling">&#182;</a></h3><p>A large number of packages exist that provide computational modelling capabilities. If these satisfy the research or design needs, and any data processing and visualisation is appropriately supported through existing tools, one can carry out computational modelling studies without any deeper programming knowledge.</p>
-<p>In a research environment – both in academia and research on new products/ideas/... in industry – one often reaches a point where existing packages will not be able to perform a required simulation task, or where more can be learned from analysing existing data in news ways etc.</p>
-<p>At that point, programming skills are required. It is also generally useful to have a broad understanding of the building blocks of software and basic ideas of software engineering as we use more and more devices that are software-controlled.</p>
-<p>It is often forgotten that there is nothing the computer can do that we as humans cannot do. The computer can do it much faster, though, and also with making far fewer mistakes. There is thus no magic in computations a computer carries out: they could have been done by humans, and – in fact – were for many years (see for example Wikipedia entry on <a href="http://en.wikipedia.org/wiki/Human_computer">Human Computer</a>).</p>
-<p>Understanding how to build a computer simulation comes roughly down to: (i) finding the model (often this means finding the right equations), (ii) knowing how to solve these equations numerically, (ii) to implement the methods to compute these solutions (this is the programming bit).</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Why-Python-for-scientific-computing?">Why Python for scientific computing?<a class="anchor-link" href="#Why-Python-for-scientific-computing?">&#182;</a></h2><p>The design focus on the Python language is on productivity and code readability, for example through:</p>
-<ul>
-<li><p>Interactive python console</p>
-</li>
-<li><p>Very clear, readable syntax through whitespace indentation</p>
-</li>
-<li><p>Strong introspection capabilities</p>
-</li>
-<li><p>Full modularity, supporting hierarchical packages</p>
-</li>
-<li><p>Exception-based error handling</p>
-</li>
-<li><p>Dynamic data types &amp; automatic memory management</p>
-</li>
-</ul>
-<p><em>As Python is an interpreted language, and it runs many times slower than compiled code, one might ask why anybody should consider such a ’slow’ language for computer simulations?</em></p>
-<p>There are two replies to this criticism:</p>
-<ol>
-<li><p><em>Implementation time versus execution time</em>: It is not the execution time alone that contributes to the cost of a computational project: one also needs to consider the cost of the development and maintenance work.</p>
-<p>In the early days of scientific computing (say in the 1960/70/80), compute time was so expensive that it made perfect sense to invest many person months of a programmer’s time to improve the performance of a calculation by a few percent.</p>
-<p>Nowadays, however, the CPU cycles have become much cheaper than the programmer’s time. For research codes which often run only a small number of times (before the researchers move on to the next problem), it may be economic to accept that the code runs only at 25% of the expected possible speed if this saves, say, a month of a researcher’s (or programmers) time. For example: if the execution time of the piece of code is 10 hours, and one can predict that it will run about 100 times, then the total execution time is approximately 1000 hours. It would be great if this could be reduced to 25% and one could save 750 (CPU) hours. On the other hand, is an extra wait (about a month) and the cost of 750 CPU hours worth investing one month of a person’s time [who could do something else while the calculation is running]? Often, the answer is not.</p>
-<p><em>Code readability &amp; maintenance - short code, fewer bugs</em>: A related issue is that a research code is not only used for one project, but carries on to be used again and again, evolves, grows, bifurcates etc. In this case, it is often justified to invest more time to make the code fast. At the same time, a significant amount of programmer time will go into (i) introducing the required changes, (ii) testing them even before work on speed optimisation of the changed version can start. To be able to maintain, extend and modify a code in often unforeseen ways, it can only be helpful to use a language that is easy to read and of great expressive power.</p>
-</li>
-<li><p><em>Well-written Python code can be very fast</em> if time critical parts in executed through compiled language.</p>
-<p>Typically, less than 5% percent of the code base of a simulation project need more than 95% of the execution time. As long as these calculations are done very efficiently, one doesn’t need to worry about all other parts of the code as the overall time their execution takes is insignificant.</p>
-<p>The compute intense part of the program should to be tuned to reach optimal performance. Python offers a number of options.</p>
-<ul>
-<li><p>For example, the <span>`numpy`</span> Python extension provides a Python interface to the compiled and efficient LAPACK libraries that are the quasi-standard in numerical linear algebra. If the problems under study can be formulated such that eventually large systems of algebraic equations have to be solved, or eigenvalues computed, etc, then the compiled code in the LAPACK library can be used (through the Python-numpy package). At this stage, the calculations are carried out with the same performance of Fortran/C as it is essentially Fortran/C code that is used. Matlab, by the way, exploits exactly this: the Matlab scripting language is very slow (about 10 time slower than Python), but Matlab gains its power from delegating the matix operation to the compiled LAPACK libraries.</p>
-</li>
-<li><p>Existing numerical C/Fortran libraries can be interfaced to be usable from within Python (using for example Swig, Boost.Python and Cython).</p>
-</li>
-<li><p>Python can be extended through compiled languages if the computationally demanding part of the problem is algorithmically non-standard and no existing libraries can be used.</p>
-<p>Commonly used are C, Fortran and C++ to implement fast extensions.</p>
-</li>
-<li><p>We list some tools that are used to use compiled code from Python:</p>
-<ul>
-<li>The <span>`scipy.weave`</span> extension is useful if just a short expression needs to be expressed in C.</li>
-<li><p>The Cython interface is growing in popularity to (i) semi-automatically declare variable types in Python code, to translate that code to C (automatically) and to then use the compiled C code from Python. Cython is also used to quickly wrap an existing C library with an interface so the C library can be used from Python.</p>
-</li>
-<li><p>Boost.Python is specialised for wrapping C++ code in Python.</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><em>The conclusion is that Python is “fast enough” for most computational tasks, and that its user friendly high-level language often makes up for reduced speed in comparison to compiled lower-level languages. Combining Python with tailor-written compiled code for the performance critical parts of the code, results in virtually optimal speed in most cases.</em></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Optimisation-strategies">Optimisation strategies<a class="anchor-link" href="#Optimisation-strategies">&#182;</a></h3><p>We generally understand reduction of execution time when discussing “code optimisation” in the context of computational modelling, and we essentially like to carry out the required calculations as fast as possible. (Sometimes we need to reduce the amount of RAM, the amount of data input output to disk or the network.) At the same time, we need to make sure that we do not invest inappropriate amounts of programming time to achieve this speed up: as always there needs to be a balance between the programmers’ time and the improvement we can gain from this.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Get-it-right-first,-then-make-it-fast">Get it right first, then make it fast<a class="anchor-link" href="#Get-it-right-first,-then-make-it-fast">&#182;</a></h3><p>To write fast code effectively, we note that the right order is to (i) first write a program that carries out the correct calculation. For this, choose a language/approach that allows you to <em>write the code quickly and make it work quickly</em> — regardless of execution speed. Then (ii) either change the program or re-write it from scratch in the same language to make the execution faster. During the process, keep comparing results with the slow version written first to make sure the optimisation does not introduce errors. (Once we are familiar with the concept of regression tests, they should be used here to compare the new and hopefully faster code with the original code.)</p>
-<p>A common pattern in Python is to start writing pure Python code, then start using Python libraries that use compiled code internally (such as the fast arrays Numpy provides, and routines from scipy that go back to established numerical codes such as ODEPACK, LAPACK and others). If required, one can – after careful profiling – start to replace parts of the Python code with a compiled language such as C and Fortran to improve execution speed further (as discussed above).</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Prototyping-in-Python">Prototyping in Python<a class="anchor-link" href="#Prototyping-in-Python">&#182;</a></h3><p>It turns out that – even if a particular code has to be written in, say, C++ – it is (often) more time efficient to prototype the code in Python, and once an appropriate design (and class structure) has been found, to translate the code to C++.</p>
-<h2 id="Literature">Literature<a class="anchor-link" href="#Literature">&#182;</a></h2><p>While this text starts with an introduction of (some aspects of) the basic Python programming language, you may find - depending on your prior experience - that you need to refer to secondary sources to fully understand some ideas.</p>
-<p>We repeatedly refer to the following documents:</p>
-<ul>
-<li><p>Allen Downey, <em>Think Python</em>. Available online in html and pdf at      <a href="http://www.greenteapress.com/thinkpython/thinkpython.html">http://www.greenteapress.com/thinkpython/thinkpython.html</a>, or from Amazon.</p>
-</li>
-<li><p>The Python documentation <a href="http://www.python.org/doc/">http://www.python.org/doc/</a>, and:</p>
-</li>
-<li><p>The Python tutorial (<a href="http://docs.python.org/tutorial/">http://docs.python.org/tutorial/</a>)</p>
-</li>
-</ul>
-<p>You may also find the following links useful:</p>
-<ul>
-<li><p>The <span>`numpy`</span> home page (<a href="http://numpy.scipy.org/">http://numpy.scipy.org/</a>)</p>
-</li>
-<li><p>The <span>`scipy`</span> home page (<a href="http://scipy.org/">http://scipy.org/</a>)</p>
-</li>
-<li><p>The <span>`matplotlib`</span> home page (<a href="http://matplotlib.sourceforge.net/">http://matplotlib.sourceforge.net/</a>).</p>
-</li>
-<li><p>The Python style guide (<a href="http://www.python.org/dev/peps/pep-0008/">http://www.python.org/dev/peps/pep-0008/</a></p>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Recorded-video-lectures-on-Python-for-beginners">Recorded video lectures on Python for beginners<a class="anchor-link" href="#Recorded-video-lectures-on-Python-for-beginners">&#182;</a></h3><p>Do you like to listen/follow lectures? There is a series of 24 lectures titled <em>Introduction to Computer Science and Programming</em> delivered by Eric Grimsom and John Guttag from the MIT available at <a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-00-introduction-to-computer-science-and-programming-fall-2008/">http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-00-introduction-to-computer-science-and-programming-fall-2008/</a> This is aimed at students with little or no programming experience. It aims to provide students with an understanding of the role computation can play in solving problems. It also aims to help students, regardless of their major, to feel justifiably confident of their ability to write small programs that allow them to accomplish useful goals.</p>
-<h3 id="Python-tutor-mailing-list">Python tutor mailing list<a class="anchor-link" href="#Python-tutor-mailing-list">&#182;</a></h3><p>There is also a Python tutor mailing list (<a href="http://mail.python.org/mailman/listinfo/tutor">http://mail.python.org/mailman/listinfo/tutor</a>) where beginners are welcome to ask questions regarding Python. Both using the archives and posting your own queries (or in fact helping others) may help with understanding the language. Use the normal mailing list etiquette (i.e. be polite, concise, etc). You may want to read <a href="http://www.catb.org/esr/faqs/smart-questions.html">http://www.catb.org/esr/faqs/smart-questions.html</a> for some guidance on how to ask questions on mailing lists.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Python-version">Python version<a class="anchor-link" href="#Python-version">&#182;</a></h2><p>There are two version of the Python language out there: Python 2.x and Python 3.x. They are (slightly) different — the changes in Python 3.x were introduced to address shortcomings in the design of the language that were identified since Python’s inception. A decision was made that some incompatibility should be accepted to achieve the higher goal of a better language for the future.</p>
-<p>For scientific computation, it is crucial to make use of numerical libraries such as <a href="http://numpy.scipy.org/">numpy</a>, <a href="http://www.scipy.org">scipy</a> and the plotting package <a href="http://matplotlib.sourceforge.net/">matplotlib</a>.</p>
-<p>All of these are now available for Python 3, and we will use Python 3.x in this book.</p>
-<p>However, there is a lot of code still in use that was written for Python 2, and it's useful to be aware of the differences. The most prominent example is that in Python 2.x, the <code>print</code> command is special, whereas in Python 3 it is an ordinary function. For example, in Python 2.7, we can write:</p>
-<div class="highlight"><pre><span></span><span class="k">print</span> <span class="s2">&quot;Hello World&quot;</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>where as in Python 3, this would cause a SyntaxError. The right way to use <code>print</code> in Python 3 would be as a function, i.e.</p>
+<h1 id="Functions-and-modules">Functions and modules<a class="anchor-link" href="#Functions-and-modules">&#182;</a></h1><h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h2><p>Functions allow us to group a number of statements into a logical block. We communicate with a function through a clearly defined interface, providing certain parameters to the function, and receiving some information back. Apart from this interface, we generally do not how exactly a function does the work to obtain the value it returns</p>
+<p>For example the function <code>math.sqrt</code>: we do not know how exactly it computes the square root, but we know about the interface: if we pass <em>x</em> into the function, it will return (an approximation of) $\\sqrt{x}$.</p>
+<p>This abstraction is a useful thing: it is a common technique in engineering to break down a system into smaller (black-box) components that all work together through well defined interfaces, but which do not need to know about the internal realisations of each other’s functionality. In fact, not having to care about these implementation details can help to have a clearer view of the system composed of many of these components.</p>
+<p>Functions provide the basic building blocks of functionality in larger programs (and computer simulations), and help to control the inherent complexity of the process.</p>
+<p>We can group functions together into a Python module (see <a href="#Modules">modules</a>), and in this way create our own libraries of functionality.</p>
+<h2 id="Using-functions">Using functions<a class="anchor-link" href="#Using-functions">&#182;</a></h2><p>The word “function” has different meanings in mathematics and programming. In programming it refers to a named sequence of operations that perform a computation. For example, the function <code>sqrt()</code> which is defined in the <code>math</code> module computes the square root of a given value:</p>
 
 </div>
 </div>
@@ -11961,7 +11793,8 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">sqrt</span>
+<span class="n">sqrt</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -11973,37 +11806,29 @@ div#notebook {
 
 
 <div class="output_area">
+<div class="prompt output_prompt">Out[1]:</div>
 
-<div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Hello World
-</pre>
-</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>2.0</pre>
 </div>
 
 </div>
+
+</div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>See <a href="05-input-output.html">Chapter 5: Input and Output</a> for further details.</p>
-<p>Fortunately, the function notation (i.e. with the parantheses) is also allowed in Python 2.7, so our examples should execute in Python 3.x and Python 2.7. (There are other differences.)</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="These-documents">These documents<a class="anchor-link" href="#These-documents">&#182;</a></h2><p>This material has been converted from Latex to a set of <a href="http://jupyter.org">Jupyter Notebooks</a>, making it possible to interact with the examples. You can run any code block with an <code>In [ ]:</code> prompt by clicking on it and pressing shift-enter, or by clicking the <i class="fa fa-step-forward"></i> button in the toolbar.</p>
-<h3 id="The-%%file-magic">The <code>%%file</code> magic<a class="anchor-link" href="#The-%%file-magic">&#182;</a></h3><p>We use some features in the notebook that are worth being aware of at this point: a cell starting with the special command <code>%%file FILENAME</code> will create (or override) a file with name <code>FILENAME</code> that contains the content that is shown in the cell below.</p>
-<p>For example</p>
+<p>The value we pass to the function <code>sqrt</code> is 4 in this example. This value is called the <em>argument</em> of the function. A function may have more than one argument.</p>
+<p>The function returns the value 2.0 (the result of its computation) to the “calling context”. This value is called the <em>return value</em> of the function.</p>
+<p>It is common to say that a function <em>takes</em> an argument and <em>returns</em> a result or return value.</p>
+<h4 id="Common-confusion-about-printing-and-returning-values">Common confusion about printing and returning values<a class="anchor-link" href="#Common-confusion-about-printing-and-returning-values">&#182;</a></h4><p>It is a common beginner’s mistake to confuse the <em>printing</em> of values with <em>returning</em> values. In the following example it is hard to see whether the function <code>math.sin</code> returns a value or whether it prints the value:</p>
 
 </div>
 </div>
@@ -12013,8 +11838,8 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">file</span> hello.txt
-This is the content of the file hello.txt
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12026,25 +11851,27 @@ This is the content of the file hello.txt
 
 
 <div class="output_area">
+<div class="prompt output_prompt">Out[2]:</div>
 
-<div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Writing hello.txt
-</pre>
-</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>0.9092974268256817</pre>
 </div>
 
 </div>
+
+</div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To confirm the file has been written and contains, we use some Python commands (which you are not expected to understand at this point):</p>
+<p>We import the <code>math</code> module, and call the <code>math.sin</code> function with an argument of <code>2</code>. The <code>math.sin(2)</code> call will actually <em>return</em> the value <code>0.909...</code> not print it. However, because we have not assigned the return value to a variable, the Python prompt will print the returned object.</p>
+<p>The following alternative sequence works only if the value is returned:</p>
 
 </div>
 </div>
@@ -12054,8 +11881,8 @@ This is the content of the file hello.txt
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;hello.txt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12067,12 +11894,10 @@ This is the content of the file hello.txt
 
 
 <div class="output_area">
-
 <div class="prompt"></div>
 
-
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>This is the content of the file hello.txt
+<pre>0.9092974268256817
 </pre>
 </div>
 </div>
@@ -12081,11 +11906,48 @@ This is the content of the file hello.txt
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="The-!-to-execute-shell-commands">The <code>!</code> to execute shell commands<a class="anchor-link" href="#The-!-to-execute-shell-commands">&#182;</a></h3><p>If we want to run a shell command, we can type it and preceed it by the <code>!</code> character. Here is an example: first we create a file that contains a Python hello world program, then we execute it:</p>
+<p>The return value of the function call <code>math.sin(2)</code> is assigned to the variable <code>x</code>, and <code>x</code> is printed in the next line.</p>
+<p>Generally, functions should execute “silently” (i.e. not print anything) and report the result of their computation through the return value.</p>
+<p>Part of the confusion about printed versus return values at the Python prompt comes from the Python prompt printing (a representation) of returned objects <em>if</em> the returned objects are not assigned. Generally, seeing the returned objects is exactly what we want (as we normally care about the returned object), just when learning Python this may cause mild confusion about functions returning values or printing values.</p>
+<h5 id="Further-information">Further information<a class="anchor-link" href="#Further-information">&#182;</a></h5><ul>
+<li>Think Python has a gentle introduction to functions (on which the previous paragraph is based) in <a href="http://www.greenteapress.com/thinkpython/html/book004.html">chapter 3 (Functions)</a> and <a href="http://www.greenteapress.com/thinkpython/html/book007.html">chapter 6 (Fruitful functions)</a>.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Defining-functions">Defining functions<a class="anchor-link" href="#Defining-functions">&#182;</a></h2><p>The generic format of a function definitions:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_function</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">argn</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Optional docstring.&quot;&quot;&quot;</span>
+
+    <span class="c1"># Implementation of the function</span>
+
+    <span class="k">return</span> <span class="n">result</span>  <span class="c1"># optional</span>
+
+<span class="c1">#this is not part of the function</span>
+<span class="n">some_command</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Allen Downey’s terminology (in his book <a href="http://www.greenteapress.com/thinkpython/html/index.html">Think Python</a>) of fruitful and fruitless functions distinguishes between functions that return a value, and those that do not return a value. The distinction refers to whether a function provides a return value (=fruitful) or whether the function does not explicitly return a value (=fruitless). If a function does not make use of the <code>return</code> statement, we tend to say that the function returns nothing (whereas in reality in will always return the <code>None</code> object when it terminates – even if the <code>return</code> statement is missing).</p>
+<p>For example, the function <code>greeting</code> will print “Hello World” when called (and is fruitless as it does not return a value).</p>
 
 </div>
 </div>
@@ -12095,8 +11957,31 @@ This is the content of the file hello.txt
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">file</span> hello.py
-print(&quot;Hello World&quot;)
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">greeting</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If we call that function:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">greeting</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -12108,12 +11993,49 @@ print(&quot;Hello World&quot;)
 
 
 <div class="output_area">
-
 <div class="prompt"></div>
 
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Hello World!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>it prints “Hello World” to stdout, as we would expect. If we assign the return value of the function to a variable <code>x</code>, we can inspect it subsequently:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">greeting</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Writing hello.py
+<pre>Hello World!
 </pre>
 </div>
 </div>
@@ -12124,10 +12046,10 @@ print(&quot;Hello World&quot;)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>python hello.py
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12139,12 +12061,10 @@ print(&quot;Hello World&quot;)
 
 
 <div class="output_area">
-
 <div class="prompt"></div>
 
-
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Hello World
+<pre>None
 </pre>
 </div>
 </div>
@@ -12153,31 +12073,845 @@ print(&quot;Hello World&quot;)
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="The-#NBVAL-tags">The <code>#NBVAL</code> tags<a class="anchor-link" href="#The-#NBVAL-tags">&#182;</a></h3><p>In some cells, you will find tags like <code>#NBVAL_SKIP</code>, <code>#NBVAL_IGNORE_OUTPUT</code> and <code>#NBVAL_RAISES_EXCEPTION</code>. You can ignore these.</p>
-<p>(We use them to be able to <a href="https://circleci.com/gh/fangohr/introduction-to-python-for-computational-science-and-engineering">automatically execute all notebooks</a> to check that the output produced is the same as what is stored in the notebook. This is an advanced topic of testing, and you can read more about NBVAL at <a href="https://github.com/computationalmodelling/nbval">https://github.com/computationalmodelling/nbval</a>).</p>
+<p>and find that the <code>greeting</code> function has indeed returned the <code>None</code> object.</p>
+<p>Another example for a function that does not return any value (that means there is no <code>return</code> keyword in the function) would be:</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>See <a href="11-python-shells.html">Chapter 11</a> for more information on Jupyter and other Python interfaces.</p>
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">printpluses</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="s2">&quot;+&quot;</span><span class="p">)</span>
+</pre></div>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Your-feedback">Your feedback<a class="anchor-link" href="#Your-feedback">&#182;</a></h2><p>is desired. If you find anything wrong in this text, or have suggestions how to change or extend it, please feel free to contact Hans at <code>hans.fangohr@xfel.eu</code> .</p>
-<p>If you find a URL that is not working (or pointing to the wrong material), please let Hans know as well. As the content of the Internet is changing rapidly, it is difficult to keep up with these changes without feedback.</p>
+<p>Generally, functions that return values are more useful as these can be used to assemble code (maybe as another function) by combining them cleverly. Let’s look at some examples of functions that do return a value.</p>
+<p>Suppose we need to define a function that computes the square of a given variable. The function source could be:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The keyword <code>def</code> tells Python that we are <em>defining</em> a function at that point. The function takes one argument (<code>x</code>). The function returns <code>x*x</code> which is of course $x^2$. Here is the listing of a file that shows how the function can be defined and used: (note that the numbers on the left are line numbers and are not part of the program)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">i_squared</span> <span class="o">=</span> <span class="n">square</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="n">i_squared</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0 * 0 = 0
+1 * 1 = 1
+2 * 2 = 4
+3 * 3 = 9
+4 * 4 = 16
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It is worth mentioning that lines 1 and 2 define the square function whereas lines 4 to 6 are the main program.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can define functions that take more than one argument:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">def</span> <span class="nf">hypot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It is also possible to return more than one argument. Here is an example of a function that converts a given string into all characters uppercase and all characters lowercase and returns the two versions. We have included the main program to show how this function can be called:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">upperAndLower</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">string</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="n">string</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+<span class="n">testword</span> <span class="o">=</span> <span class="s1">&#39;Banana&#39;</span>
+
+<span class="n">uppercase</span><span class="p">,</span> <span class="n">lowercase</span> <span class="o">=</span> <span class="n">upperAndLower</span><span class="p">(</span><span class="n">testword</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">testword</span><span class="p">,</span> <span class="s1">&#39;in lowercase:&#39;</span><span class="p">,</span> <span class="n">lowercase</span><span class="p">,</span>
+      <span class="s1">&#39;and in uppercase&#39;</span><span class="p">,</span> <span class="n">uppercase</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Banana in lowercase: banana and in uppercase BANANA
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can define multiple Python functions in one file. Here is an example with two functions:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">returnstars</span><span class="p">(</span> <span class="n">n</span> <span class="p">):</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="s1">&#39;*&#39;</span>
+
+<span class="k">def</span> <span class="nf">print_centred_in_stars</span><span class="p">(</span> <span class="n">string</span> <span class="p">):</span>
+    <span class="n">linelength</span> <span class="o">=</span> <span class="mi">46</span> 
+    <span class="n">starstring</span> <span class="o">=</span> <span class="n">returnstars</span><span class="p">((</span><span class="n">linelength</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">string</span><span class="p">))</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">starstring</span> <span class="o">+</span> <span class="n">string</span> <span class="o">+</span> <span class="n">starstring</span><span class="p">)</span>
+
+<span class="n">print_centred_in_stars</span><span class="p">(</span><span class="s1">&#39;Hello world!&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>*****************Hello world!*****************
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Further-reading">Further reading<a class="anchor-link" href="#Further-reading">&#182;</a></h5><ul>
+<li><a href="http://docs.python.org/tutorial/controlflow.html#defining-functions">Python Tutorial: Section 4.6 Defining Functions</a></li>
+</ul>
+<h2 id="Default-values-and-optional-parameters">Default values and optional parameters<a class="anchor-link" href="#Default-values-and-optional-parameters">&#182;</a></h2><p>Python allows to define <em>default</em> values for function parameters. Here is an example: This program will print the following output when executed: So how does it work? The function <code>print_mult_table</code> takes two arguments: <code>n</code> and <code>upto</code>. The first argument <code>n</code> is a “normal” variable. The second argument <code>upto</code> has a default value of 10. In other words: should the user of this function only provide one argument, then this provides the value for <code>n</code> and <code>upto</code> will default to 10. If two arguments are provided, the first one will be for <code>n</code> and the second for <code>upto</code> (as shown in the code example above).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Modules">Modules<a class="anchor-link" href="#Modules">&#182;</a></h2><p>Modules</p>
+<ul>
+<li><p>Group together functionality</p>
+</li>
+<li><p>Provide namespaces</p>
+</li>
+<li><p>Python’s standard library contains a vast collection of modules - “Batteries Included”</p>
+<ul>
+<li>Try <code>help(’modules’)</code></li>
+</ul>
+</li>
+<li><p>Means of extending Python</p>
+</li>
+</ul>
+<h3 id="Importing-modules">Importing modules<a class="anchor-link" href="#Importing-modules">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This will introduce the name <code>math</code> into the namespace in which the import command was issued. The names within the <code>math</code> module will not appear in the enclosing namespace: they must be accessed through the name <code>math</code>. For example: <code>math.sin</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span><span class="o">,</span> <span class="nn">cmath</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>More than one module can be imported in the same statement, although the <a href="http://www.python.org/dev/peps/pep-0008/">Python Style Guide</a> recommends not to do this. Instead, we should write</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">cmath</span>
+
+<span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">mathematics</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The name by which the module is known locally can be different from its “official” name. Typical uses of this are</p>
+<ul>
+<li><p>To avoid name clashes with existing names</p>
+</li>
+<li><p>To change the name to something more manageable. For example <code>import SimpleHTTPServer as shs</code>. This is discouraged for production code (as longer meaningful names make programs far more understandable than short cryptic ones), but for interactively testing out ideas, being able to use a short synonym can make your life much easier. Given that (imported) modules are first class objects, you can, of course, simply do <code>shs = SimpleHTTPServer</code> in order to obtain the more easily typable handle on the module.</p>
+</li>
+</ul>
+<!-- -->
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">sin</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This will import the <code>sin</code> function from the <code>math</code> module, but it will not introduce the name math into the current namespace. It will only introduce the name <code>sin</code> into the current namespace. It is possible to pull in more than one name from the module in one go:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Finally, let’s look at this notation:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="o">*</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Once again, this does not introduce the name math into the current namespace. It does however introduce <em>all public names</em> of the math module into the current namespace. Broadly speaking, it is a bad idea to do this:</p>
+<ul>
+<li><p>Lots of new names will be dumped into the current namespace.</p>
+</li>
+<li><p>Are you sure they will not clobber any names already present?</p>
+</li>
+<li><p>It will be very difficult to trace where these names came from</p>
+</li>
+<li><p>Having said that, some modules (including ones in the standard library, recommend that they be imported in this way). Use with caution!</p>
+</li>
+<li><p>This is fine for interactive quick and dirty testing or small calculations.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Creating-modules">Creating modules<a class="anchor-link" href="#Creating-modules">&#182;</a></h3><p>A module is in principle nothing else than a python file. 
+We create an example of a module file which is saved in <code>module1.py</code>:</p>
+<p>```</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">file</span> module1.py
+def someusefulfunction():
+    pass
+
+print(&quot;My name is&quot;, __name__)
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Overwriting module1.py
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can execute this (module) file as a normal python program (for example <code>python module1.py</code>):</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>python3 module1.py
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>My name is __main__
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We note that the Python magic variable <code>__name__</code> takes the value <code>__main__</code> if the program file <code>module1.py</code> is executed.</p>
+<p>On the other hand, we can <em>import</em> <code>module1.py</code> in another file (which could have the name <code>prog.py</code>), for example like this:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">module1</span>            <span class="c1">#in file prog.py</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>My name is module1
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>When Python comes across the <code>import module1</code> statement in <code>prog.py</code>, it looks for the file <code>module1.py</code> in the current working directory (and if it can’t find it there in all the directories in <code>sys.path</code>) and opens the file <code>module1.py</code>. While parsing the file <code>module1.py</code> from top to bottom, it will add any function definitions in this file into the <code>module1</code> name space in the calling context (that is the main program in <code>prog.py</code>). It this example, there is only the function <code>someusefulfunction</code>. Once the import process is completed, we can make use of <code>module1.someusefulfunction</code> in <code>prog.py</code>. If Python comes across statements other than function (and class) definitions while importing <code>module1.py</code>, it carries those out immediately. In this case, it will thus come across the statement <code>print(My name is, __name__)</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note the difference to the output if we <em>import</em> <code>module1.py</code> rather than executing it on its own: <code>__name__</code> inside a module takes the value of the module name if the file is imported.</p>
+<h3 id="Use-of-__name__">Use of __name__<a class="anchor-link" href="#Use-of-__name__">&#182;</a></h3><p>In summary,</p>
+<ul>
+<li><p><code>__name__</code> is <code>__main__</code> if the module file is run on its own</p>
+</li>
+<li><p><code>__name__</code> is the name of the module (i.e. the module filename without the <code>.py</code> suffix) if the module file is imported.</p>
+</li>
+</ul>
+<p>We can therefor use the following <code>if</code> statement in <code>module1.py</code> to write code that is <em>only run</em> when the module is executed on its own: This is useful to keep test programs or demonstrations of the abilities of a module in this “conditional” main program. It is common practice for any module files to have such a conditional main program which demonstrates its capabilities.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-1">Example 1<a class="anchor-link" href="#Example-1">&#182;</a></h3><p>The next example shows a main program for the another file <code>vectools.py</code> that is used to demonstrate the capabilities of the functions defined in that file:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">file</span> vectools.py
+from __future__ import division
+import math
+
+import numpy as N
+
+
+def norm(x):
+    &quot;&quot;&quot;returns the magnitude of a vector x&quot;&quot;&quot;
+    return math.sqrt(sum(x ** 2))
+
+
+def unitvector(x):
+    &quot;&quot;&quot;returns a unit vector x/|x|. x needs to be a numpy array.&quot;&quot;&quot;
+    xnorm = norm(x)
+    if xnorm == 0:
+        raise ValueError(&quot;Can&#39;t normalise vector with length 0&quot;)
+    return x / norm(x)
+
+
+if __name__ == &quot;__main__&quot;:
+    #a little demo of how the functions in this module can be used:
+    x1 = N.array([0, 1, 2])
+    print(&quot;The norm of &quot; + str(x1) + &quot; is &quot; + str(norm(x1)) + &quot;.&quot;)
+    print(&quot;The unitvector in direction of &quot; + str(x1) + &quot; is &quot; \
+        + str(unitvector(x1)) + &quot;.&quot;)
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Overwriting vectools.py
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If this file is executed using <code>python vectools.py</code>, then <code>__name__==__main__</code> is true, and the output reads</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>python3 vectools.py
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The norm of [0 1 2] is 2.23606797749979.
+The unitvector in direction of [0 1 2] is [0.         0.4472136  0.89442719].
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If this file is imported (i.e. used as a module) into another python file or the python prompt or in the Jupyter Notebook, then <code>__name__==__main__</code> is false, and that statement block will not be executed.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is quite a common way to conditionally execute code in files providing library-like functions. The code that is executed if the file is run on its own, often consists of a series of tests (to check that the file’s functions carry out the right operations – <em>regression tests</em> or <em>unit tests</em> ), or some examples of how the library functions in the file can be used.</p>
+<h3 id="Example-2">Example 2<a class="anchor-link" href="#Example-2">&#182;</a></h3><p>Even if a Python program is not intended to be used as a module file, it is good practice to always use a conditional main program:</p>
+<ul>
+<li><p>often, it turns out later that functions in the file can be reused (and saves work then)</p>
+</li>
+<li><p>this is convenient for regression testing.</p>
+</li>
+</ul>
+<p>Suppose an exercise is given to write a function that returns the first 5 prime numbers, and in addition to print them. (There is of course a trivial solution to this as we know the prime numbers, and we should imagine that the required calculation is more complex). One might be tempted to write</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">primes5</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">primes5</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">p</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2 3 5 7 11 </pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It is better style to use a conditional main function, i.e.:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">primes5</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">primes5</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">p</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2 3 5 7 11 </pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A purist might argue that the following is even cleaner:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">primes5</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">primes5</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">p</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2 3 5 7 11 </pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>but either of the last two options is good.</p>
+<p>The example in <a href="#Many-ways-to-compute-a-series">Many ways to compute a series</a> demonstrates this technique. Including functions with names starting with <code>test_</code> is compatible with the very useful py.test regression testing framework (see <a href="http://pytest.org/">http://pytest.org/</a>).</p>
+<h4 id="Further-Reading">Further Reading<a class="anchor-link" href="#Further-Reading">&#182;</a></h4><ul>
+<li><a href="http://docs.python.org/tutorial/modules.html#modules">Python Tutorial Section 6</a></li>
+</ul>
 
 </div>
 </div>

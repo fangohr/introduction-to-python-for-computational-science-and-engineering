@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>09-common-tasks</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>13-numeric-computation</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11726,7 +11726,9 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
-}@media print {
+}
+
+@media print {
   div.cell {
     display: block;
     page-break-inside: avoid;
@@ -11747,7 +11749,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -11771,513 +11773,169 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Common-tasks">Common tasks<a class="anchor-link" href="#Common-tasks">&#182;</a></h1><p>Here we provide a selection of small example programs addressing some common tasks and just providing some more Python code that can be read if seeking inspiration how to address a given problem.</p>
-<h2 id="Many-ways-to-compute-a-series">Many ways to compute a series<a class="anchor-link" href="#Many-ways-to-compute-a-series">&#182;</a></h2><p>As an example, we compute the sum of odd numbers in different ways.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">compute_sum1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;computes and returns the sum of 2,4,6, ..., m</span>
-<span class="sd">    where m is the largest even number smaller than n.</span>
-
-<span class="sd">    For example, with n = 7, we compute 0+2+4+6 = 12.</span>
-
-<span class="sd">    This implementation uses a variable &#39;mysum&#39; that is</span>
-<span class="sd">    increased in every iteration of the for-loop.&quot;&quot;&quot;</span>
-
-    <span class="n">mysum</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
-        <span class="n">mysum</span> <span class="o">=</span> <span class="n">mysum</span> <span class="o">+</span> <span class="n">i</span>
-    <span class="k">return</span> <span class="n">mysum</span>
-
-
-<span class="k">def</span> <span class="nf">compute_sum2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;computes and returns ...</span>
-
-<span class="sd">    This implementation uses a while-loop:</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">mysum</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">while</span> <span class="n">counter</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
-        <span class="n">mysum</span> <span class="o">=</span> <span class="n">mysum</span> <span class="o">+</span> <span class="n">counter</span>
-        <span class="n">counter</span> <span class="o">=</span> <span class="n">counter</span> <span class="o">+</span> <span class="mi">2</span>
-
-    <span class="k">return</span> <span class="n">mysum</span>
-
-
-<span class="k">def</span> <span class="nf">compute_sum3</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">startfrom</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;computes and returns ...</span>
-
-<span class="sd">    This is a recursive implementation:&quot;&quot;&quot;</span>
-
-    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="n">startfrom</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">0</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">startfrom</span> <span class="o">+</span> <span class="n">compute_sum3</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">startfrom</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">compute_sum4a</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;A functional approach ... this seems to be</span>
-<span class="sd">    the shortest and most concise code.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-
-
-<span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">reduce</span>
-<span class="k">def</span> <span class="nf">compute_sum4b</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;A functional approach ... not making use of &#39;sum&#39; which</span>
-<span class="sd">    happens to exist and is of course convenient here.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-
-
-<span class="k">def</span> <span class="nf">compute_sum4c</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;A functional approach ... a bit faster than compute_sum4b</span>
-<span class="sd">    as we avoid using lambda.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">import</span> <span class="nn">operator</span>
-    <span class="k">return</span> <span class="n">reduce</span><span class="p">(</span><span class="n">operator</span><span class="o">.</span><span class="fm">__add__</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-
-
-<span class="k">def</span> <span class="nf">compute_sum4d</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Using list comprehension.&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="nb">sum</span><span class="p">([</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">2</span><span class="p">)])</span>
-
-
-<span class="k">def</span> <span class="nf">compute_sum4e</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Using another variation of list comprehension.&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="nb">sum</span><span class="p">([</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="k">if</span> <span class="n">k</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">])</span>
-
-
-<span class="k">def</span> <span class="nf">compute_sum5</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Using numerical python (numpy). This is very fast</span>
-<span class="sd">    (but would only pay off if n &gt;&gt; 10).&quot;&quot;&quot;</span>
-    <span class="kn">import</span> <span class="nn">numpy</span>
-    <span class="k">return</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">))</span>
-
-
-<span class="k">def</span> <span class="nf">test_consistency</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Check that all compute_sum?? functions in this file produce</span>
-<span class="sd">    the same answer for all n&gt;=2 and &lt;N.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">check_one_n</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Compare the output of compute_sum1 with all other functions</span>
-<span class="sd">        for a given n&gt;=2. Raise AssertionError if outputs disagree.&quot;&quot;&quot;</span>
-        <span class="n">funcs</span> <span class="o">=</span> <span class="p">[</span><span class="n">compute_sum1</span><span class="p">,</span> <span class="n">compute_sum2</span><span class="p">,</span> <span class="n">compute_sum3</span><span class="p">,</span>
-                 <span class="n">compute_sum4a</span><span class="p">,</span> <span class="n">compute_sum4b</span><span class="p">,</span> <span class="n">compute_sum4c</span><span class="p">,</span>
-                 <span class="n">compute_sum4d</span><span class="p">,</span> <span class="n">compute_sum4e</span><span class="p">,</span> <span class="n">compute_sum5</span><span class="p">]</span>
-        <span class="n">ans1</span> <span class="o">=</span> <span class="n">compute_sum1</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">funcs</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
-            <span class="k">assert</span> <span class="n">ans1</span> <span class="o">==</span> <span class="n">f</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">(n)=</span><span class="si">%d</span><span class="s2"> not the same as </span><span class="si">%s</span><span class="s2">(n)=</span><span class="si">%d</span><span class="s2"> &quot;</span> \
-                                  <span class="o">%</span> <span class="p">(</span><span class="n">funcs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">funcs</span><span class="p">[</span><span class="mi">0</span><span class="p">](</span><span class="n">n</span><span class="p">),</span> <span class="n">f</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
-
-    <span class="c1">#main testing loop in test_consistency function</span>
-    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1000</span><span class="p">):</span>
-        <span class="n">check_one_n</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span> 
-    <span class="n">m</span> <span class="o">=</span> <span class="mi">7</span>
-    <span class="n">correct_result</span> <span class="o">=</span> <span class="mi">12</span>
-    <span class="n">thisresult</span> <span class="o">=</span> <span class="n">compute_sum1</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;this result is </span><span class="si">{}</span><span class="s2">, expected to be </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-        <span class="n">thisresult</span><span class="p">,</span> <span class="n">correct_result</span><span class="p">))</span>
-    <span class="c1"># compare with correct result</span>
-    <span class="k">assert</span> <span class="n">thisresult</span> <span class="o">==</span> <span class="n">correct_result</span>
-    <span class="c1"># also check all other methods</span>
-    <span class="k">assert</span> <span class="n">compute_sum2</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">==</span> <span class="n">correct_result</span>
-    <span class="k">assert</span> <span class="n">compute_sum3</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">==</span> <span class="n">correct_result</span>
-    <span class="k">assert</span> <span class="n">compute_sum4a</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">==</span> <span class="n">correct_result</span>
-    <span class="k">assert</span> <span class="n">compute_sum4b</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">==</span> <span class="n">correct_result</span>
-    <span class="k">assert</span> <span class="n">compute_sum4c</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">==</span> <span class="n">correct_result</span>
-    <span class="k">assert</span> <span class="n">compute_sum4d</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">==</span> <span class="n">correct_result</span>
-    <span class="k">assert</span> <span class="n">compute_sum4e</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">==</span> <span class="n">correct_result</span>
-    <span class="k">assert</span> <span class="n">compute_sum5</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">==</span> <span class="n">correct_result</span>
-
-    <span class="c1"># a more systematic check for many values</span>
-    <span class="n">test_consistency</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>this result is 12, expected to be 12
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>All the different implementations shown above compute the same result. There are a number of things to be learned from this:</p>
+<h1 id="Numerical-Computation">Numerical Computation<a class="anchor-link" href="#Numerical-Computation">&#182;</a></h1><h2 id="Numbers-and-numbers">Numbers and numbers<a class="anchor-link" href="#Numbers-and-numbers">&#182;</a></h2><p>We have already seen (<a href="03-data-types-structures.html#Numbers">Numbers</a>) that Python knows different <em>types</em> of numbers:</p>
 <ul>
-<li><p>There are a large (probably an infinite) number of solutions for one given problem. (This means that writing programs is a task that requires creativity!)</p>
+<li><p><code>float</code>ing point numbers such as 3.14</p>
 </li>
-<li><p>These may achieve the same ’result’ (in this case computation of a number).</p>
+<li><p><code>int</code>egers such as 42</p>
 </li>
-<li><p>Different solutions may have different characteristics. They might:</p>
-<ul>
-<li><p>be faster or slower</p>
-</li>
-<li><p>use less or more memory</p>
-</li>
-<li><p>are easier or more difficult to understand (when reading the source code)</p>
-</li>
-<li><p>can be considered more or less elegant.</p>
+<li><p><code>complex</code> numbers such as 3.14 + 1<em>j</em></p>
 </li>
 </ul>
+<h3 id="Limitations-of-number-types">Limitations of number types<a class="anchor-link" href="#Limitations-of-number-types">&#182;</a></h3><h4 id="Limitations-of-ints">Limitations of <code>int</code>s<a class="anchor-link" href="#Limitations-of-ints">&#182;</a></h4><p>Mathematics provides the infinite set of natural numbers ℕ = {1, 2, 3, …}. Because the computer has <em>finite</em> size, it is impossible to represent all of these numbers in the computer. Instead, only a small subset of numbers is represented.</p>
+<p>The <code>int</code>-type can (usually[3]) represent numbers between -2147483648 and +2147483647 and corresponds to 4 bytes (that’s 4*8 bit, and 2<sup>32</sup> = 4294967296 which is the range from -2147483648 and +2147483647).</p>
+<p>You can imagine that the hardware uses a table like this to encode integers using bits (suppose for simplicity we use only 8 bits for this):</p>
+<table>
+<thead><tr>
+<th style="text-align:right">natural number</th>
+<th style="text-align:right">bit-representation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">0</td>
+<td style="text-align:right">00000000</td>
+</tr>
+<tr>
+<td style="text-align:right">1</td>
+<td style="text-align:right">00000001</td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td style="text-align:right">00000010</td>
+</tr>
+<tr>
+<td style="text-align:right">3</td>
+<td style="text-align:right">00000011</td>
+</tr>
+<tr>
+<td style="text-align:right">4</td>
+<td style="text-align:right">00000100</td>
+</tr>
+<tr>
+<td style="text-align:right">5</td>
+<td style="text-align:right">00000101</td>
+</tr>
+<tr>
+<td style="text-align:right">⋮</td>
+<td style="text-align:right">⋮</td>
+</tr>
+<tr>
+<td style="text-align:right">254</td>
+<td style="text-align:right">11111110</td>
+</tr>
+<tr>
+<td style="text-align:right">255</td>
+<td style="text-align:right">11111111</td>
+</tr>
+</tbody>
+</table>
+<p>Using 8 bit we can represent 256 natural numbers (for example from 0 to 255) because we have 2<sup>8</sup> = 256 different ways of combining eight 0s and 1s.</p>
+<p>We could also use a slightly different table to describe 256 integer numbers ranging, for example, from -127 to +128.</p>
+<p>This is <em>in principle</em> how integers are represented in the computer. Depending on the number of bytes used, only integer numbers between a minimum and a maximum value can be represented. On today’s hardware, it is common to use 4 or 8 bytes to represent one integer, which leads exactly to the minimum and maximum values of -2147483648 and +2147483647 as shown above for 4 bytes, and +9223372036854775807 as the maximum integer for 8 bytes (that’s ≈9.2 ⋅ 10<sup>18</sup>).</p>
+<h4 id="Limitations-of-floats">Limitations of <code>float</code>s<a class="anchor-link" href="#Limitations-of-floats">&#182;</a></h4><p>The floating point numbers in a computer are not the same as the mathematical floating point numbers. (This is exactly the same as the (mathematical) integer numbers not being the same as the integer numbers in a computer: only a <em>subset</em> of the infinite set of integer numbers can be represented by the <code>int</code> data type as shown in <a href="#Numbers-and-numbers">Numbers and numbers</a>). So how are floating point numbers represented in the computer?</p>
+<ul>
+<li><p>Any real number <em>x</em> can be written as
+<em>x</em> = <em>a</em> ⋅ 10<sup>*b*</sup>
+ where <em>a</em> is the mantissa and <em>b</em> the exponent.</p>
+</li>
+<li><p>Examples:</p>
+</li>
+</ul>
+<table>
+<thead><tr>
+<th>x</th>
+<th>a</th>
+<th>b</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>123.45 = 1.23456 ⋅ 10<sup>2</sup></td>
+<td>1.23456</td>
+<td>2</td>
+</tr>
+<tr>
+<td>1000000 = 1.0 ⋅ 10<sup>6</sup></td>
+<td>1.00000</td>
+<td>6</td>
+</tr>
+<tr>
+<td>0.0000024 = 2.4 ⋅ 10<sup>-6</sup></td>
+<td>2.40000</td>
+<td>-6</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><p>Therefore, we can use 2 integers to encode one floating point number!</p>
+<p><em>x</em> = <em>a</em> ⋅ 10<sup>*b*</sup></p>
 </li>
 </ul>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Sorting">Sorting<a class="anchor-link" href="#Sorting">&#182;</a></h2><p>Suppose we need to sort a list of 2-tuples of user-ids and names, i.e.</p>
+<ul>
+<li><p>Following (roughly) the IEEE-754 standard, one uses 8 bytes for one float <em>x</em>: these 64 bits are split as</p>
+<ul>
+<li><p>10 bit for the exponent <em>b</em> and</p>
+</li>
+<li><p>54 bit for the mantissa <em>a</em>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>This results in</p>
+<ul>
+<li><p>largest possible float ≈10<sup>308</sup> (quality measure for <em>b</em>)</p>
+</li>
+<li><p>smallest possible (positive) float ≈10<sup>−308</sup> (quality measure for <em>b</em>)</p>
+</li>
+<li><p>distance between 1.0 and next larger number ≈10<sup>−16</sup> (quality measure for <em>a</em>)</p>
+</li>
+</ul>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;fangohr&quot;</span><span class="p">,</span> <span class="s2">&quot;Hans Fangohr&quot;</span><span class="p">,),</span>
-          <span class="p">(</span><span class="s2">&quot;admin&quot;</span><span class="p">,</span> <span class="s2">&quot;The Administrator&quot;</span><span class="p">),</span>
-          <span class="p">(</span><span class="s2">&quot;guest&quot;</span><span class="p">,</span> <span class="s2">&quot;The Guest&quot;</span><span class="p">)]</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>which we want to sort in increasing order of user-ids. If there are two or more identical user-ids, they should be ordered by the order of the names associated with these user-ids. This behaviour is just the default behaviour of sort (which goes back to how to sequences are compared).</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">stuff</span> <span class="o">=</span> <span class="n">mylist</span> <span class="c1"># collect your data</span>
-<span class="n">stuff</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>   <span class="c1"># sort the data in place</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">stuff</span><span class="p">)</span>   <span class="c1"># inspect the sorted data</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[(&#39;admin&#39;, &#39;The Administrator&#39;), (&#39;fangohr&#39;, &#39;Hans Fangohr&#39;), (&#39;guest&#39;, &#39;The Guest&#39;)]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Sequences are compared by initially comparing the first elements only. If they differ, then a decision is reached on the basis of those elements only. If the elements are equal, only then are the next elements in the sequence compared ... and so on, until a difference is found, or we run out of elements. For example:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[4]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>True</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[5]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>True</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[6]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>False</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="o">&gt;</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[7]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>True</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>It is also possible to do:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">stuff</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">stuff</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Where the list is not particularly large, it is generally advisable to use the <code>sorted</code> function (which <em>returns a sorted copy</em> of the list) over the <code>sort</code> method of a list (which changes the list into sorted order of elements, and returns None).</p>
-<p>However, what if the data we have is stored such that in each tuple in the list, the name comes first, followed by the id, i.e.:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mylist2</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;Hans Fangohr&quot;</span><span class="p">,</span> <span class="s2">&quot;fangohr&quot;</span><span class="p">),</span>
-           <span class="p">(</span><span class="s2">&quot;The Administrator&quot;</span><span class="p">,</span> <span class="s2">&quot;admin&quot;</span><span class="p">),</span>
-           <span class="p">(</span><span class="s2">&quot;The Guest&quot;</span><span class="p">,</span> <span class="s2">&quot;guest&quot;</span><span class="p">)]</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We want to sort with the id as the primary key. The first approach to do this is to change the order of <code>mylist2</code> to that of <code>mylist</code>, and use <code>sort</code> as shown above.</p>
-<p>The second, neater approach relies on being able to decypher the cryptic help for the sorted function. <code>list.sort()</code> has the same options, but its help is less helpful.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NBVAL_IGNORE_OUTPUT</span>
-<span class="n">help</span><span class="p">(</span><span class="nb">sorted</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Help on built-in function sorted in module builtins:
-
-sorted(iterable, key=None, reverse=False)
-    Return a new list containing all items from the iterable in ascending order.
-    
-    A custom key function can be supplied to customize the sort order, and the
-    reverse flag can be set to request the result in descending order.
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>You should notice that <code>sorted</code> and <code>list.sort</code> have two keyword parameters. The first of these is called key. You can use this to supply a <em>key function</em>, which will be used to transform the items for sort to compare.</p>
-<p>Let’s illustrate this in the context of our exercise, by assuming that we have stored a list of pairs like this</p>
-
-<pre><code>pair = name, id</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>(i.e. as in <code>mylist2</code>) and that we want to sort according to id and ignore name. We can achieve this by writing a function that retrieves only the second element of the pair it receives:</p>
+<p>Note that this is <em>in principle</em> how floating point numbers are stored (it is actually a bit more complicated).</p>
+<h4 id="Limitations-of-complex-numbers">Limitations of <code>complex</code> numbers<a class="anchor-link" href="#Limitations-of-complex-numbers">&#182;</a></h4><p>The <code>complex</code> number type has essentially the same limitations as the <code>float</code> data type (see <a href="#Limitations-of-floats">limitations of floats</a>) because a complex number consists of two <code>floats</code>: one represents the real part, the other one the imaginary part.</p>
+<h4 id="&#8230;are-these-number-types-of-practical-value?">&#8230;are these number types of practical value?<a class="anchor-link" href="#&#8230;are-these-number-types-of-practical-value?">&#182;</a></h4><p>In practice, we do not usually find numbers in our daily life that exceed 10<sup>300</sup> (this is a number with 300 zeros!), and therefore the floating point numbers cover the range of numbers we usually need.</p>
+<p>However, be warned that in scientific computation small and large numbers are used which may (often in intermediate results) exceed the range of floating point numbers.</p>
+<ul>
+<li><p>Imagine for example, that we have to take the fourth power of the constant ℏ = 1.0545716 ⋅ 10<sup>−34</sup><em>k<strong>g</strong>m</em><sup>2</sup>/<em>s</em>:</p>
+</li>
+<li><p>ℏ<sup>4</sup> = 1.2368136958909421 ⋅ 10<sup>−136</sup><em>k**g</em><sup>4</sup><em>m</em><sup>8</sup>/<em>s</em><sup>4</sup> which is “halfway” to our representable smallest positive float of the order of 10<sup>−308</sup>.</p>
+</li>
+</ul>
+<p>If there is any danger that we might exceed the range of the floating point numbers, we have to <em>rescale</em> our equations so that (ideally) all numbers are of order unity. Rescaling our equations so that all relevant numbers are approximately 1 is also useful in debugging our code: if numbers much greater or smaller than 1 appear, this may be an indication of an error.</p>
+<h3 id="Using-floating-point-numbers-(carelessly)">Using floating point numbers (carelessly)<a class="anchor-link" href="#Using-floating-point-numbers-(carelessly)">&#182;</a></h3><p>We know already that we need to take care that our floating point values do not exceed the range of floating point numbers that can be represented in the computer.</p>
+<p>There is another complication due to the way floating point numbers have to be represented internally: not all floating point numbers can be represented exactly in the computer. The number 1.0 can be represented exactly but the numbers 0.1, 0.2 and 0.3 cannot:</p>
 
 </div>
 </div>
@@ -12287,11 +11945,28 @@ sorted(iterable, key=None, reverse=False)
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">my_key</span><span class="p">(</span><span class="n">pair</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">pair</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;</span><span class="si">%.20f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="mf">1.0</span>
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[11]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;1.00000000000000000000&#39;</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -12301,29 +11976,259 @@ sorted(iterable, key=None, reverse=False)
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mylist2</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">my_key</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;</span><span class="si">%.20f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="mf">0.1</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[12]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;0.10000000000000000555&#39;</pre>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+
 </div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This also works with an anonymous function:</p>
 
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mylist2</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;</span><span class="si">%.20f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="mf">0.2</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[13]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;0.20000000000000001110&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;</span><span class="si">%.20f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="mf">0.3</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[14]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;0.29999999999999998890&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Instead, the floating point number “nearest” to the real number is chosen.</p>
+<p>This can cause problems. Suppose we need a loop where x takes values 0.1, 0.2, 0.3, …, 0.9, 1.0. We might be tempted to write something like this:</p>
+<div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="k">while</span> <span class="ow">not</span> <span class="n">x</span> <span class="o">==</span> <span class="mf">1.0</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">0.1</span>
+    <span class="k">print</span> <span class="p">(</span> <span class="s2">&quot; x =</span><span class="si">%19.17f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span> <span class="n">x</span> <span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>However, this loop will never terminate. Here are the first 11 lines of output of the program:</p>
+
+<pre><code>x=0.10000000000000001
+x=0.20000000000000001
+x=0.30000000000000004
+x=0.40000000000000002
+x=                0.5
+x=0.59999999999999998
+x=0.69999999999999996
+x=0.79999999999999993
+x=0.89999999999999991
+x=0.99999999999999989
+x=1.09999999999999987</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Because the variable <code>x</code> never takes exactly the value 1.0, the while loop will continue forever.</p>
+<p>Thus: <em>Never compare two floating point numbers for equality.</em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Using-floating-point-numbers-carefully-1">Using floating point numbers carefully 1<a class="anchor-link" href="#Using-floating-point-numbers-carefully-1">&#182;</a></h3><p>There are a number of alternative ways to solve this problem. For example, we can compare the distance between two floating point numbers:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">1e-8</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">0.1</span>
+    <span class="nb">print</span> <span class="p">(</span> <span class="s2">&quot; x =</span><span class="si">%19.17f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span> <span class="n">x</span> <span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre> x =0.10000000000000001
+ x =0.20000000000000001
+ x =0.30000000000000004
+ x =0.40000000000000002
+ x =0.50000000000000000
+ x =0.59999999999999998
+ x =0.69999999999999996
+ x =0.79999999999999993
+ x =0.89999999999999991
+ x =0.99999999999999989
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Using-floating-point-numbers-carefully-2">Using floating point numbers carefully 2<a class="anchor-link" href="#Using-floating-point-numbers-carefully-2">&#182;</a></h3><p>Alternatively, we can (for this example) iterate over a sequence of integers and compute the floating point number from the integer:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span> <span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="mf">0.1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; x =</span><span class="si">%19.17f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span> <span class="n">x</span> <span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre> x =0.10000000000000001
+ x =0.20000000000000001
+ x =0.30000000000000004
+ x =0.40000000000000002
+ x =0.50000000000000000
+ x =0.60000000000000009
+ x =0.70000000000000007
+ x =0.80000000000000004
+ x =0.90000000000000002
+ x =1.00000000000000000
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="mf">0.10000000000000001</span>
+<span class="n">x</span><span class="o">=</span><span class="mf">0.20000000000000001</span>
+<span class="n">x</span><span class="o">=</span><span class="mf">0.30000000000000004</span>
+<span class="n">x</span><span class="o">=</span><span class="mf">0.40000000000000002</span>
+<span class="n">x</span><span class="o">=</span>                <span class="mf">0.5</span>
+<span class="n">x</span><span class="o">=</span><span class="mf">0.60000000000000009</span>
+<span class="n">x</span><span class="o">=</span><span class="mf">0.70000000000000007</span>
+<span class="n">x</span><span class="o">=</span><span class="mf">0.80000000000000004</span>
+<span class="n">x</span><span class="o">=</span><span class="mf">0.90000000000000002</span>
+<span class="n">x</span><span class="o">=</span>                  <span class="mi">1</span>
 </pre></div>
 
 </div>
@@ -12331,12 +12236,210 @@ sorted(iterable, key=None, reverse=False)
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Efficiency">Efficiency<a class="anchor-link" href="#Efficiency">&#182;</a></h3><p>The <code>key</code> function will be called exactly once for every element in the list. This is much more efficient than calling a function on every <em>comparison</em> (which was how you customised sorting in older versions of Python). But if you have a large list to sort, the overhead of calling a Python function (which is relatively large compared to the C function overhead) might be noticeable.</p>
-<p>If efficiency is really important (and you have proven that a significant proportion of time is spent in these functions) then you have the option of re-coding them in C (or another low-level language).</p>
+<p>If we compare this with the output from the program in <a href="#Using-floating-point-numbers-&amp;#40;carelessly&amp;#41;">Using floating point numbers (carelessly)</a>, we can see that the floating point numbers differ. This means that – in a numerical calculation – it is not true that 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 = 1.0.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Symbolic-calculation">Symbolic calculation<a class="anchor-link" href="#Symbolic-calculation">&#182;</a></h3><p>Using the sympy package we have arbitrary precision. Using <span>`sympy.Rational`</span>, we can define the fraction 1/10 exactly symbolically. Adding this 10 times will lead exactly to the value 1, as demonstrated by this script</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="k">import</span> <span class="n">Rational</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="n">Rational</span> <span class="p">(</span><span class="mi">1</span> <span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">x</span> <span class="o">!=</span> <span class="mf">1.0</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Current x=</span><span class="si">%4s</span><span class="s2"> = </span><span class="si">%3.1f</span><span class="s2"> &quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">x</span> <span class="p">,</span> <span class="n">x</span> <span class="o">.</span> <span class="n">evalf</span> <span class="p">()))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; Reached x=</span><span class="si">%s</span><span class="s2"> &quot;</span> <span class="o">%</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Current x=1/10 = 0.1 
+ Reached x=1/10 
+Current x= 1/5 = 0.2 
+ Reached x=1/5 
+Current x=3/10 = 0.3 
+ Reached x=3/10 
+Current x= 2/5 = 0.4 
+ Reached x=2/5 
+Current x= 1/2 = 0.5 
+ Reached x=1/2 
+Current x= 3/5 = 0.6 
+ Reached x=3/5 
+Current x=7/10 = 0.7 
+ Reached x=7/10 
+Current x= 4/5 = 0.8 
+ Reached x=4/5 
+Current x=9/10 = 0.9 
+ Reached x=9/10 
+Current x=   1 = 1.0 
+ Reached x=1 
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>However, this symbolic calculation is much slower as it is done through software rather than the CPU-based floating point operations. The next program approximates the relative performances:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NBVAL_IGNORE_OUTPUT</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="k">import</span> <span class="n">Rational</span>
+<span class="n">dx_symbolic</span> <span class="o">=</span> <span class="n">Rational</span> <span class="p">(</span><span class="mi">1</span> <span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="mf">0.1</span>
+
+<span class="k">def</span> <span class="nf">loop_sympy</span> <span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx_symbolic</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="k">def</span> <span class="nf">loop_float</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span><span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="k">def</span> <span class="nf">time_this</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">time</span>
+    <span class="n">starttime</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">stoptime</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; deviation is </span><span class="si">%16.15g</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span> <span class="n">n</span> <span class="o">*</span> <span class="n">dx_symbolic</span> <span class="o">-</span> <span class="n">result</span> <span class="p">))</span>
+    <span class="k">return</span> <span class="n">stoptime</span> <span class="o">-</span> <span class="n">starttime</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">100000</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;loop using float dx:&quot;</span><span class="p">)</span>
+<span class="n">time_float</span> <span class="o">=</span> <span class="n">time_this</span><span class="p">(</span><span class="n">loop_float</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;float loop n=</span><span class="si">%d</span><span class="s2"> takes </span><span class="si">%6.5f</span><span class="s2"> seconds&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">time_float</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;loop using sympy symbolic dx:&quot;</span><span class="p">)</span>
+<span class="n">time_sympy</span> <span class="o">=</span> <span class="n">time_this</span> <span class="p">(</span><span class="n">loop_sympy</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;sympy loop n =</span><span class="si">% d</span><span class="s2"> takes </span><span class="si">%6.5f</span><span class="s2"> seconds&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">n</span> <span class="p">,</span> <span class="n">time_sympy</span> <span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Symbolic loop is a factor </span><span class="si">%.1f</span><span class="s2"> slower.&quot;</span> <span class="o">%</span> <span class="p">(</span> <span class="n">time_sympy</span> <span class="o">/</span> <span class="n">time_float</span> <span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>loop using float dx:
+ deviation is -1.88483681995422e-08
+float loop n=100000 takes 0.00778 seconds
+loop using sympy symbolic dx:
+ deviation is                0
+sympy loop n = 100000 takes 1.61389 seconds
+Symbolic loop is a factor 207.4 slower.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is of course an artificial example: we have added the symbolic code to demonstrate that these round off errors originate from the approximative representation of floating point numbers in the hardware (and thus programming languages). We can, in principle, avoid these complications by computing using symbolic expressions, but this is in practice too slow.[4]</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Summary">Summary<a class="anchor-link" href="#Summary">&#182;</a></h3><p>In summary, we have learned that</p>
+<ul>
+<li><p>floating point numbers and integers used in numeric computation are generally quite different from “mathematical numbers” (symbolic calculations are exact and use the “mathematical numbers”):</p>
+<ul>
+<li><p>there is a maximum number and a minimum number that can be represented (for both integers and floating point numbers)</p>
+</li>
+<li><p>within this range, not every floating point number can be represented in the computer.</p>
+</li>
+</ul>
+</li>
+<li><p>We deal with this limitation by:</p>
+<ul>
+<li><p>never comparing two floating point numbers for equality (instead we compute the absolute value of the difference)</p>
+</li>
+<li><p>use of algorithms that are <em>stable</em> (this means that small deviations from correct numbers can be corrected by the algorithm. We have not yet shown any such examples this document.)</p>
+</li>
+</ul>
+</li>
+<li><p>Note that there is a lot more to be said about numerical and algorithmic tricks and methods to make numeric computation as accurate as possible but this is outside the scope of this section.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercise:-infinite-or-finite-loop">Exercise: infinite or finite loop<a class="anchor-link" href="#Exercise:-infinite-or-finite-loop">&#182;</a></h3><ol>
+<li>What does the following piece of code compute? Will the loop ever finish? Why?</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="n">eps</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="k">while</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="n">eps</span> <span class="o">&gt;</span> <span class="mf">1.0</span><span class="p">:</span>
+    <span class="n">eps</span> <span class="o">=</span> <span class="n">eps</span> <span class="o">/</span> <span class="mf">2.0</span>
+<span class="k">print</span><span class="p">(</span><span class="n">eps</span><span class="p">)</span>
+</pre></div>
 
 </div>
 </div>

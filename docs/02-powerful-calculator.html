@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>05-input-output</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>02-powerful-calculator</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11726,7 +11726,9 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
-}@media print {
+}
+
+@media print {
   div.cell {
     display: block;
     page-break-inside: avoid;
@@ -11747,7 +11749,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -11771,14 +11773,20 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Input-and-Output">Input and Output<a class="anchor-link" href="#Input-and-Output">&#182;</a></h1><p>In this section, we describe printing, which includes the use of the <code>print</code> function, the old-style <code>%</code> format specifiers  and the new style <code>{}</code> format specifiers.</p>
-<h2 id="Printing-to-standard-output-(normally-the-screen)">Printing to standard output (normally the screen)<a class="anchor-link" href="#Printing-to-standard-output-(normally-the-screen)">&#182;</a></h2><p>The <code>print</code> function is the most commonly used command to print information to the “standard output device” which is normally the screen.</p>
-<p>There are two modes to use print.</p>
-<h3 id="Simple-print">Simple print<a class="anchor-link" href="#Simple-print">&#182;</a></h3><p>The easiest way to use the print command is to list the variables to be printed, separated by comma. Here are a few examples:</p>
+<h1 id="A-powerful-calculator">A powerful calculator<a class="anchor-link" href="#A-powerful-calculator">&#182;</a></h1><h2 id="Python-prompt-and-Read-Eval-Print-Loop-(REPL)">Python prompt and Read-Eval-Print Loop (REPL)<a class="anchor-link" href="#Python-prompt-and-Read-Eval-Print-Loop-(REPL)">&#182;</a></h2><p>Python is an <em>interpreted</em> language. We can collect sequences of commands into text files and save this to file as a <em>Python program</em>. It is convention that these files have the file extension “<code>.py</code>”, for example <code>hello.py</code>.</p>
+<p>We can also enter individual commands at the Python prompt which are immediately evaluated and carried out by the Python interpreter. This is very useful for the programmer/learner to understand how to use certain commands (often before one puts these commands together in a longer Python program). Python’s role can be described as Reading the command, Evaluating it, Printing the evaluated value and repeating (Loop) the cycle – this is the origin of the REPL abbreviation.</p>
+<p>Python comes with a basic terminal prompt; you may see examples from this with <code>&gt;&gt;&gt;</code> marking the input:</p>
+
+<pre><code>&gt;&gt;&gt; 2 + 2
+4
+
+</code></pre>
+<p>We are using a more powerful REPL interface, the Jupyter Notebook. Blocks of code appear with an <code>In</code> prompt next to them:</p>
 
 </div>
 </div>
@@ -11788,9 +11796,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;test text&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">4</span> <span class="o">+</span> <span class="mi">5</span>
 </pre></div>
 
 </div>
@@ -11802,26 +11808,46 @@ div#notebook {
 
 
 <div class="output_area">
+<div class="prompt output_prompt">Out[1]:</div>
 
-<div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>10
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>9</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To edit the code, click inside the code area. You should get a green border around it. To run it, press Shift-Enter.</p>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Calculator">Calculator<a class="anchor-link" href="#Calculator">&#182;</a></h2><p>Basic operations such as addition (<code>+</code>), subtraction (<code>-</code>), multiplication (<code>*</code>), division (<code>/</code>) and exponentiation (<code>**</code>) work (mostly) as expected:</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">10</span> <span class="o">+</span> <span class="mi">10000</span>
 </pre></div>
 
 </div>
@@ -11833,14 +11859,14 @@ div#notebook {
 
 
 <div class="output_area">
+<div class="prompt output_prompt">Out[2]:</div>
 
-<div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>test text
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>10010</pre>
 </div>
+
 </div>
 
 </div>
@@ -11852,7 +11878,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">42</span> <span class="o">-</span> <span class="mf">1.5</span>
 </pre></div>
 
 </div>
@@ -11864,14 +11890,14 @@ div#notebook {
 
 
 <div class="output_area">
+<div class="prompt output_prompt">Out[3]:</div>
 
-<div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>10 test text
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>40.5</pre>
 </div>
+
 </div>
 
 </div>
@@ -11883,7 +11909,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The answer is&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">47</span> <span class="o">*</span> <span class="mi">11</span>
 </pre></div>
 
 </div>
@@ -11895,14 +11921,14 @@ div#notebook {
 
 
 <div class="output_area">
+<div class="prompt output_prompt">Out[4]:</div>
 
-<div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>The answer is 10
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>517</pre>
 </div>
+
 </div>
 
 </div>
@@ -11914,7 +11940,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The answer is&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="s2">&quot;and the string contains&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">10</span> <span class="o">/</span> <span class="mf">0.5</span>
 </pre></div>
 
 </div>
@@ -11926,14 +11952,14 @@ div#notebook {
 
 
 <div class="output_area">
+<div class="prompt output_prompt">Out[5]:</div>
 
-<div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>The answer is 10 and the string contains test text
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>20.0</pre>
 </div>
+
 </div>
 
 </div>
@@ -11945,7 +11971,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The answer is&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="s2">&quot;and the string reads&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">2</span><span class="o">**</span><span class="mi">2</span>   <span class="c1"># Exponentiation (&#39;to the power of&#39;) is **, NOT ^</span>
 </pre></div>
 
 </div>
@@ -11957,37 +11983,26 @@ div#notebook {
 
 
 <div class="output_area">
+<div class="prompt output_prompt">Out[6]:</div>
 
-<div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>The answer is 10 and the string reads test text
-</pre>
-</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>4</pre>
 </div>
 
 </div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Python adds a space between every object that is being printed.</p>
-<p>Python prints a new line after every print call. To suppress that, use the <code>end=</code> parameter:</p>
 
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Printing in line one&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;...still printing in line one.&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">2</span><span class="o">**</span><span class="mi">3</span>
 </pre></div>
 
 </div>
@@ -11999,36 +12014,26 @@ div#notebook {
 
 
 <div class="output_area">
+<div class="prompt output_prompt">Out[7]:</div>
 
-<div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Printing in line one...still printing in line one.
-</pre>
-</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>8</pre>
 </div>
 
 </div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Formatted-printing">Formatted printing<a class="anchor-link" href="#Formatted-printing">&#182;</a></h3><p>The more sophisticated way of formatting output uses a syntax very similar to Matlab’s <code>fprintf</code> (and therefor also similar to C’s <code>printf</code>).</p>
-<p>The overall structure is that there is a string containing format specifiers, followed by a percentage sign and a tuple that contains the variables to be printed in place of the format specifiers.</p>
 
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a = </span><span class="si">%d</span><span class="s2"> b = </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">2</span><span class="o">**</span><span class="mi">4</span>
 </pre></div>
 
 </div>
@@ -12040,36 +12045,26 @@ div#notebook {
 
 
 <div class="output_area">
+<div class="prompt output_prompt">Out[8]:</div>
 
-<div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>a = 10 b = 20
-</pre>
-</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>16</pre>
 </div>
 
 </div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>A string can contain format identifiers (such as <code>%f</code> to format as a float, <code>%d</code> to format as an integer, and <code>%s</code> to format as a string):</p>
 
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">pi</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pi = </span><span class="si">%5.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">pi</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
 </pre></div>
 
 </div>
@@ -12081,14 +12076,14 @@ div#notebook {
 
 
 <div class="output_area">
+<div class="prompt output_prompt">Out[9]:</div>
 
-<div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Pi =  3.14
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>4</pre>
 </div>
+
 </div>
 
 </div>
@@ -12100,7 +12095,8 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pi = </span><span class="si">%10.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">pi</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This is a comment</span>
+<span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
 </pre></div>
 
 </div>
@@ -12112,14 +12108,14 @@ div#notebook {
 
 
 <div class="output_area">
+<div class="prompt output_prompt">Out[10]:</div>
 
-<div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Pi =      3.142
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>4</pre>
 </div>
+
 </div>
 
 </div>
@@ -12131,7 +12127,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pi = </span><span class="si">%10.8f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">pi</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>  <span class="c1"># and a comment on the same line as code</span>
 </pre></div>
 
 </div>
@@ -12143,26 +12139,36 @@ div#notebook {
 
 
 <div class="output_area">
+<div class="prompt output_prompt">Out[11]:</div>
 
-<div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Pi = 3.14159265
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>4</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>and, using the fact that $\sqrt[n]{x} = x^{1/n}$, we can compute the $\sqrt{3} = 1.732050\dots$ using <code>**</code>:</p>
 
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pi = </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">pi</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">3</span><span class="o">**</span><span class="mf">0.5</span>
 </pre></div>
 
 </div>
@@ -12174,26 +12180,26 @@ div#notebook {
 
 
 <div class="output_area">
+<div class="prompt output_prompt">Out[12]:</div>
 
-<div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Pi = 3
-</pre>
-</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>1.7320508075688772</pre>
 </div>
 
 </div>
+
+</div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The format specifier of type <code>%W.Df</code> means that a Float should be printed with a total Width of <code>W</code> characters and <code>D</code> digits behind the Decimal point. (This is identical to Matlab and C, for example.)</p>
-<p>To print more than one object, provide multiple format specifiers and list several objects in the tuple:</p>
+<p>Parenthesis can be used for grouping:</p>
 
 </div>
 </div>
@@ -12203,7 +12209,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pi = </span><span class="si">%f</span><span class="s2">, 142*pi = </span><span class="si">%f</span><span class="s2"> and pi^2 = </span><span class="si">%f</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">pi</span><span class="p">,</span><span class="mi">142</span><span class="o">*</span><span class="n">pi</span><span class="p">,</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">2</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="mi">5</span>
 </pre></div>
 
 </div>
@@ -12215,36 +12221,26 @@ div#notebook {
 
 
 <div class="output_area">
+<div class="prompt output_prompt">Out[13]:</div>
 
-<div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Pi = 3.141593, 142*pi = 446.106157 and pi^2 = 9.869604.
-</pre>
-</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>25</pre>
 </div>
 
 </div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Note that the conversion of a format specifier and a tuple of variables into string does not rely on the <code>print</code> command:</p>
 
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">pi</span>
-<span class="s2">&quot;pi = </span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">pi</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">10</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12256,14 +12252,12 @@ div#notebook {
 
 
 <div class="output_area">
-
 <div class="prompt output_prompt">Out[14]:</div>
 
 
 
-
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;pi = 3.141593&#39;</pre>
+<pre>30</pre>
 </div>
 
 </div>
@@ -12272,12 +12266,12 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This means that we can convert objects into strings whereever we need, and we can decide to print the strings later – there is no need to couple the formatting closely to the code that does the printing.</p>
-<p>Overview of commonly used format specifiers using the astronomical unit as an example:</p>
+<h2 id="Integer-division">Integer division<a class="anchor-link" href="#Integer-division">&#182;</a></h2><p>In Python 3, division works as you'd expect:</p>
 
 </div>
 </div>
@@ -12287,8 +12281,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">AU</span> <span class="o">=</span> <span class="mi">149597870700</span>  <span class="c1"># astronomical unit [m]</span>
-<span class="s2">&quot;</span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">AU</span>        <span class="c1"># line 1 in table</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">15</span><span class="o">/</span><span class="mi">6</span>
 </pre></div>
 
 </div>
@@ -12300,14 +12293,12 @@ div#notebook {
 
 
 <div class="output_area">
-
 <div class="prompt output_prompt">Out[15]:</div>
 
 
 
-
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;149597870700.000000&#39;</pre>
+<pre>2.5</pre>
 </div>
 
 </div>
@@ -12316,51 +12307,60 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<table>
-<thead><tr>
-<th style="text-align:left">specifier</th>
-<th style="text-align:center">style</th>
-<th style="text-align:right">Example output for AU</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><code>%f</code></td>
-<td style="text-align:center">floating point</td>
-<td style="text-align:right"><code>149597870700.000000</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>%e</code></td>
-<td style="text-align:center">exponential notation</td>
-<td style="text-align:right"><code>1.495979e+11</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>%g</code></td>
-<td style="text-align:center">shorter of %e or %f</td>
-<td style="text-align:right"><code>1.49598e+11</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>%d</code></td>
-<td style="text-align:center">integer</td>
-<td style="text-align:right"><code>149597870700</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>%s</code></td>
-<td style="text-align:center"><code>str()</code></td>
-<td style="text-align:right"><code>149597870700</code></td>
-</tr>
-<tr>
-<td style="text-align:left"><code>%r</code></td>
-<td style="text-align:center"><code>repr()</code></td>
-<td style="text-align:right"><code>149597870700L</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="&#8220;str&#8221;-and-&#8220;__str__&#8221;">&#8220;str&#8221; and &#8220;__str__&#8221;<a class="anchor-link" href="#&#8220;str&#8221;-and-&#8220;__str__&#8221;">&#182;</a></h3><p>All objects in Python should provide a method <code>__str__</code> which returns a nice string representation of the object. This method <code>a.__str__()</code> is called when we apply the <code>str</code> function to object <code>a</code>:</p>
+<p>In Python 2, however, <code>15/6</code> will give you <code>2</code>.</p>
+<p>This phenomenon is known (in many programming languages, including C) as <em>integer division</em>: because we provide two integer numbers (<code>15</code> and <code>6</code>) to the division operator (<code>/</code>), the assumption is that we seek a return value of type integer. The mathematically correct answer is (the floating point number) 2.5. (→ numerical data types in <a href="13-numeric-computation.html">Chapter 13</a>.)</p>
+<p>The convention for integer division is to truncate the fractional digits and to return the integer part only (i.e. <code>2</code> in this example). It is also called “floor division”.</p>
+<h3 id="How-to-avoid-integer-division">How to avoid integer division<a class="anchor-link" href="#How-to-avoid-integer-division">&#182;</a></h3><p>There are two ways to avoid the problem of integer division:</p>
+<ol>
+<li><p>Use Python 3 style division: this is available even in Python 2 with a special import statement:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">15</span><span class="o">/</span><span class="mi">6</span>
+<span class="mf">2.5</span>
+</pre></div>
+<p>If you want to use the <code>from __future__ import division</code> feature in a python program, it would normally be included at the beginning of the file.</p>
+</li>
+<li><p>Alternatively, if we ensure that at least one number (numerator or denominator) is of type float (or complex), the division operator will return a floating point number. This can be done by writing <code>15.</code> instead of <code>15</code>, of by forcing conversion of the number to a float, i.e. use <code>float(15)</code> instead of <code>15</code>:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="mf">15.</span><span class="o">/</span><span class="mi">6</span>
+<span class="mf">2.5</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">float</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span><span class="o">/</span><span class="mi">6</span>
+<span class="mf">2.5</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">15</span><span class="o">/</span><span class="mf">6.</span>
+<span class="mf">2.5</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">15</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="mf">2.5</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mf">15.</span><span class="o">/</span><span class="mf">6.</span>
+<span class="mf">2.5</span>
+</pre></div>
+</li>
+</ol>
+<p>If we really want integer division, we can use <code>//</code>: <code>1//2</code> returns 0, in both Python 2 and 3.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Why-should-I-care-about-this-division-problem?">Why should I care about this division problem?<a class="anchor-link" href="#Why-should-I-care-about-this-division-problem?">&#182;</a></h3><p>Integer division can result in surprising bugs: suppose you are writing code to compute the mean value <em>m</em> = (<em>x</em> + <em>y</em>)/2 of two numbers <em>x</em> and <em>y</em>. The first attempt of writing this may read:</p>
+<div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+</pre></div>
+<p>Suppose this is tested with <em>x</em> = 0.5, <em>y</em> = 0.5, then the line above computes the correct answers <em>m</em> = 0.5 (because<code>0.5 + 0.5 = 1.0</code>, i.e. a 1.0 is a floating point number, and thus <code>1.0/2</code> evaluates to <code>0.5</code>). Or we could use <em>x</em> = 10, <em>y</em> = 30, and because <code>10 + 30 = 40</code> and <code>40/2</code> evaluates to <code>20</code>, we get the correct answer <em>m</em> = 20. However, if the integers <em>x</em> = 0 and <em>y</em> = 1 would come up, then the code returns <em>m</em> = 0 (because <code>0 + 1 = 1</code> and <code>1/2</code> evaluates to <code>0</code>) whereas <em>m</em> = 0.5 would have been the right answer.</p>
+<p>We have many possibilities to change the line of code above to work safely, including these three versions:</p>
+<div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span>
+</pre></div>
+<p>This integer division behaviour is common amongst most programming languages (including the important ones C, C++ and Fortran), and it is important to be aware of the issue.</p>
+<h2 id="Mathematical-functions">Mathematical functions<a class="anchor-link" href="#Mathematical-functions">&#182;</a></h2><p>Because Python is a general purpose programming language, commonly used mathematical functions such as sin, cos, exp, log and many others are located in the mathematics module with name <code>math</code>. We can make use of this as soon as we <em>import</em> the math module:</p>
 
 </div>
 </div>
@@ -12370,8 +12370,8 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mf">3.14</span>
-<span class="n">a</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12383,14 +12383,12 @@ div#notebook {
 
 
 <div class="output_area">
-
 <div class="prompt output_prompt">Out[16]:</div>
 
 
 
-
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;3.14&#39;</pre>
+<pre>2.718281828459045</pre>
 </div>
 
 </div>
@@ -12398,13 +12396,24 @@ div#notebook {
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Using the <code>dir</code> function, we can see the directory of objects available in the math module:</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NBVAL_IGNORE_OUTPUT</span>
+<span class="nb">dir</span><span class="p">(</span><span class="n">math</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12416,14 +12425,66 @@ div#notebook {
 
 
 <div class="output_area">
-
 <div class="prompt output_prompt">Out[17]:</div>
 
 
 
-
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;3.14&#39;</pre>
+<pre>[&#39;__doc__&#39;,
+ &#39;__file__&#39;,
+ &#39;__loader__&#39;,
+ &#39;__name__&#39;,
+ &#39;__package__&#39;,
+ &#39;__spec__&#39;,
+ &#39;acos&#39;,
+ &#39;acosh&#39;,
+ &#39;asin&#39;,
+ &#39;asinh&#39;,
+ &#39;atan&#39;,
+ &#39;atan2&#39;,
+ &#39;atanh&#39;,
+ &#39;ceil&#39;,
+ &#39;copysign&#39;,
+ &#39;cos&#39;,
+ &#39;cosh&#39;,
+ &#39;degrees&#39;,
+ &#39;e&#39;,
+ &#39;erf&#39;,
+ &#39;erfc&#39;,
+ &#39;exp&#39;,
+ &#39;expm1&#39;,
+ &#39;fabs&#39;,
+ &#39;factorial&#39;,
+ &#39;floor&#39;,
+ &#39;fmod&#39;,
+ &#39;frexp&#39;,
+ &#39;fsum&#39;,
+ &#39;gamma&#39;,
+ &#39;gcd&#39;,
+ &#39;hypot&#39;,
+ &#39;inf&#39;,
+ &#39;isclose&#39;,
+ &#39;isfinite&#39;,
+ &#39;isinf&#39;,
+ &#39;isnan&#39;,
+ &#39;ldexp&#39;,
+ &#39;lgamma&#39;,
+ &#39;log&#39;,
+ &#39;log10&#39;,
+ &#39;log1p&#39;,
+ &#39;log2&#39;,
+ &#39;modf&#39;,
+ &#39;nan&#39;,
+ &#39;pi&#39;,
+ &#39;pow&#39;,
+ &#39;radians&#39;,
+ &#39;sin&#39;,
+ &#39;sinh&#39;,
+ &#39;sqrt&#39;,
+ &#39;tan&#39;,
+ &#39;tanh&#39;,
+ &#39;tau&#39;,
+ &#39;trunc&#39;]</pre>
 </div>
 
 </div>
@@ -12432,11 +12493,12 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The <code>str</code> function is extremely convenient as it allows us to print more complicated objects, such as</p>
+<p>As usual, the <code>help</code> function can provide more information about the module (<code>help(math)</code>) on individual objects:</p>
 
 </div>
 </div>
@@ -12446,8 +12508,8 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mf">4.2</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">],</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
-<span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NBVAL_IGNORE_OUTPUT</span>
+<span class="n">help</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12459,35 +12521,31 @@ div#notebook {
 
 
 <div class="output_area">
+<div class="prompt"></div>
 
-<div class="prompt output_prompt">Out[18]:</div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Help on built-in function exp in module math:
 
+exp(...)
+    exp(x)
+    
+    Return e raised to the power of x.
 
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#34;[3, 4.2, [&#39;apple&#39;, &#39;banana&#39;], (0, 1)]&#34;</pre>
+</pre>
+</div>
 </div>
 
 </div>
-
-</div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The way Python prints this is that it uses the <code>__str__</code> method of the list object. This will print the opening square bracket <code>[</code> and then call the <code>__str__</code> method of the first object, i.e. the integer 3. This will produce <code>3</code>. Then the list object’s <code>__str__</code> method prints the comma <code>,</code> and moves on to call the <code>__str__</code> method of the next element in the list (i.e. <code>4.2</code>) to print itself. This way any composite object can be represented as a string by asking the objects it holds to convert themselves to strings.</p>
-<p>The string method of object <code>x</code> is called implicitly, when we</p>
-<ul>
-<li><p>use the “%s” format specifier to print <code>x</code></p>
-</li>
-<li><p>pass the object <code>x</code> directly to the print command:</p>
-</li>
-</ul>
-<!-- -->
+<p>The mathematics module defines to constants <em>π</em> and <em>e</em>:</p>
+
 </div>
 </div>
 </div>
@@ -12496,7 +12554,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">pi</span>
 </pre></div>
 
 </div>
@@ -12508,149 +12566,7 @@ div#notebook {
 
 
 <div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[3, 4.2, [&#39;apple&#39;, &#39;banana&#39;], (0, 1)]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[3, 4.2, [&#39;apple&#39;, &#39;banana&#39;], (0, 1)]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#8220;repr&#8221;-and-&#8220;__repr__&#8221;">&#8220;repr&#8221; and &#8220;__repr__&#8221;<a class="anchor-link" href="#&#8220;repr&#8221;-and-&#8220;__repr__&#8221;">&#182;</a></h3><p>A second function, <code>repr</code>, should convert a given object into a string presentation <em>so that this string can be used to re-created the object using the <code>eval</code> function</em>. The <code>repr</code> function will generally provide a more detailed string than <code>str</code>. Applying <code>repr</code> to the object <code>x</code> will attempt to call <code>x.__repr__()</code>.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">pi</span> <span class="k">as</span> <span class="n">a1</span>
-<span class="nb">str</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[21]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;3.141592653589793&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">repr</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[22]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;3.141592653589793&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">number_as_string</span> <span class="o">=</span> <span class="nb">repr</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span>
-<span class="n">a2</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">number_as_string</span><span class="p">)</span>  <span class="c1"># evaluate string </span>
-<span class="n">a2</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[23]:</div>
-
+<div class="prompt output_prompt">Out[19]:</div>
 
 
 
@@ -12666,10 +12582,10 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a2</span><span class="o">-</span><span class="n">a1</span>                      <span class="c1"># -&gt; repr is exact representation</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">e</span>
 </pre></div>
 
 </div>
@@ -12681,14 +12597,138 @@ div#notebook {
 
 
 <div class="output_area">
-
-<div class="prompt output_prompt">Out[24]:</div>
-
+<div class="prompt output_prompt">Out[20]:</div>
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.0</pre>
+<pre>2.718281828459045</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[21]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>-1.0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">e</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[22]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1.0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Variables">Variables<a class="anchor-link" href="#Variables">&#182;</a></h2><p>A <em>variable</em> can be used to store a certain value or object. In Python, all numbers (and everything else, including functions, modules and files) are objects. A variable is created through assignement:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.5</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Once the variable <code>x</code> has been created through assignment of 0.5 in this example, we can make use of it:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="o">*</span><span class="mi">3</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[24]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1.5</pre>
 </div>
 
 </div>
@@ -12702,7 +12742,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a1</span><span class="o">-</span><span class="nb">eval</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">a1</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="o">**</span><span class="mi">2</span>
 </pre></div>
 
 </div>
@@ -12714,14 +12754,12 @@ div#notebook {
 
 
 <div class="output_area">
-
 <div class="prompt output_prompt">Out[25]:</div>
 
 
 
-
 <div class="output_text output_subarea output_execute_result">
-<pre>0.0</pre>
+<pre>0.25</pre>
 </div>
 
 </div>
@@ -12735,7 +12773,8 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a1</span><span class="o">-</span><span class="nb">eval</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">a1</span><span class="p">))</span>           <span class="c1"># -&gt; str has lost a few digits</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mi">111</span>
+<span class="n">y</span> <span class="o">+</span> <span class="mi">222</span>
 </pre></div>
 
 </div>
@@ -12747,14 +12786,12 @@ div#notebook {
 
 
 <div class="output_area">
-
 <div class="prompt output_prompt">Out[26]:</div>
 
 
 
-
 <div class="output_text output_subarea output_execute_result">
-<pre>0.0</pre>
+<pre>333</pre>
 </div>
 
 </div>
@@ -12763,11 +12800,12 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can convert an object to its <code>str()</code> or <code>repr</code> presentation using the format specifiers <code>%s and</code>%r, respectively.</p>
+<p>A variable is overriden if a new value is assigned:</p>
 
 </div>
 </div>
@@ -12777,8 +12815,8 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
-<span class="s2">&quot;</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mf">0.7</span>
+<span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
 </pre></div>
 
 </div>
@@ -12790,14 +12828,12 @@ div#notebook {
 
 
 <div class="output_area">
-
 <div class="prompt output_prompt">Out[27]:</div>
 
 
 
-
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;3.141592653589793&#39;</pre>
+<pre>1.0</pre>
 </div>
 
 </div>
@@ -12805,13 +12841,25 @@ div#notebook {
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The equal sign (’=’) is used to assign a value to a variable.</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="s2">&quot;</span><span class="si">%r</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">width</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">height</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">9</span>
+<span class="n">width</span> <span class="o">*</span> <span class="n">height</span>
 </pre></div>
 
 </div>
@@ -12823,14 +12871,12 @@ div#notebook {
 
 
 <div class="output_area">
-
 <div class="prompt output_prompt">Out[28]:</div>
 
 
 
-
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;3.141592653589793&#39;</pre>
+<pre>900</pre>
 </div>
 
 </div>
@@ -12839,12 +12885,12 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="New-style-string-formatting">New-style string formatting<a class="anchor-link" href="#New-style-string-formatting">&#182;</a></h3><p>A new system of built-in formatting allows more flexibility for complex cases, at the cost of being a bit longer.</p>
-<p>Basic ideas in examples:</p>
+<p>A value can be assigned to several variables simultaneously:</p>
 
 </div>
 </div>
@@ -12854,7 +12900,8 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> needs </span><span class="si">{}</span><span class="s2"> pints&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Peter&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>     <span class="c1"># insert values in order</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">=</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># initialise x, y and z with 0</span>
+<span class="n">x</span>
 </pre></div>
 
 </div>
@@ -12866,14 +12913,12 @@ div#notebook {
 
 
 <div class="output_area">
-
 <div class="prompt output_prompt">Out[29]:</div>
 
 
 
-
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;Peter needs 4 pints&#39;</pre>
+<pre>0</pre>
 </div>
 
 </div>
@@ -12887,7 +12932,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2"> needs </span><span class="si">{1}</span><span class="s2"> pints&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Peter&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>   <span class="c1"># index which element</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y</span>
 </pre></div>
 
 </div>
@@ -12899,14 +12944,12 @@ div#notebook {
 
 
 <div class="output_area">
-
 <div class="prompt output_prompt">Out[30]:</div>
 
 
 
-
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;Peter needs 4 pints&#39;</pre>
+<pre>0</pre>
 </div>
 
 </div>
@@ -12920,7 +12963,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="s2">&quot;</span><span class="si">{1}</span><span class="s2"> needs </span><span class="si">{0}</span><span class="s2"> pints&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Peter&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">z</span>
 </pre></div>
 
 </div>
@@ -12932,14 +12975,12 @@ div#notebook {
 
 
 <div class="output_area">
-
 <div class="prompt output_prompt">Out[31]:</div>
 
 
 
-
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;4 needs Peter pints&#39;</pre>
+<pre>0</pre>
 </div>
 
 </div>
@@ -12947,14 +12988,25 @@ div#notebook {
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Variables must be created (assigned a value) before they can be used, or an error will occur:</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="s2">&quot;</span><span class="si">{name}</span><span class="s2"> needs </span><span class="si">{number}</span><span class="s2"> pints&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>    <span class="c1"># reference element to</span>
-    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Peter&#39;</span><span class="p">,</span><span class="n">number</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>               <span class="c1"># print by name</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NBVAL_RAISES_EXCEPTION</span>
+<span class="c1"># try to access an undefined variable:</span>
+<span class="n">n</span>
 </pre></div>
 
 </div>
@@ -12966,462 +13018,150 @@ div#notebook {
 
 
 <div class="output_area">
+<div class="prompt"></div>
 
-<div class="prompt output_prompt">Out[32]:</div>
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-32-a15a18dc7d7c&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg"># NBVAL_SKIP</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-red-fg"># try to access an undefined variable:</span>
+<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg"> </span>n
 
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;Peter needs 4 pints&#39;</pre>
+<span class="ansi-red-fg">NameError</span>: name &#39;n&#39; is not defined</pre>
 </div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="s2">&quot;Pi is approximately </span><span class="si">{:f}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>     <span class="c1"># can use old-style format options for float</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[33]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;Pi is approximately 3.141593.&#39;</pre>
-</div>
-
 </div>
 
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="s2">&quot;Pi is approximately </span><span class="si">{:.2f}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>   <span class="c1"># and precision</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[34]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;Pi is approximately 3.14.&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="s2">&quot;Pi is approximately </span><span class="si">{:6.2f}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>  <span class="c1"># and width</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[35]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;Pi is approximately   3.14.&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is a powerful and elegant way of string formatting, which is gradually being used more.</p>
-<h5 id="Further-information">Further information<a class="anchor-link" href="#Further-information">&#182;</a></h5><ul>
-<li><p>Examples <a href="http://docs.python.org/library/string.html#format-examples">http://docs.python.org/library/string.html#format-examples</a></p>
-</li>
-<li><p><a href="http://www.python.org/dev/peps/pep-3101/">Python Enhancement Proposal 3101</a></p>
-</li>
-<li><p><a href="http://docs.python.org/library/stdtypes.html#string-formatting-operations">Python library String Formatting Operations</a></p>
-</li>
-<li><p><a href="http://docs.python.org/tutorial/inputoutput.html#old-string-formatting">Old string formatting</a></p>
-</li>
-<li><p><a href="http://docs.python.org/tutorial/inputoutput.html">Introduction to Fancier Output Formatting, Python tutorial, section 7.1</a></p>
-</li>
-</ul>
+<p>In interactive mode, the last printed expression is assigned to the variable <code>_</code>. This means that when you are using Python as a desk calculator, it is somewhat easier to continue calculations, for example:</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tax</span> <span class="o">=</span> <span class="mf">12.5</span> <span class="o">/</span> <span class="mi">100</span>
+<span class="n">price</span> <span class="o">=</span> <span class="mf">100.50</span>
+<span class="n">price</span> <span class="o">*</span> <span class="n">tax</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">price</span> <span class="o">+</span> <span class="n">_</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Changes-from-Python-2-to-Python-3:-print">Changes from Python 2 to Python 3: <code>print</code><a class="anchor-link" href="#Changes-from-Python-2-to-Python-3:-print">&#182;</a></h3><p>One (maybe the most obvious) change going from Python 2 to Python 3 is that the <code>print</code> command loses its special status. In Python 2, we could print “Hello World” using:</p>
-<div class="highlight"><pre><span></span><span class="k">print</span> <span class="s2">&quot;Hello world&quot;</span>             <span class="c1"># valid in Python 2.x</span>
+<p>This variable should be treated as read-only by the user. Don’t explicitly assign a value to it — you would create an independent local variable with the same name masking the built-in variable with its magic behavior.</p>
+<h3 id="Terminology">Terminology<a class="anchor-link" href="#Terminology">&#182;</a></h3><p>Strictly speaking, the following happens when we write</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.5</span>
 </pre></div>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Effectively, we call the function <code>print</code> with the argument <code>Hello World</code>. All other functions in Python are called such that the argument is enclosed in parentheses, i.e.</p>
+<p>First, Python creates the object <code>0.5</code>. Everything in Python is an object, and so is the floating point number 0.5. This object is stored somewhere in memory. Next, Python <em>binds a name to the object</em>. The name is <code>x</code>, and we often refer casually to <code>x</code> as a variable, an object, or even the value 0.5. However, technically, <code>x</code> is a name that is bound to the object <code>0.5</code>. Another way to say this is that <code>x</code> is a reference to the object.</p>
+<p>While it is often sufficient to think about assigning 0.5 to a variable x, there are situations where we need to remember what actually happens. In particular, when we pass references to objects to functions, we need to realise that the function may operate on the object (rather than a copy of the object). This is discussed in more detail in <a href="03-data-types-structures.html">the next chapter</a>.</p>
+<h2 id="Impossible-equations">Impossible equations<a class="anchor-link" href="#Impossible-equations">&#182;</a></h2><p>In computer programs we often find statements like</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>               <span class="c1"># valid in Python 3.x</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Hello World
-</pre>
 </div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is the new convention <em>required</em> in Python 3 (and <em>allowed</em> for recent version of Python 2.x.)</p>
-<p>Everything we have learned about formatting strings using the percentage operator still works the same way:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
-<span class="s2">&quot;my pi = </span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">a</span>           <span class="c1"># string formatting</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[37]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;my pi = 3.141593&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;my pi = </span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">a</span><span class="p">)</span>    <span class="c1"># valid print in 2.7 and 3.x</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>my pi = 3.141593
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="s2">&quot;Short pi = </span><span class="si">%.2f</span><span class="s2">, longer pi = </span><span class="si">%.12f</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[39]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;Short pi = 3.14, longer pi = 3.141592653590.&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Short pi = </span><span class="si">%.2f</span><span class="s2">, longer pi = </span><span class="si">%.12f</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">))</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Short pi = 3.14, longer pi = 3.141592653590.
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Short pi = </span><span class="si">%.2f</span><span class="s2">, longer pi = </span><span class="si">%.12f</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">))</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Short pi = 3.14, longer pi = 3.141592653590.
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 1. Write a file</span>
-<span class="n">out_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;test.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>          <span class="c1">#&#39;w&#39; stands for Writing</span>
-<span class="n">out_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Writing text to file. This is the first line.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">+</span>\
-               <span class="s2">&quot;And the second line.&quot;</span><span class="p">)</span>
-<span class="n">out_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>                          <span class="c1">#close the file</span>
- 
-<span class="c1"># 2. Read a file</span>
-<span class="n">in_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;test.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>           <span class="c1">#&#39;r&#39; stands for Reading</span>
-<span class="n">text</span> <span class="o">=</span> <span class="n">in_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>                     <span class="c1">#read complete file into </span>
-                                          <span class="c1">#string variable text</span>
-<span class="n">in_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>                           <span class="c1">#close the file</span>
- 
-<span class="c1"># 3. Display data</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Writing text to file. This is the first line.
-And the second line.
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Reading-and-writing-files">Reading and writing files<a class="anchor-link" href="#Reading-and-writing-files">&#182;</a></h2><p>Here is a program that</p>
+<p>If we read this as an equation as we are use to from mathematics,
+<em>x</em> = <em>x</em> + 1
+ we could subtract <em>x</em> on both sides, to find that
+0 = 1.
+ We know this is not true, so something is wrong here.</p>
+<p>The answer is that “equations“ in computer codes are not equations but <em>assignments</em>. They always have to be read in the following way two-step way:</p>
 <ol>
-<li><p>writes some text to a file with name <code>test.txt</code>,</p>
+<li><p>Evaluate the value on the right hand side of the equal sign</p>
 </li>
-<li><p>and then reads the text again and</p>
-</li>
-<li><p>prints it to the screen.</p>
+<li><p>Assign this value to the variable name shown on the left hand side. (In Python: bind the name on the left hand side to the object shown on the right hand side.)</p>
 </li>
 </ol>
-<!-- -->
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The data stored in the file <code>test.txt</code> is:</p>
-
-<pre><code>Writing text to file. This is the first line.
-And the second line.</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In more detail, you have opened a file with the <code>open</code> command, and assigned this open file object to the variable <code>out_file</code>. We have then written data to the file using the <code>out_file.write</code> method. Note that in the example above, we have given a string to the <code>write</code> method. We can, of course, use all the formatting that we have discussed before—see <a href="#Formatted-printing">formatted printing</a> and <a href="#New-style-string-formatting">new style formatting</a>. For example, to write this file with name table <code>table.txt</code> we can use this Python program It is good practice to <code>close()</code> files when we have finished reading and writing. If a Python program is left in a controlled way (i.e. not through a power cut or an unlikely bug deep in the Python language or the operating system) then it will close all open files as soon as the file objects are destroyed. However, closing them actively as soon as possible is better style.</p>
-<h3 id="File-reading-examples">File reading examples<a class="anchor-link" href="#File-reading-examples">&#182;</a></h3><p>We use a file named <code>myfile.txt</code> containing the following 3 lines of text for the examples below:</p>
-
-<pre><code>This is the first line.
-This is the second line.
-This is a third and last line.</code></pre>
+<p>Some computer science literature uses the following notation to express assignments and to avoid the confusion with mathematical equations:</p>
+$$x \leftarrow x + 1$$<p>Let’s apply our two-step rule to the assignment <code>x = x + 1</code> given above:</p>
+<ol>
+<li><p>Evaluate the value on the right hand side of the equal sign: for this we need to know what the current value of <code>x</code> is. Let’s assume <code>x</code> is currently <code>4</code>. In that case, the right hand side <code>x+1</code> evaluates to <code>5</code>.</p>
+</li>
+<li><p>Assign this value (i.e. <code>5</code>) to the variable name shown on the left hand side <code>x</code>.</p>
+</li>
+</ol>
+<p>Let’s confirm with the Python prompt that this is the correct interpretation:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;myfile.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
-<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;This is the first line.</span><span class="se">\n</span><span class="s1">&#39;</span>
-        <span class="s1">&#39;This is the second line.</span><span class="se">\n</span><span class="s1">&#39;</span>
-        <span class="s1">&#39;This is a third and last line.&#39;</span><span class="p">)</span>
-<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">4</span>     
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">x</span>
 </pre></div>
 
 </div>
@@ -13429,113 +13169,39 @@ This is a third and last line.</code></pre>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="fileobject.read()">fileobject.read()<a class="anchor-link" href="#fileobject.read()">&#182;</a></h4><p>The <code>fileobject.read()</code> method reads the whole file, and returns it as one string (including new line characters).</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;myfile.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
-<span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<h3 id="The-+=-notation">The <code>+=</code> notation<a class="anchor-link" href="#The-+=-notation">&#182;</a></h3><p>Because it is a quite a common operation to increase a variable <code>x</code> by some fixed amount <code>c</code>, we can write</p>
+<div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">+=</span> <span class="n">c</span>
+</pre></div>
+<p>instead of</p>
+<div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">c</span>
 </pre></div>
 
 </div>
 </div>
 </div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[44]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;This is the first line.\nThis is the second line.\nThis is a third and last line.&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="fileobject.readlines()">fileobject.readlines()<a class="anchor-link" href="#fileobject.readlines()">&#182;</a></h4><p>The <code>fileobject.readlines()</code> method returns a list of strings, where each element of the list corresponds to one line in the string:</p>
+<p>Our initial example above could thus have been written</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;myfile.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
-<span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[46]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[&#39;This is the first line.\n&#39;,
- &#39;This is the second line.\n&#39;,
- &#39;This is a third and last line.&#39;]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">x</span>
 </pre></div>
 
 </div>
@@ -13543,149 +13209,59 @@ This is a third and last line.</code></pre>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is often used to iterate over the lines, and to do something with each line. For example:</p>
+<p>The same operators are defined for multiplication with a constant (<code>*=</code>), subtraction of a constant (<code>-=</code>) and division by a constant (<code>/=</code>).</p>
+<p>Note that the order of <code>+</code> and <code>=</code> matters:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;myfile.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2"> characters&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">))</span>
-<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>24 characters
-25 characters
-30 characters
-</pre>
 </div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Note that this will read the complete file into a list of strings when the <code>readlines()</code> method is called. This is no problem if we know that the file is small and will fit into the machine’s memory.</p>
-<p>If so, we can also close the file before we process the data, i.e.:</p>
+<p>will increase the variable <code>x</code> by one where as</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;myfile.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
-<span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2"> characters&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=+</span> <span class="mi">1</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>24 characters
-25 characters
-30 characters
-</pre>
 </div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Iterating-over-lines-(file-object)">Iterating over lines (file object)<a class="anchor-link" href="#Iterating-over-lines-(file-object)">&#182;</a></h4><p>There is a neater possibility to read a file line by line which (i) will only read one line at a time (and is thus suitable for large files as well) and (ii) results in more compact code:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;myfile.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2"> characters&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">))</span>
-<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>24 characters
-25 characters
-30 characters
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Here, the file handler <code>f</code> acts as in iterator and will return the next line in every subsequent iteration of the for-loop until the end of the file is reached (and then the for-loop is terminated).</p>
-<h5 id="Further-reading">Further reading<a class="anchor-link" href="#Further-reading">&#182;</a></h5><p><a href="http://docs.python.org/tutorial/inputoutput.html#methods-of-file-objects">Methods of File objects, Tutorial, Section 7.2.1</a></p>
+<p>will assign the value <code>+1</code> to the variable <code>x</code>.</p>
 
 </div>
 </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>10-matlab-to-python</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>04-introspection</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11726,7 +11726,9 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
-}@media print {
+}
+
+@media print {
   div.cell {
     display: block;
     page-break-inside: avoid;
@@ -11747,7 +11749,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -11771,25 +11773,20 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="From-Matlab-to-Python">From Matlab to Python<a class="anchor-link" href="#From-Matlab-to-Python">&#182;</a></h1><h2 id="Important-commands">Important commands<a class="anchor-link" href="#Important-commands">&#182;</a></h2><h3 id="The-for-loop">The for-loop<a class="anchor-link" href="#The-for-loop">&#182;</a></h3><p>Matlab:</p>
-<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="mi">10</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<span class="k">end</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Matlab requires the <code>end</code> key-word at the end of the block belonging to the for-loop.</p>
-<p>Python:</p>
+<h1 id="Introspection">Introspection<a class="anchor-link" href="#Introspection">&#182;</a></h1><p>A Python code can ask and answer questions about itself and the objects it is manipulating.</p>
+<h2 id="dir()">dir()<a class="anchor-link" href="#dir()">&#182;</a></h2><p><span>`dir()`</span> is a built-in function which returns a list of all the names belonging to some namespace.</p>
+<ul>
+<li><p>If no arguments are passed to dir (i.e. <span>`dir()`</span>), it inspects the namespace in which it was called.</p>
+</li>
+<li><p>If <span>`dir`</span> is given an argument (i.e. <span>`dir(<object>)`</span>, then it inspects the namespace of the object which it was passed.</p>
+</li>
+</ul>
+<p>For example:</p>
 
 </div>
 </div>
@@ -11799,8 +11796,9 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NBVAL_IGNORE_OUTPUT</span>
+<span class="n">apples</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Cox&#39;</span><span class="p">,</span> <span class="s1">&#39;Braeburn&#39;</span><span class="p">,</span> <span class="s1">&#39;Jazz&#39;</span><span class="p">]</span>
+<span class="nb">dir</span><span class="p">(</span><span class="n">apples</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -11812,74 +11810,256 @@ div#notebook {
 
 
 <div class="output_area">
+<div class="prompt output_prompt">Out[1]:</div>
 
-<div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;__add__&#39;,
+ &#39;__class__&#39;,
+ &#39;__contains__&#39;,
+ &#39;__delattr__&#39;,
+ &#39;__delitem__&#39;,
+ &#39;__dir__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__eq__&#39;,
+ &#39;__format__&#39;,
+ &#39;__ge__&#39;,
+ &#39;__getattribute__&#39;,
+ &#39;__getitem__&#39;,
+ &#39;__gt__&#39;,
+ &#39;__hash__&#39;,
+ &#39;__iadd__&#39;,
+ &#39;__imul__&#39;,
+ &#39;__init__&#39;,
+ &#39;__init_subclass__&#39;,
+ &#39;__iter__&#39;,
+ &#39;__le__&#39;,
+ &#39;__len__&#39;,
+ &#39;__lt__&#39;,
+ &#39;__mul__&#39;,
+ &#39;__ne__&#39;,
+ &#39;__new__&#39;,
+ &#39;__reduce__&#39;,
+ &#39;__reduce_ex__&#39;,
+ &#39;__repr__&#39;,
+ &#39;__reversed__&#39;,
+ &#39;__rmul__&#39;,
+ &#39;__setattr__&#39;,
+ &#39;__setitem__&#39;,
+ &#39;__sizeof__&#39;,
+ &#39;__str__&#39;,
+ &#39;__subclasshook__&#39;,
+ &#39;append&#39;,
+ &#39;clear&#39;,
+ &#39;copy&#39;,
+ &#39;count&#39;,
+ &#39;extend&#39;,
+ &#39;index&#39;,
+ &#39;insert&#39;,
+ &#39;pop&#39;,
+ &#39;remove&#39;,
+ &#39;reverse&#39;,
+ &#39;sort&#39;]</pre>
 </div>
+
 </div>
 
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Python requires a colon (“:”) at the of the <code>for</code>-line. (This is important and often forgotten when you have programmed in Matlab before.) Python requires the commands to be executed within the for-loop to be indented.</p>
-<h3 id="The-if-then-statement">The if-then statement<a class="anchor-link" href="#The-if-then-statement">&#182;</a></h3><p>Matlab:</p>
-<div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">a</span><span class="o">==</span><span class="mi">0</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;a is zero&#39;</span><span class="p">)</span>
-<span class="k">elseif</span> <span class="n">a</span><span class="o">&lt;</span><span class="mi">0</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;a is negative&#39;</span><span class="p">)</span>
-<span class="k">elseif</span> <span class="n">a</span><span class="o">==</span><span class="mi">42</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;a is 42&#39;</span><span class="p">)</span>
-<span class="k">else</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;a is positive&#39;</span><span class="p">)</span>
-<span class="k">end</span>
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NBVAL_IGNORE_OUTPUT</span>
+<span class="nb">dir</span><span class="p">()</span>
 </pre></div>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[1]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;In&#39;,
+ &#39;Out&#39;,
+ &#39;_&#39;,
+ &#39;__&#39;,
+ &#39;___&#39;,
+ &#39;__builtin__&#39;,
+ &#39;__builtins__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__loader__&#39;,
+ &#39;__name__&#39;,
+ &#39;__package__&#39;,
+ &#39;__spec__&#39;,
+ &#39;_dh&#39;,
+ &#39;_i&#39;,
+ &#39;_i1&#39;,
+ &#39;_ih&#39;,
+ &#39;_ii&#39;,
+ &#39;_iii&#39;,
+ &#39;_oh&#39;,
+ &#39;_sh&#39;,
+ &#39;exit&#39;,
+ &#39;get_ipython&#39;,
+ &#39;quit&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NBVAL_IGNORE_OUTPUT</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Peter&quot;</span>
+<span class="nb">dir</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[3]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;__add__&#39;,
+ &#39;__class__&#39;,
+ &#39;__contains__&#39;,
+ &#39;__delattr__&#39;,
+ &#39;__dir__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__eq__&#39;,
+ &#39;__format__&#39;,
+ &#39;__ge__&#39;,
+ &#39;__getattribute__&#39;,
+ &#39;__getitem__&#39;,
+ &#39;__getnewargs__&#39;,
+ &#39;__gt__&#39;,
+ &#39;__hash__&#39;,
+ &#39;__init__&#39;,
+ &#39;__init_subclass__&#39;,
+ &#39;__iter__&#39;,
+ &#39;__le__&#39;,
+ &#39;__len__&#39;,
+ &#39;__lt__&#39;,
+ &#39;__mod__&#39;,
+ &#39;__mul__&#39;,
+ &#39;__ne__&#39;,
+ &#39;__new__&#39;,
+ &#39;__reduce__&#39;,
+ &#39;__reduce_ex__&#39;,
+ &#39;__repr__&#39;,
+ &#39;__rmod__&#39;,
+ &#39;__rmul__&#39;,
+ &#39;__setattr__&#39;,
+ &#39;__sizeof__&#39;,
+ &#39;__str__&#39;,
+ &#39;__subclasshook__&#39;,
+ &#39;capitalize&#39;,
+ &#39;casefold&#39;,
+ &#39;center&#39;,
+ &#39;count&#39;,
+ &#39;encode&#39;,
+ &#39;endswith&#39;,
+ &#39;expandtabs&#39;,
+ &#39;find&#39;,
+ &#39;format&#39;,
+ &#39;format_map&#39;,
+ &#39;index&#39;,
+ &#39;isalnum&#39;,
+ &#39;isalpha&#39;,
+ &#39;isdecimal&#39;,
+ &#39;isdigit&#39;,
+ &#39;isidentifier&#39;,
+ &#39;islower&#39;,
+ &#39;isnumeric&#39;,
+ &#39;isprintable&#39;,
+ &#39;isspace&#39;,
+ &#39;istitle&#39;,
+ &#39;isupper&#39;,
+ &#39;join&#39;,
+ &#39;ljust&#39;,
+ &#39;lower&#39;,
+ &#39;lstrip&#39;,
+ &#39;maketrans&#39;,
+ &#39;partition&#39;,
+ &#39;replace&#39;,
+ &#39;rfind&#39;,
+ &#39;rindex&#39;,
+ &#39;rjust&#39;,
+ &#39;rpartition&#39;,
+ &#39;rsplit&#39;,
+ &#39;rstrip&#39;,
+ &#39;split&#39;,
+ &#39;splitlines&#39;,
+ &#39;startswith&#39;,
+ &#39;strip&#39;,
+ &#39;swapcase&#39;,
+ &#39;title&#39;,
+ &#39;translate&#39;,
+ &#39;upper&#39;,
+ &#39;zfill&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Matlab requires the <code>end</code> key-word at the very end of the block belonging to the for-loop.</p>
-<p>Python:</p>
+<h3 id="Magic-names">Magic names<a class="anchor-link" href="#Magic-names">&#182;</a></h3><p>You will find many names which both start and end with a double underscore (e.g. <span>`__name__`</span>). These are called magic names. Functions with magic names provide the implementation of particular python functionality.</p>
+<p>For example, the application of the <span>`str`</span> to an object <span>`a`</span>, i.e. <span>`str(a)`</span>, will – internally – result in the method <span>`a.__str__()`</span> being called. This method <span>`__str__`</span> generally needs to return a string. The idea is that the <span>`__str__()`</span> method should be defined for all objects (including those that derive from new classes that a programmer may create) so that all objects (independent of their type or class) can be printed using the <span>`str()`</span> function. The actual conversion of some object <span>`x`</span> to the string is then done via the object specific method <span>`x.__str__()`</span>.</p>
+<p>We can demonstrate this by creating a class <span>`my_int`</span> which inherits from the Python’s integer base class, and overrides the <span>`__str__`</span> method. (It requires more Python knowledge than provided up to this point in the text to be able to understand this example.)</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
-
-<span class="k">if</span> <span class="n">a</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a is zero&#39;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">a</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a is negative&#39;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">a</span><span class="o">==</span><span class="mi">42</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a is 42&#39;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a is positive&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">my_int</span><span class="p">(</span><span class="nb">int</span><span class="p">):</span> 
+    <span class="sd">&quot;&quot;&quot;Inherited from int&quot;&quot;&quot;</span> 
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
+        <span class="sd">&quot;&quot;&quot;Tailored str representation of my int&quot;&quot;&quot;</span> 
+        <span class="k">return</span> <span class="s2">&quot;my_int: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">int</span><span class="o">.</span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+ 
+<span class="n">a</span> <span class="o">=</span> <span class="n">my_int</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>            <span class="c1"># equivalent to b = 4</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a * b = &quot;</span><span class="p">,</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Type a = &quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="s2">&quot;str(a) = &quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Type b = &quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="s2">&quot;str(b) = &quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -11891,12 +12071,12 @@ div#notebook {
 
 
 <div class="output_area">
-
 <div class="prompt"></div>
 
-
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>a is negative
+<pre>a * b =  12
+Type a =  &lt;class &#39;__main__.my_int&#39;&gt; str(a) =  my_int: 3
+Type b =  &lt;class &#39;int&#39;&gt; str(b) =  4
 </pre>
 </div>
 </div>
@@ -11905,17 +12085,1093 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Python requires a colon (“:”) after every condition (i.e. at the of the lines starting with <code>if</code>, <code>elif</code>, <code>else</code>. Python requires the commands to be executed within each part of the if-then-else statement to be indented.</p>
-<h3 id="Indexing">Indexing<a class="anchor-link" href="#Indexing">&#182;</a></h3><p>Matlab’s indexing of matrices and vectors starts a 1 (similar to Fortran), whereas Python’s indexing starts at 0 (similar to C).</p>
-<h3 id="Matrices">Matrices<a class="anchor-link" href="#Matrices">&#182;</a></h3><p>In Matlab, every object is a matrix. In Python, there is a specialised extension library called <code>numpy</code> (see Sec. [cha:numer-pyth-numpy]) which provides the <code>array</code> object which in turns provides the corresponding functionality. Similar to Matlab, the <code>numpy</code> object is actually based on binary libraries and execution there very fast.</p>
-<p>There is a dedicated introduction to numpy for Matlab users available at <a href="https://docs.scipy.org/doc/numpy-dev/user/numpy-for-matlab-users.html">https://docs.scipy.org/doc/numpy-dev/user/numpy-for-matlab-users.html</a>.</p>
+<h4 id="Further-Reading">Further Reading<a class="anchor-link" href="#Further-Reading">&#182;</a></h4><p>See →<a href="http://docs.python.org/reference/datamodel.html">Python documentation, Data Model</a></p>
+<h2 id="type">type<a class="anchor-link" href="#type">&#182;</a></h2><p>The <span>`type(<object>)`</span> command returns the type of an object:</p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[5]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>int</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[6]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>float</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;Python&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[7]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>str</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">math</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[8]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>module</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[9]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>builtin_function_or_method</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="isinstance">isinstance<a class="anchor-link" href="#isinstance">&#182;</a></h2><p><span>`isinstance(<object>, <typespec>)`</span> returns True if the given object is an instance of the given type, or any of its superclasses. Use <span>`help(isinstance`</span>) for the full syntax.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">isinstance</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="nb">int</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[10]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">isinstance</span><span class="p">(</span><span class="mf">2.</span><span class="p">,</span><span class="nb">int</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[11]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="nb">int</span><span class="p">)</span>    <span class="c1"># a is an instance of my_int</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[12]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[13]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>__main__.my_int</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="help">help<a class="anchor-link" href="#help">&#182;</a></h2><ul>
+<li><p>The <span>`help(<object>)`</span> function will report the docstring (magic attritube with name <span>`__doc__`</span>) of the object that it is given, sometimes complemented with additional information. In the case of functions, <span>`help`</span> will also show the list of arguments that the function accepts (but it cannot provide the return value).</p>
+</li>
+<li><p><span>`help()`</span> starts an interactive help environment.</p>
+</li>
+<li><p>It is common to use the <span>`help`</span> command a lot to remind oneself of the syntax and semantic of commands.</p>
+</li>
+</ul>
+<!-- -->
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Help on built-in function isinstance in module builtins:
+
+isinstance(obj, class_or_tuple, /)
+    Return whether an object is an instance of a class or of a subclass thereof.
+    
+    A tuple, as in ``isinstance(x, (A, B, ...))``, may be given as the target to
+    check against. This is equivalent to ``isinstance(x, A) or isinstance(x, B)
+    or ...`` etc.
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NBVAL_IGNORE_OUTPUT</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="n">help</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Help on built-in function sin in module math:
+
+sin(...)
+    sin(x)
+    
+    Return the sine of x (measured in radians).
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NBVAL_IGNORE_OUTPUT</span>
+<span class="n">help</span><span class="p">(</span><span class="n">math</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Help on module math:
+
+NAME
+    math
+
+MODULE REFERENCE
+    https://docs.python.org/3.6/library/math
+    
+    The following documentation is automatically generated from the Python
+    source files.  It may be incomplete, incorrect or include features that
+    are considered implementation detail and may vary between Python
+    implementations.  When in doubt, consult the module reference at the
+    location listed above.
+
+DESCRIPTION
+    This module is always available.  It provides access to the
+    mathematical functions defined by the C standard.
+
+FUNCTIONS
+    acos(...)
+        acos(x)
+        
+        Return the arc cosine (measured in radians) of x.
+    
+    acosh(...)
+        acosh(x)
+        
+        Return the inverse hyperbolic cosine of x.
+    
+    asin(...)
+        asin(x)
+        
+        Return the arc sine (measured in radians) of x.
+    
+    asinh(...)
+        asinh(x)
+        
+        Return the inverse hyperbolic sine of x.
+    
+    atan(...)
+        atan(x)
+        
+        Return the arc tangent (measured in radians) of x.
+    
+    atan2(...)
+        atan2(y, x)
+        
+        Return the arc tangent (measured in radians) of y/x.
+        Unlike atan(y/x), the signs of both x and y are considered.
+    
+    atanh(...)
+        atanh(x)
+        
+        Return the inverse hyperbolic tangent of x.
+    
+    ceil(...)
+        ceil(x)
+        
+        Return the ceiling of x as an Integral.
+        This is the smallest integer &gt;= x.
+    
+    copysign(...)
+        copysign(x, y)
+        
+        Return a float with the magnitude (absolute value) of x but the sign 
+        of y. On platforms that support signed zeros, copysign(1.0, -0.0) 
+        returns -1.0.
+    
+    cos(...)
+        cos(x)
+        
+        Return the cosine of x (measured in radians).
+    
+    cosh(...)
+        cosh(x)
+        
+        Return the hyperbolic cosine of x.
+    
+    degrees(...)
+        degrees(x)
+        
+        Convert angle x from radians to degrees.
+    
+    erf(...)
+        erf(x)
+        
+        Error function at x.
+    
+    erfc(...)
+        erfc(x)
+        
+        Complementary error function at x.
+    
+    exp(...)
+        exp(x)
+        
+        Return e raised to the power of x.
+    
+    expm1(...)
+        expm1(x)
+        
+        Return exp(x)-1.
+        This function avoids the loss of precision involved in the direct evaluation of exp(x)-1 for small x.
+    
+    fabs(...)
+        fabs(x)
+        
+        Return the absolute value of the float x.
+    
+    factorial(...)
+        factorial(x) -&gt; Integral
+        
+        Find x!. Raise a ValueError if x is negative or non-integral.
+    
+    floor(...)
+        floor(x)
+        
+        Return the floor of x as an Integral.
+        This is the largest integer &lt;= x.
+    
+    fmod(...)
+        fmod(x, y)
+        
+        Return fmod(x, y), according to platform C.  x % y may differ.
+    
+    frexp(...)
+        frexp(x)
+        
+        Return the mantissa and exponent of x, as pair (m, e).
+        m is a float and e is an int, such that x = m * 2.**e.
+        If x is 0, m and e are both 0.  Else 0.5 &lt;= abs(m) &lt; 1.0.
+    
+    fsum(...)
+        fsum(iterable)
+        
+        Return an accurate floating point sum of values in the iterable.
+        Assumes IEEE-754 floating point arithmetic.
+    
+    gamma(...)
+        gamma(x)
+        
+        Gamma function at x.
+    
+    gcd(...)
+        gcd(x, y) -&gt; int
+        greatest common divisor of x and y
+    
+    hypot(...)
+        hypot(x, y)
+        
+        Return the Euclidean distance, sqrt(x*x + y*y).
+    
+    isclose(...)
+        isclose(a, b, *, rel_tol=1e-09, abs_tol=0.0) -&gt; bool
+        
+        Determine whether two floating point numbers are close in value.
+        
+           rel_tol
+               maximum difference for being considered &#34;close&#34;, relative to the
+               magnitude of the input values
+            abs_tol
+               maximum difference for being considered &#34;close&#34;, regardless of the
+               magnitude of the input values
+        
+        Return True if a is close in value to b, and False otherwise.
+        
+        For the values to be considered close, the difference between them
+        must be smaller than at least one of the tolerances.
+        
+        -inf, inf and NaN behave similarly to the IEEE 754 Standard.  That
+        is, NaN is not close to anything, even itself.  inf and -inf are
+        only close to themselves.
+    
+    isfinite(...)
+        isfinite(x) -&gt; bool
+        
+        Return True if x is neither an infinity nor a NaN, and False otherwise.
+    
+    isinf(...)
+        isinf(x) -&gt; bool
+        
+        Return True if x is a positive or negative infinity, and False otherwise.
+    
+    isnan(...)
+        isnan(x) -&gt; bool
+        
+        Return True if x is a NaN (not a number), and False otherwise.
+    
+    ldexp(...)
+        ldexp(x, i)
+        
+        Return x * (2**i).
+    
+    lgamma(...)
+        lgamma(x)
+        
+        Natural logarithm of absolute value of Gamma function at x.
+    
+    log(...)
+        log(x[, base])
+        
+        Return the logarithm of x to the given base.
+        If the base not specified, returns the natural logarithm (base e) of x.
+    
+    log10(...)
+        log10(x)
+        
+        Return the base 10 logarithm of x.
+    
+    log1p(...)
+        log1p(x)
+        
+        Return the natural logarithm of 1+x (base e).
+        The result is computed in a way which is accurate for x near zero.
+    
+    log2(...)
+        log2(x)
+        
+        Return the base 2 logarithm of x.
+    
+    modf(...)
+        modf(x)
+        
+        Return the fractional and integer parts of x.  Both results carry the sign
+        of x and are floats.
+    
+    pow(...)
+        pow(x, y)
+        
+        Return x**y (x to the power of y).
+    
+    radians(...)
+        radians(x)
+        
+        Convert angle x from degrees to radians.
+    
+    sin(...)
+        sin(x)
+        
+        Return the sine of x (measured in radians).
+    
+    sinh(...)
+        sinh(x)
+        
+        Return the hyperbolic sine of x.
+    
+    sqrt(...)
+        sqrt(x)
+        
+        Return the square root of x.
+    
+    tan(...)
+        tan(x)
+        
+        Return the tangent of x (measured in radians).
+    
+    tanh(...)
+        tanh(x)
+        
+        Return the hyperbolic tangent of x.
+    
+    trunc(...)
+        trunc(x:Real) -&gt; Integral
+        
+        Truncates x to the nearest Integral toward 0. Uses the __trunc__ magic method.
+
+DATA
+    e = 2.718281828459045
+    inf = inf
+    nan = nan
+    pi = 3.141592653589793
+    tau = 6.283185307179586
+
+FILE
+    /Users/fangohr/anaconda3/lib/python3.6/lib-dynload/math.cpython-36m-darwin.so
+
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <span>`help`</span> function needs to be given the name of an object (which must exist in the current name space). For example py<span>help(math.sqrt)</span> will not work if the <span>`math`</span> module has not been imported before</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NBVAL_IGNORE_OUTPUT</span>
+<span class="n">help</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Help on built-in function sqrt in module math:
+
+sqrt(...)
+    sqrt(x)
+    
+    Return the square root of x.
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NBVAL_IGNORE_OUTPUT</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="n">help</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Help on built-in function sqrt in module math:
+
+sqrt(...)
+    sqrt(x)
+    
+    Return the square root of x.
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Instead of importing the module, we could also have given the <em>string</em> of <span>`math.sqrt`</span> to the help function, i.e.:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NBVAL_IGNORE_OUTPUT</span>
+<span class="n">help</span><span class="p">(</span><span class="s1">&#39;math.sqrt&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Help on built-in function sqrt in math:
+
+math.sqrt = sqrt(...)
+    sqrt(x)
+    
+    Return the square root of x.
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span>`help`</span> is a function which gives information about the object which is passed as its argument. Most things in Python (classes, functions, modules, etc.) are objects, and therefor can be passed to help. There are, however, some things on which you might like to ask for help, which are not existing Python objects. In such cases it is often possible to pass a string containing the name of the thing or concept to help, for example</p>
+<ul>
+<li><p><span>`help(’modules’)`</span> will generate a list of all modules which can be imported into the current interpreter. Note that help(modules) (note absence of quotes) will result in a NameError (unless you are unlucky enough to have a variable called modules floating around, in which case you will get help on whatever that variable happens to refer to.)</p>
+</li>
+<li><p><span>`help(’some_module’)`</span>, where some_module is a module which has not been imported yet (and therefor isn’t an object yet), will give you that module’s help information.</p>
+</li>
+<li><p><span>`help(’some_keyword’)`</span>: For example <span>`and`</span>, <span>`if`</span> or <span>`print`</span> (<em>i.e.</em> <span>`help(’and’)`</span>, <span>`help(’if’)`</span> and <span>`help(’print’)`</span>). These are special words recognized by Python: they are not objects and thus cannot be passed as arguments to help. Passing the name of the keyword as a string to help works, but only if you have Python’s HTML documentation installed, and the interpreter has been made aware of its location by setting the environment variable PYTHONDOCS.</p>
+</li>
+</ul>
+<h2 id="Docstrings">Docstrings<a class="anchor-link" href="#Docstrings">&#182;</a></h2><p>The command <span>`help(<object>)`</span> accesses the documentation strings of objects.</p>
+<p>Any literal string apparing as the first item in the definition of a class, function, method or module, is taken to be its <em>docstring</em>.</p>
+<p><span>`help`</span> includes the docstring in the information it displays about the object.</p>
+<p>In addition to the docstring it may display some other information, for example, in the case of functions, it displays the function’s signature.</p>
+<p>The docstring is stored in the object’s <span>`__doc__`</span> attribute.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NBVAL_IGNORE_OUTPUT</span>
+<span class="n">help</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Help on built-in function sin in module math:
+
+sin(...)
+    sin(x)
+    
+    Return the sine of x (measured in radians).
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NBVAL_IGNORE_OUTPUT</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>sin(x)
+
+Return the sine of x (measured in radians).
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For user-defined functions, classes, types, modules, …), one should always provide a docstring.</p>
+<p>Documenting a user-provided function:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">power2and3</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns the tuple (x**2, x**3)&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="p">,</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span>
+
+<span class="n">power2and3</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[22]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(4, 8)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">power2and3</span><span class="p">(</span><span class="mf">4.5</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[23]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(20.25, 91.125)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">power2and3</span><span class="p">(</span><span class="mi">0</span><span class="o">+</span><span class="mi">1</span><span class="n">j</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[24]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>((-1+0j), (-0-1j))</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">power2and3</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Help on function power2and3 in module __main__:
+
+power2and3(x)
+    Returns the tuple (x**2, x**3)
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">power2and3</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Returns the tuple (x**2, x**3)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     </div>
   </div>

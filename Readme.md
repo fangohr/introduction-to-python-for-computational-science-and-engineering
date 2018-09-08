@@ -1,5 +1,7 @@
 [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/master?filepath=index.ipynb)
 [![Build Status](https://travis-ci.org/fangohr/introduction-to-python-for-computational-science-and-engineering.svg?branch=master)](https://travis-ci.org/fangohr/introduction-to-python-for-computational-science-and-engineering)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1411868.svg)](https://doi.org/10.5281/zenodo.1411868)
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
 # Introduction to Python for Computational Science and Engineering
 
@@ -65,7 +67,7 @@ further maintenance and extensions of the materials.
 Please use this citation:
 
 * Hans Fangohr, *Python for Computational Science and Engineering*,
-  2018, [github.com/fangohr/introduction-to-python-for-computational-science-and-engineering](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/blob/master/Readme.md)
+  2018, DOI: [10.5281/zenodo.1411868](https://doi.org/10.5281/zenodo.1411868), [github.com/fangohr/introduction-to-python-for-computational-science-and-engineering](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/blob/master/Readme.md)
 
 # License
 

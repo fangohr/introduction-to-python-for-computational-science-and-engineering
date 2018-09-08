@@ -28,7 +28,7 @@ is
 
 # Translation
 
-The book is available in Portuguese from https://github.com/gcpeixoto/lecture-ipynb ([pdf](https://github.com/gcpeixoto/lecture-ipynb/raw/master/pdf/Introducao-Python-para-Ciencias-Computacionais-Engenharia.pdf))
+The book is available in Portuguese from https://github.com/gcpeixoto/lecture-ipynb/blob/master/README.md ([pdf](https://github.com/gcpeixoto/lecture-ipynb/raw/master/pdf/Introducao-Python-para-Ciencias-Computacionais-Engenharia.pdf))
 
 # Acknowledgments
 
@@ -50,7 +50,7 @@ fangohr@soton.ac.uk).
 # Favour request and citation
 
 If you are using the book (be it as a teacher in your lecture course,
-to support your work, or as student to support your learning), please
+as a student to support your learning, or in any other role), please
 send a short message to hans.fangohr@xfel.eu . Ideally, this would
 contain at which university/institution/company you are and how you
 use the book (in one sentence). This kind of data is useful to support

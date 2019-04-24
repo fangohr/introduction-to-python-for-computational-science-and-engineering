@@ -1,10 +1,10 @@
-matplotlib
-numpy
-pandas
-scipy
-sympy
-notebook
-pytest
 bookbook
+matplotlib
+notebook
 nbval
 seaborn
+numpy
+pytest
+scipy
+seaborn
+sympy

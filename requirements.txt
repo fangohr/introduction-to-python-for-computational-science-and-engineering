@@ -1,8 +1,9 @@
-numpy
+bookbook
 matplotlib
+notebook
+nbval
+numpy
+pytest
 scipy
 sympy
-notebook
-pytest
-bookbook
-nbval
+nnn

@@ -2,9 +2,9 @@ bookbook
 matplotlib
 notebook
 nbval
-seaborn
 numpy
+pandas
 pytest
-scipy
 seaborn
+scipy
 sympy

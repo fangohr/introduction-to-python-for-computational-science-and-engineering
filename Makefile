@@ -6,6 +6,7 @@ all:
 docker-all:
 	make docker-build
 	make docker-check-py35
+	make docker-check-pandas
 	make docker-html
 	make docker-pdf
 	make docker-nbval
@@ -33,6 +34,11 @@ check-py35:
 	@python3 -c "import sys; assert sys.version_info[0] >= 3"
 	@python3 -c "import sys; assert sys.version_info[1] >= 5"
 	@echo "        (ok)"
+
+check-pandas:
+	@echo "which python"
+	@which python3
+	@python3 -c "import pandas; print(pandas.__version__)"
 
 version:
 	echo "Last compiled: `date`" > version.txt
@@ -66,6 +72,9 @@ docker-nbval:
 
 docker-check-py35:
 	docker run -v `pwd`:/io python4compscience make check-py35
+
+docker-check-pandas:
+	docker run -v `pwd`:/io python4compscience make check-pandas
 
 
 # to update the title page:

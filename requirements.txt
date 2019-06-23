@@ -1,11 +1,94 @@
-nbconvert<=5.4.0
-bookbook
-matplotlib
-notebook
-nbval
-numpy
-pandas
-pytest
-seaborn
-scipy
-sympy
+# The required packages are listed here:
+
+#nbconvert
+#nbformat
+#bookbook
+#matplotlib
+#notebook
+#nbval
+#numpy
+#pandas
+#pytest
+#seaborn
+#scipy
+#sympy
+
+# However,
+#
+# at the moment (June 2019), there is a problem with generating
+# the pdf file
+# see https://travis-ci.org/fangohr/introduction-to-python-for-computational-science-and-engineering/builds/536371629#L3274
+#
+# This has probably to do with work in nbconvert:
+#
+# https://github.com/jupyter/nbconvert/pull/947
+# https://github.com/jupyter/nbconvert/pull/1053
+#
+#
+# As a quick fix, I went back to the set of versions that worked okay
+# in a previous build, and required exactly those as before:
+
+
+
+MarkupSafe==1.0
+Send2Trash==1.5.0
+atomicwrites==1.2.1
+attrs==18.2.0
+backcall==0.1.0
+bleach==2.1.4
+bookbook==0.2
+coverage==4.5.1
+cycler==0.10.0
+decorator==4.3.0
+defusedxml==0.5.0
+entrypoints==0.2.3
+html5lib==1.0.1
+ipykernel==4.9.0
+ipython==6.5.0
+ipython-genutils==0.2.0
+jedi==0.12.1
+jinja2==2.10
+jsonschema==2.6.0
+jupyter-client==5.2.3
+jupyter-core==4.4.0
+kiwisolver==1.0.1
+matplotlib==2.2.3
+mistune==0.8.3
+more-itertools==4.3.0
+mpmath==1.0.0
+nbconvert==5.4.0
+nbformat==4.4.0
+nbval==0.9.1
+notebook==5.6.0
+numpy==1.15.1
+pandocfilters==1.4.2
+parso==0.3.1
+pexpect==4.6.0
+pickleshare==0.7.4
+pluggy==0.7.1
+prometheus-client==0.3.1
+prompt-toolkit==1.0.15
+ptyprocess==0.6.0
+py==1.6.0
+pygments==2.2.0
+pyparsing==2.2.0
+pytest==3.8.0
+python-dateutil==2.7.3
+pytz==2018.5
+pyzmq==17.1.2
+scipy==1.1.0
+simplegeneric==0.8.1
+sympy==1.2
+terminado==0.8.1
+testpath==0.3.1
+tornado==5.1
+traitlets==4.3.2
+wcwidth==0.1.7
+webencodings==0.5.1
+
+# This works.
+#
+# For now. Should test if we can run from the master of each
+# of the packages again soon (in a new merge request).
+#
+# Thanks to Thomas Kluyver for pointing me to the nbconvert issues.

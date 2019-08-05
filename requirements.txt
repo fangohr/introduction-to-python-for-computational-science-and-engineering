@@ -93,3 +93,17 @@ pandas
 # of the packages again soon (in a new merge request).
 #
 # Thanks to Thomas Kluyver for pointing me to the nbconvert issues.
+
+
+# Addition 5 August 2019:
+# When we can go back to the most current libraries, we will have to re-run
+# (at least) these notebooks:
+#
+# 	modified:   01-introduction.ipynb
+# 	modified:   12-symbolic-computation.ipynb
+# 	modified:   14-numpy.ipynb
+# 	modified:   15-visualising-data.ipynb
+# 	modified:   16-scipy.ipynb
+#
+# They had to be re-run to make the nbval tests pass with the fixed library
+# versions.

@@ -1,8 +1,8 @@
-Last compiled: Sat Sep  8 14:15:03 CEST 2018
+Last compiled: Mon Aug  5 15:12:40 UTC 2019
  
 Last commit:
-commit e95552580ca865aa975d8f473a5993618f234fa1
-Author: Hans Fangohr escape <hans.fangohr@xfel.eu>
-Date:   Sat Sep 8 14:04:34 2018 +0200
+commit a7cdf1a2b0d0f09a6e84764971979e5fb0936ae4
+Author: Hans Fangohr <hans.fangohr@xfel.eu>
+Date:   Mon Aug 5 17:11:03 2019 +0200
 
-    fix name (must be docs for github pages)
+    record what changes are required when moving to most recent libs again.

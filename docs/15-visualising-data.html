@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>15-visualising-data</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+
+<title>15-visualising-data</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
 
 <style type="text/css">
     /*!
@@ -199,7 +204,6 @@ th {
   *:before,
   *:after {
     background: transparent !important;
-    color: #000 !important;
     box-shadow: none !important;
     text-shadow: none !important;
   }
@@ -6744,15 +6748,15 @@ button.close {
 *
 */
 /*!
- *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
 /* FONT PATH
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?v=4.2.0');
-  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'), url('../components/font-awesome/fonts/fontawesome-webfont.woff?v=4.2.0') format('woff'), url('../components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.2.0') format('truetype'), url('../components/font-awesome/fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
+  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?v=4.7.0');
+  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../components/font-awesome/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../components/font-awesome/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -6809,6 +6813,19 @@ button.close {
   border: solid 0.08em #eee;
   border-radius: .1em;
 }
+.fa-pull-left {
+  float: left;
+}
+.fa-pull-right {
+  float: right;
+}
+.fa.fa-pull-left {
+  margin-right: .3em;
+}
+.fa.fa-pull-right {
+  margin-left: .3em;
+}
+/* Deprecated as of 4.4.0 */
 .pull-right {
   float: right;
 }
@@ -6824,6 +6841,10 @@ button.close {
 .fa-spin {
   -webkit-animation: fa-spin 2s infinite linear;
   animation: fa-spin 2s infinite linear;
+}
+.fa-pulse {
+  -webkit-animation: fa-spin 1s infinite steps(8);
+  animation: fa-spin 1s infinite steps(8);
 }
 @-webkit-keyframes fa-spin {
   0% {
@@ -6846,31 +6867,31 @@ button.close {
   }
 }
 .fa-rotate-90 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 .fa-rotate-180 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 .fa-rotate-270 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
   -webkit-transform: rotate(270deg);
   -ms-transform: rotate(270deg);
   transform: rotate(270deg);
 }
 .fa-flip-horizontal {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
   -webkit-transform: scale(-1, 1);
   -ms-transform: scale(-1, 1);
   transform: scale(-1, 1);
 }
 .fa-flip-vertical {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
   -webkit-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
   transform: scale(1, -1);
@@ -7355,6 +7376,7 @@ button.close {
 .fa-twitter:before {
   content: "\f099";
 }
+.fa-facebook-f:before,
 .fa-facebook:before {
   content: "\f09a";
 }
@@ -7367,6 +7389,7 @@ button.close {
 .fa-credit-card:before {
   content: "\f09d";
 }
+.fa-feed:before,
 .fa-rss:before {
   content: "\f09e";
 }
@@ -8004,7 +8027,8 @@ button.close {
 .fa-male:before {
   content: "\f183";
 }
-.fa-gittip:before {
+.fa-gittip:before,
+.fa-gratipay:before {
   content: "\f184";
 }
 .fa-sun-o:before {
@@ -8108,7 +8132,7 @@ button.close {
 .fa-digg:before {
   content: "\f1a6";
 }
-.fa-pied-piper:before {
+.fa-pied-piper-pp:before {
   content: "\f1a7";
 }
 .fa-pied-piper-alt:before {
@@ -8234,6 +8258,7 @@ button.close {
   content: "\f1ce";
 }
 .fa-ra:before,
+.fa-resistance:before,
 .fa-rebel:before {
   content: "\f1d0";
 }
@@ -8247,6 +8272,8 @@ button.close {
 .fa-git:before {
   content: "\f1d3";
 }
+.fa-y-combinator-square:before,
+.fa-yc-square:before,
 .fa-hacker-news:before {
   content: "\f1d4";
 }
@@ -8414,6 +8441,657 @@ button.close {
 }
 .fa-meanpath:before {
   content: "\f20c";
+}
+.fa-buysellads:before {
+  content: "\f20d";
+}
+.fa-connectdevelop:before {
+  content: "\f20e";
+}
+.fa-dashcube:before {
+  content: "\f210";
+}
+.fa-forumbee:before {
+  content: "\f211";
+}
+.fa-leanpub:before {
+  content: "\f212";
+}
+.fa-sellsy:before {
+  content: "\f213";
+}
+.fa-shirtsinbulk:before {
+  content: "\f214";
+}
+.fa-simplybuilt:before {
+  content: "\f215";
+}
+.fa-skyatlas:before {
+  content: "\f216";
+}
+.fa-cart-plus:before {
+  content: "\f217";
+}
+.fa-cart-arrow-down:before {
+  content: "\f218";
+}
+.fa-diamond:before {
+  content: "\f219";
+}
+.fa-ship:before {
+  content: "\f21a";
+}
+.fa-user-secret:before {
+  content: "\f21b";
+}
+.fa-motorcycle:before {
+  content: "\f21c";
+}
+.fa-street-view:before {
+  content: "\f21d";
+}
+.fa-heartbeat:before {
+  content: "\f21e";
+}
+.fa-venus:before {
+  content: "\f221";
+}
+.fa-mars:before {
+  content: "\f222";
+}
+.fa-mercury:before {
+  content: "\f223";
+}
+.fa-intersex:before,
+.fa-transgender:before {
+  content: "\f224";
+}
+.fa-transgender-alt:before {
+  content: "\f225";
+}
+.fa-venus-double:before {
+  content: "\f226";
+}
+.fa-mars-double:before {
+  content: "\f227";
+}
+.fa-venus-mars:before {
+  content: "\f228";
+}
+.fa-mars-stroke:before {
+  content: "\f229";
+}
+.fa-mars-stroke-v:before {
+  content: "\f22a";
+}
+.fa-mars-stroke-h:before {
+  content: "\f22b";
+}
+.fa-neuter:before {
+  content: "\f22c";
+}
+.fa-genderless:before {
+  content: "\f22d";
+}
+.fa-facebook-official:before {
+  content: "\f230";
+}
+.fa-pinterest-p:before {
+  content: "\f231";
+}
+.fa-whatsapp:before {
+  content: "\f232";
+}
+.fa-server:before {
+  content: "\f233";
+}
+.fa-user-plus:before {
+  content: "\f234";
+}
+.fa-user-times:before {
+  content: "\f235";
+}
+.fa-hotel:before,
+.fa-bed:before {
+  content: "\f236";
+}
+.fa-viacoin:before {
+  content: "\f237";
+}
+.fa-train:before {
+  content: "\f238";
+}
+.fa-subway:before {
+  content: "\f239";
+}
+.fa-medium:before {
+  content: "\f23a";
+}
+.fa-yc:before,
+.fa-y-combinator:before {
+  content: "\f23b";
+}
+.fa-optin-monster:before {
+  content: "\f23c";
+}
+.fa-opencart:before {
+  content: "\f23d";
+}
+.fa-expeditedssl:before {
+  content: "\f23e";
+}
+.fa-battery-4:before,
+.fa-battery:before,
+.fa-battery-full:before {
+  content: "\f240";
+}
+.fa-battery-3:before,
+.fa-battery-three-quarters:before {
+  content: "\f241";
+}
+.fa-battery-2:before,
+.fa-battery-half:before {
+  content: "\f242";
+}
+.fa-battery-1:before,
+.fa-battery-quarter:before {
+  content: "\f243";
+}
+.fa-battery-0:before,
+.fa-battery-empty:before {
+  content: "\f244";
+}
+.fa-mouse-pointer:before {
+  content: "\f245";
+}
+.fa-i-cursor:before {
+  content: "\f246";
+}
+.fa-object-group:before {
+  content: "\f247";
+}
+.fa-object-ungroup:before {
+  content: "\f248";
+}
+.fa-sticky-note:before {
+  content: "\f249";
+}
+.fa-sticky-note-o:before {
+  content: "\f24a";
+}
+.fa-cc-jcb:before {
+  content: "\f24b";
+}
+.fa-cc-diners-club:before {
+  content: "\f24c";
+}
+.fa-clone:before {
+  content: "\f24d";
+}
+.fa-balance-scale:before {
+  content: "\f24e";
+}
+.fa-hourglass-o:before {
+  content: "\f250";
+}
+.fa-hourglass-1:before,
+.fa-hourglass-start:before {
+  content: "\f251";
+}
+.fa-hourglass-2:before,
+.fa-hourglass-half:before {
+  content: "\f252";
+}
+.fa-hourglass-3:before,
+.fa-hourglass-end:before {
+  content: "\f253";
+}
+.fa-hourglass:before {
+  content: "\f254";
+}
+.fa-hand-grab-o:before,
+.fa-hand-rock-o:before {
+  content: "\f255";
+}
+.fa-hand-stop-o:before,
+.fa-hand-paper-o:before {
+  content: "\f256";
+}
+.fa-hand-scissors-o:before {
+  content: "\f257";
+}
+.fa-hand-lizard-o:before {
+  content: "\f258";
+}
+.fa-hand-spock-o:before {
+  content: "\f259";
+}
+.fa-hand-pointer-o:before {
+  content: "\f25a";
+}
+.fa-hand-peace-o:before {
+  content: "\f25b";
+}
+.fa-trademark:before {
+  content: "\f25c";
+}
+.fa-registered:before {
+  content: "\f25d";
+}
+.fa-creative-commons:before {
+  content: "\f25e";
+}
+.fa-gg:before {
+  content: "\f260";
+}
+.fa-gg-circle:before {
+  content: "\f261";
+}
+.fa-tripadvisor:before {
+  content: "\f262";
+}
+.fa-odnoklassniki:before {
+  content: "\f263";
+}
+.fa-odnoklassniki-square:before {
+  content: "\f264";
+}
+.fa-get-pocket:before {
+  content: "\f265";
+}
+.fa-wikipedia-w:before {
+  content: "\f266";
+}
+.fa-safari:before {
+  content: "\f267";
+}
+.fa-chrome:before {
+  content: "\f268";
+}
+.fa-firefox:before {
+  content: "\f269";
+}
+.fa-opera:before {
+  content: "\f26a";
+}
+.fa-internet-explorer:before {
+  content: "\f26b";
+}
+.fa-tv:before,
+.fa-television:before {
+  content: "\f26c";
+}
+.fa-contao:before {
+  content: "\f26d";
+}
+.fa-500px:before {
+  content: "\f26e";
+}
+.fa-amazon:before {
+  content: "\f270";
+}
+.fa-calendar-plus-o:before {
+  content: "\f271";
+}
+.fa-calendar-minus-o:before {
+  content: "\f272";
+}
+.fa-calendar-times-o:before {
+  content: "\f273";
+}
+.fa-calendar-check-o:before {
+  content: "\f274";
+}
+.fa-industry:before {
+  content: "\f275";
+}
+.fa-map-pin:before {
+  content: "\f276";
+}
+.fa-map-signs:before {
+  content: "\f277";
+}
+.fa-map-o:before {
+  content: "\f278";
+}
+.fa-map:before {
+  content: "\f279";
+}
+.fa-commenting:before {
+  content: "\f27a";
+}
+.fa-commenting-o:before {
+  content: "\f27b";
+}
+.fa-houzz:before {
+  content: "\f27c";
+}
+.fa-vimeo:before {
+  content: "\f27d";
+}
+.fa-black-tie:before {
+  content: "\f27e";
+}
+.fa-fonticons:before {
+  content: "\f280";
+}
+.fa-reddit-alien:before {
+  content: "\f281";
+}
+.fa-edge:before {
+  content: "\f282";
+}
+.fa-credit-card-alt:before {
+  content: "\f283";
+}
+.fa-codiepie:before {
+  content: "\f284";
+}
+.fa-modx:before {
+  content: "\f285";
+}
+.fa-fort-awesome:before {
+  content: "\f286";
+}
+.fa-usb:before {
+  content: "\f287";
+}
+.fa-product-hunt:before {
+  content: "\f288";
+}
+.fa-mixcloud:before {
+  content: "\f289";
+}
+.fa-scribd:before {
+  content: "\f28a";
+}
+.fa-pause-circle:before {
+  content: "\f28b";
+}
+.fa-pause-circle-o:before {
+  content: "\f28c";
+}
+.fa-stop-circle:before {
+  content: "\f28d";
+}
+.fa-stop-circle-o:before {
+  content: "\f28e";
+}
+.fa-shopping-bag:before {
+  content: "\f290";
+}
+.fa-shopping-basket:before {
+  content: "\f291";
+}
+.fa-hashtag:before {
+  content: "\f292";
+}
+.fa-bluetooth:before {
+  content: "\f293";
+}
+.fa-bluetooth-b:before {
+  content: "\f294";
+}
+.fa-percent:before {
+  content: "\f295";
+}
+.fa-gitlab:before {
+  content: "\f296";
+}
+.fa-wpbeginner:before {
+  content: "\f297";
+}
+.fa-wpforms:before {
+  content: "\f298";
+}
+.fa-envira:before {
+  content: "\f299";
+}
+.fa-universal-access:before {
+  content: "\f29a";
+}
+.fa-wheelchair-alt:before {
+  content: "\f29b";
+}
+.fa-question-circle-o:before {
+  content: "\f29c";
+}
+.fa-blind:before {
+  content: "\f29d";
+}
+.fa-audio-description:before {
+  content: "\f29e";
+}
+.fa-volume-control-phone:before {
+  content: "\f2a0";
+}
+.fa-braille:before {
+  content: "\f2a1";
+}
+.fa-assistive-listening-systems:before {
+  content: "\f2a2";
+}
+.fa-asl-interpreting:before,
+.fa-american-sign-language-interpreting:before {
+  content: "\f2a3";
+}
+.fa-deafness:before,
+.fa-hard-of-hearing:before,
+.fa-deaf:before {
+  content: "\f2a4";
+}
+.fa-glide:before {
+  content: "\f2a5";
+}
+.fa-glide-g:before {
+  content: "\f2a6";
+}
+.fa-signing:before,
+.fa-sign-language:before {
+  content: "\f2a7";
+}
+.fa-low-vision:before {
+  content: "\f2a8";
+}
+.fa-viadeo:before {
+  content: "\f2a9";
+}
+.fa-viadeo-square:before {
+  content: "\f2aa";
+}
+.fa-snapchat:before {
+  content: "\f2ab";
+}
+.fa-snapchat-ghost:before {
+  content: "\f2ac";
+}
+.fa-snapchat-square:before {
+  content: "\f2ad";
+}
+.fa-pied-piper:before {
+  content: "\f2ae";
+}
+.fa-first-order:before {
+  content: "\f2b0";
+}
+.fa-yoast:before {
+  content: "\f2b1";
+}
+.fa-themeisle:before {
+  content: "\f2b2";
+}
+.fa-google-plus-circle:before,
+.fa-google-plus-official:before {
+  content: "\f2b3";
+}
+.fa-fa:before,
+.fa-font-awesome:before {
+  content: "\f2b4";
+}
+.fa-handshake-o:before {
+  content: "\f2b5";
+}
+.fa-envelope-open:before {
+  content: "\f2b6";
+}
+.fa-envelope-open-o:before {
+  content: "\f2b7";
+}
+.fa-linode:before {
+  content: "\f2b8";
+}
+.fa-address-book:before {
+  content: "\f2b9";
+}
+.fa-address-book-o:before {
+  content: "\f2ba";
+}
+.fa-vcard:before,
+.fa-address-card:before {
+  content: "\f2bb";
+}
+.fa-vcard-o:before,
+.fa-address-card-o:before {
+  content: "\f2bc";
+}
+.fa-user-circle:before {
+  content: "\f2bd";
+}
+.fa-user-circle-o:before {
+  content: "\f2be";
+}
+.fa-user-o:before {
+  content: "\f2c0";
+}
+.fa-id-badge:before {
+  content: "\f2c1";
+}
+.fa-drivers-license:before,
+.fa-id-card:before {
+  content: "\f2c2";
+}
+.fa-drivers-license-o:before,
+.fa-id-card-o:before {
+  content: "\f2c3";
+}
+.fa-quora:before {
+  content: "\f2c4";
+}
+.fa-free-code-camp:before {
+  content: "\f2c5";
+}
+.fa-telegram:before {
+  content: "\f2c6";
+}
+.fa-thermometer-4:before,
+.fa-thermometer:before,
+.fa-thermometer-full:before {
+  content: "\f2c7";
+}
+.fa-thermometer-3:before,
+.fa-thermometer-three-quarters:before {
+  content: "\f2c8";
+}
+.fa-thermometer-2:before,
+.fa-thermometer-half:before {
+  content: "\f2c9";
+}
+.fa-thermometer-1:before,
+.fa-thermometer-quarter:before {
+  content: "\f2ca";
+}
+.fa-thermometer-0:before,
+.fa-thermometer-empty:before {
+  content: "\f2cb";
+}
+.fa-shower:before {
+  content: "\f2cc";
+}
+.fa-bathtub:before,
+.fa-s15:before,
+.fa-bath:before {
+  content: "\f2cd";
+}
+.fa-podcast:before {
+  content: "\f2ce";
+}
+.fa-window-maximize:before {
+  content: "\f2d0";
+}
+.fa-window-minimize:before {
+  content: "\f2d1";
+}
+.fa-window-restore:before {
+  content: "\f2d2";
+}
+.fa-times-rectangle:before,
+.fa-window-close:before {
+  content: "\f2d3";
+}
+.fa-times-rectangle-o:before,
+.fa-window-close-o:before {
+  content: "\f2d4";
+}
+.fa-bandcamp:before {
+  content: "\f2d5";
+}
+.fa-grav:before {
+  content: "\f2d6";
+}
+.fa-etsy:before {
+  content: "\f2d7";
+}
+.fa-imdb:before {
+  content: "\f2d8";
+}
+.fa-ravelry:before {
+  content: "\f2d9";
+}
+.fa-eercast:before {
+  content: "\f2da";
+}
+.fa-microchip:before {
+  content: "\f2db";
+}
+.fa-snowflake-o:before {
+  content: "\f2dc";
+}
+.fa-superpowers:before {
+  content: "\f2dd";
+}
+.fa-wpexplorer:before {
+  content: "\f2de";
+}
+.fa-meetup:before {
+  content: "\f2e0";
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
 }
 /*!
 *
@@ -8694,6 +9372,10 @@ div.traceback-wrapper {
   max-width: 800px;
   margin: auto;
 }
+div.traceback-wrapper pre.traceback {
+  max-height: 600px;
+  overflow: auto;
+}
 /**
  * Primary styles
  *
@@ -8719,6 +9401,10 @@ body > #header {
   z-index: 100;
 }
 body > #header #header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px;
   padding-bottom: 5px;
   padding-top: 5px;
   box-sizing: border-box;
@@ -8750,13 +9436,16 @@ body > #header .header-bar {
   padding-top: 1px;
   padding-bottom: 1px;
 }
-@media (max-width: 991px) {
-  #ipython_notebook {
-    margin-left: 10px;
-  }
-}
 [dir="rtl"] #ipython_notebook {
+  margin-right: 10px;
+  margin-left: 0;
+}
+[dir="rtl"] #ipython_notebook.pull-left {
   float: right !important;
+  float: right;
+}
+.flex-spacer {
+  flex: 1;
 }
 #noscript {
   width: auto;
@@ -8791,8 +9480,14 @@ body > #header .header-bar {
 input.ui-button {
   padding: 0.3em 0.9em;
 }
+span#kernel_logo_widget {
+  margin: 0 10px;
+}
 span#login_widget {
   float: right;
+}
+[dir="rtl"] span#login_widget {
+  float: left;
 }
 span#login_widget > .button,
 #logout {
@@ -8908,6 +9603,9 @@ span#login_widget > .button .badge,
   overflow: auto;
   flex: 1;
 }
+.modal-header {
+  cursor: move;
+}
 @media (min-width: 768px) {
   .modal .modal-dialog {
     width: 700px;
@@ -8928,6 +9626,19 @@ span#login_widget > .button .badge,
   display: inline-block;
   margin-bottom: -4px;
 }
+[dir="rtl"] .center-nav form.pull-left {
+  float: right !important;
+  float: right;
+}
+[dir="rtl"] .center-nav .navbar-text {
+  float: right;
+}
+[dir="rtl"] .navbar-inner {
+  text-align: right;
+}
+[dir="rtl"] div.text-left {
+  text-align: right;
+}
 /*!
 *
 * IPython tree view
@@ -8944,34 +9655,42 @@ span#login_widget > .button .badge,
   margin: 0;
 }
 .alternate_upload input.fileinput {
-  text-align: center;
-  vertical-align: middle;
-  display: inline;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
   opacity: 0;
   z-index: 2;
-  width: 12ex;
-  margin-right: -12ex;
+}
+.alternate_upload .btn-xs > input.fileinput {
+  margin: -1px -5px;
 }
 .alternate_upload .btn-upload {
+  position: relative;
   height: 22px;
+}
+::-webkit-file-upload-button {
+  cursor: pointer;
 }
 /**
  * Primary styles
  *
  * Author: Jupyter Development Team
  */
-[dir="rtl"] #tabs li {
-  float: right;
-}
 ul#tabs {
   margin-bottom: 4px;
-}
-[dir="rtl"] ul#tabs {
-  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
   padding-bottom: 4px;
+}
+[dir="rtl"] ul#tabs.nav-tabs > li {
+  float: right;
+}
+[dir="rtl"] ul#tabs.nav.nav-tabs {
+  padding-right: 0;
 }
 ul.breadcrumb a:focus,
 ul.breadcrumb a:hover {
@@ -8991,15 +9710,13 @@ ul.breadcrumb span {
 .list_toolbar .tree-buttons {
   padding-top: 1px;
 }
-[dir="rtl"] .list_toolbar .tree-buttons {
+[dir="rtl"] .list_toolbar .tree-buttons .pull-right {
   float: left !important;
+  float: left;
 }
-[dir="rtl"] .list_toolbar .pull-right {
-  padding-top: 1px;
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-left {
-  float: right !important;
+[dir="rtl"] .list_toolbar .col-sm-4,
+[dir="rtl"] .list_toolbar .col-sm-8 {
+  float: right;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9055,7 +9772,7 @@ ul.breadcrumb span {
 .list_item > div input {
   margin-right: 7px;
   margin-left: 14px;
-  vertical-align: baseline;
+  vertical-align: text-bottom;
   line-height: 22px;
   position: relative;
   top: -1px;
@@ -9065,6 +9782,9 @@ ul.breadcrumb span {
   margin-left: -1px;
   vertical-align: baseline;
   line-height: 22px;
+}
+[dir="rtl"] .list_item > div input {
+  margin-right: 0;
 }
 .new-file input[type=checkbox] {
   visibility: hidden;
@@ -9080,6 +9800,14 @@ ul.breadcrumb span {
   margin-left: 7px;
   line-height: 22px;
   vertical-align: baseline;
+}
+.item_modified {
+  margin-right: 7px;
+  margin-left: 7px;
+}
+[dir="rtl"] .item_modified.pull-right {
+  float: left !important;
+  float: left;
 }
 .item_buttons {
   line-height: 1em;
@@ -9108,6 +9836,14 @@ ul.breadcrumb span {
   margin-right: 7px;
   float: left;
 }
+[dir="rtl"] .item_buttons.pull-right {
+  float: left !important;
+  float: left;
+}
+[dir="rtl"] .item_buttons .kernel-name {
+  margin-left: 7px;
+  float: right;
+}
 .toolbar_info {
   height: 24px;
   line-height: 24px;
@@ -9133,18 +9869,32 @@ ul.breadcrumb span {
   background-color: transparent;
   font-weight: bold;
 }
+.sort_button {
+  display: inline-block;
+  padding-left: 7px;
+}
+[dir="rtl"] .sort_button.pull-right {
+  float: left !important;
+  float: left;
+}
 #tree-selector {
   padding-right: 0px;
-}
-[dir="rtl"] #tree-selector a {
-  float: right;
 }
 #button-select-all {
   min-width: 50px;
 }
+[dir="rtl"] #button-select-all.btn {
+  float: right ;
+}
 #select-all {
   margin-left: 7px;
   margin-right: 2px;
+  margin-top: 2px;
+  height: 16px;
+}
+[dir="rtl"] #select-all.pull-left {
+  float: right !important;
+  float: right;
 }
 .menu_icon {
   margin-right: 2px;
@@ -9162,6 +9912,12 @@ ul.breadcrumb span {
   -moz-osx-font-smoothing: grayscale;
   content: "\f114";
 }
+.folder_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.folder_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .folder_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -9178,6 +9934,12 @@ ul.breadcrumb span {
   content: "\f02d";
   position: relative;
   top: -1px;
+}
+.notebook_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.notebook_icon:before.fa-pull-right {
+  margin-left: .3em;
 }
 .notebook_icon:before.pull-left {
   margin-right: .3em;
@@ -9197,6 +9959,12 @@ ul.breadcrumb span {
   top: -1px;
   color: #5cb85c;
 }
+.running_notebook_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.running_notebook_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .running_notebook_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -9214,6 +9982,12 @@ ul.breadcrumb span {
   position: relative;
   top: -2px;
 }
+.file_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.file_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .file_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -9228,8 +10002,11 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
-[dir="rtl"] #new-menu {
-  text-align: right;
+#new-menu .dropdown-header {
+  font-size: 10px;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0 0 3px;
+  margin: -3px 20px 0;
 }
 .kernel-menu-icon {
   padding-right: 12px;
@@ -9276,9 +10053,6 @@ ul#new-menu {
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
 }
-[dir="rtl"] #running .col-sm-8 {
-  float: right !important;
-}
 .delete-button {
   display: none;
 }
@@ -9286,6 +10060,12 @@ ul#new-menu {
   display: none;
 }
 .rename-button {
+  display: none;
+}
+.move-button {
+  display: none;
+}
+.download-button {
   display: none;
 }
 .shutdown-button {
@@ -9328,6 +10108,12 @@ ul#new-menu {
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
 }
+.dirty-indicator.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator.fa-pull-right {
+  margin-left: .3em;
+}
 .dirty-indicator.pull-left {
   margin-right: .3em;
 }
@@ -9342,6 +10128,12 @@ ul#new-menu {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
+}
+.dirty-indicator-dirty.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator-dirty.fa-pull-right {
+  margin-left: .3em;
 }
 .dirty-indicator-dirty.pull-left {
   margin-right: .3em;
@@ -9358,6 +10150,12 @@ ul#new-menu {
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
 }
+.dirty-indicator-clean.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator-clean.fa-pull-right {
+  margin-left: .3em;
+}
 .dirty-indicator-clean.pull-left {
   margin-right: .3em;
 }
@@ -9372,6 +10170,12 @@ ul#new-menu {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f00c";
+}
+.dirty-indicator-clean:before.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator-clean:before.fa-pull-right {
+  margin-left: .3em;
 }
 .dirty-indicator-clean:before.pull-left {
   margin-right: .3em;
@@ -9417,14 +10221,132 @@ ul#new-menu {
     box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
   }
 }
+.CodeMirror-dialog {
+  background-color: #fff;
+}
 /*!
 *
 * IPython notebook
 *
 */
-/* CSS font colors for translated ANSI colors. */
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
 .ansibold {
   font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
 }
 /* use dark versions for foreground, to improve visibility */
 .ansiblack {
@@ -9503,12 +10425,20 @@ div.cell {
   /* This acts as a spacer between cells, that is outside the border */
   margin: 0px;
   outline: none;
-  border-left-width: 1px;
-  padding-left: 5px;
-  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
 }
 div.cell.jupyter-soft-selected {
-  border-left-color: #90CAF9;
   border-left-color: #E3F2FD;
   border-left-width: 1px;
   padding-left: 5px;
@@ -9521,27 +10451,39 @@ div.cell.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected {
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
   border-color: #ababab;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
 }
 @media print {
-  div.cell.selected {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected.jupyter-soft-selected {
-  border-left-width: 0;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
-}
 .edit_mode div.cell.selected {
   border-color: #66BB6A;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
 }
 @media print {
   .edit_mode div.cell.selected {
@@ -9737,7 +10679,9 @@ div.input_area > div.highlight > pre {
 .CodeMirror-lines {
   /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
   /* we have set a different line-height and want this to scale with that. */
-  padding: 0.4em;
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
 }
 .CodeMirror-linenumber {
   padding: 0 8px 0 4px;
@@ -9747,11 +10691,24 @@ div.input_area > div.highlight > pre {
   border-top-left-radius: 2px;
 }
 .CodeMirror pre {
-  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
-  /* .CodeMirror-lines */
-  padding: 0;
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
   border: 0;
   border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
 }
 /*
 
@@ -10005,6 +10962,9 @@ div.output_area img.unconfined,
 div.output_area svg.unconfined {
   max-width: none;
 }
+div.output_area .mglyph > img {
+  max-width: none;
+}
 /* This is needed to protect the pre formating from global settings such
    as that of bootstrap */
 .output {
@@ -10043,7 +11003,7 @@ div.output_area svg.unconfined {
 }
 div.output_area pre {
   margin: 0;
-  padding: 0;
+  padding: 1px 0 1px 0;
   border: 0;
   vertical-align: baseline;
   color: black;
@@ -10203,39 +11163,35 @@ div.output_unrecognized a:hover {
 .rendered_html h6:first-child {
   margin-top: 1em;
 }
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
 .rendered_html ul {
   list-style: disc;
-  margin: 0em 2em;
-  padding-left: 0px;
 }
 .rendered_html ul ul {
   list-style: square;
-  margin: 0em 2em;
+  margin-top: 0;
 }
 .rendered_html ul ul ul {
   list-style: circle;
-  margin: 0em 2em;
 }
 .rendered_html ol {
   list-style: decimal;
-  margin: 0em 2em;
-  padding-left: 0px;
 }
 .rendered_html ol ol {
   list-style: upper-alpha;
-  margin: 0em 2em;
+  margin-top: 0;
 }
 .rendered_html ol ol ol {
   list-style: lower-alpha;
-  margin: 0em 2em;
 }
 .rendered_html ol ol ol ol {
   list-style: lower-roman;
-  margin: 0em 2em;
 }
 .rendered_html ol ol ol ol ol {
   list-style: decimal;
-  margin: 0em 2em;
 }
 .rendered_html * + ul {
   margin-top: 1em;
@@ -10249,14 +11205,23 @@ div.output_unrecognized a:hover {
 }
 .rendered_html pre {
   margin: 1em 2em;
+  padding: 0px;
+  background-color: #fff;
+}
+.rendered_html code {
+  background-color: #eff0f1;
+}
+.rendered_html p code {
+  padding: 1px 5px;
+}
+.rendered_html pre code {
+  background-color: #fff;
 }
 .rendered_html pre,
 .rendered_html code {
   border: 0;
-  background-color: #fff;
   color: #000;
   font-size: 100%;
-  padding: 0px;
 }
 .rendered_html blockquote {
   margin: 1em 2em;
@@ -10264,24 +11229,36 @@ div.output_unrecognized a:hover {
 .rendered_html table {
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid black;
+  border: none;
   border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
 }
 .rendered_html tr,
 .rendered_html th,
 .rendered_html td {
-  border: 1px solid black;
-  border-collapse: collapse;
-  margin: 1em 2em;
-}
-.rendered_html td,
-.rendered_html th {
-  text-align: left;
+  text-align: right;
   vertical-align: middle;
-  padding: 4px;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
 }
 .rendered_html th {
   font-weight: bold;
+}
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
 }
 .rendered_html * + table {
   margin-top: 1em;
@@ -10308,6 +11285,15 @@ div.output_unrecognized a:hover {
 .rendered_html img.unconfined,
 .rendered_html svg.unconfined {
   max-width: none;
+}
+.rendered_html .alert {
+  margin-bottom: initial;
+}
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] .rendered_html p {
+  text-align: right;
 }
 div.text_cell {
   /* Old browsers */
@@ -10362,8 +11348,17 @@ h6:hover .anchor-link {
   overflow-x: auto;
   overflow-y: hidden;
 }
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered .rendered_html td {
+  max-width: none;
+}
 .text_cell.unrendered .text_cell_render {
   display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
 }
 .cm-header-1,
 .cm-header-2,
@@ -10500,6 +11495,28 @@ kbd {
   padding-top: 1px;
   padding-bottom: 1px;
 }
+.jupyter-keybindings {
+  padding: 1px;
+  line-height: 24px;
+  border-bottom: 1px solid gray;
+}
+.jupyter-keybindings input {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.jupyter-keybindings i {
+  padding: 6px;
+}
+.well code {
+  background-color: #ffffff;
+  border-color: #ababab;
+  border-width: 1px;
+  border-style: solid;
+  padding: 2px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
 /* CSS for the cell toolbar */
 .celltoolbar {
   border: thin solid #CFCFCF;
@@ -10632,6 +11649,152 @@ select[multiple].celltoolbar select {
   margin-left: 5px;
   margin-right: 5px;
 }
+.tags_button_container {
+  width: 100%;
+  display: flex;
+}
+.tag-container {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  overflow: hidden;
+  position: relative;
+}
+.tag-container > * {
+  margin: 0 4px;
+}
+.remove-tag-btn {
+  margin-left: 4px;
+}
+.tags-input {
+  display: flex;
+}
+.cell-tag:last-child:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 40px;
+  height: 100%;
+  /* Fade to background color of cell toolbar */
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), #EEE);
+}
+.tags-input > * {
+  margin-left: 4px;
+}
+.cell-tag,
+.tags-input input,
+.tags-input button {
+  display: block;
+  width: 100%;
+  height: 32px;
+  padding: 6px 12px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 1px;
+  box-shadow: none;
+  width: inherit;
+  font-size: inherit;
+  height: 22px;
+  line-height: 22px;
+  padding: 0px 4px;
+  display: inline-block;
+}
+.cell-tag:focus,
+.tags-input input:focus,
+.tags-input button:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+.cell-tag::-moz-placeholder,
+.tags-input input::-moz-placeholder,
+.tags-input button::-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+.cell-tag:-ms-input-placeholder,
+.tags-input input:-ms-input-placeholder,
+.tags-input button:-ms-input-placeholder {
+  color: #999;
+}
+.cell-tag::-webkit-input-placeholder,
+.tags-input input::-webkit-input-placeholder,
+.tags-input button::-webkit-input-placeholder {
+  color: #999;
+}
+.cell-tag::-ms-expand,
+.tags-input input::-ms-expand,
+.tags-input button::-ms-expand {
+  border: 0;
+  background-color: transparent;
+}
+.cell-tag[disabled],
+.tags-input input[disabled],
+.tags-input button[disabled],
+.cell-tag[readonly],
+.tags-input input[readonly],
+.tags-input button[readonly],
+fieldset[disabled] .cell-tag,
+fieldset[disabled] .tags-input input,
+fieldset[disabled] .tags-input button {
+  background-color: #eeeeee;
+  opacity: 1;
+}
+.cell-tag[disabled],
+.tags-input input[disabled],
+.tags-input button[disabled],
+fieldset[disabled] .cell-tag,
+fieldset[disabled] .tags-input input,
+fieldset[disabled] .tags-input button {
+  cursor: not-allowed;
+}
+textarea.cell-tag,
+textarea.tags-input input,
+textarea.tags-input button {
+  height: auto;
+}
+select.cell-tag,
+select.tags-input input,
+select.tags-input button {
+  height: 30px;
+  line-height: 30px;
+}
+textarea.cell-tag,
+textarea.tags-input input,
+textarea.tags-input button,
+select[multiple].cell-tag,
+select[multiple].tags-input input,
+select[multiple].tags-input button {
+  height: auto;
+}
+.cell-tag,
+.tags-input button {
+  padding: 0px 4px;
+}
+.cell-tag {
+  background-color: #fff;
+  white-space: nowrap;
+}
+.tags-input input[type=text]:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #ccc;
+}
 .completions {
   position: absolute;
   z-index: 110;
@@ -10657,16 +11820,28 @@ select[multiple].celltoolbar select {
 .completions select option.context {
   color: #286090;
 }
-#kernel_logo_widget {
-  float: right !important;
-  float: right;
-}
 #kernel_logo_widget .current_kernel_logo {
   display: none;
   margin-top: -1px;
   margin-bottom: -1px;
   width: 32px;
   height: 32px;
+}
+[dir="rtl"] #kernel_logo_widget {
+  float: left !important;
+  float: left;
+}
+.modal .modal-body .move-path {
+  display: flex;
+  flex-direction: row;
+  justify-content: space;
+  align-items: center;
+}
+.modal .modal-body .move-path .server-root {
+  padding-right: 20px;
+}
+.modal .modal-body .move-path .path-input {
+  flex: 1;
 }
 #menubar {
   box-sizing: border-box;
@@ -10688,11 +11863,41 @@ select[multiple].celltoolbar select {
 #menubar .navbar-collapse {
   clear: left;
 }
+[dir="rtl"] #menubar .navbar-toggle {
+  float: right;
+}
+[dir="rtl"] #menubar .navbar-collapse {
+  clear: right;
+}
+[dir="rtl"] #menubar .navbar-nav {
+  float: right;
+}
+[dir="rtl"] #menubar .nav {
+  padding-right: 0px;
+}
+[dir="rtl"] #menubar .navbar-nav > li {
+  float: right;
+}
+[dir="rtl"] #menubar .navbar-right {
+  float: left !important;
+}
+[dir="rtl"] ul.dropdown-menu {
+  text-align: right;
+  left: auto;
+}
+[dir="rtl"] ul#new-menu.dropdown-menu {
+  right: auto;
+  left: 0;
+}
 .nav-wrapper {
   border-bottom: 1px solid #e7e7e7;
 }
 i.menu-icon {
   padding-top: 4px;
+}
+[dir="rtl"] i.menu-icon.pull-right {
+  float: left !important;
+  float: left;
 }
 ul#help_menu li a {
   overflow: hidden;
@@ -10700,6 +11905,17 @@ ul#help_menu li a {
 }
 ul#help_menu li a i {
   margin-right: -1.2em;
+}
+[dir="rtl"] ul#help_menu li a {
+  padding-left: 2.2em;
+}
+[dir="rtl"] ul#help_menu li a i {
+  margin-right: 0;
+  margin-left: -1.2em;
+}
+[dir="rtl"] ul#help_menu li a i.pull-right {
+  float: left !important;
+  float: left;
 }
 .dropdown-submenu {
   position: relative;
@@ -10709,6 +11925,10 @@ ul#help_menu li a i {
   left: 100%;
   margin-top: -6px;
   margin-left: -1px;
+}
+[dir="rtl"] .dropdown-submenu > .dropdown-menu {
+  right: 100%;
+  margin-right: -1px;
 }
 .dropdown-submenu:hover > .dropdown-menu {
   display: block;
@@ -10727,11 +11947,23 @@ ul#help_menu li a i {
   margin-top: 2px;
   margin-right: -10px;
 }
+.dropdown-submenu > a:after.fa-pull-left {
+  margin-right: .3em;
+}
+.dropdown-submenu > a:after.fa-pull-right {
+  margin-left: .3em;
+}
 .dropdown-submenu > a:after.pull-left {
   margin-right: .3em;
 }
 .dropdown-submenu > a:after.pull-right {
   margin-left: .3em;
+}
+[dir="rtl"] .dropdown-submenu > a:after {
+  float: left;
+  content: "\f0d9";
+  margin-right: 0;
+  margin-left: -10px;
 }
 .dropdown-submenu:hover > a:after {
   color: #262626;
@@ -10748,6 +11980,10 @@ ul#help_menu li a i {
   float: right;
   z-index: 10;
 }
+[dir="rtl"] #notification_area {
+  float: left !important;
+  float: left;
+}
 .indicator_area {
   float: right !important;
   float: right;
@@ -10758,6 +11994,10 @@ ul#help_menu li a i {
   z-index: 10;
   text-align: center;
   width: auto;
+}
+[dir="rtl"] .indicator_area {
+  float: left !important;
+  float: left;
 }
 #kernel_indicator {
   float: right !important;
@@ -10775,6 +12015,12 @@ ul#help_menu li a i {
   padding-left: 5px;
   padding-right: 5px;
 }
+[dir="rtl"] #kernel_indicator {
+  float: left !important;
+  float: left;
+  border-left: 0;
+  border-right: 1px solid;
+}
 #modal_indicator {
   float: right !important;
   float: right;
@@ -10785,6 +12031,10 @@ ul#help_menu li a i {
   z-index: 10;
   text-align: center;
   width: auto;
+}
+[dir="rtl"] #modal_indicator {
+  float: left !important;
+  float: left;
 }
 #readonly-indicator {
   float: right !important;
@@ -10815,6 +12065,12 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f040";
 }
+.edit_mode .modal_indicator:before.fa-pull-left {
+  margin-right: .3em;
+}
+.edit_mode .modal_indicator:before.fa-pull-right {
+  margin-left: .3em;
+}
 .edit_mode .modal_indicator:before.pull-left {
   margin-right: .3em;
 }
@@ -10829,6 +12085,12 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: ' ';
+}
+.command_mode .modal_indicator:before.fa-pull-left {
+  margin-right: .3em;
+}
+.command_mode .modal_indicator:before.fa-pull-right {
+  margin-left: .3em;
 }
 .command_mode .modal_indicator:before.pull-left {
   margin-right: .3em;
@@ -10845,6 +12107,12 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f10c";
 }
+.kernel_idle_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_idle_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .kernel_idle_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -10859,6 +12127,12 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f111";
+}
+.kernel_busy_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_busy_icon:before.fa-pull-right {
+  margin-left: .3em;
 }
 .kernel_busy_icon:before.pull-left {
   margin-right: .3em;
@@ -10875,6 +12149,12 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f1e2";
 }
+.kernel_dead_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_dead_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .kernel_dead_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -10889,6 +12169,12 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f127";
+}
+.kernel_disconnected_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_disconnected_icon:before.fa-pull-right {
+  margin-left: .3em;
 }
 .kernel_disconnected_icon:before.pull-left {
   margin-right: .3em;
@@ -11279,27 +12565,46 @@ div#pager .ui-resizable-handle::after {
   flex: 1;
 }
 span.save_widget {
-  margin-top: 6px;
+  height: 30px;
+  margin-top: 4px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  width: 50%;
+  flex: 1;
 }
 span.save_widget span.filename {
-  height: 1em;
+  height: 100%;
   line-height: 1em;
-  padding: 3px;
   margin-left: 16px;
   border: none;
   font-size: 146.5%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   border-radius: 2px;
 }
 span.save_widget span.filename:hover {
   background-color: #e6e6e6;
 }
+[dir="rtl"] span.save_widget.pull-left {
+  float: right !important;
+  float: right;
+}
+[dir="rtl"] span.save_widget span.filename {
+  margin-left: 0;
+  margin-right: 16px;
+}
 span.checkpoint_status,
 span.autosave_status {
   font-size: small;
+  white-space: nowrap;
+  padding: 0 5px;
 }
 @media (max-width: 767px) {
   span.save_widget {
     font-size: small;
+    padding: 0 0 0 5px;
   }
   span.checkpoint_status,
   span.autosave_status {
@@ -11343,6 +12648,9 @@ span.autosave_status {
   margin-top: 0px;
   margin-left: 5px;
 }
+.toolbar-btn-label {
+  margin-left: 6px;
+}
 #maintoolbar {
   margin-bottom: -3px;
   margin-top: -8px;
@@ -11362,6 +12670,10 @@ span.autosave_status {
 }
 .select-xs {
   height: 24px;
+}
+[dir="rtl"] .btn-group > .btn,
+.btn-group-vertical > .btn {
+  float: right;
 }
 .pulse,
 .dropdown-menu > li > a.pulse,
@@ -11512,6 +12824,10 @@ ul.typeahead-list i {
   margin-left: -10px;
   width: 18px;
 }
+[dir="rtl"] ul.typeahead-list i {
+  margin-left: 0;
+  margin-right: -10px;
+}
 ul.typeahead-list {
   max-height: 80vh;
   overflow: auto;
@@ -11520,6 +12836,13 @@ ul.typeahead-list > li > a {
   /** Firefox bug **/
   /* see https://github.com/jupyter/notebook/issues/559 */
   white-space: normal;
+}
+ul.typeahead-list  > li > a.pull-right {
+  float: left !important;
+  float: left;
+}
+[dir="rtl"] .typeahead-list {
+  text-align: right;
 }
 .cmd-palette .modal-body {
   padding: 7px;
@@ -11531,10 +12854,19 @@ ul.typeahead-list > li > a {
   outline: none;
 }
 .no-shortcut {
-  display: none;
+  min-width: 20px;
+  color: transparent;
+}
+[dir="rtl"] .no-shortcut.pull-right {
+  float: left !important;
+  float: left;
+}
+[dir="rtl"] .command-shortcut.pull-right {
+  float: left !important;
+  float: left;
 }
 .command-shortcut:before {
-  content: "(command)";
+  content: "(command mode)";
   padding-right: 3px;
   color: #777777;
 }
@@ -11543,6 +12875,10 @@ ul.typeahead-list > li > a {
   padding-right: 3px;
   color: #777777;
 }
+[dir="rtl"] .edit-shortcut.pull-right {
+  float: left !important;
+  float: left;
+}
 #find-and-replace #replace-preview .match,
 #find-and-replace #replace-preview .insert {
   background-color: #BBDEFB;
@@ -11550,6 +12886,12 @@ ul.typeahead-list > li > a {
   border-style: solid;
   border-width: 1px;
   border-radius: 0px;
+}
+[dir="ltr"] #find-and-replace .input-group-btn + .form-control {
+  border-left: none;
+}
+[dir="rtl"] #find-and-replace .input-group-btn + .form-control {
+  border-right: none;
 }
 #find-and-replace #replace-preview .replace .match {
   background-color: #FFCDD2;
@@ -11726,9 +13068,7 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
-}
-
-@media print {
+}@media print {
   div.cell {
     display: block;
     page-break-inside: avoid;
@@ -11749,7 +13089,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -11773,10 +13113,8 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Visualising-Data">Visualising Data<a class="anchor-link" href="#Visualising-Data">&#182;</a></h1><p>The purpose of scientific computation is insight not numbers: To understand the meaning of the (many) numbers we compute, we often need postprocessing, statistical analysis and graphical visualisation of our data. The following sections describe</p>
 <ul>
@@ -11808,10 +13146,8 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="First-example">First example<a class="anchor-link" href="#First-example">&#182;</a></h3><p>The recommended way of using Matplotlib in a simple example is shown here (let’s call this example 1a):</p>
 
@@ -11826,7 +13162,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -11845,7 +13181,7 @@ div#notebook {
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>                      <span class="c1"># create plot</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -11854,18 +13190,22 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[2]:</div>
+
+    <div class="prompt output_prompt">Out[2]:</div>
+
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;matplotlib.lines.Line2D at 0x7f0d4a222dd8&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x7f708ce666d8&gt;]</pre>
 </div>
 
 </div>
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 
 
@@ -11881,20 +13221,16 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="How-to-import-matplotlib,-pylab,-pyplot,-numpy-and-all-that">How to import matplotlib, pylab, pyplot, numpy and all that<a class="anchor-link" href="#How-to-import-matplotlib,-pylab,-pyplot,-numpy-and-all-that">&#182;</a></h3><p>The submodule <code>matplotlib.pyplot</code> provides an object oriented interface to the plotting library. Many of the examples in the matplotlib documentation follow the import convention to import <code>matplotlib.pyplot</code> as <code>plt</code> and <code>numpy</code> as <code>np</code>. It is of course entirely the user’s decision whether to import the <code>numpy</code> library under the name <code>np</code> (as often done in matplotlib examples) or <code>N</code> as done in this text (and in the early days when the predecessor of numpy was called “Numeric”) or any other name you like. Similarly, it is a matter of taste whether the plotting submodule (<code>matplotlib.pyplot</code>) is imported as <code>plt</code> as is done in the matplotlib documentation or <code>plot</code> (which could be argued is slightly clearer) etc.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As always a balance has to be struck between personal preferences and consistency with common practice in choosing these name. Consistency with common use is of course more important if the code is likely to be used by others or published.</p>
 <p>Plotting nearly always needs arrays of numerical data and it is for this reason that the <code>numpy</code> module is used a lot: it provides fast and memory efficient array handling for Python (see <a href="14-numpy.html">chapter 14</a>).</p>
@@ -11917,7 +13253,7 @@ div#notebook {
 <span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -11926,18 +13262,22 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[3]:</div>
+
+    <div class="prompt output_prompt">Out[3]:</div>
+
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;matplotlib.lines.Line2D at 0x7f0d4a142cc0&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x7f708ce07550&gt;]</pre>
 </div>
 
 </div>
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 
 
@@ -11953,10 +13293,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Because the <code>numpy.arange</code> and <code>numpy.sin</code> objects have already been imported into the (convenience) <code>pylab</code> namespace, we could also write it as example 1c:</p>
 
@@ -11977,7 +13315,7 @@ div#notebook {
 <span class="n">p</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -11986,18 +13324,22 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[4]:</div>
+
+    <div class="prompt output_prompt">Out[4]:</div>
+
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;matplotlib.lines.Line2D at 0x7f0d4a0b0710&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x7f708cd69f98&gt;]</pre>
 </div>
 
 </div>
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 
 
@@ -12013,10 +13355,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>If we really want to cut down on characters to type, we could also important the whole functionality from the <code>pylab</code> convenience module, and rewrite the code as example 1d:</p>
 
@@ -12038,7 +13378,7 @@ div#notebook {
 <span class="n">show</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12047,7 +13387,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 
 
@@ -12063,10 +13405,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This can be extremely convenient, but comes with a big health warning:</p>
 <ul>
@@ -12082,10 +13422,8 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="IPython&#8217;s-inline-mode">IPython&#8217;s inline mode<a class="anchor-link" href="#IPython&#8217;s-inline-mode">&#182;</a></h3><p>Within the Jupyter Notebook or Qtconsole (see the <a href="11-python-shells.html">Python shells notebook</a>) we can use the <code>%matplotlib inline</code> magic command to make further plots appear within our console or notebook. To force pop up windows instead, use <code>%matplotlib qt</code>.</p>
 <p>There is also the <code>%pylab</code> magic, which will not only switch to inline plotting but also automatically execute <code>from pylab import *</code>.</p>
@@ -12093,10 +13431,8 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Saving-the-figure-to-a-file">Saving the figure to a file<a class="anchor-link" href="#Saving-the-figure-to-a-file">&#182;</a></h3><p>Once you have created the figure (using the <code>plot</code> command) and added any labels, legends etc, you have two options to save the plot.</p>
 <ol>
@@ -12127,15 +13463,13 @@ div#notebook {
 <span class="n">pylab</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A note on file formats: Choose the <code>png</code> file format if you plan to include your graph in a word document or on a webpage. Choose the <code>eps</code> or <code>pdf</code> file format if you plan to include the figure in a Latex document – depending on whether you want to compile it using <code>latex</code> (needs <code>eps</code>) or pdflatex (can use <code>pdf</code> [better] or <code>png</code>). If the version of MS Word (or other text processing software you use) can handle <code>pdf</code> files, it is better to use <code>pdf</code> than <code>png</code>.</p>
 <p>Both <code>pdf</code> and <code>eps</code> are vector file formats which means that one can zoom into the image without loosing quality (lines will still be sharp). File formats such as <code>png</code> (and <code>jpg</code>, <code>gif</code>, <code>tif</code>, <code>bmp</code>) save the image in form of a bitmap (i.e. a matrix of colour values) and will appear blurry or pixelated when zooming in (or when printed in high resolution).</p>
@@ -12143,10 +13477,8 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Interactive-mode">Interactive mode<a class="anchor-link" href="#Interactive-mode">&#182;</a></h3><p>Matplotlib can be run in two modes:</p>
 <ul>
@@ -12162,10 +13494,8 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Fine-tuning-your-plot">Fine tuning your plot<a class="anchor-link" href="#Fine-tuning-your-plot">&#182;</a></h3><p>Matplotlib allows us to fine tune our plots in great detail. Here is an example:</p>
 
@@ -12192,7 +13522,7 @@ div#notebook {
 <span class="n">pylab</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;This is the title of the graph&#39;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12201,7 +13531,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[7]:</div>
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
 
 
 
@@ -12212,7 +13544,9 @@ div#notebook {
 </div>
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 
 
@@ -12228,10 +13562,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>showing some other useful commands:</p>
 <ul>
@@ -12264,10 +13596,8 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 
 <pre><code>plot(*args, **kwargs)
@@ -12380,10 +13710,8 @@ marker, linestyle, and markercolor with::
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The use of different line styles and thicknesses is particularly useful when colour cannot be used to distinguish lines (for example when graph will be used in document that is to be printed in black and white only).</p>
 <h3 id="Plotting-more-than-one-curve">Plotting more than one curve<a class="anchor-link" href="#Plotting-more-than-one-curve">&#182;</a></h3><p>There are three different methods to display more than one curve.</p>
@@ -12406,7 +13734,7 @@ marker, linestyle, and markercolor with::
 <span class="n">pylab</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12415,18 +13743,22 @@ marker, linestyle, and markercolor with::
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[8]:</div>
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.legend.Legend at 0x7f0d49cb66a0&gt;</pre>
+<pre>&lt;matplotlib.legend.Legend at 0x7f708c96df60&gt;</pre>
 </div>
 
 </div>
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 
 
@@ -12442,10 +13774,8 @@ marker, linestyle, and markercolor with::
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Two-(or-more-graphs)-in-one-figure-window">Two (or more graphs) in one figure window<a class="anchor-link" href="#Two-(or-more-graphs)-in-one-figure-window">&#182;</a></h4><p>The <code>pylab.subplot</code> command allows to arrange several graphs within one figure window. The general syntax is</p>
 
@@ -12454,10 +13784,8 @@ marker, linestyle, and markercolor with::
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>For example, to arrange 4 graphs in a 2-by-2 matrix, and to select the first graph for the next plot command, one can use:</p>
 <div class="highlight"><pre><span></span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -12466,10 +13794,8 @@ marker, linestyle, and markercolor with::
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Here is a complete example plotting the sine and cosine curves in two graphs that are aligned underneath each other within the same window:</p>
 
@@ -12497,7 +13823,7 @@ marker, linestyle, and markercolor with::
 <span class="n">pylab</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;cos(t)&#39;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12506,7 +13832,9 @@ marker, linestyle, and markercolor with::
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[9]:</div>
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
 
 
 
@@ -12517,7 +13845,9 @@ marker, linestyle, and markercolor with::
 </div>
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 
 
@@ -12533,10 +13863,8 @@ marker, linestyle, and markercolor with::
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Two-(or-more)-figure-windows">Two (or more) figure windows<a class="anchor-link" href="#Two-(or-more)-figure-windows">&#182;</a></h4>
 </div>
@@ -12555,7 +13883,7 @@ marker, linestyle, and markercolor with::
 <span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12564,18 +13892,22 @@ marker, linestyle, and markercolor with::
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[10]:</div>
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;matplotlib.lines.Line2D at 0x7f0d49b7e438&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x7f708c834c18&gt;]</pre>
 </div>
 
 </div>
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 
 
@@ -12588,7 +13920,9 @@ marker, linestyle, and markercolor with::
 </div>
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 
 
@@ -12604,10 +13938,8 @@ marker, linestyle, and markercolor with::
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Note that you can use <code>pylab.close()</code> to close one, some or all figure windows (use <code>help(pylab.close)</code> to learn more).</p>
 <h3 id="Histograms">Histograms<a class="anchor-link" href="#Histograms">&#182;</a></h3><embed src="code/pylab/pylabhistogram.pdf" style="width:100.0%" />
@@ -12646,7 +13978,7 @@ marker, linestyle, and markercolor with::
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12655,12 +13987,14 @@ marker, linestyle, and markercolor with::
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 
 
 <div class="output_png output_subarea ">
-<img src="data:image/png;base64,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
+<img src="data:image/png;base64,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
 "
 >
 </div>
@@ -12671,20 +14005,16 @@ marker, linestyle, and markercolor with::
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Do not try to understand every single command in this file: some are rather specialised and have not been covered in this text. The intention is to provide a few examples to show what can – in principle – be done with Matplotlib. If you need a plot like this, the expectation is that you will need to experiment and possibly learn a bit more about Matplotlib.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Visualising-matrix-data">Visualising matrix data<a class="anchor-link" href="#Visualising-matrix-data">&#182;</a></h3><p>The program below demonstrates how to create a bitmap-plot of the entries of a matrix.</p>
 
@@ -12736,7 +14066,7 @@ marker, linestyle, and markercolor with::
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;pylabimshow1b.pdf&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12745,7 +14075,9 @@ marker, linestyle, and markercolor with::
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 
 
@@ -12758,7 +14090,9 @@ marker, linestyle, and markercolor with::
 </div>
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 
 
@@ -12774,10 +14108,8 @@ marker, linestyle, and markercolor with::
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>To use different colourmaps, we make use of the <code>matplotlib.cm</code> module (where cm stands for Colour Map). The code below demonstrates how we can select colourmaps from the set of already provided maps, and how we can modify them (here by reducing the number of colours in the map). The last example mimics the behaviour of the more sophisticated <code>contour</code> command that also comes with <code>matplotlib</code>.</p>
 
@@ -12832,7 +14164,7 @@ marker, linestyle, and markercolor with::
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;pylabimshowcm.pdf&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12841,7 +14173,9 @@ marker, linestyle, and markercolor with::
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 
 
@@ -12857,10 +14191,8 @@ marker, linestyle, and markercolor with::
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Plots-of-z&#8196;=&#8196;f(x,&#8198;y)-and-other-features-of-Matplotlib">Plots of <em>z</em>&#8196;=&#8196;<em>f</em>(<em>x</em>,&#8198;<em>y</em>) and other features of Matplotlib<a class="anchor-link" href="#Plots-of-z&#8196;=&#8196;f(x,&#8198;y)-and-other-features-of-Matplotlib">&#182;</a></h3><p>Matplotlib has a large number of features and can create all the standard (1d and 2d) plots such as histograms, pie charts, scatter plots, 2d-intensity plots (i.e. <em>z</em> = <em>f</em>(<em>x</em>, <em>y</em>)) and contour lines) and much more. Figure [fig:pylabcontour_demo] shows such an example (the <code>contour_demo.py</code> program is a standard example of the <code>pylab</code> package). This link provides source code to produce this kind of plot: <a href="http://matplotlib.org/examples/pylab_examples/contour_demo.html">contour_demo.py</a></p>
 <p>Other examples are</p>
@@ -12874,10 +14206,8 @@ marker, linestyle, and markercolor with::
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Visual-Python">Visual Python<a class="anchor-link" href="#Visual-Python">&#182;</a></h2><p>Visual Python is a Python module that makes it fairly easy to create and animate three-dimensional scenes.</p>
 <p>Further information:</p>
@@ -12899,10 +14229,8 @@ marker, linestyle, and markercolor with::
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">visual</span>
 <span class="n">sphere1</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">sphere</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">visual</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">blue</span><span class="p">)</span>
@@ -12913,10 +14241,8 @@ marker, linestyle, and markercolor with::
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="static/images/visual/vpythondemo1.png" alt="Snapshot of vpythondemo1.py." style="width:50.0%" /></p>
 <p>Once you have created such a visual python scene, you can</p>
@@ -12934,10 +14260,8 @@ marker, linestyle, and markercolor with::
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">visual</span>
 
@@ -12949,10 +14273,8 @@ marker, linestyle, and markercolor with::
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>All Visual Python objects (such as the spheres and the box in the example above) have a <code>.pos</code> attribute which contains the position (of the centre of the object [sphere,box] or one end of the object [cylinder,helix]). Here is an example showing a sphere moving up and down (<code>vpythondemo3.py</code>):</li>
@@ -12961,10 +14283,8 @@ marker, linestyle, and markercolor with::
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">visual</span><span class="o">,</span> <span class="nn">math</span>
 
@@ -12988,30 +14308,24 @@ marker, linestyle, and markercolor with::
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="static/images/visual/vpythondemo3.png" alt="Snapshot of vpythondemo3.py." style="width:50.0%" /></p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Tracking-trajectories">Tracking trajectories<a class="anchor-link" href="#Tracking-trajectories">&#182;</a></h3><p>You can track the trajectory of an object using a “curve”. The basic idea is to append positions to that curve object as demonstrated in this example (<code>vpythondemo4.py</code>):</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">visual</span><span class="o">,</span> <span class="nn">math</span>
 
@@ -13035,10 +14349,8 @@ marker, linestyle, and markercolor with::
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="static/images/visual/vpythondemo4.png" alt="Snapshot of vpythondemo4.py." style="width:50.0%" /></p>
 <p>As with most visual Python objects, you can specify the colour of the curve (also per appended element!) and the radius.</p>
@@ -13046,20 +14358,16 @@ marker, linestyle, and markercolor with::
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Connecting-objects-(Cylinders,-springs,-&#8230;)">Connecting objects (Cylinders, springs, &#8230;)<a class="anchor-link" href="#Connecting-objects-(Cylinders,-springs,-&#8230;)">&#182;</a></h3><p>Cylinders and helices can be used to “connect” two objects. In addition to the <code>pos</code> attribute (which stores the position of one end of the object), there is also an <code>axis</code> attribute which stores the vector pointing from <code>pos</code> to the other end of the object. Here is an example showing this for a cylinder: (<code>vpythondemo5py</code>):</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">visual</span><span class="o">,</span> <span class="nn">math</span>
 
@@ -13081,20 +14389,16 @@ marker, linestyle, and markercolor with::
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="3d-vision">3d vision<a class="anchor-link" href="#3d-vision">&#182;</a></h3><p>If you have access to “anaglyphic” (<em>i.e.</em> colored) glasses (best red-cyan but red-green or red-blue works as well), then you can switch visual python into this stereo mode by adding these two lines to the beginning of your program:</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="highlight"><pre><span></span><span class="n">visual</span><span class="o">.</span><span class="n">scene</span><span class="o">.</span><span class="n">stereo</span><span class="o">=</span><span class="s1">&#39;redcyan&#39;</span>
 <span class="n">visual</span><span class="o">.</span><span class="n">scene</span><span class="o">.</span><span class="n">stereodepth</span><span class="o">=</span><span class="mi">1</span>
@@ -13103,10 +14407,8 @@ marker, linestyle, and markercolor with::
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Note the effect of the <code>stereodepth</code> parameter:</p>
 <ul>
@@ -13148,7 +14450,7 @@ marker, linestyle, and markercolor with::
 <div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 

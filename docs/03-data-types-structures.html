@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>03-data-types-structures</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+
+<title>03-data-types-structures</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
 
 <style type="text/css">
     /*!
@@ -199,7 +204,6 @@ th {
   *:before,
   *:after {
     background: transparent !important;
-    color: #000 !important;
     box-shadow: none !important;
     text-shadow: none !important;
   }
@@ -6744,15 +6748,15 @@ button.close {
 *
 */
 /*!
- *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
 /* FONT PATH
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?v=4.2.0');
-  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'), url('../components/font-awesome/fonts/fontawesome-webfont.woff?v=4.2.0') format('woff'), url('../components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.2.0') format('truetype'), url('../components/font-awesome/fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
+  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?v=4.7.0');
+  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../components/font-awesome/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../components/font-awesome/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -6809,6 +6813,19 @@ button.close {
   border: solid 0.08em #eee;
   border-radius: .1em;
 }
+.fa-pull-left {
+  float: left;
+}
+.fa-pull-right {
+  float: right;
+}
+.fa.fa-pull-left {
+  margin-right: .3em;
+}
+.fa.fa-pull-right {
+  margin-left: .3em;
+}
+/* Deprecated as of 4.4.0 */
 .pull-right {
   float: right;
 }
@@ -6824,6 +6841,10 @@ button.close {
 .fa-spin {
   -webkit-animation: fa-spin 2s infinite linear;
   animation: fa-spin 2s infinite linear;
+}
+.fa-pulse {
+  -webkit-animation: fa-spin 1s infinite steps(8);
+  animation: fa-spin 1s infinite steps(8);
 }
 @-webkit-keyframes fa-spin {
   0% {
@@ -6846,31 +6867,31 @@ button.close {
   }
 }
 .fa-rotate-90 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 .fa-rotate-180 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 .fa-rotate-270 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
   -webkit-transform: rotate(270deg);
   -ms-transform: rotate(270deg);
   transform: rotate(270deg);
 }
 .fa-flip-horizontal {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
   -webkit-transform: scale(-1, 1);
   -ms-transform: scale(-1, 1);
   transform: scale(-1, 1);
 }
 .fa-flip-vertical {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
   -webkit-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
   transform: scale(1, -1);
@@ -7355,6 +7376,7 @@ button.close {
 .fa-twitter:before {
   content: "\f099";
 }
+.fa-facebook-f:before,
 .fa-facebook:before {
   content: "\f09a";
 }
@@ -7367,6 +7389,7 @@ button.close {
 .fa-credit-card:before {
   content: "\f09d";
 }
+.fa-feed:before,
 .fa-rss:before {
   content: "\f09e";
 }
@@ -8004,7 +8027,8 @@ button.close {
 .fa-male:before {
   content: "\f183";
 }
-.fa-gittip:before {
+.fa-gittip:before,
+.fa-gratipay:before {
   content: "\f184";
 }
 .fa-sun-o:before {
@@ -8108,7 +8132,7 @@ button.close {
 .fa-digg:before {
   content: "\f1a6";
 }
-.fa-pied-piper:before {
+.fa-pied-piper-pp:before {
   content: "\f1a7";
 }
 .fa-pied-piper-alt:before {
@@ -8234,6 +8258,7 @@ button.close {
   content: "\f1ce";
 }
 .fa-ra:before,
+.fa-resistance:before,
 .fa-rebel:before {
   content: "\f1d0";
 }
@@ -8247,6 +8272,8 @@ button.close {
 .fa-git:before {
   content: "\f1d3";
 }
+.fa-y-combinator-square:before,
+.fa-yc-square:before,
 .fa-hacker-news:before {
   content: "\f1d4";
 }
@@ -8414,6 +8441,657 @@ button.close {
 }
 .fa-meanpath:before {
   content: "\f20c";
+}
+.fa-buysellads:before {
+  content: "\f20d";
+}
+.fa-connectdevelop:before {
+  content: "\f20e";
+}
+.fa-dashcube:before {
+  content: "\f210";
+}
+.fa-forumbee:before {
+  content: "\f211";
+}
+.fa-leanpub:before {
+  content: "\f212";
+}
+.fa-sellsy:before {
+  content: "\f213";
+}
+.fa-shirtsinbulk:before {
+  content: "\f214";
+}
+.fa-simplybuilt:before {
+  content: "\f215";
+}
+.fa-skyatlas:before {
+  content: "\f216";
+}
+.fa-cart-plus:before {
+  content: "\f217";
+}
+.fa-cart-arrow-down:before {
+  content: "\f218";
+}
+.fa-diamond:before {
+  content: "\f219";
+}
+.fa-ship:before {
+  content: "\f21a";
+}
+.fa-user-secret:before {
+  content: "\f21b";
+}
+.fa-motorcycle:before {
+  content: "\f21c";
+}
+.fa-street-view:before {
+  content: "\f21d";
+}
+.fa-heartbeat:before {
+  content: "\f21e";
+}
+.fa-venus:before {
+  content: "\f221";
+}
+.fa-mars:before {
+  content: "\f222";
+}
+.fa-mercury:before {
+  content: "\f223";
+}
+.fa-intersex:before,
+.fa-transgender:before {
+  content: "\f224";
+}
+.fa-transgender-alt:before {
+  content: "\f225";
+}
+.fa-venus-double:before {
+  content: "\f226";
+}
+.fa-mars-double:before {
+  content: "\f227";
+}
+.fa-venus-mars:before {
+  content: "\f228";
+}
+.fa-mars-stroke:before {
+  content: "\f229";
+}
+.fa-mars-stroke-v:before {
+  content: "\f22a";
+}
+.fa-mars-stroke-h:before {
+  content: "\f22b";
+}
+.fa-neuter:before {
+  content: "\f22c";
+}
+.fa-genderless:before {
+  content: "\f22d";
+}
+.fa-facebook-official:before {
+  content: "\f230";
+}
+.fa-pinterest-p:before {
+  content: "\f231";
+}
+.fa-whatsapp:before {
+  content: "\f232";
+}
+.fa-server:before {
+  content: "\f233";
+}
+.fa-user-plus:before {
+  content: "\f234";
+}
+.fa-user-times:before {
+  content: "\f235";
+}
+.fa-hotel:before,
+.fa-bed:before {
+  content: "\f236";
+}
+.fa-viacoin:before {
+  content: "\f237";
+}
+.fa-train:before {
+  content: "\f238";
+}
+.fa-subway:before {
+  content: "\f239";
+}
+.fa-medium:before {
+  content: "\f23a";
+}
+.fa-yc:before,
+.fa-y-combinator:before {
+  content: "\f23b";
+}
+.fa-optin-monster:before {
+  content: "\f23c";
+}
+.fa-opencart:before {
+  content: "\f23d";
+}
+.fa-expeditedssl:before {
+  content: "\f23e";
+}
+.fa-battery-4:before,
+.fa-battery:before,
+.fa-battery-full:before {
+  content: "\f240";
+}
+.fa-battery-3:before,
+.fa-battery-three-quarters:before {
+  content: "\f241";
+}
+.fa-battery-2:before,
+.fa-battery-half:before {
+  content: "\f242";
+}
+.fa-battery-1:before,
+.fa-battery-quarter:before {
+  content: "\f243";
+}
+.fa-battery-0:before,
+.fa-battery-empty:before {
+  content: "\f244";
+}
+.fa-mouse-pointer:before {
+  content: "\f245";
+}
+.fa-i-cursor:before {
+  content: "\f246";
+}
+.fa-object-group:before {
+  content: "\f247";
+}
+.fa-object-ungroup:before {
+  content: "\f248";
+}
+.fa-sticky-note:before {
+  content: "\f249";
+}
+.fa-sticky-note-o:before {
+  content: "\f24a";
+}
+.fa-cc-jcb:before {
+  content: "\f24b";
+}
+.fa-cc-diners-club:before {
+  content: "\f24c";
+}
+.fa-clone:before {
+  content: "\f24d";
+}
+.fa-balance-scale:before {
+  content: "\f24e";
+}
+.fa-hourglass-o:before {
+  content: "\f250";
+}
+.fa-hourglass-1:before,
+.fa-hourglass-start:before {
+  content: "\f251";
+}
+.fa-hourglass-2:before,
+.fa-hourglass-half:before {
+  content: "\f252";
+}
+.fa-hourglass-3:before,
+.fa-hourglass-end:before {
+  content: "\f253";
+}
+.fa-hourglass:before {
+  content: "\f254";
+}
+.fa-hand-grab-o:before,
+.fa-hand-rock-o:before {
+  content: "\f255";
+}
+.fa-hand-stop-o:before,
+.fa-hand-paper-o:before {
+  content: "\f256";
+}
+.fa-hand-scissors-o:before {
+  content: "\f257";
+}
+.fa-hand-lizard-o:before {
+  content: "\f258";
+}
+.fa-hand-spock-o:before {
+  content: "\f259";
+}
+.fa-hand-pointer-o:before {
+  content: "\f25a";
+}
+.fa-hand-peace-o:before {
+  content: "\f25b";
+}
+.fa-trademark:before {
+  content: "\f25c";
+}
+.fa-registered:before {
+  content: "\f25d";
+}
+.fa-creative-commons:before {
+  content: "\f25e";
+}
+.fa-gg:before {
+  content: "\f260";
+}
+.fa-gg-circle:before {
+  content: "\f261";
+}
+.fa-tripadvisor:before {
+  content: "\f262";
+}
+.fa-odnoklassniki:before {
+  content: "\f263";
+}
+.fa-odnoklassniki-square:before {
+  content: "\f264";
+}
+.fa-get-pocket:before {
+  content: "\f265";
+}
+.fa-wikipedia-w:before {
+  content: "\f266";
+}
+.fa-safari:before {
+  content: "\f267";
+}
+.fa-chrome:before {
+  content: "\f268";
+}
+.fa-firefox:before {
+  content: "\f269";
+}
+.fa-opera:before {
+  content: "\f26a";
+}
+.fa-internet-explorer:before {
+  content: "\f26b";
+}
+.fa-tv:before,
+.fa-television:before {
+  content: "\f26c";
+}
+.fa-contao:before {
+  content: "\f26d";
+}
+.fa-500px:before {
+  content: "\f26e";
+}
+.fa-amazon:before {
+  content: "\f270";
+}
+.fa-calendar-plus-o:before {
+  content: "\f271";
+}
+.fa-calendar-minus-o:before {
+  content: "\f272";
+}
+.fa-calendar-times-o:before {
+  content: "\f273";
+}
+.fa-calendar-check-o:before {
+  content: "\f274";
+}
+.fa-industry:before {
+  content: "\f275";
+}
+.fa-map-pin:before {
+  content: "\f276";
+}
+.fa-map-signs:before {
+  content: "\f277";
+}
+.fa-map-o:before {
+  content: "\f278";
+}
+.fa-map:before {
+  content: "\f279";
+}
+.fa-commenting:before {
+  content: "\f27a";
+}
+.fa-commenting-o:before {
+  content: "\f27b";
+}
+.fa-houzz:before {
+  content: "\f27c";
+}
+.fa-vimeo:before {
+  content: "\f27d";
+}
+.fa-black-tie:before {
+  content: "\f27e";
+}
+.fa-fonticons:before {
+  content: "\f280";
+}
+.fa-reddit-alien:before {
+  content: "\f281";
+}
+.fa-edge:before {
+  content: "\f282";
+}
+.fa-credit-card-alt:before {
+  content: "\f283";
+}
+.fa-codiepie:before {
+  content: "\f284";
+}
+.fa-modx:before {
+  content: "\f285";
+}
+.fa-fort-awesome:before {
+  content: "\f286";
+}
+.fa-usb:before {
+  content: "\f287";
+}
+.fa-product-hunt:before {
+  content: "\f288";
+}
+.fa-mixcloud:before {
+  content: "\f289";
+}
+.fa-scribd:before {
+  content: "\f28a";
+}
+.fa-pause-circle:before {
+  content: "\f28b";
+}
+.fa-pause-circle-o:before {
+  content: "\f28c";
+}
+.fa-stop-circle:before {
+  content: "\f28d";
+}
+.fa-stop-circle-o:before {
+  content: "\f28e";
+}
+.fa-shopping-bag:before {
+  content: "\f290";
+}
+.fa-shopping-basket:before {
+  content: "\f291";
+}
+.fa-hashtag:before {
+  content: "\f292";
+}
+.fa-bluetooth:before {
+  content: "\f293";
+}
+.fa-bluetooth-b:before {
+  content: "\f294";
+}
+.fa-percent:before {
+  content: "\f295";
+}
+.fa-gitlab:before {
+  content: "\f296";
+}
+.fa-wpbeginner:before {
+  content: "\f297";
+}
+.fa-wpforms:before {
+  content: "\f298";
+}
+.fa-envira:before {
+  content: "\f299";
+}
+.fa-universal-access:before {
+  content: "\f29a";
+}
+.fa-wheelchair-alt:before {
+  content: "\f29b";
+}
+.fa-question-circle-o:before {
+  content: "\f29c";
+}
+.fa-blind:before {
+  content: "\f29d";
+}
+.fa-audio-description:before {
+  content: "\f29e";
+}
+.fa-volume-control-phone:before {
+  content: "\f2a0";
+}
+.fa-braille:before {
+  content: "\f2a1";
+}
+.fa-assistive-listening-systems:before {
+  content: "\f2a2";
+}
+.fa-asl-interpreting:before,
+.fa-american-sign-language-interpreting:before {
+  content: "\f2a3";
+}
+.fa-deafness:before,
+.fa-hard-of-hearing:before,
+.fa-deaf:before {
+  content: "\f2a4";
+}
+.fa-glide:before {
+  content: "\f2a5";
+}
+.fa-glide-g:before {
+  content: "\f2a6";
+}
+.fa-signing:before,
+.fa-sign-language:before {
+  content: "\f2a7";
+}
+.fa-low-vision:before {
+  content: "\f2a8";
+}
+.fa-viadeo:before {
+  content: "\f2a9";
+}
+.fa-viadeo-square:before {
+  content: "\f2aa";
+}
+.fa-snapchat:before {
+  content: "\f2ab";
+}
+.fa-snapchat-ghost:before {
+  content: "\f2ac";
+}
+.fa-snapchat-square:before {
+  content: "\f2ad";
+}
+.fa-pied-piper:before {
+  content: "\f2ae";
+}
+.fa-first-order:before {
+  content: "\f2b0";
+}
+.fa-yoast:before {
+  content: "\f2b1";
+}
+.fa-themeisle:before {
+  content: "\f2b2";
+}
+.fa-google-plus-circle:before,
+.fa-google-plus-official:before {
+  content: "\f2b3";
+}
+.fa-fa:before,
+.fa-font-awesome:before {
+  content: "\f2b4";
+}
+.fa-handshake-o:before {
+  content: "\f2b5";
+}
+.fa-envelope-open:before {
+  content: "\f2b6";
+}
+.fa-envelope-open-o:before {
+  content: "\f2b7";
+}
+.fa-linode:before {
+  content: "\f2b8";
+}
+.fa-address-book:before {
+  content: "\f2b9";
+}
+.fa-address-book-o:before {
+  content: "\f2ba";
+}
+.fa-vcard:before,
+.fa-address-card:before {
+  content: "\f2bb";
+}
+.fa-vcard-o:before,
+.fa-address-card-o:before {
+  content: "\f2bc";
+}
+.fa-user-circle:before {
+  content: "\f2bd";
+}
+.fa-user-circle-o:before {
+  content: "\f2be";
+}
+.fa-user-o:before {
+  content: "\f2c0";
+}
+.fa-id-badge:before {
+  content: "\f2c1";
+}
+.fa-drivers-license:before,
+.fa-id-card:before {
+  content: "\f2c2";
+}
+.fa-drivers-license-o:before,
+.fa-id-card-o:before {
+  content: "\f2c3";
+}
+.fa-quora:before {
+  content: "\f2c4";
+}
+.fa-free-code-camp:before {
+  content: "\f2c5";
+}
+.fa-telegram:before {
+  content: "\f2c6";
+}
+.fa-thermometer-4:before,
+.fa-thermometer:before,
+.fa-thermometer-full:before {
+  content: "\f2c7";
+}
+.fa-thermometer-3:before,
+.fa-thermometer-three-quarters:before {
+  content: "\f2c8";
+}
+.fa-thermometer-2:before,
+.fa-thermometer-half:before {
+  content: "\f2c9";
+}
+.fa-thermometer-1:before,
+.fa-thermometer-quarter:before {
+  content: "\f2ca";
+}
+.fa-thermometer-0:before,
+.fa-thermometer-empty:before {
+  content: "\f2cb";
+}
+.fa-shower:before {
+  content: "\f2cc";
+}
+.fa-bathtub:before,
+.fa-s15:before,
+.fa-bath:before {
+  content: "\f2cd";
+}
+.fa-podcast:before {
+  content: "\f2ce";
+}
+.fa-window-maximize:before {
+  content: "\f2d0";
+}
+.fa-window-minimize:before {
+  content: "\f2d1";
+}
+.fa-window-restore:before {
+  content: "\f2d2";
+}
+.fa-times-rectangle:before,
+.fa-window-close:before {
+  content: "\f2d3";
+}
+.fa-times-rectangle-o:before,
+.fa-window-close-o:before {
+  content: "\f2d4";
+}
+.fa-bandcamp:before {
+  content: "\f2d5";
+}
+.fa-grav:before {
+  content: "\f2d6";
+}
+.fa-etsy:before {
+  content: "\f2d7";
+}
+.fa-imdb:before {
+  content: "\f2d8";
+}
+.fa-ravelry:before {
+  content: "\f2d9";
+}
+.fa-eercast:before {
+  content: "\f2da";
+}
+.fa-microchip:before {
+  content: "\f2db";
+}
+.fa-snowflake-o:before {
+  content: "\f2dc";
+}
+.fa-superpowers:before {
+  content: "\f2dd";
+}
+.fa-wpexplorer:before {
+  content: "\f2de";
+}
+.fa-meetup:before {
+  content: "\f2e0";
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
 }
 /*!
 *
@@ -8694,6 +9372,10 @@ div.traceback-wrapper {
   max-width: 800px;
   margin: auto;
 }
+div.traceback-wrapper pre.traceback {
+  max-height: 600px;
+  overflow: auto;
+}
 /**
  * Primary styles
  *
@@ -8719,6 +9401,10 @@ body > #header {
   z-index: 100;
 }
 body > #header #header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px;
   padding-bottom: 5px;
   padding-top: 5px;
   box-sizing: border-box;
@@ -8750,13 +9436,16 @@ body > #header .header-bar {
   padding-top: 1px;
   padding-bottom: 1px;
 }
-@media (max-width: 991px) {
-  #ipython_notebook {
-    margin-left: 10px;
-  }
-}
 [dir="rtl"] #ipython_notebook {
+  margin-right: 10px;
+  margin-left: 0;
+}
+[dir="rtl"] #ipython_notebook.pull-left {
   float: right !important;
+  float: right;
+}
+.flex-spacer {
+  flex: 1;
 }
 #noscript {
   width: auto;
@@ -8791,8 +9480,14 @@ body > #header .header-bar {
 input.ui-button {
   padding: 0.3em 0.9em;
 }
+span#kernel_logo_widget {
+  margin: 0 10px;
+}
 span#login_widget {
   float: right;
+}
+[dir="rtl"] span#login_widget {
+  float: left;
 }
 span#login_widget > .button,
 #logout {
@@ -8908,6 +9603,9 @@ span#login_widget > .button .badge,
   overflow: auto;
   flex: 1;
 }
+.modal-header {
+  cursor: move;
+}
 @media (min-width: 768px) {
   .modal .modal-dialog {
     width: 700px;
@@ -8928,6 +9626,19 @@ span#login_widget > .button .badge,
   display: inline-block;
   margin-bottom: -4px;
 }
+[dir="rtl"] .center-nav form.pull-left {
+  float: right !important;
+  float: right;
+}
+[dir="rtl"] .center-nav .navbar-text {
+  float: right;
+}
+[dir="rtl"] .navbar-inner {
+  text-align: right;
+}
+[dir="rtl"] div.text-left {
+  text-align: right;
+}
 /*!
 *
 * IPython tree view
@@ -8944,34 +9655,42 @@ span#login_widget > .button .badge,
   margin: 0;
 }
 .alternate_upload input.fileinput {
-  text-align: center;
-  vertical-align: middle;
-  display: inline;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
   opacity: 0;
   z-index: 2;
-  width: 12ex;
-  margin-right: -12ex;
+}
+.alternate_upload .btn-xs > input.fileinput {
+  margin: -1px -5px;
 }
 .alternate_upload .btn-upload {
+  position: relative;
   height: 22px;
+}
+::-webkit-file-upload-button {
+  cursor: pointer;
 }
 /**
  * Primary styles
  *
  * Author: Jupyter Development Team
  */
-[dir="rtl"] #tabs li {
-  float: right;
-}
 ul#tabs {
   margin-bottom: 4px;
-}
-[dir="rtl"] ul#tabs {
-  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
   padding-bottom: 4px;
+}
+[dir="rtl"] ul#tabs.nav-tabs > li {
+  float: right;
+}
+[dir="rtl"] ul#tabs.nav.nav-tabs {
+  padding-right: 0;
 }
 ul.breadcrumb a:focus,
 ul.breadcrumb a:hover {
@@ -8991,15 +9710,13 @@ ul.breadcrumb span {
 .list_toolbar .tree-buttons {
   padding-top: 1px;
 }
-[dir="rtl"] .list_toolbar .tree-buttons {
+[dir="rtl"] .list_toolbar .tree-buttons .pull-right {
   float: left !important;
+  float: left;
 }
-[dir="rtl"] .list_toolbar .pull-right {
-  padding-top: 1px;
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-left {
-  float: right !important;
+[dir="rtl"] .list_toolbar .col-sm-4,
+[dir="rtl"] .list_toolbar .col-sm-8 {
+  float: right;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9055,7 +9772,7 @@ ul.breadcrumb span {
 .list_item > div input {
   margin-right: 7px;
   margin-left: 14px;
-  vertical-align: baseline;
+  vertical-align: text-bottom;
   line-height: 22px;
   position: relative;
   top: -1px;
@@ -9065,6 +9782,9 @@ ul.breadcrumb span {
   margin-left: -1px;
   vertical-align: baseline;
   line-height: 22px;
+}
+[dir="rtl"] .list_item > div input {
+  margin-right: 0;
 }
 .new-file input[type=checkbox] {
   visibility: hidden;
@@ -9080,6 +9800,14 @@ ul.breadcrumb span {
   margin-left: 7px;
   line-height: 22px;
   vertical-align: baseline;
+}
+.item_modified {
+  margin-right: 7px;
+  margin-left: 7px;
+}
+[dir="rtl"] .item_modified.pull-right {
+  float: left !important;
+  float: left;
 }
 .item_buttons {
   line-height: 1em;
@@ -9108,6 +9836,14 @@ ul.breadcrumb span {
   margin-right: 7px;
   float: left;
 }
+[dir="rtl"] .item_buttons.pull-right {
+  float: left !important;
+  float: left;
+}
+[dir="rtl"] .item_buttons .kernel-name {
+  margin-left: 7px;
+  float: right;
+}
 .toolbar_info {
   height: 24px;
   line-height: 24px;
@@ -9133,18 +9869,32 @@ ul.breadcrumb span {
   background-color: transparent;
   font-weight: bold;
 }
+.sort_button {
+  display: inline-block;
+  padding-left: 7px;
+}
+[dir="rtl"] .sort_button.pull-right {
+  float: left !important;
+  float: left;
+}
 #tree-selector {
   padding-right: 0px;
-}
-[dir="rtl"] #tree-selector a {
-  float: right;
 }
 #button-select-all {
   min-width: 50px;
 }
+[dir="rtl"] #button-select-all.btn {
+  float: right ;
+}
 #select-all {
   margin-left: 7px;
   margin-right: 2px;
+  margin-top: 2px;
+  height: 16px;
+}
+[dir="rtl"] #select-all.pull-left {
+  float: right !important;
+  float: right;
 }
 .menu_icon {
   margin-right: 2px;
@@ -9162,6 +9912,12 @@ ul.breadcrumb span {
   -moz-osx-font-smoothing: grayscale;
   content: "\f114";
 }
+.folder_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.folder_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .folder_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -9178,6 +9934,12 @@ ul.breadcrumb span {
   content: "\f02d";
   position: relative;
   top: -1px;
+}
+.notebook_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.notebook_icon:before.fa-pull-right {
+  margin-left: .3em;
 }
 .notebook_icon:before.pull-left {
   margin-right: .3em;
@@ -9197,6 +9959,12 @@ ul.breadcrumb span {
   top: -1px;
   color: #5cb85c;
 }
+.running_notebook_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.running_notebook_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .running_notebook_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -9214,6 +9982,12 @@ ul.breadcrumb span {
   position: relative;
   top: -2px;
 }
+.file_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.file_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .file_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -9228,8 +10002,11 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
-[dir="rtl"] #new-menu {
-  text-align: right;
+#new-menu .dropdown-header {
+  font-size: 10px;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0 0 3px;
+  margin: -3px 20px 0;
 }
 .kernel-menu-icon {
   padding-right: 12px;
@@ -9276,9 +10053,6 @@ ul#new-menu {
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
 }
-[dir="rtl"] #running .col-sm-8 {
-  float: right !important;
-}
 .delete-button {
   display: none;
 }
@@ -9286,6 +10060,12 @@ ul#new-menu {
   display: none;
 }
 .rename-button {
+  display: none;
+}
+.move-button {
+  display: none;
+}
+.download-button {
   display: none;
 }
 .shutdown-button {
@@ -9328,6 +10108,12 @@ ul#new-menu {
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
 }
+.dirty-indicator.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator.fa-pull-right {
+  margin-left: .3em;
+}
 .dirty-indicator.pull-left {
   margin-right: .3em;
 }
@@ -9342,6 +10128,12 @@ ul#new-menu {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
+}
+.dirty-indicator-dirty.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator-dirty.fa-pull-right {
+  margin-left: .3em;
 }
 .dirty-indicator-dirty.pull-left {
   margin-right: .3em;
@@ -9358,6 +10150,12 @@ ul#new-menu {
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
 }
+.dirty-indicator-clean.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator-clean.fa-pull-right {
+  margin-left: .3em;
+}
 .dirty-indicator-clean.pull-left {
   margin-right: .3em;
 }
@@ -9372,6 +10170,12 @@ ul#new-menu {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f00c";
+}
+.dirty-indicator-clean:before.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator-clean:before.fa-pull-right {
+  margin-left: .3em;
 }
 .dirty-indicator-clean:before.pull-left {
   margin-right: .3em;
@@ -9417,14 +10221,132 @@ ul#new-menu {
     box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
   }
 }
+.CodeMirror-dialog {
+  background-color: #fff;
+}
 /*!
 *
 * IPython notebook
 *
 */
-/* CSS font colors for translated ANSI colors. */
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
 .ansibold {
   font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
 }
 /* use dark versions for foreground, to improve visibility */
 .ansiblack {
@@ -9503,12 +10425,20 @@ div.cell {
   /* This acts as a spacer between cells, that is outside the border */
   margin: 0px;
   outline: none;
-  border-left-width: 1px;
-  padding-left: 5px;
-  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
 }
 div.cell.jupyter-soft-selected {
-  border-left-color: #90CAF9;
   border-left-color: #E3F2FD;
   border-left-width: 1px;
   padding-left: 5px;
@@ -9521,27 +10451,39 @@ div.cell.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected {
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
   border-color: #ababab;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
 }
 @media print {
-  div.cell.selected {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected.jupyter-soft-selected {
-  border-left-width: 0;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
-}
 .edit_mode div.cell.selected {
   border-color: #66BB6A;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
 }
 @media print {
   .edit_mode div.cell.selected {
@@ -9737,7 +10679,9 @@ div.input_area > div.highlight > pre {
 .CodeMirror-lines {
   /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
   /* we have set a different line-height and want this to scale with that. */
-  padding: 0.4em;
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
 }
 .CodeMirror-linenumber {
   padding: 0 8px 0 4px;
@@ -9747,11 +10691,24 @@ div.input_area > div.highlight > pre {
   border-top-left-radius: 2px;
 }
 .CodeMirror pre {
-  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
-  /* .CodeMirror-lines */
-  padding: 0;
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
   border: 0;
   border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
 }
 /*
 
@@ -10005,6 +10962,9 @@ div.output_area img.unconfined,
 div.output_area svg.unconfined {
   max-width: none;
 }
+div.output_area .mglyph > img {
+  max-width: none;
+}
 /* This is needed to protect the pre formating from global settings such
    as that of bootstrap */
 .output {
@@ -10043,7 +11003,7 @@ div.output_area svg.unconfined {
 }
 div.output_area pre {
   margin: 0;
-  padding: 0;
+  padding: 1px 0 1px 0;
   border: 0;
   vertical-align: baseline;
   color: black;
@@ -10203,39 +11163,35 @@ div.output_unrecognized a:hover {
 .rendered_html h6:first-child {
   margin-top: 1em;
 }
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
 .rendered_html ul {
   list-style: disc;
-  margin: 0em 2em;
-  padding-left: 0px;
 }
 .rendered_html ul ul {
   list-style: square;
-  margin: 0em 2em;
+  margin-top: 0;
 }
 .rendered_html ul ul ul {
   list-style: circle;
-  margin: 0em 2em;
 }
 .rendered_html ol {
   list-style: decimal;
-  margin: 0em 2em;
-  padding-left: 0px;
 }
 .rendered_html ol ol {
   list-style: upper-alpha;
-  margin: 0em 2em;
+  margin-top: 0;
 }
 .rendered_html ol ol ol {
   list-style: lower-alpha;
-  margin: 0em 2em;
 }
 .rendered_html ol ol ol ol {
   list-style: lower-roman;
-  margin: 0em 2em;
 }
 .rendered_html ol ol ol ol ol {
   list-style: decimal;
-  margin: 0em 2em;
 }
 .rendered_html * + ul {
   margin-top: 1em;
@@ -10249,14 +11205,23 @@ div.output_unrecognized a:hover {
 }
 .rendered_html pre {
   margin: 1em 2em;
+  padding: 0px;
+  background-color: #fff;
+}
+.rendered_html code {
+  background-color: #eff0f1;
+}
+.rendered_html p code {
+  padding: 1px 5px;
+}
+.rendered_html pre code {
+  background-color: #fff;
 }
 .rendered_html pre,
 .rendered_html code {
   border: 0;
-  background-color: #fff;
   color: #000;
   font-size: 100%;
-  padding: 0px;
 }
 .rendered_html blockquote {
   margin: 1em 2em;
@@ -10264,24 +11229,36 @@ div.output_unrecognized a:hover {
 .rendered_html table {
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid black;
+  border: none;
   border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
 }
 .rendered_html tr,
 .rendered_html th,
 .rendered_html td {
-  border: 1px solid black;
-  border-collapse: collapse;
-  margin: 1em 2em;
-}
-.rendered_html td,
-.rendered_html th {
-  text-align: left;
+  text-align: right;
   vertical-align: middle;
-  padding: 4px;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
 }
 .rendered_html th {
   font-weight: bold;
+}
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
 }
 .rendered_html * + table {
   margin-top: 1em;
@@ -10308,6 +11285,15 @@ div.output_unrecognized a:hover {
 .rendered_html img.unconfined,
 .rendered_html svg.unconfined {
   max-width: none;
+}
+.rendered_html .alert {
+  margin-bottom: initial;
+}
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] .rendered_html p {
+  text-align: right;
 }
 div.text_cell {
   /* Old browsers */
@@ -10362,8 +11348,17 @@ h6:hover .anchor-link {
   overflow-x: auto;
   overflow-y: hidden;
 }
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered .rendered_html td {
+  max-width: none;
+}
 .text_cell.unrendered .text_cell_render {
   display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
 }
 .cm-header-1,
 .cm-header-2,
@@ -10500,6 +11495,28 @@ kbd {
   padding-top: 1px;
   padding-bottom: 1px;
 }
+.jupyter-keybindings {
+  padding: 1px;
+  line-height: 24px;
+  border-bottom: 1px solid gray;
+}
+.jupyter-keybindings input {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.jupyter-keybindings i {
+  padding: 6px;
+}
+.well code {
+  background-color: #ffffff;
+  border-color: #ababab;
+  border-width: 1px;
+  border-style: solid;
+  padding: 2px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
 /* CSS for the cell toolbar */
 .celltoolbar {
   border: thin solid #CFCFCF;
@@ -10632,6 +11649,152 @@ select[multiple].celltoolbar select {
   margin-left: 5px;
   margin-right: 5px;
 }
+.tags_button_container {
+  width: 100%;
+  display: flex;
+}
+.tag-container {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  overflow: hidden;
+  position: relative;
+}
+.tag-container > * {
+  margin: 0 4px;
+}
+.remove-tag-btn {
+  margin-left: 4px;
+}
+.tags-input {
+  display: flex;
+}
+.cell-tag:last-child:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 40px;
+  height: 100%;
+  /* Fade to background color of cell toolbar */
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), #EEE);
+}
+.tags-input > * {
+  margin-left: 4px;
+}
+.cell-tag,
+.tags-input input,
+.tags-input button {
+  display: block;
+  width: 100%;
+  height: 32px;
+  padding: 6px 12px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 1px;
+  box-shadow: none;
+  width: inherit;
+  font-size: inherit;
+  height: 22px;
+  line-height: 22px;
+  padding: 0px 4px;
+  display: inline-block;
+}
+.cell-tag:focus,
+.tags-input input:focus,
+.tags-input button:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+.cell-tag::-moz-placeholder,
+.tags-input input::-moz-placeholder,
+.tags-input button::-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+.cell-tag:-ms-input-placeholder,
+.tags-input input:-ms-input-placeholder,
+.tags-input button:-ms-input-placeholder {
+  color: #999;
+}
+.cell-tag::-webkit-input-placeholder,
+.tags-input input::-webkit-input-placeholder,
+.tags-input button::-webkit-input-placeholder {
+  color: #999;
+}
+.cell-tag::-ms-expand,
+.tags-input input::-ms-expand,
+.tags-input button::-ms-expand {
+  border: 0;
+  background-color: transparent;
+}
+.cell-tag[disabled],
+.tags-input input[disabled],
+.tags-input button[disabled],
+.cell-tag[readonly],
+.tags-input input[readonly],
+.tags-input button[readonly],
+fieldset[disabled] .cell-tag,
+fieldset[disabled] .tags-input input,
+fieldset[disabled] .tags-input button {
+  background-color: #eeeeee;
+  opacity: 1;
+}
+.cell-tag[disabled],
+.tags-input input[disabled],
+.tags-input button[disabled],
+fieldset[disabled] .cell-tag,
+fieldset[disabled] .tags-input input,
+fieldset[disabled] .tags-input button {
+  cursor: not-allowed;
+}
+textarea.cell-tag,
+textarea.tags-input input,
+textarea.tags-input button {
+  height: auto;
+}
+select.cell-tag,
+select.tags-input input,
+select.tags-input button {
+  height: 30px;
+  line-height: 30px;
+}
+textarea.cell-tag,
+textarea.tags-input input,
+textarea.tags-input button,
+select[multiple].cell-tag,
+select[multiple].tags-input input,
+select[multiple].tags-input button {
+  height: auto;
+}
+.cell-tag,
+.tags-input button {
+  padding: 0px 4px;
+}
+.cell-tag {
+  background-color: #fff;
+  white-space: nowrap;
+}
+.tags-input input[type=text]:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #ccc;
+}
 .completions {
   position: absolute;
   z-index: 110;
@@ -10657,16 +11820,28 @@ select[multiple].celltoolbar select {
 .completions select option.context {
   color: #286090;
 }
-#kernel_logo_widget {
-  float: right !important;
-  float: right;
-}
 #kernel_logo_widget .current_kernel_logo {
   display: none;
   margin-top: -1px;
   margin-bottom: -1px;
   width: 32px;
   height: 32px;
+}
+[dir="rtl"] #kernel_logo_widget {
+  float: left !important;
+  float: left;
+}
+.modal .modal-body .move-path {
+  display: flex;
+  flex-direction: row;
+  justify-content: space;
+  align-items: center;
+}
+.modal .modal-body .move-path .server-root {
+  padding-right: 20px;
+}
+.modal .modal-body .move-path .path-input {
+  flex: 1;
 }
 #menubar {
   box-sizing: border-box;
@@ -10688,11 +11863,41 @@ select[multiple].celltoolbar select {
 #menubar .navbar-collapse {
   clear: left;
 }
+[dir="rtl"] #menubar .navbar-toggle {
+  float: right;
+}
+[dir="rtl"] #menubar .navbar-collapse {
+  clear: right;
+}
+[dir="rtl"] #menubar .navbar-nav {
+  float: right;
+}
+[dir="rtl"] #menubar .nav {
+  padding-right: 0px;
+}
+[dir="rtl"] #menubar .navbar-nav > li {
+  float: right;
+}
+[dir="rtl"] #menubar .navbar-right {
+  float: left !important;
+}
+[dir="rtl"] ul.dropdown-menu {
+  text-align: right;
+  left: auto;
+}
+[dir="rtl"] ul#new-menu.dropdown-menu {
+  right: auto;
+  left: 0;
+}
 .nav-wrapper {
   border-bottom: 1px solid #e7e7e7;
 }
 i.menu-icon {
   padding-top: 4px;
+}
+[dir="rtl"] i.menu-icon.pull-right {
+  float: left !important;
+  float: left;
 }
 ul#help_menu li a {
   overflow: hidden;
@@ -10700,6 +11905,17 @@ ul#help_menu li a {
 }
 ul#help_menu li a i {
   margin-right: -1.2em;
+}
+[dir="rtl"] ul#help_menu li a {
+  padding-left: 2.2em;
+}
+[dir="rtl"] ul#help_menu li a i {
+  margin-right: 0;
+  margin-left: -1.2em;
+}
+[dir="rtl"] ul#help_menu li a i.pull-right {
+  float: left !important;
+  float: left;
 }
 .dropdown-submenu {
   position: relative;
@@ -10709,6 +11925,10 @@ ul#help_menu li a i {
   left: 100%;
   margin-top: -6px;
   margin-left: -1px;
+}
+[dir="rtl"] .dropdown-submenu > .dropdown-menu {
+  right: 100%;
+  margin-right: -1px;
 }
 .dropdown-submenu:hover > .dropdown-menu {
   display: block;
@@ -10727,11 +11947,23 @@ ul#help_menu li a i {
   margin-top: 2px;
   margin-right: -10px;
 }
+.dropdown-submenu > a:after.fa-pull-left {
+  margin-right: .3em;
+}
+.dropdown-submenu > a:after.fa-pull-right {
+  margin-left: .3em;
+}
 .dropdown-submenu > a:after.pull-left {
   margin-right: .3em;
 }
 .dropdown-submenu > a:after.pull-right {
   margin-left: .3em;
+}
+[dir="rtl"] .dropdown-submenu > a:after {
+  float: left;
+  content: "\f0d9";
+  margin-right: 0;
+  margin-left: -10px;
 }
 .dropdown-submenu:hover > a:after {
   color: #262626;
@@ -10748,6 +11980,10 @@ ul#help_menu li a i {
   float: right;
   z-index: 10;
 }
+[dir="rtl"] #notification_area {
+  float: left !important;
+  float: left;
+}
 .indicator_area {
   float: right !important;
   float: right;
@@ -10758,6 +11994,10 @@ ul#help_menu li a i {
   z-index: 10;
   text-align: center;
   width: auto;
+}
+[dir="rtl"] .indicator_area {
+  float: left !important;
+  float: left;
 }
 #kernel_indicator {
   float: right !important;
@@ -10775,6 +12015,12 @@ ul#help_menu li a i {
   padding-left: 5px;
   padding-right: 5px;
 }
+[dir="rtl"] #kernel_indicator {
+  float: left !important;
+  float: left;
+  border-left: 0;
+  border-right: 1px solid;
+}
 #modal_indicator {
   float: right !important;
   float: right;
@@ -10785,6 +12031,10 @@ ul#help_menu li a i {
   z-index: 10;
   text-align: center;
   width: auto;
+}
+[dir="rtl"] #modal_indicator {
+  float: left !important;
+  float: left;
 }
 #readonly-indicator {
   float: right !important;
@@ -10815,6 +12065,12 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f040";
 }
+.edit_mode .modal_indicator:before.fa-pull-left {
+  margin-right: .3em;
+}
+.edit_mode .modal_indicator:before.fa-pull-right {
+  margin-left: .3em;
+}
 .edit_mode .modal_indicator:before.pull-left {
   margin-right: .3em;
 }
@@ -10829,6 +12085,12 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: ' ';
+}
+.command_mode .modal_indicator:before.fa-pull-left {
+  margin-right: .3em;
+}
+.command_mode .modal_indicator:before.fa-pull-right {
+  margin-left: .3em;
 }
 .command_mode .modal_indicator:before.pull-left {
   margin-right: .3em;
@@ -10845,6 +12107,12 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f10c";
 }
+.kernel_idle_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_idle_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .kernel_idle_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -10859,6 +12127,12 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f111";
+}
+.kernel_busy_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_busy_icon:before.fa-pull-right {
+  margin-left: .3em;
 }
 .kernel_busy_icon:before.pull-left {
   margin-right: .3em;
@@ -10875,6 +12149,12 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f1e2";
 }
+.kernel_dead_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_dead_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .kernel_dead_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -10889,6 +12169,12 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f127";
+}
+.kernel_disconnected_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_disconnected_icon:before.fa-pull-right {
+  margin-left: .3em;
 }
 .kernel_disconnected_icon:before.pull-left {
   margin-right: .3em;
@@ -11279,27 +12565,46 @@ div#pager .ui-resizable-handle::after {
   flex: 1;
 }
 span.save_widget {
-  margin-top: 6px;
+  height: 30px;
+  margin-top: 4px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  width: 50%;
+  flex: 1;
 }
 span.save_widget span.filename {
-  height: 1em;
+  height: 100%;
   line-height: 1em;
-  padding: 3px;
   margin-left: 16px;
   border: none;
   font-size: 146.5%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   border-radius: 2px;
 }
 span.save_widget span.filename:hover {
   background-color: #e6e6e6;
 }
+[dir="rtl"] span.save_widget.pull-left {
+  float: right !important;
+  float: right;
+}
+[dir="rtl"] span.save_widget span.filename {
+  margin-left: 0;
+  margin-right: 16px;
+}
 span.checkpoint_status,
 span.autosave_status {
   font-size: small;
+  white-space: nowrap;
+  padding: 0 5px;
 }
 @media (max-width: 767px) {
   span.save_widget {
     font-size: small;
+    padding: 0 0 0 5px;
   }
   span.checkpoint_status,
   span.autosave_status {
@@ -11343,6 +12648,9 @@ span.autosave_status {
   margin-top: 0px;
   margin-left: 5px;
 }
+.toolbar-btn-label {
+  margin-left: 6px;
+}
 #maintoolbar {
   margin-bottom: -3px;
   margin-top: -8px;
@@ -11362,6 +12670,10 @@ span.autosave_status {
 }
 .select-xs {
   height: 24px;
+}
+[dir="rtl"] .btn-group > .btn,
+.btn-group-vertical > .btn {
+  float: right;
 }
 .pulse,
 .dropdown-menu > li > a.pulse,
@@ -11512,6 +12824,10 @@ ul.typeahead-list i {
   margin-left: -10px;
   width: 18px;
 }
+[dir="rtl"] ul.typeahead-list i {
+  margin-left: 0;
+  margin-right: -10px;
+}
 ul.typeahead-list {
   max-height: 80vh;
   overflow: auto;
@@ -11520,6 +12836,13 @@ ul.typeahead-list > li > a {
   /** Firefox bug **/
   /* see https://github.com/jupyter/notebook/issues/559 */
   white-space: normal;
+}
+ul.typeahead-list  > li > a.pull-right {
+  float: left !important;
+  float: left;
+}
+[dir="rtl"] .typeahead-list {
+  text-align: right;
 }
 .cmd-palette .modal-body {
   padding: 7px;
@@ -11531,10 +12854,19 @@ ul.typeahead-list > li > a {
   outline: none;
 }
 .no-shortcut {
-  display: none;
+  min-width: 20px;
+  color: transparent;
+}
+[dir="rtl"] .no-shortcut.pull-right {
+  float: left !important;
+  float: left;
+}
+[dir="rtl"] .command-shortcut.pull-right {
+  float: left !important;
+  float: left;
 }
 .command-shortcut:before {
-  content: "(command)";
+  content: "(command mode)";
   padding-right: 3px;
   color: #777777;
 }
@@ -11543,6 +12875,10 @@ ul.typeahead-list > li > a {
   padding-right: 3px;
   color: #777777;
 }
+[dir="rtl"] .edit-shortcut.pull-right {
+  float: left !important;
+  float: left;
+}
 #find-and-replace #replace-preview .match,
 #find-and-replace #replace-preview .insert {
   background-color: #BBDEFB;
@@ -11550,6 +12886,12 @@ ul.typeahead-list > li > a {
   border-style: solid;
   border-width: 1px;
   border-radius: 0px;
+}
+[dir="ltr"] #find-and-replace .input-group-btn + .form-control {
+  border-left: none;
+}
+[dir="rtl"] #find-and-replace .input-group-btn + .form-control {
+  border-right: none;
 }
 #find-and-replace #replace-preview .replace .match {
   background-color: #FFCDD2;
@@ -11726,9 +13068,7 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
-}
-
-@media print {
+}@media print {
   div.cell {
     display: block;
     page-break-inside: avoid;
@@ -11749,7 +13089,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -11773,10 +13113,8 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Data-Types-and-Data-Structures">Data Types and Data Structures<a class="anchor-link" href="#Data-Types-and-Data-Structures">&#182;</a></h1><h2 id="What-type-is-it?">What type is it?<a class="anchor-link" href="#What-type-is-it?">&#182;</a></h2><p>Python knows different data types. To find the type of a variable, use the <code>type()</code> function:</p>
 
@@ -11792,7 +13130,7 @@ div#notebook {
 <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -11801,7 +13139,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[1]:</div>
+
+    <div class="prompt output_prompt">Out[1]:</div>
+
 
 
 
@@ -11824,7 +13164,7 @@ div#notebook {
 <span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -11833,7 +13173,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[2]:</div>
+
+    <div class="prompt output_prompt">Out[2]:</div>
+
 
 
 
@@ -11856,7 +13198,7 @@ div#notebook {
 <span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -11865,7 +13207,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[3]:</div>
+
+    <div class="prompt output_prompt">Out[3]:</div>
+
 
 
 
@@ -11888,7 +13232,7 @@ div#notebook {
 <span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -11897,7 +13241,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[4]:</div>
+
+    <div class="prompt output_prompt">Out[4]:</div>
+
 
 
 
@@ -11911,10 +13257,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Numbers">Numbers<a class="anchor-link" href="#Numbers">&#182;</a></h2><h5 id="Further-information">Further information<a class="anchor-link" href="#Further-information">&#182;</a></h5><ul>
 <li><p>Informal introduction to numbers. <a href="http://docs.python.org/tutorial/introduction.html#using-python-as-a-calculator">Python tutorial, section 3.1.1</a></p>
@@ -11940,15 +13284,13 @@ div#notebook {
 <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>     <span class="c1"># x is in integer number</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The function <code>int()</code> will also convert floating point numbers to integers:</p>
 
@@ -11963,7 +13305,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="mf">7.0</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -11972,7 +13314,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[6]:</div>
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
 
 
 
@@ -11994,7 +13338,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="mf">7.9</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12003,7 +13347,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[7]:</div>
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
 
 
 
@@ -12017,10 +13363,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Note than <code>int</code> will truncate any non-integer part of a floating point number. To <code>round</code> an floating point number to an integer, use the <code>round()</code> command:</p>
 
@@ -12035,7 +13379,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">7.9</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12044,7 +13388,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[8]:</div>
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
 
 
 
@@ -12058,10 +13404,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Integer-limits">Integer limits<a class="anchor-link" href="#Integer-limits">&#182;</a></h3><p>Integers in Python 3 are unlimited; Python will automatically assign more memory as needed as the numbers get bigger. This means we can calculate very large numbers with no special steps.</p>
 
@@ -12076,7 +13420,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="mi">35</span><span class="o">**</span><span class="mi">42</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12085,7 +13429,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[9]:</div>
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
 
 
 
@@ -12099,10 +13445,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In many other programming languages, such as C and FORTRAN, integers are a fixed size—most frequently 4 bytes, which allows $2^{32}$ different values—but different types are available with different sizes. For numbers that fit into these limits, calculations can be faster, but you may need to check that the numbers don't go beyond the limits. Calculating a number beyond the limits is called <em>integer overflow</em>, and may produce bizarre results.</p>
 <p>Even in Python, we need to be aware of this when we use numpy (see <a href="14-numpy.html">Chapter 14</a>). Numpy uses integers with a fixed size, because it stores many of them together and needs to calculate with them efficiently. <a href="http://docs.scipy.org/doc/numpy/user/basics.types.html">Numpy data types</a> include a range of integer types named for their size, so e.g. <code>int16</code> is a 16-bit integer, with $2^{16}$ possible values.</p>
@@ -12115,10 +13459,8 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Floating-Point-numbers">Floating Point numbers<a class="anchor-link" href="#Floating-Point-numbers">&#182;</a></h3><p>A string containing a floating point number can be converted into a floating point number using the <code>float()</code> command:</p>
 
@@ -12135,7 +13477,7 @@ div#notebook {
 <span class="n">b</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12144,7 +13486,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[10]:</div>
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
 
 
 
@@ -12166,7 +13510,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12175,7 +13519,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[11]:</div>
+
+    <div class="prompt output_prompt">Out[11]:</div>
+
 
 
 
@@ -12189,10 +13535,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Complex-numbers">Complex numbers<a class="anchor-link" href="#Complex-numbers">&#182;</a></h3><p>Python (as Fortran and Matlab) has built-in complex numbers. Here are some examples how to use these:</p>
 
@@ -12208,7 +13552,7 @@ div#notebook {
 <span class="n">x</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12217,7 +13561,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[12]:</div>
+
+    <div class="prompt output_prompt">Out[12]:</div>
+
 
 
 
@@ -12239,7 +13585,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>               <span class="c1"># computes the absolute value</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12248,7 +13594,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[13]:</div>
+
+    <div class="prompt output_prompt">Out[13]:</div>
+
 
 
 
@@ -12270,7 +13618,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">imag</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12279,7 +13627,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[14]:</div>
+
+    <div class="prompt output_prompt">Out[14]:</div>
+
 
 
 
@@ -12301,7 +13651,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">real</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12310,7 +13660,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[15]:</div>
+
+    <div class="prompt output_prompt">Out[15]:</div>
+
 
 
 
@@ -12332,7 +13684,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12341,7 +13693,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[16]:</div>
+
+    <div class="prompt output_prompt">Out[16]:</div>
+
 
 
 
@@ -12363,7 +13717,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12372,7 +13726,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[17]:</div>
+
+    <div class="prompt output_prompt">Out[17]:</div>
+
 
 
 
@@ -12394,7 +13750,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="mi">3</span> <span class="o">*</span> <span class="n">x</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12403,7 +13759,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[18]:</div>
+
+    <div class="prompt output_prompt">Out[18]:</div>
+
 
 
 
@@ -12417,10 +13775,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Note that if you want to perform more complicated operations (such as taking the square root, etc) you have to use the <code>cmath</code> module (Complex MATHematics):</p>
 
@@ -12436,7 +13792,7 @@ div#notebook {
 <span class="n">cmath</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12445,7 +13801,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[19]:</div>
+
+    <div class="prompt output_prompt">Out[19]:</div>
+
 
 
 
@@ -12459,10 +13817,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Functions-applicable-to-all-types-of-numbers">Functions applicable to all types of numbers<a class="anchor-link" href="#Functions-applicable-to-all-types-of-numbers">&#182;</a></h3><p>The <code>abs()</code> function returns the absolute value of a number (also called modulus):</p>
 
@@ -12478,7 +13834,7 @@ div#notebook {
 <span class="nb">abs</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12487,7 +13843,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[20]:</div>
+
+    <div class="prompt output_prompt">Out[20]:</div>
+
 
 
 
@@ -12501,10 +13859,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Note that <code>abs()</code> also works for complex numbers (see above).</p>
 <h2 id="Sequences">Sequences<a class="anchor-link" href="#Sequences">&#182;</a></h2><p>Strings, lists and tuples are <em>sequences</em>. They can be <em>indexed</em> and <em>sliced</em> in the same way.</p>
@@ -12524,10 +13880,8 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Sequence-type-1:-String">Sequence type 1: String<a class="anchor-link" href="#Sequence-type-1:-String">&#182;</a></h3><h5 id="Further-information">Further information<a class="anchor-link" href="#Further-information">&#182;</a></h5><ul>
 <li>Introduction to strings, <a href="http://docs.python.org/tutorial/introduction.html#strings">Python tutorial 3.1.2</a></li>
@@ -12545,15 +13899,13 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;Hello World&#39;</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>double quotes:</p>
 
@@ -12568,15 +13920,13 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;Hello World&quot;</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>or triple quotes of either kind</p>
 
@@ -12592,15 +13942,13 @@ div#notebook {
 <span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Hello World&#39;&#39;&#39;</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The type of a string is <code>str</code> and the empty string is given by <code>""</code>:</p>
 
@@ -12616,7 +13964,7 @@ div#notebook {
 <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12625,7 +13973,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[24]:</div>
+
+    <div class="prompt output_prompt">Out[24]:</div>
+
 
 
 
@@ -12648,7 +13998,7 @@ div#notebook {
 <span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12657,7 +14007,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[25]:</div>
+
+    <div class="prompt output_prompt">Out[25]:</div>
+
 
 
 
@@ -12679,7 +14031,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12688,7 +14040,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[26]:</div>
+
+    <div class="prompt output_prompt">Out[26]:</div>
+
 
 
 
@@ -12710,7 +14064,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12719,7 +14073,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[27]:</div>
+
+    <div class="prompt output_prompt">Out[27]:</div>
+
 
 
 
@@ -12733,10 +14089,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The number of characters in a string (that is its <em>length</em>) can be obtained using the <code>len()</code>-function:</p>
 
@@ -12752,7 +14106,7 @@ div#notebook {
 <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12761,7 +14115,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[28]:</div>
+
+    <div class="prompt output_prompt">Out[28]:</div>
+
 
 
 
@@ -12784,7 +14140,7 @@ div#notebook {
 <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12793,7 +14149,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[29]:</div>
+
+    <div class="prompt output_prompt">Out[29]:</div>
+
 
 
 
@@ -12815,7 +14173,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;another test&#39;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12824,7 +14182,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[30]:</div>
+
+    <div class="prompt output_prompt">Out[30]:</div>
+
 
 
 
@@ -12838,10 +14198,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>You can combine (“concatenate”) two strings using the <code>+</code> operator:</p>
 
@@ -12856,7 +14214,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;Hello &#39;</span> <span class="o">+</span> <span class="s1">&#39;World&#39;</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12865,7 +14223,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[31]:</div>
+
+    <div class="prompt output_prompt">Out[31]:</div>
+
 
 
 
@@ -12879,10 +14239,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Strings have a number of useful methods, including for example <code>upper()</code> which returns the string in upper case:</p>
 
@@ -12898,7 +14256,7 @@ div#notebook {
 <span class="n">a</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12907,7 +14265,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[32]:</div>
+
+    <div class="prompt output_prompt">Out[32]:</div>
+
 
 
 
@@ -12921,10 +14281,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A list of available string methods can be found in the Python reference documentation. If a Python prompt is available, one should use the <code>dir</code> and <code>help</code> function to retrieve this information, <em>i.e.</em> <code>dir()</code> provides the list of methods, <code>help</code> can be used to learn about each method.</p>
 <p>A particularly useful method is <code>split()</code> which converts a string into a list of strings:</p>
@@ -12941,7 +14299,7 @@ div#notebook {
 <span class="n">a</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12950,7 +14308,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[33]:</div>
+
+    <div class="prompt output_prompt">Out[33]:</div>
+
 
 
 
@@ -12964,10 +14324,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The <code>split()</code> method will separate the string where it finds <em>white space</em>. White space means any character that is printed as white space, such as one space or several spaces or a tab.</p>
 <p>By passing a separator character to the <code>split()</code> method, a string can split into different parts. Suppose, for example, we would like to obtain a list of complete sentences:</p>
@@ -12984,7 +14342,7 @@ div#notebook {
 <span class="n">a</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12993,7 +14351,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[34]:</div>
+
+    <div class="prompt output_prompt">Out[34]:</div>
+
 
 
 
@@ -13007,10 +14367,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The opposite string method to <code>split</code> is <code>join</code> which can be used as follows:</p>
 
@@ -13027,7 +14385,7 @@ div#notebook {
 <span class="n">s</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13036,7 +14394,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[35]:</div>
+
+    <div class="prompt output_prompt">Out[35]:</div>
+
 
 
 
@@ -13058,7 +14418,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="s2">&quot;.&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13067,7 +14427,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[36]:</div>
+
+    <div class="prompt output_prompt">Out[36]:</div>
+
 
 
 
@@ -13089,7 +14451,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="s2">&quot; STOP&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13098,7 +14460,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[37]:</div>
+
+    <div class="prompt output_prompt">Out[37]:</div>
+
 
 
 
@@ -13112,10 +14476,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Sequence-type-2:-List">Sequence type 2: List<a class="anchor-link" href="#Sequence-type-2:-List">&#182;</a></h3><h5 id="Further-information">Further information<a class="anchor-link" href="#Further-information">&#182;</a></h5><ul>
 <li>Introduction to Lists, <a href="http://docs.python.org/tutorial/introduction.html#lists">Python tutorial, section 3.1.4</a></li>
@@ -13133,15 +14495,13 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">34</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">54</span><span class="p">]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>or strings:</p>
 
@@ -13156,15 +14516,13 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;mouse&#39;</span><span class="p">]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>An empty list is presented by <code>[]</code>:</p>
 
@@ -13179,15 +14537,13 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The type is <code>list</code>:</p>
 
@@ -13202,7 +14558,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13211,7 +14567,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[41]:</div>
+
+    <div class="prompt output_prompt">Out[41]:</div>
+
 
 
 
@@ -13233,7 +14591,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">([])</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13242,7 +14600,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[42]:</div>
+
+    <div class="prompt output_prompt">Out[42]:</div>
+
 
 
 
@@ -13256,10 +14616,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As with strings, the number of elements in a list can be obtained using the <code>len()</code> function:</p>
 
@@ -13275,7 +14633,7 @@ div#notebook {
 <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13284,7 +14642,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[43]:</div>
+
+    <div class="prompt output_prompt">Out[43]:</div>
+
 
 
 
@@ -13298,10 +14658,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>It is also possible to <em>mix</em> different types in the same list:</p>
 
@@ -13316,15 +14674,13 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">123</span><span class="p">,</span> <span class="s1">&#39;duck&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">42</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;elephant&#39;</span><span class="p">]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In Python a list is an object. It is therefor possible for a list to contain other lists (because a list keeps a sequence of objects):</p>
 
@@ -13339,15 +14695,13 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">400</span><span class="p">]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>You can combine (“concatenate”) two lists using the <code>+</code> operator:</p>
 
@@ -13362,7 +14716,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">34</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13371,7 +14725,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[46]:</div>
+
+    <div class="prompt output_prompt">Out[46]:</div>
+
 
 
 
@@ -13385,10 +14741,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Or you can add one object to the end of a list using the <code>append()</code> method:</p>
 
@@ -13405,7 +14759,7 @@ div#notebook {
 <span class="n">a</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13414,7 +14768,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[47]:</div>
+
+    <div class="prompt output_prompt">Out[47]:</div>
+
 
 
 
@@ -13428,10 +14784,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>You can delete an object from a list by calling the <code>remove()</code> method and passing the object to delete. For example:</p>
 
@@ -13448,7 +14802,7 @@ div#notebook {
 <span class="n">a</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13457,7 +14811,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[48]:</div>
+
+    <div class="prompt output_prompt">Out[48]:</div>
+
 
 
 
@@ -13471,10 +14827,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="The-range()-command">The range() command<a class="anchor-link" href="#The-range()-command">&#182;</a></h4><p>A special type of list is frequently required (often together with <code>for-loops</code>) and therefor a command exists to generate that list: the <code>range(n)</code> command generates integers starting from 0 and going up to <em>but not including</em> n. Here are a few examples:</p>
 
@@ -13489,7 +14843,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13498,7 +14852,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[49]:</div>
+
+    <div class="prompt output_prompt">Out[49]:</div>
+
 
 
 
@@ -13520,7 +14876,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13529,7 +14885,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[50]:</div>
+
+    <div class="prompt output_prompt">Out[50]:</div>
+
 
 
 
@@ -13543,10 +14901,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This command is often used with for loops. For example, to print the numbers 0<sup>2</sup>,1<sup>2</sup>,2<sup>2</sup>,3<sup>2</sup>,…,10<sup>2</sup>, the following program can be used:</p>
 
@@ -13562,7 +14918,7 @@ div#notebook {
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13571,7 +14927,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>0
@@ -13593,10 +14951,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The range command takes an optional parameter for the beginning of the integer sequence (start) and another optional parameter for the step size. This is often written as <code>range([start],stop,[step])</code> where the arguments in square brackets (<em>i.e.</em> start and step) are optional. Here are some examples:</p>
 
@@ -13611,7 +14967,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>            <span class="c1"># start=3</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13620,7 +14976,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[52]:</div>
+
+    <div class="prompt output_prompt">Out[52]:</div>
+
 
 
 
@@ -13642,7 +15000,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>         <span class="c1"># start=3, step=2</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13651,7 +15009,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[53]:</div>
+
+    <div class="prompt output_prompt">Out[53]:</div>
+
 
 
 
@@ -13673,7 +15033,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>        <span class="c1"># start=10,step=-1</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13682,7 +15042,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[54]:</div>
+
+    <div class="prompt output_prompt">Out[54]:</div>
+
 
 
 
@@ -13696,10 +15058,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Why are we calling <code>list(range())</code>?</p>
 <p>In Python 3, <code>range()</code> generates the numbers on demand. When you use <code>range()</code> in a for loop, this is more efficient, because it doesn't take up memory with a list of numbers. Passing it to <code>list()</code> forces it to generate all of its numbers, so we can see what it does.</p>
@@ -13708,10 +15068,8 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Sequence-type-3:-Tuples">Sequence type 3: Tuples<a class="anchor-link" href="#Sequence-type-3:-Tuples">&#182;</a></h3><p>A <em>tuple</em> is a (immutable) sequence of objects. Tuples are very similar in behaviour to lists with the exception that they cannot be modified (i.e. are immutable).</p>
 <p>For example, the objects in a sequence can be of any type:</p>
@@ -13728,7 +15086,7 @@ div#notebook {
 <span class="n">a</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13737,7 +15095,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[55]:</div>
+
+    <div class="prompt output_prompt">Out[55]:</div>
+
 
 
 
@@ -13759,7 +15119,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13768,7 +15128,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[56]:</div>
+
+    <div class="prompt output_prompt">Out[56]:</div>
+
 
 
 
@@ -13782,10 +15144,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The parentheses are not necessary to define a tuple: just a sequence of objects separated by commas is sufficient to define a tuple:</p>
 
@@ -13801,7 +15161,7 @@ div#notebook {
 <span class="n">a</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13810,7 +15170,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[57]:</div>
+
+    <div class="prompt output_prompt">Out[57]:</div>
+
 
 
 
@@ -13824,10 +15186,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>although it is good practice to include the paranthesis where it helps to show that tuple is defined.</p>
 <p>Tuples can also be used to make two assignments at the same time:</p>
@@ -13844,7 +15204,7 @@ div#notebook {
 <span class="n">x</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13853,7 +15213,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[58]:</div>
+
+    <div class="prompt output_prompt">Out[58]:</div>
+
 
 
 
@@ -13875,7 +15237,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">y</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13884,7 +15246,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[59]:</div>
+
+    <div class="prompt output_prompt">Out[59]:</div>
+
 
 
 
@@ -13898,10 +15262,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This can be used to <em>swap</em> to objects within one line. For example</p>
 
@@ -13919,7 +15281,7 @@ div#notebook {
 <span class="n">x</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13928,7 +15290,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[60]:</div>
+
+    <div class="prompt output_prompt">Out[60]:</div>
+
 
 
 
@@ -13950,7 +15314,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">y</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13959,7 +15323,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[61]:</div>
+
+    <div class="prompt output_prompt">Out[61]:</div>
+
 
 
 
@@ -13973,10 +15339,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The empty tuple is given by <code>()</code></p>
 
@@ -13992,7 +15356,7 @@ div#notebook {
 <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14001,7 +15365,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[62]:</div>
+
+    <div class="prompt output_prompt">Out[62]:</div>
+
 
 
 
@@ -14023,7 +15389,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14032,7 +15398,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[63]:</div>
+
+    <div class="prompt output_prompt">Out[63]:</div>
+
 
 
 
@@ -14046,10 +15414,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The notation for a tuple containing one value may seem a bit odd at first:</p>
 
@@ -14065,7 +15431,7 @@ div#notebook {
 <span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14074,7 +15440,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[64]:</div>
+
+    <div class="prompt output_prompt">Out[64]:</div>
+
 
 
 
@@ -14096,7 +15464,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14105,7 +15473,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[65]:</div>
+
+    <div class="prompt output_prompt">Out[65]:</div>
+
 
 
 
@@ -14119,10 +15489,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The extra comma is required to distinguish <code>(42,)</code> from <code>(42)</code> where in the latter case the parenthesis would be read as defining operator precedence: <code>(42)</code> simplifies to <code>42</code> which is just a number:</p>
 
@@ -14138,7 +15506,7 @@ div#notebook {
 <span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14147,7 +15515,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[66]:</div>
+
+    <div class="prompt output_prompt">Out[66]:</div>
+
 
 
 
@@ -14161,10 +15531,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This example shows the immutability of a tuple:</p>
 
@@ -14180,7 +15548,7 @@ div#notebook {
 <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14189,7 +15557,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[67]:</div>
+
+    <div class="prompt output_prompt">Out[67]:</div>
+
 
 
 
@@ -14212,7 +15582,7 @@ div#notebook {
 <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14221,7 +15591,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 <div class="output_subarea output_text output_error">
 <pre>
@@ -14239,10 +15611,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The immutability is the main difference between a tuple and a list (the latter being mutable). We should use tuples when we don’t want the content to change.</p>
 <p>Note that Python functions that return more than one value, return these in tuples (which makes sense because you don’t want these values be changed).</p>
@@ -14263,7 +15633,7 @@ div#notebook {
 <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14272,7 +15642,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[69]:</div>
+
+    <div class="prompt output_prompt">Out[69]:</div>
+
 
 
 
@@ -14294,7 +15666,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14303,7 +15675,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[70]:</div>
+
+    <div class="prompt output_prompt">Out[70]:</div>
+
 
 
 
@@ -14325,7 +15699,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14334,7 +15708,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[71]:</div>
+
+    <div class="prompt output_prompt">Out[71]:</div>
+
 
 
 
@@ -14348,10 +15724,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Note that Python (like C but unlike Fortran and unlike Matlab) starts counting indices from zero!</p>
 <p>Python provides a handy shortcut to retrieve the last element in a list: for this one uses the index “-1” where the minus indicates that it is one element <em>from the back</em> of the list. Similarly, the index “-2” will return the 2nd last element:</p>
@@ -14368,7 +15742,7 @@ div#notebook {
 <span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14377,7 +15751,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[72]:</div>
+
+    <div class="prompt output_prompt">Out[72]:</div>
+
 
 
 
@@ -14399,7 +15775,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14408,7 +15784,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[73]:</div>
+
+    <div class="prompt output_prompt">Out[73]:</div>
+
 
 
 
@@ -14422,10 +15800,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>If you prefer, you can think of the index <code>a[-1]</code> to be a shorthand notation for <code>a[len(a) - 1]</code>.</p>
 <p>Remember that strings (like lists) are also a sequence type and can be indexed in the same way:</p>
@@ -14442,7 +15818,7 @@ div#notebook {
 <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14451,7 +15827,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[74]:</div>
+
+    <div class="prompt output_prompt">Out[74]:</div>
+
 
 
 
@@ -14473,7 +15851,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14482,7 +15860,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[75]:</div>
+
+    <div class="prompt output_prompt">Out[75]:</div>
+
 
 
 
@@ -14504,7 +15884,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14513,7 +15893,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[76]:</div>
+
+    <div class="prompt output_prompt">Out[76]:</div>
+
 
 
 
@@ -14535,7 +15917,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14544,7 +15926,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[77]:</div>
+
+    <div class="prompt output_prompt">Out[77]:</div>
+
 
 
 
@@ -14566,7 +15950,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14575,7 +15959,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[78]:</div>
+
+    <div class="prompt output_prompt">Out[78]:</div>
+
 
 
 
@@ -14589,10 +15975,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Slicing-sequences">Slicing sequences<a class="anchor-link" href="#Slicing-sequences">&#182;</a></h3><h5 id="Further-information">Further information<a class="anchor-link" href="#Further-information">&#182;</a></h5><ul>
 <li>Introduction to strings, indexing and slicing in <a href="http://docs.python.org/tutorial/introduction.html#strings">Python tutorial, section 3.1.2</a></li>
@@ -14611,7 +15995,7 @@ div#notebook {
 <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14620,7 +16004,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[79]:</div>
+
+    <div class="prompt output_prompt">Out[79]:</div>
+
 
 
 
@@ -14634,10 +16020,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>By writing <code>a[0:3]</code> we request the first 3 elements starting from element 0. Similarly:</p>
 
@@ -14652,7 +16036,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14661,7 +16045,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[80]:</div>
+
+    <div class="prompt output_prompt">Out[80]:</div>
+
 
 
 
@@ -14683,7 +16069,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14692,7 +16078,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[81]:</div>
+
+    <div class="prompt output_prompt">Out[81]:</div>
+
 
 
 
@@ -14714,7 +16102,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14723,7 +16111,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[82]:</div>
+
+    <div class="prompt output_prompt">Out[82]:</div>
+
 
 
 
@@ -14737,10 +16127,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We can use negative indices to refer to the end of the sequence:</p>
 
@@ -14755,7 +16143,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14764,7 +16152,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[83]:</div>
+
+    <div class="prompt output_prompt">Out[83]:</div>
+
 
 
 
@@ -14778,10 +16168,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>It is also possible to leave out the start or the end index and this will return all elements up to the beginning or the end of the sequence. Here are some examples to make this clearer:</p>
 
@@ -14797,7 +16185,7 @@ div#notebook {
 <span class="n">a</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14806,7 +16194,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[84]:</div>
+
+    <div class="prompt output_prompt">Out[84]:</div>
+
 
 
 
@@ -14828,7 +16218,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">5</span><span class="p">:]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14837,7 +16227,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[85]:</div>
+
+    <div class="prompt output_prompt">Out[85]:</div>
+
 
 
 
@@ -14859,7 +16251,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14868,7 +16260,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[86]:</div>
+
+    <div class="prompt output_prompt">Out[86]:</div>
+
 
 
 
@@ -14890,7 +16284,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">[:]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14899,7 +16293,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[87]:</div>
+
+    <div class="prompt output_prompt">Out[87]:</div>
+
 
 
 
@@ -14913,10 +16309,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Note that <code>a[:]</code> will generate a <em>copy</em> of <code>a</code>. The use of indices in slicing is by some people experienced as counter intuitive. If you feel uncomfortable with slicing, have a look at this quotation from the <a href="http://docs.python.org/tutorial/introduction.html#strings">Python tutorial (section 3.1.2)</a>:</p>
 <blockquote><p>The best way to remember how slices work is to think of the indices as pointing between characters, with the left edge of the first character numbered 0. Then the right edge of the last character of a string of 5 characters has index 5, for example:</p>
@@ -14946,10 +16340,8 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>If you are not sure what the right index is, it is always a good technique to play around with a small example at the Python prompt to test things before or while you write your program.</p>
 <h3 id="Dictionaries">Dictionaries<a class="anchor-link" href="#Dictionaries">&#182;</a></h3><p>Dictionaries are also called “associative arrays” and “hash tables”. Dictionaries are <em>unordered</em> sets of <em>key-value pairs</em>.</p>
@@ -14966,15 +16358,13 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Keyword-value pairs can be added like this:</p>
 
@@ -14989,7 +16379,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;today&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;22 deg C&#39;</span>    <span class="c1"># &#39;today&#39; is the keyword</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15002,15 +16392,13 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;yesterday&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;19 deg C&#39;</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><code>d.keys()</code> returns a list of all keys:</p>
 
@@ -15025,7 +16413,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">d</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15034,7 +16422,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[91]:</div>
+
+    <div class="prompt output_prompt">Out[91]:</div>
+
 
 
 
@@ -15048,10 +16438,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We can retrieve values by using the keyword as the index:</p>
 
@@ -15066,7 +16454,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;today&#39;</span><span class="p">]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15075,7 +16463,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[92]:</div>
+
+    <div class="prompt output_prompt">Out[92]:</div>
+
 
 
 
@@ -15089,10 +16479,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Other ways of populating a dictionary if the data is known at creation time are:</p>
 
@@ -15108,7 +16496,7 @@ div#notebook {
 <span class="n">d2</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15117,7 +16505,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[93]:</div>
+
+    <div class="prompt output_prompt">Out[93]:</div>
+
 
 
 
@@ -15140,7 +16530,7 @@ div#notebook {
 <span class="n">d3</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15149,7 +16539,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[94]:</div>
+
+    <div class="prompt output_prompt">Out[94]:</div>
+
 
 
 
@@ -15163,10 +16555,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The function <code>dict()</code> creates an empty dictionary.</p>
 <p>Other useful dictionary methods include <code>values()</code>, <code>items()</code> and <code>get()</code>. You can use <code>in</code> to check for the presence of values.</p>
@@ -15182,7 +16572,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">d</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15191,7 +16581,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[95]:</div>
+
+    <div class="prompt output_prompt">Out[95]:</div>
+
 
 
 
@@ -15213,7 +16605,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15222,7 +16614,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[96]:</div>
+
+    <div class="prompt output_prompt">Out[96]:</div>
+
 
 
 
@@ -15244,7 +16638,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;today&#39;</span><span class="p">,</span><span class="s1">&#39;unknown&#39;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15253,7 +16647,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[97]:</div>
+
+    <div class="prompt output_prompt">Out[97]:</div>
+
 
 
 
@@ -15275,7 +16671,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;tomorrow&#39;</span><span class="p">,</span><span class="s1">&#39;unknown&#39;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15284,7 +16680,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[98]:</div>
+
+    <div class="prompt output_prompt">Out[98]:</div>
+
 
 
 
@@ -15306,7 +16704,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;today&#39;</span> <span class="ow">in</span> <span class="n">d</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15315,7 +16713,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[99]:</div>
+
+    <div class="prompt output_prompt">Out[99]:</div>
+
 
 
 
@@ -15337,7 +16737,7 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;tomorrow&#39;</span> <span class="ow">in</span> <span class="n">d</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15346,7 +16746,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[100]:</div>
+
+    <div class="prompt output_prompt">Out[100]:</div>
+
 
 
 
@@ -15360,10 +16762,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The method <code>get(key,default)</code> will provide the value for a given <code>key</code> if that key exists, otherwise it will return the <code>default</code> object.</p>
 <p>Here is a more complex example:</p>
@@ -15389,7 +16789,7 @@ div#notebook {
     <span class="nb">print</span><span class="p">(</span><span class="n">person</span><span class="p">,</span> <span class="s2">&quot;requests&quot;</span><span class="p">,</span> <span class="n">order</span><span class="p">[</span><span class="n">person</span><span class="p">])</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15398,7 +16798,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Peter requests Pint of bitter
@@ -15412,10 +16814,8 @@ Mary requests Gin Tonic
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Some more technicalities:</p>
 <ul>
@@ -15453,7 +16853,7 @@ Mary requests Gin Tonic
     <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s2">&quot;works in&quot;</span><span class="p">,</span> <span class="n">dic</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15462,7 +16862,9 @@ Mary requests Gin Tonic
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Hans works in room 1033
@@ -15476,10 +16878,8 @@ Ken works in room 1027
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Without dictionary:</p>
 
@@ -15502,7 +16902,7 @@ Ken works in room 1027
     <span class="nb">print</span><span class="p">(</span><span class="n">people</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="s2">&quot;works in&quot;</span><span class="p">,</span><span class="n">rooms</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15511,7 +16911,9 @@ Ken works in room 1027
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Hans works in room 1033
@@ -15525,10 +16927,8 @@ Ken works in room 1027
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Passing-arguments-to-functions">Passing arguments to functions<a class="anchor-link" href="#Passing-arguments-to-functions">&#182;</a></h2><p>This section contains some more advanced ideas and makes use of concepts that are only later introduced in this text. The section may be more easily accessible at a later stage.</p>
 <p>When objects are passed to a function, Python always passes (the value of) the reference to the object to the function. Effectively this is calling a function by reference, although one could refer to it as calling by value (of the reference).</p>
@@ -15564,10 +16964,8 @@ global_m=1
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Call-by-reference">Call by reference<a class="anchor-link" href="#Call-by-reference">&#182;</a></h3><p>Calling a function by reference, on the other hand, means that the object given to a function is a reference to the object. This means that the function will see the same object as in the calling code (because they are referencing the same object: we can think of the reference as a pointer to the place in memory where the object is located). Any changes acting on the object inside the function, will then be visible in the object at the calling level (because the function does actually operate on the same object, not a copy of it).</p>
 <p>Here is one example showing this using pointers in C:</p>
@@ -15597,10 +16995,8 @@ global_m=42</code></pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>C++ provides the ability to pass arguments as references by adding an ampersand in front of the argument name in the function definition:</p>
 <div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
@@ -15629,10 +17025,8 @@ global_m=42</code></pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Argument-passing-in-Python">Argument passing in Python<a class="anchor-link" href="#Argument-passing-in-Python">&#182;</a></h3><p>In Python, objects are passed as the value of a reference (think pointer) to the object. Depending on the way the reference is used in the function and depending on the type of object it references, this can result in pass-by-reference behaviour (where any changes to the object received as a function argument, are immediately reflected in the calling level).</p>
 <p>Here are three examples to discuss this. We start by passing a list to a function which iterates through all elements in the sequence and doubles the value of each element:</p>
@@ -15657,7 +17051,7 @@ global_m=42</code></pre>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;In main: s=</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">l_global</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15666,7 +17060,9 @@ global_m=42</code></pre>
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>In main: s=[0, 1, 2, 3, 10]
@@ -15681,10 +17077,8 @@ In main: s=[0, 2, 4, 6, 20]
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The variable <code>l</code> is a reference to the list object. The line <code>l[i] = l[i] * 2</code> first evaluates the right-hand side and reads the element with index <code>i</code>, then multiplies this by two. A reference to this new object is then stored in the list object <code>l</code> at position with index <code>i</code>. We have thus modified the list object, that is referenced through <code>l</code>.</p>
 <p>The reference to the list object does never change: the line <code>l[i] = l[i] * 2</code> changes the elements <code>l[i]</code> of the list <code>l</code> but never changes the reference <code>l</code> for the list. Thus both the function and calling level are operating on the same object through the references <code>l</code> and <code>global_l</code>, respectively.</p>
@@ -15709,7 +17103,7 @@ In main: s=[0, 2, 4, 6, 20]
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;In main: l=</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">l_global</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15718,7 +17112,9 @@ In main: s=[0, 2, 4, 6, 20]
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>In main: l=Hello
@@ -15733,10 +17129,8 @@ In main: l=Hello
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>What happens here is that during the evaluation of <code>l = l + l</code> a new object is created that holds <code>l + l</code>, and that we then bind the name <code>l</code> to it. In the process, we lose the references to the list object <code>l</code> that was given to the function (and thus we do not change the list object given to the function).</p>
 <p>Finally, let’s look at which produces this output:</p>
@@ -15760,7 +17154,7 @@ In main: l=Hello
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;In main: s=</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">l_global</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15769,7 +17163,9 @@ In main: l=Hello
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>In main: s=42
@@ -15784,10 +17180,8 @@ In main: s=42
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In this example, we also double the value (from 42 to 84) within the function. However, when we bind the object 84 to the python name <code>l</code> (that is the line <code>l = l * 2</code>) we have created a new object (84), and we bind the new object to <code>l</code>. In the process, we lose the reference to the object 42 within the function. This does not affect the object 42 itself, nor the reference <code>l_global</code> to it.</p>
 <p>In summary, Python’s behaviour of passing arguments to a function may appear to vary (if we view it from the pass by value versus pass by reference point of view). However, it is always call by value, where the value is a reference to the object in question, and the behaviour can be explained through the same reasoning in every case.</p>
@@ -15795,10 +17189,8 @@ In main: s=42
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Performance-considerations">Performance considerations<a class="anchor-link" href="#Performance-considerations">&#182;</a></h3><p>Call by value function calls require copying of the value before it is passed to the function. From a performance point of view (both execution time and memory requirements), this can be an expensive process if the value is large. (Imagine the value is a <code>numpy.array</code> object which could be several Megabytes or Gigabytes in size.)</p>
 <p>One generally prefers call by reference for large data objects as in this case only a pointer to the data objects is passed, independent of the actual size of the object, and thus this is generally faster than call-by-value.</p>
@@ -15831,7 +17223,7 @@ In main: s=42
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;in main after calling mymax(s): s=</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">s</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15840,7 +17232,9 @@ In main: s=42
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>in main before caling mymax(s): s=[-45, 3, 6, 2, -1]
@@ -15854,10 +17248,8 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The user of the <code>mymax()</code> function would not expect that the input argument is modified when the function executes. We should generally avoid this. There are several ways to find better solutions to the given problem:</p>
 <ul>
@@ -15885,7 +17277,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 <span class="n">a</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15894,7 +17286,9 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[108]:</div>
+
+    <div class="prompt output_prompt">Out[108]:</div>
+
 
 
 
@@ -15918,7 +17312,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 <span class="n">a</span>              <span class="c1"># changing b changes a</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15927,7 +17321,9 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[109]:</div>
+
+    <div class="prompt output_prompt">Out[109]:</div>
+
 
 
 
@@ -15950,7 +17346,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15959,7 +17355,9 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[110]:</div>
+
+    <div class="prompt output_prompt">Out[110]:</div>
+
 
 
 
@@ -15982,7 +17380,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15991,7 +17389,9 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[111]:</div>
+
+    <div class="prompt output_prompt">Out[111]:</div>
+
 
 
 
@@ -16015,7 +17415,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 <span class="nb">id</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>          <span class="c1"># c is a different object</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -16024,7 +17424,9 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[112]:</div>
+
+    <div class="prompt output_prompt">Out[112]:</div>
+
 
 
 
@@ -16047,7 +17449,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 <span class="n">a</span>              <span class="c1"># changing c does not affect a</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -16056,7 +17458,9 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[113]:</div>
+
+    <div class="prompt output_prompt">Out[113]:</div>
+
 
 
 
@@ -16070,10 +17474,8 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Python’s standard library provides the <code>copy</code> module, which provides copy functions that can be used to create copies of objects. We could have used <code>import copy; c = copy.deepcopy(a)</code> instead of <code>c = a[:]</code>.</p>
 <h2 id="Equality-and-Identity/Sameness">Equality and Identity/Sameness<a class="anchor-link" href="#Equality-and-Identity/Sameness">&#182;</a></h2><p>A related question concerns the equality of objects.</p>
@@ -16091,7 +17493,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -16100,7 +17502,9 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[114]:</div>
+
+    <div class="prompt output_prompt">Out[114]:</div>
+
 
 
 
@@ -16122,7 +17526,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -16131,7 +17535,9 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[115]:</div>
+
+    <div class="prompt output_prompt">Out[115]:</div>
+
 
 
 
@@ -16153,7 +17559,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -16162,7 +17568,9 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[116]:</div>
+
+    <div class="prompt output_prompt">Out[116]:</div>
+
 
 
 
@@ -16176,10 +17584,8 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>So the <code>==</code> operator checks whether the values of two objects are equal.</p>
 <h3 id="Identity-/-Sameness">Identity / Sameness<a class="anchor-link" href="#Identity-/-Sameness">&#182;</a></h3><p>To see check whether two objects <code>a</code> and <code>b</code> are the same (i.e. <code>a</code> and <code>b</code> are references to the same place in memory), we can use the <code>is</code> operator (continued from example above):</p>
@@ -16195,7 +17601,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="ow">is</span> <span class="n">b</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -16204,7 +17610,9 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[117]:</div>
+
+    <div class="prompt output_prompt">Out[117]:</div>
+
 
 
 
@@ -16218,10 +17626,8 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Of course they are different here, as they are not of the same type.</p>
 <p>We can also ask the <code>id</code> function which, according to the documentation string in Python 2.7 “<em>Returns the identity of an object. This is guaranteed to be unique among simultaneously existing objects. (Hint: it’s the object’s memory address.)</em>”</p>
@@ -16238,7 +17644,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -16247,7 +17653,9 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[118]:</div>
+
+    <div class="prompt output_prompt">Out[118]:</div>
+
 
 
 
@@ -16270,7 +17678,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -16279,7 +17687,9 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[119]:</div>
+
+    <div class="prompt output_prompt">Out[119]:</div>
+
 
 
 
@@ -16293,10 +17703,8 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>which shows that <code>a</code> and <code>b</code> are stored in different places in memory.</p>
 <h3 id="Example:-Equality-and-identity">Example: Equality and identity<a class="anchor-link" href="#Example:-Equality-and-identity">&#182;</a></h3><p>We close with an example involving lists:</p>
@@ -16314,7 +17722,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 <span class="n">x</span> <span class="o">==</span> <span class="n">y</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -16323,7 +17731,9 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[120]:</div>
+
+    <div class="prompt output_prompt">Out[120]:</div>
+
 
 
 
@@ -16345,7 +17755,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="ow">is</span> <span class="n">y</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -16354,7 +17764,9 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[121]:</div>
+
+    <div class="prompt output_prompt">Out[121]:</div>
+
 
 
 
@@ -16377,7 +17789,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 <span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -16386,7 +17798,9 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[122]:</div>
+
+    <div class="prompt output_prompt">Out[122]:</div>
+
 
 
 
@@ -16409,7 +17823,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 <span class="nb">id</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -16418,7 +17832,9 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[123]:</div>
+
+    <div class="prompt output_prompt">Out[123]:</div>
+
 
 
 
@@ -16432,10 +17848,8 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Here, <code>x</code> and <code>y</code> are references to the same piece of memory, they are thus identical and the <code>is</code> operator confirms this. The important point to remember is that line 2 (<code>y=x</code>) creates a new reference <code>y</code> to the same list object that <code>x</code> is a reference for.</p>
 <p>Accordingly, we can change elements of <code>x</code>, and <code>y</code> will change simultaneously as both <code>x</code> and <code>y</code> refer to the same object:</p>
@@ -16451,7 +17865,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -16460,7 +17874,9 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[124]:</div>
+
+    <div class="prompt output_prompt">Out[124]:</div>
+
 
 
 
@@ -16482,7 +17898,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">y</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -16491,7 +17907,9 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[125]:</div>
+
+    <div class="prompt output_prompt">Out[125]:</div>
+
 
 
 
@@ -16513,7 +17931,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="ow">is</span> <span class="n">y</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -16522,7 +17940,9 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[126]:</div>
+
+    <div class="prompt output_prompt">Out[126]:</div>
+
 
 
 
@@ -16545,7 +17965,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 <span class="n">y</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -16554,7 +17974,9 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[127]:</div>
+
+    <div class="prompt output_prompt">Out[127]:</div>
+
 
 
 
@@ -16576,7 +17998,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -16585,7 +18007,9 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[128]:</div>
+
+    <div class="prompt output_prompt">Out[128]:</div>
+
 
 
 
@@ -16599,10 +18023,8 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In contrast, if we use <code>z=x[:]</code> (instead of <code>z=x</code>) to create a new name <code>z</code>, then the slicing operation <code>x[:]</code> will actually create a copy of the list <code>x</code>, and the new reference <code>z</code> will point to the copy. The <em>value</em> of <code>x</code> and <code>z</code> is equal, but <code>x</code> and <code>z</code> are not the same object (they are not identical):</p>
 
@@ -16617,7 +18039,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -16626,7 +18048,9 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[129]:</div>
+
+    <div class="prompt output_prompt">Out[129]:</div>
+
 
 
 
@@ -16649,7 +18073,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 <span class="n">z</span> <span class="o">==</span> <span class="n">x</span>              <span class="c1"># same value</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -16658,7 +18082,9 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[130]:</div>
+
+    <div class="prompt output_prompt">Out[130]:</div>
+
 
 
 
@@ -16680,7 +18106,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">z</span> <span class="ow">is</span> <span class="n">x</span>              <span class="c1"># are not the same object</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -16689,7 +18115,9 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[131]:</div>
+
+    <div class="prompt output_prompt">Out[131]:</div>
+
 
 
 
@@ -16712,7 +18140,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 <span class="nb">id</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>               <span class="c1"># confirm by looking at ids</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -16721,7 +18149,9 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[132]:</div>
+
+    <div class="prompt output_prompt">Out[132]:</div>
+
 
 
 
@@ -16744,7 +18174,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 <span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -16753,7 +18183,9 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[133]:</div>
+
+    <div class="prompt output_prompt">Out[133]:</div>
+
 
 
 
@@ -16775,7 +18207,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -16784,7 +18216,9 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[134]:</div>
+
+    <div class="prompt output_prompt">Out[134]:</div>
+
 
 
 
@@ -16806,7 +18240,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">z</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -16815,7 +18249,9 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[135]:</div>
+
+    <div class="prompt output_prompt">Out[135]:</div>
+
 
 
 
@@ -16829,10 +18265,8 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Consequently, we can change <code>x</code> without changing <code>z</code>, for example (continued)</p>
 
@@ -16848,7 +18282,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 <span class="n">x</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -16857,7 +18291,9 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[136]:</div>
+
+    <div class="prompt output_prompt">Out[136]:</div>
+
 
 
 
@@ -16879,7 +18315,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">z</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -16888,7 +18324,9 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[137]:</div>
+
+    <div class="prompt output_prompt">Out[137]:</div>
+
 
 
 

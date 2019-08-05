@@ -1,8 +1,8 @@
-Last compiled: Thu Aug 23 16:38:22 UTC 2018
+Last compiled: Mon Aug  5 15:13:09 UTC 2019
  
 Last commit:
-commit ed7794343d11d78a7c67eecde7c6bb3a2dd636f0
-Author: Hans Fangohr <fangohr@soton.ac.uk>
-Date:   Thu Aug 23 12:37:06 2018 -0400
+commit a7cdf1a2b0d0f09a6e84764971979e5fb0936ae4
+Author: Hans Fangohr <hans.fangohr@xfel.eu>
+Date:   Mon Aug 5 17:11:03 2019 +0200
 
-    Rerun creation of html and pdf (after minor updates)
+    record what changes are required when moving to most recent libs again.

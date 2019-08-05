@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>12-symbolic-computation</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+
+<title>12-symbolic-computation</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
 
 <style type="text/css">
     /*!
@@ -199,7 +204,6 @@ th {
   *:before,
   *:after {
     background: transparent !important;
-    color: #000 !important;
     box-shadow: none !important;
     text-shadow: none !important;
   }
@@ -6744,15 +6748,15 @@ button.close {
 *
 */
 /*!
- *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
 /* FONT PATH
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?v=4.2.0');
-  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'), url('../components/font-awesome/fonts/fontawesome-webfont.woff?v=4.2.0') format('woff'), url('../components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.2.0') format('truetype'), url('../components/font-awesome/fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
+  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?v=4.7.0');
+  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../components/font-awesome/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../components/font-awesome/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -6809,6 +6813,19 @@ button.close {
   border: solid 0.08em #eee;
   border-radius: .1em;
 }
+.fa-pull-left {
+  float: left;
+}
+.fa-pull-right {
+  float: right;
+}
+.fa.fa-pull-left {
+  margin-right: .3em;
+}
+.fa.fa-pull-right {
+  margin-left: .3em;
+}
+/* Deprecated as of 4.4.0 */
 .pull-right {
   float: right;
 }
@@ -6824,6 +6841,10 @@ button.close {
 .fa-spin {
   -webkit-animation: fa-spin 2s infinite linear;
   animation: fa-spin 2s infinite linear;
+}
+.fa-pulse {
+  -webkit-animation: fa-spin 1s infinite steps(8);
+  animation: fa-spin 1s infinite steps(8);
 }
 @-webkit-keyframes fa-spin {
   0% {
@@ -6846,31 +6867,31 @@ button.close {
   }
 }
 .fa-rotate-90 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 .fa-rotate-180 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 .fa-rotate-270 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
   -webkit-transform: rotate(270deg);
   -ms-transform: rotate(270deg);
   transform: rotate(270deg);
 }
 .fa-flip-horizontal {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
   -webkit-transform: scale(-1, 1);
   -ms-transform: scale(-1, 1);
   transform: scale(-1, 1);
 }
 .fa-flip-vertical {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
   -webkit-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
   transform: scale(1, -1);
@@ -7355,6 +7376,7 @@ button.close {
 .fa-twitter:before {
   content: "\f099";
 }
+.fa-facebook-f:before,
 .fa-facebook:before {
   content: "\f09a";
 }
@@ -7367,6 +7389,7 @@ button.close {
 .fa-credit-card:before {
   content: "\f09d";
 }
+.fa-feed:before,
 .fa-rss:before {
   content: "\f09e";
 }
@@ -8004,7 +8027,8 @@ button.close {
 .fa-male:before {
   content: "\f183";
 }
-.fa-gittip:before {
+.fa-gittip:before,
+.fa-gratipay:before {
   content: "\f184";
 }
 .fa-sun-o:before {
@@ -8108,7 +8132,7 @@ button.close {
 .fa-digg:before {
   content: "\f1a6";
 }
-.fa-pied-piper:before {
+.fa-pied-piper-pp:before {
   content: "\f1a7";
 }
 .fa-pied-piper-alt:before {
@@ -8234,6 +8258,7 @@ button.close {
   content: "\f1ce";
 }
 .fa-ra:before,
+.fa-resistance:before,
 .fa-rebel:before {
   content: "\f1d0";
 }
@@ -8247,6 +8272,8 @@ button.close {
 .fa-git:before {
   content: "\f1d3";
 }
+.fa-y-combinator-square:before,
+.fa-yc-square:before,
 .fa-hacker-news:before {
   content: "\f1d4";
 }
@@ -8414,6 +8441,657 @@ button.close {
 }
 .fa-meanpath:before {
   content: "\f20c";
+}
+.fa-buysellads:before {
+  content: "\f20d";
+}
+.fa-connectdevelop:before {
+  content: "\f20e";
+}
+.fa-dashcube:before {
+  content: "\f210";
+}
+.fa-forumbee:before {
+  content: "\f211";
+}
+.fa-leanpub:before {
+  content: "\f212";
+}
+.fa-sellsy:before {
+  content: "\f213";
+}
+.fa-shirtsinbulk:before {
+  content: "\f214";
+}
+.fa-simplybuilt:before {
+  content: "\f215";
+}
+.fa-skyatlas:before {
+  content: "\f216";
+}
+.fa-cart-plus:before {
+  content: "\f217";
+}
+.fa-cart-arrow-down:before {
+  content: "\f218";
+}
+.fa-diamond:before {
+  content: "\f219";
+}
+.fa-ship:before {
+  content: "\f21a";
+}
+.fa-user-secret:before {
+  content: "\f21b";
+}
+.fa-motorcycle:before {
+  content: "\f21c";
+}
+.fa-street-view:before {
+  content: "\f21d";
+}
+.fa-heartbeat:before {
+  content: "\f21e";
+}
+.fa-venus:before {
+  content: "\f221";
+}
+.fa-mars:before {
+  content: "\f222";
+}
+.fa-mercury:before {
+  content: "\f223";
+}
+.fa-intersex:before,
+.fa-transgender:before {
+  content: "\f224";
+}
+.fa-transgender-alt:before {
+  content: "\f225";
+}
+.fa-venus-double:before {
+  content: "\f226";
+}
+.fa-mars-double:before {
+  content: "\f227";
+}
+.fa-venus-mars:before {
+  content: "\f228";
+}
+.fa-mars-stroke:before {
+  content: "\f229";
+}
+.fa-mars-stroke-v:before {
+  content: "\f22a";
+}
+.fa-mars-stroke-h:before {
+  content: "\f22b";
+}
+.fa-neuter:before {
+  content: "\f22c";
+}
+.fa-genderless:before {
+  content: "\f22d";
+}
+.fa-facebook-official:before {
+  content: "\f230";
+}
+.fa-pinterest-p:before {
+  content: "\f231";
+}
+.fa-whatsapp:before {
+  content: "\f232";
+}
+.fa-server:before {
+  content: "\f233";
+}
+.fa-user-plus:before {
+  content: "\f234";
+}
+.fa-user-times:before {
+  content: "\f235";
+}
+.fa-hotel:before,
+.fa-bed:before {
+  content: "\f236";
+}
+.fa-viacoin:before {
+  content: "\f237";
+}
+.fa-train:before {
+  content: "\f238";
+}
+.fa-subway:before {
+  content: "\f239";
+}
+.fa-medium:before {
+  content: "\f23a";
+}
+.fa-yc:before,
+.fa-y-combinator:before {
+  content: "\f23b";
+}
+.fa-optin-monster:before {
+  content: "\f23c";
+}
+.fa-opencart:before {
+  content: "\f23d";
+}
+.fa-expeditedssl:before {
+  content: "\f23e";
+}
+.fa-battery-4:before,
+.fa-battery:before,
+.fa-battery-full:before {
+  content: "\f240";
+}
+.fa-battery-3:before,
+.fa-battery-three-quarters:before {
+  content: "\f241";
+}
+.fa-battery-2:before,
+.fa-battery-half:before {
+  content: "\f242";
+}
+.fa-battery-1:before,
+.fa-battery-quarter:before {
+  content: "\f243";
+}
+.fa-battery-0:before,
+.fa-battery-empty:before {
+  content: "\f244";
+}
+.fa-mouse-pointer:before {
+  content: "\f245";
+}
+.fa-i-cursor:before {
+  content: "\f246";
+}
+.fa-object-group:before {
+  content: "\f247";
+}
+.fa-object-ungroup:before {
+  content: "\f248";
+}
+.fa-sticky-note:before {
+  content: "\f249";
+}
+.fa-sticky-note-o:before {
+  content: "\f24a";
+}
+.fa-cc-jcb:before {
+  content: "\f24b";
+}
+.fa-cc-diners-club:before {
+  content: "\f24c";
+}
+.fa-clone:before {
+  content: "\f24d";
+}
+.fa-balance-scale:before {
+  content: "\f24e";
+}
+.fa-hourglass-o:before {
+  content: "\f250";
+}
+.fa-hourglass-1:before,
+.fa-hourglass-start:before {
+  content: "\f251";
+}
+.fa-hourglass-2:before,
+.fa-hourglass-half:before {
+  content: "\f252";
+}
+.fa-hourglass-3:before,
+.fa-hourglass-end:before {
+  content: "\f253";
+}
+.fa-hourglass:before {
+  content: "\f254";
+}
+.fa-hand-grab-o:before,
+.fa-hand-rock-o:before {
+  content: "\f255";
+}
+.fa-hand-stop-o:before,
+.fa-hand-paper-o:before {
+  content: "\f256";
+}
+.fa-hand-scissors-o:before {
+  content: "\f257";
+}
+.fa-hand-lizard-o:before {
+  content: "\f258";
+}
+.fa-hand-spock-o:before {
+  content: "\f259";
+}
+.fa-hand-pointer-o:before {
+  content: "\f25a";
+}
+.fa-hand-peace-o:before {
+  content: "\f25b";
+}
+.fa-trademark:before {
+  content: "\f25c";
+}
+.fa-registered:before {
+  content: "\f25d";
+}
+.fa-creative-commons:before {
+  content: "\f25e";
+}
+.fa-gg:before {
+  content: "\f260";
+}
+.fa-gg-circle:before {
+  content: "\f261";
+}
+.fa-tripadvisor:before {
+  content: "\f262";
+}
+.fa-odnoklassniki:before {
+  content: "\f263";
+}
+.fa-odnoklassniki-square:before {
+  content: "\f264";
+}
+.fa-get-pocket:before {
+  content: "\f265";
+}
+.fa-wikipedia-w:before {
+  content: "\f266";
+}
+.fa-safari:before {
+  content: "\f267";
+}
+.fa-chrome:before {
+  content: "\f268";
+}
+.fa-firefox:before {
+  content: "\f269";
+}
+.fa-opera:before {
+  content: "\f26a";
+}
+.fa-internet-explorer:before {
+  content: "\f26b";
+}
+.fa-tv:before,
+.fa-television:before {
+  content: "\f26c";
+}
+.fa-contao:before {
+  content: "\f26d";
+}
+.fa-500px:before {
+  content: "\f26e";
+}
+.fa-amazon:before {
+  content: "\f270";
+}
+.fa-calendar-plus-o:before {
+  content: "\f271";
+}
+.fa-calendar-minus-o:before {
+  content: "\f272";
+}
+.fa-calendar-times-o:before {
+  content: "\f273";
+}
+.fa-calendar-check-o:before {
+  content: "\f274";
+}
+.fa-industry:before {
+  content: "\f275";
+}
+.fa-map-pin:before {
+  content: "\f276";
+}
+.fa-map-signs:before {
+  content: "\f277";
+}
+.fa-map-o:before {
+  content: "\f278";
+}
+.fa-map:before {
+  content: "\f279";
+}
+.fa-commenting:before {
+  content: "\f27a";
+}
+.fa-commenting-o:before {
+  content: "\f27b";
+}
+.fa-houzz:before {
+  content: "\f27c";
+}
+.fa-vimeo:before {
+  content: "\f27d";
+}
+.fa-black-tie:before {
+  content: "\f27e";
+}
+.fa-fonticons:before {
+  content: "\f280";
+}
+.fa-reddit-alien:before {
+  content: "\f281";
+}
+.fa-edge:before {
+  content: "\f282";
+}
+.fa-credit-card-alt:before {
+  content: "\f283";
+}
+.fa-codiepie:before {
+  content: "\f284";
+}
+.fa-modx:before {
+  content: "\f285";
+}
+.fa-fort-awesome:before {
+  content: "\f286";
+}
+.fa-usb:before {
+  content: "\f287";
+}
+.fa-product-hunt:before {
+  content: "\f288";
+}
+.fa-mixcloud:before {
+  content: "\f289";
+}
+.fa-scribd:before {
+  content: "\f28a";
+}
+.fa-pause-circle:before {
+  content: "\f28b";
+}
+.fa-pause-circle-o:before {
+  content: "\f28c";
+}
+.fa-stop-circle:before {
+  content: "\f28d";
+}
+.fa-stop-circle-o:before {
+  content: "\f28e";
+}
+.fa-shopping-bag:before {
+  content: "\f290";
+}
+.fa-shopping-basket:before {
+  content: "\f291";
+}
+.fa-hashtag:before {
+  content: "\f292";
+}
+.fa-bluetooth:before {
+  content: "\f293";
+}
+.fa-bluetooth-b:before {
+  content: "\f294";
+}
+.fa-percent:before {
+  content: "\f295";
+}
+.fa-gitlab:before {
+  content: "\f296";
+}
+.fa-wpbeginner:before {
+  content: "\f297";
+}
+.fa-wpforms:before {
+  content: "\f298";
+}
+.fa-envira:before {
+  content: "\f299";
+}
+.fa-universal-access:before {
+  content: "\f29a";
+}
+.fa-wheelchair-alt:before {
+  content: "\f29b";
+}
+.fa-question-circle-o:before {
+  content: "\f29c";
+}
+.fa-blind:before {
+  content: "\f29d";
+}
+.fa-audio-description:before {
+  content: "\f29e";
+}
+.fa-volume-control-phone:before {
+  content: "\f2a0";
+}
+.fa-braille:before {
+  content: "\f2a1";
+}
+.fa-assistive-listening-systems:before {
+  content: "\f2a2";
+}
+.fa-asl-interpreting:before,
+.fa-american-sign-language-interpreting:before {
+  content: "\f2a3";
+}
+.fa-deafness:before,
+.fa-hard-of-hearing:before,
+.fa-deaf:before {
+  content: "\f2a4";
+}
+.fa-glide:before {
+  content: "\f2a5";
+}
+.fa-glide-g:before {
+  content: "\f2a6";
+}
+.fa-signing:before,
+.fa-sign-language:before {
+  content: "\f2a7";
+}
+.fa-low-vision:before {
+  content: "\f2a8";
+}
+.fa-viadeo:before {
+  content: "\f2a9";
+}
+.fa-viadeo-square:before {
+  content: "\f2aa";
+}
+.fa-snapchat:before {
+  content: "\f2ab";
+}
+.fa-snapchat-ghost:before {
+  content: "\f2ac";
+}
+.fa-snapchat-square:before {
+  content: "\f2ad";
+}
+.fa-pied-piper:before {
+  content: "\f2ae";
+}
+.fa-first-order:before {
+  content: "\f2b0";
+}
+.fa-yoast:before {
+  content: "\f2b1";
+}
+.fa-themeisle:before {
+  content: "\f2b2";
+}
+.fa-google-plus-circle:before,
+.fa-google-plus-official:before {
+  content: "\f2b3";
+}
+.fa-fa:before,
+.fa-font-awesome:before {
+  content: "\f2b4";
+}
+.fa-handshake-o:before {
+  content: "\f2b5";
+}
+.fa-envelope-open:before {
+  content: "\f2b6";
+}
+.fa-envelope-open-o:before {
+  content: "\f2b7";
+}
+.fa-linode:before {
+  content: "\f2b8";
+}
+.fa-address-book:before {
+  content: "\f2b9";
+}
+.fa-address-book-o:before {
+  content: "\f2ba";
+}
+.fa-vcard:before,
+.fa-address-card:before {
+  content: "\f2bb";
+}
+.fa-vcard-o:before,
+.fa-address-card-o:before {
+  content: "\f2bc";
+}
+.fa-user-circle:before {
+  content: "\f2bd";
+}
+.fa-user-circle-o:before {
+  content: "\f2be";
+}
+.fa-user-o:before {
+  content: "\f2c0";
+}
+.fa-id-badge:before {
+  content: "\f2c1";
+}
+.fa-drivers-license:before,
+.fa-id-card:before {
+  content: "\f2c2";
+}
+.fa-drivers-license-o:before,
+.fa-id-card-o:before {
+  content: "\f2c3";
+}
+.fa-quora:before {
+  content: "\f2c4";
+}
+.fa-free-code-camp:before {
+  content: "\f2c5";
+}
+.fa-telegram:before {
+  content: "\f2c6";
+}
+.fa-thermometer-4:before,
+.fa-thermometer:before,
+.fa-thermometer-full:before {
+  content: "\f2c7";
+}
+.fa-thermometer-3:before,
+.fa-thermometer-three-quarters:before {
+  content: "\f2c8";
+}
+.fa-thermometer-2:before,
+.fa-thermometer-half:before {
+  content: "\f2c9";
+}
+.fa-thermometer-1:before,
+.fa-thermometer-quarter:before {
+  content: "\f2ca";
+}
+.fa-thermometer-0:before,
+.fa-thermometer-empty:before {
+  content: "\f2cb";
+}
+.fa-shower:before {
+  content: "\f2cc";
+}
+.fa-bathtub:before,
+.fa-s15:before,
+.fa-bath:before {
+  content: "\f2cd";
+}
+.fa-podcast:before {
+  content: "\f2ce";
+}
+.fa-window-maximize:before {
+  content: "\f2d0";
+}
+.fa-window-minimize:before {
+  content: "\f2d1";
+}
+.fa-window-restore:before {
+  content: "\f2d2";
+}
+.fa-times-rectangle:before,
+.fa-window-close:before {
+  content: "\f2d3";
+}
+.fa-times-rectangle-o:before,
+.fa-window-close-o:before {
+  content: "\f2d4";
+}
+.fa-bandcamp:before {
+  content: "\f2d5";
+}
+.fa-grav:before {
+  content: "\f2d6";
+}
+.fa-etsy:before {
+  content: "\f2d7";
+}
+.fa-imdb:before {
+  content: "\f2d8";
+}
+.fa-ravelry:before {
+  content: "\f2d9";
+}
+.fa-eercast:before {
+  content: "\f2da";
+}
+.fa-microchip:before {
+  content: "\f2db";
+}
+.fa-snowflake-o:before {
+  content: "\f2dc";
+}
+.fa-superpowers:before {
+  content: "\f2dd";
+}
+.fa-wpexplorer:before {
+  content: "\f2de";
+}
+.fa-meetup:before {
+  content: "\f2e0";
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
 }
 /*!
 *
@@ -8694,6 +9372,10 @@ div.traceback-wrapper {
   max-width: 800px;
   margin: auto;
 }
+div.traceback-wrapper pre.traceback {
+  max-height: 600px;
+  overflow: auto;
+}
 /**
  * Primary styles
  *
@@ -8719,6 +9401,10 @@ body > #header {
   z-index: 100;
 }
 body > #header #header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px;
   padding-bottom: 5px;
   padding-top: 5px;
   box-sizing: border-box;
@@ -8750,13 +9436,16 @@ body > #header .header-bar {
   padding-top: 1px;
   padding-bottom: 1px;
 }
-@media (max-width: 991px) {
-  #ipython_notebook {
-    margin-left: 10px;
-  }
-}
 [dir="rtl"] #ipython_notebook {
+  margin-right: 10px;
+  margin-left: 0;
+}
+[dir="rtl"] #ipython_notebook.pull-left {
   float: right !important;
+  float: right;
+}
+.flex-spacer {
+  flex: 1;
 }
 #noscript {
   width: auto;
@@ -8791,8 +9480,14 @@ body > #header .header-bar {
 input.ui-button {
   padding: 0.3em 0.9em;
 }
+span#kernel_logo_widget {
+  margin: 0 10px;
+}
 span#login_widget {
   float: right;
+}
+[dir="rtl"] span#login_widget {
+  float: left;
 }
 span#login_widget > .button,
 #logout {
@@ -8908,6 +9603,9 @@ span#login_widget > .button .badge,
   overflow: auto;
   flex: 1;
 }
+.modal-header {
+  cursor: move;
+}
 @media (min-width: 768px) {
   .modal .modal-dialog {
     width: 700px;
@@ -8928,6 +9626,19 @@ span#login_widget > .button .badge,
   display: inline-block;
   margin-bottom: -4px;
 }
+[dir="rtl"] .center-nav form.pull-left {
+  float: right !important;
+  float: right;
+}
+[dir="rtl"] .center-nav .navbar-text {
+  float: right;
+}
+[dir="rtl"] .navbar-inner {
+  text-align: right;
+}
+[dir="rtl"] div.text-left {
+  text-align: right;
+}
 /*!
 *
 * IPython tree view
@@ -8944,34 +9655,42 @@ span#login_widget > .button .badge,
   margin: 0;
 }
 .alternate_upload input.fileinput {
-  text-align: center;
-  vertical-align: middle;
-  display: inline;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
   opacity: 0;
   z-index: 2;
-  width: 12ex;
-  margin-right: -12ex;
+}
+.alternate_upload .btn-xs > input.fileinput {
+  margin: -1px -5px;
 }
 .alternate_upload .btn-upload {
+  position: relative;
   height: 22px;
+}
+::-webkit-file-upload-button {
+  cursor: pointer;
 }
 /**
  * Primary styles
  *
  * Author: Jupyter Development Team
  */
-[dir="rtl"] #tabs li {
-  float: right;
-}
 ul#tabs {
   margin-bottom: 4px;
-}
-[dir="rtl"] ul#tabs {
-  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
   padding-bottom: 4px;
+}
+[dir="rtl"] ul#tabs.nav-tabs > li {
+  float: right;
+}
+[dir="rtl"] ul#tabs.nav.nav-tabs {
+  padding-right: 0;
 }
 ul.breadcrumb a:focus,
 ul.breadcrumb a:hover {
@@ -8991,15 +9710,13 @@ ul.breadcrumb span {
 .list_toolbar .tree-buttons {
   padding-top: 1px;
 }
-[dir="rtl"] .list_toolbar .tree-buttons {
+[dir="rtl"] .list_toolbar .tree-buttons .pull-right {
   float: left !important;
+  float: left;
 }
-[dir="rtl"] .list_toolbar .pull-right {
-  padding-top: 1px;
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-left {
-  float: right !important;
+[dir="rtl"] .list_toolbar .col-sm-4,
+[dir="rtl"] .list_toolbar .col-sm-8 {
+  float: right;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9055,7 +9772,7 @@ ul.breadcrumb span {
 .list_item > div input {
   margin-right: 7px;
   margin-left: 14px;
-  vertical-align: baseline;
+  vertical-align: text-bottom;
   line-height: 22px;
   position: relative;
   top: -1px;
@@ -9065,6 +9782,9 @@ ul.breadcrumb span {
   margin-left: -1px;
   vertical-align: baseline;
   line-height: 22px;
+}
+[dir="rtl"] .list_item > div input {
+  margin-right: 0;
 }
 .new-file input[type=checkbox] {
   visibility: hidden;
@@ -9080,6 +9800,14 @@ ul.breadcrumb span {
   margin-left: 7px;
   line-height: 22px;
   vertical-align: baseline;
+}
+.item_modified {
+  margin-right: 7px;
+  margin-left: 7px;
+}
+[dir="rtl"] .item_modified.pull-right {
+  float: left !important;
+  float: left;
 }
 .item_buttons {
   line-height: 1em;
@@ -9108,6 +9836,14 @@ ul.breadcrumb span {
   margin-right: 7px;
   float: left;
 }
+[dir="rtl"] .item_buttons.pull-right {
+  float: left !important;
+  float: left;
+}
+[dir="rtl"] .item_buttons .kernel-name {
+  margin-left: 7px;
+  float: right;
+}
 .toolbar_info {
   height: 24px;
   line-height: 24px;
@@ -9133,18 +9869,32 @@ ul.breadcrumb span {
   background-color: transparent;
   font-weight: bold;
 }
+.sort_button {
+  display: inline-block;
+  padding-left: 7px;
+}
+[dir="rtl"] .sort_button.pull-right {
+  float: left !important;
+  float: left;
+}
 #tree-selector {
   padding-right: 0px;
-}
-[dir="rtl"] #tree-selector a {
-  float: right;
 }
 #button-select-all {
   min-width: 50px;
 }
+[dir="rtl"] #button-select-all.btn {
+  float: right ;
+}
 #select-all {
   margin-left: 7px;
   margin-right: 2px;
+  margin-top: 2px;
+  height: 16px;
+}
+[dir="rtl"] #select-all.pull-left {
+  float: right !important;
+  float: right;
 }
 .menu_icon {
   margin-right: 2px;
@@ -9162,6 +9912,12 @@ ul.breadcrumb span {
   -moz-osx-font-smoothing: grayscale;
   content: "\f114";
 }
+.folder_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.folder_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .folder_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -9178,6 +9934,12 @@ ul.breadcrumb span {
   content: "\f02d";
   position: relative;
   top: -1px;
+}
+.notebook_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.notebook_icon:before.fa-pull-right {
+  margin-left: .3em;
 }
 .notebook_icon:before.pull-left {
   margin-right: .3em;
@@ -9197,6 +9959,12 @@ ul.breadcrumb span {
   top: -1px;
   color: #5cb85c;
 }
+.running_notebook_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.running_notebook_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .running_notebook_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -9214,6 +9982,12 @@ ul.breadcrumb span {
   position: relative;
   top: -2px;
 }
+.file_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.file_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .file_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -9228,8 +10002,11 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
-[dir="rtl"] #new-menu {
-  text-align: right;
+#new-menu .dropdown-header {
+  font-size: 10px;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0 0 3px;
+  margin: -3px 20px 0;
 }
 .kernel-menu-icon {
   padding-right: 12px;
@@ -9276,9 +10053,6 @@ ul#new-menu {
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
 }
-[dir="rtl"] #running .col-sm-8 {
-  float: right !important;
-}
 .delete-button {
   display: none;
 }
@@ -9286,6 +10060,12 @@ ul#new-menu {
   display: none;
 }
 .rename-button {
+  display: none;
+}
+.move-button {
+  display: none;
+}
+.download-button {
   display: none;
 }
 .shutdown-button {
@@ -9328,6 +10108,12 @@ ul#new-menu {
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
 }
+.dirty-indicator.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator.fa-pull-right {
+  margin-left: .3em;
+}
 .dirty-indicator.pull-left {
   margin-right: .3em;
 }
@@ -9342,6 +10128,12 @@ ul#new-menu {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
+}
+.dirty-indicator-dirty.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator-dirty.fa-pull-right {
+  margin-left: .3em;
 }
 .dirty-indicator-dirty.pull-left {
   margin-right: .3em;
@@ -9358,6 +10150,12 @@ ul#new-menu {
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
 }
+.dirty-indicator-clean.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator-clean.fa-pull-right {
+  margin-left: .3em;
+}
 .dirty-indicator-clean.pull-left {
   margin-right: .3em;
 }
@@ -9372,6 +10170,12 @@ ul#new-menu {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f00c";
+}
+.dirty-indicator-clean:before.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator-clean:before.fa-pull-right {
+  margin-left: .3em;
 }
 .dirty-indicator-clean:before.pull-left {
   margin-right: .3em;
@@ -9417,14 +10221,132 @@ ul#new-menu {
     box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
   }
 }
+.CodeMirror-dialog {
+  background-color: #fff;
+}
 /*!
 *
 * IPython notebook
 *
 */
-/* CSS font colors for translated ANSI colors. */
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
 .ansibold {
   font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
 }
 /* use dark versions for foreground, to improve visibility */
 .ansiblack {
@@ -9503,12 +10425,20 @@ div.cell {
   /* This acts as a spacer between cells, that is outside the border */
   margin: 0px;
   outline: none;
-  border-left-width: 1px;
-  padding-left: 5px;
-  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
 }
 div.cell.jupyter-soft-selected {
-  border-left-color: #90CAF9;
   border-left-color: #E3F2FD;
   border-left-width: 1px;
   padding-left: 5px;
@@ -9521,27 +10451,39 @@ div.cell.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected {
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
   border-color: #ababab;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
 }
 @media print {
-  div.cell.selected {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected.jupyter-soft-selected {
-  border-left-width: 0;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
-}
 .edit_mode div.cell.selected {
   border-color: #66BB6A;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
 }
 @media print {
   .edit_mode div.cell.selected {
@@ -9737,7 +10679,9 @@ div.input_area > div.highlight > pre {
 .CodeMirror-lines {
   /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
   /* we have set a different line-height and want this to scale with that. */
-  padding: 0.4em;
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
 }
 .CodeMirror-linenumber {
   padding: 0 8px 0 4px;
@@ -9747,11 +10691,24 @@ div.input_area > div.highlight > pre {
   border-top-left-radius: 2px;
 }
 .CodeMirror pre {
-  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
-  /* .CodeMirror-lines */
-  padding: 0;
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
   border: 0;
   border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
 }
 /*
 
@@ -10005,6 +10962,9 @@ div.output_area img.unconfined,
 div.output_area svg.unconfined {
   max-width: none;
 }
+div.output_area .mglyph > img {
+  max-width: none;
+}
 /* This is needed to protect the pre formating from global settings such
    as that of bootstrap */
 .output {
@@ -10043,7 +11003,7 @@ div.output_area svg.unconfined {
 }
 div.output_area pre {
   margin: 0;
-  padding: 0;
+  padding: 1px 0 1px 0;
   border: 0;
   vertical-align: baseline;
   color: black;
@@ -10203,39 +11163,35 @@ div.output_unrecognized a:hover {
 .rendered_html h6:first-child {
   margin-top: 1em;
 }
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
 .rendered_html ul {
   list-style: disc;
-  margin: 0em 2em;
-  padding-left: 0px;
 }
 .rendered_html ul ul {
   list-style: square;
-  margin: 0em 2em;
+  margin-top: 0;
 }
 .rendered_html ul ul ul {
   list-style: circle;
-  margin: 0em 2em;
 }
 .rendered_html ol {
   list-style: decimal;
-  margin: 0em 2em;
-  padding-left: 0px;
 }
 .rendered_html ol ol {
   list-style: upper-alpha;
-  margin: 0em 2em;
+  margin-top: 0;
 }
 .rendered_html ol ol ol {
   list-style: lower-alpha;
-  margin: 0em 2em;
 }
 .rendered_html ol ol ol ol {
   list-style: lower-roman;
-  margin: 0em 2em;
 }
 .rendered_html ol ol ol ol ol {
   list-style: decimal;
-  margin: 0em 2em;
 }
 .rendered_html * + ul {
   margin-top: 1em;
@@ -10249,14 +11205,23 @@ div.output_unrecognized a:hover {
 }
 .rendered_html pre {
   margin: 1em 2em;
+  padding: 0px;
+  background-color: #fff;
+}
+.rendered_html code {
+  background-color: #eff0f1;
+}
+.rendered_html p code {
+  padding: 1px 5px;
+}
+.rendered_html pre code {
+  background-color: #fff;
 }
 .rendered_html pre,
 .rendered_html code {
   border: 0;
-  background-color: #fff;
   color: #000;
   font-size: 100%;
-  padding: 0px;
 }
 .rendered_html blockquote {
   margin: 1em 2em;
@@ -10264,24 +11229,36 @@ div.output_unrecognized a:hover {
 .rendered_html table {
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid black;
+  border: none;
   border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
 }
 .rendered_html tr,
 .rendered_html th,
 .rendered_html td {
-  border: 1px solid black;
-  border-collapse: collapse;
-  margin: 1em 2em;
-}
-.rendered_html td,
-.rendered_html th {
-  text-align: left;
+  text-align: right;
   vertical-align: middle;
-  padding: 4px;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
 }
 .rendered_html th {
   font-weight: bold;
+}
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
 }
 .rendered_html * + table {
   margin-top: 1em;
@@ -10308,6 +11285,15 @@ div.output_unrecognized a:hover {
 .rendered_html img.unconfined,
 .rendered_html svg.unconfined {
   max-width: none;
+}
+.rendered_html .alert {
+  margin-bottom: initial;
+}
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] .rendered_html p {
+  text-align: right;
 }
 div.text_cell {
   /* Old browsers */
@@ -10362,8 +11348,17 @@ h6:hover .anchor-link {
   overflow-x: auto;
   overflow-y: hidden;
 }
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered .rendered_html td {
+  max-width: none;
+}
 .text_cell.unrendered .text_cell_render {
   display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
 }
 .cm-header-1,
 .cm-header-2,
@@ -10500,6 +11495,28 @@ kbd {
   padding-top: 1px;
   padding-bottom: 1px;
 }
+.jupyter-keybindings {
+  padding: 1px;
+  line-height: 24px;
+  border-bottom: 1px solid gray;
+}
+.jupyter-keybindings input {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.jupyter-keybindings i {
+  padding: 6px;
+}
+.well code {
+  background-color: #ffffff;
+  border-color: #ababab;
+  border-width: 1px;
+  border-style: solid;
+  padding: 2px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
 /* CSS for the cell toolbar */
 .celltoolbar {
   border: thin solid #CFCFCF;
@@ -10632,6 +11649,152 @@ select[multiple].celltoolbar select {
   margin-left: 5px;
   margin-right: 5px;
 }
+.tags_button_container {
+  width: 100%;
+  display: flex;
+}
+.tag-container {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  overflow: hidden;
+  position: relative;
+}
+.tag-container > * {
+  margin: 0 4px;
+}
+.remove-tag-btn {
+  margin-left: 4px;
+}
+.tags-input {
+  display: flex;
+}
+.cell-tag:last-child:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 40px;
+  height: 100%;
+  /* Fade to background color of cell toolbar */
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), #EEE);
+}
+.tags-input > * {
+  margin-left: 4px;
+}
+.cell-tag,
+.tags-input input,
+.tags-input button {
+  display: block;
+  width: 100%;
+  height: 32px;
+  padding: 6px 12px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 1px;
+  box-shadow: none;
+  width: inherit;
+  font-size: inherit;
+  height: 22px;
+  line-height: 22px;
+  padding: 0px 4px;
+  display: inline-block;
+}
+.cell-tag:focus,
+.tags-input input:focus,
+.tags-input button:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+.cell-tag::-moz-placeholder,
+.tags-input input::-moz-placeholder,
+.tags-input button::-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+.cell-tag:-ms-input-placeholder,
+.tags-input input:-ms-input-placeholder,
+.tags-input button:-ms-input-placeholder {
+  color: #999;
+}
+.cell-tag::-webkit-input-placeholder,
+.tags-input input::-webkit-input-placeholder,
+.tags-input button::-webkit-input-placeholder {
+  color: #999;
+}
+.cell-tag::-ms-expand,
+.tags-input input::-ms-expand,
+.tags-input button::-ms-expand {
+  border: 0;
+  background-color: transparent;
+}
+.cell-tag[disabled],
+.tags-input input[disabled],
+.tags-input button[disabled],
+.cell-tag[readonly],
+.tags-input input[readonly],
+.tags-input button[readonly],
+fieldset[disabled] .cell-tag,
+fieldset[disabled] .tags-input input,
+fieldset[disabled] .tags-input button {
+  background-color: #eeeeee;
+  opacity: 1;
+}
+.cell-tag[disabled],
+.tags-input input[disabled],
+.tags-input button[disabled],
+fieldset[disabled] .cell-tag,
+fieldset[disabled] .tags-input input,
+fieldset[disabled] .tags-input button {
+  cursor: not-allowed;
+}
+textarea.cell-tag,
+textarea.tags-input input,
+textarea.tags-input button {
+  height: auto;
+}
+select.cell-tag,
+select.tags-input input,
+select.tags-input button {
+  height: 30px;
+  line-height: 30px;
+}
+textarea.cell-tag,
+textarea.tags-input input,
+textarea.tags-input button,
+select[multiple].cell-tag,
+select[multiple].tags-input input,
+select[multiple].tags-input button {
+  height: auto;
+}
+.cell-tag,
+.tags-input button {
+  padding: 0px 4px;
+}
+.cell-tag {
+  background-color: #fff;
+  white-space: nowrap;
+}
+.tags-input input[type=text]:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #ccc;
+}
 .completions {
   position: absolute;
   z-index: 110;
@@ -10657,16 +11820,28 @@ select[multiple].celltoolbar select {
 .completions select option.context {
   color: #286090;
 }
-#kernel_logo_widget {
-  float: right !important;
-  float: right;
-}
 #kernel_logo_widget .current_kernel_logo {
   display: none;
   margin-top: -1px;
   margin-bottom: -1px;
   width: 32px;
   height: 32px;
+}
+[dir="rtl"] #kernel_logo_widget {
+  float: left !important;
+  float: left;
+}
+.modal .modal-body .move-path {
+  display: flex;
+  flex-direction: row;
+  justify-content: space;
+  align-items: center;
+}
+.modal .modal-body .move-path .server-root {
+  padding-right: 20px;
+}
+.modal .modal-body .move-path .path-input {
+  flex: 1;
 }
 #menubar {
   box-sizing: border-box;
@@ -10688,11 +11863,41 @@ select[multiple].celltoolbar select {
 #menubar .navbar-collapse {
   clear: left;
 }
+[dir="rtl"] #menubar .navbar-toggle {
+  float: right;
+}
+[dir="rtl"] #menubar .navbar-collapse {
+  clear: right;
+}
+[dir="rtl"] #menubar .navbar-nav {
+  float: right;
+}
+[dir="rtl"] #menubar .nav {
+  padding-right: 0px;
+}
+[dir="rtl"] #menubar .navbar-nav > li {
+  float: right;
+}
+[dir="rtl"] #menubar .navbar-right {
+  float: left !important;
+}
+[dir="rtl"] ul.dropdown-menu {
+  text-align: right;
+  left: auto;
+}
+[dir="rtl"] ul#new-menu.dropdown-menu {
+  right: auto;
+  left: 0;
+}
 .nav-wrapper {
   border-bottom: 1px solid #e7e7e7;
 }
 i.menu-icon {
   padding-top: 4px;
+}
+[dir="rtl"] i.menu-icon.pull-right {
+  float: left !important;
+  float: left;
 }
 ul#help_menu li a {
   overflow: hidden;
@@ -10700,6 +11905,17 @@ ul#help_menu li a {
 }
 ul#help_menu li a i {
   margin-right: -1.2em;
+}
+[dir="rtl"] ul#help_menu li a {
+  padding-left: 2.2em;
+}
+[dir="rtl"] ul#help_menu li a i {
+  margin-right: 0;
+  margin-left: -1.2em;
+}
+[dir="rtl"] ul#help_menu li a i.pull-right {
+  float: left !important;
+  float: left;
 }
 .dropdown-submenu {
   position: relative;
@@ -10709,6 +11925,10 @@ ul#help_menu li a i {
   left: 100%;
   margin-top: -6px;
   margin-left: -1px;
+}
+[dir="rtl"] .dropdown-submenu > .dropdown-menu {
+  right: 100%;
+  margin-right: -1px;
 }
 .dropdown-submenu:hover > .dropdown-menu {
   display: block;
@@ -10727,11 +11947,23 @@ ul#help_menu li a i {
   margin-top: 2px;
   margin-right: -10px;
 }
+.dropdown-submenu > a:after.fa-pull-left {
+  margin-right: .3em;
+}
+.dropdown-submenu > a:after.fa-pull-right {
+  margin-left: .3em;
+}
 .dropdown-submenu > a:after.pull-left {
   margin-right: .3em;
 }
 .dropdown-submenu > a:after.pull-right {
   margin-left: .3em;
+}
+[dir="rtl"] .dropdown-submenu > a:after {
+  float: left;
+  content: "\f0d9";
+  margin-right: 0;
+  margin-left: -10px;
 }
 .dropdown-submenu:hover > a:after {
   color: #262626;
@@ -10748,6 +11980,10 @@ ul#help_menu li a i {
   float: right;
   z-index: 10;
 }
+[dir="rtl"] #notification_area {
+  float: left !important;
+  float: left;
+}
 .indicator_area {
   float: right !important;
   float: right;
@@ -10758,6 +11994,10 @@ ul#help_menu li a i {
   z-index: 10;
   text-align: center;
   width: auto;
+}
+[dir="rtl"] .indicator_area {
+  float: left !important;
+  float: left;
 }
 #kernel_indicator {
   float: right !important;
@@ -10775,6 +12015,12 @@ ul#help_menu li a i {
   padding-left: 5px;
   padding-right: 5px;
 }
+[dir="rtl"] #kernel_indicator {
+  float: left !important;
+  float: left;
+  border-left: 0;
+  border-right: 1px solid;
+}
 #modal_indicator {
   float: right !important;
   float: right;
@@ -10785,6 +12031,10 @@ ul#help_menu li a i {
   z-index: 10;
   text-align: center;
   width: auto;
+}
+[dir="rtl"] #modal_indicator {
+  float: left !important;
+  float: left;
 }
 #readonly-indicator {
   float: right !important;
@@ -10815,6 +12065,12 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f040";
 }
+.edit_mode .modal_indicator:before.fa-pull-left {
+  margin-right: .3em;
+}
+.edit_mode .modal_indicator:before.fa-pull-right {
+  margin-left: .3em;
+}
 .edit_mode .modal_indicator:before.pull-left {
   margin-right: .3em;
 }
@@ -10829,6 +12085,12 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: ' ';
+}
+.command_mode .modal_indicator:before.fa-pull-left {
+  margin-right: .3em;
+}
+.command_mode .modal_indicator:before.fa-pull-right {
+  margin-left: .3em;
 }
 .command_mode .modal_indicator:before.pull-left {
   margin-right: .3em;
@@ -10845,6 +12107,12 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f10c";
 }
+.kernel_idle_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_idle_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .kernel_idle_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -10859,6 +12127,12 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f111";
+}
+.kernel_busy_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_busy_icon:before.fa-pull-right {
+  margin-left: .3em;
 }
 .kernel_busy_icon:before.pull-left {
   margin-right: .3em;
@@ -10875,6 +12149,12 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f1e2";
 }
+.kernel_dead_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_dead_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .kernel_dead_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -10889,6 +12169,12 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f127";
+}
+.kernel_disconnected_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_disconnected_icon:before.fa-pull-right {
+  margin-left: .3em;
 }
 .kernel_disconnected_icon:before.pull-left {
   margin-right: .3em;
@@ -11279,27 +12565,46 @@ div#pager .ui-resizable-handle::after {
   flex: 1;
 }
 span.save_widget {
-  margin-top: 6px;
+  height: 30px;
+  margin-top: 4px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  width: 50%;
+  flex: 1;
 }
 span.save_widget span.filename {
-  height: 1em;
+  height: 100%;
   line-height: 1em;
-  padding: 3px;
   margin-left: 16px;
   border: none;
   font-size: 146.5%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   border-radius: 2px;
 }
 span.save_widget span.filename:hover {
   background-color: #e6e6e6;
 }
+[dir="rtl"] span.save_widget.pull-left {
+  float: right !important;
+  float: right;
+}
+[dir="rtl"] span.save_widget span.filename {
+  margin-left: 0;
+  margin-right: 16px;
+}
 span.checkpoint_status,
 span.autosave_status {
   font-size: small;
+  white-space: nowrap;
+  padding: 0 5px;
 }
 @media (max-width: 767px) {
   span.save_widget {
     font-size: small;
+    padding: 0 0 0 5px;
   }
   span.checkpoint_status,
   span.autosave_status {
@@ -11343,6 +12648,9 @@ span.autosave_status {
   margin-top: 0px;
   margin-left: 5px;
 }
+.toolbar-btn-label {
+  margin-left: 6px;
+}
 #maintoolbar {
   margin-bottom: -3px;
   margin-top: -8px;
@@ -11362,6 +12670,10 @@ span.autosave_status {
 }
 .select-xs {
   height: 24px;
+}
+[dir="rtl"] .btn-group > .btn,
+.btn-group-vertical > .btn {
+  float: right;
 }
 .pulse,
 .dropdown-menu > li > a.pulse,
@@ -11512,6 +12824,10 @@ ul.typeahead-list i {
   margin-left: -10px;
   width: 18px;
 }
+[dir="rtl"] ul.typeahead-list i {
+  margin-left: 0;
+  margin-right: -10px;
+}
 ul.typeahead-list {
   max-height: 80vh;
   overflow: auto;
@@ -11520,6 +12836,13 @@ ul.typeahead-list > li > a {
   /** Firefox bug **/
   /* see https://github.com/jupyter/notebook/issues/559 */
   white-space: normal;
+}
+ul.typeahead-list  > li > a.pull-right {
+  float: left !important;
+  float: left;
+}
+[dir="rtl"] .typeahead-list {
+  text-align: right;
 }
 .cmd-palette .modal-body {
   padding: 7px;
@@ -11531,10 +12854,19 @@ ul.typeahead-list > li > a {
   outline: none;
 }
 .no-shortcut {
-  display: none;
+  min-width: 20px;
+  color: transparent;
+}
+[dir="rtl"] .no-shortcut.pull-right {
+  float: left !important;
+  float: left;
+}
+[dir="rtl"] .command-shortcut.pull-right {
+  float: left !important;
+  float: left;
 }
 .command-shortcut:before {
-  content: "(command)";
+  content: "(command mode)";
   padding-right: 3px;
   color: #777777;
 }
@@ -11543,6 +12875,10 @@ ul.typeahead-list > li > a {
   padding-right: 3px;
   color: #777777;
 }
+[dir="rtl"] .edit-shortcut.pull-right {
+  float: left !important;
+  float: left;
+}
 #find-and-replace #replace-preview .match,
 #find-and-replace #replace-preview .insert {
   background-color: #BBDEFB;
@@ -11550,6 +12886,12 @@ ul.typeahead-list > li > a {
   border-style: solid;
   border-width: 1px;
   border-radius: 0px;
+}
+[dir="ltr"] #find-and-replace .input-group-btn + .form-control {
+  border-left: none;
+}
+[dir="rtl"] #find-and-replace .input-group-btn + .form-control {
+  border-right: none;
 }
 #find-and-replace #replace-preview .replace .match {
   background-color: #FFCDD2;
@@ -11726,9 +13068,7 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
-}
-
-@media print {
+}@media print {
   div.cell {
     display: block;
     page-break-inside: avoid;
@@ -11749,7 +13089,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -11773,10 +13113,8 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Symbolic-computation">Symbolic computation<a class="anchor-link" href="#Symbolic-computation">&#182;</a></h1><h2 id="SymPy">SymPy<a class="anchor-link" href="#SymPy">&#182;</a></h2><p>In this section, we introduce some basic functionality of the SymPy (SYMbolic Python) library. In contrast to numerical computation (involving numbers), in symbolic calculation we are processing and transforming generic variables.</p>
 <p>The SymPy home page is <a href="http://sympy.org/">http://sympy.org/</a>, and provides the full (and up-to-date) documentation for this library.</p>
@@ -11795,15 +13133,13 @@ div#notebook {
 <span class="n">sympy</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Symbols">Symbols<a class="anchor-link" href="#Symbols">&#182;</a></h3><p>Before we can carry out any symbolic operations, we need to create symbolic variables using SymPy’s <code>Symbol</code> function:</p>
 
@@ -11820,7 +13156,7 @@ div#notebook {
 <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -11829,7 +13165,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[2]:</div>
+
+    <div class="prompt output_prompt">Out[2]:</div>
+
 
 
 
@@ -11852,7 +13190,7 @@ div#notebook {
 <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="n">x</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -11861,7 +13199,9 @@ div#notebook {
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[3]:</div>
+
+    <div class="prompt output_prompt">Out[3]:</div>
+
 
 
 
@@ -11883,7 +13223,7 @@ $$x$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">10</span><span class="o">*</span><span class="n">y</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -11892,7 +13232,9 @@ $$x$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[4]:</div>
+
+    <div class="prompt output_prompt">Out[4]:</div>
+
 
 
 
@@ -11914,7 +13256,7 @@ $$2 x + 11 y$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">y</span> <span class="o">+</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">10</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -11923,7 +13265,9 @@ $$2 x + 11 y$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[5]:</div>
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
 
 
 
@@ -11937,10 +13281,8 @@ $$x + 10$$
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We can abbreviate the creation of multiple symbolic variables using the <code>symbols</code> function. For example, to create the symbolic variables <code>x</code>, <code>y</code> and <code>z</code>, we can use</p>
 
@@ -11957,7 +13299,7 @@ $$x + 10$$
 <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">z</span> <span class="o">-</span> <span class="n">x</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -11966,7 +13308,9 @@ $$x + 10$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[6]:</div>
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
 
 
 
@@ -11980,10 +13324,8 @@ $$2 y + 3 z$$
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Once we have completed our term manipulation, we sometimes like to insert numbers for variables. This can be done using the <code>subs</code> method.</p>
 
@@ -12000,7 +13342,7 @@ $$2 y + 3 z$$
 <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">y</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12009,7 +13351,9 @@ $$2 y + 3 z$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[7]:</div>
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
 
 
 
@@ -12031,7 +13375,7 @@ $$x + 2 y$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">y</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12040,7 +13384,9 @@ $$x + 2 y$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[8]:</div>
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
 
 
 
@@ -12062,7 +13408,7 @@ $$x + 2 y$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12071,7 +13417,9 @@ $$x + 2 y$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[9]:</div>
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
 
 
 
@@ -12093,7 +13441,7 @@ $$2 y + 10$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12102,7 +13450,9 @@ $$2 y + 10$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[10]:</div>
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
 
 
 
@@ -12124,7 +13474,7 @@ $$16$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">x</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span><span class="mi">3</span><span class="p">})</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12133,7 +13483,9 @@ $$16$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[11]:</div>
+
+    <div class="prompt output_prompt">Out[11]:</div>
+
 
 
 
@@ -12147,10 +13499,8 @@ $$16$$
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We can also substitute a symbolic variable for another one such as in this example where <code>y</code> is replaced with <code>x</code> before we substitute <code>x</code> with the number <code>2</code>.</p>
 
@@ -12166,7 +13516,7 @@ $$16$$
 <span class="n">myterm</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12175,7 +13525,9 @@ $$16$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[12]:</div>
+
+    <div class="prompt output_prompt">Out[12]:</div>
+
 
 
 
@@ -12197,7 +13549,7 @@ $$3 x + y^{2}$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">myterm</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12206,7 +13558,9 @@ $$3 x + y^{2}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[13]:</div>
+
+    <div class="prompt output_prompt">Out[13]:</div>
+
 
 
 
@@ -12228,7 +13582,7 @@ $$y^{2} + 3 y$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">myterm</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12237,7 +13591,9 @@ $$y^{2} + 3 y$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[14]:</div>
+
+    <div class="prompt output_prompt">Out[14]:</div>
+
 
 
 
@@ -12251,20 +13607,16 @@ $$10$$
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>From this point onward, some of the code fragments and examples we present will assume that the required symbols have already been defined. If you try an example and SymPy gives a message like <code>NameError: name ’x’ is not defined</code> it is probably because you need to define the symbol using one of the methods above.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="isympy">isympy<a class="anchor-link" href="#isympy">&#182;</a></h3><p>The <code>isympy</code> executable is a wrapper around ipython which creates the symbolic (real) variables <code>x</code>, <code>y</code> and <code>z</code>, the symbolic integer variables <code>k</code>, <code>m</code> and <code>n</code> and the symbolic function variables <code>f</code>, <code>g</code> and <code>h</code>, and imports all objects from the SymPy toplevel.</p>
 <p>This is convenient to figure out new features or experimenting interactively</p>
@@ -12286,10 +13638,8 @@ In [1]: </code></pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Numeric-types">Numeric types<a class="anchor-link" href="#Numeric-types">&#182;</a></h3><p>SymPy has the numeric types <code>Rational</code> and <code>RealNumber</code>. The Rational class represents a rational number as a pair of two integers: the numerator and the denominator, so <code>Rational(1,2)</code> represents <code>1/2</code>, <code>Rational(5,2)</code> represents <code>5/2</code> and so on.</p>
 
@@ -12304,7 +13654,7 @@ In [1]: </code></pre>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="k">import</span> <span class="n">Rational</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12318,7 +13668,7 @@ In [1]: </code></pre>
 <span class="n">a</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12327,7 +13677,9 @@ In [1]: </code></pre>
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[16]:</div>
+
+    <div class="prompt output_prompt">Out[16]:</div>
+
 
 
 
@@ -12350,7 +13702,7 @@ $$\frac{1}{10}$$
 <span class="n">b</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12359,7 +13711,9 @@ $$\frac{1}{10}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[17]:</div>
+
+    <div class="prompt output_prompt">Out[17]:</div>
+
 
 
 
@@ -12381,7 +13735,7 @@ $$\frac{45}{67}$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12390,7 +13744,9 @@ $$\frac{45}{67}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[18]:</div>
+
+    <div class="prompt output_prompt">Out[18]:</div>
+
 
 
 
@@ -12412,7 +13768,7 @@ $$\frac{9}{134}$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12421,7 +13777,9 @@ $$\frac{9}{134}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[19]:</div>
+
+    <div class="prompt output_prompt">Out[19]:</div>
+
 
 
 
@@ -12443,7 +13801,7 @@ $$- \frac{383}{670}$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12452,7 +13810,9 @@ $$- \frac{383}{670}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[20]:</div>
+
+    <div class="prompt output_prompt">Out[20]:</div>
+
 
 
 
@@ -12466,10 +13826,8 @@ $$\frac{517}{670}$$
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Note that the Rational class works with rational expressions <em>exactly</em>. This is in contrast to Python’s standard <code>float</code> data type which uses floating point representation to <em>approximate</em> (rational) numbers.</p>
 <p>We can convert the <code>sympy.Rational</code> type into a Python floating point variable using <code>float</code> or the <code>evalf</code> method of the Rational object. The <code>evalf</code> method can take an argument that specifies how many digits should be computed for the floating point approximation (not all of those may be used by Python’s floating point type of course).</p>
@@ -12486,7 +13844,7 @@ $$\frac{517}{670}$$
 <span class="n">c</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12495,7 +13853,9 @@ $$\frac{517}{670}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[21]:</div>
+
+    <div class="prompt output_prompt">Out[21]:</div>
+
 
 
 
@@ -12517,7 +13877,7 @@ $$\frac{2}{3}$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12526,7 +13886,9 @@ $$\frac{2}{3}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[22]:</div>
+
+    <div class="prompt output_prompt">Out[22]:</div>
+
 
 
 
@@ -12548,7 +13910,7 @@ $$0.6666666666666666$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">evalf</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12557,7 +13919,9 @@ $$0.6666666666666666$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[23]:</div>
+
+    <div class="prompt output_prompt">Out[23]:</div>
+
 
 
 
@@ -12579,7 +13943,7 @@ $$0.666666666666667$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12588,7 +13952,9 @@ $$0.666666666666667$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[24]:</div>
+
+    <div class="prompt output_prompt">Out[24]:</div>
+
 
 
 
@@ -12602,10 +13968,8 @@ $$0.66666666666666666666666666666666666666666666666667$$
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Differentiation-and-Integration">Differentiation and Integration<a class="anchor-link" href="#Differentiation-and-Integration">&#182;</a></h3><p>SymPy is capable of carrying out differentiation and integration of many functions:</p>
 
@@ -12623,7 +13987,7 @@ $$0.66666666666666666666666666666666666666666666666667$$
 <span class="n">diff</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12632,7 +13996,9 @@ $$0.66666666666666666666666666666666666666666666666667$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[25]:</div>
+
+    <div class="prompt output_prompt">Out[25]:</div>
+
 
 
 
@@ -12654,7 +14020,7 @@ $$\cos{\left (x \right )}$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">diff</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12663,7 +14029,9 @@ $$\cos{\left (x \right )}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[26]:</div>
+
+    <div class="prompt output_prompt">Out[26]:</div>
+
 
 
 
@@ -12685,7 +14053,7 @@ $$0$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">diff</span><span class="p">(</span><span class="mi">10</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="mi">10</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">9</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12694,7 +14062,9 @@ $$0$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[27]:</div>
+
+    <div class="prompt output_prompt">Out[27]:</div>
+
 
 
 
@@ -12716,7 +14086,7 @@ $$9 x^{8} + 20 x + 3$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">diff</span><span class="p">(</span><span class="mi">10</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="mi">10</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">9</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12725,7 +14095,9 @@ $$9 x^{8} + 20 x + 3$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[28]:</div>
+
+    <div class="prompt output_prompt">Out[28]:</div>
+
 
 
 
@@ -12747,7 +14119,7 @@ $$4$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">diff</span><span class="p">(</span><span class="mi">10</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="mi">10</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">9</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12756,7 +14128,9 @@ $$4$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[29]:</div>
+
+    <div class="prompt output_prompt">Out[29]:</div>
+
 
 
 
@@ -12778,7 +14152,7 @@ $$32$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">diff</span><span class="p">(</span><span class="mi">10</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="mi">10</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">9</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mf">1.5</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12787,7 +14161,9 @@ $$32$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[30]:</div>
+
+    <div class="prompt output_prompt">Out[30]:</div>
+
 
 
 
@@ -12809,7 +14185,7 @@ $$263.66015625$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">diff</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12818,7 +14194,9 @@ $$263.66015625$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[31]:</div>
+
+    <div class="prompt output_prompt">Out[31]:</div>
+
 
 
 
@@ -12840,7 +14218,7 @@ $$e^{x}$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">diff</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12849,7 +14227,9 @@ $$e^{x}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[32]:</div>
+
+    <div class="prompt output_prompt">Out[32]:</div>
+
 
 
 
@@ -12863,10 +14243,8 @@ $$- x e^{- \frac{x^{2}}{2}}$$
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The SymPy <code>diff()</code> function takes a minimum of two arguments: the function to be differentiated and the variable with respect to which the differentiation is performed. Higher derivatives may be calculated by specifying additional variables, or by adding an optional integer argument:</p>
 
@@ -12881,7 +14259,7 @@ $$- x e^{- \frac{x^{2}}{2}}$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">diff</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">4</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12890,7 +14268,9 @@ $$- x e^{- \frac{x^{2}}{2}}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[33]:</div>
+
+    <div class="prompt output_prompt">Out[33]:</div>
+
 
 
 
@@ -12912,7 +14292,7 @@ $$12 x^{3}$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">diff</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">4</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12921,7 +14301,9 @@ $$12 x^{3}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[34]:</div>
+
+    <div class="prompt output_prompt">Out[34]:</div>
+
 
 
 
@@ -12943,7 +14325,7 @@ $$72 x$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">diff</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">4</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12952,7 +14334,9 @@ $$72 x$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[35]:</div>
+
+    <div class="prompt output_prompt">Out[35]:</div>
+
 
 
 
@@ -12974,7 +14358,7 @@ $$72 x$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">diff</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">4</span><span class="o">*</span><span class="n">y</span><span class="o">**</span><span class="mi">7</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12983,7 +14367,9 @@ $$72 x$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[36]:</div>
+
+    <div class="prompt output_prompt">Out[36]:</div>
+
 
 
 
@@ -13005,7 +14391,7 @@ $$1512 x^{2} y^{5}$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">diff</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">4</span><span class="o">*</span><span class="n">y</span><span class="o">**</span><span class="mi">7</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="n">y</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13014,7 +14400,9 @@ $$1512 x^{2} y^{5}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[37]:</div>
+
+    <div class="prompt output_prompt">Out[37]:</div>
+
 
 
 
@@ -13028,10 +14416,8 @@ $$1512 x^{2} y^{5}$$
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>At times, SymPy may return a result in an unfamiliar form. If, for example, you wish to use SymPy to check that you differentiated something correctly, a technique that might be of use is to subtract the SymPy result from your result, and check that the answer is zero.</p>
 <p>Taking the simple example of a multiquadric radial basis function, $\phi(r)=\sqrt{r^2+\sigma^2}$ with $r=\sqrt{x^2+y^2}$ and <em>σ</em> a constant, we can verify that the first derivative in <em>x</em> is $\partial\phi/\partial x=x/\sqrt{r^2+\sigma^2}$.</p>
@@ -13054,7 +14440,7 @@ $$1512 x^{2} y^{5}$$
 <span class="nb">print</span><span class="p">(</span><span class="n">diff</span><span class="p">(</span><span class="n">phi</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sigma</span><span class="p">),</span> <span class="n">x</span><span class="p">))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13063,7 +14449,9 @@ $$1512 x^{2} y^{5}$$
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>x/sqrt(x**2 + y**2 + σ**2)
@@ -13083,7 +14471,7 @@ $$1512 x^{2} y^{5}$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mydfdx</span> <span class="o">-</span> <span class="n">diff</span><span class="p">(</span><span class="n">phi</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sigma</span><span class="p">),</span> <span class="n">x</span><span class="p">))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13092,7 +14480,9 @@ $$1512 x^{2} y^{5}$$
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>0
@@ -13104,10 +14494,8 @@ $$1512 x^{2} y^{5}$$
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Here it is trivial to tell that the expressions are identical without SymPy’s help, but in more complicated examples there may be many more terms and it would become increasingly difficult, time consuming and error-prone to attempt to rearrange our trial derivative and SymPy’s answer into the same form. It is in such cases that this subtraction technique is of most use.</p>
 <p>Integration uses a similar syntax. For the indefinite case, specify the function and the variable with respect to which the integration is performed:</p>
@@ -13124,7 +14512,7 @@ $$1512 x^{2} y^{5}$$
 <span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13133,7 +14521,9 @@ $$1512 x^{2} y^{5}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[40]:</div>
+
+    <div class="prompt output_prompt">Out[40]:</div>
+
 
 
 
@@ -13155,7 +14545,7 @@ $$\frac{x^{3}}{3}$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13164,7 +14554,9 @@ $$\frac{x^{3}}{3}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[41]:</div>
+
+    <div class="prompt output_prompt">Out[41]:</div>
+
 
 
 
@@ -13186,7 +14578,7 @@ $$x^{2} y$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">integrate</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13195,7 +14587,9 @@ $$x^{2} y$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[42]:</div>
+
+    <div class="prompt output_prompt">Out[42]:</div>
+
 
 
 
@@ -13217,7 +14611,7 @@ $$y \sin{\left (x \right )}$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">integrate</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13226,7 +14620,9 @@ $$y \sin{\left (x \right )}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[43]:</div>
+
+    <div class="prompt output_prompt">Out[43]:</div>
+
 
 
 
@@ -13248,7 +14644,7 @@ $$- \cos{\left (x \right )}$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">integrate</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13257,7 +14653,9 @@ $$- \cos{\left (x \right )}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[44]:</div>
+
+    <div class="prompt output_prompt">Out[44]:</div>
+
 
 
 
@@ -13271,10 +14669,8 @@ $$e^{- \frac{x^{2}}{2}}$$
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We can calculate definite integrals by providing <code>integrate()</code> with a tuple containing the variable of interest, the lower and the upper bounds. If several variables are specified, multiple integration is performed. When SymPy returns a result in the <code>Rational</code> class, it is possible to evaluate it to a floating-point representation at any desired precision (see <a href="#Numeric-types">numeric types</a>).</p>
 
@@ -13289,7 +14685,7 @@ $$e^{- \frac{x^{2}}{2}}$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13298,7 +14694,9 @@ $$e^{- \frac{x^{2}}{2}}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[45]:</div>
+
+    <div class="prompt output_prompt">Out[45]:</div>
+
 
 
 
@@ -13320,7 +14718,7 @@ $$1$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13329,7 +14727,9 @@ $$1$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[46]:</div>
+
+    <div class="prompt output_prompt">Out[46]:</div>
+
 
 
 
@@ -13351,7 +14751,7 @@ $$\frac{x^{3}}{3}$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13360,7 +14760,9 @@ $$\frac{x^{3}}{3}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[47]:</div>
+
+    <div class="prompt output_prompt">Out[47]:</div>
+
 
 
 
@@ -13382,7 +14784,7 @@ $$\frac{x^{4}}{12}$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13391,7 +14793,9 @@ $$\frac{x^{4}}{12}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[48]:</div>
+
+    <div class="prompt output_prompt">Out[48]:</div>
+
 
 
 
@@ -13413,7 +14817,7 @@ $$\frac{x^{4} y}{12}$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13422,7 +14826,9 @@ $$\frac{x^{4} y}{12}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[49]:</div>
+
+    <div class="prompt output_prompt">Out[49]:</div>
+
 
 
 
@@ -13444,7 +14850,7 @@ $$\frac{8}{3}$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13453,7 +14859,9 @@ $$\frac{8}{3}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[50]:</div>
+
+    <div class="prompt output_prompt">Out[50]:</div>
+
 
 
 
@@ -13475,7 +14883,7 @@ $$\frac{16}{3}$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13484,7 +14892,9 @@ $$\frac{16}{3}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[51]:</div>
+
+    <div class="prompt output_prompt">Out[51]:</div>
+
 
 
 
@@ -13506,7 +14916,7 @@ $$2.6666666666666665$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13515,7 +14925,9 @@ $$2.6666666666666665$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[52]:</div>
+
+    <div class="prompt output_prompt">Out[52]:</div>
+
 
 
 
@@ -13538,7 +14950,7 @@ $$2.6666666666666665$$
 <span class="n">result_rational</span><span class="o">.</span><span class="n">evalf</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13547,7 +14959,9 @@ $$2.6666666666666665$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[53]:</div>
+
+    <div class="prompt output_prompt">Out[53]:</div>
+
 
 
 
@@ -13569,7 +14983,7 @@ $$2.66666666666667$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">result_rational</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13578,7 +14992,9 @@ $$2.66666666666667$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[54]:</div>
+
+    <div class="prompt output_prompt">Out[54]:</div>
+
 
 
 
@@ -13592,10 +15008,8 @@ $$2.6666666666666666666666666666666666666666666666667$$
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Ordinary-differential-equations">Ordinary differential equations<a class="anchor-link" href="#Ordinary-differential-equations">&#182;</a></h3><p>SymPy has inbuilt support for solving several kinds of ordinary differential equation via its <code>dsolve</code> command. We need to set up the ODE and pass it as the first argument, <code>eq</code>. The second argument is the function <code>f(x)</code> to solve for. An optional third argument, <code>hint</code>, influences the method that <code>dsolve</code> uses: some methods are better-suited to certain classes of ODEs, or will express the solution more simply, than others.</p>
 <p>To set up the ODE solver, we need a way to refer to the unknown function for which we are solving, as well as its derivatives. The <code>Function</code> and <code>Derivative</code> classes facilitate this:</p>
@@ -13615,7 +15029,7 @@ $$2.6666666666666666666666666666666666666666666666667$$
 <span class="n">dsolve</span><span class="p">(</span><span class="n">y_</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13624,7 +15038,9 @@ $$2.6666666666666666666666666666666666666666666666667$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[55]:</div>
+
+    <div class="prompt output_prompt">Out[55]:</div>
+
 
 
 
@@ -13638,10 +15054,8 @@ $$y{\left (x \right )} = C_{1} e^{- 5 x}$$
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Note how <code>dsolve</code> has introduced a constant of integration, <code>C1</code>. It will introduce as many constants as are required, and they will all be named <code>Cn</code>, where <code>n</code> is an integer. Note also that the first argument to <code>dsolve</code> is taken to be equal to zero unless we use the <code>Eq()</code> function to specify otherwise:</p>
 
@@ -13656,7 +15070,7 @@ $$y{\left (x \right )} = C_{1} e^{- 5 x}$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dsolve</span><span class="p">(</span><span class="n">y_</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13665,7 +15079,9 @@ $$y{\left (x \right )} = C_{1} e^{- 5 x}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[56]:</div>
+
+    <div class="prompt output_prompt">Out[56]:</div>
+
 
 
 
@@ -13687,7 +15103,7 @@ $$y{\left (x \right )} = C_{1} e^{- 5 x}$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dsolve</span><span class="p">(</span><span class="n">Eq</span><span class="p">(</span><span class="n">y_</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mi">0</span><span class="p">),</span> <span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13696,7 +15112,9 @@ $$y{\left (x \right )} = C_{1} e^{- 5 x}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[57]:</div>
+
+    <div class="prompt output_prompt">Out[57]:</div>
+
 
 
 
@@ -13718,7 +15136,7 @@ $$y{\left (x \right )} = C_{1} e^{- 5 x}$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dsolve</span><span class="p">(</span><span class="n">Eq</span><span class="p">(</span><span class="n">y_</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mi">12</span><span class="p">),</span> <span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13727,7 +15145,9 @@ $$y{\left (x \right )} = C_{1} e^{- 5 x}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[58]:</div>
+
+    <div class="prompt output_prompt">Out[58]:</div>
+
 
 
 
@@ -13741,10 +15161,8 @@ $$y{\left (x \right )} = \frac{C_{1} e^{- 5 x}}{5} + \frac{12}{5}$$
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The results from <code>dsolve</code> are an instance of the <code>Equality</code> class. This has consequences when we wish to numerically evaluate the function and use the result elsewhere (<em>e.g.</em> if we wanted to plot <em>y</em>(<em>x</em>) against <em>x</em>), because even after using <code>subs()</code> and <code>evalf()</code>, we still have an <code>Equality</code>, not any sort of scalar. The way to evaluate the function to a number is via the <code>rhs</code> attribute of the <code>Equality</code>.</p>
 <p>Note that, here, we use <code>z</code> to store the <code>Equality</code> returned by <code>dsolve</code>, even though it is an expression for a function called <code>y(x)</code>, to emphasise the distinction between the <code>Equality</code> itself and the data that it contains.</p>
@@ -13761,7 +15179,7 @@ $$y{\left (x \right )} = \frac{C_{1} e^{- 5 x}}{5} + \frac{12}{5}$$
 <span class="n">z</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13770,7 +15188,9 @@ $$y{\left (x \right )} = \frac{C_{1} e^{- 5 x}}{5} + \frac{12}{5}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[59]:</div>
+
+    <div class="prompt output_prompt">Out[59]:</div>
+
 
 
 
@@ -13792,7 +15212,7 @@ $$y{\left (x \right )} = C_{1} e^{- 5 x}$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13801,7 +15221,9 @@ $$y{\left (x \right )} = C_{1} e^{- 5 x}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[60]:</div>
+
+    <div class="prompt output_prompt">Out[60]:</div>
+
 
 
 
@@ -13823,7 +15245,7 @@ $$y{\left (x \right )} = C_{1} e^{- 5 x}$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">z</span><span class="o">.</span><span class="n">rhs</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13832,7 +15254,9 @@ $$y{\left (x \right )} = C_{1} e^{- 5 x}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[61]:</div>
+
+    <div class="prompt output_prompt">Out[61]:</div>
+
 
 
 
@@ -13856,7 +15280,7 @@ $$C_{1} e^{- 5 x}$$
 <span class="n">y3</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13865,7 +15289,9 @@ $$C_{1} e^{- 5 x}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[62]:</div>
+
+    <div class="prompt output_prompt">Out[62]:</div>
+
 
 
 
@@ -13887,7 +15313,7 @@ $$y{\left (3 \right )} = \frac{2}{e^{15}}$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">y3</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13896,7 +15322,9 @@ $$y{\left (3 \right )} = \frac{2}{e^{15}}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[63]:</div>
+
+    <div class="prompt output_prompt">Out[63]:</div>
+
 
 
 
@@ -13918,7 +15346,7 @@ $$y{\left (3 \right )} = 6.11804641 \cdot 10^{-7}$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">y3</span><span class="o">.</span><span class="n">rhs</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13927,7 +15355,9 @@ $$y{\left (3 \right )} = 6.11804641 \cdot 10^{-7}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[64]:</div>
+
+    <div class="prompt output_prompt">Out[64]:</div>
+
 
 
 
@@ -13949,7 +15379,7 @@ $$\frac{2}{e^{15}}$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">y3</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13958,7 +15388,9 @@ $$\frac{2}{e^{15}}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[65]:</div>
+
+    <div class="prompt output_prompt">Out[65]:</div>
+
 
 
 
@@ -13980,7 +15412,7 @@ $$6.11804641 \cdot 10^{-7}$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">z</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">C1</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span><span class="mi">4</span><span class="p">})</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13989,7 +15421,9 @@ $$6.11804641 \cdot 10^{-7}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[66]:</div>
+
+    <div class="prompt output_prompt">Out[66]:</div>
+
 
 
 
@@ -14011,7 +15445,7 @@ $$4.122307245 \cdot 10^{-9}$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">z</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">C1</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span><span class="mi">5</span><span class="p">})</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14020,7 +15454,9 @@ $$4.122307245 \cdot 10^{-9}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[67]:</div>
+
+    <div class="prompt output_prompt">Out[67]:</div>
+
 
 
 
@@ -14042,7 +15478,7 @@ $$2.777588773 \cdot 10^{-11}$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">C1</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span><span class="mi">5</span><span class="p">})</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14051,7 +15487,9 @@ $$2.777588773 \cdot 10^{-11}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[68]:</div>
+
+    <div class="prompt output_prompt">Out[68]:</div>
+
 
 
 
@@ -14065,10 +15503,8 @@ $$2.777588773 \cdot 10^{-11}$$
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>At times, <code>dsolve</code> may return too general a solution. One example is when there is a possibility that some coefficients may be complex. If we know that, for example, they are always real and positive, we can provide <code>dsolve</code> this information to avoid the solution becoming unnecessarily complicated:</p>
 
@@ -14086,7 +15522,7 @@ $$2.777588773 \cdot 10^{-11}$$
 <span class="n">dsolve</span><span class="p">(</span><span class="n">Derivative</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">a</span><span class="o">**</span><span class="mi">4</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14095,7 +15531,9 @@ $$2.777588773 \cdot 10^{-11}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[69]:</div>
+
+    <div class="prompt output_prompt">Out[69]:</div>
+
 
 
 
@@ -14114,11 +15552,11 @@ $$f{\left (x \right )} = C_{1} e^{- i a^{2} x} + C_{2} e^{i a^{2} x}$$
 <div class="prompt input_prompt">In&nbsp;[70]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">dsolve</span><span class="p">(</span><span class="n">Derivative</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">a</span><span class="o">**</span><span class="mi">4</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14127,7 +15565,9 @@ $$f{\left (x \right )} = C_{1} e^{- i a^{2} x} + C_{2} e^{i a^{2} x}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[70]:</div>
+
+    <div class="prompt output_prompt">Out[70]:</div>
+
 
 
 
@@ -14141,10 +15581,8 @@ $$f{\left (x \right )} = C_{1} \sin{\left (a^{2} x \right )} + C_{2} \cos{\left 
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Series-expansions-and-plotting">Series expansions and plotting<a class="anchor-link" href="#Series-expansions-and-plotting">&#182;</a></h3><p>It is possible to expand many SymPy expressions as Taylor series. The <code>series</code> method makes this straightforward. At minimum, we must specify the expression and the variable in which to expand it. Optionally, we can also specify the point around which to expand, the maximum term number, and the direction of the expansion (try <code>help(Basic.series)</code> for more information).</p>
 
@@ -14161,7 +15599,7 @@ $$f{\left (x \right )} = C_{1} \sin{\left (a^{2} x \right )} + C_{2} \cos{\left 
 <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14170,7 +15608,9 @@ $$f{\left (x \right )} = C_{1} \sin{\left (a^{2} x \right )} + C_{2} \cos{\left 
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[71]:</div>
+
+    <div class="prompt output_prompt">Out[71]:</div>
+
 
 
 
@@ -14192,7 +15632,7 @@ $$x - \frac{x^{3}}{6} + \frac{x^{5}}{120} + O\left(x^{6}\right)$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">series</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14201,7 +15641,9 @@ $$x - \frac{x^{3}}{6} + \frac{x^{5}}{120} + O\left(x^{6}\right)$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[72]:</div>
+
+    <div class="prompt output_prompt">Out[72]:</div>
+
 
 
 
@@ -14224,7 +15666,7 @@ $$x - \frac{x^{3}}{6} + \frac{x^{5}}{120} + O\left(x^{6}\right)$$
 <span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14233,7 +15675,9 @@ $$x - \frac{x^{3}}{6} + \frac{x^{5}}{120} + O\left(x^{6}\right)$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[73]:</div>
+
+    <div class="prompt output_prompt">Out[73]:</div>
+
 
 
 
@@ -14247,10 +15691,8 @@ $$1.11729533119247 - 0.438791280945186 \left(x - 0.5\right)^{2} + 0.079904256434
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In some cases, especially for numerical evaluation and plotting the results, it is necessary to remove the trailing <code>O(n)</code> term:</p>
 
@@ -14266,7 +15708,7 @@ $$1.11729533119247 - 0.438791280945186 \left(x - 0.5\right)^{2} + 0.079904256434
 <span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">removeO</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14275,7 +15717,9 @@ $$1.11729533119247 - 0.438791280945186 \left(x - 0.5\right)^{2} + 0.079904256434
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[74]:</div>
+
+    <div class="prompt output_prompt">Out[74]:</div>
+
 
 
 
@@ -14289,13 +15733,11 @@ $$- 0.479425538604203 x - 1.32116826114474 \cdot 10^{-6} \left(x - 0.5\right)^{9
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>SymPy provides two inbuilt plotting functions, <code>Plot()</code> from the <code>sympy.plotting</code> module, and <code>plot</code> from <code>sympy.mpmath.visualization</code>. At the time of writing, these functions lack the ability to add a key to the plot, which means they are unsuitable for most of our needs. Should you wish to use them nevertheless, their <code>help()</code> text is useful.</p>
-<p>For most of our purposes, Matplotlib should be the plotting tool of choice. The details are in chapter [cha:visualisingdata]. Here we furnish just one example of how to plot the results of a SymPy computation.</p>
+<p>For most of our purposes, Matplotlib should be the plotting tool of choice. The details are in chapter [cha:visualisingdata]. Here we furnish just one example of how to plot the results of a SymPy computation.</p>
 
 </div>
 </div>
@@ -14308,7 +15750,7 @@ $$- 0.479425538604203 x - 1.32116826114474 \cdot 10^{-6} \left(x - 0.5\right)^{9
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14337,7 +15779,7 @@ $$- 0.479425538604203 x - 1.32116826114474 \cdot 10^{-6} \left(x - 0.5\right)^{9
 <span class="n">pylab</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14346,7 +15788,9 @@ $$- 0.479425538604203 x - 1.32116826114474 \cdot 10^{-6} \left(x - 0.5\right)^{9
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[76]:</div>
+
+    <div class="prompt output_prompt">Out[76]:</div>
+
 
 
 
@@ -14357,7 +15801,9 @@ $$- 0.479425538604203 x - 1.32116826114474 \cdot 10^{-6} \left(x - 0.5\right)^{9
 </div>
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 
 
@@ -14387,7 +15833,7 @@ $$- 0.479425538604203 x - 1.32116826114474 \cdot 10^{-6} \left(x - 0.5\right)^{9
 <span class="n">pylab</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14396,18 +15842,22 @@ $$- 0.479425538604203 x - 1.32116826114474 \cdot 10^{-6} \left(x - 0.5\right)^{9
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[77]:</div>
+
+    <div class="prompt output_prompt">Out[77]:</div>
+
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.legend.Legend at 0x7f8a1b069a58&gt;</pre>
+<pre>&lt;matplotlib.legend.Legend at 0x7fe14d105390&gt;</pre>
 </div>
 
 </div>
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 
 
@@ -14423,18 +15873,16 @@ $$- 0.479425538604203 x - 1.32116826114474 \cdot 10^{-6} \left(x - 0.5\right)^{9
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Linear-equations-and-matrix-inversion">Linear equations and matrix inversion<a class="anchor-link" href="#Linear-equations-and-matrix-inversion">&#182;</a></h3><p>SymPy has a <code>Matrix</code> class and associated functions that allow the symbolic solution of systems of linear equations (and, of course, we can obtain numerical answers with <code>subs()</code> and <code>evalf()</code>). We shall consider the example of the following simple pair of linear equations:</p>
 $$\begin{aligned}
-3x + 7y&= 12z\\
-4x - 2y&= 5z\end{aligned}$$<p>We may write this system in the form $A\vec{x}=\vec{b}$ (multiply <em>A</em> by $\vec{x}$ if you want to verify that we recover the original equations), where</p>
+3x + 7y&amp;= 12z\\
+4x - 2y&amp;= 5z\end{aligned}$$<p>We may write this system in the form $A\vec{x}=\vec{b}$ (multiply <em>A</em> by $\vec{x}$ if you want to verify that we recover the original equations), where</p>
 $$A=\left(\begin{array}{cc}
-3 & 7\\
-4 & -2 \end{array} \right),\qquad
+3 &amp; 7\\
+4 &amp; -2 \end{array} \right),\qquad
 \vec{x}=\left(\begin{array}{c}
 x\\
 y \end{array}\right),\qquad
@@ -14457,7 +15905,7 @@ y \end{array}\right),\qquad
 <span class="n">A</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14466,7 +15914,9 @@ y \end{array}\right),\qquad
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[78]:</div>
+
+    <div class="prompt output_prompt">Out[78]:</div>
+
 
 
 
@@ -14488,7 +15938,7 @@ $$\left[\begin{matrix}3 & 7\\4 & -2\end{matrix}\right]$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">inv</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14497,7 +15947,9 @@ $$\left[\begin{matrix}3 & 7\\4 & -2\end{matrix}\right]$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[79]:</div>
+
+    <div class="prompt output_prompt">Out[79]:</div>
+
 
 
 
@@ -14520,7 +15972,7 @@ $$\left[\begin{matrix}\frac{1}{17} & \frac{7}{34}\\\frac{2}{17} & - \frac{3}{34}
 <span class="n">b</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14529,7 +15981,9 @@ $$\left[\begin{matrix}\frac{1}{17} & \frac{7}{34}\\\frac{2}{17} & - \frac{3}{34}
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[80]:</div>
+
+    <div class="prompt output_prompt">Out[80]:</div>
+
 
 
 
@@ -14552,7 +16006,7 @@ $$\left[\begin{matrix}12 z\\5 z\end{matrix}\right]$$
 <span class="n">x</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14561,7 +16015,9 @@ $$\left[\begin{matrix}12 z\\5 z\end{matrix}\right]$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[81]:</div>
+
+    <div class="prompt output_prompt">Out[81]:</div>
+
 
 
 
@@ -14583,7 +16039,7 @@ $$\left[\begin{matrix}\frac{59 z}{34}\\\frac{33 z}{34}\end{matrix}\right]$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">z</span><span class="p">:</span><span class="mf">3.3</span><span class="p">})</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14592,7 +16048,9 @@ $$\left[\begin{matrix}\frac{59 z}{34}\\\frac{33 z}{34}\end{matrix}\right]$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[82]:</div>
+
+    <div class="prompt output_prompt">Out[82]:</div>
+
 
 
 
@@ -14614,7 +16072,7 @@ $$\left[\begin{matrix}5.726\\3.203\end{matrix}\right]$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14623,7 +16081,9 @@ $$\left[\begin{matrix}5.726\\3.203\end{matrix}\right]$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[83]:</div>
+
+    <div class="prompt output_prompt">Out[83]:</div>
+
 
 
 
@@ -14637,15 +16097,13 @@ $$\left[\begin{matrix}5.726\\3.203\end{matrix}\right]$$
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>An alternative method of solving the same problem is to construct the system as a matrix in augmented form; that is the form obtained by appending the columns of (in our example) <em>A</em> and $\vec{b}$ together. The augmented matrix is[1]:</p>
 $$(A|\vec{b})=\left(\begin{array}{cc|c}
-3 & 7 & 12z\\
-4 & -2 & 5z\end{array} \right),$$<p>and as before we construct this as a SymPy <code>Matrix</code> object, but in this case we pass it to the <code>solve_linear_system()</code> function:</p>
+3 &amp; 7 &amp; 12z\\
+4 &amp; -2 &amp; 5z\end{array} \right),$$<p>and as before we construct this as a SymPy <code>Matrix</code> object, but in this case we pass it to the <code>solve_linear_system()</code> function:</p>
 
 </div>
 </div>
@@ -14661,7 +16119,7 @@ $$(A|\vec{b})=\left(\begin{array}{cc|c}
 <span class="n">system</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14670,7 +16128,9 @@ $$(A|\vec{b})=\left(\begin{array}{cc|c}
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[84]:</div>
+
+    <div class="prompt output_prompt">Out[84]:</div>
+
 
 
 
@@ -14693,7 +16153,7 @@ $$\left[\begin{matrix}3 & 7 & 12 z\\4 & -2 & 5 z\end{matrix}\right]$$
 <span class="n">sol</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14702,7 +16162,9 @@ $$\left[\begin{matrix}3 & 7 & 12 z\\4 & -2 & 5 z\end{matrix}\right]$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[85]:</div>
+
+    <div class="prompt output_prompt">Out[85]:</div>
+
 
 
 
@@ -14724,7 +16186,7 @@ $$\left \{ x : \frac{59 z}{34}, \quad y : \frac{33 z}{34}\right \}$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">sol</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14733,7 +16195,9 @@ $$\left \{ x : \frac{59 z}{34}, \quad y : \frac{33 z}{34}\right \}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[86]:</div>
+
+    <div class="prompt output_prompt">Out[86]:</div>
+
 
 
 
@@ -14757,7 +16221,7 @@ $$\left \{ x : \frac{59 z}{34}, \quad y : \frac{33 z}{34}\right \}$$
     <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="s1">&#39;=&#39;</span><span class="p">,</span><span class="n">sol</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">z</span><span class="p">:</span><span class="mf">3.3</span><span class="p">})</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14766,7 +16230,9 @@ $$\left \{ x : \frac{59 z}{34}, \quad y : \frac{33 z}{34}\right \}$$
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>x = 5.726
@@ -14779,10 +16245,8 @@ y = 3.203
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A third option is the <code>solve()</code> method, whose arguments include the individual symbolic equations, rather than any matrices. Like <code>dsolve()</code> (see <a href="#Ordinary-differential-equations">ODEs</a>), <code>solve()</code> expects either expressions which it will assume equal to zero, or <code>Equality</code> objects, which we can conveniently create with <code>Eq()</code>:</p>
 
@@ -14799,7 +16263,7 @@ y = 3.203
 <span class="n">solve</span><span class="p">((</span><span class="n">Eq</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">7</span><span class="o">*</span><span class="n">y</span><span class="p">,</span><span class="mi">12</span><span class="o">*</span><span class="n">z</span><span class="p">),</span> <span class="n">Eq</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">y</span><span class="p">,</span><span class="mi">5</span><span class="o">*</span><span class="n">z</span><span class="p">)),</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14808,7 +16272,9 @@ y = 3.203
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[88]:</div>
+
+    <div class="prompt output_prompt">Out[88]:</div>
+
 
 
 
@@ -14830,7 +16296,7 @@ $$\left \{ x : \frac{59 z}{34}, \quad y : \frac{33 z}{34}\right \}$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">solve</span><span class="p">((</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">7</span><span class="o">*</span><span class="n">y</span><span class="o">-</span><span class="mi">12</span><span class="o">*</span><span class="n">z</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">y</span><span class="o">-</span><span class="mi">5</span><span class="o">*</span><span class="n">z</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14839,7 +16305,9 @@ $$\left \{ x : \frac{59 z}{34}, \quad y : \frac{33 z}{34}\right \}$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[89]:</div>
+
+    <div class="prompt output_prompt">Out[89]:</div>
+
 
 
 
@@ -14853,10 +16321,8 @@ $$\left \{ x : \frac{59 z}{34}, \quad y : \frac{33 z}{34}\right \}$$
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>For more information, see <code>help(solve)</code> and <code>help(solve_linear_system)</code>.</p>
 <h3 id="Non-linear-equations">Non linear equations<a class="anchor-link" href="#Non-linear-equations">&#182;</a></h3><p>Let’s solve a simple equation such as
@@ -14875,7 +16341,7 @@ $x = x^2$. There are two obvious solutions: <em>x</em> = 0 and <em>x</em
 <span class="n">eq</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span>                           <span class="c1"># define the equation</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14888,7 +16354,7 @@ $x = x^2$. There are two obvious solutions: <em>x</em> = 0 and <em>x</em
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>                        <span class="c1"># solve eq = 0</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14897,7 +16363,9 @@ $x = x^2$. There are two obvious solutions: <em>x</em> = 0 and <em>x</em
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[91]:</div>
+
+    <div class="prompt output_prompt">Out[91]:</div>
+
 
 
 
@@ -14911,10 +16379,8 @@ $$\left [ 0, \quad 1\right ]$$
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The <code>solve()</code> function expects an expression that as meant to be solve so that it evaluates to zero. For our example, we rewrite</p>
 <p><em>x</em> = <em>x</em><sup>2</sup>
@@ -14937,7 +16403,7 @@ $$\left [ 0, \quad 1\right ]$$
 <span class="n">sympy</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>                        <span class="c1"># solve eq = 0</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14946,7 +16412,9 @@ $$\left [ 0, \quad 1\right ]$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[92]:</div>
+
+    <div class="prompt output_prompt">Out[92]:</div>
+
 
 
 
@@ -14960,12 +16428,10 @@ $$\left [ -1, \quad 0, \quad 1\right ]$$
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Output:-LaTeX-interface-and-pretty-printing">Output: LaTeX interface and pretty-printing<a class="anchor-link" href="#Output:-LaTeX-interface-and-pretty-printing">&#182;</a></h3><p>As is the case with many computer algebra systems, SymPy has the ability to format its output as LaTeX code, for easy inclusion into documents.</p>
+<h3 id="Output:-LaTeX&#160;interface-and-pretty-printing">Output: LaTeX&#160;interface and pretty-printing<a class="anchor-link" href="#Output:-LaTeX&#160;interface-and-pretty-printing">&#182;</a></h3><p>As is the case with many computer algebra systems, SymPy has the ability to format its output as LaTeX code, for easy inclusion into documents.</p>
 <p>At the start of this chapter, we called:</p>
 <div class="highlight"><pre><span></span><span class="n">sympy</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
 </pre></div>
@@ -14983,7 +16449,7 @@ $$\left [ -1, \quad 0, \quad 1\right ]$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">series</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">),</span> <span class="n">y</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14992,7 +16458,9 @@ $$\left [ -1, \quad 0, \quad 1\right ]$$
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>y**2/x**3 - y/x**2 + 1/x + O(y**3)
@@ -15012,7 +16480,7 @@ $$\left [ -1, \quad 0, \quad 1\right ]$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">latex</span><span class="p">(</span><span class="n">series</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">),</span> <span class="n">y</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15021,7 +16489,9 @@ $$\left [ -1, \quad 0, \quad 1\right ]$$
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>\frac{y^{2}}{x^{3}} - \frac{y}{x^{2}} + \frac{1}{x} + O\left(y^{3}\right)
@@ -15041,7 +16511,7 @@ $$\left [ -1, \quad 0, \quad 1\right ]$$
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">latex</span><span class="p">(</span><span class="n">series</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">),</span> <span class="n">y</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;inline&#39;</span><span class="p">))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15050,7 +16520,9 @@ $$\left [ -1, \quad 0, \quad 1\right ]$$
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>$\frac{y^{2}}{x^{3}} - \frac{y}{x^{2}} + 1 / x + O\left(y^{3}\right)$
@@ -15062,10 +16534,8 @@ $$\left [ -1, \quad 0, \quad 1\right ]$$
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Be aware that in its default mode, <code>latex()</code> outputs code that requires the <code>amsmath</code> package to be loaded via a <code>\backslashusepackage{amsmath}</code> command in the document preamble.</p>
 <p>SymPy also supports a “pretty print” (<code>pprint()</code>) output routine, which produces better-formatted text output than the default printing routine, as illustrated below. Note features such as the subscripts for array elements whose names are of the form <code>T_n</code>, the italicised constant <em>e</em>, vertically-centred dots for multiplication, and the nicely-formed matrix borders and fractions.</p>
@@ -15075,10 +16545,8 @@ $$\left [ -1, \quad 0, \quad 1\right ]$$
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Automatic-generation-of-C-code">Automatic generation of C code<a class="anchor-link" href="#Automatic-generation-of-C-code">&#182;</a></h3><p>A strong point of many symbolic libraries is that they can convert the symbolic expressions to C-code (or other code) that can subsequently be compiled for high execution speed. Here is an example that demonstrates this:</p>
 
@@ -15096,7 +16564,7 @@ $$\left [ -1, \quad 0, \quad 1\right ]$$
 <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15105,7 +16573,9 @@ $$\left [ -1, \quad 0, \quad 1\right ]$$
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[96]:</div>
+
+    <div class="prompt output_prompt">Out[96]:</div>
+
 
 
 
@@ -15128,7 +16598,7 @@ $$x - \frac{x^{3}}{6} + \frac{x^{5}}{120} + O\left(x^{6}\right)$$
 <span class="nb">print</span><span class="p">(</span><span class="n">codegen</span><span class="p">((</span><span class="s2">&quot;taylor_sine&quot;</span><span class="p">,</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">)),</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;C&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -15137,7 +16607,9 @@ $$x - \frac{x^{3}}{6} + \frac{x^{5}}{120} + O\left(x^{6}\right)$$
 
 
 <div class="output_area">
-<div class="prompt"></div>
+
+    <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>/******************************************************************************
@@ -15166,10 +16638,8 @@ double taylor_sine(double x) {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Related-tools">Related tools<a class="anchor-link" href="#Related-tools">&#182;</a></h2><p>It is worth noting that the SAGE initiative <a href="http://www.sagemath.org/">http://www.sagemath.org/</a> is trying to “create a viable free open source alternative to Magma, Maple, Mathematica and Matlab.” and includes the SymPy library among many others. Its symbolic capabilities are more powerful than SymPy’s, and SAGE, but the SymPy features will already cover many of the needs arising in science and engineering. SAGE includes the computer algebra system Maxima, which is also available standalone from <a href="http://maxima.sourceforge.net/">http://maxima.sourceforge.net/</a>.</p>
 

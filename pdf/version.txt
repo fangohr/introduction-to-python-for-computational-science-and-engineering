@@ -1,8 +1,8 @@
-Last compiled: Mon Aug  5 15:13:09 UTC 2019
+Last compiled: Mon Dec  9 12:55:32 UTC 2019
  
 Last commit:
-commit a7cdf1a2b0d0f09a6e84764971979e5fb0936ae4
+commit aff7d1002a8dee25f1112ff1a8f96770eef529f2
 Author: Hans Fangohr <hans.fangohr@xfel.eu>
-Date:   Mon Aug 5 17:11:03 2019 +0200
+Date:   Mon Nov 11 21:54:47 2019 +0100
 
-    record what changes are required when moving to most recent libs again.
+    things to fix

@@ -10,7 +10,7 @@
 </a>
 
 An [Introduction to Python for Computational Science and
-Engineering](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/blob/review-readme-2018-09-08/Readme.md), developed by Hans Fangohr (2003-2018).
+Engineering](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/blob/review-readme-2018-09-08/Readme.md), developed by Hans Fangohr (2003-2019).
 
 The content and methods taught are intended for a target audience of
 scientists and engineers who need to use computational methods and
@@ -68,6 +68,20 @@ Please use this citation:
 
 * Hans Fangohr, *Python for Computational Science and Engineering*,
   2018, DOI: [10.5281/zenodo.1411868](https://doi.org/10.5281/zenodo.1411868), [github.com/fangohr/introduction-to-python-for-computational-science-and-engineering](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/blob/master/Readme.md)
+  
+For BibTeX:
+```
+@misc{fangohr-python-book,
+  doi = {10.5281/ZENODO.1411868},
+  url = {https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering},
+  author = {Fangohr,  Hans},
+  keywords = {Python,  Education,  Textbook,  Computational Science,  Data Science,  Jupyter},
+  language = {en},
+  title = {Introduction To {Python} For Computational Science And Engineering},
+  publisher = {Zenodo},
+  year = {2019}
+}
+```
 
 # License
 

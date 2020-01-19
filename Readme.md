@@ -10,7 +10,7 @@
 </a>
 
 An [Introduction to Python for Computational Science and
-Engineering](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/blob/review-readme-2018-09-08/Readme.md), developed by Hans Fangohr (2003-2019).
+Engineering](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/blob/review-readme-2018-09-08/Readme.md), developed by Hans Fangohr (2003-2020).
 
 The content and methods taught are intended for a target audience of
 scientists and engineers who need to use computational methods and
@@ -103,8 +103,8 @@ Hans Fangohr is a researcher and teacher (see
 include effective software engineering for computational science and
 data science, researching computational modelling and data analysis
 methods, and education. He is a Professor at the [University of
-Southampton (UK)](http://www.southampton.ac.uk) and Data Analysis
-Scientist at the [European X-ray Free Electron Laser (EuXFEL)
+Southampton (UK)](http://www.southampton.ac.uk) and Head of Data Analysis
+at the [European X-ray Free Electron Laser (EuXFEL)
 facility (Germany)](https://xfel.eu).
 
 

@@ -13117,11 +13117,11 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Introspection">Introspection<a class="anchor-link" href="#Introspection">&#182;</a></h1><p>A Python code can ask and answer questions about itself and the objects it is manipulating.</p>
-<h2 id="dir()">dir()<a class="anchor-link" href="#dir()">&#182;</a></h2><p><span>`dir()`</span> is a built-in function which returns a list of all the names belonging to some namespace.</p>
+<h2 id="dir">dir<a class="anchor-link" href="#dir">&#182;</a></h2><p><code>dir()</code> is a built-in function which returns a list of all the names belonging to some namespace.</p>
 <ul>
-<li><p>If no arguments are passed to dir (i.e. <span>`dir()`</span>), it inspects the namespace in which it was called.</p>
+<li><p>If no arguments are passed to dir (i.e. <code>dir()</code>), it inspects the namespace in which it was called.</p>
 </li>
-<li><p>If <span>`dir`</span> is given an argument (i.e. <span>`dir(<object>)`</span>, then it inspects the namespace of the object which it was passed.</p>
+<li><p>If <code>dir</code> is given an argument (i.e. <code>dir(&lt;object&gt;)</code>, then it inspects the namespace of the object which it was passed.</p>
 </li>
 </ul>
 <p>For example:</p>
@@ -13211,7 +13211,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NBVAL_IGNORE_OUTPUT</span>
@@ -13228,7 +13228,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[1]:</div>
+    <div class="prompt output_prompt">Out[2]:</div>
 
 
 
@@ -13237,6 +13237,7 @@ div#notebook {
 <pre>[&#39;In&#39;,
  &#39;Out&#39;,
  &#39;_&#39;,
+ &#39;_1&#39;,
  &#39;__&#39;,
  &#39;___&#39;,
  &#39;__builtin__&#39;,
@@ -13249,11 +13250,12 @@ div#notebook {
  &#39;_dh&#39;,
  &#39;_i&#39;,
  &#39;_i1&#39;,
+ &#39;_i2&#39;,
  &#39;_ih&#39;,
  &#39;_ii&#39;,
  &#39;_iii&#39;,
  &#39;_oh&#39;,
- &#39;_sh&#39;,
+ &#39;apples&#39;,
  &#39;exit&#39;,
  &#39;get_ipython&#39;,
  &#39;quit&#39;]</pre>
@@ -13433,7 +13435,7 @@ Type b =  &lt;class &#39;int&#39;&gt; str(b) =  4
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Further-Reading">Further Reading<a class="anchor-link" href="#Further-Reading">&#182;</a></h4><p>See →<a href="http://docs.python.org/reference/datamodel.html">Python documentation, Data Model</a></p>
-<h2 id="type">type<a class="anchor-link" href="#type">&#182;</a></h2><p>The <span>`type(<object>)`</span> command returns the type of an object:</p>
+<h2 id="type">type<a class="anchor-link" href="#type">&#182;</a></h2><p>The <code>type(&lt;object&gt;)</code>command returns the type of an object:</p>
 
 </div>
 </div>
@@ -13607,7 +13609,7 @@ Type b =  &lt;class &#39;int&#39;&gt; str(b) =  4
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="isinstance">isinstance<a class="anchor-link" href="#isinstance">&#182;</a></h2><p><span>`isinstance(<object>, <typespec>)`</span> returns True if the given object is an instance of the given type, or any of its superclasses. Use <span>`help(isinstance`</span>) for the full syntax.</p>
+<h2 id="isinstance">isinstance<a class="anchor-link" href="#isinstance">&#182;</a></h2><p><code>isinstance(&lt;object&gt;, &lt;typespec&gt;)</code> returns True if the given object is an instance of the given type, or any of its superclasses. Use <code>help(isinstance)</code> for the full syntax.</p>
 
 </div>
 </div>
@@ -13748,11 +13750,11 @@ Type b =  &lt;class &#39;int&#39;&gt; str(b) =  4
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="help">help<a class="anchor-link" href="#help">&#182;</a></h2><ul>
-<li><p>The <span>`help(<object>)`</span> function will report the docstring (magic attritube with name <span>`__doc__`</span>) of the object that it is given, sometimes complemented with additional information. In the case of functions, <span>`help`</span> will also show the list of arguments that the function accepts (but it cannot provide the return value).</p>
+<li><p>The <code>help(&lt;object&gt;)</code> function will report the docstring (magic attritube with name <code>__doc__</code>) of the object that it is given, sometimes complemented with additional information. In the case of functions, <code>help</code> will also show the list of arguments that the function accepts (but it cannot provide the return value).</p>
 </li>
-<li><p><span>`help()`</span> starts an interactive help environment.</p>
+<li><p><code>help()</code> starts an interactive help environment.</p>
 </li>
-<li><p>It is common to use the <span>`help`</span> command a lot to remind oneself of the syntax and semantic of commands.</p>
+<li><p>It is common to use the <code>help</code> command a lot to remind oneself of the syntax and semantic of commands.</p>
 </li>
 </ul>
 <!-- -->
@@ -14148,7 +14150,7 @@ FILE
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The <span>`help`</span> function needs to be given the name of an object (which must exist in the current name space). For example py<span>help(math.sqrt)</span> will not work if the <span>`math`</span> module has not been imported before</p>
+<p>The <code>help</code> function needs to be given the name of an object (which must exist in the current name space). For example <code>help(math.sqrt)</code> will not work if the <code>math</code> module has not been imported before.</p>
 
 </div>
 </div>
@@ -14233,7 +14235,7 @@ sqrt(...)
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Instead of importing the module, we could also have given the <em>string</em> of <span>`math.sqrt`</span> to the help function, i.e.:</p>
+<p>Instead of importing the module, we could also have given the <em>string</em> of <code>math.sqrt</code> to the help function, i.e.:</p>
 
 </div>
 </div>
@@ -14279,20 +14281,20 @@ math.sqrt = sqrt(...)
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><span>`help`</span> is a function which gives information about the object which is passed as its argument. Most things in Python (classes, functions, modules, etc.) are objects, and therefor can be passed to help. There are, however, some things on which you might like to ask for help, which are not existing Python objects. In such cases it is often possible to pass a string containing the name of the thing or concept to help, for example</p>
+<p><code>help</code> is a function which gives information about the object which is passed as its argument. Most things in Python (classes, functions, modules, etc.) are objects, and therefor can be passed to help. There are, however, some things on which you might like to ask for help, which are not existing Python objects. In such cases it is often possible to pass a string containing the name of the thing or concept to help, for example</p>
 <ul>
-<li><p><span>`help(’modules’)`</span> will generate a list of all modules which can be imported into the current interpreter. Note that help(modules) (note absence of quotes) will result in a NameError (unless you are unlucky enough to have a variable called modules floating around, in which case you will get help on whatever that variable happens to refer to.)</p>
+<li><p><code>help(’modules’)</code> will generate a list of all modules which can be imported into the current interpreter. Note that help(modules) (note absence of quotes) will result in a NameError (unless you are unlucky enough to have a variable called modules floating around, in which case you will get help on whatever that variable happens to refer to.)</p>
 </li>
-<li><p><span>`help(’some_module’)`</span>, where some_module is a module which has not been imported yet (and therefor isn’t an object yet), will give you that module’s help information.</p>
+<li><p><code>help(’some_module’)</code>, where some_module is a module which has not been imported yet (and therefor isn’t an object yet), will give you that module’s help information.</p>
 </li>
-<li><p><span>`help(’some_keyword’)`</span>: For example <span>`and`</span>, <span>`if`</span> or <span>`print`</span> (<em>i.e.</em> <span>`help(’and’)`</span>, <span>`help(’if’)`</span> and <span>`help(’print’)`</span>). These are special words recognized by Python: they are not objects and thus cannot be passed as arguments to help. Passing the name of the keyword as a string to help works, but only if you have Python’s HTML documentation installed, and the interpreter has been made aware of its location by setting the environment variable PYTHONDOCS.</p>
+<li><p><code>help(’some_keyword’)</code>: For example <code>and</code>, <code>if</code> or <code>print</code> (<em>i.e.</em> <code>help(’and’)</code>, <code>help(’if’)</code> and <code>help(’print’)</code>). These are special words recognized by Python: they are not objects and thus cannot be passed as arguments to help. Passing the name of the keyword as a string to help works, but only if you have Python’s HTML documentation installed, and the interpreter has been made aware of its location by setting the environment variable PYTHONDOCS.</p>
 </li>
 </ul>
-<h2 id="Docstrings">Docstrings<a class="anchor-link" href="#Docstrings">&#182;</a></h2><p>The command <span>`help(<object>)`</span> accesses the documentation strings of objects.</p>
+<h2 id="Docstrings">Docstrings<a class="anchor-link" href="#Docstrings">&#182;</a></h2><p>The command <code>help(&lt;object&gt;)</code> accesses the documentation strings of objects.</p>
 <p>Any literal string apparing as the first item in the definition of a class, function, method or module, is taken to be its <em>docstring</em>.</p>
-<p><span>`help`</span> includes the docstring in the information it displays about the object.</p>
+<p><code>help</code> includes the docstring in the information it displays about the object.</p>
 <p>In addition to the docstring it may display some other information, for example, in the case of functions, it displays the function’s signature.</p>
-<p>The docstring is stored in the object’s <span>`__doc__`</span> attribute.</p>
+<p>The docstring is stored in the object’s <code>__doc__</code> attribute.</p>
 
 </div>
 </div>

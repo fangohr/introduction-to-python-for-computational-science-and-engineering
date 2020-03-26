@@ -1,12 +1,11 @@
-Last compiled: Thu Jan 23 18:58:27 UTC 2020
+Last compiled: Thu Mar 26 10:13:49 UTC 2020
  
 Last commit:
-commit b71ad85c947d474fe8f6fa03d812a2e02e6746ba
-Author: Hans Fangohr <hans.fangohr@xfel.eu>
-Date:   Thu Jan 23 19:52:18 2020 +0100
+commit 8f7afd0f0de778eae5eeb14cc3bd60f79ead41e6
+Merge: 1dabea4 1da1af5
+Author: Hans Fangohr <fangohr@users.noreply.github.com>
+Date:   Tue Feb 25 17:14:38 2020 +0100
 
-    Remove <span> from in-line code quoting
+    Merge pull request #15 from fangohr/dependabot/pip/bleach-3.1.1
     
-    This created a problem with the html output.
-    
-    Thanks to the reader who reported the problem.
+    Bump bleach from 2.1.4 to 3.1.1

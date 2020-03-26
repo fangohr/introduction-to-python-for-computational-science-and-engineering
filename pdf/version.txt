@@ -1,8 +1,11 @@
-Last compiled: Mon Dec  9 12:55:32 UTC 2019
+Last compiled: Thu Mar 26 10:14:25 UTC 2020
  
 Last commit:
-commit aff7d1002a8dee25f1112ff1a8f96770eef529f2
-Author: Hans Fangohr <hans.fangohr@xfel.eu>
-Date:   Mon Nov 11 21:54:47 2019 +0100
+commit 8f7afd0f0de778eae5eeb14cc3bd60f79ead41e6
+Merge: 1dabea4 1da1af5
+Author: Hans Fangohr <fangohr@users.noreply.github.com>
+Date:   Tue Feb 25 17:14:38 2020 +0100
 
-    things to fix
+    Merge pull request #15 from fangohr/dependabot/pip/bleach-3.1.1
+    
+    Bump bleach from 2.1.4 to 3.1.1

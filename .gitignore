@@ -1,4 +1,4 @@
-.cache
+OB.cache
 .ipynb_checkpoints
 __pycache__
 html
@@ -16,3 +16,6 @@ pylabimshow1b.pdf
 pylabimshowcm.pdf
 test.txt
 vectools.py
+.pytest_cache/
+eu-pop-2017.csv
+stock.csv

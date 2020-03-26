@@ -61,7 +61,7 @@ docker-build:
 
 # Occasionally (after changing branch) we need to force rebuild:
 docker-build-nocache:
-        docker build -t python4compscience2 --no-cache -f tools/docker/Dockerfile .
+	docker build -t python4compscience2 --no-cache -f tools/docker/Dockerfile .
 
 # build pdf and html through container
 docker-html:

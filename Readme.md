@@ -34,6 +34,11 @@ The book is based on Python 3.
 is
 [available online](http://www.southampton.ac.uk/~fangohr/training/python/pdfs/Python2-for-Computational-Science-and-Engineering.pdf))
 
+# Why use this book? (Feedback from user)
+> *Readers looking for a beginner's guide to Python are faced with a baffling array of choices. However, Introduction to Python for Computational Science and Engineering, by Hans Fangohr is uniquely valuable because it is specifically aimed at those of us who are engaged in applied science or scientific research. The book is concise, well organized and full of practical examples that the reader can implement as they are going along. The key concepts of programming are introduced in the first half of the book, while the second half focuses on science/engineering applications: numerical methods, optimization, scientific plotting, and data science. This book is a must-have companion for anyone learning to use Python to enable their work in applied science or scientific research." 
+                   - Simon Box, Head of Virtual Development at Aurora Innovation.*
+
+
 # Translation
 
 The [book is available in Portuguese](https://github.com/gcpeixoto/lecture-ipynb/blob/master/README.md) ([pdf](https://github.com/gcpeixoto/lecture-ipynb/raw/master/pdf/Introducao-Python-para-Ciencias-Computacionais-Engenharia.pdf)).

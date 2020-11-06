@@ -1,2 +1,0 @@
-```{nb-exec-table}
-```

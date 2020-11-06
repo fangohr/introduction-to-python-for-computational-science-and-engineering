@@ -9,8 +9,6 @@ logo: logo.png
 # See https://jupyterbook.org/content/execute.html
 execute:
   execute_notebooks: force
-  run_in_temp: true
-  allow_errors: false
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -30,4 +28,4 @@ html:
   use_repository_button: true
   comments:
     utterances:
-      repo: "github-org/github-repo"
+      repo: "RobertRosca/introduction-to-python-for-computational-science-and-engineering"

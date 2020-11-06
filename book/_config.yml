@@ -29,3 +29,7 @@ html:
   comments:
     utterances:
       repo: "RobertRosca/introduction-to-python-for-computational-science-and-engineering"
+      issue-term: "pathname"
+      label: "💬 utterances"
+      theme: "github-light"
+      crossorigin: "anonymous"

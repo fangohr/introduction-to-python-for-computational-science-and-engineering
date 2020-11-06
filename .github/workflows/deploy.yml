@@ -24,6 +24,13 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
 
+    - uses: actions/cache@v2
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('poetry.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-${{ hashFiles('poetry.lock') }}
+
     - name: Install poetry
       uses: abatilo/actions-poetry@v2.0.0
 

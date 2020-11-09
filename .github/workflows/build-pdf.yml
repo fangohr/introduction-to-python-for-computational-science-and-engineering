@@ -46,15 +46,11 @@ jobs:
     - name: Install dependencies
       run: |
         poetry install
-        sudo apt-get update
-        sudo apt-get install texlive-latex-recommended texlive-latex-extra \
-                        texlive-fonts-recommended texlive-fonts-extra \
-                        texlive-xetex latexmk
 
     # Build the book
     - name: Build the book
       run: |
-        poetry run jupyter-book build book --builder pdflatex
+        poetry run jupyter-book build book --builder pdfhtml
 
     - name: Create Release
       id: create_release
@@ -62,8 +58,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ github.ref }}
-        release_name: Release ${{ github.ref }}
+        tag_name: latest
+        release_name: latest
         draft: false
         prerelease: true
 
@@ -74,6 +70,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
-        asset_path: ./book/_build/latex/book.pdf
-        asset_name: my-book.pdf
+        asset_path: ./ book/_build/pdf/book.pdf
+        asset_name: book.pdf
         asset_content_type: application/pdf

@@ -1,0 +1,79 @@
+name: build-pdf
+
+on:
+  # Trigger the workflow on push to main branch
+  push:
+    branches:
+      - jupyterbook
+
+# This job installs dependencies, build the book, and pushes it to `gh-pages`
+jobs:
+  build-pdf:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        python-version: [3.8]
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: setup-python fix for local runs with nektos/act
+      run: |
+        #  Hack to get setup-python to work on act
+        #  https://github.com/nektos/act/issues/251#issuecomment-706412948
+        if [ $GITHUB_ACTOR == "nektos/act" ]; then
+          if [ ! -f "/etc/lsb-release" ] ; then
+            echo "DISTRIB_RELEASE=18.04" > /etc/lsb-release
+          fi
+        fi
+
+    # Install dependencies
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v1
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - uses: actions/cache@v2
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('poetry.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-${{ hashFiles('poetry.lock') }}
+
+    - name: Install poetry
+      uses: abatilo/actions-poetry@v2.0.0
+
+    - name: Install dependencies
+      run: |
+        poetry install
+        apt-get update
+        apt-get install texlive-latex-recommended texlive-latex-extra \
+                        texlive-fonts-recommended texlive-fonts-extra \
+                        texlive-xetex latexmk
+
+    # Build the book
+    - name: Build the book
+      run: |
+        poetry run jupyter-book build book --builder pdflatex
+
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        draft: false
+        prerelease: true
+
+    - name: Upload Release Asset
+      id: upload-release-asset
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+        asset_path: ./book/_build/latex/book.pdf
+        asset_name: my-book.pdf
+        asset_content_type: application/pdf

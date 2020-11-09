@@ -12,6 +12,7 @@ execute:
 
 # Define the name of the latex output file for PDF builds
 latex:
+  latex_engine: xelatex
   latex_documents:
     targetname: book.tex
 

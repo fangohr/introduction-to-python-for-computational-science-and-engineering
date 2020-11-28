@@ -40,6 +40,9 @@ check-pandas:
 	@which python3
 	@python3 -c "import pandas; print(pandas.__version__)"
 
+install:
+	@python3 -m pip install -r requirements.txt
+
 version:
 	echo "Last compiled: `date`" > version.txt
 	echo " " >> version.txt

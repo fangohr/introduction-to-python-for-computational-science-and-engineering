@@ -1050,10 +1050,10 @@ $<span class="math notranslate nohighlight">\(f(x,\vec{p}) = a \exp(-b x) + c, \
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimal parameters are a=2.62197, b=1.38519, and c=0.504784
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimal parameters are a=2.46591, b=1.47731, and c=0.557144
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fef28573280&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7efd340789a0&gt;
 </pre></div>
 </div>
 <img alt="_images/16-scipy_29_2.png" src="_images/16-scipy_29_2.png" />
@@ -1184,8 +1184,6 @@ $<span class="math notranslate nohighlight">\(f(x,\vec{p}) = a \exp(-b x) + c, \
   return cos(x) - 3 * exp( -(x - 0.2) ** 2)
 &lt;ipython-input-11-127f35e01b3a&gt;:6: DeprecationWarning: scipy.exp is deprecated and will be removed in SciPy 2.0.0, use numpy.exp instead
   return cos(x) - 3 * exp( -(x - 0.2) ** 2)
-&lt;ipython-input-11-127f35e01b3a&gt;:16: DeprecationWarning: scipy.arange is deprecated and will be removed in SciPy 2.0.0, use numpy.arange instead
-  x = arange(-10, 10, 0.1)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimization terminated successfully.
@@ -1200,7 +1198,9 @@ Optimization terminated successfully.
 Start search at x=2., minimum is [3.13847656]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-11-127f35e01b3a&gt;:6: DeprecationWarning: scipy.cos is deprecated and will be removed in SciPy 2.0.0, use numpy.cos instead
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-11-127f35e01b3a&gt;:16: DeprecationWarning: scipy.arange is deprecated and will be removed in SciPy 2.0.0, use numpy.arange instead
+  x = arange(-10, 10, 0.1)
+&lt;ipython-input-11-127f35e01b3a&gt;:6: DeprecationWarning: scipy.cos is deprecated and will be removed in SciPy 2.0.0, use numpy.cos instead
   return cos(x) - 3 * exp( -(x - 0.2) ** 2)
 &lt;ipython-input-11-127f35e01b3a&gt;:6: DeprecationWarning: scipy.exp is deprecated and will be removed in SciPy 2.0.0, use numpy.exp instead
   return cos(x) - 3 * exp( -(x - 0.2) ** 2)
@@ -1214,7 +1214,7 @@ Start search at x=2., minimum is [3.13847656]
   return cos(x) - 3 * exp( -(x - 0.2) ** 2)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fef25793cd0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7efd1adbe040&gt;
 </pre></div>
 </div>
 <img alt="_images/16-scipy_35_4.png" src="_images/16-scipy_35_4.png" />

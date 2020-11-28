@@ -1,7 +1,7 @@
 # Table of content
 # Learn more at https://jupyterbook.org/customize/toc.html
 #
-- file: index
+- file: opening
   numbered: true
 
 - file: 01-introduction

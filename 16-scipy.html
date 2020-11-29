@@ -630,6 +630,18 @@ _0^1\cos(2\pi x) dx\)</span>.</p></li>
 <li><p>(i) creates a plot of the integrand <span class="math notranslate nohighlight">\(f(x)\)</span> and</p></li>
 <li><p>(ii) computes the integral numerically using the <code class="docutils literal notranslate"><span class="pre">quad</span></code> function. The return values should be as for the <code class="docutils literal notranslate"><span class="pre">quad</span></code> function.</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="c1"># settings for jupyter book: svg for html version, high-resolution png for pdf</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">set_matplotlib_formats</span>
+<span class="n">set_matplotlib_formats</span><span class="p">(</span><span class="s1">&#39;svg&#39;</span><span class="p">,</span> <span class="s1">&#39;png&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.dpi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">400</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="solving-ordinary-differential-equations">
@@ -670,7 +682,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}y}{\mathrm{d}t}(t)
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;y(t)&#39;)
 </pre></div>
 </div>
-<img alt="_images/16-scipy_13_1.svg" src="_images/16-scipy_13_1.svg" /></div>
+<img alt="_images/16-scipy_14_1.svg" src="_images/16-scipy_14_1.svg" /></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">odeint</span></code> command takes a number of optional parameters to change the default error tolerance of the integration (and to trigger the production of extra debugging output). Use the help command to explore these:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">scipy</span><span class="o">.</span><span class="n">integrate</span><span class="o">.</span><span class="n">odeint</span><span class="p">)</span>
@@ -1014,7 +1026,7 @@ The exact error is -6.66134e-15.
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;x&#39;)
 </pre></div>
 </div>
-<img alt="_images/16-scipy_24_1.svg" src="_images/16-scipy_24_1.svg" /></div>
+<img alt="_images/16-scipy_25_1.svg" src="_images/16-scipy_25_1.svg" /></div>
 </div>
 </div>
 <div class="section" id="curve-fitting">
@@ -1060,13 +1072,13 @@ $<span class="math notranslate nohighlight">\(f(x,\vec{p}) = a \exp(-b x) + c, \
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimal parameters are a=2.38036, b=1.33539, and c=0.542939
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimal parameters are a=2.39496, b=1.39288, and c=0.606012
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fc783133220&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f598f44ea30&gt;
 </pre></div>
 </div>
-<img alt="_images/16-scipy_26_2.svg" src="_images/16-scipy_26_2.svg" /></div>
+<img alt="_images/16-scipy_27_2.svg" src="_images/16-scipy_27_2.svg" /></div>
 </div>
 <p>Note that in the source code above we define the fitting function <span class="math notranslate nohighlight">\(y = f(x)\)</span> through Python code. We can thus fit (nearly) arbitrary functions using the <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> method.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> function returns a tuple <code class="docutils literal notranslate"><span class="pre">popt,</span> <span class="pre">pcov</span></code>. The first entry <code class="docutils literal notranslate"><span class="pre">popt</span></code> contains a tuple of the OPTimal Parameters (in the sense that these minimise equation ([eq:1]). The second entry contains the covariance matrix for all parameters. The diagonals provide the variance of the parameter estimations.</p>
@@ -1126,7 +1138,7 @@ $<span class="math notranslate nohighlight">\(f(x,\vec{p}) = a \exp(-b x) + c, \
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/16-scipy_29_0.svg" src="_images/16-scipy_29_0.svg" /></div>
+<img alt="_images/16-scipy_30_0.svg" src="_images/16-scipy_30_0.svg" /></div>
 </div>
 <p>The lower plot shows the discrete Fourier transform computed from the data shown in the upper plot.</p>
 </div>
@@ -1188,10 +1200,10 @@ Optimization terminated successfully.
 Start search at x=2., minimum is [3.13847656]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fc782fcd640&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f598f26fcd0&gt;
 </pre></div>
 </div>
-<img alt="_images/16-scipy_32_2.svg" src="_images/16-scipy_32_2.svg" /></div>
+<img alt="_images/16-scipy_33_2.svg" src="_images/16-scipy_33_2.svg" /></div>
 </div>
 <p>Calling the <code class="docutils literal notranslate"><span class="pre">fmin</span></code> function will produce some diagnostic output, which you can also see above.</p>
 <p><strong>Return value of <code class="docutils literal notranslate"><span class="pre">fmin</span></code></strong></p>

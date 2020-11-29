@@ -509,18 +509,23 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>Pylab is slightly more convenient to use for easy plots, and Matplotlib gives far more detailed control over how plots are created. If you use Matplotlib routinely to produce figures, you are well advised to learn about the object oriented matplotlib interface (instead of the pylab interface).</p>
 <p>This chapter focusses on the Pylab interface.</p>
 <p>An excellent introduction and overview of the Matplotlib plotting interface is available in<a class="reference external" href="http://nbviewer.ipython.org/urls/raw.github.com/jrjohansson/scientific-python-lectures/master/Lecture-4-Matplotlib.ipynb">http://nbviewer.ipython.org/urls/raw.github.com/jrjohansson/scientific-python-lectures/master/Lecture-4-Matplotlib.ipynb</a>.</p>
-</div>
-<div class="section" id="first-example">
-<h3><span class="section-number">15.1.2. </span>First example<a class="headerlink" href="#first-example" title="Permalink to this headline">¶</a></h3>
-<p>The recommended way of using Matplotlib in a simple example is shown here (let’s call this example 1a):</p>
+<p>For the purpose of this book and the <a class="reference external" href="http://jupyterbook.org">jupyterbook package</a>, we use some settings to create a svg file for the html version of the book, and a high-resolution png file for the pdf version:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># change the format of images created by matplotlib to SVG</span>
-<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;svg&#39;
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="c1"># settings for jupyter book: svg for html version, high-resolution png for pdf</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">set_matplotlib_formats</span>
+<span class="n">set_matplotlib_formats</span><span class="p">(</span><span class="s1">&#39;svg&#39;</span><span class="p">,</span> <span class="s1">&#39;png&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.dpi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">400</span>
 </pre></div>
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="first-example">
+<h3><span class="section-number">15.1.2. </span>First example<a class="headerlink" href="#first-example" title="Permalink to this headline">¶</a></h3>
+<p>The recommended way of using Matplotlib in a simple example is shown here (let’s call this example 1a):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example 1 a</span>
@@ -534,35 +539,35 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f138ebc7670&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb506afbfd0&gt;]
 </pre></div>
 </div>
-<img alt="_images/15-visualising-data_3_1.svg" src="_images/15-visualising-data_3_1.svg" /></div>
+<img alt="_images/15-visualising-data_4_1.svg" src="_images/15-visualising-data_4_1.svg" /></div>
 </div>
 </div>
 <div class="section" id="how-to-import-matplotlib-pylab-pyplot-numpy-and-all-that">
 <h3><span class="section-number">15.1.3. </span>How to import matplotlib, pylab, pyplot, numpy and all that<a class="headerlink" href="#how-to-import-matplotlib-pylab-pyplot-numpy-and-all-that" title="Permalink to this headline">¶</a></h3>
-<p>The submodule <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> provides an object oriented interface to the plotting library. Many of the examples in the matplotlib documentation follow the import convention to import <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> as <code class="docutils literal notranslate"><span class="pre">plt</span></code> and <code class="docutils literal notranslate"><span class="pre">numpy</span></code> as <code class="docutils literal notranslate"><span class="pre">np</span></code>. It is of course entirely the user’s decision whether to import the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> library under the name <code class="docutils literal notranslate"><span class="pre">np</span></code> (as often done in matplotlib examples) or <code class="docutils literal notranslate"><span class="pre">N</span></code> as done in this text (and in the early days when the predecessor of numpy was called “Numeric”) or any other name you like. Similarly, it is a matter of taste whether the plotting submodule (<code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code>) is imported as <code class="docutils literal notranslate"><span class="pre">plt</span></code> as is done in the matplotlib documentation or <code class="docutils literal notranslate"><span class="pre">plot</span></code> (which could be argued is slightly clearer) etc.</p>
+<p>The submodule <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> provides an object oriented interface to the plotting library. Many of the examples in the matplotlib documentation follow the import convention to import <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> as <code class="docutils literal notranslate"><span class="pre">plt</span></code> and <code class="docutils literal notranslate"><span class="pre">numpy</span></code> as <code class="docutils literal notranslate"><span class="pre">np</span></code>. It is of course entirely the user’s decision whether to import the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> library under the name <code class="docutils literal notranslate"><span class="pre">np</span></code> (as often done in matplotlib examples) or <code class="docutils literal notranslate"><span class="pre">N</span></code> as occasionally done in this text (and in the early days when the predecessor of numpy was called “Numeric”) or any other name you like. Similarly, it is a matter of taste whether the plotting submodule (<code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code>) is imported as <code class="docutils literal notranslate"><span class="pre">plt</span></code> as is done in the matplotlib documentation or <code class="docutils literal notranslate"><span class="pre">plot</span></code> (which could be argued is slightly clearer) etc.</p>
 <p>As always a balance has to be struck between personal preferences and consistency with common practice in choosing these name. Consistency with common use is of course more important if the code is likely to be used by others or published.</p>
 <p>Plotting nearly always needs arrays of numerical data and it is for this reason that the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> module is used a lot: it provides fast and memory efficient array handling for Python (see <a class="reference internal" href="14-numpy.html"><span class="doc std std-doc">chapter 14</span></a>).</p>
 <p>We could thus also have written the example 1a above as in example 1b (which is identical in functionality to the example above and will create the same plot):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pylab</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">N</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="n">N</span><span class="o">.</span><span class="n">arange</span> <span class="p">(</span><span class="o">-</span><span class="mf">3.14</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">N</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span> <span class="p">(</span><span class="o">-</span><span class="mf">3.14</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
 <span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f138cb07040&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb5041e1460&gt;]
 </pre></div>
 </div>
-<img alt="_images/15-visualising-data_6_1.svg" src="_images/15-visualising-data_6_1.svg" /></div>
+<img alt="_images/15-visualising-data_7_1.svg" src="_images/15-visualising-data_7_1.svg" /></div>
 </div>
 <p>Because the <code class="docutils literal notranslate"><span class="pre">numpy.arange</span></code> and <code class="docutils literal notranslate"><span class="pre">numpy.sin</span></code> objects have already been imported into the (convenience) <code class="docutils literal notranslate"><span class="pre">pylab</span></code> namespace, we could also write it as example 1c:</p>
 <div class="cell docutils container">
@@ -578,10 +583,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f138ca66a60&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb5041c3790&gt;]
 </pre></div>
 </div>
-<img alt="_images/15-visualising-data_8_1.svg" src="_images/15-visualising-data_8_1.svg" /></div>
+<img alt="_images/15-visualising-data_9_1.svg" src="_images/15-visualising-data_9_1.svg" /></div>
 </div>
 <p>If we really want to cut down on characters to type, we could also important the whole functionality from the <code class="docutils literal notranslate"><span class="pre">pylab</span></code> convenience module, and rewrite the code as example 1d:</p>
 <div class="cell docutils container">
@@ -598,7 +603,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/15-visualising-data_10_0.svg" src="_images/15-visualising-data_10_0.svg" /></div>
+<img alt="_images/15-visualising-data_11_0.svg" src="_images/15-visualising-data_11_0.svg" /></div>
 </div>
 <p>This can be extremely convenient, but comes with a big health warning:</p>
 <ul class="simple">
@@ -676,7 +681,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;This is the title of the graph&#39;)
 </pre></div>
 </div>
-<img alt="_images/15-visualising-data_18_1.svg" src="_images/15-visualising-data_18_1.svg" /></div>
+<img alt="_images/15-visualising-data_19_1.svg" src="_images/15-visualising-data_19_1.svg" /></div>
 </div>
 <p>showing some other useful commands:</p>
 <ul class="simple">
@@ -825,10 +830,10 @@ marker, linestyle, and markercolor with::
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f138c633400&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fb503dbe820&gt;
 </pre></div>
 </div>
-<img alt="_images/15-visualising-data_22_1.svg" src="_images/15-visualising-data_22_1.svg" /></div>
+<img alt="_images/15-visualising-data_23_1.svg" src="_images/15-visualising-data_23_1.svg" /></div>
 </div>
 </div>
 <div class="section" id="two-or-more-graphs-in-one-figure-window">
@@ -862,7 +867,7 @@ marker, linestyle, and markercolor with::
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/15-visualising-data_26_0.svg" src="_images/15-visualising-data_26_0.svg" /></div>
+<img alt="_images/15-visualising-data_27_0.svg" src="_images/15-visualising-data_27_0.svg" /></div>
 </div>
 </div>
 <div class="section" id="two-or-more-figure-windows">
@@ -879,10 +884,10 @@ marker, linestyle, and markercolor with::
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f138c505760&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb503c0ea00&gt;]
 </pre></div>
 </div>
-<img alt="_images/15-visualising-data_28_1.svg" src="_images/15-visualising-data_28_1.svg" /><img alt="_images/15-visualising-data_28_2.svg" src="_images/15-visualising-data_28_2.svg" /></div>
+<img alt="_images/15-visualising-data_29_1.svg" src="_images/15-visualising-data_29_1.svg" /><img alt="_images/15-visualising-data_29_2.svg" src="_images/15-visualising-data_29_2.svg" /></div>
 </div>
 <p>Note that you can use <code class="docutils literal notranslate"><span class="pre">pylab.close()</span></code> to close one, some or all figure windows (use <code class="docutils literal notranslate"><span class="pre">help(pylab.close)</span></code> to learn more).</p>
 </div>
@@ -919,7 +924,7 @@ marker, linestyle, and markercolor with::
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/15-visualising-data_30_0.svg" src="_images/15-visualising-data_30_0.svg" /></div>
+<img alt="_images/15-visualising-data_31_0.svg" src="_images/15-visualising-data_31_0.svg" /></div>
 </div>
 <p>Do not try to understand every single command in this file: some are rather specialised and have not been covered in this text. The intention is to provide a few examples to show what can – in principle – be done with Matplotlib. If you need a plot like this, the expectation is that you will need to experiment and possibly learn a bit more about Matplotlib.</p>
 </div>
@@ -970,7 +975,7 @@ marker, linestyle, and markercolor with::
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/15-visualising-data_33_0.svg" src="_images/15-visualising-data_33_0.svg" /><img alt="_images/15-visualising-data_33_1.svg" src="_images/15-visualising-data_33_1.svg" /></div>
+<img alt="_images/15-visualising-data_34_0.svg" src="_images/15-visualising-data_34_0.svg" /><img alt="_images/15-visualising-data_34_1.svg" src="_images/15-visualising-data_34_1.svg" /></div>
 </div>
 <p>To use different colourmaps, we make use of the <code class="docutils literal notranslate"><span class="pre">matplotlib.cm</span></code> module (where cm stands for Colour Map). The code below demonstrates how we can select colourmaps from the set of already provided maps, and how we can modify them (here by reducing the number of colours in the map). The last example mimics the behaviour of the more sophisticated <code class="docutils literal notranslate"><span class="pre">contour</span></code> command that also comes with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.</p>
 <div class="cell docutils container">
@@ -1027,7 +1032,7 @@ marker, linestyle, and markercolor with::
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/15-visualising-data_36_0.svg" src="_images/15-visualising-data_36_0.svg" /></div>
+<img alt="_images/15-visualising-data_37_0.svg" src="_images/15-visualising-data_37_0.svg" /></div>
 </div>
 </div>
 <div class="section" id="plots-of-z-f-x-y-and-other-features-of-matplotlib">

@@ -31,6 +31,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -127,7 +128,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="index.html">
+  <a class="reference internal" href="opening.html">
    Python for Computational Science and Engineering
   </a>
  </li>
@@ -462,34 +463,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <div class="section" id="scipy">
 <h2><span class="section-number">16.2. </span>SciPy<a class="headerlink" href="#scipy" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">Scipy</span></code> is built on <code class="docutils literal notranslate"><span class="pre">numpy</span></code>. All functionality from <code class="docutils literal notranslate"><span class="pre">numpy</span></code> seems to be available in <code class="docutils literal notranslate"><span class="pre">scipy</span></code> as well. For example, instead of</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>we can therefor also use</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">s</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-2-6192ba825424&gt;:2: DeprecationWarning: scipy.arange is deprecated and will be removed in SciPy 2.0.0, use numpy.arange instead
-  x = s.arange(0, 10, 0.1)
-&lt;ipython-input-2-6192ba825424&gt;:3: DeprecationWarning: scipy.sin is deprecated and will be removed in SciPy 2.0.0, use numpy.sin instead
-  y = s.sin(x)
-</pre></div>
-</div>
-</div>
-</div>
+<p><code class="docutils literal notranslate"><span class="pre">Scipy</span></code> provides many scientific computing functions and is generally complementary to the the functionality of <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p>
 <p>First we need to import <code class="docutils literal notranslate"><span class="pre">scipy</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -503,28 +477,40 @@ commentsRunWhenDOMLoaded(addUtterances);
 </pre></div>
 </div>
 <p>The output is very long, so we’re showing just a part of it here:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>stats       --- Statistical Functions [*]
-sparse      --- Sparse matrix [*]
-lib         --- Python wrappers to external libraries [*]
-linalg      --- Linear algebra routines [*]
-signal      --- Signal Processing Tools [*]
-misc        --- Various utilities that don&#39;t have another home.
-interpolate --- Interpolation Tools [*]
-optimize    --- Optimization Tools [*]
-cluster     --- Vector Quantization / Kmeans [*]
-fftpack     --- Discrete Fourier Transform algorithms [*]
-io          --- Data input and output [*]
-integrate   --- Integration routines [*]
-lib.lapack  --- Wrappers to LAPACK library [*]
-special     --- Special Functions [*]
-lib.blas    --- Wrappers to BLAS library [*]
-  [*] - using a package requires explicit import (see pkgload)
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> cluster                      --- Vector Quantization / Kmeans
+ fft                          --- Discrete Fourier transforms
+ fftpack                      --- Legacy discrete Fourier transforms
+ integrate                    --- Integration routines
+ interpolate                  --- Interpolation Tools
+ io                           --- Data input and output
+ linalg                       --- Linear algebra routines
+ linalg.blas                  --- Wrappers to BLAS library
+ linalg.lapack                --- Wrappers to LAPACK library
+ misc                         --- Various utilities that don&#39;t have
+                                  another home.
+ ndimage                      --- n-dimensional image package
+ odr                          --- Orthogonal Distance Regression
+ optimize                     --- Optimization Tools
+ signal                       --- Signal Processing Tools
+ signal.windows               --- Window functions
+ sparse                       --- Sparse Matrices
+ sparse.linalg                --- Sparse Linear Algebra
+ sparse.linalg.dsolve         --- Linear Solvers
+ sparse.linalg.dsolve.umfpack --- :Interface to the UMFPACK library:
+                                  Conjugate Gradient Method (LOBPCG)
+ sparse.linalg.eigen          --- Sparse Eigenvalue Solvers
+ sparse.linalg.eigen.lobpcg   --- Locally Optimal Block Preconditioned
+                                  Conjugate Gradient Method (LOBPCG)
+ spatial                      --- Spatial data structures and algorithms
+ special                      --- Special functions
+ stats                        --- Statistical Functions
 </pre></div>
 </div>
 <p>If we are looking for an algorithm to integrate a function, we might explore the <code class="docutils literal notranslate"><span class="pre">integrate</span></code> package:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>import scipy.integrate
-
-scipy.integrate?
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.integrate</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>scipy.integrate?
 </pre></div>
 </div>
 <p>produces:</p>
@@ -541,6 +527,7 @@ Integrating functions, given function object
    :toctree: generated/
 
    quad          -- General purpose integration
+   quad_vec      -- General purpose integration of vector-valued functions
    dblquad       -- General purpose double integration
    tplquad       -- General purpose triple integration
    nquad         -- General purpose n-dimensional integration
@@ -568,15 +555,25 @@ Integrating functions, given fixed samples
    :mod:`scipy.special` for orthogonal polynomials (special) for Gaussian
    quadrature roots and weights for other weighting factors and regions.
 
-Integrators of ODE systems
-==========================
+Solving initial value problems for ODE systems
+==============================================
+
+The solvers are implemented as individual classes which can be used directly
+(low-level usage) or through a convenience function.
 
 .. autosummary::
    :toctree: generated/
 
-   odeint        -- General integration of ordinary differential equations.
-   ode           -- Integrate ODE using VODE and ZVODE routines.
-   complex_ode   -- Convert a complex-valued ODE to real-valued and integrate.
+   solve_ivp     -- Convenient function for ODE integration.
+   RK23          -- Explicit Runge-Kutta solver of order 3(2).
+   RK45          -- Explicit Runge-Kutta solver of order 5(4).
+   DOP853        -- Explicit Runge-Kutta solver of order 8.
+   Radau         -- Implicit Runge-Kutta solver of order 5.
+   BDF           -- Implicit multi-step variable order (1 to 5) solver.
+   LSODA         -- LSODA solver from ODEPACK Fortran package.
+   OdeSolver     -- Base class for ODE solvers.
+   DenseOutput   -- Local interpolant for computing a dense output.
+   OdeSolution   -- Class which represents a continuous ODE solution.
 </pre></div>
 </div>
 <p>The following sections show examples which demonstrate how to employ the algorithms provided by <code class="docutils literal notranslate"><span class="pre">scipy</span></code>.</p>
@@ -646,9 +643,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}y}{\mathrm{d}t}(t)
 $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}y}{\mathrm{d}t}(t) = -2yt \quad \mathrm{with} \quad y(0)=1.\)</span>$</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">set_matplotlib_formats</span>
-<span class="n">set_matplotlib_formats</span><span class="p">(</span><span class="s1">&#39;svg&#39;</span><span class="p">)</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;svg&#39;
 <span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">odeint</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">N</span>
 
@@ -675,8 +670,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}y}{\mathrm{d}t}(t)
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;y(t)&#39;)
 </pre></div>
 </div>
-<img alt="_images/16-scipy_16_1.png" src="_images/16-scipy_16_1.png" />
-</div>
+<img alt="_images/16-scipy_13_1.svg" src="_images/16-scipy_13_1.svg" /></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">odeint</span></code> command takes a number of optional parameters to change the default error tolerance of the integration (and to trigger the production of extra debugging output). Use the help command to explore these:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">scipy</span><span class="o">.</span><span class="n">integrate</span><span class="o">.</span><span class="n">odeint</span><span class="p">)</span>
@@ -685,8 +679,11 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}y}{\mathrm{d}t}(t)
 <p>will show:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Help on function odeint in module scipy.integrate.odepack:
 
-odeint(func, y0, t, args=(), Dfun=None, col_deriv=0, full_output=0, ml=None, mu=None, rtol=None, atol=None, tcrit=None, h0=0.0, hmax=0.0, hmin=0.0, ixpr=0, mxstep=0, mxhnil=0, mxordn=12, mxords=5, printmessg=0)
+odeint(func, y0, t, args=(), Dfun=None, col_deriv=0, full_output=0, ml=None, mu=None, rtol=None, atol=None, tcrit=None, h0=0.0, hmax=0.0, hmin=0.0, ixpr=0, mxstep=0, mxhnil=0, mxordn=12, mxords=5, printmessg=0, tfirst=False)
     Integrate a system of ordinary differential equations.
+    
+    .. note:: For new code, use `scipy.integrate.solve_ivp` to solve a
+              differential equation.
     
     Solve a system of ordinary differential equations using lsoda from the
     FORTRAN library odepack.
@@ -694,27 +691,36 @@ odeint(func, y0, t, args=(), Dfun=None, col_deriv=0, full_output=0, ml=None, mu=
     Solves the initial value problem for stiff or non-stiff systems
     of first order ode-s::
     
-        dy/dt = func(y, t0, ...)
+        dy/dt = func(y, t, ...)  [or func(t, y, ...)]
     
     where y can be a vector.
     
-    *Note*: The first two arguments of ``func(y, t0, ...)`` are in the
-    opposite order of the arguments in the system definition function used
-    by the `scipy.integrate.ode` class.
+    .. note:: By default, the required order of the first two arguments of
+              `func` are in the opposite order of the arguments in the system
+              definition function used by the `scipy.integrate.ode` class and
+              the function `scipy.integrate.solve_ivp`.  To use a function with
+              the signature ``func(t, y, ...)``, the argument `tfirst` must be
+              set to ``True``.
     
     Parameters
     ----------
-    func : callable(y, t0, ...)
-        Computes the derivative of y at t0.
+    func : callable(y, t, ...) or callable(t, y, ...)
+        Computes the derivative of y at t.
+        If the signature is ``callable(t, y, ...)``, then the argument
+        `tfirst` must be set ``True``.
     y0 : array
         Initial condition on y (can be a vector).
     t : array
         A sequence of time points for which to solve for y.  The initial
         value point should be the first element of this sequence.
+        This sequence must be monotonically increasing or monotonically
+        decreasing; repeated values are allowed.
     args : tuple, optional
         Extra arguments to pass to function.
-    Dfun : callable(y, t0, ...)
+    Dfun : callable(y, t, ...) or callable(t, y, ...)
         Gradient (Jacobian) of `func`.
+        If the signature is ``callable(t, y, ...)``, then the argument
+        `tfirst` must be set ``True``.
     col_deriv : bool, optional
         True if `Dfun` defines derivatives down columns (faster),
         otherwise `Dfun` should define derivatives across rows.
@@ -722,6 +728,11 @@ odeint(func, y0, t, args=(), Dfun=None, col_deriv=0, full_output=0, ml=None, mu=
         True if to return a dictionary of optional outputs as the second output
     printmessg : bool, optional
         Whether to print the convergence message
+    tfirst: bool, optional
+        If True, the first two arguments of `func` (and `Dfun`, if given)
+        must ``t, y`` instead of the default ``y, t``.
+    
+        .. versionadded:: 1.1.0
     
     Returns
     -------
@@ -800,6 +811,7 @@ odeint(func, y0, t, args=(), Dfun=None, col_deriv=0, full_output=0, ml=None, mu=
     
     See Also
     --------
+    solve_ivp : Solve an initial value problem for a system of ODEs.
     ode : a more object-oriented integrator based on VODE.
     quad : for finding the area under a curve.
     
@@ -833,12 +845,12 @@ odeint(func, y0, t, args=(), Dfun=None, col_deriv=0, full_output=0, ml=None, mu=
     &gt;&gt;&gt; c = 5.0
     
     For initial conditions, we assume the pendulum is nearly vertical
-    with `theta(0)` = `pi` - 0.1, and it initially at rest, so
+    with `theta(0)` = `pi` - 0.1, and is initially at rest, so
     `omega(0)` = 0.  Then the vector of initial conditions is
     
     &gt;&gt;&gt; y0 = [np.pi - 0.1, 0.0]
     
-    We generate a solution 101 evenly spaced samples in the interval
+    We will generate a solution at 101 evenly spaced samples in the interval
     0 &lt;= `t` &lt;= 10.  So our array of times is:
     
     &gt;&gt;&gt; t = np.linspace(0, 10, 101)
@@ -861,7 +873,6 @@ odeint(func, y0, t, args=(), Dfun=None, col_deriv=0, full_output=0, ml=None, mu=
     &gt;&gt;&gt; plt.xlabel(&#39;t&#39;)
     &gt;&gt;&gt; plt.grid()
     &gt;&gt;&gt; plt.show()
-
 </pre></div>
 </div>
 <div class="section" id="exercise-using-odeint">
@@ -874,7 +885,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}y}{\mathrm{d}t} = 
 <li><p>You should display the solution graphically at points <span class="math notranslate nohighlight">\(t=0\)</span>, <span class="math notranslate nohighlight">\(t=0.01\)</span>, <span class="math notranslate nohighlight">\(t=0.02\)</span>, …, <span class="math notranslate nohighlight">\(t=9.99\)</span>, <span class="math notranslate nohighlight">\(t=10\)</span>.</p></li>
 </ol>
 <p>Hint: a part of the solution <span class="math notranslate nohighlight">\(y(t)\)</span> is shown in the figure below.</p>
-<img src="static/images/odeintsolution8to10.png" alt="image" style="width:100.0%" /></div>
+<img src="static/images/odeintsolution8to10.png" alt="image" style="width:80.0%" /></div>
 </div>
 <div class="section" id="root-finding">
 <h2><span class="section-number">16.5. </span>Root finding<a class="headerlink" href="#root-finding" title="Permalink to this headline">¶</a></h2>
@@ -1003,8 +1014,7 @@ The exact error is -6.66134e-15.
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;x&#39;)
 </pre></div>
 </div>
-<img alt="_images/16-scipy_27_1.png" src="_images/16-scipy_27_1.png" />
-</div>
+<img alt="_images/16-scipy_24_1.svg" src="_images/16-scipy_24_1.svg" /></div>
 </div>
 </div>
 <div class="section" id="curve-fitting">
@@ -1050,14 +1060,13 @@ $<span class="math notranslate nohighlight">\(f(x,\vec{p}) = a \exp(-b x) + c, \
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimal parameters are a=2.46591, b=1.47731, and c=0.557144
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimal parameters are a=2.43471, b=1.13756, and c=0.414475
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7efd340789a0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f99b4579430&gt;
 </pre></div>
 </div>
-<img alt="_images/16-scipy_29_2.png" src="_images/16-scipy_29_2.png" />
-</div>
+<img alt="_images/16-scipy_26_2.svg" src="_images/16-scipy_26_2.svg" /></div>
 </div>
 <p>Note that in the source code above we define the fitting function <span class="math notranslate nohighlight">\(y = f(x)\)</span> through Python code. We can thus fit (nearly) arbitrary functions using the <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> method.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> function returns a tuple <code class="docutils literal notranslate"><span class="pre">popt,</span> <span class="pre">pcov</span></code>. The first entry <code class="docutils literal notranslate"><span class="pre">popt</span></code> contains a tuple of the OPTimal Parameters (in the sense that these minimise equation ([eq:1]). The second entry contains the covariance matrix for all parameters. The diagonals provide the variance of the parameter estimations.</p>
@@ -1067,7 +1076,7 @@ $<span class="math notranslate nohighlight">\(f(x,\vec{p}) = a \exp(-b x) + c, \
 </pre></div>
 </div>
 <p>to</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">popt</span><span class="p">,</span> <span class="n">pcov</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">yi</span><span class="p">,</span> <span class="n">p0</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.6</span><span class="p">))</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">popt</span><span class="p">,</span> <span class="n">pcov</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">yi</span><span class="p">,</span> <span class="n">p0</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>if our initial guesses would be <em>a</em> = 2, <em>b</em> = 1 and <em>c</em> = 0.6. Once we take the algorithm “roughly in the right area” in parameter space, the fitting usually works well.</p>
@@ -1077,60 +1086,47 @@ $<span class="math notranslate nohighlight">\(f(x,\vec{p}) = a \exp(-b x) + c, \
 <p>In the next example, we create a signal as a superposition of a 50 Hz and 70 Hz sine wave (with a slight phase shift between them). We then Fourier transform the signal and plot the absolute value of the (complex) discrete Fourier transform coefficients against frequency, and expect to see peaks at 50Hz and 70Hz.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.fft</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="n">pi</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">pi</span>
 
-<span class="n">signal_length</span> <span class="o">=</span> <span class="mf">0.5</span>   <span class="c1">#[seconds]</span>
-<span class="n">sample_rate</span><span class="o">=</span><span class="mi">500</span>       <span class="c1">#sampling rate [Hz]</span>
-<span class="n">dt</span> <span class="o">=</span> <span class="mf">1.</span><span class="o">/</span><span class="n">sample_rate</span>   <span class="c1">#time between two samples [s]</span>
+<span class="n">signal_length</span> <span class="o">=</span> <span class="mf">0.5</span>     <span class="c1"># [seconds]</span>
+<span class="n">sample_rate</span> <span class="o">=</span> <span class="mi">500</span>       <span class="c1"># sampling rate [Hz]</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">/</span> <span class="n">sample_rate</span>   <span class="c1"># time between two samples [s]</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">signal_length</span>  <span class="c1">#frequency between points in</span>
-                      <span class="c1">#in frequency domain [Hz] </span>
-<span class="n">t</span><span class="o">=</span><span class="n">scipy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">signal_length</span><span class="p">,</span><span class="n">dt</span><span class="p">)</span> <span class="c1">#the time vector</span>
-<span class="n">n_t</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>            <span class="c1">#length of time vector</span>
+<span class="n">df</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">signal_length</span>  <span class="c1"># frequency between points in</span>
+                        <span class="c1"># in frequency domain [Hz] </span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">signal_length</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>  <span class="c1"># the time vector</span>
+<span class="n">n_t</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>            <span class="c1"># length of time vector</span>
 
-<span class="c1">#create signal</span>
-<span class="n">y</span><span class="o">=</span><span class="n">scipy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="mi">50</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">scipy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="mi">70</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+<span class="c1"># create signal</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="mi">50</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="mi">70</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
 
-<span class="c1">#compute fourier transform</span>
-<span class="n">f</span><span class="o">=</span><span class="n">scipy</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="c1"># compute Fourier transform</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 
-<span class="c1">#work out meaningful frequencies in fourier transform</span>
-<span class="n">freqs</span><span class="o">=</span><span class="n">df</span><span class="o">*</span><span class="n">scipy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,(</span><span class="n">n_t</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;d&#39;</span><span class="p">)</span> <span class="c1">#d=double precision float</span>
-<span class="n">n_freq</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">freqs</span><span class="p">)</span>
+<span class="c1"># work out meaningful frequencies in Fourier transform</span>
+<span class="n">freqs</span> <span class="o">=</span> <span class="n">df</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="n">n_t</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;d&#39;</span><span class="p">)</span>  <span class="c1"># &#39;d&#39;=double precision float</span>
+<span class="n">n_freq</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">freqs</span><span class="p">)</span>
 
-<span class="c1">#plot input data y against time</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;input data&#39;</span><span class="p">)</span>
+<span class="c1"># plot input data y against time</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;input data&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time [s]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;signal&#39;</span><span class="p">)</span>
 
 <span class="c1">#plot frequency spectrum </span>
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freqs</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n_freq</span><span class="p">]),</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freqs</span><span class="p">,</span> <span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n_freq</span><span class="p">]),</span>
          <span class="n">label</span><span class="o">=</span><span class="s1">&#39;abs(fourier transform)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;frequency [Hz]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;abs(DFT(signal))&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;abs(DFT(signal))&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-10-5ba1e1e6133d&gt;:11: DeprecationWarning: scipy.arange is deprecated and will be removed in SciPy 2.0.0, use numpy.arange instead
-  t=scipy.arange(0,signal_length,dt) #the time vector
-&lt;ipython-input-10-5ba1e1e6133d&gt;:15: DeprecationWarning: scipy.sin is deprecated and will be removed in SciPy 2.0.0, use numpy.sin instead
-  y=scipy.sin(2*pi*50*t)+scipy.sin(2*pi*70*t+pi/4)
-&lt;ipython-input-10-5ba1e1e6133d&gt;:18: DeprecationWarning: Using scipy.fft as a function is deprecated and will be removed in SciPy 1.5.0, use scipy.fft.fft instead.
-  f=scipy.fft(y)
-&lt;ipython-input-10-5ba1e1e6133d&gt;:21: DeprecationWarning: scipy.arange is deprecated and will be removed in SciPy 2.0.0, use numpy.arange instead
-  freqs=df*scipy.arange(0,(n_t-1)/2.,dtype=&#39;d&#39;) #d=double precision float
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;abs(DFT(signal))&#39;)
-</pre></div>
-</div>
-<img alt="_images/16-scipy_32_2.png" src="_images/16-scipy_32_2.png" />
-</div>
+<img alt="_images/16-scipy_29_0.svg" src="_images/16-scipy_29_0.svg" /></div>
 </div>
 <p>The lower plot shows the discrete Fourier transform computed from the data shown in the upper plot.</p>
 </div>
@@ -1141,7 +1137,7 @@ $<span class="math notranslate nohighlight">\(f(x,\vec{p}) = a \exp(-b x) + c, \
 <p>The majority of the commands (after the two calls to <code class="docutils literal notranslate"><span class="pre">fmin</span></code>) in the file <code class="docutils literal notranslate"><span class="pre">fmin1.py</span></code> creates the plot of the function, the start points for the searches and the minima obtained:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">arange</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">exp</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">arange</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">exp</span>
 <span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fmin</span>
 <span class="kn">import</span> <span class="nn">pylab</span>
 
@@ -1180,12 +1176,6 @@ $<span class="math notranslate nohighlight">\(f(x,\vec{p}) = a \exp(-b x) + c, \
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-11-127f35e01b3a&gt;:6: DeprecationWarning: scipy.cos is deprecated and will be removed in SciPy 2.0.0, use numpy.cos instead
-  return cos(x) - 3 * exp( -(x - 0.2) ** 2)
-&lt;ipython-input-11-127f35e01b3a&gt;:6: DeprecationWarning: scipy.exp is deprecated and will be removed in SciPy 2.0.0, use numpy.exp instead
-  return cos(x) - 3 * exp( -(x - 0.2) ** 2)
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimization terminated successfully.
          Current function value: -2.023866
          Iterations: 16
@@ -1198,27 +1188,10 @@ Optimization terminated successfully.
 Start search at x=2., minimum is [3.13847656]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-11-127f35e01b3a&gt;:16: DeprecationWarning: scipy.arange is deprecated and will be removed in SciPy 2.0.0, use numpy.arange instead
-  x = arange(-10, 10, 0.1)
-&lt;ipython-input-11-127f35e01b3a&gt;:6: DeprecationWarning: scipy.cos is deprecated and will be removed in SciPy 2.0.0, use numpy.cos instead
-  return cos(x) - 3 * exp( -(x - 0.2) ** 2)
-&lt;ipython-input-11-127f35e01b3a&gt;:6: DeprecationWarning: scipy.exp is deprecated and will be removed in SciPy 2.0.0, use numpy.exp instead
-  return cos(x) - 3 * exp( -(x - 0.2) ** 2)
-&lt;ipython-input-11-127f35e01b3a&gt;:6: DeprecationWarning: scipy.cos is deprecated and will be removed in SciPy 2.0.0, use numpy.cos instead
-  return cos(x) - 3 * exp( -(x - 0.2) ** 2)
-&lt;ipython-input-11-127f35e01b3a&gt;:6: DeprecationWarning: scipy.exp is deprecated and will be removed in SciPy 2.0.0, use numpy.exp instead
-  return cos(x) - 3 * exp( -(x - 0.2) ** 2)
-&lt;ipython-input-11-127f35e01b3a&gt;:6: DeprecationWarning: scipy.cos is deprecated and will be removed in SciPy 2.0.0, use numpy.cos instead
-  return cos(x) - 3 * exp( -(x - 0.2) ** 2)
-&lt;ipython-input-11-127f35e01b3a&gt;:6: DeprecationWarning: scipy.exp is deprecated and will be removed in SciPy 2.0.0, use numpy.exp instead
-  return cos(x) - 3 * exp( -(x - 0.2) ** 2)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f99b441cfa0&gt;
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7efd1adbe040&gt;
-</pre></div>
-</div>
-<img alt="_images/16-scipy_35_4.png" src="_images/16-scipy_35_4.png" />
-</div>
+<img alt="_images/16-scipy_32_2.svg" src="_images/16-scipy_32_2.svg" /></div>
 </div>
 <p>Calling the <code class="docutils literal notranslate"><span class="pre">fmin</span></code> function will produce some diagnostic output, which you can also see above.</p>
 <p><strong>Return value of <code class="docutils literal notranslate"><span class="pre">fmin</span></code></strong></p>

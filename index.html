@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Python for Computational Science and Engineering &#8212; Introduction to Python for Computational Science and Engineering</title>
+    <title>&lt;no title&gt; &#8212; Introduction to Python for Computational Science and Engineering</title>
     
   <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -31,6 +31,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -91,7 +92,6 @@ commentsRunWhenDOMLoaded(addUtterances);
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Introduction" href="01-introduction.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -126,7 +126,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="#">
+  <a class="reference internal" href="opening.html">
    Python for Computational Science and Engineering
   </a>
  </li>
@@ -326,39 +326,7 @@ commentsRunWhenDOMLoaded(addUtterances);
             <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#first-steps-with-jupyter-notebook">
-   First steps with Jupyter Notebook
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#navigating-the-notebook">
-     Navigating the notebook
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#executing-code">
-     Executing code
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#editing-code">
-     Editing code
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#warning-changes-on-mybinder-are-temporary">
-   Warning: Changes on mybinder are temporary
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#comments-questions">
-   Comments? Questions?
-  </a>
- </li>
+            <ul class="simple nav section-nav flex-column">
 </ul>
 
         </nav>
@@ -370,40 +338,30 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <div class="section" id="python-for-computational-science-and-engineering">
-<h1>Python for Computational Science and Engineering<a class="headerlink" href="#python-for-computational-science-and-engineering" title="Permalink to this headline">¶</a></h1>
+  <p><em>Python for Computational Science and Engineering</em></p>
 <p>The content of <a class="reference external" href="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/blob/binder/Readme.md">this book</a> is distributed into chapters, using one Jupyter Notebook for each chapter.</p>
 <p>If you have not used the Jupyter Notebook before, please read the section “First steps with Jupyter Notebook” below before you proceed.</p>
 <p>You can use the links below to jump directly to these notebooks to read the book, and to change all examples as you like.</p>
-<div class="section" id="first-steps-with-jupyter-notebook">
-<h2>First steps with Jupyter Notebook<a class="headerlink" href="#first-steps-with-jupyter-notebook" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="navigating-the-notebook">
-<h3>Navigating the notebook<a class="headerlink" href="#navigating-the-notebook" title="Permalink to this headline">¶</a></h3>
+<p><em>First steps with Jupyter Notebook</em></p>
+<ol class="simple">
+<li><p>Navigating the notebook</p></li>
+</ol>
 <p>When you open a notebook, you will find that you can move a highlighted block (with a blue line at the left) with the cursor keys to move up and down. This block highlights a <em>cell</em>. (You can also use the mouse to select a cell.) This is called the <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Notebook%20Basics.html#Command-mode">Command mode</a>.</p>
-</div>
-<div class="section" id="executing-code">
-<h3>Executing code<a class="headerlink" href="#executing-code" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Executing code</p></li>
+</ol>
 <p>If you want to execute a cell (for example one that contains some Python code), you can press <code class="docutils literal notranslate"><span class="pre">Shift+ENTER</span></code>. If the cell creates some output, it will be displayed below the cell. (You may not notice if it just updates output that was displayed before, in particular if the new output is the same as the old output.)</p>
-</div>
-<div class="section" id="editing-code">
-<h3>Editing code<a class="headerlink" href="#editing-code" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Editing code</p></li>
+</ol>
 <p>If you want to <em>change</em> the code in the currently highlighted cell, you need to press <code class="docutils literal notranslate"><span class="pre">ENTER</span></code>. You have now entered the <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Notebook%20Basics.html#Edit-mode">Editing mode</a>, and the content of the cell can be edited. If you have completed your changes, and you want to execute them, use the <code class="docutils literal notranslate"><span class="pre">Shift+ENTER</span></code> short cut.</p>
 <p>Note that you can also edit blocks of text (or go into edit mode for a text cell unintentionally). Just press <code class="docutils literal notranslate"><span class="pre">Shift+ENTER</span></code> to render the text again, and go back into command mode.</p>
-</div>
-</div>
-<div class="section" id="warning-changes-on-mybinder-are-temporary">
-<h2>Warning: Changes on mybinder are temporary<a class="headerlink" href="#warning-changes-on-mybinder-are-temporary" title="Permalink to this headline">¶</a></h2>
+<p><em>Warning: Changes on mybinder are temporary</em></p>
 <p>If you use this text book interactively on the mybinder service, then you have been given a temporary resource in the cloud to execute the code examples. The changes you have made to the notebook <em>will be lost</em> when your session ends (which is when you close the window, or the patience of the service has expired). Thus, the interactive exploration of the notebooks is good to help learn Python, computing and data science, but you should not attempt to write any code in these notebooks that you want to re-use the next day or later.</p>
-</div>
-<div class="section" id="comments-questions">
-<h2>Comments? Questions?<a class="headerlink" href="#comments-questions" title="Permalink to this headline">¶</a></h2>
+<p><em>Comments? Questions?</em></p>
 <p>For feedback, corrections, and questions please refer to the <a class="reference external" href="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/blob/binder/Readme.md">home page</a> of the book.</p>
 <p>Enjoy!</p>
 <p><img alt="Logo, created with MayaVi" src="_images/mayavi-samp.png" /></p>
-<div class="toctree-wrapper compound">
-</div>
-</div>
-</div>
 
     <script type="text/x-thebe-config">
     {
@@ -433,7 +391,6 @@ commentsRunWhenDOMLoaded(addUtterances);
     
     <div class='prev-next-bottom'>
         
-    <a class='right-next' id="next-link" href="01-introduction.html" title="next page"><span class="section-number">1. </span>Introduction</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

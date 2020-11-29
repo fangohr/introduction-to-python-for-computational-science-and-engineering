@@ -31,6 +31,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -127,7 +128,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="index.html">
+  <a class="reference internal" href="opening.html">
    Python for Computational Science and Engineering
   </a>
  </li>
@@ -514,9 +515,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>The recommended way of using Matplotlib in a simple example is shown here (let’s call this example 1a):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">set_matplotlib_formats</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="n">set_matplotlib_formats</span><span class="p">(</span><span class="s1">&#39;svg&#39;</span><span class="p">)</span>       <span class="c1"># change the format to SVG</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># change the format of images created by matplotlib to SVG</span>
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;svg&#39;
 </pre></div>
 </div>
 </div>
@@ -534,7 +534,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f6a5b2a82e0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f9338cb96a0&gt;]
 </pre></div>
 </div>
 <img alt="_images/15-visualising-data_3_1.svg" src="_images/15-visualising-data_3_1.svg" /></div>
@@ -559,7 +559,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f6a591e1970&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f9336bddfd0&gt;]
 </pre></div>
 </div>
 <img alt="_images/15-visualising-data_6_1.svg" src="_images/15-visualising-data_6_1.svg" /></div>
@@ -567,7 +567,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>Because the <code class="docutils literal notranslate"><span class="pre">numpy.arange</span></code> and <code class="docutils literal notranslate"><span class="pre">numpy.sin</span></code> objects have already been imported into the (convenience) <code class="docutils literal notranslate"><span class="pre">pylab</span></code> namespace, we could also write it as example 1c:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#example 1c</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example 1c</span>
 <span class="kn">import</span> <span class="nn">pylab</span> <span class="k">as</span> <span class="nn">p</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">3.14</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
@@ -578,7 +578,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f6a59146c70&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f9336b5ca00&gt;]
 </pre></div>
 </div>
 <img alt="_images/15-visualising-data_8_1.svg" src="_images/15-visualising-data_8_1.svg" /></div>
@@ -586,7 +586,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>If we really want to cut down on characters to type, we could also important the whole functionality from the <code class="docutils literal notranslate"><span class="pre">pylab</span></code> convenience module, and rewrite the code as example 1d:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#example 1 d</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example 1 d</span>
 <span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>  <span class="c1"># not generally recommended</span>
                      <span class="c1"># okay for interactive testing</span>
 
@@ -680,19 +680,20 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <p>showing some other useful commands:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">figure(figsize=(5,5))</span></code> sets the figure size to 5inch by 5inch</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">plot(x,y1,label=’sin(x)’)</span></code> The “label” keyword defines the name of this line. The line label will be shown in the legend if the <code class="docutils literal notranslate"><span class="pre">legend()</span></code> command is used later.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">figure(figsize=(5,</span> <span class="pre">5))</span></code> sets the figure size to 5inch by 5inch</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plot(x,</span> <span class="pre">y1,</span> <span class="pre">label=’sin(x)’)</span></code> The “label” keyword defines the name of this line. The line label will be shown in the legend if the <code class="docutils literal notranslate"><span class="pre">legend()</span></code> command is used later.</p></li>
 <li><p>Note that calling the <code class="docutils literal notranslate"><span class="pre">plot</span></code> command repeatedly, allows you to overlay a number of curves.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">axis([-2,2,-1,1])</span></code> This fixes the displayed area to go from xmin=-2 to xmax=2 in x-direction, and from ymin=-1 to ymax=1 in y-direction</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">axis([-2,</span> <span class="pre">2,</span> <span class="pre">-1,</span> <span class="pre">1])</span></code> This fixes the displayed area to go from xmin=-2 to xmax=2 in x-direction, and from ymin=-1 to ymax=1 in y-direction</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">legend()</span></code> This command will display a legend with the labels as defined in the plot command. Try <code class="docutils literal notranslate"><span class="pre">help(pylab.legend)</span></code> to learn more about the placement of the legend.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">grid()</span></code> This command will display a grid on the backdrop.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">xlabel(’...’)</span></code> and <code class="docutils literal notranslate"><span class="pre">ylabel(’...’)</span></code> allow labelling the axes.</p></li>
 </ul>
 <p>Note further than you can chose different line styles, line thicknesses, symbols and colours for the data to be plotted. (The syntax is very similar to MATLAB.) For example:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">plot(x,y,’og’)</span></code> will plot circles (<code class="docutils literal notranslate"><span class="pre">o</span></code>) in green (<code class="docutils literal notranslate"><span class="pre">g</span></code>)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">plot(x,y,’-r’)</span></code> will plot a line (<code class="docutils literal notranslate"><span class="pre">-</span></code>) in red (<code class="docutils literal notranslate"><span class="pre">r</span></code>)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">plot(x,y,’-b’,linewidth=2)</span></code> will plot a blue line (<code class="docutils literal notranslate"><span class="pre">b</span></code>) with two two pixel thickness <code class="docutils literal notranslate"><span class="pre">linewidth=2</span></code> which is twice as wide as the default.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plot(x,</span> <span class="pre">y,</span> <span class="pre">’og’)</span></code> will plot circles (<code class="docutils literal notranslate"><span class="pre">o</span></code>) in green (<code class="docutils literal notranslate"><span class="pre">g</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plot(x,</span> <span class="pre">y,</span> <span class="pre">’-r’)</span></code> will plot a line (<code class="docutils literal notranslate"><span class="pre">-</span></code>) in red (<code class="docutils literal notranslate"><span class="pre">r</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plot(x,</span> <span class="pre">y,</span> <span class="pre">’-b’,</span> <span class="pre">linewidth=2)</span></code> will plot a blue line (<code class="docutils literal notranslate"><span class="pre">b</span></code>) with two two pixel thickness <code class="docutils literal notranslate"><span class="pre">linewidth=2</span></code> which is twice as wide as the default.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plot(x,</span> <span class="pre">y,</span> <span class="pre">’-’,</span> <span class="pre">alpha=0.5)</span></code> will plot a semi-transparent line (<code class="docutils literal notranslate"><span class="pre">b</span></code>).</p></li>
 </ul>
 <p>The full list of options can be found when typing <code class="docutils literal notranslate"><span class="pre">help(pylab.plot)</span></code> at the Python prompt. Because this documentation is so useful, we repeat parts of it here:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>plot(*args, **kwargs)
@@ -813,18 +814,18 @@ marker, linestyle, and markercolor with::
 <p>By calling the <code class="docutils literal notranslate"><span class="pre">plot</span></code> command repeatedly, more than one curve can be drawn in the same graph. Example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">N</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">N</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mf">0.01</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
 
 <span class="kn">import</span> <span class="nn">pylab</span>
-<span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">N</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;sin(t)&#39;</span><span class="p">)</span>
-<span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">N</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;cos(t)&#39;</span><span class="p">)</span>
+<span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;sin(t)&#39;</span><span class="p">)</span>
+<span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;cos(t)&#39;</span><span class="p">)</span>
 <span class="n">pylab</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f6a58cfa1f0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f9336726460&gt;
 </pre></div>
 </div>
 <img alt="_images/15-visualising-data_22_1.svg" src="_images/15-visualising-data_22_1.svg" /></div>
@@ -843,28 +844,25 @@ marker, linestyle, and markercolor with::
 <p>Here is a complete example plotting the sine and cosine curves in two graphs that are aligned underneath each other within the same window:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">N</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">N</span><span class="o">.</span><span class="n">arange</span> <span class="p">(</span><span class="mi">0</span> <span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">N</span> <span class="o">.</span> <span class="n">pi</span> <span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
 
 <span class="kn">import</span> <span class="nn">pylab</span>
 
 <span class="n">pylab</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">N</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
 <span class="n">pylab</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
 <span class="n">pylab</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;sin(t)&#39;</span><span class="p">)</span>
 
 <span class="n">pylab</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">N</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
 <span class="n">pylab</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
-<span class="n">pylab</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;cos(t)&#39;</span><span class="p">)</span>
+<span class="n">pylab</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;cos(t)&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;cos(t)&#39;)
-</pre></div>
-</div>
-<img alt="_images/15-visualising-data_26_1.svg" src="_images/15-visualising-data_26_1.svg" /></div>
+<img alt="_images/15-visualising-data_26_0.svg" src="_images/15-visualising-data_26_0.svg" /></div>
 </div>
 </div>
 <div class="section" id="two-or-more-figure-windows">
@@ -873,15 +871,15 @@ marker, linestyle, and markercolor with::
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pylab</span>
 <span class="n">pylab</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
 
 <span class="n">pylab</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f6a58be69a0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f93365fa6a0&gt;]
 </pre></div>
 </div>
 <img alt="_images/15-visualising-data_28_1.svg" src="_images/15-visualising-data_28_1.svg" /><img alt="_images/15-visualising-data_28_2.svg" src="_images/15-visualising-data_28_2.svg" /></div>
@@ -892,7 +890,7 @@ marker, linestyle, and markercolor with::
 <div class="section" id="histograms">
 <h3><span class="section-number">15.1.9. </span>Histograms<a class="headerlink" href="#histograms" title="Permalink to this headline">¶</a></h3>
 <embed src="code/pylab/pylabhistogram.pdf" style="width:100.0%" />
-<p>The program below demonstrates how to create histograms from statistical data in Matplotlib. The resulting plot is show in figure</p>
+<p>The program below demonstrates how to create histograms from statistical data with matplotlib.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -977,6 +975,13 @@ marker, linestyle, and markercolor with::
 <p>To use different colourmaps, we make use of the <code class="docutils literal notranslate"><span class="pre">matplotlib.cm</span></code> module (where cm stands for Colour Map). The code below demonstrates how we can select colourmaps from the set of already provided maps, and how we can modify them (here by reducing the number of colours in the map). The last example mimics the behaviour of the more sophisticated <code class="docutils literal notranslate"><span class="pre">contour</span></code> command that also comes with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>plt.subplot<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">matplotlib.cm</span> <span class="k">as</span> <span class="nn">cm</span>        <span class="c1"># Colour map submodule</span>
@@ -1016,13 +1021,13 @@ marker, linestyle, and markercolor with::
 <span class="n">mycmap</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;jet&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>    <span class="c1"># 10 discrete colors</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">mycmap</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;colourmap jet</span><span class="se">\n</span><span class="s2">(10 colours only)&quot;</span><span class="p">)</span>
-
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>   <span class="c1"># avoid overlap of titles and axis labels</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;pylabimshowcm.pdf&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/15-visualising-data_35_0.svg" src="_images/15-visualising-data_35_0.svg" /></div>
+<img alt="_images/15-visualising-data_36_0.svg" src="_images/15-visualising-data_36_0.svg" /></div>
 </div>
 </div>
 <div class="section" id="plots-of-z-f-x-y-and-other-features-of-matplotlib">
@@ -1034,7 +1039,7 @@ marker, linestyle, and markercolor with::
 <li><p><a class="reference external" href="http://matplotlib.org/gallery.html">http://matplotlib.org/gallery.html</a></p></li>
 <li><p>Recently, creation of 3d-plots has been added to pylab: <a class="reference external" href="http://matplotlib.org/examples/mplot3d/index.html#mplot3d-examples">http://matplotlib.org/examples/mplot3d/index.html#mplot3d-examples</a></p></li>
 </ul>
-<img src="static/images/pylab/contour_demo.png" alt="The output of contour_demo.py." style="width:80.0%" /></div>
+<img src="static/images/pylab/contour_demo.png" alt="The output of contour_demo.py." style="width:60.0%" /></div>
 </div>
 <div class="section" id="visual-python">
 <h2><span class="section-number">15.2. </span>Visual Python<a class="headerlink" href="#visual-python" title="Permalink to this headline">¶</a></h2>

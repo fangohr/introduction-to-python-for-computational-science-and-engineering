@@ -31,6 +31,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -127,7 +128,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="index.html">
+  <a class="reference internal" href="opening.html">
    Python for Computational Science and Engineering
   </a>
  </li>
@@ -784,7 +785,10 @@ In last line of program -- bye
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dog DOG
-cat CAT
+cat 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CAT
 mouse MOUSE
 </pre></div>
 </div>
@@ -1062,9 +1066,9 @@ mouse MOUSE
 <p>Possibilities of raising an Exception</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">raise</span> <span class="pre">OverflowError</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">raise</span> <span class="pre">OverflowError,</span> <span class="pre">Bath</span> <span class="pre">is</span> <span class="pre">full</span></code> (Old style, now discouraged)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">raise</span> <span class="pre">OverflowError(Bath</span> <span class="pre">is</span> <span class="pre">full)</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">e</span> <span class="pre">=</span> <span class="pre">OverflowError(Bath</span> <span class="pre">is</span> <span class="pre">full);</span> <span class="pre">raise</span> <span class="pre">e</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">raise</span> <span class="pre">OverflowError,</span> <span class="pre">&quot;Bath</span> <span class="pre">is</span> <span class="pre">full&quot;</span></code> (Old style, now discouraged)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">raise</span> <span class="pre">OverflowError(&quot;Bath</span> <span class="pre">is</span> <span class="pre">full&quot;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">e</span> <span class="pre">=</span> <span class="pre">OverflowError(&quot;Bath</span> <span class="pre">is</span> <span class="pre">full&quot;);</span> <span class="pre">raise</span> <span class="pre">e</span></code></p></li>
 </ul>
 <div class="section" id="exception-hierarchy">
 <h4><span class="section-number">6.6.1.1. </span>Exception hierarchy<a class="headerlink" href="#exception-hierarchy" title="Permalink to this headline">¶</a></h4>

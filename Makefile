@@ -12,22 +12,24 @@ docker-all:
 	make docker-nbval
 
 
-notebooks-pdf: *-*.ipynb static/latex_template.tplx
+notebooks-pdf: book/*-*.ipynb 
 	@echo "Attempting to create combined.pdf from notebooks"
-	python3 -m bookbook.latex --pdf --template static/latex_template.tplx
-	@mkdir -p pdf
-	mv -v combined.pdf pdf/Introduction-to-Python-for-Computational-Science-and-Engineering.pdf
-	make version && mv -v version.txt pdf
+	poetry run jupyter-book build book --builder pdflatex
+	@#python3 -m bookbook.latex --pdf --template static/latex_template.tplx
+	@#@mkdir -p pdf
+	@#mv -v combined.pdf pdf/Introduction-to-Python-for-Computational-Science-and-Engineering.pdf
+	@#make version && mv -v version.txt pdf
 
 notebooks-html: check-py35
-	@echo "Attempting to create html version (in ./html)"
-	python3 -m bookbook.html
-	@echo "Output stored in html/*html; start with html/index.html"
-	make version && mv -v version.txt html
-	@echo "Move files to 'docs' (for github pages)"
-	mkdir -p docs
-	mv html/*.html html/version.txt docs
-	@echo "If this version should be hosted on github, you need to 'cd docs && git commit .' or similar."
+	@# @echo "Attempting to create html version (in ./html)"
+	@# python3 -m bookbook.html
+	@# @echo "Output stored in html/*html; start with html/index.html"
+	@# make version && mv -v version.txt html
+	@# @echo "Move files to 'docs' (for github pages)"
+	@# mkdir -p docs
+	@# mv html/*.html html/version.txt docs
+	@# @echo "If this version should be hosted on github, you need to 'cd docs && git commit .' or similar."
+	poetry run jupyter-book build book --builder html
 
 check-py35:
 	@echo "Checking Python version is >= 3.5"
@@ -41,7 +43,8 @@ check-pandas:
 	@python3 -c "import pandas; print(pandas.__version__)"
 
 install:
-	@python3 -m pip install -r requirements.txt
+	@#@python3 -m pip install -r requirements.txt
+	poetry install
 
 version:
 	echo "Last compiled: `date`" > version.txt

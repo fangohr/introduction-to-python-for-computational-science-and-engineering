@@ -52,7 +52,7 @@ jobs:
       run: |
         poetry run jupyter-book build book --builder pdfhtml
 
-    - uses: marvinpinto/action-automatic-releases@a9bf7f1aa6859580ab24ecce025ff7beb6c30e73
+    - uses: marvinpinto/action-automatic-releases@10bdce64abdb4558a2ee6983192242be40d631d8
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
         automatic_release_tag: "latest"

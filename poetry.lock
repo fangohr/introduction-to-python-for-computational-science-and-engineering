@@ -6,20 +6,17 @@ category = "dev"
 optional = false
 python-versions = ">=3.6"
 
-[package.extras]
-speedups = ["aiodns", "brotlipy", "cchardet"]
-
 [package.dependencies]
 async-timeout = ">=3.0,<4.0"
 attrs = ">=17.3.0"
 chardet = ">=2.0,<4.0"
+idna-ssl = {version = ">=1.0", markers = "python_version < \"3.7\""}
 multidict = ">=4.5,<7.0"
 typing-extensions = ">=3.6.5"
 yarl = ">=1.0,<2.0"
 
-[package.dependencies.idna-ssl]
-version = ">=1.0"
-python = "<3.7"
+[package.extras]
+speedups = ["aiodns", "brotlipy", "cchardet"]
 
 [[package]]
 name = "alabaster"
@@ -44,7 +41,6 @@ description = "Disable App Nap on OS X 10.9"
 category = "dev"
 optional = false
 python-versions = "*"
-marker = "sys_platform == \"darwin\" or platform_system == \"Darwin\" or python_version >= \"3.3\" and sys_platform == \"darwin\""
 
 [[package]]
 name = "argon2-cffi"
@@ -54,14 +50,14 @@ category = "dev"
 optional = false
 python-versions = "*"
 
-[package.extras]
-dev = ["coverage (>=5.0.2)", "hypothesis", "pytest", "sphinx", "wheel", "pre-commit"]
-docs = ["sphinx"]
-tests = ["coverage (>=5.0.2)", "hypothesis", "pytest"]
-
 [package.dependencies]
 cffi = ">=1.0.0"
 six = "*"
+
+[package.extras]
+dev = ["coverage[toml] (>=5.0.2)", "hypothesis", "pytest", "sphinx", "wheel", "pre-commit"]
+docs = ["sphinx"]
+tests = ["coverage[toml] (>=5.0.2)", "hypothesis", "pytest"]
 
 [[package]]
 name = "async-generator"
@@ -86,7 +82,6 @@ description = "Atomic file writes."
 category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-marker = "sys_platform == \"win32\""
 
 [[package]]
 name = "attrs"
@@ -97,10 +92,10 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [package.extras]
-dev = ["coverage (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)", "six", "zope.interface", "furo", "sphinx", "pre-commit"]
+dev = ["coverage[toml] (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)", "six", "zope.interface", "furo", "sphinx", "pre-commit"]
 docs = ["furo", "sphinx", "zope.interface"]
-tests = ["coverage (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)", "six", "zope.interface"]
-tests_no_zope = ["coverage (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)", "six"]
+tests = ["coverage[toml] (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)", "six", "zope.interface"]
+tests_no_zope = ["coverage[toml] (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)", "six"]
 
 [[package]]
 name = "babel"
@@ -129,14 +124,12 @@ category = "dev"
 optional = false
 python-versions = "*"
 
+[package.dependencies]
+soupsieve = {version = ">1.2", markers = "python_version >= \"3.0\""}
+
 [package.extras]
 html5lib = ["html5lib"]
 lxml = ["lxml"]
-
-[package.dependencies]
-[package.dependencies.soupsieve]
-version = ">1.2"
-python = ">=3.0"
 
 [[package]]
 name = "bleach"
@@ -158,9 +151,6 @@ description = "Lightweight, extensible schema and data validation tool for Pytho
 category = "dev"
 optional = false
 python-versions = ">=2.7"
-
-[package.dependencies]
-setuptools = "*"
 
 [[package]]
 name = "certifi"
@@ -251,12 +241,6 @@ category = "dev"
 optional = false
 python-versions = ">=3.6"
 
-[package.extras]
-full = ["aiofiles", "appdirs", "autopep8", "bowler", "colorama", "docker", "dockerpty", "fissix", "graphviz", "html5lib", "pygments", "python-gnupg", "tabulate", "yapf"]
-tests = ["aioresponses", "pytest", "requests-mock"]
-dev = ["aioresponses", "alabaster", "flake8-isort", "isort", "pygments-github-lexers", "pytest", "recommonmark", "requests-mock", "sphinx"]
-docs = ["alabaster", "pygments-github-lexers", "recommonmark", "sphinx"]
-
 [package.dependencies]
 aiohttp = "*"
 attrs = ">=19.2.0"
@@ -278,11 +262,16 @@ dephell-versioning = "*"
 jinja2 = "*"
 m2r = "*"
 packaging = "*"
-pip = ">=18.0,<=19.3.1"
 requests = "*"
 "ruamel.yaml" = "*"
 tomlkit = "*"
 yaspin = "*"
+
+[package.extras]
+full = ["aiofiles", "appdirs", "autopep8", "bowler", "colorama", "docker", "dockerpty", "fissix", "graphviz", "html5lib", "pygments", "python-gnupg", "tabulate", "yapf"]
+tests = ["aioresponses", "pytest", "requests-mock"]
+dev = ["aioresponses", "alabaster", "flake8-isort", "isort", "pygments-github-lexers", "pytest", "recommonmark", "requests-mock", "sphinx"]
+docs = ["alabaster", "pygments-github-lexers", "recommonmark", "sphinx"]
 
 [[package]]
 name = "dephell-archive"
@@ -311,11 +300,11 @@ category = "dev"
 optional = false
 python-versions = ">=3.5"
 
-[package.extras]
-dev = ["pytest", "pytest-xdist"]
-
 [package.dependencies]
 requests = "*"
+
+[package.extras]
+dev = ["pytest", "pytest-xdist"]
 
 [[package]]
 name = "dephell-discover"
@@ -387,9 +376,6 @@ python-versions = ">=3.5"
 
 [package.extras]
 dev = ["mypy", "pkginfo", "pytest"]
-
-[package.dependencies]
-setuptools = "*"
 
 [[package]]
 name = "dephell-shells"
@@ -492,7 +478,6 @@ description = "Patch ssl.match_hostname for Unicode(idna) domains support"
 category = "dev"
 optional = false
 python-versions = "*"
-marker = "python_version < \"3.7\""
 
 [package.dependencies]
 idna = ">=2.0"
@@ -513,12 +498,12 @@ category = "dev"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
 
+[package.dependencies]
+zipp = ">=0.5"
+
 [package.extras]
 docs = ["sphinx", "rst.linker"]
 testing = ["packaging", "pep517", "importlib-resources (>=1.3)"]
-
-[package.dependencies]
-zipp = ">=0.5"
 
 [[package]]
 name = "importlib-resources"
@@ -527,15 +512,12 @@ description = "Read resources from Python packages"
 category = "dev"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
-marker = "python_version < \"3.7\""
+
+[package.dependencies]
+zipp = {version = ">=0.4", markers = "python_version < \"3.8\""}
 
 [package.extras]
 docs = ["sphinx", "rst.linker", "jaraco.packaging"]
-
-[package.dependencies]
-[package.dependencies.zipp]
-version = ">=0.4"
-python = "<3.8"
 
 [[package]]
 name = "iniconfig"
@@ -553,15 +535,15 @@ category = "dev"
 optional = false
 python-versions = ">=3.5"
 
-[package.extras]
-test = ["pytest (!=5.3.4)", "pytest-cov", "flaky", "nose"]
-
 [package.dependencies]
-appnope = "*"
+appnope = {version = "*", markers = "platform_system == \"Darwin\""}
 ipython = ">=5.0.0"
 jupyter-client = "*"
 tornado = ">=4.2"
 traitlets = ">=4.1.0"
+
+[package.extras]
+test = ["pytest (!=5.3.4)", "pytest-cov", "flaky", "nose"]
 
 [[package]]
 name = "ipython"
@@ -570,6 +552,18 @@ description = "IPython: Productive Interactive Computing"
 category = "dev"
 optional = false
 python-versions = ">=3.6"
+
+[package.dependencies]
+appnope = {version = "*", markers = "sys_platform == \"darwin\""}
+backcall = "*"
+colorama = {version = "*", markers = "sys_platform == \"win32\""}
+decorator = "*"
+jedi = ">=0.10"
+pexpect = {version = "*", markers = "sys_platform != \"win32\""}
+pickleshare = "*"
+prompt-toolkit = ">=2.0.0,<3.0.0 || >3.0.0,<3.0.1 || >3.0.1,<3.1.0"
+pygments = "*"
+traitlets = ">=4.2"
 
 [package.extras]
 all = ["Sphinx (>=1.3)", "ipykernel", "ipyparallel", "ipywidgets", "nbconvert", "nbformat", "nose (>=0.10.1)", "notebook", "numpy (>=1.14)", "pygments", "qtconsole", "requests", "testpath"]
@@ -581,19 +575,6 @@ notebook = ["notebook", "ipywidgets"]
 parallel = ["ipyparallel"]
 qtconsole = ["qtconsole"]
 test = ["nose (>=0.10.1)", "requests", "testpath", "pygments", "nbformat", "ipykernel", "numpy (>=1.14)"]
-
-[package.dependencies]
-appnope = "*"
-backcall = "*"
-colorama = "*"
-decorator = "*"
-jedi = ">=0.10"
-pexpect = "*"
-pickleshare = "*"
-prompt-toolkit = ">=2.0.0,<3.0.0 || >3.0.0,<3.0.1 || >3.0.1,<3.1.0"
-pygments = "*"
-setuptools = ">=18.5"
-traitlets = ">=4.2"
 
 [[package]]
 name = "ipython-genutils"
@@ -611,18 +592,15 @@ category = "dev"
 optional = false
 python-versions = "*"
 
-[package.extras]
-test = ["pytest (>=3.6.0)", "pytest-cov", "mock"]
-
 [package.dependencies]
 ipykernel = ">=4.5.1"
+ipython = {version = ">=4.0.0", markers = "python_version >= \"3.3\""}
 nbformat = ">=4.2.0"
 traitlets = ">=4.3.1"
 widgetsnbextension = ">=3.5.0,<3.6.0"
 
-[package.dependencies.ipython]
-version = ">=4.0.0"
-python = ">=3.3"
+[package.extras]
+test = ["pytest (>=3.6.0)", "pytest-cov", "mock"]
 
 [[package]]
 name = "jedi"
@@ -632,12 +610,12 @@ category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
-[package.extras]
-qa = ["flake8 (3.7.9)"]
-testing = ["Django (<3.1)", "colorama", "docopt", "pytest (>=3.9.0,<5.0.0)"]
-
 [package.dependencies]
 parso = ">=0.7.0,<0.8.0"
+
+[package.extras]
+qa = ["flake8 (==3.7.9)"]
+testing = ["Django (<3.1)", "colorama", "docopt", "pytest (>=3.9.0,<5.0.0)"]
 
 [[package]]
 name = "jinja2"
@@ -647,11 +625,11 @@ category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
-[package.extras]
-i18n = ["Babel (>=0.8)"]
-
 [package.dependencies]
 MarkupSafe = ">=0.23"
+
+[package.extras]
+i18n = ["Babel (>=0.8)"]
 
 [[package]]
 name = "jsonschema"
@@ -661,19 +639,15 @@ category = "dev"
 optional = false
 python-versions = "*"
 
+[package.dependencies]
+attrs = ">=17.4.0"
+importlib-metadata = {version = "*", markers = "python_version < \"3.8\""}
+pyrsistent = ">=0.14.0"
+six = ">=1.11.0"
+
 [package.extras]
 format = ["idna", "jsonpointer (>1.13)", "rfc3987", "strict-rfc3339", "webcolors"]
 format_nongpl = ["idna", "jsonpointer (>1.13)", "webcolors", "rfc3986-validator (>0.1.0)", "rfc3339-validator"]
-
-[package.dependencies]
-attrs = ">=17.4.0"
-pyrsistent = ">=0.14.0"
-setuptools = "*"
-six = ">=1.11.0"
-
-[package.dependencies.importlib-metadata]
-version = "*"
-python = "<3.8"
 
 [[package]]
 name = "jupyter-book"
@@ -683,13 +657,6 @@ category = "dev"
 optional = false
 python-versions = ">=3.6"
 
-[package.extras]
-all = ["pytest-cov", "black", "nbclient", "pre-commit (1.17.0)", "matplotlib", "ipywidgets", "pytest-regressions", "sphinx-click", "pytest (>=3.6,<4)", "pandas", "sphinxext-rediraffe (>=0.2.3,<0.3.0)", "pyppeteer", "bokeh", "pytest-timeout", "jupytext (>=1.6.0,<1.7.0)", "cookiecutter", "plotly", "coverage", "pytest-xdist", "sphinx-tabs", "folium", "sympy", "beautifulsoup4", "numpy", "altair", "flake8 (>=3.7.0,<3.8.0)"]
-code_style = ["flake8 (>=3.7.0,<3.8.0)", "black", "pre-commit (1.17.0)"]
-pdfhtml = ["pyppeteer"]
-sphinx = ["folium", "numpy", "matplotlib", "ipywidgets", "pandas", "nbclient", "sympy", "plotly", "bokeh", "altair", "sphinx-click", "sphinx-tabs", "jupytext (>=1.6.0,<1.7.0)", "sphinxext-rediraffe (>=0.2.3,<0.3.0)"]
-testing = ["coverage", "pytest (>=3.6,<4)", "pytest-cov", "pytest-xdist", "pytest-timeout", "beautifulsoup4", "matplotlib", "pytest-regressions", "jupytext (>=1.6.0,<1.7.0)", "altair", "sphinx-click", "sphinx-tabs", "pyppeteer", "cookiecutter"]
-
 [package.dependencies]
 click = "*"
 docutils = ">=0.15"
@@ -698,7 +665,6 @@ myst-nb = ">=0.10.1,<0.11.0"
 nbconvert = "<6"
 nbformat = "*"
 pyyaml = "*"
-setuptools = "*"
 sphinx = ">=2,<4"
 sphinx-book-theme = ">=0.0.38"
 sphinx-comments = "*"
@@ -708,6 +674,13 @@ sphinx-thebe = ">=0.0.6"
 sphinx-togglebutton = "*"
 sphinxcontrib-bibtex = "*"
 
+[package.extras]
+all = ["pytest-cov", "black", "nbclient", "pre-commit (==1.17.0)", "matplotlib", "ipywidgets", "pytest-regressions", "sphinx-click", "pytest (>=3.6,<4)", "pandas", "sphinxext-rediraffe (>=0.2.3,<0.3.0)", "pyppeteer", "bokeh", "pytest-timeout", "jupytext (>=1.6.0,<1.7.0)", "cookiecutter", "plotly", "coverage", "pytest-xdist", "sphinx-tabs", "folium", "sympy", "beautifulsoup4", "numpy", "altair", "flake8 (>=3.7.0,<3.8.0)"]
+code_style = ["flake8 (>=3.7.0,<3.8.0)", "black", "pre-commit (==1.17.0)"]
+pdfhtml = ["pyppeteer"]
+sphinx = ["folium", "numpy", "matplotlib", "ipywidgets", "pandas", "nbclient", "sympy", "plotly", "bokeh", "altair", "sphinx-click", "sphinx-tabs", "jupytext (>=1.6.0,<1.7.0)", "sphinxext-rediraffe (>=0.2.3,<0.3.0)"]
+testing = ["coverage", "pytest (>=3.6,<4)", "pytest-cov", "pytest-xdist", "pytest-timeout", "beautifulsoup4", "matplotlib", "pytest-regressions", "jupytext (>=1.6.0,<1.7.0)", "altair", "sphinx-click", "sphinx-tabs", "pyppeteer", "cookiecutter"]
+
 [[package]]
 name = "jupyter-cache"
 version = "0.4.1"
@@ -716,18 +689,18 @@ category = "dev"
 optional = false
 python-versions = ">=3.6"
 
-[package.extras]
-cli = ["click", "click-completion", "click-log", "tabulate", "pyyaml"]
-code_style = ["flake8 (>=3.7.0,<3.8.0)", "black", "pre-commit (1.17.0)"]
-rtd = ["myst-nb (>=0.7,<1.0)", "sphinx-copybutton", "pydata-sphinx-theme"]
-testing = ["coverage", "pytest (>=3.6,<4)", "pytest-cov", "pytest-regressions", "matplotlib", "numpy", "sympy", "pandas"]
-
 [package.dependencies]
 attrs = "*"
 nbclient = ">=0.2,<0.6"
 nbdime = "*"
 nbformat = "*"
 sqlalchemy = ">=1.3.12,<1.4.0"
+
+[package.extras]
+cli = ["click", "click-completion", "click-log", "tabulate", "pyyaml"]
+code_style = ["flake8 (>=3.7.0,<3.8.0)", "black", "pre-commit (==1.17.0)"]
+rtd = ["myst-nb (>=0.7,<1.0)", "sphinx-copybutton", "pydata-sphinx-theme"]
+testing = ["coverage", "pytest (>=3.6,<4)", "pytest-cov", "pytest-regressions", "matplotlib", "numpy", "sympy", "pandas"]
 
 [[package]]
 name = "jupyter-client"
@@ -737,15 +710,15 @@ category = "dev"
 optional = false
 python-versions = ">=3.5"
 
-[package.extras]
-test = ["ipykernel", "ipython", "mock", "pytest", "pytest-asyncio", "async-generator", "pytest-timeout"]
-
 [package.dependencies]
 jupyter-core = ">=4.6.0"
 python-dateutil = ">=2.1"
 pyzmq = ">=13"
 tornado = ">=4.1"
 traitlets = "*"
+
+[package.extras]
+test = ["ipykernel", "ipython", "mock", "pytest", "pytest-asyncio", "async-generator", "pytest-timeout"]
 
 [[package]]
 name = "jupyter-core"
@@ -756,7 +729,7 @@ optional = false
 python-versions = "!=3.0,!=3.1,!=3.2,!=3.3,!=3.4,>=2.7"
 
 [package.dependencies]
-pywin32 = ">=1.0"
+pywin32 = {version = ">=1.0", markers = "sys_platform == \"win32\""}
 traitlets = "*"
 
 [[package]]
@@ -782,17 +755,14 @@ category = "dev"
 optional = false
 python-versions = "*"
 
-[package.extras]
-toml = ["toml"]
-
 [package.dependencies]
+markdown-it-py = {version = ">=0.5.2,<0.6.0", markers = "python_version >= \"3.6\""}
 nbformat = ">=4.0.0"
 pyyaml = "*"
 toml = "*"
 
-[package.dependencies.markdown-it-py]
-version = ">=0.5.2,<0.6.0"
-python = ">=3.6"
+[package.extras]
+toml = ["toml"]
 
 [[package]]
 name = "kiwisolver"
@@ -833,14 +803,14 @@ category = "dev"
 optional = false
 python-versions = "~=3.6"
 
+[package.dependencies]
+attrs = ">=19,<21"
+
 [package.extras]
-code_style = ["pre-commit (2.6)"]
+code_style = ["pre-commit (==2.6)"]
 compare = ["commonmark (>=0.9.1,<0.10.0)", "markdown (>=3.2.2,<3.3.0)", "mistune (>=0.8.4,<0.9.0)", "mistletoe-ebp (>=0.10.0,<0.11.0)", "panflute (>=1.12,<2.0)"]
 rtd = ["myst-nb (>=0.10.0,<0.11.0)", "sphinx-book-theme", "sphinx-panels (>=0.4.0,<0.5.0)", "sphinx-copybutton", "sphinx (>=2,<4)", "pyyaml"]
 testing = ["coverage", "pytest (>=3.6,<4)", "pytest-cov", "pytest-regressions", "pytest-benchmark (>=3.2,<4.0)", "psutil"]
-
-[package.dependencies]
-attrs = ">=19,<21"
 
 [[package]]
 name = "markupsafe"
@@ -899,11 +869,6 @@ category = "dev"
 optional = false
 python-versions = ">=3.6"
 
-[package.extras]
-code_style = ["flake8 (>=3.7.0,<3.8.0)", "black", "pre-commit (1.17.0)"]
-rtd = ["jupytext (>=1.6.0)", "coconut (>=1.4.3,<1.5.0)", "sphinxcontrib-bibtex", "ipywidgets", "pandas", "numpy", "sympy", "altair", "alabaster", "bokeh", "plotly", "matplotlib", "sphinx-copybutton", "sphinx-book-theme", "sphinx-panels (>=0.4.1,<0.5.0)"]
-testing = ["pytest (>=5.4,<6.0)", "pytest-cov (>=2.8,<3.0)", "coverage (<5.0)", "pytest-regressions", "matplotlib", "numpy", "sympy", "pandas", "jupytext (>=1.6.0)"]
-
 [package.dependencies]
 docutils = ">=0.15"
 importlib-metadata = "*"
@@ -918,6 +883,11 @@ pyyaml = "*"
 sphinx = ">=2,<4"
 sphinx-togglebutton = ">=0.2.2,<0.3.0"
 
+[package.extras]
+code_style = ["flake8 (>=3.7.0,<3.8.0)", "black", "pre-commit (==1.17.0)"]
+rtd = ["jupytext (>=1.6.0)", "coconut (>=1.4.3,<1.5.0)", "sphinxcontrib-bibtex", "ipywidgets", "pandas", "numpy", "sympy", "altair", "alabaster", "bokeh", "plotly", "matplotlib", "sphinx-copybutton", "sphinx-book-theme", "sphinx-panels (>=0.4.1,<0.5.0)"]
+testing = ["pytest (>=5.4,<6.0)", "pytest-cov (>=2.8,<3.0)", "coverage (<5.0)", "pytest-regressions", "matplotlib", "numpy", "sympy", "pandas", "jupytext (>=1.6.0)"]
+
 [[package]]
 name = "myst-parser"
 version = "0.12.10"
@@ -926,16 +896,16 @@ category = "dev"
 optional = false
 python-versions = ">=3.6"
 
-[package.extras]
-code_style = ["flake8 (>=3.7.0,<3.8.0)", "black", "pre-commit (1.17.0)"]
-rtd = ["sphinxcontrib-bibtex", "ipython", "sphinx-book-theme (>=0.0.36)", "sphinx-tabs", "sphinx-panels (>=0.4.1,<0.5.0)"]
-testing = ["coverage", "pytest (>=3.6,<4)", "pytest-cov", "pytest-regressions", "beautifulsoup4"]
-
 [package.dependencies]
 docutils = ">=0.15"
 markdown-it-py = ">=0.5.4,<0.6.0"
 pyyaml = "*"
 sphinx = ">=2,<4"
+
+[package.extras]
+code_style = ["flake8 (>=3.7.0,<3.8.0)", "black", "pre-commit (==1.17.0)"]
+rtd = ["sphinxcontrib-bibtex", "ipython", "sphinx-book-theme (>=0.0.36)", "sphinx-tabs", "sphinx-panels (>=0.4.1,<0.5.0)"]
+testing = ["coverage", "pytest (>=3.6,<4)", "pytest-cov", "pytest-regressions", "beautifulsoup4"]
 
 [[package]]
 name = "nbclient"
@@ -945,17 +915,17 @@ category = "dev"
 optional = false
 python-versions = ">=3.6"
 
-[package.extras]
-dev = ["codecov", "coverage", "ipython", "ipykernel", "ipywidgets", "pytest (>=4.1)", "pytest-cov (>=2.6.1)", "check-manifest", "flake8", "mypy", "tox", "bumpversion", "xmltodict", "pip (>=18.1)", "wheel (>=0.31.0)", "setuptools (>=38.6.0)", "twine (>=1.11.0)", "black"]
-sphinx = ["Sphinx (>=1.7)", "sphinx-book-theme", "mock", "moto", "myst-parser"]
-test = ["codecov", "coverage", "ipython", "ipykernel", "ipywidgets", "pytest (>=4.1)", "pytest-cov (>=2.6.1)", "check-manifest", "flake8", "mypy", "tox", "bumpversion", "xmltodict", "pip (>=18.1)", "wheel (>=0.31.0)", "setuptools (>=38.6.0)", "twine (>=1.11.0)", "black"]
-
 [package.dependencies]
 async-generator = "*"
 jupyter-client = ">=6.1.5"
 nbformat = ">=5.0"
 nest-asyncio = "*"
 traitlets = ">=4.2"
+
+[package.extras]
+dev = ["codecov", "coverage", "ipython", "ipykernel", "ipywidgets", "pytest (>=4.1)", "pytest-cov (>=2.6.1)", "check-manifest", "flake8", "mypy", "tox", "bumpversion", "xmltodict", "pip (>=18.1)", "wheel (>=0.31.0)", "setuptools (>=38.6.0)", "twine (>=1.11.0)", "black"]
+sphinx = ["Sphinx (>=1.7)", "sphinx-book-theme", "mock", "moto", "myst-parser"]
+test = ["codecov", "coverage", "ipython", "ipykernel", "ipywidgets", "pytest (>=4.1)", "pytest-cov (>=2.6.1)", "check-manifest", "flake8", "mypy", "tox", "bumpversion", "xmltodict", "pip (>=18.1)", "wheel (>=0.31.0)", "setuptools (>=38.6.0)", "twine (>=1.11.0)", "black"]
 
 [[package]]
 name = "nbconvert"
@@ -964,13 +934,6 @@ description = "Converting Jupyter Notebooks"
 category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
-
-[package.extras]
-all = ["pytest", "pytest-cov", "ipykernel", "jupyter-client (>=5.3.1)", "ipywidgets (>=7)", "pebble", "tornado (>=4.0)", "sphinx (>=1.5.1)", "sphinx-rtd-theme", "nbsphinx (>=0.2.12)", "sphinxcontrib-github-alt", "ipython", "mock"]
-docs = ["sphinx (>=1.5.1)", "sphinx-rtd-theme", "nbsphinx (>=0.2.12)", "sphinxcontrib-github-alt", "ipython", "jupyter-client (>=5.3.1)"]
-execute = ["jupyter-client (>=5.3.1)"]
-serve = ["tornado (>=4.0)"]
-test = ["pytest", "pytest-cov", "ipykernel", "jupyter-client (>=5.3.1)", "ipywidgets (>=7)", "pebble", "mock"]
 
 [package.dependencies]
 bleach = "*"
@@ -985,6 +948,13 @@ pygments = "*"
 testpath = "*"
 traitlets = ">=4.2"
 
+[package.extras]
+all = ["pytest", "pytest-cov", "ipykernel", "jupyter-client (>=5.3.1)", "ipywidgets (>=7)", "pebble", "tornado (>=4.0)", "sphinx (>=1.5.1)", "sphinx-rtd-theme", "nbsphinx (>=0.2.12)", "sphinxcontrib-github-alt", "ipython", "mock"]
+docs = ["sphinx (>=1.5.1)", "sphinx-rtd-theme", "nbsphinx (>=0.2.12)", "sphinxcontrib-github-alt", "ipython", "jupyter-client (>=5.3.1)"]
+execute = ["jupyter-client (>=5.3.1)"]
+serve = ["tornado (>=4.0)"]
+test = ["pytest", "pytest-cov", "ipykernel", "jupyter-client (>=5.3.1)", "ipywidgets (>=7)", "pebble", "mock"]
+
 [[package]]
 name = "nbdime"
 version = "2.1.0"
@@ -992,10 +962,6 @@ description = "Diff and merge of Jupyter Notebooks"
 category = "dev"
 optional = false
 python-versions = ">=3.6"
-
-[package.extras]
-docs = ["sphinx", "recommonmark", "sphinx-rtd-theme"]
-test = ["pytest (>=3.6)", "pytest-cov", "pytest-timeout", "pytest-tornado", "jsonschema", "mock", "requests", "tabulate"]
 
 [package.dependencies]
 colorama = "*"
@@ -1008,6 +974,10 @@ requests = "*"
 six = "*"
 tornado = "*"
 
+[package.extras]
+docs = ["sphinx", "recommonmark", "sphinx-rtd-theme"]
+test = ["pytest (>=3.6)", "pytest-cov", "pytest-timeout", "pytest-tornado", "jsonschema", "mock", "requests", "tabulate"]
+
 [[package]]
 name = "nbformat"
 version = "5.0.8"
@@ -1016,15 +986,15 @@ category = "dev"
 optional = false
 python-versions = ">=3.5"
 
-[package.extras]
-fast = ["fastjsonschema"]
-test = ["fastjsonschema", "testpath", "pytest", "pytest-cov"]
-
 [package.dependencies]
 ipython-genutils = "*"
 jsonschema = ">=2.4,<2.5.0 || >2.5.0"
 jupyter-core = "*"
 traitlets = ">=4.1"
+
+[package.extras]
+fast = ["fastjsonschema"]
+test = ["fastjsonschema", "testpath", "pytest", "pytest-cov"]
 
 [[package]]
 name = "nbval"
@@ -1058,10 +1028,6 @@ category = "dev"
 optional = false
 python-versions = ">=3.5"
 
-[package.extras]
-docs = ["sphinx", "nbsphinx", "sphinxcontrib-github-alt"]
-test = ["nose", "coverage", "requests", "nose-warnings-filters", "nbval", "nose-exclude", "selenium", "pytest", "pytest-cov", "requests-unixsocket"]
-
 [package.dependencies]
 argon2-cffi = "*"
 ipykernel = "*"
@@ -1078,6 +1044,10 @@ terminado = ">=0.8.3"
 tornado = ">=5.0"
 traitlets = ">=4.2.1"
 
+[package.extras]
+docs = ["sphinx", "nbsphinx", "sphinxcontrib-github-alt"]
+test = ["nose", "coverage", "requests", "nose-warnings-filters", "nbval", "nose-exclude", "selenium", "pytest", "pytest-cov", "requests-unixsocket"]
+
 [[package]]
 name = "numpy"
 version = "1.19.4"
@@ -1093,9 +1063,6 @@ description = "Ordered Set."
 category = "dev"
 optional = false
 python-versions = "*"
-
-[package.dependencies]
-setuptools = "*"
 
 [[package]]
 name = "packaging"
@@ -1117,13 +1084,13 @@ category = "main"
 optional = false
 python-versions = ">=3.6.1"
 
-[package.extras]
-test = ["pytest (>=4.0.2)", "pytest-xdist", "hypothesis (>=3.58)"]
-
 [package.dependencies]
 numpy = ">=1.15.4"
 python-dateutil = ">=2.7.3"
 pytz = ">=2017.2"
+
+[package.extras]
+test = ["pytest (>=4.0.2)", "pytest-xdist", "hypothesis (>=3.58)"]
 
 [[package]]
 name = "pandocfilters"
@@ -1179,13 +1146,11 @@ category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
+[package.dependencies]
+importlib-metadata = {version = ">=0.12", markers = "python_version < \"3.8\""}
+
 [package.extras]
 dev = ["pre-commit", "tox"]
-
-[package.dependencies]
-[package.dependencies.importlib-metadata]
-version = ">=0.12"
-python = "<3.8"
 
 [[package]]
 name = "prometheus-client"
@@ -1233,13 +1198,13 @@ category = "dev"
 optional = false
 python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*"
 
-[package.extras]
-test = ["pytest"]
-
 [package.dependencies]
 latexcodec = ">=1.0.4"
 PyYAML = ">=3.01"
 six = "*"
+
+[package.extras]
+test = ["pytest"]
 
 [[package]]
 name = "pybtex-docutils"
@@ -1328,23 +1293,20 @@ category = "dev"
 optional = false
 python-versions = ">=3.5"
 
-[package.extras]
-checkqa_mypy = ["mypy (0.780)"]
-testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "requests", "xmlschema"]
-
 [package.dependencies]
-atomicwrites = ">=1.0"
+atomicwrites = {version = ">=1.0", markers = "sys_platform == \"win32\""}
 attrs = ">=17.4.0"
-colorama = "*"
+colorama = {version = "*", markers = "sys_platform == \"win32\""}
+importlib-metadata = {version = ">=0.12", markers = "python_version < \"3.8\""}
 iniconfig = "*"
 packaging = "*"
 pluggy = ">=0.12,<1.0"
 py = ">=1.8.2"
 toml = "*"
 
-[package.dependencies.importlib-metadata]
-version = ">=0.12"
-python = "<3.8"
+[package.extras]
+checkqa_mypy = ["mypy (==0.780)"]
+testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "requests", "xmlschema"]
 
 [[package]]
 name = "python-dateutil"
@@ -1372,7 +1334,6 @@ description = "Python for Window Extensions"
 category = "dev"
 optional = false
 python-versions = "*"
-marker = "sys_platform == \"win32\""
 
 [[package]]
 name = "pywinpty"
@@ -1381,7 +1342,6 @@ description = "Python bindings for the winpty library"
 category = "dev"
 optional = false
 python-versions = "*"
-marker = "os_name == \"nt\""
 
 [[package]]
 name = "pyyaml"
@@ -1407,15 +1367,15 @@ category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
-[package.extras]
-security = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)"]
-socks = ["PySocks (>=1.5.6,<1.5.7 || >1.5.7)", "win-inet-pton"]
-
 [package.dependencies]
 certifi = ">=2017.4.17"
 chardet = ">=3.0.2,<4"
 idna = ">=2.5,<3"
 urllib3 = ">=1.21.1,<1.25.0 || >1.25.0,<1.25.1 || >1.25.1,<1.26"
+
+[package.extras]
+security = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)"]
+socks = ["PySocks (>=1.5.6,!=1.5.7)", "win-inet-pton"]
 
 [[package]]
 name = "ruamel.yaml"
@@ -1425,14 +1385,12 @@ category = "dev"
 optional = false
 python-versions = "*"
 
+[package.dependencies]
+"ruamel.yaml.clib" = {version = ">=0.1.2", markers = "platform_python_implementation == \"CPython\" and python_version < \"3.9\""}
+
 [package.extras]
 docs = ["ryd"]
 jinja2 = ["ruamel.yaml.jinja2 (>=0.2)"]
-
-[package.dependencies]
-[package.dependencies."ruamel.yaml.clib"]
-version = ">=0.1.2"
-python = "<3.9"
 
 [[package]]
 name = "ruamel.yaml.clib"
@@ -1441,7 +1399,6 @@ description = "C version of reader, parser and emitter for ruamel.yaml derived f
 category = "dev"
 optional = false
 python-versions = "*"
-marker = "platform_python_implementation == \"CPython\" and python_version < \"3.9\""
 
 [[package]]
 name = "scipy"
@@ -1501,7 +1458,6 @@ description = "A modern CSS selector implementation for Beautiful Soup."
 category = "dev"
 optional = false
 python-versions = ">=3.5"
-marker = "python_version >= \"3.0\""
 
 [[package]]
 name = "sphinx"
@@ -1511,22 +1467,16 @@ category = "dev"
 optional = false
 python-versions = ">=3.5"
 
-[package.extras]
-docs = ["sphinxcontrib-websupport"]
-lint = ["flake8 (>=3.5.0)", "flake8-import-order", "mypy (>=0.790)", "docutils-stubs"]
-test = ["pytest", "pytest-cov", "html5lib", "typed-ast", "cython"]
-
 [package.dependencies]
 alabaster = ">=0.7,<0.8"
 babel = ">=1.3"
-colorama = ">=0.3.5"
+colorama = {version = ">=0.3.5", markers = "sys_platform == \"win32\""}
 docutils = ">=0.12"
 imagesize = "*"
 Jinja2 = ">=2.3"
 packaging = "*"
 Pygments = ">=2.0"
 requests = ">=2.5.0"
-setuptools = "*"
 snowballstemmer = ">=1.1"
 sphinxcontrib-applehelp = "*"
 sphinxcontrib-devhelp = "*"
@@ -1534,6 +1484,11 @@ sphinxcontrib-htmlhelp = "*"
 sphinxcontrib-jsmath = "*"
 sphinxcontrib-qthelp = "*"
 sphinxcontrib-serializinghtml = "*"
+
+[package.extras]
+docs = ["sphinxcontrib-websupport"]
+lint = ["flake8 (>=3.5.0)", "flake8-import-order", "mypy (>=0.790)", "docutils-stubs"]
+test = ["pytest", "pytest-cov", "html5lib", "typed-ast", "cython"]
 
 [[package]]
 name = "sphinx-book-theme"
@@ -1543,23 +1498,20 @@ category = "dev"
 optional = false
 python-versions = ">=3.6"
 
+[package.dependencies]
+beautifulsoup4 = "*"
+click = "*"
+docutils = ">=0.15"
+importlib-resources = {version = ">=3.0.0,<3.1.0", markers = "python_version < \"3.7\""}
+pydata-sphinx-theme = ">=0.4.0,<0.5.0"
+pyyaml = "*"
+sphinx = "*"
+
 [package.extras]
 code_style = ["pre-commit (>=2.7.0,<2.8.0)"]
 live-dev = ["sphinx-autobuild", "web-compile (>=0.2.1,<0.3.0)"]
 sphinx = ["folium", "numpy", "matplotlib", "ipywidgets", "pandas", "nbclient", "myst-nb (>=0.10.1,<0.11.0)", "sphinx-togglebutton (>=0.2.1)", "sphinx-copybutton", "plotly", "sphinxcontrib-bibtex", "sphinx-thebe"]
 testing = ["myst-nb (>=0.10.1,<0.11.0)", "sphinx-thebe", "coverage", "pytest (>=6.0.1,<6.1.0)", "pytest-cov", "pytest-regressions (>=2.0.1,<2.1.0)"]
-
-[package.dependencies]
-beautifulsoup4 = "*"
-click = "*"
-docutils = ">=0.15"
-pydata-sphinx-theme = ">=0.4.0,<0.5.0"
-pyyaml = "*"
-sphinx = "*"
-
-[package.dependencies.importlib-resources]
-version = ">=3.0.0,<3.1.0"
-python = "<3.7"
 
 [[package]]
 name = "sphinx-comments"
@@ -1569,13 +1521,13 @@ category = "dev"
 optional = false
 python-versions = "*"
 
-[package.extras]
-code_style = ["flake8 (>=3.7.0,<3.8.0)", "black", "pre-commit (1.17.0)"]
-sphinx = ["sphinx (>=2)", "sphinx-book-theme", "myst-parser"]
-testing = ["beautifulsoup4", "myst-parser", "pytest", "pytest-regressions", "sphinx (>=2)", "sphinx-book-theme"]
-
 [package.dependencies]
 sphinx = ">=1.8"
+
+[package.extras]
+code_style = ["flake8 (>=3.7.0,<3.8.0)", "black", "pre-commit (==1.17.0)"]
+sphinx = ["sphinx (>=2)", "sphinx-book-theme", "myst-parser"]
+testing = ["beautifulsoup4", "myst-parser", "pytest", "pytest-regressions", "sphinx (>=2)", "sphinx-book-theme"]
 
 [[package]]
 name = "sphinx-copybutton"
@@ -1585,11 +1537,11 @@ category = "dev"
 optional = false
 python-versions = "*"
 
-[package.extras]
-code_style = ["flake8 (>=3.7.0,<3.8.0)", "black", "pre-commit (1.17.0)"]
-
 [package.dependencies]
 sphinx = ">=1.8"
+
+[package.extras]
+code_style = ["flake8 (>=3.7.0,<3.8.0)", "black", "pre-commit (==1.17.0)"]
 
 [[package]]
 name = "sphinx-panels"
@@ -1599,19 +1551,16 @@ category = "dev"
 optional = false
 python-versions = "*"
 
+[package.dependencies]
+docutils = "*"
+importlib-resources = {version = ">=3.0.0,<3.1.0", markers = "python_version < \"3.7\""}
+sphinx = ">=2,<4"
+
 [package.extras]
 code_style = ["pre-commit (>=2.7.0,<2.8.0)"]
 live-dev = ["sphinx-autobuild", "web-compile (>=0.2.0,<0.3.0)"]
 testing = ["pytest (>=6.0.1,<6.1.0)", "pytest-regressions (>=2.0.1,<2.1.0)"]
 themes = ["sphinx-rtd-theme", "pydata-sphinx-theme (>=0.4.0,<0.5.0)", "sphinx-book-theme (>=0.0.36,<0.1.0)", "myst-parser (>=0.12.9,<0.13.0)"]
-
-[package.dependencies]
-docutils = "*"
-sphinx = ">=2,<4"
-
-[package.dependencies.importlib-resources]
-version = ">=3.0.0,<3.1.0"
-python = "<3.7"
 
 [[package]]
 name = "sphinx-thebe"
@@ -1621,12 +1570,12 @@ category = "dev"
 optional = false
 python-versions = "*"
 
+[package.dependencies]
+sphinx = ">=1.8"
+
 [package.extras]
 sphinx = ["myst-parser", "sphinx-book-theme", "jupyter-sphinx", "sphinx-panels"]
 testing = ["pytest", "pytest-regressions", "beautifulsoup4"]
-
-[package.dependencies]
-sphinx = ">=1.8"
 
 [[package]]
 name = "sphinx-togglebutton"
@@ -1636,14 +1585,12 @@ category = "dev"
 optional = false
 python-versions = "*"
 
-[package.extras]
-sphinx = ["myst-nb", "sphinx-book-theme"]
-
 [package.dependencies]
 docutils = "*"
-setuptools = "*"
 sphinx = "*"
-wheel = "*"
+
+[package.extras]
+sphinx = ["myst-nb", "sphinx-book-theme"]
 
 [[package]]
 name = "sphinxcontrib-applehelp"
@@ -1770,8 +1717,8 @@ optional = false
 python-versions = ">=3.6"
 
 [package.dependencies]
-ptyprocess = "*"
-pywinpty = ">=0.5"
+ptyprocess = {version = "*", markers = "os_name != \"nt\""}
+pywinpty = {version = ">=0.5", markers = "os_name == \"nt\""}
 tornado = ">=4"
 
 [[package]]
@@ -1828,13 +1775,13 @@ category = "dev"
 optional = false
 python-versions = "*"
 
-[package.extras]
-test = ["pytest", "mock"]
-
 [package.dependencies]
 decorator = "*"
 ipython-genutils = "*"
 six = "*"
+
+[package.extras]
+test = ["pytest", "mock"]
 
 [[package]]
 name = "typing-extensions"
@@ -1855,7 +1802,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, <4"
 [package.extras]
 brotli = ["brotlipy (>=0.6.0)"]
 secure = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "certifi", "ipaddress"]
-socks = ["PySocks (>=1.5.6,<1.5.7 || >1.5.7,<2.0)"]
+socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 
 [[package]]
 name = "wcwidth"
@@ -1882,17 +1829,6 @@ optional = false
 python-versions = ">=3.6.1"
 
 [[package]]
-name = "wheel"
-version = "0.35.1"
-description = "A built-package format for Python"
-category = "dev"
-optional = false
-python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
-
-[package.extras]
-test = ["pytest (>=3.0.0)", "pytest-cov"]
-
-[[package]]
 name = "widgetsnbextension"
 version = "3.5.1"
 description = "IPython HTML widgets for Jupyter"
@@ -1914,10 +1850,7 @@ python-versions = ">=3.6"
 [package.dependencies]
 idna = ">=2.0"
 multidict = ">=4.0"
-
-[package.dependencies.typing-extensions]
-version = ">=3.7.4"
-python = "<3.8"
+typing-extensions = {version = ">=3.7.4", markers = "python_version < \"3.8\""}
 
 [[package]]
 name = "yaspin"
@@ -1937,10 +1870,10 @@ python-versions = ">=3.6"
 
 [package.extras]
 docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
-testing = ["pytest (>=3.5,<3.7.3 || >3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pytest-cov", "jaraco.test (>=3.2.0)", "jaraco.itertools", "func-timeout", "pytest-black (>=0.3.7)", "pytest-mypy"]
+testing = ["pytest (>=3.5,!=3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pytest-cov", "jaraco.test (>=3.2.0)", "jaraco.itertools", "func-timeout", "pytest-black (>=0.3.7)", "pytest-mypy"]
 
 [metadata]
-lock-version = "1.0"
+lock-version = "1.1"
 python-versions = "^3.6.1"
 content-hash = "dc507b1e955cb7b3c73e3acd79325ed5c09e3e633a5a2899ff08b2f857fd56ce"
 
@@ -2009,6 +1942,8 @@ argon2-cffi = [
     {file = "argon2_cffi-20.1.0-cp37-cp37m-win_amd64.whl", hash = "sha256:6678bb047373f52bcff02db8afab0d2a77d83bde61cfecea7c5c62e2335cb203"},
     {file = "argon2_cffi-20.1.0-cp38-cp38-win32.whl", hash = "sha256:77e909cc756ef81d6abb60524d259d959bab384832f0c651ed7dcb6e5ccdbb78"},
     {file = "argon2_cffi-20.1.0-cp38-cp38-win_amd64.whl", hash = "sha256:9dfd5197852530294ecb5795c97a823839258dfd5eb9420233c7cfedec2058f2"},
+    {file = "argon2_cffi-20.1.0-cp39-cp39-win32.whl", hash = "sha256:e2db6e85c057c16d0bd3b4d2b04f270a7467c147381e8fd73cbbe5bc719832be"},
+    {file = "argon2_cffi-20.1.0-cp39-cp39-win_amd64.whl", hash = "sha256:8a84934bd818e14a17943de8099d41160da4a336bcc699bb4c394bbb9b94bd32"},
 ]
 async-generator = [
     {file = "async_generator-1.10-py3-none-any.whl", hash = "sha256:01c7bf666359b4967d2cda0000cc2e4af16a0ae098cbffcb8472fb9e8ad6585b"},
@@ -2690,6 +2625,8 @@ pyyaml = [
     {file = "PyYAML-5.3.1-cp37-cp37m-win_amd64.whl", hash = "sha256:73f099454b799e05e5ab51423c7bcf361c58d3206fa7b0d555426b1f4d9a3eaf"},
     {file = "PyYAML-5.3.1-cp38-cp38-win32.whl", hash = "sha256:06a0d7ba600ce0b2d2fe2e78453a470b5a6e000a985dd4a4e54e436cc36b0e97"},
     {file = "PyYAML-5.3.1-cp38-cp38-win_amd64.whl", hash = "sha256:95f71d2af0ff4227885f7a6605c37fd53d3a106fcab511b8860ecca9fcf400ee"},
+    {file = "PyYAML-5.3.1-cp39-cp39-win32.whl", hash = "sha256:ad9c67312c84def58f3c04504727ca879cb0013b2517c85a9a253f0cb6380c0a"},
+    {file = "PyYAML-5.3.1-cp39-cp39-win_amd64.whl", hash = "sha256:6034f55dab5fea9e53f436aa68fa3ace2634918e8b5994d82f3621c04ff5ed2e"},
     {file = "PyYAML-5.3.1.tar.gz", hash = "sha256:b8eac752c5e14d3eca0e6dd9199cd627518cb5ec06add0de9d32baeee6fe645d"},
 ]
 pyzmq = [
@@ -2718,6 +2655,10 @@ pyzmq = [
     {file = "pyzmq-19.0.2-cp38-cp38-manylinux1_x86_64.whl", hash = "sha256:654d3e06a4edc566b416c10293064732516cf8871a4522e0a2ba00cc2a2e600c"},
     {file = "pyzmq-19.0.2-cp38-cp38-win32.whl", hash = "sha256:276ad604bffd70992a386a84bea34883e696a6b22e7378053e5d3227321d9702"},
     {file = "pyzmq-19.0.2-cp38-cp38-win_amd64.whl", hash = "sha256:09d24a80ccb8cbda1af6ed8eb26b005b6743e58e9290566d2a6841f4e31fa8e0"},
+    {file = "pyzmq-19.0.2-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:18189fc59ff5bf46b7ccf5a65c1963326dbfc85a2bc73e9f4a90a40322b992c8"},
+    {file = "pyzmq-19.0.2-cp39-cp39-manylinux1_i686.whl", hash = "sha256:b1dd4cf4c5e09cbeef0aee83f3b8af1e9986c086a8927b261c042655607571e8"},
+    {file = "pyzmq-19.0.2-cp39-cp39-manylinux1_x86_64.whl", hash = "sha256:c6d653bab76b3925c65d4ac2ddbdffe09710f3f41cc7f177299e8c4498adb04a"},
+    {file = "pyzmq-19.0.2-cp39-cp39-win_amd64.whl", hash = "sha256:949a219493a861c263b75a16588eadeeeab08f372e25ff4a15a00f73dfe341f4"},
     {file = "pyzmq-19.0.2-pp27-pypy_73-macosx_10_9_x86_64.whl", hash = "sha256:c1a31cd42905b405530e92bdb70a8a56f048c8a371728b8acf9d746ecd4482c0"},
     {file = "pyzmq-19.0.2-pp36-pypy36_pp73-macosx_10_9_x86_64.whl", hash = "sha256:a7e7f930039ee0c4c26e4dfee015f20bd6919cd8b97c9cd7afbde2923a5167b6"},
     {file = "pyzmq-19.0.2.tar.gz", hash = "sha256:296540a065c8c21b26d63e3cea2d1d57902373b16e4256afe46422691903a438"},
@@ -2738,20 +2679,29 @@ requests = [
     {file = "ruamel.yaml.clib-0.2.2-cp27-cp27mu-manylinux1_x86_64.whl", hash = "sha256:73b3d43e04cc4b228fa6fa5d796409ece6fcb53a6c270eb2048109cbcbc3b9c2"},
     {file = "ruamel.yaml.clib-0.2.2-cp35-cp35m-macosx_10_6_intel.whl", hash = "sha256:53b9dd1abd70e257a6e32f934ebc482dac5edb8c93e23deb663eac724c30b026"},
     {file = "ruamel.yaml.clib-0.2.2-cp35-cp35m-manylinux1_x86_64.whl", hash = "sha256:839dd72545ef7ba78fd2aa1a5dd07b33696adf3e68fae7f31327161c1093001b"},
+    {file = "ruamel.yaml.clib-0.2.2-cp35-cp35m-manylinux2014_aarch64.whl", hash = "sha256:1236df55e0f73cd138c0eca074ee086136c3f16a97c2ac719032c050f7e0622f"},
     {file = "ruamel.yaml.clib-0.2.2-cp35-cp35m-win32.whl", hash = "sha256:b1e981fe1aff1fd11627f531524826a4dcc1f26c726235a52fcb62ded27d150f"},
     {file = "ruamel.yaml.clib-0.2.2-cp35-cp35m-win_amd64.whl", hash = "sha256:4e52c96ca66de04be42ea2278012a2342d89f5e82b4512fb6fb7134e377e2e62"},
     {file = "ruamel.yaml.clib-0.2.2-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:a873e4d4954f865dcb60bdc4914af7eaae48fb56b60ed6daa1d6251c72f5337c"},
     {file = "ruamel.yaml.clib-0.2.2-cp36-cp36m-manylinux1_x86_64.whl", hash = "sha256:ab845f1f51f7eb750a78937be9f79baea4a42c7960f5a94dde34e69f3cce1988"},
+    {file = "ruamel.yaml.clib-0.2.2-cp36-cp36m-manylinux2014_aarch64.whl", hash = "sha256:2fd336a5c6415c82e2deb40d08c222087febe0aebe520f4d21910629018ab0f3"},
     {file = "ruamel.yaml.clib-0.2.2-cp36-cp36m-win32.whl", hash = "sha256:e9f7d1d8c26a6a12c23421061f9022bb62704e38211fe375c645485f38df34a2"},
     {file = "ruamel.yaml.clib-0.2.2-cp36-cp36m-win_amd64.whl", hash = "sha256:2602e91bd5c1b874d6f93d3086f9830f3e907c543c7672cf293a97c3fabdcd91"},
     {file = "ruamel.yaml.clib-0.2.2-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:44c7b0498c39f27795224438f1a6be6c5352f82cb887bc33d962c3a3acc00df6"},
     {file = "ruamel.yaml.clib-0.2.2-cp37-cp37m-manylinux1_x86_64.whl", hash = "sha256:8e8fd0a22c9d92af3a34f91e8a2594eeb35cba90ab643c5e0e643567dc8be43e"},
+    {file = "ruamel.yaml.clib-0.2.2-cp37-cp37m-manylinux2014_aarch64.whl", hash = "sha256:75f0ee6839532e52a3a53f80ce64925ed4aed697dd3fa890c4c918f3304bd4f4"},
     {file = "ruamel.yaml.clib-0.2.2-cp37-cp37m-win32.whl", hash = "sha256:464e66a04e740d754170be5e740657a3b3b6d2bcc567f0c3437879a6e6087ff6"},
     {file = "ruamel.yaml.clib-0.2.2-cp37-cp37m-win_amd64.whl", hash = "sha256:52ae5739e4b5d6317b52f5b040b1b6639e8af68a5b8fd606a8b08658fbd0cab5"},
     {file = "ruamel.yaml.clib-0.2.2-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:4df5019e7783d14b79217ad9c56edf1ba7485d614ad5a385d1b3c768635c81c0"},
     {file = "ruamel.yaml.clib-0.2.2-cp38-cp38-manylinux1_x86_64.whl", hash = "sha256:5254af7d8bdf4d5484c089f929cb7f5bafa59b4f01d4f48adda4be41e6d29f99"},
+    {file = "ruamel.yaml.clib-0.2.2-cp38-cp38-manylinux2014_aarch64.whl", hash = "sha256:8be05be57dc5c7b4a0b24edcaa2f7275866d9c907725226cdde46da09367d923"},
     {file = "ruamel.yaml.clib-0.2.2-cp38-cp38-win32.whl", hash = "sha256:74161d827407f4db9072011adcfb825b5258a5ccb3d2cd518dd6c9edea9e30f1"},
     {file = "ruamel.yaml.clib-0.2.2-cp38-cp38-win_amd64.whl", hash = "sha256:058a1cc3df2a8aecc12f983a48bda99315cebf55a3b3a5463e37bb599b05727b"},
+    {file = "ruamel.yaml.clib-0.2.2-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:c6ac7e45367b1317e56f1461719c853fd6825226f45b835df7436bb04031fd8a"},
+    {file = "ruamel.yaml.clib-0.2.2-cp39-cp39-manylinux1_x86_64.whl", hash = "sha256:b4b0d31f2052b3f9f9b5327024dc629a253a83d8649d4734ca7f35b60ec3e9e5"},
+    {file = "ruamel.yaml.clib-0.2.2-cp39-cp39-manylinux2014_aarch64.whl", hash = "sha256:1f8c0a4577c0e6c99d208de5c4d3fd8aceed9574bb154d7a2b21c16bb924154c"},
+    {file = "ruamel.yaml.clib-0.2.2-cp39-cp39-win32.whl", hash = "sha256:46d6d20815064e8bb023ea8628cfb7402c0f0e83de2c2227a88097e239a7dffd"},
+    {file = "ruamel.yaml.clib-0.2.2-cp39-cp39-win_amd64.whl", hash = "sha256:6c0a5dc52fc74eb87c67374a4e554d4761fd42a4d01390b7e868b30d21f4b8bb"},
     {file = "ruamel.yaml.clib-0.2.2.tar.gz", hash = "sha256:2d24bd98af676f4990c4d715bcdc2a60b19c56a3fb3a763164d2d8ca0e806ba7"},
 ]
 scipy = [
@@ -3012,10 +2962,6 @@ websockets = [
     {file = "websockets-8.1-cp38-cp38-win32.whl", hash = "sha256:e898a0863421650f0bebac8ba40840fc02258ef4714cb7e1fd76b6a6354bda36"},
     {file = "websockets-8.1-cp38-cp38-win_amd64.whl", hash = "sha256:f8a7bff6e8664afc4e6c28b983845c5bc14965030e3fb98789734d416af77c4b"},
     {file = "websockets-8.1.tar.gz", hash = "sha256:5c65d2da8c6bce0fca2528f69f44b2f977e06954c8512a952222cea50dad430f"},
-]
-wheel = [
-    {file = "wheel-0.35.1-py2.py3-none-any.whl", hash = "sha256:497add53525d16c173c2c1c733b8f655510e909ea78cc0e29d374243544b77a2"},
-    {file = "wheel-0.35.1.tar.gz", hash = "sha256:99a22d87add3f634ff917310a3d87e499f19e663413a52eb9232c447aa646c9f"},
 ]
 widgetsnbextension = [
     {file = "widgetsnbextension-3.5.1-py2.py3-none-any.whl", hash = "sha256:bd314f8ceb488571a5ffea6cc5b9fc6cba0adaf88a9d2386b93a489751938bcd"},

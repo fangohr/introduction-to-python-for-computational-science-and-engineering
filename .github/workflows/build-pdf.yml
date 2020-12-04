@@ -1,13 +1,12 @@
 name: build-pdf
 
 on:
-  # Trigger the workflow on push to main branch
   push:
     branches:
       - jupyterbook
 
-# This job installs dependencies, build the book, and pushes it to `gh-pages`
-jobs:
+#  This job installs dependencies, builds a PDF using the latex pdf builder, and
+#  then uploads the built book as a release artefact
   build-pdf:
     runs-on: ${{ matrix.os }}
     strategy:
@@ -17,22 +16,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    # - name: setup-python fix for local runs with nektos/act
-    #   run: |
-    #     #  Hack to get setup-python to work on act
-    #     #  https://github.com/nektos/act/issues/251#issuecomment-706412948
-    #     if [ $GITHUB_ACTOR == "nektos/act" ]; then
-    #       if [ ! -f "/etc/lsb-release" ] ; then
-    #         echo "DISTRIB_RELEASE=18.04" > /etc/lsb-release
-    #       fi
-    #     fi
-
-    - name: install latexmk
+    - name: Install latexmk
       run: |
         sudo apt-get update -y
         sudo apt-get install -y latexmk texlive-xetex fonts-freefont-otf
 
-    # Install dependencies
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v1
       with:
@@ -46,13 +34,12 @@ jobs:
           ${{ runner.os }}-pip-${{ hashFiles('poetry.lock') }}
 
     - name: Install poetry
-      uses: abatilo/actions-poetry@v2.0.0
+      run: pip install poetry==1.1.4
 
     - name: Install dependencies
       run: |
         poetry install
 
-    # Build the book
     - name: Build the book
       run: |
         poetry run jupyter-book build book --builder pdflatex

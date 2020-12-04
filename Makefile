@@ -1,63 +1,33 @@
 all:
-	make check-py35
-	make notebooks-html
-	make notebooks-pdf
+	make html
+	make pdf
+
 
 docker-all:
 	make docker-build
-	make docker-check-py35
-	make docker-check-pandas
 	make docker-html
 	make docker-pdf
 	make docker-nbval
 
 
-notebooks-pdf: book/*-*.ipynb 
-	@echo "Attempting to create combined.pdf from notebooks"
-	poetry run jupyter-book build book --builder pdflatex
-	@#python3 -m bookbook.latex --pdf --template static/latex_template.tplx
-	@#@mkdir -p pdf
-	@#mv -v combined.pdf pdf/Introduction-to-Python-for-Computational-Science-and-Engineering.pdf
-	@#make version && mv -v version.txt pdf
-
-notebooks-html: check-py35
-	@# @echo "Attempting to create html version (in ./html)"
-	@# python3 -m bookbook.html
-	@# @echo "Output stored in html/*html; start with html/index.html"
-	@# make version && mv -v version.txt html
-	@# @echo "Move files to 'docs' (for github pages)"
-	@# mkdir -p docs
-	@# mv html/*.html html/version.txt docs
-	@# @echo "If this version should be hosted on github, you need to 'cd docs && git commit .' or similar."
-	poetry run jupyter-book build book --builder html
-
-check-py35:
-	@echo "Checking Python version is >= 3.5"
-	@python3 -c "import sys; assert sys.version_info[0] >= 3"
-	@python3 -c "import sys; assert sys.version_info[1] >= 5"
-	@echo "        (ok)"
-
-check-pandas:
-	@echo "which python"
-	@which python3
-	@python3 -c "import pandas; print(pandas.__version__)"
-
 install:
-	@#@python3 -m pip install -r requirements.txt
-	poetry install
-
-version:
-	echo "Last compiled: `date`" > version.txt
-	echo " " >> version.txt
-	echo "Last commit:" >> version.txt
-	git log HEAD -1	 >> version.txt
-
-nbval:
-	py.test -v --nbval --sanitize-with static/nbval_sanitize.cfg *.ipynb
+	poetry -vvv install
 
 clean:
-	rm -rf *.aux *.out *.log combined_files hello.txt hello.py pylabimshow* myplot* myfile* data.mat test.txt vectools.py module1.py pylabhistogram.pdf
+	cd book; rm -rf \
+		*.aux *.out *.log pylabimshow* myplot* myfile* \
+		combined_files hello.txt hello.py data.mat test.txt vectools.py \
+		module1.py pylabhistogram.pdf eu-pop-2017.csv
 
+html:
+	poetry run jupyter-book build book --builder html
+
+pdf: book/*-*.ipynb
+	poetry run jupyter-book build book --builder pdflatex
+
+nbval:
+	make clean
+	poetry run pytest -v --nbval book/*.ipynb --sanitize-with book/static/nbval_sanitize.cfg
 
 # To use Docker container for building and testing
 
@@ -78,13 +48,6 @@ docker-pdf:
 
 docker-nbval:
 	docker run -v `pwd`:/io python4compscience make nbval
-
-docker-check-py35:
-	docker run -v `pwd`:/io python4compscience make check-py35
-
-docker-check-pandas:
-	docker run -v `pwd`:/io python4compscience make check-pandas
-
 
 # to update the title page:
 # - screenshot first page of pdf

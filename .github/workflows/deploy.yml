@@ -37,8 +37,7 @@ jobs:
       run: poetry install
 
     - name: Build the book
-      run: |
-        poetry run jupyter-book build book
+      run: poetry run jupyter-book build book
 
     # Deploy the book's HTML to gh-pages branch
     - name: GitHub Pages action

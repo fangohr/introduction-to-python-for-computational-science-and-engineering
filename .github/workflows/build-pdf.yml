@@ -38,12 +38,10 @@ jobs:
       run: pip install poetry==1.1.4
 
     - name: Install dependencies
-      run: |
-        poetry install
+      run: poetry install
 
     - name: Build the book
-      run: |
-        poetry run jupyter-book build book --builder pdflatex
+      run: poetry run jupyter-book build book --builder pdflatex
 
     - uses: marvinpinto/action-automatic-releases@10bdce64abdb4558a2ee6983192242be40d631d8
       with:

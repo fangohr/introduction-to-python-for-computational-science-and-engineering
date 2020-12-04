@@ -1,13 +1,13 @@
 name: deploy
 
 on:
-  # Trigger the workflow on push to main branch
   push:
     branches:
       - master
       - jupyterbook
 
-# This job installs dependencies, build the book, and pushes it to `gh-pages`
+#  This job installs dependencies, builds the book, and pushes the html contents
+#  to `gh-pages`
 jobs:
   build-and-deploy-book:
     runs-on: ${{ matrix.os }}
@@ -36,7 +36,6 @@ jobs:
     - name: Install dependencies
       run: poetry install
 
-    # Build the book
     - name: Build the book
       run: |
         poetry run jupyter-book build book

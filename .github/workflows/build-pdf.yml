@@ -7,6 +7,7 @@ on:
 
 #  This job installs dependencies, builds a PDF using the latex pdf builder, and
 #  then uploads the built book as a release artefact
+jobs:
   build-pdf:
     runs-on: ${{ matrix.os }}
     strategy:

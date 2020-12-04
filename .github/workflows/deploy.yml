@@ -18,17 +18,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    # - name: setup-python fix for local runs with nektos/act
-    #   run: |
-    #     #  Hack to get setup-python to work on act
-    #     #  https://github.com/nektos/act/issues/251#issuecomment-706412948
-    #     if [ $GITHUB_ACTOR == "nektos/act" ]; then
-    #       if [ ! -f "/etc/lsb-release" ] ; then
-    #         echo "DISTRIB_RELEASE=18.04" > /etc/lsb-release
-    #       fi
-    #     fi
-
-    # Install dependencies
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v1
       with:

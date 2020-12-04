@@ -31,7 +31,7 @@ jobs:
           ${{ runner.os }}-pip-${{ hashFiles('poetry.lock') }}
 
     - name: Install poetry
-      uses: abatilo/actions-poetry@v2.0.0
+      run: pip install poetry==1.1.4
 
     - name: Install dependencies
       run: poetry install

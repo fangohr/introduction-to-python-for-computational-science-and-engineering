@@ -1,6 +1,6 @@
 FROM python:3.7
 
-RUN apt-get update -y && apt-get install -y texlive-xetex
+RUN apt-get update -y && apt-get install -y texlive-xetex latexmk texlive-xetex fonts-freefont-otf
 RUN pip3 install --upgrade pip
 
 COPY poetry.lock pyproject.toml /opt/

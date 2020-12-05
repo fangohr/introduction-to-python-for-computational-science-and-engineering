@@ -2,14 +2,6 @@ all:
 	make html
 	make pdf
 
-
-docker-all:
-	make docker-build
-	make docker-html
-	make docker-pdf
-	make docker-nbval
-
-
 install:
 	poetry -vvv install
 
@@ -26,28 +18,31 @@ pdf: book/*-*.ipynb
 	poetry run jupyter-book build book --builder pdflatex
 
 nbval:
-	make clean
 	poetry run pytest -v --nbval book/*.ipynb --sanitize-with book/static/nbval_sanitize.cfg
 
-# To use Docker container for building and testing
 
-# build docker image locally, needs to be done first
+docker-all:
+	make docker-build
+	make docker-html
+	make docker-pdf
+	make docker-nbval
+
 docker-build:
-	docker build -t python4compscience -f tools/docker/Dockerfile .
+	docker build -t python4compscience .
 
 # Occasionally (after changing branch) we need to force rebuild:
 docker-build-nocache:
-	docker build -t python4compscience2 --no-cache -f tools/docker/Dockerfile .
+	docker build -t python4compscience2 --no-cache .
 
 # build pdf and html through container
 docker-html:
-	docker run -v `pwd`:/io python4compscience make notebooks-html
+	docker run -v "$(pwd):/io python4compscience make html
 
 docker-pdf:
-	docker run -v `pwd`:/io python4compscience make notebooks-pdf
+	docker run -v $(pwd):/io python4compscience make pdf
 
 docker-nbval:
-	docker run -v `pwd`:/io python4compscience make nbval
+	docker run -v $(pwd):/io python4compscience make nbval
 
 # to update the title page:
 # - screenshot first page of pdf

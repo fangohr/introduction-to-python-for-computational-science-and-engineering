@@ -23,7 +23,6 @@ nbval:
 
 
 docker-all:
-	make clean
 	make docker-build
 	make docker-html
 	make docker-pdf
@@ -38,13 +37,24 @@ docker-build-nocache:
 
 # build pdf and html through container
 docker-html:
-	docker run -v `pwd`:/io python4compscience make html
+	docker run -u $(id -u ${USER}):$(id -g ${USER}) \
+		-v `pwd`:/io python4compscience \
+		make html
 
 docker-pdf:
-	docker run -v `pwd`:/io python4compscience make pdf
+	docker run -u $(id -u ${USER}):$(id -g ${USER}) \
+		-v `pwd`:/io python4compscience \
+		make pdf
 
 docker-nbval:
-	docker run -v `pwd`:/io python4compscience make nbval
+	docker run -u $(id -u ${USER}):$(id -g ${USER}) \
+		-v `pwd`:/io python4compscience \
+		make nbval
+
+docker-clean:
+	docker run -u $(id -u ${USER}):$(id -g ${USER}) \
+		-v `pwd`:/io python4compscience \
+		make clean
 
 # to update the title page:
 # - screenshot first page of pdf

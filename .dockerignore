@@ -1,0 +1,14 @@
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv
+.venv
+.tox
+.coverage
+.coverage.*
+.cache
+*,cover
+*.log
+.git

@@ -3,7 +3,7 @@ name: build-pdf
 on:
   push:
     branches:
-      - jupyterbook
+      - master
 
 #  This job installs dependencies, builds a PDF using the latex pdf builder, and
 #  then uploads the built book as a release artefact

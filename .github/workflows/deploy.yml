@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - master
-      - jupyterbook
+      # - jupyterbook
 
 #  This job installs dependencies, builds the book, and pushes the html contents
 #  to `gh-pages`

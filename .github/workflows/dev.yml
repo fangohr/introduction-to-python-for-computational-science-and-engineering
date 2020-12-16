@@ -1,9 +1,8 @@
 name: Book
 
 on:
-  push:
-    branches:
-      - jupyterbook
+  pull_request:
+    branches: [ master ]
 
 jobs:
   docker-build-and-deploy:
@@ -41,7 +40,9 @@ jobs:
       run: make docker-html
 
     - name: Make Docker PDF
-      run: make docker-pdf
+      run: |
+        make docker-pdf
+        cp book/_build/pdf/book.pdf book/_build/html/book.pdf
 
     # Deploy the book's HTML to gh-pages branch
     - name: GitHub Pages action
@@ -49,3 +50,4 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: book/_build/html
+        destination_dir: staging

@@ -42,7 +42,7 @@ jobs:
     - name: Make Docker PDF
       run: |
         make docker-pdf
-        cp book/_build/pdf/book.pdf book/_build/html/book.pdf
+        cp book/_build/latex/book.pdf book/_build/html/book.pdf
 
     # Deploy the book's HTML to gh-pages branch
     - name: GitHub Pages action
@@ -56,4 +56,4 @@ jobs:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
         automatic_release_tag: "latest"
         title: "Development Build"
-        files: book/_build/pdf/book.pdf
+        files: book/_build/latex/book.pdf

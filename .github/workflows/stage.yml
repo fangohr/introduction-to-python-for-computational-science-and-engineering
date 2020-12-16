@@ -41,7 +41,7 @@ jobs:
     - name: Make Docker PDF
       run: |
         make docker-pdf
-        cp book/_build/pdf/book.pdf book/_build/html/book.pdf
+        cp book/_build/latex/book.pdf book/_build/html/book.pdf
 
     # Deploy the book's HTML to gh-pages branch
     - name: GitHub Pages action

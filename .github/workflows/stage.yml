@@ -1,4 +1,4 @@
-name: Book
+name: Book Staging
 
 on:
   pull_request:

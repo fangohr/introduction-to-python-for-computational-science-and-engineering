@@ -6,14 +6,6 @@ on:
       - jupyterbook
 
 jobs:
-  # local-registry:
-  #   runs-on: ubuntu-latest
-  #   services:
-  #     registry:
-  #       image: registry:2
-  #       ports:
-  #         - 5000:5000
-
   docker-build:
     runs-on: ubuntu-latest
     steps:
@@ -42,27 +34,12 @@ jobs:
         cache-to: type=local,dest=/tmp/.buildx-cache
         tags: python4compscience:latest
 
-  docker-stuff:
-    needs: docker-build
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-
-    - name: Cache Docker layers
-      uses: actions/cache@v2
-      with:
-        path: /tmp/.buildx-cache
-        key: ${{ runner.os }}-buildx-${{ hashFiles('poetry.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-buildx-${{ hashFiles('poetry.lock') }}
-
     - name: Make docker html
       run: make docker-html
 
     - name: Make docker pdf
       run: make docker-pdf
 
-    - uses: actions/checkout@v2
     # Deploy the book's HTML to gh-pages branch
     - name: GitHub Pages action
       uses: peaceiris/actions-gh-pages@bbdfb200618d235585ad98e965f4aafc39b4c501

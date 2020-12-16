@@ -35,26 +35,29 @@ docker-build:
 docker-build-nocache:
 	docker build -t python4compscience2 --no-cache .
 
+# Here we only bind the required directories and files into the docker container
+# at runtime to avoid potential conflicts with local files
+define DOCKER_RUN
+docker run -u $(id -u ${USER}):$(id -g ${USER}) \
+	-v $(CURDIR)/book:/io/book \
+	-v $(CURDIR)/Makefile:/io/Makefile \
+	-v $(CURDIR)/poetry.lock:/io/poetry.lock \
+	-v $(CURDIR)/pyproject.toml:/io/pyproject.toml \
+	python4compscience
+endef
+
 # build pdf and html through container
 docker-html:
-	docker run -u $(id -u ${USER}):$(id -g ${USER}) \
-		-v `pwd`:/io python4compscience \
-		make html
+	$(DOCKER_RUN) make html
 
 docker-pdf:
-	docker run -u $(id -u ${USER}):$(id -g ${USER}) \
-		-v `pwd`:/io python4compscience \
-		make pdf
+	$(DOCKER_RUN) make pdf
 
 docker-nbval:
-	docker run -u $(id -u ${USER}):$(id -g ${USER}) \
-		-v `pwd`:/io python4compscience \
-		make nbval
+	$(DOCKER_RUN) make nbval
 
 docker-clean:
-	docker run -u $(id -u ${USER}):$(id -g ${USER}) \
-		-v `pwd`:/io python4compscience \
-		make clean
+	$(DOCKER_RUN) make clean
 
 # to update the title page:
 # - screenshot first page of pdf

@@ -12,3 +12,4 @@ venv
 *,cover
 *.log
 .git
+.github

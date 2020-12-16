@@ -16,7 +16,6 @@ sympy = "^1.6.2"
 jupyter-book = "^0.8.3"
 pyppeteer = "^0.2.2"
 jupytext = "^1.6.0"
-dephell = "^0.8.3"
 nbval = "^0.9.6"
 
 [build-system]

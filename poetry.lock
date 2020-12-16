@@ -1320,16 +1320,16 @@ test = ["pytest"]
 
 [[package]]
 name = "sphinxcontrib-bibtex"
-version = "2.0.0"
-description = "Sphinx extensions for BibTeX style citations."
+version = "1.0.0"
+description = "A Sphinx extension for BibTeX style citations."
 category = "dev"
 optional = false
-python-versions = ">=3.6"
+python-versions = "*"
 
 [package.dependencies]
 oset = ">=0.1.3"
 pybtex = ">=0.20"
-pybtex-docutils = ">=0.2.2"
+pybtex-docutils = ">=0.2.0"
 Sphinx = ">=2.0"
 
 [[package]]
@@ -1560,7 +1560,7 @@ testing = ["pytest (>=3.5,!=3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.6.1"
-content-hash = "280b96d1814b6eeddbb73f96ff86f2e1ec0729f775d56bd5ed9060d5d97ca6eb"
+content-hash = "ac9b780f04f843678f351b0cda194d9ccc18ca312873bc8f5922983bc1557e27"
 
 [metadata.files]
 alabaster = [
@@ -2290,8 +2290,8 @@ sphinxcontrib-applehelp = [
     {file = "sphinxcontrib_applehelp-1.0.2-py2.py3-none-any.whl", hash = "sha256:806111e5e962be97c29ec4c1e7fe277bfd19e9652fb1a4392105b43e01af885a"},
 ]
 sphinxcontrib-bibtex = [
-    {file = "sphinxcontrib-bibtex-2.0.0.tar.gz", hash = "sha256:98e18eb0b088d3f556199f3fbb91d3d48ebb7596fe86b6c37cc4c4dc5419b7a1"},
-    {file = "sphinxcontrib_bibtex-2.0.0-py3-none-any.whl", hash = "sha256:2e1d36fc2a0820dff342c21c44125a142ca1835a54a3b4a92bf09aeabbd7eb5f"},
+    {file = "sphinxcontrib-bibtex-1.0.0.tar.gz", hash = "sha256:629612b001f86784669d65e662377a482052decfd9a0a17c46860878eef7b9e0"},
+    {file = "sphinxcontrib_bibtex-1.0.0-py3-none-any.whl", hash = "sha256:bebc2cba91e838f808c49dbf5735812525a11221a9b134fa4cc366990f85c864"},
 ]
 sphinxcontrib-devhelp = [
     {file = "sphinxcontrib-devhelp-1.0.2.tar.gz", hash = "sha256:ff7f1afa7b9642e7060379360a67e9c41e8f3121f2ce9164266f61b9f4b338e4"},

@@ -18,7 +18,8 @@ jobs:
       with:
         path: /tmp/.buildx-cache
         key: buildx-${{ hashFiles('poetry.lock') }}
-        restore-keys: buildx-${{ hashFiles('poetry.lock') }}
+        restore-keys: |
+          buildx-${{ hashFiles('poetry.lock') }}
 
     #  This build and push step does the same thing as `make docker-build`, but
     #  makes it easier to store and load caches, which is why we use it instead

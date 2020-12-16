@@ -45,6 +45,8 @@ jobs:
   docker-stuff:
     needs: docker-build
     runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
 
     - name: Make docker html
       run: make docker-html

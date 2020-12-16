@@ -24,15 +24,18 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-buildx-${{ hashFiles('poetry.lock') }}
 
-    - name: Build and push to local registry
-      uses: docker/build-push-action@v2
-      with:
-        context: ./
-        file: ./Dockerfile
-        push: false
-        cache-from: type=local,src=/tmp/.buildx-cache
-        cache-to: type=local,dest=/tmp/.buildx-cache
-        tags: python4compscience
+    # - name: Build and push to local registry
+    #   uses: docker/build-push-action@v2
+    #   with:
+    #     context: ./
+    #     file: ./Dockerfile
+    #     push: false
+    #     cache-from: type=local,src=/tmp/.buildx-cache
+    #     cache-to: type=local,dest=/tmp/.buildx-cache
+    #     tags: python4compscience
+
+    - name: Make docker build
+      run: make docker-build
 
     - name: debug
       run: docker images

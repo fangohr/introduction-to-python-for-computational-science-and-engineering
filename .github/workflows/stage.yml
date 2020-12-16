@@ -5,7 +5,7 @@ on:
     branches: [ master ]
 
 jobs:
-  docker-build-and-deploy:
+  docker-build-and-stage:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2

@@ -772,7 +772,7 @@ NAME
     math
 
 MODULE REFERENCE
-    https://docs.python.org/3.8/library/math
+    https://docs.python.org/3.7/library/math
     
     The following documentation is automatically generated from the Python
     source files.  It may be incomplete, incorrect or include features that
@@ -813,19 +813,6 @@ FUNCTIONS
         
         This is the smallest integer &gt;= x.
     
-    comb(n, k, /)
-        Number of ways to choose k items from n items without repetition and without order.
-        
-        Evaluates to n! / (k! * (n - k)!) when k &lt;= n and evaluates
-        to zero when k &gt; n.
-        
-        Also called the binomial coefficient because it is equivalent
-        to the coefficient of k-th term in polynomial expansion of the
-        expression (1 + x)**n.
-        
-        Raises TypeError if either of the arguments are not integers.
-        Raises ValueError if either of the arguments are negative.
-    
     copysign(x, y, /)
         Return a float with the magnitude (absolute value) of x but the sign of y.
         
@@ -840,15 +827,6 @@ FUNCTIONS
     
     degrees(x, /)
         Convert angle x from radians to degrees.
-    
-    dist(p, q, /)
-        Return the Euclidean distance between two points p and q.
-        
-        The points should be specified as sequences (or iterables) of
-        coordinates.  Both inputs must have the same dimension.
-        
-        Roughly equivalent to:
-            sqrt(sum((px - qx) ** 2.0 for px, qx in zip(p, q)))
     
     erf(x, /)
         Error function at x.
@@ -899,21 +877,8 @@ FUNCTIONS
     gcd(x, y, /)
         greatest common divisor of x and y
     
-    hypot(...)
-        hypot(*coordinates) -&gt; value
-        
-        Multidimensional Euclidean distance from the origin to a point.
-        
-        Roughly equivalent to:
-            sqrt(sum(x**2 for x in coordinates))
-        
-        For a two dimensional point (x, y), gives the hypotenuse
-        using the Pythagorean theorem:  sqrt(x*x + y*y).
-        
-        For example, the hypotenuse of a 3/4/5 right triangle is:
-        
-            &gt;&gt;&gt; hypot(3.0, 4.0)
-            5.0
+    hypot(x, y, /)
+        Return the Euclidean distance, sqrt(x*x + y*y).
     
     isclose(a, b, *, rel_tol=1e-09, abs_tol=0.0)
         Determine whether two floating point numbers are close in value.
@@ -942,9 +907,6 @@ FUNCTIONS
     
     isnan(x, /)
         Return True if x is a NaN (not a number), and False otherwise.
-    
-    isqrt(n, /)
-        Return the integer part of the square root of the input.
     
     ldexp(x, i, /)
         Return x * (2**i).
@@ -976,29 +938,8 @@ FUNCTIONS
         
         Both results carry the sign of x and are floats.
     
-    perm(n, k=None, /)
-        Number of ways to choose k items from n items without repetition and with order.
-        
-        Evaluates to n! / (n - k)! when k &lt;= n and evaluates
-        to zero when k &gt; n.
-        
-        If k is not specified or is None, then k defaults to n
-        and the function returns n!.
-        
-        Raises TypeError if either of the arguments are not integers.
-        Raises ValueError if either of the arguments are negative.
-    
     pow(x, y, /)
         Return x**y (x to the power of y).
-    
-    prod(iterable, /, *, start=1)
-        Calculate the product of all the elements in the input iterable.
-        
-        The default start value for the product is 1.
-        
-        When the iterable is empty, return the start value.  This function is
-        intended specifically for use with numeric values and may reject
-        non-numeric types.
     
     radians(x, /)
         Convert angle x from degrees to radians.
@@ -1038,7 +979,7 @@ DATA
     tau = 6.283185307179586
 
 FILE
-    /opt/hostedtoolcache/Python/3.8.6/x64/lib/python3.8/lib-dynload/math.cpython-38-x86_64-linux-gnu.so
+    /usr/local/lib/python3.7/lib-dynload/math.cpython-37m-x86_64-linux-gnu.so
 </pre></div>
 </div>
 </div>

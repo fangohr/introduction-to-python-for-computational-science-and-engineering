@@ -48,6 +48,14 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: Cache Docker layers
+      uses: actions/cache@v2
+      with:
+        path: /tmp/.buildx-cache
+        key: ${{ runner.os }}-buildx-${{ hashFiles('poetry.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-buildx-${{ hashFiles('poetry.lock') }}
+
     - name: Make docker html
       run: make docker-html
 

@@ -32,7 +32,10 @@ jobs:
         push: false
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache
-        tags: python4compscience:latest
+        tags: python4compscience
+
+    - name: debug
+      run: docker images
 
     - name: Make docker html
       run: make docker-html

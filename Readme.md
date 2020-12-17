@@ -129,6 +129,6 @@ facility (Germany)](https://xfel.eu).
 ----
 
 Historical note: CI was done on [Circle
-CI](https://circleci.com/gh/fangohr/introduction-to-python-for-computational-science-and-engineering)
+CI](https://app.circleci.com/pipelines/github/fangohr/introduction-to-python-for-computational-science-and-engineering)
 until 23 August 2018, then switched to [Travis
 CI](https://travis-ci.org/fangohr/introduction-to-python-for-computational-science-and-engineering).

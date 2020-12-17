@@ -1,7 +1,7 @@
 Python for Computational Science and Engineering
 ================================================
 
-The content of [this book](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/blob/binder/Readme.md) is distributed into chapters, using one Jupyter Notebook for each chapter.
+The content of [this book](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/blob/master/Readme.md) is distributed into chapters, using one Jupyter Notebook for each chapter.
 
 If you have not used the Jupyter Notebook before, please read the section "First steps with Jupyter Notebook" below before you proceed.
 
@@ -29,8 +29,10 @@ If you use this text book interactively on the mybinder service, then you have b
 
 *Comments? Questions?*
 
-For feedback, corrections, and questions please refer to the [home page](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/blob/binder/Readme.md) of the book.
+For feedback, corrections, and questions please refer to the [home page](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/blob/master/Readme.md) of the book.
 
 Enjoy!
 
+<!-- markdown-link-check-disable -->
 ![Logo, created with MayaVi](static/images/mayavi/mayavi-samp.png "3d magnetisation vector field")
+<!-- markdown-link-check-enable -->

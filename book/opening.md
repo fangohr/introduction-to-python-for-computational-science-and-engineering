@@ -29,7 +29,7 @@ If you use this text book interactively on the mybinder service, then you have b
 
 *Comments? Questions?*
 
-For feedback, corrections, and questions please refer to the [home page](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/blob/binder/Readme.md) of the book.
+For feedback, corrections, and questions please refer to the [home page](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/blob/master/Readme.md) of the book.
 
 Enjoy!
 

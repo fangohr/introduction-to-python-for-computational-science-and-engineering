@@ -1,8 +1,11 @@
 - Check figures at end of chapter 15 (MayaVi, vpython) - they don't show up in html output
-- check saving notebooks without output (15, 16, 17) works fine with binder
+- check that saving notebooks without output (15, 16, 17) works fine with binder
 - make binder work
 - move footnotes from end of text into the right places
 - in output from pdflatex, one cannot see which cells are input cells and which are output cells.
+  - similar in html
+  - maybe this works: output is printed in black, input is generally coloured?
+    - Update text where it explains input and output cells (search for "In")
 - test CI locally
 
 
@@ -11,5 +14,3 @@
   - only run this when we merge to master
     - create preview in https://fangohr.github.io/introduction-to-python-for-computational-science-and-engineering/dev or so for other branches
 
-- tidy up Makefiles
-  - allow execution in docker container locally as used to be? 

@@ -51,7 +51,7 @@ jobs:
       uses: ruzickap/action-my-broken-link-checker@4a8f10a7cee94ca3db91a09542c9a84b1a25320c
       with:
         url: https://${{ github.event.repository.owner.name }}.github.io/${{ github.event.repository.name }}
-        pages_path: ./book/_html/
+        pages_path: ./book/_build/html
         cmd_params: --buffer-size=8192 --max-connections=10 --color=always --skip-tls-verification --limit-redirections=5 --timeout=20  # muffet parameters
         run_timeout: 600  # maximum amount of time to run muffet (default is set to 300 seconds)
 

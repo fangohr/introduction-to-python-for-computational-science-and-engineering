@@ -60,7 +60,7 @@ jobs:
       uses: peaceiris/actions-gh-pages@bbdfb200618d235585ad98e965f4aafc39b4c501
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: book/_build/html
+        publish_dir: ./book/_build/html
 
     - uses: marvinpinto/action-automatic-releases@10bdce64abdb4558a2ee6983192242be40d631d8
       with:

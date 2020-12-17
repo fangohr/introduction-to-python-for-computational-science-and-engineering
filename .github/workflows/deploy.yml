@@ -39,6 +39,9 @@ jobs:
     - name: Make Docker HTML
       run: make docker-html
 
+    - name: Make Docker Linkcheck
+      run: make docker-linkcheck
+
     - name: Make Docker PDF
       run: |
         make docker-pdf

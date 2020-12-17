@@ -53,7 +53,7 @@ endef
 docker-html:
 	$(DOCKER_RUN) make html
 
-docker-html:
+docker-linkcheck:
 	$(DOCKER_RUN) make linkcheck
 
 docker-pdf:

@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "introduction-to-python-for-computational-science-and-engineering"
+name = "Introduction to Python for Computational Science and Engineering"
 version = "0.1.0"
 description = ""
 authors = ["Your Name <you@example.com>"]
@@ -13,7 +13,7 @@ pandas = "^1.1.4"
 sympy = "^1.6.2"
 
 [tool.poetry.dev-dependencies]
-jupyter-book = "^0.8.3"
+jupyter-book = {git = "https://github.com/executablebooks/jupyter-book", rev = "f2b846838c35529581d1619fc4086b1b6e70c0e8"}
 pyppeteer = "^0.2.2"
 jupytext = "^1.6.0"
 nbval = "^0.9.6"

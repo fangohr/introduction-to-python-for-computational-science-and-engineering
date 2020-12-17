@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; Introduction to Python for Computational Science and Engineering</title>
+    <title>18. Where to go from here? &#8212; Introduction to Python for Computational Science and Engineering</title>
     
   <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -92,6 +92,7 @@ commentsRunWhenDOMLoaded(addUtterances);
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="17. Pandas - Data Science with Python" href="17-pandas.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -108,7 +109,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="#">
+<a class="navbar-brand text-wrap" href="index.html">
   
   <img src="_static/logo.png" class="logo" alt="logo">
   
@@ -128,7 +129,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   </a>
  </li>
 </ul>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="01-introduction.html">
    1. Introduction
@@ -214,8 +215,8 @@ commentsRunWhenDOMLoaded(addUtterances);
    17. Pandas - Data Science with Python
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="18-next-steps.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    18. Where to go from here?
   </a>
  </li>
@@ -259,7 +260,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/index.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/18-next-steps.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -279,7 +280,7 @@ commentsRunWhenDOMLoaded(addUtterances);
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/issues/new?title=Issue%20on%20page%20%2Findex.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/issues/new?title=Issue%20on%20page%20%2F18-next-steps.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -300,7 +301,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/master?urlpath=tree/book/index.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/master?urlpath=tree/book/18-next-steps.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -321,7 +322,54 @@ commentsRunWhenDOMLoaded(addUtterances);
             <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            <ul class="simple nav section-nav flex-column">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#advanced-programming">
+   18.1. Advanced programming
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compiled-programming-language">
+   18.2. Compiled programming language
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#testing">
+   18.3. Testing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simulation-models">
+   18.4. Simulation models
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#software-engineering-for-research-codes">
+   18.5. Software engineering for research codes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-and-visualisation">
+   18.6. Data and visualisation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#version-control">
+   18.7. Version control
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parallel-execution">
+   18.8. Parallel execution
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#acknowledgements">
+     18.8.1. Acknowledgements
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
         </nav>
@@ -333,35 +381,65 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <p><em>Python for Computational Science and Engineering</em></p>
-<p>The content of <a class="reference external" href="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/blob/master/Readme.md">this book</a> is distributed into chapters, using one Jupyter Notebook for each chapter.</p>
-<p>If you have not used the Jupyter Notebook before, please read the section “First steps with Jupyter Notebook” below before you proceed.</p>
-<p>You can use the links below to jump directly to these notebooks to read the book, and to change all examples as you like.</p>
-<p><em>First steps with Jupyter Notebook</em></p>
-<ol class="simple">
-<li><p>Navigating the notebook:</p>
+  <div class="section" id="where-to-go-from-here">
+<h1><span class="section-number">18. </span>Where to go from here?<a class="headerlink" href="#where-to-go-from-here" title="Permalink to this headline">¶</a></h1>
+<p>Learning a programming language is the first step towards becoming a computationalists who advances science and engineering through computational modelling and simulation.</p>
+<p>We list some additional skills that can be very beneficial for day-to-day computational science work, but is of course not exhaustive.</p>
+<div class="section" id="advanced-programming">
+<h2><span class="section-number">18.1. </span>Advanced programming<a class="headerlink" href="#advanced-programming" title="Permalink to this headline">¶</a></h2>
+<p>This text has put emphasis on providing a robust foundation in terms of programming, covering control flow, data structures and elements from function and procedural programming. We have not touch Object Orientation in great detail, nor have we discussed some of Python’s more advanced features such as iterators, and decorators, for example.</p>
+</div>
+<div class="section" id="compiled-programming-language">
+<h2><span class="section-number">18.2. </span>Compiled programming language<a class="headerlink" href="#compiled-programming-language" title="Permalink to this headline">¶</a></h2>
+<p>When performance starts to be the highest priority, we may need to use compiled code, and likely embed this in a Python code to carry out the computational that are the performance bottle neck.</p>
+<p>Fortran, C and C++ are sensible choices here; maybe Julia in the near future.</p>
+<p>We also need to learn how to integrate the compiled code with Python using tools such as Cython, Boost, Ctypes and Swig.</p>
+</div>
+<div class="section" id="testing">
+<h2><span class="section-number">18.3. </span>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h2>
+<p>Good coding is supported by a range of unit and system tests that can be run routinely to check that the code works correctly. Tools such as doctest, nose and pytest are invaluable, and we should learn at least how to use pytest (or nose).</p>
+</div>
+<div class="section" id="simulation-models">
+<h2><span class="section-number">18.4. </span>Simulation models<a class="headerlink" href="#simulation-models" title="Permalink to this headline">¶</a></h2>
+<p>A number of standard simulation tools such as Monte Carlo, Molecular Dynamics, lattice based models, agents, finite difference and finite element models are commonly used to solve particular simulation challenges – it is useful to have at least a broad overview of these.</p>
+</div>
+<div class="section" id="software-engineering-for-research-codes">
+<h2><span class="section-number">18.5. </span>Software engineering for research codes<a class="headerlink" href="#software-engineering-for-research-codes" title="Permalink to this headline">¶</a></h2>
+<p>Research codes bring particular challenges: the requirements may change during the run time of the project, we need great flexibility yet reproducibility. A number of techniques are available to support effectively.</p>
+</div>
+<div class="section" id="data-and-visualisation">
+<h2><span class="section-number">18.6. </span>Data and visualisation<a class="headerlink" href="#data-and-visualisation" title="Permalink to this headline">¶</a></h2>
+<p>Dealing with large amounts of data, processing and visualising it can be a challenge. Fundamental knowledge of database design, 3d visualisation and modern data processing tools such as the Pandas Python package help with this.</p>
+</div>
+<div class="section" id="version-control">
+<h2><span class="section-number">18.7. </span>Version control<a class="headerlink" href="#version-control" title="Permalink to this headline">¶</a></h2>
+<p>Using a version control tool, such as git or mercurial, should be a standard approach and improves code writing effectiveness significantly, helps with working in teams, and - maybe most importantly - supports reproducibility of computational results.</p>
+</div>
+<div class="section" id="parallel-execution">
+<h2><span class="section-number">18.8. </span>Parallel execution<a class="headerlink" href="#parallel-execution" title="Permalink to this headline">¶</a></h2>
+<p>Parallel execution of code is a way to make it run orders of magnitude faster. This could be using MPI for inter-node communication or OpenMP for intra-node parallelisation or a hybrid mode bringing both together.</p>
+<p>The recent rise of GPU computing provides yet another avenue of parallelisation, and so do the many-core chips such as the Intel Phi.</p>
+<div class="section" id="acknowledgements">
+<h3><span class="section-number">18.8.1. </span>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">¶</a></h3>
+<p>Big thanks go to</p>
 <ul class="simple">
-<li><p>When you open a notebook, you will find that you can move a highlighted block (with a blue line at the left) with the cursor keys to move up and down. This block highlights a <em>cell</em>. (You can also use the mouse to select a cell.) This is called the <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Notebook%20Basics.html#Command-mode">Command mode</a>.</p></li>
+<li><p>Marc Molinari for carefully proof reading this manuscript around 2007.</p></li>
+<li><p>Neil O’Brien for contributing to the SymPy section.</p></li>
+<li><p>Jacek Generowicz for introducing me to Python in the last millennium, and for kindly sharing countless ideas from his Python course.</p></li>
+<li><p>EPSRC (GR/T09156/01 and EP/G03690X/1) and the European Union (OpenDreamKit Horizon 2020 European Research Infrastructures project, #676541) for support.</p></li>
+<li><p>Students and other readers who have provided feedback and pointed out typos and errors etc.</p></li>
+<li><p>Thomas Kluyver who helped to translate the Python 2 LaTeX based document into Python 3 Jupyter Notebooks and provided the machinery to create html and pdf versions. automatically (via his <a class="reference external" href="https://github.com/takluyver/bookbook">bookbook package</a>).</p></li>
+<li><p>Robert Rosca who helped to create html and pdf files after using <a class="reference external" href="https://jupyterbook.org">jupyterbook</a> was released (2020).</p></li>
 </ul>
-</li>
-<li><p>Executing code:</p>
-<ul class="simple">
-<li><p>If you want to execute a cell (for example one that contains some Python code), you can press <code class="docutils literal notranslate"><span class="pre">Shift+ENTER</span></code>. If the cell creates some output, it will be displayed below the cell. (You may not notice if it just updates output that was displayed before, in particular if the new output is the same as the old output.)</p></li>
-</ul>
-</li>
-<li><p>Editing code:</p>
-<ul class="simple">
-<li><p>If you want to <em>change</em> the code in the currently highlighted cell, you need to press <code class="docutils literal notranslate"><span class="pre">ENTER</span></code>. You have now entered the <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Notebook%20Basics.html#Edit-mode">Editing mode</a>, and the content of the cell can be edited. If you have completed your changes, and you want to execute them, use the <code class="docutils literal notranslate"><span class="pre">Shift+ENTER</span></code> short cut.</p></li>
-</ul>
-</li>
-</ol>
-<p>Note that you can also edit blocks of text (or go into edit mode for a text cell unintentionally). Just press <code class="docutils literal notranslate"><span class="pre">Shift+ENTER</span></code> to render the text again, and go back into command mode.</p>
-<p><em>Warning: Changes on mybinder are temporary</em></p>
-<p>If you use this text book interactively on the mybinder service, then you have been given a temporary resource in the cloud to execute the code examples. The changes you have made to the notebook <em>will be lost</em> when your session ends (which is when you close the window, or the patience of the service has expired). Thus, the interactive exploration of the notebooks is good to help learn Python, computing and data science, but you should not attempt to write any code in these notebooks that you want to re-use the next day or later.</p>
-<p><em>Comments? Questions?</em></p>
-<p>For feedback, corrections, and questions please refer to the <a class="reference external" href="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/blob/master/Readme.md">home page</a> of the book.</p>
-<p>Enjoy!</p>
-<p><img alt="Logo, created with MayaVi" src="_images/mayavi-samp.png" /></p>
+<p>[1] the vertical line is to show the division between the original components only; mathematically, the augmented matrix behaves like any other 2 × 3 matrix, and we code it in SymPy as we would any other.</p>
+<p>[2] from the <span><code class="docutils literal notranslate"><span class="pre">help(preview)</span></code></span> documentation: “Currently this depends on pexpect, which is not available for windows.”</p>
+<p>[3] The exact value for the upper limit is availabe in <code class="docutils literal notranslate"><span class="pre">sys.maxint</span></code>.</p>
+<p>[4] We add for completeness, that a C-program (or C++ of Fortran) that executes the same loop will be about 100 times faster than the python float loop, and thus about 100*200 = 20000 faster than the symbolic loop.</p>
+<p>[5] In this text, we usually import <code class="docutils literal notranslate"><span class="pre">numpy</span></code> under the name <code class="docutils literal notranslate"><span class="pre">N</span></code> like this: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">N</span></code>. If you don’t have <code class="docutils literal notranslate"><span class="pre">numpy</span></code> on your machine, you can substitute this line by <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">Numeric</span> <span class="pre">as</span> <span class="pre">N</span></code> or <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numarray</span> <span class="pre">as</span> <span class="pre">N</span></code>.</p>
+<p>[6] Historical note: this has changed from scipy version 0.7 to 0.8. Before 0.8, the return value was a float if a one-dimensional problem was to solve.</p>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -391,6 +469,7 @@ commentsRunWhenDOMLoaded(addUtterances);
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="17-pandas.html" title="previous page"><span class="section-number">17. </span>Pandas - Data Science with Python</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; Introduction to Python for Computational Science and Engineering</title>
+    <title>10. From Matlab to Python &#8212; Introduction to Python for Computational Science and Engineering</title>
     
   <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -92,6 +92,8 @@ commentsRunWhenDOMLoaded(addUtterances);
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="11. Python shells" href="11-python-shells.html" />
+    <link rel="prev" title="9. Common tasks" href="09-common-tasks.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -108,7 +110,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="#">
+<a class="navbar-brand text-wrap" href="index.html">
   
   <img src="_static/logo.png" class="logo" alt="logo">
   
@@ -128,7 +130,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   </a>
  </li>
 </ul>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="01-introduction.html">
    1. Introduction
@@ -174,8 +176,8 @@ commentsRunWhenDOMLoaded(addUtterances);
    9. Common tasks
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="10-matlab-to-python.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    10. From Matlab to Python
   </a>
  </li>
@@ -259,7 +261,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/index.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/10-matlab-to-python.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -279,7 +281,7 @@ commentsRunWhenDOMLoaded(addUtterances);
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/issues/new?title=Issue%20on%20page%20%2Findex.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/issues/new?title=Issue%20on%20page%20%2F10-matlab-to-python.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -300,7 +302,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/master?urlpath=tree/book/index.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/master?urlpath=tree/book/10-matlab-to-python.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -321,7 +323,34 @@ commentsRunWhenDOMLoaded(addUtterances);
             <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            <ul class="simple nav section-nav flex-column">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#important-commands">
+   10.1. Important commands
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-for-loop">
+     10.1.1. The for-loop
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-if-then-statement">
+     10.1.2. The if-then statement
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#indexing">
+     10.1.3. Indexing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matrices">
+     10.1.4. Matrices
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
         </nav>
@@ -333,35 +362,94 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <p><em>Python for Computational Science and Engineering</em></p>
-<p>The content of <a class="reference external" href="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/blob/master/Readme.md">this book</a> is distributed into chapters, using one Jupyter Notebook for each chapter.</p>
-<p>If you have not used the Jupyter Notebook before, please read the section “First steps with Jupyter Notebook” below before you proceed.</p>
-<p>You can use the links below to jump directly to these notebooks to read the book, and to change all examples as you like.</p>
-<p><em>First steps with Jupyter Notebook</em></p>
-<ol class="simple">
-<li><p>Navigating the notebook:</p>
-<ul class="simple">
-<li><p>When you open a notebook, you will find that you can move a highlighted block (with a blue line at the left) with the cursor keys to move up and down. This block highlights a <em>cell</em>. (You can also use the mouse to select a cell.) This is called the <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Notebook%20Basics.html#Command-mode">Command mode</a>.</p></li>
-</ul>
-</li>
-<li><p>Executing code:</p>
-<ul class="simple">
-<li><p>If you want to execute a cell (for example one that contains some Python code), you can press <code class="docutils literal notranslate"><span class="pre">Shift+ENTER</span></code>. If the cell creates some output, it will be displayed below the cell. (You may not notice if it just updates output that was displayed before, in particular if the new output is the same as the old output.)</p></li>
-</ul>
-</li>
-<li><p>Editing code:</p>
-<ul class="simple">
-<li><p>If you want to <em>change</em> the code in the currently highlighted cell, you need to press <code class="docutils literal notranslate"><span class="pre">ENTER</span></code>. You have now entered the <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Notebook%20Basics.html#Edit-mode">Editing mode</a>, and the content of the cell can be edited. If you have completed your changes, and you want to execute them, use the <code class="docutils literal notranslate"><span class="pre">Shift+ENTER</span></code> short cut.</p></li>
-</ul>
-</li>
-</ol>
-<p>Note that you can also edit blocks of text (or go into edit mode for a text cell unintentionally). Just press <code class="docutils literal notranslate"><span class="pre">Shift+ENTER</span></code> to render the text again, and go back into command mode.</p>
-<p><em>Warning: Changes on mybinder are temporary</em></p>
-<p>If you use this text book interactively on the mybinder service, then you have been given a temporary resource in the cloud to execute the code examples. The changes you have made to the notebook <em>will be lost</em> when your session ends (which is when you close the window, or the patience of the service has expired). Thus, the interactive exploration of the notebooks is good to help learn Python, computing and data science, but you should not attempt to write any code in these notebooks that you want to re-use the next day or later.</p>
-<p><em>Comments? Questions?</em></p>
-<p>For feedback, corrections, and questions please refer to the <a class="reference external" href="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/blob/master/Readme.md">home page</a> of the book.</p>
-<p>Enjoy!</p>
-<p><img alt="Logo, created with MayaVi" src="_images/mayavi-samp.png" /></p>
+  <div class="section" id="from-matlab-to-python">
+<h1><span class="section-number">10. </span>From Matlab to Python<a class="headerlink" href="#from-matlab-to-python" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="important-commands">
+<h2><span class="section-number">10.1. </span>Important commands<a class="headerlink" href="#important-commands" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-for-loop">
+<h3><span class="section-number">10.1.1. </span>The for-loop<a class="headerlink" href="#the-for-loop" title="Permalink to this headline">¶</a></h3>
+<p>Matlab:</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="mi">10</span>
+    <span class="nb">disp</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+<p>Matlab requires the <code class="docutils literal notranslate"><span class="pre">end</span></code> key-word at the end of the block belonging to the for-loop.</p>
+<p>Python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></div>
+</div>
+</div>
+</div>
+<p>Python requires a colon (“:”) at the of the <code class="docutils literal notranslate"><span class="pre">for</span></code>-line. (This is important and often forgotten when you have programmed in Matlab before.) Python requires the commands to be executed within the for-loop to be indented.</p>
+</div>
+<div class="section" id="the-if-then-statement">
+<h3><span class="section-number">10.1.2. </span>The if-then statement<a class="headerlink" href="#the-if-then-statement" title="Permalink to this headline">¶</a></h3>
+<p>Matlab:</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">a</span><span class="o">==</span><span class="mi">0</span>
+    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;a is zero&#39;</span><span class="p">)</span>
+<span class="k">elseif</span> <span class="n">a</span><span class="o">&lt;</span><span class="mi">0</span>
+    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;a is negative&#39;</span><span class="p">)</span>
+<span class="k">elseif</span> <span class="n">a</span><span class="o">==</span><span class="mi">42</span>
+    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;a is 42&#39;</span><span class="p">)</span>
+<span class="k">else</span>
+    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;a is positive&#39;</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+<p>Matlab requires the <code class="docutils literal notranslate"><span class="pre">end</span></code> key-word at the very end of the block belonging to the for-loop.</p>
+<p>Python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
+
+<span class="k">if</span> <span class="n">a</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a is zero&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">a</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a is negative&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">a</span><span class="o">==</span><span class="mi">42</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a is 42&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a is positive&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a is negative
+</pre></div>
+</div>
+</div>
+</div>
+<p>Python requires a colon (“:”) after every condition (i.e. at the of the lines starting with <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>. Python requires the commands to be executed within each part of the if-then-else statement to be indented.</p>
+</div>
+<div class="section" id="indexing">
+<h3><span class="section-number">10.1.3. </span>Indexing<a class="headerlink" href="#indexing" title="Permalink to this headline">¶</a></h3>
+<p>Matlab’s indexing of matrices and vectors starts a 1 (similar to Fortran), whereas Python’s indexing starts at 0 (similar to C).</p>
+</div>
+<div class="section" id="matrices">
+<h3><span class="section-number">10.1.4. </span>Matrices<a class="headerlink" href="#matrices" title="Permalink to this headline">¶</a></h3>
+<p>In Matlab, every object is a matrix. In Python, there is a specialised extension library called <code class="docutils literal notranslate"><span class="pre">numpy</span></code> (see Sec. [cha:numer-pyth-numpy]) which provides the <code class="docutils literal notranslate"><span class="pre">array</span></code> object which in turns provides the corresponding functionality. Similar to Matlab, the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> object is actually based on binary libraries and execution there very fast.</p>
+<p>There is a dedicated introduction to numpy for Matlab users available at <a class="reference external" href="https://numpy.org/doc/stable/user/numpy-for-matlab-users.html">https://numpy.org/doc/stable/user/numpy-for-matlab-users.html</a>.</p>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -391,6 +479,8 @@ commentsRunWhenDOMLoaded(addUtterances);
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="09-common-tasks.html" title="previous page"><span class="section-number">9. </span>Common tasks</a>
+    <a class='right-next' id="next-link" href="11-python-shells.html" title="next page"><span class="section-number">11. </span>Python shells</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

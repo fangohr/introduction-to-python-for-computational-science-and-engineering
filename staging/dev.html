@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; Introduction to Python for Computational Science and Engineering</title>
+    <title>Dev &#8212; Introduction to Python for Computational Science and Engineering</title>
     
   <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -108,7 +108,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="#">
+<a class="navbar-brand text-wrap" href="index.html">
   
   <img src="_static/logo.png" class="logo" alt="logo">
   
@@ -259,9 +259,9 @@ commentsRunWhenDOMLoaded(addUtterances);
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/index.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/dev.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -279,7 +279,7 @@ commentsRunWhenDOMLoaded(addUtterances);
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/issues/new?title=Issue%20on%20page%20%2Findex.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/issues/new?title=Issue%20on%20page%20%2Fdev.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -295,23 +295,6 @@ commentsRunWhenDOMLoaded(addUtterances);
 
         <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/master?urlpath=tree/book/index.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
     </div>
 
     <!-- Table of contents -->
@@ -321,7 +304,17 @@ commentsRunWhenDOMLoaded(addUtterances);
             <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            <ul class="simple nav section-nav flex-column">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#todo">
+   TODO
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#execution-status">
+   Execution Status
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -333,35 +326,144 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <p><em>Python for Computational Science and Engineering</em></p>
-<p>The content of <a class="reference external" href="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/blob/master/Readme.md">this book</a> is distributed into chapters, using one Jupyter Notebook for each chapter.</p>
-<p>If you have not used the Jupyter Notebook before, please read the section “First steps with Jupyter Notebook” below before you proceed.</p>
-<p>You can use the links below to jump directly to these notebooks to read the book, and to change all examples as you like.</p>
-<p><em>First steps with Jupyter Notebook</em></p>
-<ol class="simple">
-<li><p>Navigating the notebook:</p>
+  <div class="section" id="dev">
+<h1>Dev<a class="headerlink" href="#dev" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="todo">
+<h2>TODO<a class="headerlink" href="#todo" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>When you open a notebook, you will find that you can move a highlighted block (with a blue line at the left) with the cursor keys to move up and down. This block highlights a <em>cell</em>. (You can also use the mouse to select a cell.) This is called the <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Notebook%20Basics.html#Command-mode">Command mode</a>.</p></li>
+<li><p>[ ] Add f-string to section 5</p></li>
 </ul>
-</li>
-<li><p>Executing code:</p>
-<ul class="simple">
-<li><p>If you want to execute a cell (for example one that contains some Python code), you can press <code class="docutils literal notranslate"><span class="pre">Shift+ENTER</span></code>. If the cell creates some output, it will be displayed below the cell. (You may not notice if it just updates output that was displayed before, in particular if the new output is the same as the old output.)</p></li>
-</ul>
-</li>
-<li><p>Editing code:</p>
-<ul class="simple">
-<li><p>If you want to <em>change</em> the code in the currently highlighted cell, you need to press <code class="docutils literal notranslate"><span class="pre">ENTER</span></code>. You have now entered the <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Notebook%20Basics.html#Edit-mode">Editing mode</a>, and the content of the cell can be edited. If you have completed your changes, and you want to execute them, use the <code class="docutils literal notranslate"><span class="pre">Shift+ENTER</span></code> short cut.</p></li>
-</ul>
-</li>
-</ol>
-<p>Note that you can also edit blocks of text (or go into edit mode for a text cell unintentionally). Just press <code class="docutils literal notranslate"><span class="pre">Shift+ENTER</span></code> to render the text again, and go back into command mode.</p>
-<p><em>Warning: Changes on mybinder are temporary</em></p>
-<p>If you use this text book interactively on the mybinder service, then you have been given a temporary resource in the cloud to execute the code examples. The changes you have made to the notebook <em>will be lost</em> when your session ends (which is when you close the window, or the patience of the service has expired). Thus, the interactive exploration of the notebooks is good to help learn Python, computing and data science, but you should not attempt to write any code in these notebooks that you want to re-use the next day or later.</p>
-<p><em>Comments? Questions?</em></p>
-<p>For feedback, corrections, and questions please refer to the <a class="reference external" href="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/blob/master/Readme.md">home page</a> of the book.</p>
-<p>Enjoy!</p>
-<p><img alt="Logo, created with MayaVi" src="_images/mayavi-samp.png" /></p>
+</div>
+<div class="section" id="execution-status">
+<h2>Execution Status<a class="headerlink" href="#execution-status" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Document</p></th>
+<th class="head"><p>Modified</p></th>
+<th class="head"><p>Method</p></th>
+<th class="head"><p>Run Time (s)</p></th>
+<th class="head"><p>Status</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>01-introduction</p></td>
+<td><p>2020-12-17 20:32</p></td>
+<td><p>force</p></td>
+<td><p>1.67</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-odd"><td><p>02-powerful-calculator</p></td>
+<td><p>2020-12-17 20:32</p></td>
+<td><p>force</p></td>
+<td><p>1.33</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-even"><td><p>03-data-types-structures</p></td>
+<td><p>2020-12-17 20:32</p></td>
+<td><p>force</p></td>
+<td><p>1.95</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-odd"><td><p>04-introspection</p></td>
+<td><p>2020-12-17 20:32</p></td>
+<td><p>force</p></td>
+<td><p>1.11</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-even"><td><p>05-input-output</p></td>
+<td><p>2020-12-17 20:33</p></td>
+<td><p>force</p></td>
+<td><p>1.32</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-odd"><td><p>06-control-flow</p></td>
+<td><p>2020-12-17 20:33</p></td>
+<td><p>force</p></td>
+<td><p>1.72</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-even"><td><p>07-functions-modules</p></td>
+<td><p>2020-12-17 20:33</p></td>
+<td><p>force</p></td>
+<td><p>2.75</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-odd"><td><p>08-functional-tools</p></td>
+<td><p>2020-12-17 20:33</p></td>
+<td><p>force</p></td>
+<td><p>13.81</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-even"><td><p>09-common-tasks</p></td>
+<td><p>2020-12-17 20:33</p></td>
+<td><p>force</p></td>
+<td><p>1.23</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-odd"><td><p>10-matlab-to-python</p></td>
+<td><p>2020-12-17 20:33</p></td>
+<td><p>force</p></td>
+<td><p>0.87</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-even"><td><p>11-python-shells</p></td>
+<td><p>2020-12-17 20:33</p></td>
+<td><p>force</p></td>
+<td><p>0.86</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-odd"><td><p>12-symbolic-computation</p></td>
+<td><p>2020-12-17 20:33</p></td>
+<td><p>force</p></td>
+<td><p>14.79</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-even"><td><p>13-numeric-computation</p></td>
+<td><p>2020-12-17 20:33</p></td>
+<td><p>force</p></td>
+<td><p>2.52</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-odd"><td><p>14-numpy</p></td>
+<td><p>2020-12-17 20:33</p></td>
+<td><p>force</p></td>
+<td><p>1.54</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-even"><td><p>15-visualising-data</p></td>
+<td><p>2020-12-17 20:33</p></td>
+<td><p>force</p></td>
+<td><p>12.42</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-odd"><td><p>16-scipy</p></td>
+<td><p>2020-12-17 20:34</p></td>
+<td><p>force</p></td>
+<td><p>2.58</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-even"><td><p>17-pandas</p></td>
+<td><p>2020-12-17 20:34</p></td>
+<td><p>force</p></td>
+<td><p>16.39</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-odd"><td><p>18-next-steps</p></td>
+<td><p>2020-12-17 20:34</p></td>
+<td><p>force</p></td>
+<td><p>0.85</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-even"><td><p>index</p></td>
+<td><p>2020-12-17 20:34</p></td>
+<td><p>force</p></td>
+<td><p>0.88</p></td>
+<td><p>✅</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

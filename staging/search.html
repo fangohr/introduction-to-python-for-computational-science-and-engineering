@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; Introduction to Python for Computational Science and Engineering</title>
+    <title>Search &#8212; Introduction to Python for Computational Science and Engineering</title>
     
   <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -37,6 +37,7 @@
     
   <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
 
+    
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
@@ -90,11 +91,15 @@ commentsRunWhenDOMLoaded(addUtterances);
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/searchtools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <link rel="search" title="Search" href="#" />
+  <script src="searchindex.js" defer></script>
+  
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
+
 
 
 
@@ -108,7 +113,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="#">
+<a class="navbar-brand text-wrap" href="index.html">
   
   <img src="_static/logo.png" class="logo" alt="logo">
   
@@ -116,7 +121,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   <h1 class="site-logo" id="site-title">Introduction to Python for Computational Science and Engineering</h1>
   
 </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="#" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
@@ -251,23 +256,6 @@ commentsRunWhenDOMLoaded(addUtterances);
         </button>
         
         
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/index.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
         <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
@@ -279,7 +267,7 @@ commentsRunWhenDOMLoaded(addUtterances);
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/issues/new?title=Issue%20on%20page%20%2Findex.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/issues/new?title=Issue%20on%20page%20%2Fsearch.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -295,36 +283,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 
         <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/master?urlpath=tree/book/index.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
     </div>
 
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-        
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="simple nav section-nav flex-column">
-</ul>
-
-        </nav>
         
     </div>
 </div>
@@ -333,55 +295,27 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <p><em>Python for Computational Science and Engineering</em></p>
-<p>The content of <a class="reference external" href="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/blob/master/Readme.md">this book</a> is distributed into chapters, using one Jupyter Notebook for each chapter.</p>
-<p>If you have not used the Jupyter Notebook before, please read the section “First steps with Jupyter Notebook” below before you proceed.</p>
-<p>You can use the links below to jump directly to these notebooks to read the book, and to change all examples as you like.</p>
-<p><em>First steps with Jupyter Notebook</em></p>
-<ol class="simple">
-<li><p>Navigating the notebook:</p>
-<ul class="simple">
-<li><p>When you open a notebook, you will find that you can move a highlighted block (with a blue line at the left) with the cursor keys to move up and down. This block highlights a <em>cell</em>. (You can also use the mouse to select a cell.) This is called the <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Notebook%20Basics.html#Command-mode">Command mode</a>.</p></li>
-</ul>
-</li>
-<li><p>Executing code:</p>
-<ul class="simple">
-<li><p>If you want to execute a cell (for example one that contains some Python code), you can press <code class="docutils literal notranslate"><span class="pre">Shift+ENTER</span></code>. If the cell creates some output, it will be displayed below the cell. (You may not notice if it just updates output that was displayed before, in particular if the new output is the same as the old output.)</p></li>
-</ul>
-</li>
-<li><p>Editing code:</p>
-<ul class="simple">
-<li><p>If you want to <em>change</em> the code in the currently highlighted cell, you need to press <code class="docutils literal notranslate"><span class="pre">ENTER</span></code>. You have now entered the <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Notebook%20Basics.html#Edit-mode">Editing mode</a>, and the content of the cell can be edited. If you have completed your changes, and you want to execute them, use the <code class="docutils literal notranslate"><span class="pre">Shift+ENTER</span></code> short cut.</p></li>
-</ul>
-</li>
-</ol>
-<p>Note that you can also edit blocks of text (or go into edit mode for a text cell unintentionally). Just press <code class="docutils literal notranslate"><span class="pre">Shift+ENTER</span></code> to render the text again, and go back into command mode.</p>
-<p><em>Warning: Changes on mybinder are temporary</em></p>
-<p>If you use this text book interactively on the mybinder service, then you have been given a temporary resource in the cloud to execute the code examples. The changes you have made to the notebook <em>will be lost</em> when your session ends (which is when you close the window, or the patience of the service has expired). Thus, the interactive exploration of the notebooks is good to help learn Python, computing and data science, but you should not attempt to write any code in these notebooks that you want to re-use the next day or later.</p>
-<p><em>Comments? Questions?</em></p>
-<p>For feedback, corrections, and questions please refer to the <a class="reference external" href="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/blob/master/Readme.md">home page</a> of the book.</p>
-<p>Enjoy!</p>
-<p><img alt="Logo, created with MayaVi" src="_images/mayavi-samp.png" /></p>
-
-    <script type="text/x-thebe-config">
-    {
-        requestKernel: true,
-        binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
-        },
-        codeMirrorConfig: {
-            theme: "abcdef",
-            mode: "python"
-        },
-        kernelOptions: {
-            kernelName: "python3",
-            path: "./."
-        },
-        predefinedOutput: true
-    }
-    </script>
-    <script>kernelName = 'python3'</script>
+  <h1 id="search-documentation">Search</h1>
+  <div id="fallback" class="admonition warning">
+  <script>$('#fallback').hide();</script>
+  <p>
+    Please activate JavaScript to enable the search
+    functionality.
+  </p>
+  </div>
+  <p>
+    Searching for multiple words only shows matches that contain
+    all words.
+  </p>
+  <form action="" method="get">
+    <input type="text" name="q" aria-labelledby="search-documentation" value="" />
+    <input type="submit" value="search" />
+    <span id="search-progress" style="padding-left: 10px"></span>
+  </form>
+  
+  <div id="search-results">
+  
+  </div>
 
               </div>
               

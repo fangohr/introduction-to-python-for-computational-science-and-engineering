@@ -1,5 +1,8 @@
 [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/library-current-versions?filepath=index.ipynb)
+<!-- markdown-link-check-disable -->
+<!-- TODO: Enable this AFTER first merge and deploy to master! -->
 ![Book Deploy](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/workflows/Book%20Deploy/badge.svg)
+<!-- markdown-link-check-enable -->
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1411868.svg)](https://doi.org/10.5281/zenodo.1411868)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
@@ -20,7 +23,10 @@ science training.
 The book is available:
 
 - [As a web page](https://fangohr.github.io/introduction-to-python-for-computational-science-and-engineering/)
+<!-- markdown-link-check-disable -->
+<!-- TODO: Enable this AFTER first merge and deploy to master! -->
 - [As a PDF](https://fangohr.github.io/introduction-to-python-for-computational-science-and-engineering/book.pdf)
+<!-- markdown-link-check-enable -->
 - Interactively [as Jupyter Notebooks on MyBinder](https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/library-current-versions?filepath=book/index.ipynb) (or [use JupyterLab](https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/library-current-versions?urlpath=lab/tree/book/index.ipynb) instead of the traditional Notebook.)
 
 The book is based on Python 3.

@@ -44,6 +44,17 @@ jobs:
         make docker-pdf
         sudo cp book/_build/latex/book.pdf book/_build/html/book.pdf
 
+    - name: Check links - Markdown
+      uses: gaurav-nelson/github-action-markdown-link-check@v1
+
+    - name: Check links - Muffet
+      uses: ruzickap/action-my-broken-link-checker@v1
+      with:
+        url: https://${{ github.event.repository.name }}
+        pages_path: ./book/_html/
+        cmd_params: --buffer-size=8192 --max-connections=10 --color=always --skip-tls-verification --limit-redirections=5 --timeout=20  # muffet parameters
+        run_timeout: 600  # maximum amount of time to run muffet (default is set to 300 seconds)
+
     # Deploy the book's HTML to gh-pages branch
     - name: GitHub Pages action
       uses: peaceiris/actions-gh-pages@bbdfb200618d235585ad98e965f4aafc39b4c501

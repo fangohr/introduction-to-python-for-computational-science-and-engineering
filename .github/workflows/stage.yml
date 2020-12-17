@@ -48,7 +48,7 @@ jobs:
       uses: gaurav-nelson/github-action-markdown-link-check@v1
 
     - name: Check links - Muffet
-      uses: ruzickap/action-my-broken-link-checker@v1
+      uses: ruzickap/action-my-broken-link-checker@4a8f10a7cee94ca3db91a09542c9a84b1a25320c
       with:
         url: https://${{ github.event.repository.name }}
         pages_path: ./book/_html/

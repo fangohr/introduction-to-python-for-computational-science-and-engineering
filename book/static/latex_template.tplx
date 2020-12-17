@@ -50,8 +50,8 @@
 
 
 %Example:
-% \href{http://nmag.soton.ac.uk}{nmag}
-% \htmllink{nmag}{http://nmag.soton.ac.uk}
+% \href{https://nmag.soton.ac.uk}{nmag}
+% \htmllink{nmag}{https://nmag.soton.ac.uk}
 
 
 %Eiter use html

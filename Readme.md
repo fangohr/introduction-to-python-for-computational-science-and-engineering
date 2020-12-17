@@ -32,7 +32,7 @@ The book is available:
 The book is based on Python 3.
 
 (A Python 2.7 version is [available
-online](http://www.southampton.ac.uk/~fangohr/training/python/pdfs/Python2-for-Computational-Science-and-Engineering.pdf))
+online](https://www.southampton.ac.uk/~fangohr/training/python/pdfs/Python2-for-Computational-Science-and-Engineering.pdf))
 
 # Why use this book? (Feedback from user)
 
@@ -101,13 +101,13 @@ For BibTeX:
 
 # License
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img
+<a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/"><img
 alt="Creative Commons License" style="border-width:0"
 src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br /> This work
 is <a
 href="https://raw.githubusercontent.com/fangohr/introduction-to-python-for-computational-science-and-engineering/master/LICENSE.TXT">licensed</a>
 under a <a rel="license"
-href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons
+href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons
 Attribution-NonCommercial 4.0 International License</a>.
 
 The book can be downloaded, used and re-distributed for non-commercial purposes,
@@ -122,7 +122,7 @@ Hans Fangohr is a researcher and teacher (see
 [twitter](https://twitter.com/ProfCompMod)). His interests include effective
 software engineering for computational science and data science, researching
 computational modelling and data analysis methods, and education. He is a
-Professor at the [University of Southampton (UK)](http://www.southampton.ac.uk)
+Professor at the [University of Southampton (UK)](https://www.southampton.ac.uk)
 and Head of Data Analysis at the [European X-ray Free Electron Laser (EuXFEL)
 facility (Germany)](https://xfel.eu).
 

@@ -15,6 +15,9 @@ clean:
 html:
 	poetry run jupyter-book build book --builder html
 
+linkcheck:
+	poetry run jupyter-book build book --builder linkcheck
+
 pdf: book/*-*.ipynb
 	poetry run jupyter-book build book --builder pdflatex
 
@@ -25,6 +28,7 @@ nbval:
 docker-all:
 	make docker-build
 	make docker-html
+	make docker-linkcheck
 	make docker-pdf
 	make docker-nbval
 
@@ -46,9 +50,11 @@ docker run -u $(id -u ${USER}):$(id -g ${USER}) \
 	python4compscience
 endef
 
-# build pdf and html through container
 docker-html:
 	$(DOCKER_RUN) make html
+
+docker-html:
+	$(DOCKER_RUN) make linkcheck
 
 docker-pdf:
 	$(DOCKER_RUN) make pdf

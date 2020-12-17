@@ -34,3 +34,8 @@ html:
       label: "💬 utterances"
       theme: "github-light"
       crossorigin: "anonymous"
+
+sphinx:
+  config:
+    linkcheck_anchors: false
+    linkcheck_workers: 10

@@ -59,8 +59,8 @@ jobs:
         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY }}
 
     - uses: mshick/add-pr-comment@07f690343c25a94e24a8acb70d03c86b701ae322
-        with:
-          message: ${{ steps.netlify-deploy.outputs.NETLIFY_OUTPUT }}
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          repo-token-user-login: 'github-actions[bot]'
-          allow-repeats: true
+      with:
+        message: ${{ steps.netlify-deploy.outputs.NETLIFY_OUTPUT }}
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        repo-token-user-login: 'github-actions[bot]'
+        allow-repeats: true

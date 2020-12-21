@@ -50,10 +50,9 @@ jobs:
         make docker-pdf
         sudo cp book/_build/latex/book.pdf book/_build/html/book.pdf
 
-    # Deploy the book's HTML to gh-pages branch
-    - name: GitHub Pages action
-      uses: peaceiris/actions-gh-pages@bbdfb200618d235585ad98e965f4aafc39b4c501
+    - name: Publish Staging Site
+      uses: netlify/actions/cli@6c34c3fcafc69ac2e1d6dbf226560329c6dfc51b
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: book/_build/html
-        destination_dir: staging
+        args: deploy --dir=./book/_build/html
+      env:
+        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY }}

@@ -3,7 +3,7 @@ all:
 	make pdf
 
 install:
-	poetry -vvv install
+	poetry install -vvv 
 
 clean:
 	cd book; rm -rf \

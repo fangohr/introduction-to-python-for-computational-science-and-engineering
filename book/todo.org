@@ -2,10 +2,10 @@
 - [ ] check that saving notebooks without output (15, 16, 17) works fine with binder
 - [ ] check binder once merged
 - [ ] move footnotes from end of text into the right places
-- [ ] in output from pdflatex, one cannot see which cells are input cells and which are output cells.
+- [X] in output from pdflatex, one cannot see which cells are input cells and which are output cells.
   - similar in html
   - maybe this works: output is printed in black, input is generally coloured?
-    - [ ] Update text where it explains input and output cells (search for "In")
+    - [X] Update text where it explains input and output cells (search for "In")
 - test CI locally
 
 

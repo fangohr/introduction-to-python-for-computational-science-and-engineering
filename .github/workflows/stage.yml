@@ -50,23 +50,23 @@ jobs:
         make docker-pdf
         sudo cp book/_build/latex/book.pdf book/_build/html/book.pdf
 
-    - name: Publish
-      uses: netlify/actions/build@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NETLIFY_DIR: ./book/_build/html
-
-    - name: Publish Staging Site
-      id: netlify-deploy
-      uses: netlify/actions/cli@6c34c3fcafc69ac2e1d6dbf226560329c6dfc51b
-      with:
-        args: deploy --dir=./book/_build/html
-      env:
-        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY }}
-
-    - uses: mshick/add-pr-comment@07f690343c25a94e24a8acb70d03c86b701ae322
-      with:
-        message: ${{ steps.netlify-deploy.outputs.NETLIFY_OUTPUT }}
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        repo-token-user-login: 'github-actions[bot]'
-        allow-repeats: true
+#     - name: Publish
+#       uses: netlify/actions/build@master
+#       env:
+#         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#         NETLIFY_DIR: ./book/_build/html
+# 
+#     - name: Publish Staging Site
+#       id: netlify-deploy
+#       uses: netlify/actions/cli@6c34c3fcafc69ac2e1d6dbf226560329c6dfc51b
+#       with:
+#         args: deploy --dir=./book/_build/html
+#       env:
+#         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY }}
+# 
+#     - uses: mshick/add-pr-comment@07f690343c25a94e24a8acb70d03c86b701ae322
+#       with:
+#         message: ${{ steps.netlify-deploy.outputs.NETLIFY_OUTPUT }}
+#         repo-token: ${{ secrets.GITHUB_TOKEN }}
+#         repo-token-user-login: 'github-actions[bot]'
+#         allow-repeats: true

@@ -65,7 +65,7 @@ var addUtterances = () => {
     script.src = "https://utteranc.es/client.js";
     script.async = "async";
 
-    script.setAttribute("repo", "RobertRosca/introduction-to-python-for-computational-science-and-engineering");
+    script.setAttribute("repo", "fangohr/introduction-to-python-for-computational-science-and-engineering");
     script.setAttribute("issue-term", "pathname");
     script.setAttribute("theme", "github-light");
     script.setAttribute("label", "💬 utterances");
@@ -537,14 +537,14 @@ commentsRunWhenDOMLoaded(addUtterances);
 <h2><span class="section-number">3.2. </span>Numbers<a class="headerlink" href="#numbers" title="Permalink to this headline">¶</a></h2>
 <p><strong>Further information</strong></p>
 <ul class="simple">
-<li><p>Informal introduction to numbers. <a class="reference external" href="http://docs.python.org/tutorial/introduction.html#using-python-as-a-calculator">Python tutorial, section 3.1.1</a></p></li>
-<li><p>Python Library Reference: formal overview of numeric types, <a class="reference external" href="http://docs.python.org/library/stdtypes.html#numeric-types-int-float-long-complex">http://docs.python.org/library/stdtypes.html#numeric-types-int-float-long-complex</a></p></li>
-<li><p>Think Python, <a class="reference external" href="http://www.greenteapress.com/thinkpython/html/book003.html">Sec 2.1</a></p></li>
+<li><p>Informal introduction to numbers. <a class="reference external" href="https://docs.python.org/3/tutorial/introduction.html#using-python-as-a-calculator">Python tutorial, section 3.1.1</a></p></li>
+<li><p>Python Library Reference: formal overview of numeric types, <a class="reference external" href="https://docs.python.org/3.8/library/stdtypes.html#numeric-types-int-float-complex">https://docs.python.org/3.8/library/stdtypes.html#numeric-types-int-float-complex</a></p></li>
+<li><p>Think Python, <a class="reference external" href="https://www.greenteapress.com/thinkpython/html/book003.html">Sec 2.1</a></p></li>
 </ul>
 <p>The in-built numerical types are integers and floating point numbers (see <a class="reference external" href="#Floating-Point-numbers">floating point numbers</a>) and complex floating point numbers (<a class="reference external" href="#Complex-numbers">complex numbers</a>).</p>
 <div class="section" id="integers">
 <h3><span class="section-number">3.2.1. </span>Integers<a class="headerlink" href="#integers" title="Permalink to this headline">¶</a></h3>
-<p>We have seen the use of integer numbers already in <a class="reference internal" href="02-powerful-calculator.html"><span class="doc std std-doc">Chapter 2</span></a>. Be aware of integer division problems (<a class="reference external" href="02-powerful-calculator.ipynb#Integer-division">integer division</a>).</p>
+<p>We have seen the use of integer numbers already in <a class="reference internal" href="02-powerful-calculator.html"><span class="doc std std-doc">Chapter 2</span></a>. Be aware of integer division problems (02 A Powerful Calculator, Integer Division).</p>
 <p>If we need to convert string containing an integer number to an integer we can use <code class="docutils literal notranslate"><span class="pre">int()</span></code> function:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -609,7 +609,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 <p>In many other programming languages, such as C and FORTRAN, integers are a fixed size—most frequently 4 bytes, which allows <span class="math notranslate nohighlight">\(2^{32}\)</span> different values—but different types are available with different sizes. For numbers that fit into these limits, calculations can be faster, but you may need to check that the numbers don’t go beyond the limits. Calculating a number beyond the limits is called <em>integer overflow</em>, and may produce bizarre results.</p>
-<p>Even in Python, we need to be aware of this when we use numpy (see <a class="reference internal" href="14-numpy.html"><span class="doc std std-doc">Chapter 14</span></a>). Numpy uses integers with a fixed size, because it stores many of them together and needs to calculate with them efficiently. <a class="reference external" href="http://docs.scipy.org/doc/numpy/user/basics.types.html">Numpy data types</a> include a range of integer types named for their size, so e.g. <code class="docutils literal notranslate"><span class="pre">int16</span></code> is a 16-bit integer, with <span class="math notranslate nohighlight">\(2^{16}\)</span> possible values.</p>
+<p>Even in Python, we need to be aware of this when we use numpy (see <a class="reference internal" href="14-numpy.html"><span class="doc std std-doc">Chapter 14</span></a>). Numpy uses integers with a fixed size, because it stores many of them together and needs to calculate with them efficiently. <a class="reference external" href="https://numpy.org/doc/stable/user/basics.types.html">Numpy data types</a> include a range of integer types named for their size, so e.g. <code class="docutils literal notranslate"><span class="pre">int16</span></code> is a 16-bit integer, with <span class="math notranslate nohighlight">\(2^{16}\)</span> possible values.</p>
 <p>Integer types can also be <em>signed</em> or <em>unsigned</em>. Signed integers allow positive or negative values, unsigned integers only allow positive ones. For instance:</p>
 <ul class="simple">
 <li><p>uint16 (unsigned) ranges from 0 to <span class="math notranslate nohighlight">\(2^{16}-1\)</span></p></li>
@@ -787,7 +787,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <h3><span class="section-number">3.3.1. </span>Sequence type 1: String<a class="headerlink" href="#sequence-type-1-string" title="Permalink to this headline">¶</a></h3>
 <p><strong>Further information</strong></p>
 <ul class="simple">
-<li><p>Introduction to strings, <a class="reference external" href="http://docs.python.org/tutorial/introduction.html#strings">Python tutorial 3.1.2</a></p></li>
+<li><p>Introduction to strings, <a class="reference external" href="https://docs.python.org/3/tutorial/introduction.html#strings">Python tutorial 3.1.2</a></p></li>
 </ul>
 <p>A string is a (immutable) sequence of characters. A string can be defined using single quotes:</p>
 <div class="cell docutils container">
@@ -1005,7 +1005,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <h3><span class="section-number">3.3.2. </span>Sequence type 2: List<a class="headerlink" href="#sequence-type-2-list" title="Permalink to this headline">¶</a></h3>
 <p><strong>Further information</strong></p>
 <ul class="simple">
-<li><p>Introduction to Lists, <a class="reference external" href="http://docs.python.org/tutorial/introduction.html#lists">Python tutorial, section 3.1.4</a></p></li>
+<li><p>Introduction to Lists, <a class="reference external" href="https://docs.python.org/3/tutorial/introduction.html#lists">Python tutorial, section 3.1.4</a></p></li>
 </ul>
 <p>A list is a sequence of objects. The objects can be of any type, for example integers:</p>
 <div class="cell docutils container">
@@ -1426,7 +1426,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <h3><span class="section-number">3.3.4. </span>Indexing sequences<a class="headerlink" href="#indexing-sequences" title="Permalink to this headline">¶</a></h3>
 <p><strong>Further information</strong></p>
 <ul class="simple">
-<li><p>Introduction to strings and indexing in <a class="reference external" href="http://docs.python.org/tutorial/introduction.html#strings">Python tutorial, section 3.1.2</a>, the relevant section is starting after strings have been introduced.</p></li>
+<li><p>Introduction to strings and indexing in <a class="reference external" href="https://docs.python.org/3/tutorial/introduction.html#strings">Python tutorial, section 3.1.2</a>, the relevant section is starting after strings have been introduced.</p></li>
 </ul>
 <p>Individual objects in lists can be accessed by using the index of the object and square brackets (<code class="docutils literal notranslate"><span class="pre">[</span></code> and <code class="docutils literal notranslate"><span class="pre">]</span></code>):</p>
 <div class="cell docutils container">
@@ -1561,7 +1561,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <h3><span class="section-number">3.3.5. </span>Slicing sequences<a class="headerlink" href="#slicing-sequences" title="Permalink to this headline">¶</a></h3>
 <p><strong>Further information</strong></p>
 <ul class="simple">
-<li><p>Introduction to strings, indexing and slicing in <a class="reference external" href="http://docs.python.org/tutorial/introduction.html#strings">Python tutorial, section 3.1.2</a></p></li>
+<li><p>Introduction to strings, indexing and slicing in <a class="reference external" href="https://docs.python.org/3/tutorial/introduction.html#strings">Python tutorial, section 3.1.2</a></p></li>
 </ul>
 <p><em>Slicing</em> of sequences can be used to retrieve more than one element. For example:</p>
 <div class="cell docutils container">
@@ -1677,7 +1677,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 </div>
-<p>Note that <code class="docutils literal notranslate"><span class="pre">a[:]</span></code> will generate a <em>copy</em> of <code class="docutils literal notranslate"><span class="pre">a</span></code>. The use of indices in slicing is by some people experienced as counter intuitive. If you feel uncomfortable with slicing, have a look at this quotation from the <a class="reference external" href="http://docs.python.org/tutorial/introduction.html#strings">Python tutorial (section 3.1.2)</a>:</p>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">a[:]</span></code> will generate a <em>copy</em> of <code class="docutils literal notranslate"><span class="pre">a</span></code>. The use of indices in slicing is by some people experienced as counter intuitive. If you feel uncomfortable with slicing, have a look at this quotation from the <a class="reference external" href="https://docs.python.org/3/tutorial/introduction.html#strings">Python tutorial (section 3.1.2)</a>:</p>
 <blockquote>
 <div><p>The best way to remember how slices work is to think of the indices as pointing between characters, with the left edge of the first character numbered 0. Then the right edge of the last character of a string of 5 characters has index 5, for example:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span> +---+---+---+---+---+ 
@@ -2197,7 +2197,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139734088942368
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139642156741568
 </pre></div>
 </div>
 </div>
@@ -2210,7 +2210,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139734088942368
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139642156741568
 </pre></div>
 </div>
 </div>
@@ -2224,7 +2224,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139734089989248
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139642157278144
 </pre></div>
 </div>
 </div>
@@ -2315,7 +2315,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139734090003184
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139642157867568
 </pre></div>
 </div>
 </div>
@@ -2328,7 +2328,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139734227698752
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139642295538752
 </pre></div>
 </div>
 </div>
@@ -2372,7 +2372,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139734098572864
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139642157649664
 </pre></div>
 </div>
 </div>
@@ -2385,7 +2385,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139734098572864
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139642157649664
 </pre></div>
 </div>
 </div>
@@ -2499,7 +2499,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139734089383280
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139642157254608
 </pre></div>
 </div>
 </div>
@@ -2512,7 +2512,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139734098572864
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139642157649664
 </pre></div>
 </div>
 </div>

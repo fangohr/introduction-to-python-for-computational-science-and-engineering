@@ -65,7 +65,7 @@ var addUtterances = () => {
     script.src = "https://utteranc.es/client.js";
     script.async = "async";
 
-    script.setAttribute("repo", "RobertRosca/introduction-to-python-for-computational-science-and-engineering");
+    script.setAttribute("repo", "fangohr/introduction-to-python-for-computational-science-and-engineering");
     script.setAttribute("issue-term", "pathname");
     script.setAttribute("theme", "github-light");
     script.setAttribute("label", "💬 utterances");
@@ -407,8 +407,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 <div class="section" id="sympy">
 <h2><span class="section-number">12.1. </span>SymPy<a class="headerlink" href="#sympy" title="Permalink to this headline">¶</a></h2>
 <p>In this section, we introduce some basic functionality of the SymPy (SYMbolic Python) library. In contrast to numerical computation (involving numbers), in symbolic calculation we are processing and transforming generic variables.</p>
-<p>The SymPy home page is <a class="reference external" href="http://sympy.org/">http://sympy.org/</a>, and provides the full (and up-to-date) documentation for this library.</p>
-<p>Symbolic calculation is very slow compared to floating point operation (see for example <a class="reference external" href="13-numeric-computation.ipynb#Symbolic-calculation">symbolic calculation for decimals</a>), and thus generally not for direct simulation. However, it is a powerful tool to support the preparation of code and symbolic work. Occasionally, we use symbolic operations in simulations to work out the most efficient numerical code, before that is executed.</p>
+<p>The SymPy home page is <a class="reference external" href="https://www.sympy.org/">https://www.sympy.org/</a>, and provides the full (and up-to-date) documentation for this library.</p>
+<p>Symbolic calculation is very slow compared to floating point operation (see for example [symbolic calculation for decimals](13 Numeric Computation, Symbolic Calculation)), and thus generally not for direct simulation. However, it is a powerful tool to support the preparation of code and symbolic work. Occasionally, we use symbolic operations in simulations to work out the most efficient numerical code, before that is executed.</p>
 <div class="section" id="output">
 <h3><span class="section-number">12.1.1. </span>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h3>
 <p>Before we start using sympy, we’ll call <code class="docutils literal notranslate"><span class="pre">init_printing</span></code>. This tells sympy to display expressions in a nicer format.</p>
@@ -595,7 +595,7 @@ These commands were executed:
 &gt;&gt;&gt; k, m, n = symbols(&#39;kmn&#39;, integer=True)
 &gt;&gt;&gt; f, g, h = map(Function, &#39;fgh&#39;)
 
-Documentation can be found at http://sympy.org/
+Documentation can be found at https://www.sympy.org/
 
 In [1]: 
 </pre></div>
@@ -1376,7 +1376,7 @@ In [1]:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7febd02ad650&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f89d953a4d0&gt;
 </pre></div>
 </div>
 <img alt="_images/12-symbolic-computation_97_1.png" src="_images/12-symbolic-computation_97_1.png" />
@@ -1653,7 +1653,7 @@ and solve</p>
 </div>
 <p>Be aware that in its default mode, <code class="docutils literal notranslate"><span class="pre">latex()</span></code> outputs code that requires the <code class="docutils literal notranslate"><span class="pre">amsmath</span></code> package to be loaded via a <code class="docutils literal notranslate"><span class="pre">\backslashusepackage{amsmath}</span></code> command in the document preamble.</p>
 <p>SymPy also supports a “pretty print” (<code class="docutils literal notranslate"><span class="pre">pprint()</span></code>) output routine, which produces better-formatted text output than the default printing routine, as illustrated below. Note features such as the subscripts for array elements whose names are of the form <code class="docutils literal notranslate"><span class="pre">T_n</span></code>, the italicised constant <em>e</em>, vertically-centred dots for multiplication, and the nicely-formed matrix borders and fractions.</p>
-<img src="static/images/sympy.png" alt="Nicely-formatted output from pprint()." style="width:60.0%" />
+<img alt="Nicely-formatted output from pprint()." src="_images/sympy.png" />
 <p>Finally, SymPy offers <code class="docutils literal notranslate"><span class="pre">preview()</span></code>, which displays rendered output on screen (check <code class="docutils literal notranslate"><span class="pre">help(preview)</span></code> for details).</p>
 </div>
 <div class="section" id="automatic-generation-of-c-code">
@@ -1706,7 +1706,7 @@ double taylor_sine(double x) {
 </div>
 <div class="section" id="related-tools">
 <h2><span class="section-number">12.2. </span>Related tools<a class="headerlink" href="#related-tools" title="Permalink to this headline">¶</a></h2>
-<p>It is worth noting that the SAGE initiative <a class="reference external" href="http://www.sagemath.org/">http://www.sagemath.org/</a> is trying to “create a viable free open source alternative to Magma, Maple, Mathematica and Matlab.” and includes the SymPy library among many others. Its symbolic capabilities are more powerful than SymPy’s, and SAGE, but the SymPy features will already cover many of the needs arising in science and engineering. SAGE includes the computer algebra system Maxima, which is also available standalone from <a class="reference external" href="http://maxima.sourceforge.net/">http://maxima.sourceforge.net/</a>.</p>
+<p>It is worth noting that the SAGE initiative <a class="reference external" href="https://www.sagemath.org/">https://www.sagemath.org/</a> is trying to “create a viable free open source alternative to Magma, Maple, Mathematica and Matlab.” and includes the SymPy library among many others. Its symbolic capabilities are more powerful than SymPy’s, and SAGE, but the SymPy features will already cover many of the needs arising in science and engineering. SAGE includes the computer algebra system Maxima, which is also available standalone from <a class="reference external" href="https://doc.sagemath.org/html/en/reference/interfaces/sage/interfaces/maxima_abstract.html">https://doc.sagemath.org/html/en/reference/interfaces/sage/interfaces/maxima_abstract.html</a>.</p>
 </div>
 </div>
 

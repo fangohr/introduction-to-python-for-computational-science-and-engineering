@@ -65,7 +65,7 @@ var addUtterances = () => {
     script.src = "https://utteranc.es/client.js";
     script.async = "async";
 
-    script.setAttribute("repo", "RobertRosca/introduction-to-python-for-computational-science-and-engineering");
+    script.setAttribute("repo", "fangohr/introduction-to-python-for-computational-science-and-engineering");
     script.setAttribute("issue-term", "pathname");
     script.setAttribute("theme", "github-light");
     script.setAttribute("label", "💬 utterances");
@@ -366,38 +366,36 @@ commentsRunWhenDOMLoaded(addUtterances);
      1.2.3. Prototyping in Python
     </a>
    </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#literature">
-   1.3. Literature
-  </a>
-  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#literature">
+     1.2.4. Literature
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#recorded-video-lectures-on-python-for-beginners">
-     1.3.1. Recorded video lectures on Python for beginners
+     1.2.5. Recorded video lectures on Python for beginners
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#python-tutor-mailing-list">
-     1.3.2. Python tutor mailing list
+     1.2.6. Python tutor mailing list
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#python-version">
-   1.4. Python version
+   1.3. Python version
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#these-documents">
-   1.5. These documents
+   1.4. These documents
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-file-magic">
-     1.5.1. The
+     1.4.1. The
      <code class="docutils literal notranslate">
       <span class="pre">
        %%file
@@ -408,7 +406,7 @@ commentsRunWhenDOMLoaded(addUtterances);
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-to-execute-shell-commands">
-     1.5.2. The
+     1.4.2. The
      <code class="docutils literal notranslate">
       <span class="pre">
        !
@@ -419,7 +417,7 @@ commentsRunWhenDOMLoaded(addUtterances);
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-nbval-tags">
-     1.5.3. The
+     1.4.3. The
      <code class="docutils literal notranslate">
       <span class="pre">
        #NBVAL
@@ -432,7 +430,7 @@ commentsRunWhenDOMLoaded(addUtterances);
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#your-feedback">
-   1.6. Your feedback
+   1.5. Your feedback
   </a>
  </li>
 </ul>
@@ -472,7 +470,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>A large number of packages exist that provide computational modelling capabilities. If these satisfy the research or design needs, and any data processing and visualisation is appropriately supported through existing tools, one can carry out computational modelling studies without any deeper programming knowledge.</p>
 <p>In a research environment – both in academia and research on new products/ideas/… in industry – one often reaches a point where existing packages will not be able to perform a required simulation task, or where more can be learned from analysing existing data in news ways etc.</p>
 <p>At that point, programming skills are required. It is also generally useful to have a broad understanding of the building blocks of software and basic ideas of software engineering as we use more and more devices that are software-controlled.</p>
-<p>It is often forgotten that there is nothing the computer can do that we as humans cannot do. The computer can do it much faster, though, and also with making far fewer mistakes. There is thus no magic in computations a computer carries out: they could have been done by humans, and – in fact – were for many years (see for example Wikipedia entry on <a class="reference external" href="http://en.wikipedia.org/wiki/Human_computer">Human Computer</a>).</p>
+<p>It is often forgotten that there is nothing the computer can do that we as humans cannot do. The computer can do it much faster, though, and also with making far fewer mistakes. There is thus no magic in computations a computer carries out: they could have been done by humans, and – in fact – were for many years (see for example Wikipedia entry on <a class="reference external" href="https://en.wikipedia.org/wiki/Human_computer">Human Computer</a>).</p>
 <p>Understanding how to build a computer simulation comes roughly down to: (i) finding the model (often this means finding the right equations), (ii) knowing how to solve these equations numerically, (ii) to implement the methods to compute these solutions (this is the programming bit).</p>
 </div>
 </div>
@@ -530,36 +528,37 @@ commentsRunWhenDOMLoaded(addUtterances);
 <h3><span class="section-number">1.2.3. </span>Prototyping in Python<a class="headerlink" href="#prototyping-in-python" title="Permalink to this headline">¶</a></h3>
 <p>It turns out that – even if a particular code has to be written in, say, C++ – it is (often) more time efficient to prototype the code in Python, and once an appropriate design (and class structure) has been found, to translate the code to C++.</p>
 </div>
-</div>
 <div class="section" id="literature">
-<h2><span class="section-number">1.3. </span>Literature<a class="headerlink" href="#literature" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">1.2.4. </span>Literature<a class="headerlink" href="#literature" title="Permalink to this headline">¶</a></h3>
 <p>While this text starts with an introduction of (some aspects of) the basic Python programming language, you may find - depending on your prior experience - that you need to refer to secondary sources to fully understand some ideas.</p>
 <p>We repeatedly refer to the following documents:</p>
 <ul class="simple">
-<li><p>Allen Downey, <em>Think Python</em>. Available online in html and pdf at      <a class="reference external" href="http://www.greenteapress.com/thinkpython/thinkpython.html">http://www.greenteapress.com/thinkpython/thinkpython.html</a>, or from Amazon.</p></li>
-<li><p>The Python documentation <a class="reference external" href="http://www.python.org/doc/">http://www.python.org/doc/</a>, and:</p></li>
-<li><p>The Python tutorial (<a class="reference external" href="http://docs.python.org/tutorial/">http://docs.python.org/tutorial/</a>)</p></li>
+<li><p>Allen Downey, <em>Think Python</em>. Available online in html and pdf at <a class="reference external" href="https://www.greenteapress.com/thinkpython/thinkpython.html">https://www.greenteapress.com/thinkpython/thinkpython.html</a>, or from Amazon.</p></li>
+<li><p>The Python documentation <a class="reference external" href="https://www.python.org/doc/">https://www.python.org/doc/</a>, and:</p></li>
+<li><p>The Python tutorial (<a class="reference external" href="https://docs.python.org/3/tutorial/">https://docs.python.org/3/tutorial/</a>)</p></li>
 </ul>
 <p>You may also find the following links useful:</p>
 <ul class="simple">
-<li><p>The <span><code class="docutils literal notranslate"><span class="pre">numpy</span></code></span> home page (<a class="reference external" href="http://numpy.scipy.org/">http://numpy.scipy.org/</a>)</p></li>
-<li><p>The <span><code class="docutils literal notranslate"><span class="pre">scipy</span></code></span> home page (<a class="reference external" href="http://scipy.org/">http://scipy.org/</a>)</p></li>
-<li><p>The <span><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></span> home page (<a class="reference external" href="http://matplotlib.sourceforge.net/">http://matplotlib.sourceforge.net/</a>).</p></li>
-<li><p>The Python style guide (<a class="reference external" href="http://www.python.org/dev/peps/pep-0008/">http://www.python.org/dev/peps/pep-0008/</a></p></li>
+<li><p>The <span><code class="docutils literal notranslate"><span class="pre">numpy</span></code></span> home page (<a class="reference external" href="https://numpy.org/">https://numpy.org/</a>)</p></li>
+<li><p>The <span><code class="docutils literal notranslate"><span class="pre">scipy</span></code></span> home page (<a class="reference external" href="https://www.scipy.org/">https://www.scipy.org/</a>)</p></li>
+<li><p>The <span><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></span> home page (<a class="reference external" href="https://matplotlib.org/">https://matplotlib.org/</a>).</p></li>
+<li><p>The Python style guide (<a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">https://www.python.org/dev/peps/pep-0008/</a></p></li>
 </ul>
+</div>
 <div class="section" id="recorded-video-lectures-on-python-for-beginners">
-<h3><span class="section-number">1.3.1. </span>Recorded video lectures on Python for beginners<a class="headerlink" href="#recorded-video-lectures-on-python-for-beginners" title="Permalink to this headline">¶</a></h3>
-<p>Do you like to listen/follow lectures? There is a series of 24 lectures titled <em>Introduction to Computer Science and Programming</em> delivered by Eric Grimsom and John Guttag from the MIT available at <a class="reference external" href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-00-introduction-to-computer-science-and-programming-fall-2008/">http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-00-introduction-to-computer-science-and-programming-fall-2008/</a> This is aimed at students with little or no programming experience. It aims to provide students with an understanding of the role computation can play in solving problems. It also aims to help students, regardless of their major, to feel justifiably confident of their ability to write small programs that allow them to accomplish useful goals.</p>
+<h3><span class="section-number">1.2.5. </span>Recorded video lectures on Python for beginners<a class="headerlink" href="#recorded-video-lectures-on-python-for-beginners" title="Permalink to this headline">¶</a></h3>
+<p>Do you like to listen/follow lectures? There is a series of 24 lectures titled <em>Introduction to Computer Science and Programming</em> delivered by Eric Grimsom and John Guttag from the MIT available at <a class="reference external" href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-00-introduction-to-computer-science-and-programming-fall-2008/">https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-00-introduction-to-computer-science-and-programming-fall-2008/</a> This is aimed at students with little or no programming experience. It aims to provide students with an understanding of the role computation can play in solving problems. It also aims to help students, regardless of their major, to feel justifiably confident of their ability to write small programs that allow them to accomplish useful goals.</p>
+<p>An more recent <a class="reference external" href="https://www.youtube.com/playlist?list=PLi01XoE8jYohWFPpC17Z-wWhPOSuh8Er-">collection of topic specific (and shorter) tutorial videos</a> is available from <a class="reference external" href="https://www.youtube.com/c/Socratica">Socratica</a> .</p>
 </div>
 <div class="section" id="python-tutor-mailing-list">
-<h3><span class="section-number">1.3.2. </span>Python tutor mailing list<a class="headerlink" href="#python-tutor-mailing-list" title="Permalink to this headline">¶</a></h3>
-<p>There is also a Python tutor mailing list (<a class="reference external" href="http://mail.python.org/mailman/listinfo/tutor">http://mail.python.org/mailman/listinfo/tutor</a>) where beginners are welcome to ask questions regarding Python. Both using the archives and posting your own queries (or in fact helping others) may help with understanding the language. Use the normal mailing list etiquette (i.e. be polite, concise, etc). You may want to read <a class="reference external" href="http://www.catb.org/esr/faqs/smart-questions.html">http://www.catb.org/esr/faqs/smart-questions.html</a> for some guidance on how to ask questions on mailing lists.</p>
+<h3><span class="section-number">1.2.6. </span>Python tutor mailing list<a class="headerlink" href="#python-tutor-mailing-list" title="Permalink to this headline">¶</a></h3>
+<p>There is also a Python tutor mailing list (<a class="reference external" href="https://mail.python.org/mailman/listinfo/tutor">https://mail.python.org/mailman/listinfo/tutor</a>) where beginners are welcome to ask questions regarding Python. Both using the archives and posting your own queries (or in fact helping others) may help with understanding the language. Use the normal mailing list etiquette (i.e. be polite, concise, etc). You may want to read <a class="reference external" href="https://www.freebsd.org/doc/en/articles/mailing-list-faq/etiquette.html">https://www.freebsd.org/doc/en/articles/mailing-list-faq/etiquette.html</a> for some guidance on how to ask questions on mailing lists.</p>
 </div>
 </div>
 <div class="section" id="python-version">
-<h2><span class="section-number">1.4. </span>Python version<a class="headerlink" href="#python-version" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.3. </span>Python version<a class="headerlink" href="#python-version" title="Permalink to this headline">¶</a></h2>
 <p>There are two version of the Python language out there: Python 2.x and Python 3.x. They are (slightly) different — the changes in Python 3.x were introduced to address shortcomings in the design of the language that were identified since Python’s inception. A decision was made that some incompatibility should be accepted to achieve the higher goal of a better language for the future.</p>
-<p>For scientific computation, it is crucial to make use of numerical libraries such as <a class="reference external" href="http://numpy.scipy.org/">numpy</a>, <a class="reference external" href="http://www.scipy.org">scipy</a> and the plotting package <a class="reference external" href="http://matplotlib.sourceforge.net/">matplotlib</a>.</p>
+<p>For scientific computation, it is crucial to make use of numerical libraries such as <a class="reference external" href="https://numpy.org/">numpy</a>, <a class="reference external" href="https://www.scipy.org">scipy</a> and the plotting package <a class="reference external" href="https://matplotlib.org/">matplotlib</a>.</p>
 <p>All of these are now available for Python 3, and we will use Python 3.x in this book.</p>
 <p>However, there is a lot of code still in use that was written for Python 2, and it’s useful to be aware of the differences. The most prominent example is that in Python 2.x, the <code class="docutils literal notranslate"><span class="pre">print</span></code> command is special, whereas in Python 3 it is an ordinary function. For example, in Python 2.7, we can write:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="s2">&quot;Hello World&quot;</span>
@@ -582,10 +581,27 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>Fortunately, the function notation (i.e. with the parantheses) is also allowed in Python 2.7, so our examples should execute in Python 3.x and Python 2.7. (There are other differences.)</p>
 </div>
 <div class="section" id="these-documents">
-<h2><span class="section-number">1.5. </span>These documents<a class="headerlink" href="#these-documents" title="Permalink to this headline">¶</a></h2>
-<p>This material has been converted from Latex to a set of <a class="reference external" href="http://jupyter.org">Jupyter Notebooks</a>, making it possible to interact with the examples. You can run any code block with an <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[</span> <span class="pre">]:</span></code> prompt by clicking on it and pressing shift-enter, or by clicking the <i class="fa fa-step-forward"></i> button in the toolbar.</p>
+<h2><span class="section-number">1.4. </span>These documents<a class="headerlink" href="#these-documents" title="Permalink to this headline">¶</a></h2>
+<p>This material has been converted from Latex to a set of <a class="reference external" href="https://jupyter.org">Jupyter Notebooks</a>, making it possible to interact with the examples. You can run any code block with an <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[</span> <span class="pre">]:</span></code> prompt by clicking on it and pressing shift-enter, or by clicking the <i class="fa fa-step-forward"></i> button in the toolbar.</p>
+<p><em>Code blocks</em> can be recognised (in the html and pdf version of this book) by having coloured items (to emphasise the syntactic role). For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello
+Hello
+Hello
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <em>output</em> (here <code class="docutils literal notranslate"><span class="pre">Hello</span></code> repeated on three lines) that is produced by the code block, is shown below the code block and not coloured.</p>
 <div class="section" id="the-file-magic">
-<h3><span class="section-number">1.5.1. </span>The <code class="docutils literal notranslate"><span class="pre">%%file</span></code> magic<a class="headerlink" href="#the-file-magic" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.4.1. </span>The <code class="docutils literal notranslate"><span class="pre">%%file</span></code> magic<a class="headerlink" href="#the-file-magic" title="Permalink to this headline">¶</a></h3>
 <p>We use some features in the notebook that are worth being aware of at this point: a cell starting with the special command <code class="docutils literal notranslate"><span class="pre">%%file</span> <span class="pre">FILENAME</span></code> will create (or override) a file with name <code class="docutils literal notranslate"><span class="pre">FILENAME</span></code> that contains the content that is shown in the cell below.</p>
 <p>For example</p>
 <div class="cell docutils container">
@@ -617,7 +633,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 <div class="section" id="the-to-execute-shell-commands">
-<h3><span class="section-number">1.5.2. </span>The <code class="docutils literal notranslate"><span class="pre">!</span></code> to execute shell commands<a class="headerlink" href="#the-to-execute-shell-commands" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.4.2. </span>The <code class="docutils literal notranslate"><span class="pre">!</span></code> to execute shell commands<a class="headerlink" href="#the-to-execute-shell-commands" title="Permalink to this headline">¶</a></h3>
 <p>If we want to run a shell command, we can type it and preceed it by the <code class="docutils literal notranslate"><span class="pre">!</span></code> character. Here is an example: first we create a file that contains a Python hello world program, then we execute it:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -646,14 +662,14 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 <div class="section" id="the-nbval-tags">
-<h3><span class="section-number">1.5.3. </span>The <code class="docutils literal notranslate"><span class="pre">#NBVAL</span></code> tags<a class="headerlink" href="#the-nbval-tags" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.4.3. </span>The <code class="docutils literal notranslate"><span class="pre">#NBVAL</span></code> tags<a class="headerlink" href="#the-nbval-tags" title="Permalink to this headline">¶</a></h3>
 <p>In some cells, you will find tags like <code class="docutils literal notranslate"><span class="pre">#NBVAL_SKIP</span></code>, <code class="docutils literal notranslate"><span class="pre">#NBVAL_IGNORE_OUTPUT</span></code> and <code class="docutils literal notranslate"><span class="pre">#NBVAL_RAISES_EXCEPTION</span></code>. You can ignore these.</p>
-<p>(We use them to be able to <a class="reference external" href="https://circleci.com/gh/fangohr/introduction-to-python-for-computational-science-and-engineering">automatically execute all notebooks</a> to check that the output produced is the same as what is stored in the notebook. This is an advanced topic of testing, and you can read more about NBVAL at https://github.com/computationalmodelling/nbval).</p>
+<p>(We use them to be able to <a class="reference external" href="https://app.circleci.com/pipelines/github/fangohr/introduction-to-python-for-computational-science-and-engineering">automatically execute all notebooks</a> to check that the output produced is the same as what is stored in the notebook. This is an advanced topic of testing, and you can read more about NBVAL at https://github.com/computationalmodelling/nbval).</p>
 <p>See <a class="reference internal" href="11-python-shells.html"><span class="doc std std-doc">Chapter 11</span></a> for more information on Jupyter and other Python interfaces.</p>
 </div>
 </div>
 <div class="section" id="your-feedback">
-<h2><span class="section-number">1.6. </span>Your feedback<a class="headerlink" href="#your-feedback" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.5. </span>Your feedback<a class="headerlink" href="#your-feedback" title="Permalink to this headline">¶</a></h2>
 <p>is desired. If you find anything wrong in this text, or have suggestions how to change or extend it, please feel free to contact Hans at <code class="docutils literal notranslate"><span class="pre">hans.fangohr&#64;xfel.eu</span></code> .</p>
 <p>If you find a URL that is not working (or pointing to the wrong material), please let Hans know as well. As the content of the Internet is changing rapidly, it is difficult to keep up with these changes without feedback.</p>
 </div>

@@ -65,7 +65,7 @@ var addUtterances = () => {
     script.src = "https://utteranc.es/client.js";
     script.async = "async";
 
-    script.setAttribute("repo", "RobertRosca/introduction-to-python-for-computational-science-and-engineering");
+    script.setAttribute("repo", "fangohr/introduction-to-python-for-computational-science-and-engineering");
     script.setAttribute("issue-term", "pathname");
     script.setAttribute("theme", "github-light");
     script.setAttribute("label", "💬 utterances");
@@ -710,7 +710,7 @@ In last line of program -- bye
 <h2><span class="section-number">6.2. </span>If-then-else<a class="headerlink" href="#if-then-else" title="Permalink to this headline">¶</a></h2>
 <p><strong>Further information</strong></p>
 <ul class="simple">
-<li><p>Introduction to If-then in <a class="reference external" href="http://docs.python.org/tutorial/controlflow.html#if-statements">Python tutorial, section 4.1</a></p></li>
+<li><p>Introduction to If-then in <a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html#if-statements">Python tutorial, section 4.1</a></p></li>
 </ul>
 <p>The <span><code class="docutils literal notranslate"><span class="pre">if</span></code></span> statement allows conditional execution of code, for example:</p>
 <div class="cell docutils container">
@@ -768,7 +768,7 @@ In last line of program -- bye
 <h2><span class="section-number">6.3. </span>For loop<a class="headerlink" href="#for-loop" title="Permalink to this headline">¶</a></h2>
 <p><strong>Further information</strong></p>
 <ul class="simple">
-<li><p>Introduction to for-loops in <a class="reference external" href="http://docs.python.org/tutorial/controlflow.html#for-statements">Python tutorial, section 4.2</a></p></li>
+<li><p>Introduction to for-loops in <a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html#for-statements">Python tutorial, section 4.2</a></p></li>
 </ul>
 <p>The <span><code class="docutils literal notranslate"><span class="pre">for</span></code></span>-loop allows to iterate over a sequence (this could be a string or a list, for example). Here is an example:</p>
 <div class="cell docutils container">
@@ -786,7 +786,7 @@ mouse MOUSE
 </div>
 </div>
 </div>
-<p>Together with the <code class="docutils literal notranslate"><span class="pre">range()</span></code> command (<a class="reference external" href="03-data-types-structures.ipynb#The-range()-command">in chapter 3</a>), one can iterate over increasing integers:</p>
+<p>Together with the <code class="docutils literal notranslate"><span class="pre">range()</span></code> command (03 Data Types Structures, The Range Command), one can iterate over increasing integers:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
@@ -1014,7 +1014,7 @@ mouse MOUSE
 </div>
 </div>
 </div>
-<p>Starting with Python 2.5, you can use the with statement to simplify the writing of code for some predefined functions, in particular the <span><code class="docutils literal notranslate"><span class="pre">open</span></code></span> function to open files: see <a class="reference external" href="http://docs.python.org/tutorial/errors.html#predefined-clean-up-actions">http://docs.python.org/tutorial/errors.html#predefined-clean-up-actions</a>.</p>
+<p>Starting with Python 2.5, you can use the with statement to simplify the writing of code for some predefined functions, in particular the <span><code class="docutils literal notranslate"><span class="pre">open</span></code></span> function to open files: see <a class="reference external" href="https://docs.python.org/3/tutorial/errors.html#predefined-clean-up-actions">https://docs.python.org/3/tutorial/errors.html#predefined-clean-up-actions</a>.</p>
 <p>Example: We try to open a file that does not exist, and Python will raise an exception of type <span><code class="docutils literal notranslate"><span class="pre">IOError</span></code></span> which stands for Input Output Error:</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
@@ -1051,7 +1051,7 @@ mouse MOUSE
 </div>
 </div>
 </div>
-<p>There is a lot more to be said about exceptions and their use in larger programs. Start reading <a class="reference external" href="http://docs.python.org/tutorial/errors.html#errors-and-exceptions">Python Tutorial Chapter 8: Errors and Exceptions</a> if you are interested.</p>
+<p>There is a lot more to be said about exceptions and their use in larger programs. Start reading <a class="reference external" href="https://docs.python.org/3/tutorial/errors.html#errors-and-exceptions">Python Tutorial Chapter 8: Errors and Exceptions</a> if you are interested.</p>
 <div class="section" id="raising-exceptions">
 <h3><span class="section-number">6.6.1. </span>Raising Exceptions<a class="headerlink" href="#raising-exceptions" title="Permalink to this headline">¶</a></h3>
 <p>Raising exception is also referred to as ’throwing an exception’.</p>
@@ -1072,7 +1072,7 @@ mouse MOUSE
 <h3><span class="section-number">6.6.2. </span>Creating our own exceptions<a class="headerlink" href="#creating-our-own-exceptions" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>You can and should derive your own exceptions from the built-in Exception.</p></li>
-<li><p>To see what built-in exceptions exist, look in the module exceptions (try <span><code class="docutils literal notranslate"><span class="pre">help(’exceptions’)</span></code></span>), or go to <a class="reference external" href="http://docs.python.org/library/exceptions.html#bltin-exceptions">http://docs.python.org/library/exceptions.html#bltin-exceptions</a>.</p></li>
+<li><p>To see what built-in exceptions exist, look in the module exceptions (try <span><code class="docutils literal notranslate"><span class="pre">help(’exceptions’)</span></code></span>), or go to <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#bltin-exceptions">https://docs.python.org/3/library/exceptions.html#bltin-exceptions</a>.</p></li>
 </ul>
 </div>
 <div class="section" id="lbyl-vs-eafp">
@@ -1125,13 +1125,13 @@ mouse MOUSE
 <blockquote>
 <div><p>Easier to ask for forgiveness than permission. This common Python coding style assumes the existence of valid keys or attributes and catches exceptions if the assumption proves false. This clean and fast style is characterized by the presence of many try and except statements. The technique contrasts with the LBYL style common to many other languages such as C.</p>
 </div></blockquote>
-<p>Source: <a class="reference external" href="http://docs.python.org/glossary.html#term-eafp">http://docs.python.org/glossary.html#term-eafp</a></p>
+<p>Source: <a class="reference external" href="https://docs.python.org/3/glossary.html#term-eafp">https://docs.python.org/3/glossary.html#term-eafp</a></p>
 <p>The Python documentation says about LBYL:</p>
 <blockquote>
 <div><p>Look before you leap. This coding style explicitly tests for pre-conditions before making calls or lookups. This style contrasts with the EAFP approach and is characterized by the presence of many if statements.</p>
 <p>In a multi-threaded environment, the LBYL approach can risk introducing a race condition between “the looking” and “the leaping”. For example, the code, if key in mapping: return mapping[key] can fail if another thread removes key from mapping after the test, but before the lookup. This issue can be solved with locks or by using the EAFP approach.</p>
 </div></blockquote>
-<p>Source: <a class="reference external" href="http://docs.python.org/glossary.html#term-lbyl">http://docs.python.org/glossary.html#term-lbyl</a></p>
+<p>Source: <a class="reference external" href="https://docs.python.org/3/glossary.html#term-lbyl">https://docs.python.org/3/glossary.html#term-lbyl</a></p>
 <p>EAFP is the Pythonic way.</p>
 </div>
 </div>

@@ -65,7 +65,7 @@ var addUtterances = () => {
     script.src = "https://utteranc.es/client.js";
     script.async = "async";
 
-    script.setAttribute("repo", "RobertRosca/introduction-to-python-for-computational-science-and-engineering");
+    script.setAttribute("repo", "fangohr/introduction-to-python-for-computational-science-and-engineering");
     script.setAttribute("issue-term", "pathname");
     script.setAttribute("theme", "github-light");
     script.setAttribute("label", "💬 utterances");
@@ -362,13 +362,11 @@ commentsRunWhenDOMLoaded(addUtterances);
   <a class="reference internal nav-link" href="#parallel-execution">
    18.8. Parallel execution
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#acknowledgements">
-     18.8.1. Acknowledgements
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#acknowledgements">
+   18.9. Acknowledgements
+  </a>
  </li>
 </ul>
 
@@ -419,17 +417,18 @@ commentsRunWhenDOMLoaded(addUtterances);
 <h2><span class="section-number">18.8. </span>Parallel execution<a class="headerlink" href="#parallel-execution" title="Permalink to this headline">¶</a></h2>
 <p>Parallel execution of code is a way to make it run orders of magnitude faster. This could be using MPI for inter-node communication or OpenMP for intra-node parallelisation or a hybrid mode bringing both together.</p>
 <p>The recent rise of GPU computing provides yet another avenue of parallelisation, and so do the many-core chips such as the Intel Phi.</p>
+</div>
 <div class="section" id="acknowledgements">
-<h3><span class="section-number">18.8.1. </span>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">¶</a></h3>
+<h2><span class="section-number">18.9. </span>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">¶</a></h2>
 <p>Big thanks go to</p>
 <ul class="simple">
 <li><p>Marc Molinari for carefully proof reading this manuscript around 2007.</p></li>
 <li><p>Neil O’Brien for contributing to the SymPy section.</p></li>
-<li><p>Jacek Generowicz for introducing me to Python in the last millennium, and for kindly sharing countless ideas from his Python course.</p></li>
+<li><p>Jacek Generowicz for introducing me to Python in the last millennium, and for kindly sharing countless ideas from his excellent Python course.</p></li>
 <li><p>EPSRC (GR/T09156/01 and EP/G03690X/1) and the European Union (OpenDreamKit Horizon 2020 European Research Infrastructures project, #676541) for support.</p></li>
 <li><p>Students and other readers who have provided feedback and pointed out typos and errors etc.</p></li>
 <li><p>Thomas Kluyver who helped to translate the Python 2 LaTeX based document into Python 3 Jupyter Notebooks and provided the machinery to create html and pdf versions. automatically (via his <a class="reference external" href="https://github.com/takluyver/bookbook">bookbook package</a>).</p></li>
-<li><p>Robert Rosca who helped to create html and pdf files after using <a class="reference external" href="http://jupyterbook.org">jupyterbook</a> was released (2020).</p></li>
+<li><p>Robert Rosca who helped to create html and pdf files after using <a class="reference external" href="https://jupyterbook.org">jupyterbook</a> was released (2020).</p></li>
 </ul>
 <p>[1] the vertical line is to show the division between the original components only; mathematically, the augmented matrix behaves like any other 2 × 3 matrix, and we code it in SymPy as we would any other.</p>
 <p>[2] from the <span><code class="docutils literal notranslate"><span class="pre">help(preview)</span></code></span> documentation: “Currently this depends on pexpect, which is not available for windows.”</p>
@@ -437,7 +436,6 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>[4] We add for completeness, that a C-program (or C++ of Fortran) that executes the same loop will be about 100 times faster than the python float loop, and thus about 100*200 = 20000 faster than the symbolic loop.</p>
 <p>[5] In this text, we usually import <code class="docutils literal notranslate"><span class="pre">numpy</span></code> under the name <code class="docutils literal notranslate"><span class="pre">N</span></code> like this: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">N</span></code>. If you don’t have <code class="docutils literal notranslate"><span class="pre">numpy</span></code> on your machine, you can substitute this line by <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">Numeric</span> <span class="pre">as</span> <span class="pre">N</span></code> or <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numarray</span> <span class="pre">as</span> <span class="pre">N</span></code>.</p>
 <p>[6] Historical note: this has changed from scipy version 0.7 to 0.8. Before 0.8, the return value was a float if a one-dimensional problem was to solve.</p>
-</div>
 </div>
 </div>
 

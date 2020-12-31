@@ -65,7 +65,7 @@ var addUtterances = () => {
     script.src = "https://utteranc.es/client.js";
     script.async = "async";
 
-    script.setAttribute("repo", "RobertRosca/introduction-to-python-for-computational-science-and-engineering");
+    script.setAttribute("repo", "fangohr/introduction-to-python-for-computational-science-and-engineering");
     script.setAttribute("issue-term", "pathname");
     script.setAttribute("theme", "github-light");
     script.setAttribute("label", "💬 utterances");
@@ -456,7 +456,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>Part of the confusion about printed versus return values at the Python prompt comes from the Python prompt printing (a representation) of returned objects <em>if</em> the returned objects are not assigned. Generally, seeing the returned objects is exactly what we want (as we normally care about the returned object), just when learning Python this may cause mild confusion about functions returning values or printing values.</p>
 <p><strong>Further information</strong></p>
 <ul class="simple">
-<li><p>Think Python has a gentle introduction to functions (on which the previous paragraph is based) in <a class="reference external" href="http://www.greenteapress.com/thinkpython/html/book004.html">chapter 3 (Functions)</a> and <a class="reference external" href="http://www.greenteapress.com/thinkpython/html/book007.html">chapter 6 (Fruitful functions)</a>.</p></li>
+<li><p>Think Python has a gentle introduction to functions (on which the previous paragraph is based) in <a class="reference external" href="https://www.greenteapress.com/thinkpython/html/book004.html">chapter 3 (Functions)</a> and <a class="reference external" href="https://www.greenteapress.com/thinkpython/html/book007.html">chapter 6 (Fruitful functions)</a>.</p></li>
 </ul>
 </div>
 <div class="section" id="defining-functions">
@@ -473,7 +473,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="n">some_command</span>
 </pre></div>
 </div>
-<p>Allen Downey’s terminology (in his book <a class="reference external" href="http://www.greenteapress.com/thinkpython/html/index.html">Think Python</a>) of fruitful and fruitless functions distinguishes between functions that return a value, and those that do not return a value. The distinction refers to whether a function provides a return value (=fruitful) or whether the function does not explicitly return a value (=fruitless). If a function does not make use of the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement, we tend to say that the function returns nothing (whereas in reality in will always return the <code class="docutils literal notranslate"><span class="pre">None</span></code> object when it terminates – even if the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement is missing).</p>
+<p>Allen Downey’s terminology (in his book <a class="reference external" href="https://www.greenteapress.com/thinkpython/html/index.html">Think Python</a>) of fruitful and fruitless functions distinguishes between functions that return a value, and those that do not return a value. The distinction refers to whether a function provides a return value (=fruitful) or whether the function does not explicitly return a value (=fruitless). If a function does not make use of the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement, we tend to say that the function returns nothing (whereas in reality in will always return the <code class="docutils literal notranslate"><span class="pre">None</span></code> object when it terminates – even if the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement is missing).</p>
 <p>For example, the function <code class="docutils literal notranslate"><span class="pre">greeting</span></code> will print “Hello World” when called (and is fruitless as it does not return a value).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -620,7 +620,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <p><strong>Further reading</strong></p>
 <ul class="simple">
-<li><p><a class="reference external" href="http://docs.python.org/tutorial/controlflow.html#defining-functions">Python Tutorial: Section 4.6 Defining Functions</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html#defining-functions">Python Tutorial: Section 4.6 Defining Functions</a></p></li>
 </ul>
 </div>
 <div class="section" id="default-values-and-optional-parameters">
@@ -654,7 +654,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 </div>
-<p>More than one module can be imported in the same statement, although the <a class="reference external" href="http://www.python.org/dev/peps/pep-0008/">Python Style Guide</a> recommends not to do this. Instead, we should write</p>
+<p>More than one module can be imported in the same statement, although the <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">Python Style Guide</a> recommends not to do this. Instead, we should write</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
@@ -882,13 +882,13 @@ The unitvector in direction of [0 1 2] is [0.         0.4472136  0.89442719].
 </div>
 </div>
 <p>but either of the last two options is good.</p>
-<p>The example in <a class="reference external" href="#Many-ways-to-compute-a-series">Many ways to compute a series</a> demonstrates this technique. Including functions with names starting with <code class="docutils literal notranslate"><span class="pre">test_</span></code> is compatible with the very useful py.test regression testing framework (see <a class="reference external" href="http://pytest.org/">http://pytest.org/</a>).</p>
+<p>The example in <a class="reference external" href="#Many-ways-to-compute-a-series">Many ways to compute a series</a> demonstrates this technique. Including functions with names starting with <code class="docutils literal notranslate"><span class="pre">test_</span></code> is compatible with the very useful py.test regression testing framework (see <a class="reference external" href="https://docs.pytest.org/en/stable//">https://docs.pytest.org/en/stable//</a>).</p>
 </div>
 </div>
 <div class="section" id="further-reading">
 <h2><span class="section-number">7.6. </span>Further Reading<a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="http://docs.python.org/tutorial/modules.html#modules">Python Tutorial Section 6</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/modules.html#modules">Python Tutorial Section 6</a></p></li>
 </ul>
 </div>
 </div>

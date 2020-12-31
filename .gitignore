@@ -19,3 +19,6 @@ vectools.py
 .pytest_cache/
 eu-pop-2017.csv
 stock.csv
+.venv
+.venv/
+book/_build

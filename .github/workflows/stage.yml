@@ -1,0 +1,72 @@
+name: Book Staging
+
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  docker-build-and-stage:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
+
+    - name: Cache Docker layers
+      uses: actions/cache@v2
+      with:
+        path: /tmp/.buildx-cache
+        key: ${{ runner.os }}-buildx-${{ hashFiles('poetry.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-buildx-${{ hashFiles('poetry.lock') }}
+
+    #  This build and push step does the same thing as `make docker-build`, but
+    #  makes it easier to store and load caches, which is why we use it instead
+    - name: Build and Save Layers Locally
+      uses: docker/build-push-action@v2
+      with:
+        context: ./
+        file: ./Dockerfile
+        load: true
+        cache-from: type=local,src=/tmp/.buildx-cache
+        cache-to: type=local,dest=/tmp/.buildx-cache
+        tags: python4compscience
+
+    - name: List Available Images
+      run: docker images
+
+    - name: Make Docker HTML
+      run: make docker-html
+
+    - name: Check links - Markdown
+      uses: gaurav-nelson/github-action-markdown-link-check@v1
+
+    - name: Make Docker Linkcheck
+      run: make docker-linkcheck
+
+    - name: Make Docker PDF
+      run: |
+        make docker-pdf
+        sudo cp book/_build/latex/book.pdf book/_build/html/book.pdf
+
+#     - name: Publish
+#       uses: netlify/actions/build@master
+#       env:
+#         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#         NETLIFY_DIR: ./book/_build/html
+# 
+#     - name: Publish Staging Site
+#       id: netlify-deploy
+#       uses: netlify/actions/cli@6c34c3fcafc69ac2e1d6dbf226560329c6dfc51b
+#       with:
+#         args: deploy --dir=./book/_build/html
+#       env:
+#         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY }}
+# 
+#     - uses: mshick/add-pr-comment@07f690343c25a94e24a8acb70d03c86b701ae322
+#       with:
+#         message: ${{ steps.netlify-deploy.outputs.NETLIFY_OUTPUT }}
+#         repo-token: ${{ secrets.GITHUB_TOKEN }}
+#         repo-token-user-login: 'github-actions[bot]'
+#         allow-repeats: true

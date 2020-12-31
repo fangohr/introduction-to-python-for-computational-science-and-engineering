@@ -1,0 +1,47 @@
+# Book settings
+# Learn more at https://jupyterbook.org/customize/config.html
+
+title: Introduction to Python for Computational Science and Engineering
+author: Hans Fangohr
+logo: logo.png
+
+# Force re-execution of notebooks on each build.
+# See https://jupyterbook.org/content/execute.html
+execute:
+  execute_notebooks: force
+
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_engine: xelatex
+  latex_documents:
+    targetname: book.tex
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering  # Online location of your book
+  path_to_book: book  # Optional path to your book, relative to the repository root
+  branch: master  # Which branch of the repository should be used when creating links (optional)
+
+# Add GitHub buttons to your book
+# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+html:
+  use_issues_button: true
+  use_repository_button: true
+  comments:
+    utterances:
+      repo: "fangohr/introduction-to-python-for-computational-science-and-engineering"
+      issue-term: "pathname"
+      label: "💬 utterances"
+      theme: "github-light"
+      crossorigin: "anonymous"
+
+
+# Allow parsing of "<img src=..." tags in markdown cells (used in Chapter 15 on visualisation)
+parse:
+  myst_extended_syntax: true
+
+  
+sphinx:
+  config:
+    linkcheck_anchors: false
+    linkcheck_workers: 10

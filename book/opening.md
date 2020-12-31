@@ -11,17 +11,17 @@ You can use the links below to jump directly to these notebooks to read the book
 
 1. Navigating the notebook
 
-When you open a notebook, you will find that you can move a highlighted block (with a blue line at the left) with the cursor keys to move up and down. This block highlights a *cell*. (You can also use the mouse to select a cell.) This is called the [Command mode](https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Notebook%20Basics.html#Command-mode).
+   When you open a notebook, you will find that you can move a highlighted block (with a blue line at the left) with the cursor keys to move up and down. This block highlights a *cell*. (You can also use the mouse to select a cell.) This is called the [Command mode](https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Notebook%20Basics.html#Command-mode).
 
 2. Executing code
 
-If you want to execute a cell (for example one that contains some Python code), you can press `Shift+ENTER`. If the cell creates some output, it will be displayed below the cell. (You may not notice if it just updates output that was displayed before, in particular if the new output is the same as the old output.)
+   If you want to execute a cell (for example one that contains some Python code), you can press `Shift+ENTER`. If the cell creates some output, it will be displayed below the cell. (You may not notice if it just updates output that was displayed before, in particular if the new output is the same as the old output.)
 
 3. Editing code
 
-If you want to *change* the code in the currently highlighted cell, you need to press `ENTER`. You have now entered the [Editing mode](https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Notebook%20Basics.html#Edit-mode), and the content of the cell can be edited. If you have completed your changes, and you want to execute them, use the `Shift+ENTER` short cut.
+   If you want to *change* the code in the currently highlighted cell, you need to press `ENTER`. You have now entered the [Editing mode](https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Notebook%20Basics.html#Edit-mode), and the content of the cell can be edited. If you have completed your changes, and you want to execute them, use the `Shift+ENTER` short cut.
 
-Note that you can also edit blocks of text (or go into edit mode for a text cell unintentionally). Just press `Shift+ENTER` to render the text again, and go back into command mode.
+   Note that you can also edit blocks of text (or go into edit mode for a text cell unintentionally). Just press `Shift+ENTER` to render the text again, and go back into command mode.
 
 *Warning: Changes on mybinder are temporary*
 

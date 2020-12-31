@@ -29,10 +29,9 @@ If you use this text book interactively on the mybinder service, then you have b
 
 *Comments? Questions?*
 
-For feedback, corrections, and questions please refer to the [home page](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/blob/master/Readme.md) of the book.
+For feedback, corrections, and questions please refer to the [home page (https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/blob/master/Readme.md)](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/blob/master/Readme.md) of the book. You can also find the most recent versions there.
 
 Enjoy!
 
-<!-- markdown-link-check-disable -->
-![Logo, created with MayaVi](static/images/mayavi/mayavi-samp.png "3d magnetisation vector field")
-<!-- markdown-link-check-enable -->
+<img src="static/images/mayavi/mayavi-samp.png" alt="3d magnetisation vector field, created with MayaVi2" style="width:40.0%"> 
+

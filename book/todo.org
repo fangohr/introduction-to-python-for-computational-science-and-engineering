@@ -1,13 +1,6 @@
-- [X] Check figures at end of chapter 15 (MayaVi, vpython) - they don't show up in html output
 - [ ] check that saving notebooks without output (15, 16, 17) works fine with binder
 - [ ] check binder once merged
 - [ ] move footnotes from end of text into the right places
-- [X] in output from pdflatex, one cannot see which cells are input cells and which are output cells.
-  - similar in html
-  - maybe this works: output is printed in black, input is generally coloured?
-    - [X] Update text where it explains input and output cells (search for "In")
-- test CI locally
-
 
 - [ ] html output on https://fangohr.github.io/introduction-to-python-for-computational-science-and-engineering
   - [ ] add links in the right places

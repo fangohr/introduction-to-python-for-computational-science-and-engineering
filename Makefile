@@ -50,6 +50,9 @@ docker run -u $(id -u ${USER}):$(id -g ${USER}) \
 	python4compscience
 endef
 
+docker-bash:
+	docker run -t -i -v $(CURDIR):/io python4compscience
+
 docker-html:
 	$(DOCKER_RUN) make html
 

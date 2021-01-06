@@ -41,8 +41,9 @@ docker-build-nocache:
 
 # Here we only bind the required directories and files into the docker container
 # at runtime to avoid potential conflicts with local files
+
 define DOCKER_RUN
-docker run -u $(id -u ${USER}):$(id -g ${USER}) \
+docker run --workdir=/io  \
 	-v $(CURDIR)/book:/io/book \
 	-v $(CURDIR)/Makefile:/io/Makefile \
 	-v $(CURDIR)/poetry.lock:/io/poetry.lock \
@@ -51,7 +52,7 @@ docker run -u $(id -u ${USER}):$(id -g ${USER}) \
 endef
 
 docker-bash:
-	docker run -t -i -v $(CURDIR):/io python4compscience
+	docker run --workdir=/io -t -i -v $(CURDIR):/io python4compscience bash
 
 docker-html:
 	$(DOCKER_RUN) make html

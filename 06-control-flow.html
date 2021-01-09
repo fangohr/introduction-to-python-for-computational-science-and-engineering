@@ -1014,8 +1014,8 @@ mouse MOUSE
 </div>
 </div>
 </div>
-<p>Starting with Python 2.5, you can use the with statement to simplify the writing of code for some predefined functions, in particular the <span><code class="docutils literal notranslate"><span class="pre">open</span></code></span> function to open files: see <a class="reference external" href="https://docs.python.org/3/tutorial/errors.html#predefined-clean-up-actions">https://docs.python.org/3/tutorial/errors.html#predefined-clean-up-actions</a>.</p>
-<p>Example: We try to open a file that does not exist, and Python will raise an exception of type <span><code class="docutils literal notranslate"><span class="pre">IOError</span></code></span> which stands for Input Output Error:</p>
+<p>Starting with Python 2.5, you can use the <code class="docutils literal notranslate"><span class="pre">with</span></code> statement to simplify the writing of code for some predefined functions, in particular the <span><code class="docutils literal notranslate"><span class="pre">open</span></code></span> function to open files: see <a class="reference external" href="https://docs.python.org/3/tutorial/errors.html#predefined-clean-up-actions">https://docs.python.org/3/tutorial/errors.html#predefined-clean-up-actions</a>.</p>
+<p>Example: We try to open a file that does not exist, and Python will raise an exception of type <span><code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code></span> because the file cannot be found:</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># NBVAL_RAISES_EXCEPTION</span>
@@ -1040,7 +1040,7 @@ mouse MOUSE
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;filenamethatdoesnotexist&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>
-<span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+<span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Could not open that file&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1079,7 +1079,7 @@ mouse MOUSE
 <h3><span class="section-number">6.6.3. </span>LBYL vs EAFP<a class="headerlink" href="#lbyl-vs-eafp" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>LBYL (Look Before You Leap) vs</p></li>
-<li><p>EAFP (Easer to ask forgiveness than permission)</p></li>
+<li><p>EAFP (Easier to ask forgiveness than permission)</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

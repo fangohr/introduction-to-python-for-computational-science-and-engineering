@@ -95,7 +95,7 @@ For BibTeX:
   language = {en},
   title = {Introduction To {Python} For Computational Science And Engineering},
   publisher = {Zenodo},
-  year = {2019}
+  year = {2018}
 }
 ```
 

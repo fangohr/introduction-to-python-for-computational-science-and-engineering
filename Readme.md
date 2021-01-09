@@ -68,13 +68,13 @@ OpenDreamKit Horizon 2020 European Research Infrastructures project (#676541).
 # Feedback?
 
 If you have used these materials and have some feedback (positive or negative),
-please get in touch with [Hans Fangohr](mailto:hans.fangohr@mpsd.mpg.de).
+please get in touch with [Hans Fangohr](mailto:fangohr@soton.ac.uk).
 
 # Favour request and citation
 
 If you are using the book (be it as a teacher in your lecture course, as a
 student to support your learning, or in any other role), please send a short
-message to hans.fangohr@mpsd.mpg.de . Ideally, this would contain at which
+message to hans.fangohr@soton.ac.uk . Ideally, this would contain at which
 university/institution/company you are and how you use the book (in one
 sentence). This kind of data is useful to support further maintenance and
 extensions of the materials.
@@ -123,7 +123,7 @@ Hans Fangohr is a researcher and teacher (see
 software engineering for computational science and data science, researching
 computational modelling and data analysis methods, and education. He is a
 Professor at the [University of Southampton (UK)](https://www.southampton.ac.uk)
-and Head of the Scientic Support Group for Computational Science at the  [Max Planck Institute for Structure and Dynamics of Matter (Germany)](https://mpsd.mpg.de/).
+and Head of the Scientific Support Unit for Computational Science at the  [Max Planck Institute for Structure and Dynamics of Matter (Germany)](https://www.mpsd.mpg.de/research/ssus/comput-science).
 
 ----
 

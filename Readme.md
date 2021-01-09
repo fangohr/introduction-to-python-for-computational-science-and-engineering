@@ -8,7 +8,7 @@
 
 # Introduction to Python for Computational Science and Engineering
 
-<a href="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/raw/master/pdf/Introduction-to-Python-for-Computational-Science-and-Engineering.pdf">
+<a href="https://fangohr.github.io/introduction-to-python-for-computational-science-and-engineering/book.pdf">
 <img src="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/raw/master/static/images/logo.png" style="float" align="right" width="30%">
 </a>
 

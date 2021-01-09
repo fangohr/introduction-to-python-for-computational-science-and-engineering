@@ -8,12 +8,12 @@
 
 # Introduction to Python for Computational Science and Engineering
 
-<a href="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/raw/master/pdf/Introduction-to-Python-for-Computational-Science-and-Engineering.pdf">
-<img src="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/raw/master/static/images/titlepage.png" style="float" align="right" width="30%">
+<a href="https://fangohr.github.io/introduction-to-python-for-computational-science-and-engineering/book.pdf">
+<img src="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/raw/master/static/images/logo.png" style="float" align="right" width="30%">
 </a>
 
 An Introduction to Python for Computational Science and Engineering, developed
-by Hans Fangohr (2003-2020).
+by Hans Fangohr (2003-2021).
 
 The content and methods taught are intended for a target audience of scientists
 and engineers who need to use computational methods and data processing in their
@@ -58,7 +58,7 @@ Portuguese](https://github.com/gcpeixoto/lecture-ipynb/blob/master/README.md)
 
 # Acknowledgments
 
-Thanks go to Thomas Kluyver, Neil O'Brien, Jacek Generowicz, and Mark Molinari
+Thanks go to Robert Rosca, Thomas Kluyver, Neil O'Brien, Jacek Generowicz, and Mark Molinari
 for various contributions (see last chapter for details). Special thanks to all
 readers, users and students who have provided feedback and corrections.
 
@@ -68,13 +68,13 @@ OpenDreamKit Horizon 2020 European Research Infrastructures project (#676541).
 # Feedback?
 
 If you have used these materials and have some feedback (positive or negative),
-please get in touch (hans.fangohr@xfel.eu or fangohr@soton.ac.uk).
+please get in touch with [Hans Fangohr](mailto:fangohr@soton.ac.uk).
 
 # Favour request and citation
 
 If you are using the book (be it as a teacher in your lecture course, as a
 student to support your learning, or in any other role), please send a short
-message to hans.fangohr@xfel.eu . Ideally, this would contain at which
+message to hans.fangohr@soton.ac.uk . Ideally, this would contain at which
 university/institution/company you are and how you use the book (in one
 sentence). This kind of data is useful to support further maintenance and
 extensions of the materials.
@@ -95,7 +95,7 @@ For BibTeX:
   language = {en},
   title = {Introduction To {Python} For Computational Science And Engineering},
   publisher = {Zenodo},
-  year = {2019}
+  year = {2018}
 }
 ```
 
@@ -123,12 +123,11 @@ Hans Fangohr is a researcher and teacher (see
 software engineering for computational science and data science, researching
 computational modelling and data analysis methods, and education. He is a
 Professor at the [University of Southampton (UK)](https://www.southampton.ac.uk)
-and Head of Data Analysis at the [European X-ray Free Electron Laser (EuXFEL)
-facility (Germany)](https://xfel.eu).
+and Head of the Scientific Support Unit for Computational Science at the  [Max Planck Institute for Structure and Dynamics of Matter (Germany)](https://www.mpsd.mpg.de/research/ssus/comput-science).
 
 ----
 
 Historical note: CI was done on [Circle
 CI](https://app.circleci.com/pipelines/github/fangohr/introduction-to-python-for-computational-science-and-engineering)
 until 23 August 2018, then switched to [Travis
-CI](https://travis-ci.org/fangohr/introduction-to-python-for-computational-science-and-engineering).
+CI](https://travis-ci.org/fangohr/introduction-to-python-for-computational-science-and-engineering). A further switch in December 2020 to GitHub workflows.

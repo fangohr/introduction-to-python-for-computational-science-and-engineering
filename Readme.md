@@ -9,11 +9,11 @@
 # Introduction to Python for Computational Science and Engineering
 
 <a href="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/raw/master/pdf/Introduction-to-Python-for-Computational-Science-and-Engineering.pdf">
-<img src="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/raw/master/static/images/titlepage.png" style="float" align="right" width="30%">
+<img src="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/raw/master/static/images/logo.png" style="float" align="right" width="30%">
 </a>
 
 An Introduction to Python for Computational Science and Engineering, developed
-by Hans Fangohr (2003-2020).
+by Hans Fangohr (2003-2021).
 
 The content and methods taught are intended for a target audience of scientists
 and engineers who need to use computational methods and data processing in their

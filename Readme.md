@@ -1,4 +1,4 @@
-[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/library-current-versions?filepath=index.ipynb)
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/master?urlpath=tree/book/index.ipynb)
 <!-- markdown-link-check-disable -->
 <!-- TODO: Enable this AFTER first merge and deploy to master! -->
 ![Book Deploy](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/workflows/Book%20Deploy/badge.svg)
@@ -22,12 +22,12 @@ science training.
 
 The book is available:
 
-- [As a web page](https://fangohr.github.io/introduction-to-python-for-computational-science-and-engineering/)
-<!-- markdown-link-check-disable -->
+- [As a web page (html)](https://fangohr.github.io/introduction-to-python-for-computational-science-and-engineering/)
+<!-- markdown-link-check-enable -->
 <!-- TODO: Enable this AFTER first merge and deploy to master! -->
 - [As a PDF](https://fangohr.github.io/introduction-to-python-for-computational-science-and-engineering/book.pdf)
 <!-- markdown-link-check-enable -->
-- Interactively [as Jupyter Notebooks on MyBinder](https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/library-current-versions?filepath=book/index.ipynb) (or [use JupyterLab](https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/library-current-versions?urlpath=lab/tree/book/index.ipynb) instead of the traditional Notebook.)
+- Interactively [as Jupyter Notebooks on MyBinder](https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/master?urlpath=tree/book/index.ipynb) (or [use JupyterLab](https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/master?urlpath=lab/tree/book/index.ipynb) instead of the traditional Notebook.)
 
 The book is based on Python 3.
 

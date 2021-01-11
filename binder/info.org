@@ -1,0 +1,30 @@
+* Overall strategy: separate Docker containers for development and mybinder
+
+This repository uses a Dockerfile in the root directory for development
+purposes. This includes translation of the source files (in book/*ipynb) to html
+and pdf (using jupyterbook), which in turns needs a full latex installation.
+
+That makes the container quite big.
+
+For myBinder, we do not need latex, so in this directory, we attempt to have a
+leaner definition of dependencies.
+
+Binder should look in this directory (as it is called 'binder') and ignore the
+global Dockerfile.
+
+* Re-use dependencies from development environment in myBinder
+
+I don't know if myBinder could read dependencies from a pyproject.toml file (and
+couldn't find any documentation on this yet), nor if we can extract a
+requirements.txt file from the pyproject.toml file automatically.
+
+As a first step towards making the binder image leaner, I will stick to a definition via a Dockerfile, and leave out latex to make it smaller.
+
+This didn't go so well.
+
+Next attempt: specifying the packages we need in requirements.txt directly. It's
+not ideal, as we don't run tests on the particular versions, and we duplicate
+some effort from ../pyproject.toml here in reqiuirements.txt. On the positive
+side, Binder start-up time could be much smaller (and Binder work at all).
+
+

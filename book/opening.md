@@ -3,9 +3,10 @@ Python for Computational Science and Engineering
 
 The content of [this book](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/blob/master/Readme.md) is distributed into chapters, using one Jupyter Notebook for each chapter.
 
-If you have not used the Jupyter Notebook before, please read the section "First steps with Jupyter Notebook" below before you proceed.
-
-You can use the links below to jump directly to these notebooks to read the book, and to change all examples as you like.
+You can read the book in different formats:  [html](https://fangohr.github.io/introduction-to-python-for-computational-science-and-engineering/), [pdf](https://fangohr.github.io/introduction-to-python-for-computational-science-and-engineering/book.pdf), or you can use the [myBinder](https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/master?urlpath=tree/book/index.ipynb)
+ environment, in which you can read the text and execute the examples in a browser (without having to install Python locally) using one Jupyter notebook per chapter, as mentioned above.
+ 
+If you have not used the Jupyter Notebook before, please read the section "First steps with Jupyter Notebook" below before you proceed. 
 
 *First steps with Jupyter Notebook*
 
@@ -23,9 +24,9 @@ You can use the links below to jump directly to these notebooks to read the book
 
    Note that you can also edit blocks of text (or go into edit mode for a text cell unintentionally). Just press `Shift+ENTER` to render the text again, and go back into command mode.
 
-*Warning: Changes on mybinder are temporary*
+*Warning: Changes on myBinder are temporary*
 
-If you use this text book interactively on the mybinder service, then you have been given a temporary resource in the cloud to execute the code examples. The changes you have made to the notebook *will be lost* when your session ends (which is when you close the window, or the patience of the service has expired). Thus, the interactive exploration of the notebooks is good to help learn Python, computing and data science, but you should not attempt to write any code in these notebooks that you want to re-use the next day or later.
+If you use this text book interactively on the myBinder service, then you have been given a temporary resource in the cloud to execute the code examples. The changes you have made to the notebook *will be lost* when your session ends (which is when you close the window, or the patience of the service has expired). Thus, the interactive exploration of the notebooks is good to help learn Python, computing and data science, but you should not attempt to write any code in these notebooks that you want to re-use the next day or later.
 
 *Comments? Questions?*
 

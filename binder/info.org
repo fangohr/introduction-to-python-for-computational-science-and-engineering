@@ -20,13 +20,11 @@ requirements.txt file from the pyproject.toml file automatically.
 
 As a first step towards making the binder image leaner, I will stick to a definition via a Dockerfile, and leave out latex to make it smaller.
 
-* Duplication between Dockerfile and ../Dockerfile
+This didn't go so well.
 
-The general strategy will be to copy from ../Dockerfile, and comment out
-unneeded bits and pieces.
-
-In addition, myBinder would like creation of a user with UID 1000, which is added to the Dockerfile here.
-
-
+Next attempt: specifying the packages we need in requirements.txt directly. It's
+not ideal, as we don't run tests on the particular versions, and we duplicate
+some effort from ../pyproject.toml here in reqiuirements.txt. On the positive
+side, Binder start-up time could be much smaller (and Binder work at all).
 
 

@@ -1,3 +1,0 @@
-set -ex
-echo "Install dependencies using poetry"
-poetry install

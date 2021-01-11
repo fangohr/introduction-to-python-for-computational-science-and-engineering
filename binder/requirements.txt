@@ -1,1 +1,7 @@
-poetry
+numpy
+scipy
+sympy
+matplotlib
+pandas
+ipython
+pytest

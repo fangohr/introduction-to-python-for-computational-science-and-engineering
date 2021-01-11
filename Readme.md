@@ -74,7 +74,7 @@ please get in touch with [Hans Fangohr](mailto:fangohr@soton.ac.uk).
 
 If you are using the book (be it as a teacher in your lecture course, as a
 student to support your learning, or in any other role), please send a short
-message to hans.fangohr@soton.ac.uk . Ideally, this would contain at which
+message to Hans (mailto:fangohr@soton.ac.uk) . Ideally, this would contain at which
 university/institution/company you are and how you use the book (in one
 sentence). This kind of data is useful to support further maintenance and
 extensions of the materials.

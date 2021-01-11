@@ -36,6 +36,7 @@ RUN adduser --disabled-password \
 COPY book/* ${HOME}/
 USER root
 RUN chown -R ${NB_UID} ${HOME}
+RUN chown -R ${NB_UID} /io
 USER ${NB_USER}
 
 # start directory for binder

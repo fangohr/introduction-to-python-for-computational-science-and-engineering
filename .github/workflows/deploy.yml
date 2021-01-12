@@ -3,8 +3,6 @@ name: Book Deploy
 on:
   release:
     types: [created]
-  push:
-    # all
 
 jobs:
   docker-build-and-deploy:

@@ -50,6 +50,23 @@ jobs:
         make docker-pdf
         sudo cp book/_build/latex/book.pdf book/_build/html/book.pdf
 
+  repo2docker-build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build Docker Container with repo2docker
+      uses: jupyterhub/repo2docker-action@master
+      with:
+        NO_PUSH: 'true'
+        IMAGE_NAME: "python4compscience-binder"
+
+    - name: List Available Images
+      run: docker images
+
+    - name: Test with nbval
+      run: make docker-binder-nbval
+
 #     - name: Publish
 #       uses: netlify/actions/build@master
 #       env:

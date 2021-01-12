@@ -3,7 +3,7 @@ all:
 	make pdf
 
 install:
-	poetry install -vvv 
+	poetry install -vvv
 
 clean:
 	cd book; rm -rf \
@@ -24,6 +24,8 @@ pdf: book/*-*.ipynb
 nbval:
 	poetry run pytest -v --nbval book/*.ipynb --sanitize-with book/static/nbval_sanitize.cfg
 
+nbval-native:
+	pytest -v --nbval book/*.ipynb --sanitize-with book/static/nbval_sanitize.cfg
 
 docker-all:
 	make docker-build
@@ -68,6 +70,15 @@ docker-nbval:
 
 docker-clean:
 	$(DOCKER_RUN) make clean
+
+docker-binder-nbval:
+	docker run --workdir=/io \
+		-v $(CURDIR)/book:/io/book \
+		-v $(CURDIR)/Makefile:/io/Makefile \
+		-v $(CURDIR)/poetry.lock:/io/poetry.lock \
+		-v $(CURDIR)/pyproject.toml:/io/pyproject.toml \
+		python4compscience-binder \
+		make nbval-native
 
 # to update the title page:
 # - screenshot first page of pdf

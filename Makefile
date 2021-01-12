@@ -73,6 +73,7 @@ docker-clean:
 
 docker-binder-nbval:
 	docker run --workdir=/io \
+		-v $(CURDIR)/book:/io/book \
 		-v $(CURDIR)/Makefile:/io/Makefile \
 		python4compscience-binder \
 		make nbval-native

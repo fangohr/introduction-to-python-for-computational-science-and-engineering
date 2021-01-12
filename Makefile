@@ -75,8 +75,6 @@ docker-binder-nbval:
 	docker run --workdir=/io \
 		-v $(CURDIR)/book:/io/book \
 		-v $(CURDIR)/Makefile:/io/Makefile \
-		-v $(CURDIR)/poetry.lock:/io/poetry.lock \
-		-v $(CURDIR)/pyproject.toml:/io/pyproject.toml \
 		python4compscience-binder \
 		make nbval-native
 

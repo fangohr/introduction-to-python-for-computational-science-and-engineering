@@ -389,6 +389,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;__add__&#39;,
  &#39;__class__&#39;,
+ &#39;__class_getitem__&#39;,
  &#39;__contains__&#39;,
  &#39;__delattr__&#39;,
  &#39;__delitem__&#39;,
@@ -545,6 +546,8 @@ commentsRunWhenDOMLoaded(addUtterances);
  &#39;lstrip&#39;,
  &#39;maketrans&#39;,
  &#39;partition&#39;,
+ &#39;removeprefix&#39;,
+ &#39;removesuffix&#39;,
  &#39;replace&#39;,
  &#39;rfind&#39;,
  &#39;rindex&#39;,
@@ -766,19 +769,10 @@ sin(x, /)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on module math:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on built-in module math:
 
 NAME
     math
-
-MODULE REFERENCE
-    https://docs.python.org/3.7/library/math
-    
-    The following documentation is automatically generated from the Python
-    source files.  It may be incomplete, incorrect or include features that
-    are considered implementation detail and may vary between Python
-    implementations.  When in doubt, consult the module reference at the
-    location listed above.
 
 DESCRIPTION
     This module provides access to the mathematical functions
@@ -787,18 +781,24 @@ DESCRIPTION
 FUNCTIONS
     acos(x, /)
         Return the arc cosine (measured in radians) of x.
+        
+        The result is between 0 and pi.
     
     acosh(x, /)
         Return the inverse hyperbolic cosine of x.
     
     asin(x, /)
         Return the arc sine (measured in radians) of x.
+        
+        The result is between -pi/2 and pi/2.
     
     asinh(x, /)
         Return the inverse hyperbolic sine of x.
     
     atan(x, /)
         Return the arc tangent (measured in radians) of x.
+        
+        The result is between -pi/2 and pi/2.
     
     atan2(y, x, /)
         Return the arc tangent (measured in radians) of y/x.
@@ -812,6 +812,19 @@ FUNCTIONS
         Return the ceiling of x as an Integral.
         
         This is the smallest integer &gt;= x.
+    
+    comb(n, k, /)
+        Number of ways to choose k items from n items without repetition and without order.
+        
+        Evaluates to n! / (k! * (n - k)!) when k &lt;= n and evaluates
+        to zero when k &gt; n.
+        
+        Also called the binomial coefficient because it is equivalent
+        to the coefficient of k-th term in polynomial expansion of the
+        expression (1 + x)**n.
+        
+        Raises TypeError if either of the arguments are not integers.
+        Raises ValueError if either of the arguments are negative.
     
     copysign(x, y, /)
         Return a float with the magnitude (absolute value) of x but the sign of y.
@@ -827,6 +840,15 @@ FUNCTIONS
     
     degrees(x, /)
         Convert angle x from radians to degrees.
+    
+    dist(p, q, /)
+        Return the Euclidean distance between two points p and q.
+        
+        The points should be specified as sequences (or iterables) of
+        coordinates.  Both inputs must have the same dimension.
+        
+        Roughly equivalent to:
+            sqrt(sum((px - qx) ** 2.0 for px, qx in zip(p, q)))
     
     erf(x, /)
         Error function at x.
@@ -874,11 +896,24 @@ FUNCTIONS
     gamma(x, /)
         Gamma function at x.
     
-    gcd(x, y, /)
-        greatest common divisor of x and y
+    gcd(*integers)
+        Greatest Common Divisor.
     
-    hypot(x, y, /)
-        Return the Euclidean distance, sqrt(x*x + y*y).
+    hypot(...)
+        hypot(*coordinates) -&gt; value
+        
+        Multidimensional Euclidean distance from the origin to a point.
+        
+        Roughly equivalent to:
+            sqrt(sum(x**2 for x in coordinates))
+        
+        For a two dimensional point (x, y), gives the hypotenuse
+        using the Pythagorean theorem:  sqrt(x*x + y*y).
+        
+        For example, the hypotenuse of a 3/4/5 right triangle is:
+        
+            &gt;&gt;&gt; hypot(3.0, 4.0)
+            5.0
     
     isclose(a, b, *, rel_tol=1e-09, abs_tol=0.0)
         Determine whether two floating point numbers are close in value.
@@ -907,6 +942,12 @@ FUNCTIONS
     
     isnan(x, /)
         Return True if x is a NaN (not a number), and False otherwise.
+    
+    isqrt(n, /)
+        Return the integer part of the square root of the input.
+    
+    lcm(*integers)
+        Least Common Multiple.
     
     ldexp(x, i, /)
         Return x * (2**i).
@@ -938,8 +979,32 @@ FUNCTIONS
         
         Both results carry the sign of x and are floats.
     
+    nextafter(x, y, /)
+        Return the next floating-point value after x towards y.
+    
+    perm(n, k=None, /)
+        Number of ways to choose k items from n items without repetition and with order.
+        
+        Evaluates to n! / (n - k)! when k &lt;= n and evaluates
+        to zero when k &gt; n.
+        
+        If k is not specified or is None, then k defaults to n
+        and the function returns n!.
+        
+        Raises TypeError if either of the arguments are not integers.
+        Raises ValueError if either of the arguments are negative.
+    
     pow(x, y, /)
         Return x**y (x to the power of y).
+    
+    prod(iterable, /, *, start=1)
+        Calculate the product of all the elements in the input iterable.
+        
+        The default start value for the product is 1.
+        
+        When the iterable is empty, return the start value.  This function is
+        intended specifically for use with numeric values and may reject
+        non-numeric types.
     
     radians(x, /)
         Convert angle x from degrees to radians.
@@ -970,6 +1035,9 @@ FUNCTIONS
         Truncates the Real x to the nearest Integral toward 0.
         
         Uses the __trunc__ magic method.
+    
+    ulp(x, /)
+        Return the value of the least significant bit of the float x.
 
 DATA
     e = 2.718281828459045
@@ -979,7 +1047,7 @@ DATA
     tau = 6.283185307179586
 
 FILE
-    /usr/local/lib/python3.7/lib-dynload/math.cpython-37m-x86_64-linux-gnu.so
+    (built-in)
 </pre></div>
 </div>
 </div>

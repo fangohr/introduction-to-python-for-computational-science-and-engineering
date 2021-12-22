@@ -1,9 +1,8 @@
-# Table of content
-# Learn more at https://jupyterbook.org/customize/toc.html
-#
-- file: opening
+format: jb-article
+root: opening
+options:
   numbered: true
-
+sections:
 - file: 01-introduction
 - file: 02-powerful-calculator
 - file: 03-data-types-structures

@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>3. Data Types and Data Structures &#8212; Introduction to Python for Computational Science and Engineering</title>
     
-  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -35,13 +32,12 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -79,12 +75,12 @@ var addUtterances = () => {
 }
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -94,14 +90,17 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="4. Introspection" href="04-introspection.html" />
     <link rel="prev" title="2. A powerful calculator" href="02-powerful-calculator.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
 
-
-
+    <!-- Google Analytics -->
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -110,27 +109,31 @@ commentsRunWhenDOMLoaded(addUtterances);
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  <img src="_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">Introduction to Python for Computational Science and Engineering</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Python for Computational Science and Engineering</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="opening.html">
    Python for Computational Science and Engineering
   </a>
  </li>
 </ul>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01-introduction.html">
    1. Introduction
@@ -223,6 +226,7 @@ commentsRunWhenDOMLoaded(addUtterances);
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -238,21 +242,21 @@ commentsRunWhenDOMLoaded(addUtterances);
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
@@ -270,7 +274,7 @@ commentsRunWhenDOMLoaded(addUtterances);
     </div>
 </div>
 
-        <!-- Source interaction buttons -->
+            <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -288,14 +292,14 @@ commentsRunWhenDOMLoaded(addUtterances);
     </div>
 </div>
 
+            <!-- Full screen (wrap in <a> to have style consistency -->
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
-        <!-- Launch buttons -->
+            <!-- Launch buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -314,16 +318,16 @@ commentsRunWhenDOMLoaded(addUtterances);
     </div>
 </div>
 
-    </div>
-
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
         </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-type-is-it">
    3.1. What type is it?
@@ -466,8 +470,8 @@ commentsRunWhenDOMLoaded(addUtterances);
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -475,7 +479,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <div class="section" id="data-types-and-data-structures">
+  <div class="tex2jax_ignore mathjax_ignore section" id="data-types-and-data-structures">
 <h1><span class="section-number">3. </span>Data Types and Data Structures<a class="headerlink" href="#data-types-and-data-structures" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="what-type-is-it">
 <h2><span class="section-number">3.1. </span>What type is it?<a class="headerlink" href="#what-type-is-it" title="Permalink to this headline">¶</a></h2>
@@ -1410,7 +1414,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">68</span><span class="o">-</span><span class="n">a907c75b4c69</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_54</span><span class="o">/</span><span class="mf">2821052978.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># NBVAL_RAISES_EXCEPTION</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 
@@ -1950,21 +1954,21 @@ Ken works in room 1027
 <div class="section" id="call-by-value">
 <h3><span class="section-number">3.4.1. </span>Call by value<a class="headerlink" href="#call-by-value" title="Permalink to this headline">¶</a></h3>
 <p>One might expect that if we pass an object by value to a function, that modifications of that value inside the function will not affect the object (because we don’t pass the object itself, but only its value, which is a copy). Here is an example of this behaviour (in C):</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 
-<span class="kt">void</span> <span class="nf">pass_by_value</span><span class="p">(</span><span class="kt">int</span> <span class="n">m</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;in pass_by_value: received m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">m</span><span class="p">);</span>
-  <span class="n">m</span><span class="o">=</span><span class="mi">42</span><span class="p">;</span>
-  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;in pass_by_value: changed to m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">m</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">pass_by_value</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;in pass_by_value: received m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">m</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">m</span><span class="o">=</span><span class="mi">42</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;in pass_by_value: changed to m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">m</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kt">int</span> <span class="n">global_m</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;global_m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">global_m</span><span class="p">);</span>
-  <span class="n">pass_by_value</span><span class="p">(</span><span class="n">global_m</span><span class="p">);</span>
-  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;global_m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">global_m</span><span class="p">);</span>
-  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">global_m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;global_m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">global_m</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">pass_by_value</span><span class="p">(</span><span class="n">global_m</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;global_m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">global_m</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>together with the corresponding output:</p>
@@ -1980,21 +1984,21 @@ global_m=1
 <h3><span class="section-number">3.4.2. </span>Call by reference<a class="headerlink" href="#call-by-reference" title="Permalink to this headline">¶</a></h3>
 <p>Calling a function by reference, on the other hand, means that the object given to a function is a reference to the object. This means that the function will see the same object as in the calling code (because they are referencing the same object: we can think of the reference as a pointer to the place in memory where the object is located). Any changes acting on the object inside the function, will then be visible in the object at the calling level (because the function does actually operate on the same object, not a copy of it).</p>
 <p>Here is one example showing this using pointers in C:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 
-<span class="kt">void</span> <span class="nf">pass_by_reference</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">m</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;in pass_by_reference: received m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="o">*</span><span class="n">m</span><span class="p">);</span>
-  <span class="o">*</span><span class="n">m</span><span class="o">=</span><span class="mi">42</span><span class="p">;</span>
-  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;in pass_by_reference: changed to m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="o">*</span><span class="n">m</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">pass_by_reference</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;in pass_by_reference: received m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="o">*</span><span class="n">m</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="o">*</span><span class="n">m</span><span class="o">=</span><span class="mi">42</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;in pass_by_reference: changed to m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="o">*</span><span class="n">m</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kt">int</span> <span class="n">global_m</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;global_m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">global_m</span><span class="p">);</span>
-  <span class="n">pass_by_reference</span><span class="p">(</span><span class="o">&amp;</span><span class="n">global_m</span><span class="p">);</span>
-  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;global_m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">global_m</span><span class="p">);</span>
-  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">global_m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;global_m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">global_m</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">pass_by_reference</span><span class="p">(</span><span class="o">&amp;</span><span class="n">global_m</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;global_m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">global_m</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>together with the corresponding output:</p>
@@ -2005,21 +2009,21 @@ global_m=42
 </pre></div>
 </div>
 <p>C++ provides the ability to pass arguments as references by adding an ampersand in front of the argument name in the function definition:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 
-<span class="kt">void</span> <span class="nf">pass_by_reference</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;in pass_by_reference: received m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">m</span><span class="p">);</span>
-  <span class="n">m</span><span class="o">=</span><span class="mi">42</span><span class="p">;</span>
-  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;in pass_by_reference: changed to m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">m</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">pass_by_reference</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;in pass_by_reference: received m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">m</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">m</span><span class="o">=</span><span class="mi">42</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;in pass_by_reference: changed to m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">m</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kt">int</span> <span class="n">global_m</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;global_m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">global_m</span><span class="p">);</span>
-  <span class="n">pass_by_reference</span><span class="p">(</span><span class="n">global_m</span><span class="p">);</span>
-  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;global_m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">global_m</span><span class="p">);</span>
-  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">global_m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;global_m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">global_m</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">pass_by_reference</span><span class="p">(</span><span class="n">global_m</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;global_m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">global_m</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>together with the corresponding output:</p>
@@ -2197,7 +2201,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140568912765376
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140320556936896
 </pre></div>
 </div>
 </div>
@@ -2210,7 +2214,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140568912765376
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140320556936896
 </pre></div>
 </div>
 </div>
@@ -2224,7 +2228,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140568913078464
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140320557476736
 </pre></div>
 </div>
 </div>
@@ -2315,7 +2319,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140568912652976
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140320556355440
 </pre></div>
 </div>
 </div>
@@ -2328,7 +2332,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140569027418416
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140320664754480
 </pre></div>
 </div>
 </div>
@@ -2372,7 +2376,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140568912756608
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140320556467776
 </pre></div>
 </div>
 </div>
@@ -2385,7 +2389,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140568912756608
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140320556467776
 </pre></div>
 </div>
 </div>
@@ -2499,7 +2503,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140568912768320
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140320591682368
 </pre></div>
 </div>
 </div>
@@ -2512,7 +2516,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140568912756608
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140320556467776
 </pre></div>
 </div>
 </div>
@@ -2593,23 +2597,34 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 
               </div>
               
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="02-powerful-calculator.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">2. </span>A powerful calculator</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="04-introspection.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Introspection</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
         </div>
     </div>
-    
-    
-    <div class='prev-next-bottom'>
-        
-    <a class='left-prev' id="prev-link" href="02-powerful-calculator.html" title="previous page"><span class="section-number">2. </span>A powerful calculator</a>
-    <a class='right-next' id="next-link" href="04-introspection.html" title="next page"><span class="section-number">4. </span>Introspection</a>
-
-    </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
           By Hans Fangohr<br/>
         
-            &copy; Copyright 2020.<br/>
+            &copy; Copyright 2021.<br/>
       </p>
     </div>
   </footer>
@@ -2618,11 +2633,8 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 
       </div>
     </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-    
-  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
-
-
-    
   </body>
 </html>

@@ -1,7 +1,7 @@
-FROM python:3.7
+FROM debian:bullseye-slim
 
-RUN apt-get update -y && apt-get install -y texlive-xetex latexmk texlive-xetex fonts-freefont-otf
-RUN pip3 install --upgrade pip
+RUN apt-get update -y && apt-get install -y texlive-xetex latexmk texlive-xetex fonts-freefont-otf \
+	python3 python3-pip git zile
 
 COPY poetry.lock pyproject.toml /opt/
 

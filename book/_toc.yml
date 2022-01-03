@@ -1,8 +1,8 @@
-format: jb-article
+format: jb-book
 root: opening
 options:
   numbered: true
-sections:
+chapters:
 - file: 01-introduction
 - file: 02-powerful-calculator
 - file: 03-data-types-structures

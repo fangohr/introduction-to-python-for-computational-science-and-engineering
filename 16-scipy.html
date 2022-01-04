@@ -648,7 +648,7 @@ _0^1\cos(2\pi x) dx\)</span>.</p></li>
 <div class="section" id="solving-ordinary-differential-equations-odes">
 <h2><span class="section-number">16.4. </span>Solving Ordinary Differential Equations (ODEs)<a class="headerlink" href="#solving-ordinary-differential-equations-odes" title="Permalink to this headline">¶</a></h2>
 <p>To solve an ordinary differential equation of the type
-$<span class="math notranslate nohighlight">\(\frac{\mathrm{d}y}{\mathrm{d}t}(t) = f(y,t)\)</span>$</p>
+$<span class="math notranslate nohighlight">\(\frac{\mathrm{d}y}{\mathrm{d}t}(t) = f(t, y)\)</span>$</p>
 <p>with a given <span class="math notranslate nohighlight">\(y(t_0)=y_0\)</span>, we can use <code class="docutils literal notranslate"><span class="pre">scipy</span></code>’s <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> function. Here is a (self explaining) example program (<code class="docutils literal notranslate"><span class="pre">usesolve_ivp.py</span></code>) to find</p>
 <div class="math notranslate nohighlight">
 \[y(t) \quad \mathrm{for}\quad t\in[0,2]\]</div>
@@ -656,19 +656,18 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}y}{\mathrm{d}t}(t)
 $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}y}{\mathrm{d}t}(t) = -2yt \quad \mathrm{with} \quad y(0)=1.\)</span>$</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;svg&#39;
-<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;this is the rhs of the ODE to integrate, i.e. dy/dt=f(y,t)&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">y</span> <span class="o">*</span> <span class="n">t</span>
 
 <span class="n">y0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>           <span class="c1"># initial value y0=y(t0)</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>              <span class="c1"># integration limits for t: start at t=t0=a</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>              <span class="c1"># and finish at t=b</span>
+<span class="n">t0</span> <span class="o">=</span> <span class="mi">0</span>             <span class="c1"># integration limits for t: start at t0=0</span>
+<span class="n">tf</span> <span class="o">=</span> <span class="mi">2</span>             <span class="c1"># and finish at tf=2</span>
 
-<span class="n">sol</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">fun</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">t_span</span><span class="o">=</span><span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">],</span> <span class="n">y0</span><span class="o">=</span><span class="n">y0</span><span class="p">)</span>  <span class="c1"># computation of SOLution </span>
+<span class="n">sol</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">fun</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">t_span</span><span class="o">=</span><span class="p">[</span><span class="n">t0</span><span class="p">,</span> <span class="n">tf</span><span class="p">],</span> <span class="n">y0</span><span class="o">=</span><span class="n">y0</span><span class="p">)</span>  <span class="c1"># computation of SOLution </span>
 
 <span class="kn">import</span> <span class="nn">pylab</span>          <span class="c1"># plotting of results</span>
 <span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;o-&#39;</span><span class="p">)</span>
@@ -682,14 +681,14 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}y}{\mathrm{d}t}(t)
 </div>
 <img alt="_images/16-scipy_14_1.svg" src="_images/16-scipy_14_1.svg" /></div>
 </div>
-<p>We have not given the <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> command any guidance for which values of <span class="math notranslate nohighlight">\(t\)</span> we would like to know the solution <span class="math notranslate nohighlight">\(y(t)\)</span>: we have only specified that <span class="math notranslate nohighlight">\(t_0 = 0\)</span> and that we would like to know the solution between <span class="math notranslate nohighlight">\(t0=a=0\)</span> and <span class="math notranslate nohighlight">\(t=b=2\)</span>. The solver itself has determined the number of required function evaluations, and returns the corresponding values in <code class="docutils literal notranslate"><span class="pre">sol.t</span></code> and <code class="docutils literal notranslate"><span class="pre">sol.y[0]</span></code>.</p>
+<p>We have not given the <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> command any guidance for which values of <span class="math notranslate nohighlight">\(t\)</span> we would like to know the solution <span class="math notranslate nohighlight">\(y(t)\)</span>: we have only specified that <span class="math notranslate nohighlight">\(t_0 = 0\)</span> and that we would like to know the solution between <span class="math notranslate nohighlight">\(t_0=0\)</span> and <span class="math notranslate nohighlight">\(t_y=2\)</span>. The solver itself has determined the number of required function evaluations, and returns the corresponding values in <code class="docutils literal notranslate"><span class="pre">sol.t</span></code> and <code class="docutils literal notranslate"><span class="pre">sol.y[0]</span></code>.</p>
 <p>We can obtain more data points in a number of ways:</p>
 <ol class="simple">
 <li><p>Increase the default error tolerance. The relative tolerance (<code class="docutils literal notranslate"><span class="pre">rtol</span></code>) and absolute tolerance (<code class="docutils literal notranslate"><span class="pre">atol</span></code>) default to <code class="docutils literal notranslate"><span class="pre">1e-3</span></code> each. If we increase them, we typically enforce the use of a larger number of intermediate points:</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sol</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">fun</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">t_span</span><span class="o">=</span><span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">],</span> <span class="n">y0</span><span class="o">=</span><span class="n">y0</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1e-8</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">1e-8</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sol</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">fun</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">t_span</span><span class="o">=</span><span class="p">[</span><span class="n">t0</span><span class="p">,</span> <span class="n">tf</span><span class="p">],</span> <span class="n">y0</span><span class="o">=</span><span class="n">y0</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1e-8</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">1e-8</span><span class="p">)</span>
 
 <span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
 <span class="n">pylab</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">);</span> <span class="n">pylab</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y(t)&#39;</span><span class="p">)</span>
@@ -708,11 +707,11 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}y}{\mathrm{d}t}(t)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>           <span class="c1"># initial value</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>              <span class="c1"># integration limits for t</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>              
-<span class="n">ts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>   <span class="c1"># 100 points between a and b</span>
+<span class="n">t0</span> <span class="o">=</span> <span class="mi">0</span>             <span class="c1"># integration limits for t</span>
+<span class="n">tf</span> <span class="o">=</span> <span class="mi">2</span>              
+<span class="n">ts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">t0</span><span class="p">,</span> <span class="n">tf</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>  <span class="c1"># 100 points between t0 and tf</span>
 
-<span class="n">sol</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">fun</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">t_span</span><span class="o">=</span><span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">],</span> <span class="n">y0</span><span class="o">=</span><span class="n">y0</span><span class="p">,</span> <span class="n">t_eval</span><span class="o">=</span><span class="n">ts</span><span class="p">)</span> 
+<span class="n">sol</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">fun</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">t_span</span><span class="o">=</span><span class="p">[</span><span class="n">t0</span><span class="p">,</span> <span class="n">tf</span><span class="p">],</span> <span class="n">y0</span><span class="o">=</span><span class="n">y0</span><span class="p">,</span> <span class="n">t_eval</span><span class="o">=</span><span class="n">ts</span><span class="p">)</span> 
 
 <span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
 <span class="n">pylab</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">);</span> <span class="n">pylab</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y(t)&#39;</span><span class="p">)</span>
@@ -725,7 +724,8 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}y}{\mathrm{d}t}(t)
 </div>
 <img alt="_images/16-scipy_18_1.svg" src="_images/16-scipy_18_1.svg" /></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> command returns a “OdeResult” object, which we have called <code class="docutils literal notranslate"><span class="pre">sol</span></code> in the example above.</p>
+<p>If we use <code class="docutils literal notranslate"><span class="pre">t_eval</span></code> - and thus request values of the solution at particular points - <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> will not generally change the way it computes the solution, but rather use interpolation to map the way it has internally computed the solution to the values of t for which we would like to know the solution. There is thus no (significant) computational penalty if we use <code class="docutils literal notranslate"><span class="pre">t_eval</span></code> to get smoother looking plots.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> command returns a <code class="docutils literal notranslate"><span class="pre">OdeResult</span></code> object, which we have called <code class="docutils literal notranslate"><span class="pre">sol</span></code> in the example above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">sol</span><span class="p">)</span>
@@ -787,7 +787,8 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}y}{\mathrm{d}t}(t)
 </div>
 </div>
 </div>
-<p>Other interesting attributes are the number of function evaluations that were necessary (where the function is the function <code class="docutils literal notranslate"><span class="pre">f</span></code> which computes the right hand side of the ODE).</p>
+<p>Because <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> is designed to integrate <em>systems</em> of ordinary differential equations, <code class="docutils literal notranslate"><span class="pre">sol.y</span></code> is a matrix, where each row contains the values for one degree of freedom. In our simple example above, we only have one degree of freedom (<span class="math notranslate nohighlight">\(y\)</span>). This is the reason, why we had to use <code class="docutils literal notranslate"><span class="pre">sol.y[0]</span></code> to access the solution values.</p>
+<p>Other interesting attributes of the <code class="docutils literal notranslate"><span class="pre">OdeResult</span></code> object are the number of function evaluations that were necessary (where the function is the function <code class="docutils literal notranslate"><span class="pre">f</span></code> which computes the right hand side of the ODE).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sol</span><span class="o">.</span><span class="n">nfev</span>
@@ -826,7 +827,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}y}{\mathrm{d}t}(t)
 </div>
 </div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> command takes a number of optional parameters - we have already seen <code class="docutils literal notranslate"><span class="pre">atol</span></code> and <code class="docutils literal notranslate"><span class="pre">rtol</span></code> to change the default error tolerance of the integration. We can use the help command to explore these. The help string also explains the attributes of the solution object in more detail:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> command takes a number of optional parameters - we have already seen <code class="docutils literal notranslate"><span class="pre">atol</span></code> and <code class="docutils literal notranslate"><span class="pre">rtol</span></code> to change the default error tolerance of the integration. We can use the <code class="docutils literal notranslate"><span class="pre">help</span></code> command to explore these. The help string also explains the attributes of the solution object <code class="docutils literal notranslate"><span class="pre">OdeResult</span></code> in more detail:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">scipy</span><span class="o">.</span><span class="n">integrate</span><span class="o">.</span><span class="n">solve_ivp</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1059,16 +1060,10 @@ solve_ivp(fun, t_span, y0, method=&#39;RK45&#39;, t_eval=None, dense_output=Fals
 </ul>
 <p>To compute the time dependence of <span class="math notranslate nohighlight">\(p_1\)</span> and <span class="math notranslate nohighlight">\(p_2\)</span>:</p>
 <ul class="simple">
-<li><p>Assume that rabbits proliferate at a rate <span class="math notranslate nohighlight">\(a\)</span>. Per unit time a number <span class="math notranslate nohighlight">\(a p_1\)</span> of rabbits is born.</p></li>
-<li><p>Number of rabbits is reduced by collisions with foxes. Per unit time <span class="math notranslate nohighlight">\(c p_1 p_2\)</span> rabbits are eaten.</p></li>
+<li><p>Assume that rabbits proliferate at a rate <span class="math notranslate nohighlight">\(a\)</span>. Per unit time a number <span class="math notranslate nohighlight">\(a p_1\)</span> of rabbits are born.</p></li>
+<li><p>Assume that the number of rabbits is reduced by collisions with foxes: per unit time <span class="math notranslate nohighlight">\(c p_1 p_2\)</span> rabbits are eaten.</p></li>
 <li><p>Assume that birth rate of foxes depends only on food intake in form of rabbits.</p></li>
 <li><p>Assume that foxes die a natural death at a rate <span class="math notranslate nohighlight">\(b\)</span>.</p></li>
-</ul>
-<p>We use the following parameters:</p>
-<ul class="simple">
-<li><p>rabbit birth rate <span class="math notranslate nohighlight">\(a = 0.7\)</span></p></li>
-<li><p>rabbit-fox-collision rate <span class="math notranslate nohighlight">\( c = 0.007\)</span></p></li>
-<li><p>fox death rate <span class="math notranslate nohighlight">\(b = 1\)</span></p></li>
 </ul>
 <p>We put this together into the system of coupled ordinary differential equations:
 \begin{eqnarray}
@@ -1076,7 +1071,13 @@ solve_ivp(fun, t_span, y0, method=&#39;RK45&#39;, t_eval=None, dense_output=Fals
 \frac{d p_1}{dt} &amp;=&amp; a p_1 - c p_1 p_2\nonumber\
 \frac{d p_1}{dt} &amp;=&amp; c p_1 p_2 - b p_2\nonumber
 \end{eqnarray}</p>
-<p>We want to solve this for <span class="math notranslate nohighlight">\(p_1(0)=70\)</span> and <span class="math notranslate nohighlight">\(p_2(0)=50\)</span> as initial values, for 30 units of time.</p>
+<p>We use the following parameters:</p>
+<ul class="simple">
+<li><p>rabbit birth rate <span class="math notranslate nohighlight">\(a = 0.7\)</span></p></li>
+<li><p>rabbit-fox-collision rate <span class="math notranslate nohighlight">\( c = 0.007\)</span></p></li>
+<li><p>fox death rate <span class="math notranslate nohighlight">\(b = 1\)</span></p></li>
+</ul>
+<p>We want to solve this for <span class="math notranslate nohighlight">\(p_1(t_0)=70\)</span> and <span class="math notranslate nohighlight">\(p_2(t_0)=50\)</span> as initial values, starting at <span class="math notranslate nohighlight">\(t_0=0\)</span> for 30 units of time.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pylab</span>
@@ -1094,18 +1095,18 @@ solve_ivp(fun, t_span, y0, method=&#39;RK45&#39;, t_eval=None, dense_output=Fals
     <span class="n">dp1dt</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">p1</span> <span class="o">-</span> <span class="n">c</span> <span class="o">*</span> <span class="n">p1</span> <span class="o">*</span> <span class="n">p2</span>
     <span class="n">dp2dt</span> <span class="o">=</span> <span class="n">c</span> <span class="o">*</span> <span class="n">p1</span> <span class="o">*</span> <span class="n">p2</span> <span class="o">-</span> <span class="n">b</span> <span class="o">*</span> <span class="n">p2</span>
 
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">dp1dt</span><span class="p">,</span> <span class="n">dp2dt</span><span class="p">])</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">dp1dt</span><span class="p">,</span> <span class="n">dp2dt</span><span class="p">]</span>
 
 
 <span class="n">p0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">70</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>      <span class="c1"># initial condition</span>
 <span class="n">t0</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">tfinal</span> <span class="o">=</span> <span class="mi">30</span>
-<span class="n">ts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">t0</span><span class="p">,</span> <span class="n">tfinal</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">ts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">t0</span><span class="p">,</span> <span class="n">tfinal</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
 
 <span class="n">sol</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">rhs</span><span class="p">,</span> <span class="p">[</span><span class="n">t0</span><span class="p">,</span> <span class="n">tfinal</span><span class="p">],</span> <span class="n">p0</span><span class="p">,</span> <span class="n">t_eval</span><span class="o">=</span><span class="n">ts</span><span class="p">)</span>
 
-<span class="n">p1</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>                <span class="c1"># extract p1 and</span>
-<span class="n">p2</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>                <span class="c1"># p2</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>                
+<span class="n">p2</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>                
 
 <span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;rabbits&#39;</span><span class="p">)</span>
 <span class="n">pylab</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="s1">&#39;-og&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;foxes&#39;</span><span class="p">)</span>
@@ -1117,7 +1118,7 @@ solve_ivp(fun, t_span, y0, method=&#39;RK45&#39;, t_eval=None, dense_output=Fals
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/16-scipy_35_0.svg" src="_images/16-scipy_35_0.svg" /></div>
+<img alt="_images/16-scipy_37_0.svg" src="_images/16-scipy_37_0.svg" /></div>
 </div>
 </div>
 </div>
@@ -1248,7 +1249,7 @@ The exact error is -6.66134e-15.
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;x&#39;)
 </pre></div>
 </div>
-<img alt="_images/16-scipy_43_1.svg" src="_images/16-scipy_43_1.svg" /></div>
+<img alt="_images/16-scipy_45_1.svg" src="_images/16-scipy_45_1.svg" /></div>
 </div>
 </div>
 <div class="section" id="curve-fitting">
@@ -1294,13 +1295,13 @@ $<span class="math notranslate nohighlight">\(f(x,\vec{p}) = a \exp(-b x) + c, \
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimal parameters are a=2.68885, b=1.1853, and c=0.420785
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimal parameters are a=2.44752, b=1.23168, and c=0.48948
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f15f47af190&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fae4fc96040&gt;
 </pre></div>
 </div>
-<img alt="_images/16-scipy_45_2.svg" src="_images/16-scipy_45_2.svg" /></div>
+<img alt="_images/16-scipy_47_2.svg" src="_images/16-scipy_47_2.svg" /></div>
 </div>
 <p>Note that in the source code above we define the fitting function <span class="math notranslate nohighlight">\(y = f(x)\)</span> through Python code. We can thus fit (nearly) arbitrary functions using the <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> method.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> function returns a tuple <code class="docutils literal notranslate"><span class="pre">popt,</span> <span class="pre">pcov</span></code>. The first entry <code class="docutils literal notranslate"><span class="pre">popt</span></code> contains a tuple of the OPTimal Parameters (in the sense that these minimise equation ([eq:1]). The second entry contains the covariance matrix for all parameters. The diagonals provide the variance of the parameter estimations.</p>
@@ -1360,7 +1361,7 @@ $<span class="math notranslate nohighlight">\(f(x,\vec{p}) = a \exp(-b x) + c, \
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/16-scipy_48_0.svg" src="_images/16-scipy_48_0.svg" /></div>
+<img alt="_images/16-scipy_50_0.svg" src="_images/16-scipy_50_0.svg" /></div>
 </div>
 <p>The lower plot shows the discrete Fourier transform computed from the data shown in the upper plot.</p>
 </div>
@@ -1422,10 +1423,10 @@ Optimization terminated successfully.
 Start search at x=2., minimum is [3.13847656]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f15f320ae80&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fae4fb47280&gt;
 </pre></div>
 </div>
-<img alt="_images/16-scipy_51_2.svg" src="_images/16-scipy_51_2.svg" /></div>
+<img alt="_images/16-scipy_53_2.svg" src="_images/16-scipy_53_2.svg" /></div>
 </div>
 <p>Calling the <code class="docutils literal notranslate"><span class="pre">fmin</span></code> function will produce some diagnostic output, which you can also see above.</p>
 <p><strong>Return value of <code class="docutils literal notranslate"><span class="pre">fmin</span></code></strong></p>

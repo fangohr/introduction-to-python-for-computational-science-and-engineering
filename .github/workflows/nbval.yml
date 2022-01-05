@@ -1,6 +1,6 @@
 name: nbval
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
   docker-build-and-nbval:

@@ -596,21 +596,15 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>The <code class="docutils literal notranslate"><span class="pre">pylab</span></code> interface is slightly more convenient to use for simple plots, and <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> gives far more detailed control over how plots are created. If you routinely need to produce figures, we suggest to learn about the object oriented <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> interface (instead of the <code class="docutils literal notranslate"><span class="pre">pylab</span></code> interface).</p>
 <p>This chapter focusses on the Pylab interface, but also provides examples for the object-oriented <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> interface.</p>
 <p>An excellent introduction and overview of the <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> plotting interface is available in <a class="reference external" href="https://nbviewer.ipython.org/github/jrjohansson/scientific-python-lectures/blob/master/Lecture-4-Matplotlib.ipynb">https://nbviewer.ipython.org/github/jrjohansson/scientific-python-lectures/blob/master/Lecture-4-Matplotlib.ipynb</a>.</p>
-<p>For the purpose of this book and the <a class="reference external" href="https://jupyterbook.org">jupyterbook package</a>, we use some settings to create a svg file for the html version of the book, and a high-resolution png file for the pdf version:</p>
+<p>For the purpose of this book and the <a class="reference external" href="https://jupyterbook.org">Jupyterbook package</a>, we use some settings to create a svg file for the html version of the book, and a high-resolution png file for the pdf version:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="c1"># settings for jupyter book: svg for html version, high-resolution png for pdf</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">set_matplotlib_formats</span>
-<span class="n">set_matplotlib_formats</span><span class="p">(</span><span class="s1">&#39;svg&#39;</span><span class="p">,</span> <span class="s1">&#39;png&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">matplotlib_inline</span>
+<span class="n">matplotlib_inline</span><span class="o">.</span><span class="n">backend_inline</span><span class="o">.</span><span class="n">set_matplotlib_formats</span><span class="p">(</span><span class="s1">&#39;svg&#39;</span><span class="p">,</span> <span class="s1">&#39;png&#39;</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
 <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.dpi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">400</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_225/922218149.py:4: DeprecationWarning: `set_matplotlib_formats` is deprecated since IPython 7.23, directly use `matplotlib_inline.backend_inline.set_matplotlib_formats()`
-  set_matplotlib_formats(&#39;svg&#39;, &#39;png&#39;)
 </pre></div>
 </div>
 </div>
@@ -634,7 +628,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb17edf6130&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fa4cc032130&gt;]
 </pre></div>
 </div>
 <img alt="_images/15-visualising-data_4_1.svg" src="_images/15-visualising-data_4_1.svg" /></div>
@@ -662,7 +656,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb17cd70280&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fa4c9fa1eb0&gt;]
 </pre></div>
 </div>
 <img alt="_images/15-visualising-data_6_1.svg" src="_images/15-visualising-data_6_1.svg" /></div>
@@ -682,7 +676,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb17ccd3b50&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fa4c9f14370&gt;]
 </pre></div>
 </div>
 <img alt="_images/15-visualising-data_8_1.svg" src="_images/15-visualising-data_8_1.svg" /></div>
@@ -945,7 +939,7 @@ marker, linestyle, and markercolor with::
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fb17c3d2df0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fa4c96105e0&gt;
 </pre></div>
 </div>
 <img alt="_images/15-visualising-data_23_1.svg" src="_images/15-visualising-data_23_1.svg" /></div>
@@ -999,7 +993,7 @@ marker, linestyle, and markercolor with::
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb17c248ac0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fa4c94892e0&gt;]
 </pre></div>
 </div>
 <img alt="_images/15-visualising-data_29_1.svg" src="_images/15-visualising-data_29_1.svg" /><img alt="_images/15-visualising-data_29_2.svg" src="_images/15-visualising-data_29_2.svg" /></div>
@@ -1043,7 +1037,7 @@ marker, linestyle, and markercolor with::
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb17cbe69a0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fa4c95e7940&gt;]
 </pre></div>
 </div>
 <img alt="_images/15-visualising-data_33_1.svg" src="_images/15-visualising-data_33_1.svg" /></div>
@@ -1223,7 +1217,7 @@ marker, linestyle, and markercolor with::
 </div>
 <div class="section" id="how-to-learn-how-to-use-matplotlib">
 <h3><span class="section-number">15.3.5. </span>How to learn how to use Matplotlib?<a class="headerlink" href="#how-to-learn-how-to-use-matplotlib" title="Permalink to this headline">¶</a></h3>
-<p>A common strategy is to scan the examples at https://matplotlib.org/stable/gallery/index.html to find a plot similar to the desired one, and then to modify the given example code. In the process, it may be worth learning more about the commands used in the example through reading the documentation.</p>
+<p>A common strategy is to scan the examples at <a class="reference external" href="https://matplotlib.org/stable/gallery/index.html">https://matplotlib.org/stable/gallery</a> to find a plot similar to the desired one, and then to modify the given example code. In the process, it may be worth learning more about the commands used in the example through reading the documentation.</p>
 </div>
 </div>
 <div class="section" id="visual-python">

@@ -1,4 +1,3 @@
-# follows deploy.yml
 name: nbval
 
 on:

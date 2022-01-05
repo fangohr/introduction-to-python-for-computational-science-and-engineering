@@ -34,5 +34,5 @@ jobs:
     - name: List Available Images
       run: docker images
 
-    - name: Make Docker HTML
+    - name: Run NBVAL over all chapters
       run: make docker-nbval

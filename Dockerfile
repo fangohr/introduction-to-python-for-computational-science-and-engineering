@@ -1,7 +1,7 @@
-FROM python:3.7
+FROM debian:bullseye-slim
 
-RUN apt-get update -y && apt-get install -y texlive-xetex latexmk texlive-xetex fonts-freefont-otf
-RUN pip3 install --upgrade pip
+RUN apt-get update -y && apt-get install -y texlive-xetex latexmk texlive-xetex \
+	texlive-fonts-extra fonts-freefont-otf python3 python3-pip git zile
 
 COPY poetry.lock pyproject.toml /opt/
 
@@ -13,4 +13,8 @@ RUN poetry install -vvv
 
 RUN mkdir -p /io
 WORKDIR /io
+
+# Need this for one nbval and chapter 1
+RUN ln -s /usr/bin/python3 /usr/local/bin/python
+
 CMD ["/bin/bash"]

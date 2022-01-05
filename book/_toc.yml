@@ -1,9 +1,8 @@
-# Table of content
-# Learn more at https://jupyterbook.org/customize/toc.html
-#
-- file: opening
+format: jb-book
+root: opening
+options:
   numbered: true
-
+chapters:
 - file: 01-introduction
 - file: 02-powerful-calculator
 - file: 03-data-types-structures
@@ -22,3 +21,4 @@
 - file: 16-scipy
 - file: 17-pandas
 - file: 18-next-steps
+- file: 99-changes

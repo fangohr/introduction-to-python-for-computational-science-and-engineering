@@ -22,7 +22,12 @@ pdf: book/*-*.ipynb
 	poetry run jupyter-book build book --builder pdflatex
 
 nbval:
-	poetry run pytest -v --nbval book/*.ipynb --sanitize-with book/static/nbval_sanitize.cfg
+	@echo "Testing all chapters (apart from 18) with --nbval"
+	poetry run pytest -v --nbval book --sanitize-with book/static/nbval_sanitize.cfg \
+	    --ignore=book/18-environments.ipynb --ignore=book/_build
+	@echo "Testing chapter 18 with --nbval-lax"
+	poetry run pytest -v --nbval-lax book/18-environments.ipynb
+
 
 
 docker-all:

@@ -1,10 +1,6 @@
 name: nbval
 
-on:
-  release:
-    types: [created]
-  push:
-    all
+on: [push, pull_request]
 
 jobs:
   docker-build-and-nbval:

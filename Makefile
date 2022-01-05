@@ -22,7 +22,8 @@ pdf: book/*-*.ipynb
 	poetry run jupyter-book build book --builder pdflatex
 
 nbval:
-	poetry run pytest -v --nbval book/*.ipynb --sanitize-with book/static/nbval_sanitize.cfg
+	poetry run pytest -v --nbval book --sanitize-with book/static/nbval_sanitize.cfg \
+	    --ignore=book/18-environments.ipynb --ignore=book/_build
 
 
 docker-all:

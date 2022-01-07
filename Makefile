@@ -82,7 +82,7 @@ docker-clean:
 	$(DOCKER_RUN) make clean
 
 docker-binder-nbval:
-	docker run python4compscience-binder make nbval-native
+	$(DOCKER_RUN) make nbval-native
 
 # to update the title page:
 # - screenshot first page of pdf

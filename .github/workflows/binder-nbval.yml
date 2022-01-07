@@ -15,7 +15,7 @@ jobs:
       uses: jupyterhub/repo2docker-action@master
       with:
         NO_PUSH: 'true'
-        IMAGE_NAME: "python4compscience-binder"
+        IMAGE_NAME: "python4compscience"
 
     - name: List Available Images
       run: docker images

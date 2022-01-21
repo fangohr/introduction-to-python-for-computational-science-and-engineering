@@ -1401,17 +1401,17 @@ Successfully installed cowsay-4.0
 <div class="section" id="should-i-install-a-python-package-through-conda-or-pip">
 <h3><span class="section-number">18.4.3. </span>Should I install a python package through <code class="docutils literal notranslate"><span class="pre">conda</span></code> or <code class="docutils literal notranslate"><span class="pre">pip</span></code>?<a class="headerlink" href="#should-i-install-a-python-package-through-conda-or-pip" title="Permalink to this headline">¶</a></h3>
 <p>The typical scenario is that one installs Anaconda, and most Python packages needed are available: somewhat standard tools such as <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">scipy</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">jupyter</span></code>, <code class="docutils literal notranslate"><span class="pre">ipython</span></code> and <code class="docutils literal notranslate"><span class="pre">spyder</span></code> already come with the anaconda distribution. Then some package is missing that needs to be installed additionally.</p>
-<p>For example, the package xarray: this can be installed through conda or through pip.</p>
+<p>For example, the package <code class="docutils literal notranslate"><span class="pre">xarray</span></code>: this can be installed through conda or through pip.</p>
 <p>Experience-based rough guidance is as follows if working within an anaconda installation of Python:</p>
 <ul>
-<li><p>avoid mixing pip installs with conda installs</p></li>
-<li><p>if conda can install the required packages, then use that</p></li>
-<li><p>if conda cannot insall the required packages, we have to use pip. In that case:</p>
+<li><p>avoid mixing <code class="docutils literal notranslate"><span class="pre">pip</span></code> installs with <code class="docutils literal notranslate"><span class="pre">conda</span></code> installs</p></li>
+<li><p>if <code class="docutils literal notranslate"><span class="pre">conda</span></code> can install the required packages, then use that</p></li>
+<li><p>if <code class="docutils literal notranslate"><span class="pre">conda</span></code> cannot install the required packages, we have to use <code class="docutils literal notranslate"><span class="pre">pip</span></code>. In that case:</p>
 <ul>
-<li><p>install as many of the requirements as (easily) possible using conda</p></li>
-<li><p>then install the desired packages through pip</p></li>
-<li><p>afterwards, do not use conda again to install more packages.</p>
-<p>The reason for this is that conda and pip cannot interact perfectly, and so the changes that one package manager made, maybe overriden or accidentally repeated slightly differently by the other one.</p>
+<li><p>install the requirements that need to come from <code class="docutils literal notranslate"><span class="pre">conda</span></code> (if any)</p></li>
+<li><p>then install the desired packages through <code class="docutils literal notranslate"><span class="pre">pip</span></code></p></li>
+<li><p>after having used <code class="docutils literal notranslate"><span class="pre">pip</span></code>, do not use <code class="docutils literal notranslate"><span class="pre">conda</span></code> again to install more packages.</p>
+<p>The reason for this is that <code class="docutils literal notranslate"><span class="pre">conda</span></code> and <code class="docutils literal notranslate"><span class="pre">pip</span></code> cannot interact perfectly, and so the changes that one package manager made, maybe overriden or accidentally repeated slightly differently by the other one.</p>
 </li>
 </ul>
 </li>

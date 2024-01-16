@@ -1,0 +1,12 @@
+* TODO
+- [X] building natively on OSX works (make html, make pdf)
+- [X] Binder link is included
+- [ ] nbval shows some failures
+- [ ] building through docker fails for pdf
+- [ ] check github actions
+- [ ] make pdf available?
+- [ ] JupyterLite version
+- [ ] check CI
+- [ ] run black over notebooks
+- [ ] review content
+

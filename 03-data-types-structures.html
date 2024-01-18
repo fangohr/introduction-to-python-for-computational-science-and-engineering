@@ -1,46 +1,60 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>3. Data Types and Data Structures &#8212; Introduction to Python for Computational Science and Engineering</title>
-    
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -75,424 +89,428 @@ var addUtterances = () => {
 }
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '03-data-types-structures';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="4. Introspection" href="04-introspection.html" />
     <link rel="prev" title="2. A powerful calculator" href="02-powerful-calculator.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
         
       
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="opening.html">
+  
+  
+  
+  
+  
+    
+    
       
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Introduction to Python for Computational Science and Engineering</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="opening.html">
-   Python for Computational Science and Engineering
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="01-introduction.html">
-   1. Introduction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02-powerful-calculator.html">
-   2. A powerful calculator
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   3. Data Types and Data Structures
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="04-introspection.html">
-   4. Introspection
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="05-input-output.html">
-   5. Input and Output
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="06-control-flow.html">
-   6. Control Flow
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="07-functions-modules.html">
-   7. Functions and modules
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="08-functional-tools.html">
-   8. Functional tools
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="09-common-tasks.html">
-   9. Common tasks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="10-matlab-to-python.html">
-   10. From Matlab to Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="11-python-shells.html">
-   11. Python shells
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="12-symbolic-computation.html">
-   12. Symbolic computation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="13-numeric-computation.html">
-   13. Numerical Computation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="14-numpy.html">
-   14. Numerical Python (numpy): arrays
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="15-visualising-data.html">
-   15. Visualising Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="16-scipy.html">
-   16. Numerical Methods using Python (scipy)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="17-pandas.html">
-   17. Pandas - Data Science with Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="18-environments.html">
-   18. Python packages and environments
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="19-next-steps.html">
-   19. Where to go from here?
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="99-changes.html">
-   20. Change history
-  </a>
- </li>
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Introduction to Python for Computational Science and Engineering - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Introduction to Python for Computational Science and Engineering - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="opening.html">
+                    Python for Computational Science and Engineering
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-introduction.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-powerful-calculator.html">2. A powerful calculator</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Data Types and Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-introspection.html">4. Introspection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-input-output.html">5. Input and Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-control-flow.html">6. Control Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-functions-modules.html">7. Functions and modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-functional-tools.html">8. Functional tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-common-tasks.html">9. Common tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-matlab-to-python.html">10. From Matlab to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-python-shells.html">11. Python shells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12-symbolic-computation.html">12. Symbolic computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13-numeric-computation.html">13. Numerical Computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14-numpy.html">14. Numerical Python (numpy): arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15-visualising-data.html">15. Visualising Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16-scipy.html">16. Numerical Methods using Python (scipy)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17-pandas.html">17. Pandas - Data Science with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18-environments.html">18. Python packages and environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19-next-steps.html">19. Where to go from here?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="99-changes.html">20. Change history</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/03-data-types-structures.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/issues/new?title=Issue%20on%20page%20%2F03-data-types-structures.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main">
         
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/master?urlpath=tree/book/03-data-types-structures.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/master?urlpath=tree/book/03-data-types-structures.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/issues/new?title=Issue%20on%20page%20%2F03-data-types-structures.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/03-data-types-structures.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
     </div>
+  
 </div>
+</div>
+              
+              
 
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Data Types and Data Structures</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-type-is-it">
-   3.1. What type is it?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#numbers">
-   3.2. Numbers
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#integers">
-     3.2.1. Integers
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#integer-limits">
-     3.2.2. Integer limits
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#floating-point-numbers">
-     3.2.3. Floating Point numbers
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#complex-numbers">
-     3.2.4. Complex numbers
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#functions-applicable-to-all-types-of-numbers">
-     3.2.5. Functions applicable to all types of numbers
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sequences">
-   3.3. Sequences
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sequence-type-1-string">
-     3.3.1. Sequence type 1: String
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sequence-type-2-list">
-     3.3.2. Sequence type 2: List
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#the-range-command">
-       3.3.2.1. The range() command
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sequence-type-3-tuples">
-     3.3.3. Sequence type 3: Tuples
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#indexing-sequences">
-     3.3.4. Indexing sequences
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#slicing-sequences">
-     3.3.5. Slicing sequences
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dictionaries">
-     3.3.6. Dictionaries
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#passing-arguments-to-functions">
-   3.4. Passing arguments to functions
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#call-by-value">
-     3.4.1. Call by value
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#call-by-reference">
-     3.4.2. Call by reference
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#argument-passing-in-python">
-     3.4.3. Argument passing in Python
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#performance-considerations">
-     3.4.4. Performance considerations
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inadvertent-modification-of-data">
-     3.4.5. Inadvertent modification of data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#copying-objects">
-     3.4.6. Copying objects
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#equality-and-identity-sameness">
-   3.5. Equality and Identity/Sameness
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#equality">
-     3.5.1. Equality
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#identity-sameness">
-     3.5.2. Identity / Sameness
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-equality-and-identity">
-     3.5.3. Example: Equality and identity
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-type-is-it">3.1. What type is it?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numbers">3.2. Numbers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integers">3.2.1. Integers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-limits">3.2.2. Integer limits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#floating-point-numbers">3.2.3. Floating Point numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-numbers">3.2.4. Complex numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-applicable-to-all-types-of-numbers">3.2.5. Functions applicable to all types of numbers</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sequences">3.3. Sequences</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-type-1-string">3.3.1. Sequence type 1: String</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-type-2-list">3.3.2. Sequence type 2: List</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-range-command">3.3.2.1. The range() command</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-type-3-tuples">3.3.3. Sequence type 3: Tuples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-sequences">3.3.4. Indexing sequences</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-sequences">3.3.5. Slicing sequences</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries">3.3.6. Dictionaries</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#passing-arguments-to-functions">3.4. Passing arguments to functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#call-by-value">3.4.1. Call by value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#call-by-reference">3.4.2. Call by reference</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#argument-passing-in-python">3.4.3. Argument passing in Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-considerations">3.4.4. Performance considerations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inadvertent-modification-of-data">3.4.5. Inadvertent modification of data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copying-objects">3.4.6. Copying objects</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equality-and-identity-sameness">3.5. Equality and Identity/Sameness</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equality">3.5.1. Equality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identity-sameness">3.5.2. Identity / Sameness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-equality-and-identity">3.5.3. Example: Equality and identity</a></li>
+</ul>
+</li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="data-types-and-data-structures">
-<h1><span class="section-number">3. </span>Data Types and Data Structures<a class="headerlink" href="#data-types-and-data-structures" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="what-type-is-it">
-<h2><span class="section-number">3.1. </span>What type is it?<a class="headerlink" href="#what-type-is-it" title="Permalink to this headline">¶</a></h2>
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="data-types-and-data-structures">
+<h1><span class="section-number">3. </span>Data Types and Data Structures<a class="headerlink" href="#data-types-and-data-structures" title="Permalink to this heading">#</a></h1>
+<section id="what-type-is-it">
+<h2><span class="section-number">3.1. </span>What type is it?<a class="headerlink" href="#what-type-is-it" title="Permalink to this heading">#</a></h2>
 <p>Python knows different data types. To find the type of a variable, use the <code class="docutils literal notranslate"><span class="pre">type()</span></code> function:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -546,18 +564,18 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="numbers">
-<h2><span class="section-number">3.2. </span>Numbers<a class="headerlink" href="#numbers" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="numbers">
+<h2><span class="section-number">3.2. </span>Numbers<a class="headerlink" href="#numbers" title="Permalink to this heading">#</a></h2>
 <p><strong>Further information</strong></p>
 <ul class="simple">
 <li><p>Informal introduction to numbers. <a class="reference external" href="https://docs.python.org/3/tutorial/introduction.html#using-python-as-a-calculator">Python tutorial, section 3.1.1</a></p></li>
 <li><p>Python Library Reference: formal overview of numeric types, <a class="reference external" href="https://docs.python.org/3.8/library/stdtypes.html#numeric-types-int-float-complex">https://docs.python.org/3.8/library/stdtypes.html#numeric-types-int-float-complex</a></p></li>
 <li><p>Think Python, <a class="reference external" href="https://www.greenteapress.com/thinkpython/html/book003.html">Sec 2.1</a></p></li>
 </ul>
-<p>The in-built numerical types are integers and floating point numbers (see <a class="reference external" href="#Floating-Point-numbers">floating point numbers</a>) and complex floating point numbers (<a class="reference external" href="#Complex-numbers">complex numbers</a>).</p>
-<div class="section" id="integers">
-<h3><span class="section-number">3.2.1. </span>Integers<a class="headerlink" href="#integers" title="Permalink to this headline">¶</a></h3>
+<p>The in-built numerical types are integers and floating point numbers (see <span class="xref myst">floating point numbers</span>) and complex floating point numbers (<span class="xref myst">complex numbers</span>).</p>
+<section id="integers">
+<h3><span class="section-number">3.2.1. </span>Integers<a class="headerlink" href="#integers" title="Permalink to this heading">#</a></h3>
 <p>We have seen the use of integer numbers already in <a class="reference internal" href="02-powerful-calculator.html"><span class="doc std std-doc">Chapter 2</span></a>. Be aware of integer division problems (02 A Powerful Calculator, Integer Division).</p>
 <p>If we need to convert string containing an integer number to an integer we can use <code class="docutils literal notranslate"><span class="pre">int()</span></code> function:</p>
 <div class="cell docutils container">
@@ -606,9 +624,9 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="integer-limits">
-<h3><span class="section-number">3.2.2. </span>Integer limits<a class="headerlink" href="#integer-limits" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="integer-limits">
+<h3><span class="section-number">3.2.2. </span>Integer limits<a class="headerlink" href="#integer-limits" title="Permalink to this heading">#</a></h3>
 <p>Integers in Python 3 are unlimited; Python will automatically assign more memory as needed as the numbers get bigger. This means we can calculate very large numbers with no special steps.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -629,9 +647,9 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p>uint16 (unsigned) ranges from 0 to <span class="math notranslate nohighlight">\(2^{16}-1\)</span></p></li>
 <li><p>int16 (signed) ranges from <span class="math notranslate nohighlight">\(-2^{15}\)</span> to <span class="math notranslate nohighlight">\(2^{15}-1\)</span></p></li>
 </ul>
-</div>
-<div class="section" id="floating-point-numbers">
-<h3><span class="section-number">3.2.3. </span>Floating Point numbers<a class="headerlink" href="#floating-point-numbers" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="floating-point-numbers">
+<h3><span class="section-number">3.2.3. </span>Floating Point numbers<a class="headerlink" href="#floating-point-numbers" title="Permalink to this heading">#</a></h3>
 <p>A string containing a floating point number can be converted into a floating point number using the <code class="docutils literal notranslate"><span class="pre">float()</span></code> command:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -659,9 +677,9 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="complex-numbers">
-<h3><span class="section-number">3.2.4. </span>Complex numbers<a class="headerlink" href="#complex-numbers" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="complex-numbers">
+<h3><span class="section-number">3.2.4. </span>Complex numbers<a class="headerlink" href="#complex-numbers" title="Permalink to this heading">#</a></h3>
 <p>Python (as Fortran and Matlab) has built-in complex numbers. Here are some examples how to use these:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -762,9 +780,9 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="functions-applicable-to-all-types-of-numbers">
-<h3><span class="section-number">3.2.5. </span>Functions applicable to all types of numbers<a class="headerlink" href="#functions-applicable-to-all-types-of-numbers" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="functions-applicable-to-all-types-of-numbers">
+<h3><span class="section-number">3.2.5. </span>Functions applicable to all types of numbers<a class="headerlink" href="#functions-applicable-to-all-types-of-numbers" title="Permalink to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">abs()</span></code> function returns the absolute value of a number (also called modulus):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -780,10 +798,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 <p>Note that <code class="docutils literal notranslate"><span class="pre">abs()</span></code> also works for complex numbers (see above).</p>
-</div>
-</div>
-<div class="section" id="sequences">
-<h2><span class="section-number">3.3. </span>Sequences<a class="headerlink" href="#sequences" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="sequences">
+<h2><span class="section-number">3.3. </span>Sequences<a class="headerlink" href="#sequences" title="Permalink to this heading">#</a></h2>
 <p>Strings, lists and tuples are <em>sequences</em>. They can be <em>indexed</em> and <em>sliced</em> in the same way.</p>
 <p>Tuples and strings are “immutable” (which basically means we can’t change individual elements within the tuple, and we cannot change individual characters within a string) whereas lists are “mutable” (<em>.i.e</em> we can change elements in a list.)</p>
 <p>Sequences share the following operations</p>
@@ -797,8 +815,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code> concatenates <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">*</span> <span class="pre">a</span></code> creates <code class="docutils literal notranslate"><span class="pre">n</span></code> copies of sequence <code class="docutils literal notranslate"><span class="pre">a</span></code></p></li>
 </ul>
-<div class="section" id="sequence-type-1-string">
-<h3><span class="section-number">3.3.1. </span>Sequence type 1: String<a class="headerlink" href="#sequence-type-1-string" title="Permalink to this headline">¶</a></h3>
+<section id="sequence-type-1-string">
+<h3><span class="section-number">3.3.1. </span>Sequence type 1: String<a class="headerlink" href="#sequence-type-1-string" title="Permalink to this heading">#</a></h3>
 <p><strong>Further information</strong></p>
 <ul class="simple">
 <li><p>Introduction to strings, <a class="reference external" href="https://docs.python.org/3/tutorial/introduction.html#strings">Python tutorial 3.1.2</a></p></li>
@@ -1014,9 +1032,9 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="sequence-type-2-list">
-<h3><span class="section-number">3.3.2. </span>Sequence type 2: List<a class="headerlink" href="#sequence-type-2-list" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="sequence-type-2-list">
+<h3><span class="section-number">3.3.2. </span>Sequence type 2: List<a class="headerlink" href="#sequence-type-2-list" title="Permalink to this heading">#</a></h3>
 <p><strong>Further information</strong></p>
 <ul class="simple">
 <li><p>Introduction to Lists, <a class="reference external" href="https://docs.python.org/3/tutorial/introduction.html#lists">Python tutorial, section 3.1.4</a></p></li>
@@ -1143,8 +1161,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 </div>
-<div class="section" id="the-range-command">
-<h4><span class="section-number">3.3.2.1. </span>The range() command<a class="headerlink" href="#the-range-command" title="Permalink to this headline">¶</a></h4>
+<section id="the-range-command">
+<h4><span class="section-number">3.3.2.1. </span>The range() command<a class="headerlink" href="#the-range-command" title="Permalink to this heading">#</a></h4>
 <p>A special type of list is frequently required (often together with <code class="docutils literal notranslate"><span class="pre">for-loops</span></code>) and therefor a command exists to generate that list: the <code class="docutils literal notranslate"><span class="pre">range(n)</span></code> command generates integers starting from 0 and going up to <em>but not including</em> n. Here are a few examples:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1234,10 +1252,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>Why are we calling <code class="docutils literal notranslate"><span class="pre">list(range())</span></code>?</p>
 <p>In Python 3, <code class="docutils literal notranslate"><span class="pre">range()</span></code> generates the numbers on demand. When you use <code class="docutils literal notranslate"><span class="pre">range()</span></code> in a for loop, this is more efficient, because it doesn’t take up memory with a list of numbers. Passing it to <code class="docutils literal notranslate"><span class="pre">list()</span></code> forces it to generate all of its numbers, so we can see what it does.</p>
 <p>To get the same efficient behaviour in Python 2, use <code class="docutils literal notranslate"><span class="pre">xrange()</span></code> instead of <code class="docutils literal notranslate"><span class="pre">range()</span></code>.</p>
-</div>
-</div>
-<div class="section" id="sequence-type-3-tuples">
-<h3><span class="section-number">3.3.3. </span>Sequence type 3: Tuples<a class="headerlink" href="#sequence-type-3-tuples" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="sequence-type-3-tuples">
+<h3><span class="section-number">3.3.3. </span>Sequence type 3: Tuples<a class="headerlink" href="#sequence-type-3-tuples" title="Permalink to this heading">#</a></h3>
 <p>A <em>tuple</em> is a (immutable) sequence of objects. Tuples are very similar in behaviour to lists with the exception that they cannot be modified (i.e. are immutable).</p>
 <p>For example, the objects in a sequence can be of any type:</p>
 <div class="cell docutils container">
@@ -1424,7 +1442,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_33</span><span class="o">/</span><span class="mf">2821052978.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">68</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># NBVAL_RAISES_EXCEPTION</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 
@@ -1435,9 +1453,9 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <p>The immutability is the main difference between a tuple and a list (the latter being mutable). We should use tuples when we don’t want the content to change.</p>
 <p>Note that Python functions that return more than one value, return these in tuples (which makes sense because you don’t want these values be changed).</p>
-</div>
-<div class="section" id="indexing-sequences">
-<h3><span class="section-number">3.3.4. </span>Indexing sequences<a class="headerlink" href="#indexing-sequences" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="indexing-sequences">
+<h3><span class="section-number">3.3.4. </span>Indexing sequences<a class="headerlink" href="#indexing-sequences" title="Permalink to this heading">#</a></h3>
 <p><strong>Further information</strong></p>
 <ul class="simple">
 <li><p>Introduction to strings and indexing in <a class="reference external" href="https://docs.python.org/3/tutorial/introduction.html#strings">Python tutorial, section 3.1.2</a>, the relevant section is starting after strings have been introduced.</p></li>
@@ -1570,9 +1588,9 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="slicing-sequences">
-<h3><span class="section-number">3.3.5. </span>Slicing sequences<a class="headerlink" href="#slicing-sequences" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="slicing-sequences">
+<h3><span class="section-number">3.3.5. </span>Slicing sequences<a class="headerlink" href="#slicing-sequences" title="Permalink to this heading">#</a></h3>
 <p><strong>Further information</strong></p>
 <ul class="simple">
 <li><p>Introduction to strings, indexing and slicing in <a class="reference external" href="https://docs.python.org/3/tutorial/introduction.html#strings">Python tutorial, section 3.1.2</a></p></li>
@@ -1717,9 +1735,9 @@ commentsRunWhenDOMLoaded(addUtterances);
 </pre></div>
 </div>
 <p>If you are not sure what the right index is, it is always a good technique to play around with a small example at the Python prompt to test things before or while you write your program.</p>
-</div>
-<div class="section" id="dictionaries">
-<h3><span class="section-number">3.3.6. </span>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="dictionaries">
+<h3><span class="section-number">3.3.6. </span>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this heading">#</a></h3>
 <p>Dictionaries are also called “associative arrays” and “hash tables”. Dictionaries are <em>unordered</em> sets of <em>key-value pairs</em>.</p>
 <p>An empty dictionary can be created using curly braces:</p>
 <div class="cell docutils container">
@@ -1954,31 +1972,31 @@ Ken works in room 1027
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="passing-arguments-to-functions">
-<h2><span class="section-number">3.4. </span>Passing arguments to functions<a class="headerlink" href="#passing-arguments-to-functions" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="passing-arguments-to-functions">
+<h2><span class="section-number">3.4. </span>Passing arguments to functions<a class="headerlink" href="#passing-arguments-to-functions" title="Permalink to this heading">#</a></h2>
 <p>This section contains some more advanced ideas and makes use of concepts that are only later introduced in this text. The section may be more easily accessible at a later stage.</p>
 <p>When objects are passed to a function, Python always passes (the value of) the reference to the object to the function. Effectively this is calling a function by reference, although one could refer to it as calling by value (of the reference).</p>
 <p>We review argument passing by value and reference before discussing the situation in Python in more detail.</p>
-<div class="section" id="call-by-value">
-<h3><span class="section-number">3.4.1. </span>Call by value<a class="headerlink" href="#call-by-value" title="Permalink to this headline">¶</a></h3>
+<section id="call-by-value">
+<h3><span class="section-number">3.4.1. </span>Call by value<a class="headerlink" href="#call-by-value" title="Permalink to this heading">#</a></h3>
 <p>One might expect that if we pass an object by value to a function, that modifications of that value inside the function will not affect the object (because we don’t pass the object itself, but only its value, which is a copy). Here is an example of this behaviour (in C):</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">pass_by_value</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;in pass_by_value: received m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">m</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">m</span><span class="o">=</span><span class="mi">42</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;in pass_by_value: changed to m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">m</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">pass_by_value</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;in pass_by_value: received m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">m</span><span class="p">);</span>
+<span class="w">  </span><span class="n">m</span><span class="o">=</span><span class="mi">42</span><span class="p">;</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;in pass_by_value: changed to m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">m</span><span class="p">);</span>
+<span class="p">}</span>
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">global_m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;global_m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">global_m</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">pass_by_value</span><span class="p">(</span><span class="n">global_m</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;global_m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">global_m</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">global_m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;global_m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">global_m</span><span class="p">);</span>
+<span class="w">  </span><span class="n">pass_by_value</span><span class="p">(</span><span class="n">global_m</span><span class="p">);</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;global_m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">global_m</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>together with the corresponding output:</p>
@@ -1989,26 +2007,26 @@ global_m=1
 </pre></div>
 </div>
 <p>The value <code class="docutils literal notranslate"><span class="pre">1</span></code> of the global variable <code class="docutils literal notranslate"><span class="pre">global_m</span></code> is not modified when the function <code class="docutils literal notranslate"><span class="pre">pass_by_value</span></code> changes its input argument to 42.</p>
-</div>
-<div class="section" id="call-by-reference">
-<h3><span class="section-number">3.4.2. </span>Call by reference<a class="headerlink" href="#call-by-reference" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="call-by-reference">
+<h3><span class="section-number">3.4.2. </span>Call by reference<a class="headerlink" href="#call-by-reference" title="Permalink to this heading">#</a></h3>
 <p>Calling a function by reference, on the other hand, means that the object given to a function is a reference to the object. This means that the function will see the same object as in the calling code (because they are referencing the same object: we can think of the reference as a pointer to the place in memory where the object is located). Any changes acting on the object inside the function, will then be visible in the object at the calling level (because the function does actually operate on the same object, not a copy of it).</p>
 <p>Here is one example showing this using pointers in C:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">pass_by_reference</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;in pass_by_reference: received m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="o">*</span><span class="n">m</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="o">*</span><span class="n">m</span><span class="o">=</span><span class="mi">42</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;in pass_by_reference: changed to m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="o">*</span><span class="n">m</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">pass_by_reference</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;in pass_by_reference: received m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="o">*</span><span class="n">m</span><span class="p">);</span>
+<span class="w">  </span><span class="o">*</span><span class="n">m</span><span class="o">=</span><span class="mi">42</span><span class="p">;</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;in pass_by_reference: changed to m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="o">*</span><span class="n">m</span><span class="p">);</span>
+<span class="p">}</span>
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">global_m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;global_m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">global_m</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">pass_by_reference</span><span class="p">(</span><span class="o">&amp;</span><span class="n">global_m</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;global_m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">global_m</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">global_m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;global_m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">global_m</span><span class="p">);</span>
+<span class="w">  </span><span class="n">pass_by_reference</span><span class="p">(</span><span class="o">&amp;</span><span class="n">global_m</span><span class="p">);</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;global_m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">global_m</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>together with the corresponding output:</p>
@@ -2019,21 +2037,21 @@ global_m=42
 </pre></div>
 </div>
 <p>C++ provides the ability to pass arguments as references by adding an ampersand in front of the argument name in the function definition:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">pass_by_reference</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;in pass_by_reference: received m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">m</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">m</span><span class="o">=</span><span class="mi">42</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;in pass_by_reference: changed to m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">m</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">pass_by_reference</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;in pass_by_reference: received m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">m</span><span class="p">);</span>
+<span class="w">  </span><span class="n">m</span><span class="o">=</span><span class="mi">42</span><span class="p">;</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;in pass_by_reference: changed to m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">m</span><span class="p">);</span>
+<span class="p">}</span>
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">global_m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;global_m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">global_m</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">pass_by_reference</span><span class="p">(</span><span class="n">global_m</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;global_m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">global_m</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">global_m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;global_m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">global_m</span><span class="p">);</span>
+<span class="w">  </span><span class="n">pass_by_reference</span><span class="p">(</span><span class="n">global_m</span><span class="p">);</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;global_m=%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">global_m</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>together with the corresponding output:</p>
@@ -2043,9 +2061,9 @@ in pass_by_reference: changed to m=42
 global_m=42
 </pre></div>
 </div>
-</div>
-<div class="section" id="argument-passing-in-python">
-<h3><span class="section-number">3.4.3. </span>Argument passing in Python<a class="headerlink" href="#argument-passing-in-python" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="argument-passing-in-python">
+<h3><span class="section-number">3.4.3. </span>Argument passing in Python<a class="headerlink" href="#argument-passing-in-python" title="Permalink to this heading">#</a></h3>
 <p>In Python, objects are passed as the value of a reference (think pointer) to the object. Depending on the way the reference is used in the function and depending on the type of object it references, this can result in pass-by-reference behaviour (where any changes to the object received as a function argument, are immediately reflected in the calling level).</p>
 <p>Here are three examples to discuss this. We start by passing a list to a function which iterates through all elements in the sequence and doubles the value of each element:</p>
 <div class="cell docutils container">
@@ -2125,15 +2143,15 @@ In main: s=42
 </div>
 <p>In this example, we also double the value (from 42 to 84) within the function. However, when we bind the object 84 to the python name <code class="docutils literal notranslate"><span class="pre">l</span></code> (that is the line <code class="docutils literal notranslate"><span class="pre">l</span> <span class="pre">=</span> <span class="pre">l</span> <span class="pre">*</span> <span class="pre">2</span></code>) we have created a new object (84), and we bind the new object to <code class="docutils literal notranslate"><span class="pre">l</span></code>. In the process, we lose the reference to the object 42 within the function. This does not affect the object 42 itself, nor the reference <code class="docutils literal notranslate"><span class="pre">l_global</span></code> to it.</p>
 <p>In summary, Python’s behaviour of passing arguments to a function may appear to vary (if we view it from the pass by value versus pass by reference point of view). However, it is always call by value, where the value is a reference to the object in question, and the behaviour can be explained through the same reasoning in every case.</p>
-</div>
-<div class="section" id="performance-considerations">
-<h3><span class="section-number">3.4.4. </span>Performance considerations<a class="headerlink" href="#performance-considerations" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="performance-considerations">
+<h3><span class="section-number">3.4.4. </span>Performance considerations<a class="headerlink" href="#performance-considerations" title="Permalink to this heading">#</a></h3>
 <p>Call by value function calls require copying of the value before it is passed to the function. From a performance point of view (both execution time and memory requirements), this can be an expensive process if the value is large. (Imagine the value is a <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code> object which could be several Megabytes or Gigabytes in size.)</p>
 <p>One generally prefers call by reference for large data objects as in this case only a pointer to the data objects is passed, independent of the actual size of the object, and thus this is generally faster than call-by-value.</p>
 <p>Python’s approach of (effectively) calling by reference is thus efficient. However, we need to be careful that our function do not modify the data they have been given where this is undesired.</p>
-</div>
-<div class="section" id="inadvertent-modification-of-data">
-<h3><span class="section-number">3.4.5. </span>Inadvertent modification of data<a class="headerlink" href="#inadvertent-modification-of-data" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="inadvertent-modification-of-data">
+<h3><span class="section-number">3.4.5. </span>Inadvertent modification of data<a class="headerlink" href="#inadvertent-modification-of-data" title="Permalink to this heading">#</a></h3>
 <p>Generally, a function should not modify the data given as input to it.</p>
 <p>For example, the following code demonstrates the attempt to determine the maximum value of a list, and – inadvertently – modifies the list in the process:</p>
 <div class="cell docutils container">
@@ -2167,13 +2185,13 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 <p>The user of the <code class="docutils literal notranslate"><span class="pre">mymax()</span></code> function would not expect that the input argument is modified when the function executes. We should generally avoid this. There are several ways to find better solutions to the given problem:</p>
 <ul class="simple">
 <li><p>In this particular case, we could use the Python in-built function <code class="docutils literal notranslate"><span class="pre">max()</span></code> to obtain the maximum value of a sequence.</p></li>
-<li><p>If we felt we need to stick to storing temporary values inside the list [this is actually not necessary], we could create a copy of the incoming list <code class="docutils literal notranslate"><span class="pre">s</span></code> first, and then proceed with the algorithm (see <a class="reference external" href="#Copying-objects">below</a> on Copying objects).</p></li>
+<li><p>If we felt we need to stick to storing temporary values inside the list [this is actually not necessary], we could create a copy of the incoming list <code class="docutils literal notranslate"><span class="pre">s</span></code> first, and then proceed with the algorithm (see <span class="xref myst">below</span> on Copying objects).</p></li>
 <li><p>Use another algorithm which uses an extra temporary variable rather than abusing the list for this. For example:</p></li>
 <li><p>We could pass a tuple (instead of a list) to the function: a tuple is <em>immutable</em> and can thus never be modified (this would result in an exception being raised when the function tries to write to elements in the tuple).</p></li>
 </ul>
-</div>
-<div class="section" id="copying-objects">
-<h3><span class="section-number">3.4.6. </span>Copying objects<a class="headerlink" href="#copying-objects" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="copying-objects">
+<h3><span class="section-number">3.4.6. </span>Copying objects<a class="headerlink" href="#copying-objects" title="Permalink to this heading">#</a></h3>
 <p>Python provides the <code class="docutils literal notranslate"><span class="pre">id()</span></code> function which returns an integer number that is unique for each object. (In the current CPython implementation, this is the memory address.) We can use this to identify whether two objects are the same.</p>
 <p>To copy a sequence object (including lists), we can slice it, <em>i.e.</em> if <code class="docutils literal notranslate"><span class="pre">a</span></code> is a list, then <code class="docutils literal notranslate"><span class="pre">a[:]</span></code> will return a copy of <code class="docutils literal notranslate"><span class="pre">a</span></code>. Here is a demonstration:</p>
 <div class="cell docutils container">
@@ -2211,7 +2229,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140295189578240
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140619651705792
 </pre></div>
 </div>
 </div>
@@ -2224,7 +2242,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140295189578240
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140619651705792
 </pre></div>
 </div>
 </div>
@@ -2238,7 +2256,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140295189075456
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140619653485056
 </pre></div>
 </div>
 </div>
@@ -2257,13 +2275,13 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <p>Python’s standard library provides the <code class="docutils literal notranslate"><span class="pre">copy</span></code> module, which provides copy functions that can be used to create copies of objects. We could have used <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">copy;</span> <span class="pre">c</span> <span class="pre">=</span> <span class="pre">copy.deepcopy(a)</span></code> instead of <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">a[:]</span></code>.</p>
-</div>
-</div>
-<div class="section" id="equality-and-identity-sameness">
-<h2><span class="section-number">3.5. </span>Equality and Identity/Sameness<a class="headerlink" href="#equality-and-identity-sameness" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="equality-and-identity-sameness">
+<h2><span class="section-number">3.5. </span>Equality and Identity/Sameness<a class="headerlink" href="#equality-and-identity-sameness" title="Permalink to this heading">#</a></h2>
 <p>A related question concerns the equality of objects.</p>
-<div class="section" id="equality">
-<h3><span class="section-number">3.5.1. </span>Equality<a class="headerlink" href="#equality" title="Permalink to this headline">¶</a></h3>
+<section id="equality">
+<h3><span class="section-number">3.5.1. </span>Equality<a class="headerlink" href="#equality" title="Permalink to this heading">#</a></h3>
 <p>The operators <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, and <code class="docutils literal notranslate"><span class="pre">!=</span></code> compare the <em>values</em> of two objects. The objects need not have the same type. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2303,9 +2321,9 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <p>So the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator checks whether the values of two objects are equal.</p>
-</div>
-<div class="section" id="identity-sameness">
-<h3><span class="section-number">3.5.2. </span>Identity / Sameness<a class="headerlink" href="#identity-sameness" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="identity-sameness">
+<h3><span class="section-number">3.5.2. </span>Identity / Sameness<a class="headerlink" href="#identity-sameness" title="Permalink to this heading">#</a></h3>
 <p>To see check whether two objects <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are the same (i.e. <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are references to the same place in memory), we can use the <code class="docutils literal notranslate"><span class="pre">is</span></code> operator (continued from example above):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2329,7 +2347,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140295189540816
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140619742867184
 </pre></div>
 </div>
 </div>
@@ -2342,15 +2360,15 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140295347734832
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10861192
 </pre></div>
 </div>
 </div>
 </div>
 <p>which shows that <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are stored in different places in memory.</p>
-</div>
-<div class="section" id="example-equality-and-identity">
-<h3><span class="section-number">3.5.3. </span>Example: Equality and identity<a class="headerlink" href="#example-equality-and-identity" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="example-equality-and-identity">
+<h3><span class="section-number">3.5.3. </span>Example: Equality and identity<a class="headerlink" href="#example-equality-and-identity" title="Permalink to this heading">#</a></h3>
 <p>We close with an example involving lists:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2386,7 +2404,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140295189075904
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140619653542144
 </pre></div>
 </div>
 </div>
@@ -2399,7 +2417,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140295189075904
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140619653542144
 </pre></div>
 </div>
 </div>
@@ -2513,7 +2531,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140295274679872
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140619651693696
 </pre></div>
 </div>
 </div>
@@ -2526,7 +2544,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140295189075904
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140619653542144
 </pre></div>
 </div>
 </div>
@@ -2581,9 +2599,9 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2597,7 +2615,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -2605,46 +2623,138 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="02-powerful-calculator.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2. </span>A powerful calculator</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="02-powerful-calculator.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>A powerful calculator</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="04-introspection.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="04-introspection.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"><span class="section-number">4. </span>Introspection</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-        
-        </div>
-    </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Hans Fangohr<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-      </div>
-    </div>
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-type-is-it">3.1. What type is it?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numbers">3.2. Numbers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integers">3.2.1. Integers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-limits">3.2.2. Integer limits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#floating-point-numbers">3.2.3. Floating Point numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-numbers">3.2.4. Complex numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-applicable-to-all-types-of-numbers">3.2.5. Functions applicable to all types of numbers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sequences">3.3. Sequences</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-type-1-string">3.3.1. Sequence type 1: String</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-type-2-list">3.3.2. Sequence type 2: List</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-range-command">3.3.2.1. The range() command</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-type-3-tuples">3.3.3. Sequence type 3: Tuples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-sequences">3.3.4. Indexing sequences</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-sequences">3.3.5. Slicing sequences</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries">3.3.6. Dictionaries</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#passing-arguments-to-functions">3.4. Passing arguments to functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#call-by-value">3.4.1. Call by value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#call-by-reference">3.4.2. Call by reference</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#argument-passing-in-python">3.4.3. Argument passing in Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-considerations">3.4.4. Performance considerations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inadvertent-modification-of-data">3.4.5. Inadvertent modification of data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copying-objects">3.4.6. Copying objects</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equality-and-identity-sameness">3.5. Equality and Identity/Sameness</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equality">3.5.1. Equality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identity-sameness">3.5.2. Identity / Sameness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-equality-and-identity">3.5.3. Example: Equality and identity</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+By Hans Fangohr
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

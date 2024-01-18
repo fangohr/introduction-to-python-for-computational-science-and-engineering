@@ -1,46 +1,60 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>1. Introduction &#8212; Introduction to Python for Computational Science and Engineering</title>
-    
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -75,401 +89,423 @@ var addUtterances = () => {
 }
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01-introduction';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="2. A powerful calculator" href="02-powerful-calculator.html" />
     <link rel="prev" title="Python for Computational Science and Engineering" href="opening.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
         
       
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="opening.html">
+  
+  
+  
+  
+  
+    
+    
       
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Introduction to Python for Computational Science and Engineering</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="opening.html">
-   Python for Computational Science and Engineering
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   1. Introduction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02-powerful-calculator.html">
-   2. A powerful calculator
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03-data-types-structures.html">
-   3. Data Types and Data Structures
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="04-introspection.html">
-   4. Introspection
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="05-input-output.html">
-   5. Input and Output
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="06-control-flow.html">
-   6. Control Flow
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="07-functions-modules.html">
-   7. Functions and modules
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="08-functional-tools.html">
-   8. Functional tools
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="09-common-tasks.html">
-   9. Common tasks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="10-matlab-to-python.html">
-   10. From Matlab to Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="11-python-shells.html">
-   11. Python shells
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="12-symbolic-computation.html">
-   12. Symbolic computation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="13-numeric-computation.html">
-   13. Numerical Computation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="14-numpy.html">
-   14. Numerical Python (numpy): arrays
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="15-visualising-data.html">
-   15. Visualising Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="16-scipy.html">
-   16. Numerical Methods using Python (scipy)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="17-pandas.html">
-   17. Pandas - Data Science with Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="18-environments.html">
-   18. Python packages and environments
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="19-next-steps.html">
-   19. Where to go from here?
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="99-changes.html">
-   20. Change history
-  </a>
- </li>
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Introduction to Python for Computational Science and Engineering - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Introduction to Python for Computational Science and Engineering - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="opening.html">
+                    Python for Computational Science and Engineering
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-powerful-calculator.html">2. A powerful calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-data-types-structures.html">3. Data Types and Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-introspection.html">4. Introspection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-input-output.html">5. Input and Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-control-flow.html">6. Control Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-functions-modules.html">7. Functions and modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-functional-tools.html">8. Functional tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-common-tasks.html">9. Common tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-matlab-to-python.html">10. From Matlab to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-python-shells.html">11. Python shells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12-symbolic-computation.html">12. Symbolic computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13-numeric-computation.html">13. Numerical Computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14-numpy.html">14. Numerical Python (numpy): arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15-visualising-data.html">15. Visualising Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16-scipy.html">16. Numerical Methods using Python (scipy)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17-pandas.html">17. Pandas - Data Science with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18-environments.html">18. Python packages and environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19-next-steps.html">19. Where to go from here?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="99-changes.html">20. Change history</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/01-introduction.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/issues/new?title=Issue%20on%20page%20%2F01-introduction.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main">
         
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/master?urlpath=tree/book/01-introduction.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/master?urlpath=tree/book/01-introduction.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/issues/new?title=Issue%20on%20page%20%2F01-introduction.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/01-introduction.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
     </div>
+  
 </div>
+</div>
+              
+              
 
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduction</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#computational-modelling">
-   1.1. Computational Modelling
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     1.1.1. Introduction
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     1.1.2. Computational Modelling
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#programming-to-support-computational-modelling">
-     1.1.3. Programming to support computational modelling
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-python-for-scientific-computing">
-   1.2. Why Python for scientific computing?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#optimisation-strategies">
-     1.2.1. Optimisation strategies
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#get-it-right-first-then-make-it-fast">
-     1.2.2. Get it right first, then make it fast
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#prototyping-in-python">
-     1.2.3. Prototyping in Python
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#literature">
-     1.2.4. Literature
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#recorded-video-lectures-on-python-for-beginners">
-     1.2.5. Recorded video lectures on Python for beginners
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#python-tutor-mailing-list">
-     1.2.6. Python tutor mailing list
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#python-version">
-   1.3. Python version
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#these-documents">
-   1.4. These documents
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-file-magic">
-     1.4.1. The
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       %%file
-      </span>
-     </code>
-     magic
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-to-execute-shell-commands">
-     1.4.2. The
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       !
-      </span>
-     </code>
-     to execute shell commands
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-nbval-tags">
-     1.4.3. The
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       #NBVAL
-      </span>
-     </code>
-     tags
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#your-feedback">
-   1.5. Your feedback
-  </a>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-modelling">1.1. Computational Modelling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.1.1. Introduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.1.2. Computational Modelling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-to-support-computational-modelling">1.1.3. Programming to support computational modelling</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-python-for-scientific-computing">1.2. Why Python for scientific computing?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimisation-strategies">1.2.1. Optimisation strategies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-it-right-first-then-make-it-fast">1.2.2. Get it right first, then make it fast</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prototyping-in-python">1.2.3. Prototyping in Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#literature">1.2.4. Literature</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recorded-video-lectures-on-python-for-beginners">1.2.5. Recorded video lectures on Python for beginners</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-tutor-mailing-list">1.2.6. Python tutor mailing list</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-version">1.3. Python version</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#these-documents">1.4. These documents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-file-magic">1.4.1. The <code class="docutils literal notranslate"><span class="pre">%%file</span></code> magic</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-to-execute-shell-commands">1.4.2. The <code class="docutils literal notranslate"><span class="pre">!</span></code> to execute shell commands</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-nbval-tags">1.4.3. The <code class="docutils literal notranslate"><span class="pre">#NBVAL</span></code> tags</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-feedback">1.5. Your feedback</a></li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="introduction">
-<h1><span class="section-number">1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
+<h1><span class="section-number">1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h1>
 <p>This text summarises a number of core ideas relevant to Computational Engineering and Scientific Computing using Python. The emphasis is on introducing some basic Python (programming) concepts that are relevant for numerical algorithms. The later chapters touch upon numerical libraries such as <span><code class="docutils literal notranslate"><span class="pre">numpy</span></code></span> and <span><code class="docutils literal notranslate"><span class="pre">scipy</span></code></span> each of which deserves much more space than provided here. We aim to enable the reader to learn independently how to use other functionality of these libraries using the available documentation (online and through the packages itself).</p>
-<div class="section" id="computational-modelling">
-<h2><span class="section-number">1.1. </span>Computational Modelling<a class="headerlink" href="#computational-modelling" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id1">
-<h3><span class="section-number">1.1.1. </span>Introduction<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<section id="computational-modelling">
+<h2><span class="section-number">1.1. </span>Computational Modelling<a class="headerlink" href="#computational-modelling" title="Permalink to this heading">#</a></h2>
+<section id="id1">
+<h3><span class="section-number">1.1.1. </span>Introduction<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p>Increasingly, processes and systems are researched or developed through computer simulations: new aircraft prototypes such as for the recent A380 are first designed and tested virtually through computer simulations. With the ever increasing computational power available through supercomputers, clusters of computers and even desktop and laptop machines, this trend is likely to continue.</p>
 <p>Computer simulations are routinely used in fundamental research to help understand experimental measurements, and to replace – for example – growth and fabrication of expensive samples/experiments where possible. In an industrial context, product and device design can often be done much more cost effectively if carried out virtually through simulation rather than through building and testing prototypes. This is in particular so in areas where samples are expensive such as nanoscience (where it is expensive to create small things) and aerospace industry (where it is expensive to build large things). There are also situations where certain experiments can only be carried out virtually (ranging from astrophysics to study of effects of large scale nuclear or chemical accidents). Computational modelling, including use of computational tools to post-process, analyse and visualise data, has been used in engineering, physics and chemistry for many decades but is becoming more important due to the cheap availability of computational resources. Computational Modelling is also starting to play a more important role in studies of biological systems, the economy, archeology, medicine, health care, and many other domains.</p>
-</div>
-<div class="section" id="id2">
-<h3><span class="section-number">1.1.2. </span>Computational Modelling<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id2">
+<h3><span class="section-number">1.1.2. </span>Computational Modelling<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <p>To study a process with a computer simulation we distinguish two steps: the first one is to develop a <em>model</em> of the real system. When studying the motion of a small object, such as a penny, say, under the influence of gravity, we may be able to ignore friction of air: our model — which might only consider the gravitational force and the penny’s inertia, i.e. <span class="math notranslate nohighlight">\(a(t) = F/m = -9.81\mathrm{m}/\mathrm{s}^2\)</span> — is an approximation of the real system. The model will normally allow us to express the behaviour of the system (in some approximated form) through mathematical equations, which often involve ordinary differential equations (ODEs) or partial differential equatons (PDEs).</p>
 <p>In the natural sciences such as physics, chemistry and related engineering, it is often not so difficult to find a suitable model, although the resulting equations tend to be very difficult to solve, and can in most cases not be solved analytically at all.</p>
 <p>On the other hand, in subjects that are not as well described through a mathematical framework and depend on behaviour of objects whose actions are impossible to predict deterministically (such as humans), it is much more difficult to find a good model to describe reality. As a rule of thumb, in these disciplines the resulting equations are easier to solve, but they are harder to find and the validity of a model needs to be questioned much more. Typical examples are attempts to simulate the economy, the use of global resources, the behaviour of a panicking crowd, etc.</p>
@@ -478,18 +514,18 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>The numerical solution that can be computed using a computer would consist of data that shows how the velocity changes over time for a particular initial velocity <em>v</em><sub>0</sub> (<em>v</em><sub>0</sub> is a boundary condition here). The computer program would report a long lists of two numbers keeping the (i) value of time <em>t</em><sub><em>i</em></sub> for which a particular (ii) value of the velocity <em>v</em><sub><em>i</em></sub> has been computed. By plotting all <em>v</em><sub><em>i</em></sub> against <em>t</em><sub><em>i</em></sub>, or by fitting a curve through the data, we may be able to understand the trend from the data (which we can just see from the analytical solution of course).</p>
 <p>It is clearly desirable to find an analytical solutions wherever possible but the number of problems where this is possible is small. Usually, the obtaining numerical result of a computer simulation is very useful (despite the shortcomings of the numerical results in comparison to an analytical expression) because it is the only possible way to study the system at all.</p>
 <p>The name <em>computational modelling</em> derives from the two steps: (i) <em>modelling</em>, i.e. finding a model description of a real system, and (ii) solving the resulting model equations using <em>computational</em> methods because this is the only way the equations can be solved at all.</p>
-</div>
-<div class="section" id="programming-to-support-computational-modelling">
-<h3><span class="section-number">1.1.3. </span>Programming to support computational modelling<a class="headerlink" href="#programming-to-support-computational-modelling" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="programming-to-support-computational-modelling">
+<h3><span class="section-number">1.1.3. </span>Programming to support computational modelling<a class="headerlink" href="#programming-to-support-computational-modelling" title="Permalink to this heading">#</a></h3>
 <p>A large number of packages exist that provide computational modelling capabilities. If these satisfy the research or design needs, and any data processing and visualisation is appropriately supported through existing tools, one can carry out computational modelling studies without any deeper programming knowledge.</p>
 <p>In a research environment – both in academia and research on new products/ideas/… in industry – one often reaches a point where existing packages will not be able to perform a required simulation task, or where more can be learned from analysing existing data in news ways etc.</p>
 <p>At that point, programming skills are required. It is also generally useful to have a broad understanding of the building blocks of software and basic ideas of software engineering as we use more and more devices that are software-controlled.</p>
 <p>It is often forgotten that there is nothing the computer can do that we as humans cannot do. The computer can do it much faster, though, and also with making far fewer mistakes. There is thus no magic in computations a computer carries out: they could have been done by humans, and – in fact – were for many years (see for example Wikipedia entry on <a class="reference external" href="https://en.wikipedia.org/wiki/Human_computer">Human Computer</a>).</p>
 <p>Understanding how to build a computer simulation comes roughly down to: (i) finding the model (often this means finding the right equations), (ii) knowing how to solve these equations numerically, (ii) to implement the methods to compute these solutions (this is the programming bit).</p>
-</div>
-</div>
-<div class="section" id="why-python-for-scientific-computing">
-<h2><span class="section-number">1.2. </span>Why Python for scientific computing?<a class="headerlink" href="#why-python-for-scientific-computing" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="why-python-for-scientific-computing">
+<h2><span class="section-number">1.2. </span>Why Python for scientific computing?<a class="headerlink" href="#why-python-for-scientific-computing" title="Permalink to this heading">#</a></h2>
 <p>The design focus on the Python language is on productivity and code readability, for example through:</p>
 <ul class="simple">
 <li><p>Interactive python console</p></li>
@@ -501,13 +537,13 @@ commentsRunWhenDOMLoaded(addUtterances);
 </ul>
 <p><em>As Python is an interpreted language, and it runs many times slower than compiled code, one might ask why anybody should consider such a ’slow’ language for computer simulations?</em></p>
 <p>There are two replies to this criticism:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><em>Implementation time versus execution time</em>: It is not the execution time alone that contributes to the cost of a computational project: one also needs to consider the cost of the development and maintenance work.</p></li>
 </ol>
 <p>In the early days of scientific computing (say in the 1960/70/80), compute time was so expensive that it made perfect sense to invest many person months of a programmer’s time to improve the performance of a calculation by a few percent.</p>
 <p>Nowadays, however, the CPU cycles have become much cheaper than the programmer’s time. For research codes which often run only a small number of times (before the researchers move on to the next problem), it may be economic to accept that the code runs only at 25% of the expected possible speed if this saves, say, a month of a researcher’s (or programmers) time. For example: if the execution time of the piece of code is 10 hours, and one can predict that it will run about 100 times, then the total execution time is approximately 1000 hours. It would be great if this could be reduced to 25% and one could save 750 (CPU) hours. On the other hand, is an extra wait (about a month) and the cost of 750 CPU hours worth investing one month of a person’s time [who could do something else while the calculation is running]? Often, the answer is not.</p>
 <p><em>Code readability &amp; maintenance - short code, fewer bugs</em>: A related issue is that a research code is not only used for one project, but carries on to be used again and again, evolves, grows, bifurcates etc. In this case, it is often justified to invest more time to make the code fast. At the same time, a significant amount of programmer time will go into (i) introducing the required changes, (ii) testing them even before work on speed optimisation of the changed version can start. To be able to maintain, extend and modify a code in often unforeseen ways, it can only be helpful to use a language that is easy to read and of great expressive power.</p>
-<ol>
+<ol class="arabic" start="2">
 <li><p><em>Well-written Python code can be very fast</em> if time critical parts in executed through compiled language.</p>
 <p>Typically, less than 5% percent of the code base of a simulation project need more than 95% of the execution time. As long as these calculations are done very efficiently, one doesn’t need to worry about all other parts of the code as the overall time their execution takes is insignificant.</p>
 <p>The compute intense part of the program should to be tuned to reach optimal performance. Python offers a number of options.</p>
@@ -529,21 +565,21 @@ commentsRunWhenDOMLoaded(addUtterances);
 </li>
 </ol>
 <p><em>The conclusion is that Python is “fast enough” for most computational tasks, and that its user friendly high-level language often makes up for reduced speed in comparison to compiled lower-level languages. Combining Python with tailor-written compiled code for the performance critical parts of the code, results in virtually optimal speed in most cases.</em></p>
-<div class="section" id="optimisation-strategies">
-<h3><span class="section-number">1.2.1. </span>Optimisation strategies<a class="headerlink" href="#optimisation-strategies" title="Permalink to this headline">¶</a></h3>
+<section id="optimisation-strategies">
+<h3><span class="section-number">1.2.1. </span>Optimisation strategies<a class="headerlink" href="#optimisation-strategies" title="Permalink to this heading">#</a></h3>
 <p>We generally understand reduction of execution time when discussing “code optimisation” in the context of computational modelling, and we essentially like to carry out the required calculations as fast as possible. (Sometimes we need to reduce the amount of RAM, the amount of data input output to disk or the network.) At the same time, we need to make sure that we do not invest inappropriate amounts of programming time to achieve this speed up: as always there needs to be a balance between the programmers’ time and the improvement we can gain from this.</p>
-</div>
-<div class="section" id="get-it-right-first-then-make-it-fast">
-<h3><span class="section-number">1.2.2. </span>Get it right first, then make it fast<a class="headerlink" href="#get-it-right-first-then-make-it-fast" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="get-it-right-first-then-make-it-fast">
+<h3><span class="section-number">1.2.2. </span>Get it right first, then make it fast<a class="headerlink" href="#get-it-right-first-then-make-it-fast" title="Permalink to this heading">#</a></h3>
 <p>To write fast code effectively, we note that the right order is to (i) first write a program that carries out the correct calculation. For this, choose a language/approach that allows you to <em>write the code quickly and make it work quickly</em> — regardless of execution speed. Then (ii) either change the program or re-write it from scratch in the same language to make the execution faster. During the process, keep comparing results with the slow version written first to make sure the optimisation does not introduce errors. (Once we are familiar with the concept of regression tests, they should be used here to compare the new and hopefully faster code with the original code.)</p>
 <p>A common pattern in Python is to start writing pure Python code, then start using Python libraries that use compiled code internally (such as the fast arrays Numpy provides, and routines from scipy that go back to established numerical codes such as ODEPACK, LAPACK and others). If required, one can – after careful profiling – start to replace parts of the Python code with a compiled language such as C and Fortran to improve execution speed further (as discussed above).</p>
-</div>
-<div class="section" id="prototyping-in-python">
-<h3><span class="section-number">1.2.3. </span>Prototyping in Python<a class="headerlink" href="#prototyping-in-python" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="prototyping-in-python">
+<h3><span class="section-number">1.2.3. </span>Prototyping in Python<a class="headerlink" href="#prototyping-in-python" title="Permalink to this heading">#</a></h3>
 <p>It turns out that – even if a particular code has to be written in, say, C++ – it is (often) more time efficient to prototype the code in Python, and once an appropriate design (and class structure) has been found, to translate the code to C++.</p>
-</div>
-<div class="section" id="literature">
-<h3><span class="section-number">1.2.4. </span>Literature<a class="headerlink" href="#literature" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="literature">
+<h3><span class="section-number">1.2.4. </span>Literature<a class="headerlink" href="#literature" title="Permalink to this heading">#</a></h3>
 <p>While this text starts with an introduction of (some aspects of) the basic Python programming language, you may find - depending on your prior experience - that you need to refer to secondary sources to fully understand some ideas.</p>
 <p>We repeatedly refer to the following documents:</p>
 <ul class="simple">
@@ -558,19 +594,19 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p>The <span><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></span> home page (<a class="reference external" href="https://matplotlib.org/">https://matplotlib.org/</a>).</p></li>
 <li><p>The Python style guide (<a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">https://www.python.org/dev/peps/pep-0008/</a></p></li>
 </ul>
-</div>
-<div class="section" id="recorded-video-lectures-on-python-for-beginners">
-<h3><span class="section-number">1.2.5. </span>Recorded video lectures on Python for beginners<a class="headerlink" href="#recorded-video-lectures-on-python-for-beginners" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="recorded-video-lectures-on-python-for-beginners">
+<h3><span class="section-number">1.2.5. </span>Recorded video lectures on Python for beginners<a class="headerlink" href="#recorded-video-lectures-on-python-for-beginners" title="Permalink to this heading">#</a></h3>
 <p>Do you like to listen/follow lectures? There is a series of 24 lectures titled <em>Introduction to Computer Science and Programming</em> delivered by Eric Grimsom and John Guttag from the MIT available at <a class="reference external" href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-00-introduction-to-computer-science-and-programming-fall-2008/">https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-00-introduction-to-computer-science-and-programming-fall-2008/</a> This is aimed at students with little or no programming experience. It aims to provide students with an understanding of the role computation can play in solving problems. It also aims to help students, regardless of their major, to feel justifiably confident of their ability to write small programs that allow them to accomplish useful goals.</p>
 <p>An more recent <a class="reference external" href="https://www.youtube.com/playlist?list=PLi01XoE8jYohWFPpC17Z-wWhPOSuh8Er-">collection of topic specific (and shorter) tutorial videos</a> is available from <a class="reference external" href="https://www.youtube.com/c/Socratica">Socratica</a> .</p>
-</div>
-<div class="section" id="python-tutor-mailing-list">
-<h3><span class="section-number">1.2.6. </span>Python tutor mailing list<a class="headerlink" href="#python-tutor-mailing-list" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="python-tutor-mailing-list">
+<h3><span class="section-number">1.2.6. </span>Python tutor mailing list<a class="headerlink" href="#python-tutor-mailing-list" title="Permalink to this heading">#</a></h3>
 <p>There is also a Python tutor mailing list (<a class="reference external" href="https://mail.python.org/mailman/listinfo/tutor">https://mail.python.org/mailman/listinfo/tutor</a>) where beginners are welcome to ask questions regarding Python. Both using the archives and posting your own queries (or in fact helping others) may help with understanding the language. Use the normal mailing list etiquette (i.e. be polite, concise, etc). You may want to read <a class="reference external" href="https://www.freebsd.org/doc/en/articles/mailing-list-faq/etiquette.html">https://www.freebsd.org/doc/en/articles/mailing-list-faq/etiquette.html</a> for some guidance on how to ask questions on mailing lists.</p>
-</div>
-</div>
-<div class="section" id="python-version">
-<h2><span class="section-number">1.3. </span>Python version<a class="headerlink" href="#python-version" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="python-version">
+<h2><span class="section-number">1.3. </span>Python version<a class="headerlink" href="#python-version" title="Permalink to this heading">#</a></h2>
 <p>There are two version of the Python language out there: Python 2.x and Python 3.x. They are (slightly) different — the changes in Python 3.x were introduced to address shortcomings in the design of the language that were identified since Python’s inception. A decision was made that some incompatibility should be accepted to achieve the higher goal of a better language for the future.</p>
 <p>For scientific computation, it is crucial to make use of numerical libraries such as <a class="reference external" href="https://numpy.org/">numpy</a>, <a class="reference external" href="https://www.scipy.org">scipy</a> and the plotting package <a class="reference external" href="https://matplotlib.org/">matplotlib</a>.</p>
 <p>All of these are now available for Python 3, and we will use Python 3.x in this book.</p>
@@ -593,9 +629,9 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <p>See <a class="reference internal" href="05-input-output.html"><span class="doc std std-doc">Chapter 5: Input and Output</span></a> for further details.</p>
 <p>Fortunately, the function notation (i.e. with the parantheses) is also allowed in Python 2.7, so our examples should execute in Python 3.x and Python 2.7. (There are other differences.)</p>
-</div>
-<div class="section" id="these-documents">
-<h2><span class="section-number">1.4. </span>These documents<a class="headerlink" href="#these-documents" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="these-documents">
+<h2><span class="section-number">1.4. </span>These documents<a class="headerlink" href="#these-documents" title="Permalink to this heading">#</a></h2>
 <p>This material has been converted from Latex to a set of <a class="reference external" href="https://jupyter.org">Jupyter Notebooks</a>, making it possible to interact with the examples. You can run any code block with an <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[</span> <span class="pre">]:</span></code> prompt by clicking on it and pressing shift-enter, or by clicking the <i class="fa fa-step-forward"></i> button in the toolbar.</p>
 <p><em>Code blocks</em> can be recognised (in the html and pdf version of this book) by having coloured items (to emphasise the syntactic role). For example:</p>
 <div class="cell docutils container">
@@ -614,8 +650,8 @@ Hello
 </div>
 </div>
 <p>The <em>output</em> (here <code class="docutils literal notranslate"><span class="pre">Hello</span></code> repeated on three lines) that is produced by the code block, is shown below the code block and not coloured.</p>
-<div class="section" id="the-file-magic">
-<h3><span class="section-number">1.4.1. </span>The <code class="docutils literal notranslate"><span class="pre">%%file</span></code> magic<a class="headerlink" href="#the-file-magic" title="Permalink to this headline">¶</a></h3>
+<section id="the-file-magic">
+<h3><span class="section-number">1.4.1. </span>The <code class="docutils literal notranslate"><span class="pre">%%file</span></code> magic<a class="headerlink" href="#the-file-magic" title="Permalink to this heading">#</a></h3>
 <p>We use some features in the notebook that are worth being aware of at this point: a cell starting with the special command <code class="docutils literal notranslate"><span class="pre">%%file</span> <span class="pre">FILENAME</span></code> will create (or override) a file with name <code class="docutils literal notranslate"><span class="pre">FILENAME</span></code> that contains the content that is shown in the cell below.</p>
 <p>For example</p>
 <div class="cell docutils container">
@@ -645,9 +681,9 @@ Hello
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="the-to-execute-shell-commands">
-<h3><span class="section-number">1.4.2. </span>The <code class="docutils literal notranslate"><span class="pre">!</span></code> to execute shell commands<a class="headerlink" href="#the-to-execute-shell-commands" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="the-to-execute-shell-commands">
+<h3><span class="section-number">1.4.2. </span>The <code class="docutils literal notranslate"><span class="pre">!</span></code> to execute shell commands<a class="headerlink" href="#the-to-execute-shell-commands" title="Permalink to this heading">#</a></h3>
 <p>If we want to run a shell command, we can type it and preceed it by the <code class="docutils literal notranslate"><span class="pre">!</span></code> character. Here is an example: first we create a file that contains a Python hello world program, then we execute it:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -664,7 +700,7 @@ Hello
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>python hello.py
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>python<span class="w"> </span>hello.py
 </pre></div>
 </div>
 </div>
@@ -674,20 +710,20 @@ Hello
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="the-nbval-tags">
-<h3><span class="section-number">1.4.3. </span>The <code class="docutils literal notranslate"><span class="pre">#NBVAL</span></code> tags<a class="headerlink" href="#the-nbval-tags" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="the-nbval-tags">
+<h3><span class="section-number">1.4.3. </span>The <code class="docutils literal notranslate"><span class="pre">#NBVAL</span></code> tags<a class="headerlink" href="#the-nbval-tags" title="Permalink to this heading">#</a></h3>
 <p>In some cells, you will find tags like <code class="docutils literal notranslate"><span class="pre">#NBVAL_SKIP</span></code>, <code class="docutils literal notranslate"><span class="pre">#NBVAL_IGNORE_OUTPUT</span></code> and <code class="docutils literal notranslate"><span class="pre">#NBVAL_RAISES_EXCEPTION</span></code>. You can ignore these.</p>
 <p>(We use them to be able to <a class="reference external" href="https://app.circleci.com/pipelines/github/fangohr/introduction-to-python-for-computational-science-and-engineering">automatically execute all notebooks</a> to check that the output produced is the same as what is stored in the notebook. This is an advanced topic of testing, and you can read more about NBVAL at https://github.com/computationalmodelling/nbval).</p>
 <p>See <a class="reference internal" href="11-python-shells.html"><span class="doc std std-doc">Chapter 11</span></a> for more information on Jupyter and other Python interfaces.</p>
-</div>
-</div>
-<div class="section" id="your-feedback">
-<h2><span class="section-number">1.5. </span>Your feedback<a class="headerlink" href="#your-feedback" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="your-feedback">
+<h2><span class="section-number">1.5. </span>Your feedback<a class="headerlink" href="#your-feedback" title="Permalink to this heading">#</a></h2>
 <p>is desired. If you find anything wrong in this text, or have suggestions how to change or extend it, please feel free to contact Hans at <code class="docutils literal notranslate"><span class="pre">hans.fangohr&#64;xfel.eu</span></code> .</p>
 <p>If you find a URL that is not working (or pointing to the wrong material), please let Hans know as well. As the content of the Internet is changing rapidly, it is difficult to keep up with these changes without feedback.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -701,7 +737,7 @@ Hello
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -709,46 +745,125 @@ Hello
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="opening.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Python for Computational Science and Engineering</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="opening.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Python for Computational Science and Engineering</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="02-powerful-calculator.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="02-powerful-calculator.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"><span class="section-number">2. </span>A powerful calculator</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-        
-        </div>
-    </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Hans Fangohr<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-      </div>
-    </div>
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-modelling">1.1. Computational Modelling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.1.1. Introduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.1.2. Computational Modelling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-to-support-computational-modelling">1.1.3. Programming to support computational modelling</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-python-for-scientific-computing">1.2. Why Python for scientific computing?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimisation-strategies">1.2.1. Optimisation strategies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-it-right-first-then-make-it-fast">1.2.2. Get it right first, then make it fast</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prototyping-in-python">1.2.3. Prototyping in Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#literature">1.2.4. Literature</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recorded-video-lectures-on-python-for-beginners">1.2.5. Recorded video lectures on Python for beginners</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-tutor-mailing-list">1.2.6. Python tutor mailing list</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-version">1.3. Python version</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#these-documents">1.4. These documents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-file-magic">1.4.1. The <code class="docutils literal notranslate"><span class="pre">%%file</span></code> magic</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-to-execute-shell-commands">1.4.2. The <code class="docutils literal notranslate"><span class="pre">!</span></code> to execute shell commands</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-nbval-tags">1.4.3. The <code class="docutils literal notranslate"><span class="pre">#NBVAL</span></code> tags</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-feedback">1.5. Your feedback</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+By Hans Fangohr
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

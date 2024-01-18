@@ -1,46 +1,60 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>15. Visualising Data &#8212; Introduction to Python for Computational Science and Engineering</title>
-    
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -75,491 +89,443 @@ var addUtterances = () => {
 }
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '15-visualising-data';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="16. Numerical Methods using Python (scipy)" href="16-scipy.html" />
     <link rel="prev" title="14. Numerical Python (numpy): arrays" href="14-numpy.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
         
       
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="opening.html">
+  
+  
+  
+  
+  
+    
+    
       
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Introduction to Python for Computational Science and Engineering</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="opening.html">
-   Python for Computational Science and Engineering
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="01-introduction.html">
-   1. Introduction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02-powerful-calculator.html">
-   2. A powerful calculator
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03-data-types-structures.html">
-   3. Data Types and Data Structures
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="04-introspection.html">
-   4. Introspection
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="05-input-output.html">
-   5. Input and Output
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="06-control-flow.html">
-   6. Control Flow
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="07-functions-modules.html">
-   7. Functions and modules
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="08-functional-tools.html">
-   8. Functional tools
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="09-common-tasks.html">
-   9. Common tasks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="10-matlab-to-python.html">
-   10. From Matlab to Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="11-python-shells.html">
-   11. Python shells
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="12-symbolic-computation.html">
-   12. Symbolic computation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="13-numeric-computation.html">
-   13. Numerical Computation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="14-numpy.html">
-   14. Numerical Python (numpy): arrays
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   15. Visualising Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="16-scipy.html">
-   16. Numerical Methods using Python (scipy)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="17-pandas.html">
-   17. Pandas - Data Science with Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="18-environments.html">
-   18. Python packages and environments
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="19-next-steps.html">
-   19. Where to go from here?
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="99-changes.html">
-   20. Change history
-  </a>
- </li>
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Introduction to Python for Computational Science and Engineering - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Introduction to Python for Computational Science and Engineering - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="opening.html">
+                    Python for Computational Science and Engineering
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-introduction.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-powerful-calculator.html">2. A powerful calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-data-types-structures.html">3. Data Types and Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-introspection.html">4. Introspection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-input-output.html">5. Input and Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-control-flow.html">6. Control Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-functions-modules.html">7. Functions and modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-functional-tools.html">8. Functional tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-common-tasks.html">9. Common tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-matlab-to-python.html">10. From Matlab to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-python-shells.html">11. Python shells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12-symbolic-computation.html">12. Symbolic computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13-numeric-computation.html">13. Numerical Computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14-numpy.html">14. Numerical Python (numpy): arrays</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">15. Visualising Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16-scipy.html">16. Numerical Methods using Python (scipy)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17-pandas.html">17. Pandas - Data Science with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18-environments.html">18. Python packages and environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19-next-steps.html">19. Where to go from here?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="99-changes.html">20. Change history</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/15-visualising-data.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/issues/new?title=Issue%20on%20page%20%2F15-visualising-data.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main">
         
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/master?urlpath=tree/book/15-visualising-data.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/fangohr/introduction-to-python-for-computational-science-and-engineering/master?urlpath=tree/book/15-visualising-data.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/issues/new?title=Issue%20on%20page%20%2F15-visualising-data.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/15-visualising-data.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
     </div>
+  
 </div>
+</div>
+              
+              
 
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Visualising Data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#matplotlib-plotting-y-f-x-and-a-bit-more">
-   15.1. Matplotlib – plotting y=f(x), (and a bit more)
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#matplotlib-and-pylab">
-     15.1.1. Matplotlib and Pylab
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#first-example">
-     15.1.2. First example
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#the-pyplot-interface">
-       15.1.2.1. The pyplot interface
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#how-to-import-matplotlib-pylab-pyplot-numpy-and-all-that">
-     15.1.3. How to import matplotlib, pylab, pyplot, numpy and all that
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#the-pylab-interface">
-       15.1.3.1. The Pylab interface
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ipythons-inline-mode">
-     15.1.4. IPython’s inline mode
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#saving-the-figure-to-a-file">
-     15.1.5. Saving the figure to a file
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   15.2. The pylab interface
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fine-tuning-your-plot">
-     15.2.1. Fine tuning your plot
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plotting-more-than-one-curve">
-     15.2.2. Plotting more than one curve
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#two-or-more-curves-in-one-graph">
-       15.2.2.1. Two (or more) curves in one graph
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#two-or-more-graphs-in-one-figure-window">
-       15.2.2.2. Two (or more graphs) in one figure window
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#two-or-more-figure-windows">
-       15.2.2.3. Two (or more) figure windows
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#interactive-mode">
-     15.2.3. Interactive mode
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-matplotlib-pyplot-interface">
-   15.3. The matplotlib.pyplot interface
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#histograms">
-     15.3.1. Histograms
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#visualising-matrix-data">
-     15.3.2. Visualising matrix data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-colour-map-to-choose">
-     15.3.3. What colour map to choose?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plots-of-z-f-x-y-and-other-features-of-matplotlib">
-     15.3.4. Plots of
-     <em>
-      z
-     </em>
-     =
-     <em>
-      f
-     </em>
-     (
-     <em>
-      x
-     </em>
-     ,
-     <em>
-      y
-     </em>
-     ) and other features of Matplotlib
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#how-to-learn-how-to-use-matplotlib">
-     15.3.5. How to learn how to use Matplotlib?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#visual-python">
-   15.4. Visual Python
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#basics-rotating-and-zooming">
-     15.4.1. Basics, rotating and zooming
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#setting-the-frame-rate-for-animations">
-     15.4.2. Setting the frame rate for animations
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tracking-trajectories">
-     15.4.3. Tracking trajectories
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#connecting-objects-cylinders-springs">
-     15.4.4. Connecting objects (Cylinders, springs, …)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#d-vision">
-     15.4.5. 3d vision
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#visualising-higher-dimensional-data-vtk">
-   15.5. Visualising higher dimensional data (VTK)
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mayavi-paraview-visit">
-     15.5.1. Mayavi, Paraview, Visit
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#writing-vtk-files-from-python-pyvtk">
-     15.5.2. Writing vtk files from Python (pyvtk)
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#further-tools-and-developments">
-   15.6. Further tools and developments
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exploiting-self-describing-data-for-visualisation">
-     15.6.1. Exploiting self-describing data for visualisation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-future-of-data-visualisation">
-     15.6.2. The future of data visualisation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fine-tuning-matplotlib-plots-that-are-generated-by-high-level-frame-works">
-     15.6.3. Fine-tuning matplotlib plots that are generated by high level frame works
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#jupyter-notebooks">
-   15.7. Jupyter Notebooks
-  </a>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib-plotting-y-f-x-and-a-bit-more">15.1. Matplotlib – plotting y=f(x), (and a bit more)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib-and-pylab">15.1.1. Matplotlib and Pylab</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-example">15.1.2. First example</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-pyplot-interface">15.1.2.1. The pyplot interface</a></li>
 </ul>
-
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-import-matplotlib-pylab-pyplot-numpy-and-all-that">15.1.3. How to import matplotlib, pylab, pyplot, numpy and all that</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-pylab-interface">15.1.3.1. The Pylab interface</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipythons-inline-mode">15.1.4. IPython’s inline mode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-the-figure-to-a-file">15.1.5. Saving the figure to a file</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">15.2. The pylab interface</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fine-tuning-your-plot">15.2.1. Fine tuning your plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-more-than-one-curve">15.2.2. Plotting more than one curve</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#two-or-more-curves-in-one-graph">15.2.2.1. Two (or more) curves in one graph</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#two-or-more-graphs-in-one-figure-window">15.2.2.2. Two (or more graphs) in one figure window</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#two-or-more-figure-windows">15.2.2.3. Two (or more) figure windows</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-mode">15.2.3. Interactive mode</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-matplotlib-pyplot-interface">15.3. The matplotlib.pyplot interface</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histograms">15.3.1. Histograms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualising-matrix-data">15.3.2. Visualising matrix data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-colour-map-to-choose">15.3.3. What colour map to choose?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plots-of-z-f-x-y-and-other-features-of-matplotlib">15.3.4. Plots of <em>z</em> = <em>f</em>(<em>x</em>, <em>y</em>) and other features of Matplotlib</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-learn-how-to-use-matplotlib">15.3.5. How to learn how to use Matplotlib?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-python">15.4. Visual Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basics-rotating-and-zooming">15.4.1. Basics, rotating and zooming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-the-frame-rate-for-animations">15.4.2. Setting the frame rate for animations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tracking-trajectories">15.4.3. Tracking trajectories</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-objects-cylinders-springs">15.4.4. Connecting objects (Cylinders, springs, …)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-vision">15.4.5. 3d vision</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualising-higher-dimensional-data-vtk">15.5. Visualising higher dimensional data (VTK)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mayavi-paraview-visit">15.5.1. Mayavi, Paraview, Visit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-vtk-files-from-python-pyvtk">15.5.2. Writing vtk files from Python (pyvtk)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-tools-and-developments">15.6. Further tools and developments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exploiting-self-describing-data-for-visualisation">15.6.1. Exploiting self-describing data for visualisation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-future-of-data-visualisation">15.6.2. The future of data visualisation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fine-tuning-matplotlib-plots-that-are-generated-by-high-level-frame-works">15.6.3. Fine-tuning matplotlib plots that are generated by high level frame works</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebooks">15.7. Jupyter Notebooks</a></li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="visualising-data">
-<h1><span class="section-number">15. </span>Visualising Data<a class="headerlink" href="#visualising-data" title="Permalink to this headline">¶</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="visualising-data">
+<h1><span class="section-number">15. </span>Visualising Data<a class="headerlink" href="#visualising-data" title="Permalink to this heading">#</a></h1>
 <p>The purpose of scientific computation is insight not numbers: To understand the meaning of the (many) numbers we compute, we often need postprocessing, statistical analysis and graphical visualisation of our data. The following sections describe</p>
 <ul class="simple">
 <li><p>Matplotlib/Pylab — a tool to generate high quality graphs of the type <em>y</em> = <em>f</em>(<em>x</em>) (and a bit more)</p>
@@ -578,24 +544,24 @@ commentsRunWhenDOMLoaded(addUtterances);
 <ul class="simple">
 <li><p>Further tools and developments discussing other tools and emerging approaches for data visualisation and analysis.</p></li>
 </ul>
-<div class="section" id="matplotlib-plotting-y-f-x-and-a-bit-more">
-<h2><span class="section-number">15.1. </span>Matplotlib – plotting y=f(x), (and a bit more)<a class="headerlink" href="#matplotlib-plotting-y-f-x-and-a-bit-more" title="Permalink to this headline">¶</a></h2>
+<section id="matplotlib-plotting-y-f-x-and-a-bit-more">
+<h2><span class="section-number">15.1. </span>Matplotlib – plotting y=f(x), (and a bit more)<a class="headerlink" href="#matplotlib-plotting-y-f-x-and-a-bit-more" title="Permalink to this heading">#</a></h2>
 <p>The Python library <em>Matplotlib</em> is a python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments. Matplotlib tries to make easy things easy and hard things possible. You can generate plots, histograms, power spectra, bar charts, errorcharts, scatterplots, etc, with just a few lines of code.</p>
 <p>For more detailed information, check these links</p>
 <ul class="simple">
 <li><p>A very nice introduction in the object oriented Matplotlib interface, and summary of all important ways of changing style, figure size, linewidth, etc. This is a useful reference:
-<a class="reference external" href="https://nbviewer.ipython.org/github/jrjohansson/scientific-python-lectures/blob/master/Lecture-4-Matplotlib.ipynb">https://nbviewer.ipython.org/github/jrjohansson/scientific-python-lectures/blob/master/Lecture-4-Matplotlib.ipynb</a></p></li>
+<a class="github reference external" href="https://github.com/jrjohansson/scientific-python-lectures/blob/master/Lecture-4-Matplotlib.ipynb">jrjohansson/scientific-python-lectures</a></p></li>
 <li><p><a class="reference external" href="https://matplotlib.org/stable/tutorials/index">Matplotlib tutorial</a></p></li>
 <li><p><a class="reference external" href="https://matplotlib.org">Matplotlib home page</a></p></li>
 <li><p>Extended thumbnail gallery of examples https://matplotlib.org/stable/gallery/index.html</p></li>
 </ul>
-<div class="section" id="matplotlib-and-pylab">
-<h3><span class="section-number">15.1.1. </span>Matplotlib and Pylab<a class="headerlink" href="#matplotlib-and-pylab" title="Permalink to this headline">¶</a></h3>
+<section id="matplotlib-and-pylab">
+<h3><span class="section-number">15.1.1. </span>Matplotlib and Pylab<a class="headerlink" href="#matplotlib-and-pylab" title="Permalink to this heading">#</a></h3>
 <p>The Matplotlib package provides <em>an object oriented plotting library</em> under the name space <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">pylab</span></code> interface is provided through the Matplotlib package. Internally it uses <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> functionality but imitates the (state-driven) Matlab plotting interface.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">pylab</span></code> interface is slightly more convenient to use for simple plots, and <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> gives far more detailed control over how plots are created. If you routinely need to produce figures, we suggest to learn about the object oriented <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> interface (instead of the <code class="docutils literal notranslate"><span class="pre">pylab</span></code> interface).</p>
 <p>This chapter focusses on the Pylab interface, but also provides examples for the object-oriented <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> interface.</p>
-<p>An excellent introduction and overview of the <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> plotting interface is available in <a class="reference external" href="https://nbviewer.ipython.org/github/jrjohansson/scientific-python-lectures/blob/master/Lecture-4-Matplotlib.ipynb">https://nbviewer.ipython.org/github/jrjohansson/scientific-python-lectures/blob/master/Lecture-4-Matplotlib.ipynb</a>.</p>
+<p>An excellent introduction and overview of the <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> plotting interface is available in <a class="github reference external" href="https://github.com/jrjohansson/scientific-python-lectures/blob/master/Lecture-4-Matplotlib.ipynb">jrjohansson/scientific-python-lectures</a>.</p>
 <p>For the purpose of this book and the <a class="reference external" href="https://jupyterbook.org">Jupyterbook package</a>, we use some settings to create a svg file for the html version of the book, and a high-resolution png file for the pdf version:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -609,11 +575,11 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="first-example">
-<h3><span class="section-number">15.1.2. </span>First example<a class="headerlink" href="#first-example" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="the-pyplot-interface">
-<h4><span class="section-number">15.1.2.1. </span>The pyplot interface<a class="headerlink" href="#the-pyplot-interface" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="first-example">
+<h3><span class="section-number">15.1.2. </span>First example<a class="headerlink" href="#first-example" title="Permalink to this heading">#</a></h3>
+<section id="the-pyplot-interface">
+<h4><span class="section-number">15.1.2.1. </span>The pyplot interface<a class="headerlink" href="#the-pyplot-interface" title="Permalink to this heading">#</a></h4>
 <p>The recommended way of using Matplotlib in a simple example is shown here:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -628,19 +594,19 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f11fe5fe130&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb6b9f4aed0&gt;]
 </pre></div>
 </div>
-<img alt="_images/15-visualising-data_4_1.svg" src="_images/15-visualising-data_4_1.svg" /></div>
+<img alt="_images/fd86225bd6bc1eb49363eb64b424a1920d214439aa689250c0d25e7585117591.svg" src="_images/fd86225bd6bc1eb49363eb64b424a1920d214439aa689250c0d25e7585117591.svg" /></div>
 </div>
-</div>
-</div>
-<div class="section" id="how-to-import-matplotlib-pylab-pyplot-numpy-and-all-that">
-<h3><span class="section-number">15.1.3. </span>How to import matplotlib, pylab, pyplot, numpy and all that<a class="headerlink" href="#how-to-import-matplotlib-pylab-pyplot-numpy-and-all-that" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="how-to-import-matplotlib-pylab-pyplot-numpy-and-all-that">
+<h3><span class="section-number">15.1.3. </span>How to import matplotlib, pylab, pyplot, numpy and all that<a class="headerlink" href="#how-to-import-matplotlib-pylab-pyplot-numpy-and-all-that" title="Permalink to this heading">#</a></h3>
 <p>The submodule <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> provides an object oriented interface to the plotting library. Many of the examples in the matplotlib documentation follow the import convention to import <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> as <code class="docutils literal notranslate"><span class="pre">plt</span></code> and <code class="docutils literal notranslate"><span class="pre">numpy</span></code> as <code class="docutils literal notranslate"><span class="pre">np</span></code>. It is of the user’s decision whether to import the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> library under the name <code class="docutils literal notranslate"><span class="pre">np</span></code> (as often done in matplotlib examples) or <code class="docutils literal notranslate"><span class="pre">N</span></code> as occasionally done in this text (and in the early days when the predecessor of numpy was called “Numeric”) or any other name you like. Similarly, it is a matter of taste whether the plotting submodule (<code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code>) is imported as <code class="docutils literal notranslate"><span class="pre">plt</span></code> as is done in the matplotlib documentation or <code class="docutils literal notranslate"><span class="pre">plot</span></code> (which could be argued is slightly clearer) etc.</p>
 <p>As always a balance has to be struck between personal preferences and consistency with common practice in choosing these name. Consistency with common use is more important if the code is likely to be used by others or published.</p>
-<div class="section" id="the-pylab-interface">
-<h4><span class="section-number">15.1.3.1. </span>The Pylab interface<a class="headerlink" href="#the-pylab-interface" title="Permalink to this headline">¶</a></h4>
+<section id="the-pylab-interface">
+<h4><span class="section-number">15.1.3.1. </span>The Pylab interface<a class="headerlink" href="#the-pylab-interface" title="Permalink to this heading">#</a></h4>
 <p>We introduce the <code class="docutils literal notranslate"><span class="pre">pylab</span></code> interface by translating the example 1a above to the following example 1b (which is identical in functionality to the example 1a and will create the same plot):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -656,10 +622,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f11fc56dbb0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb69440d410&gt;]
 </pre></div>
 </div>
-<img alt="_images/15-visualising-data_6_1.svg" src="_images/15-visualising-data_6_1.svg" /></div>
+<img alt="_images/f237c920a5e0bee2024b62fd81b3ed03cabcaf6d1b39ec84e00dcc555b006038.svg" src="_images/f237c920a5e0bee2024b62fd81b3ed03cabcaf6d1b39ec84e00dcc555b006038.svg" /></div>
 </div>
 <p>Plotting nearly always needs arrays of numerical data and it is for this reason that the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> module is used a lot: it provides fast and memory efficient array handling for Python (see <a class="reference internal" href="14-numpy.html"><span class="doc std std-doc">chapter 14</span></a>). The <code class="docutils literal notranslate"><span class="pre">pylab</span></code> interface has taken this a step further and automatically imports all objects from <code class="docutils literal notranslate"><span class="pre">numpy</span></code> into the <code class="docutils literal notranslate"><span class="pre">pylab</span></code> name space:</p>
 <p>Because the <code class="docutils literal notranslate"><span class="pre">numpy.arange</span></code> and <code class="docutils literal notranslate"><span class="pre">numpy.sin</span></code> objects have already been imported into the <code class="docutils literal notranslate"><span class="pre">pylab</span></code> namespace, we could also write it as example 1c:</p>
@@ -676,10 +642,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f11fc4e1370&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb6944c1e10&gt;]
 </pre></div>
 </div>
-<img alt="_images/15-visualising-data_8_1.svg" src="_images/15-visualising-data_8_1.svg" /></div>
+<img alt="_images/3fc9a6bb15b980f1becbeb13c1475e01b65c536d67f19cf3a7dd2b5230493d82.svg" src="_images/3fc9a6bb15b980f1becbeb13c1475e01b65c536d67f19cf3a7dd2b5230493d82.svg" /></div>
 </div>
 <p>If we really want to cut down on characters to type, we could also important all the objects (<code class="docutils literal notranslate"><span class="pre">*</span></code>) from the <code class="docutils literal notranslate"><span class="pre">pylab</span></code> convenience module into our current namespace, and rewrite the code as example 1d:</p>
 <div class="cell docutils container">
@@ -696,7 +662,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/15-visualising-data_10_0.svg" src="_images/15-visualising-data_10_0.svg" /></div>
+<img alt="_images/d1d74c8b757b20a2bf398989dafd2ddd19b2e09e5c2aefefd432f30b169e5cd2.svg" src="_images/d1d74c8b757b20a2bf398989dafd2ddd19b2e09e5c2aefefd432f30b169e5cd2.svg" /></div>
 </div>
 <p>This can be extremely convenient, but comes with a big health warning:</p>
 <ul class="simple">
@@ -704,17 +670,17 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p>The pylab toplevel provides over 800 different objects which are all imported into the global name space when running <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">pylab</span> <span class="pre">import</span> <span class="pre">*</span></code>. This is not good practice, and could conflict with other objects that exist already or are created later.</p></li>
 <li><p>As a rule of thumb: do never use <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">somewhere</span> <span class="pre">import</span> <span class="pre">*</span></code> in programs we save. This may be okay at the command prompt for interactive data exploration.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="ipythons-inline-mode">
-<h3><span class="section-number">15.1.4. </span>IPython’s inline mode<a class="headerlink" href="#ipythons-inline-mode" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="ipythons-inline-mode">
+<h3><span class="section-number">15.1.4. </span>IPython’s inline mode<a class="headerlink" href="#ipythons-inline-mode" title="Permalink to this heading">#</a></h3>
 <p>Within the Jupyter Notebook or Qtconsole (see the <a class="reference internal" href="11-python-shells.html"><span class="doc std std-doc">Python shells notebook</span></a>) we can use the <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">inline</span></code> magic command to make further plots appear within our console or notebook. To force pop up windows instead, use <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">qt</span></code>.</p>
 <p>If you enjoy the <code class="docutils literal notranslate"><span class="pre">pylab</span></code> interface, then you maybe interested in the <code class="docutils literal notranslate"><span class="pre">%pylab</span></code> magic, which will not only switch to inline plotting but also automatically execute <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">pylab</span> <span class="pre">import</span> <span class="pre">*</span></code>.</p>
-</div>
-<div class="section" id="saving-the-figure-to-a-file">
-<h3><span class="section-number">15.1.5. </span>Saving the figure to a file<a class="headerlink" href="#saving-the-figure-to-a-file" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="saving-the-figure-to-a-file">
+<h3><span class="section-number">15.1.5. </span>Saving the figure to a file<a class="headerlink" href="#saving-the-figure-to-a-file" title="Permalink to this heading">#</a></h3>
 <p>Once you have created the figure (using the <code class="docutils literal notranslate"><span class="pre">plot</span></code> command) and added any labels, legends etc, you have two options to save the plot.</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>You can display the figure (using <code class="docutils literal notranslate"><span class="pre">show</span></code>) and <em>interactively</em> save it by clicking on the disk icon. (This does not work with inline plots as the icons are not available.)</p></li>
 <li><p>You can (without displaying the figure) save it directly from your Python code. The command to use is <code class="docutils literal notranslate"><span class="pre">savefig</span></code>. The format is determined by the extension of the file name you provide. Here is an example (<code class="docutils literal notranslate"><span class="pre">pylabsavefig.py</span></code>) which saves a figure into different files.</p></li>
 </ol>
@@ -760,12 +726,12 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="id1">
-<h2><span class="section-number">15.2. </span>The pylab interface<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="fine-tuning-your-plot">
-<h3><span class="section-number">15.2.1. </span>Fine tuning your plot<a class="headerlink" href="#fine-tuning-your-plot" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id1">
+<h2><span class="section-number">15.2. </span>The pylab interface<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<section id="fine-tuning-your-plot">
+<h3><span class="section-number">15.2.1. </span>Fine tuning your plot<a class="headerlink" href="#fine-tuning-your-plot" title="Permalink to this heading">#</a></h3>
 <p>Matplotlib allows us to fine tune our plots in great detail. Here is an example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -790,7 +756,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;This is the title of the graph&#39;)
 </pre></div>
 </div>
-<img alt="_images/15-visualising-data_19_1.svg" src="_images/15-visualising-data_19_1.svg" /></div>
+<img alt="_images/320d1add6df7dce54f232c7300e42a80a593a82f33a9fdcc43835baec6fa5670.svg" src="_images/320d1add6df7dce54f232c7300e42a80a593a82f33a9fdcc43835baec6fa5670.svg" /></div>
 </div>
 <p>showing some other useful commands:</p>
 <ul class="simple">
@@ -919,12 +885,12 @@ marker, linestyle, and markercolor with::
 </pre></div>
 </div>
 <p>The use of different line styles and thicknesses is particularly useful when colour cannot be used to distinguish lines (for example when graph will be used in document that is to be printed in black and white only).</p>
-</div>
-<div class="section" id="plotting-more-than-one-curve">
-<h3><span class="section-number">15.2.2. </span>Plotting more than one curve<a class="headerlink" href="#plotting-more-than-one-curve" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="plotting-more-than-one-curve">
+<h3><span class="section-number">15.2.2. </span>Plotting more than one curve<a class="headerlink" href="#plotting-more-than-one-curve" title="Permalink to this heading">#</a></h3>
 <p>There are three different methods to display more than one curve.</p>
-<div class="section" id="two-or-more-curves-in-one-graph">
-<h4><span class="section-number">15.2.2.1. </span>Two (or more) curves in one graph<a class="headerlink" href="#two-or-more-curves-in-one-graph" title="Permalink to this headline">¶</a></h4>
+<section id="two-or-more-curves-in-one-graph">
+<h4><span class="section-number">15.2.2.1. </span>Two (or more) curves in one graph<a class="headerlink" href="#two-or-more-curves-in-one-graph" title="Permalink to this heading">#</a></h4>
 <p>By calling the <code class="docutils literal notranslate"><span class="pre">plot</span></code> command repeatedly, more than one curve can be drawn in the same graph. Example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -939,14 +905,14 @@ marker, linestyle, and markercolor with::
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f11fc470a30&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fb67cb5f190&gt;
 </pre></div>
 </div>
-<img alt="_images/15-visualising-data_23_1.svg" src="_images/15-visualising-data_23_1.svg" /></div>
+<img alt="_images/cf98a8c2c8778667b4d64825c410450e3b259cd54affe265d560174990f8b1eb.svg" src="_images/cf98a8c2c8778667b4d64825c410450e3b259cd54affe265d560174990f8b1eb.svg" /></div>
 </div>
-</div>
-<div class="section" id="two-or-more-graphs-in-one-figure-window">
-<h4><span class="section-number">15.2.2.2. </span>Two (or more graphs) in one figure window<a class="headerlink" href="#two-or-more-graphs-in-one-figure-window" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="two-or-more-graphs-in-one-figure-window">
+<h4><span class="section-number">15.2.2.2. </span>Two (or more graphs) in one figure window<a class="headerlink" href="#two-or-more-graphs-in-one-figure-window" title="Permalink to this heading">#</a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">pylab.subplot</span></code> command allows to arrange several graphs within one figure window. The general syntax is</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>subplot(numRows, numCols, plotNum)
 </pre></div>
@@ -976,11 +942,11 @@ marker, linestyle, and markercolor with::
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/15-visualising-data_27_0.svg" src="_images/15-visualising-data_27_0.svg" /></div>
+<img alt="_images/60f24bd352b6df8b5a220ebcc5b499fbd096af1ae3a42b859e5f3662635a22e2.svg" src="_images/60f24bd352b6df8b5a220ebcc5b499fbd096af1ae3a42b859e5f3662635a22e2.svg" /></div>
 </div>
-</div>
-<div class="section" id="two-or-more-figure-windows">
-<h4><span class="section-number">15.2.2.3. </span>Two (or more) figure windows<a class="headerlink" href="#two-or-more-figure-windows" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="two-or-more-figure-windows">
+<h4><span class="section-number">15.2.2.3. </span>Two (or more) figure windows<a class="headerlink" href="#two-or-more-figure-windows" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pylab</span>
@@ -993,16 +959,16 @@ marker, linestyle, and markercolor with::
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f11fba563a0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb67c95df10&gt;]
 </pre></div>
 </div>
-<img alt="_images/15-visualising-data_29_1.svg" src="_images/15-visualising-data_29_1.svg" /><img alt="_images/15-visualising-data_29_2.svg" src="_images/15-visualising-data_29_2.svg" /></div>
+<img alt="_images/c5ae5f1e9c307d2f178ee085f8ea7e32d8fa9070b2263266c69aab20e6a3e921.svg" src="_images/c5ae5f1e9c307d2f178ee085f8ea7e32d8fa9070b2263266c69aab20e6a3e921.svg" /><img alt="_images/15eba0e7cac7da1d4eb1f16326c6a67ae8334b9c5f28ef87061a2b6b5f1ec117.svg" src="_images/15eba0e7cac7da1d4eb1f16326c6a67ae8334b9c5f28ef87061a2b6b5f1ec117.svg" /></div>
 </div>
 <p>Note that you can use <code class="docutils literal notranslate"><span class="pre">pylab.close()</span></code> to close one, some or all figure windows (use <code class="docutils literal notranslate"><span class="pre">help(pylab.close)</span></code> to learn more). The closing of figures is not relevant for inline plots, but for plots that appear in pop-up windows, those windows will be closed when the figure is closed.</p>
-</div>
-</div>
-<div class="section" id="interactive-mode">
-<h3><span class="section-number">15.2.3. </span>Interactive mode<a class="headerlink" href="#interactive-mode" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="interactive-mode">
+<h3><span class="section-number">15.2.3. </span>Interactive mode<a class="headerlink" href="#interactive-mode" title="Permalink to this heading">#</a></h3>
 <p>Pylab can be run in two modes:</p>
 <ul class="simple">
 <li><p>non-interactive (this is the default)</p></li>
@@ -1012,13 +978,13 @@ marker, linestyle, and markercolor with::
 <p>In interactive mode, plots will be immediately displayed after the plot command has been issued.</p>
 <p>One can switch the interactive mode on using <code class="docutils literal notranslate"><span class="pre">pylab.ion()</span></code> and off using <code class="docutils literal notranslate"><span class="pre">pylab.ioff()</span></code>. IPython’s <code class="docutils literal notranslate"><span class="pre">%matplotlib</span></code> magic also enables interactive mode.</p>
 <p>If you use Jupyter notebooks with inline plots, then this feature is not so relevant.</p>
-</div>
-</div>
-<div class="section" id="the-matplotlib-pyplot-interface">
-<h2><span class="section-number">15.3. </span>The matplotlib.pyplot interface<a class="headerlink" href="#the-matplotlib-pyplot-interface" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="the-matplotlib-pyplot-interface">
+<h2><span class="section-number">15.3. </span>The matplotlib.pyplot interface<a class="headerlink" href="#the-matplotlib-pyplot-interface" title="Permalink to this heading">#</a></h2>
 <p>This is the recommended way to use matplotlib for producing publication quality plots, or anything that needs some fine tuning: the object oriented approach of the <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> interface makes it generally easier to tailor the plots that the state-driven <code class="docutils literal notranslate"><span class="pre">pylab</span></code> interface.</p>
 <p>The central two commands to create <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> figures are:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Create a figure object, and one (or more) axes objects within the figure.</p></li>
 <li><p>Create some drawing inside the axes object.</p></li>
 </ol>
@@ -1037,10 +1003,10 @@ marker, linestyle, and markercolor with::
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f11fc3d63d0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb67c9e5b50&gt;]
 </pre></div>
 </div>
-<img alt="_images/15-visualising-data_33_1.svg" src="_images/15-visualising-data_33_1.svg" /></div>
+<img alt="_images/bffde41ac7c5f717b023f7d2bcf39d9cbc509884917dd26d433e51e432bdc676.svg" src="_images/bffde41ac7c5f717b023f7d2bcf39d9cbc509884917dd26d433e51e432bdc676.svg" /></div>
 </div>
 <p>Below is a more complete example. We can see that the object oriented nature, for example the <code class="docutils literal notranslate"><span class="pre">ax</span></code> object, makes it possible to target our formatting instructions to that <code class="docutils literal notranslate"><span class="pre">ax</span></code> object. This becomes particularly useful if we have more than one axes object in the same figure.</p>
 <div class="cell docutils container">
@@ -1062,10 +1028,10 @@ marker, linestyle, and markercolor with::
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/15-visualising-data_35_0.svg" src="_images/15-visualising-data_35_0.svg" /></div>
+<img alt="_images/1a4cf2a2e883188b2711024aa9c27641f83cf5e583a5f08b0d60e2773598d405.svg" src="_images/1a4cf2a2e883188b2711024aa9c27641f83cf5e583a5f08b0d60e2773598d405.svg" /></div>
 </div>
-<div class="section" id="histograms">
-<h3><span class="section-number">15.3.1. </span>Histograms<a class="headerlink" href="#histograms" title="Permalink to this headline">¶</a></h3>
+<section id="histograms">
+<h3><span class="section-number">15.3.1. </span>Histograms<a class="headerlink" href="#histograms" title="Permalink to this heading">#</a></h3>
 <embed src="code/pylab/pylabhistogram.pdf" style="width:100.0%" />
 <p>The program below demonstrates how to create histograms from statistical data with matplotlib.</p>
 <div class="cell docutils container">
@@ -1098,12 +1064,12 @@ marker, linestyle, and markercolor with::
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/15-visualising-data_37_0.svg" src="_images/15-visualising-data_37_0.svg" /></div>
+<img alt="_images/ef065fa8b56263625c07ea172ee826c8c56eeedc2b2bbe14595a4074ba4a2839.svg" src="_images/ef065fa8b56263625c07ea172ee826c8c56eeedc2b2bbe14595a4074ba4a2839.svg" /></div>
 </div>
 <p>Do not try to understand every single command in this file: some are rather specialised and have not been covered in this text. The intention is to provide a few examples to show what can – in principle – be done with Matplotlib. If you need a plot like this, the expectation is that you will need to experiment and possibly learn a bit more about Matplotlib.</p>
-</div>
-<div class="section" id="visualising-matrix-data">
-<h3><span class="section-number">15.3.2. </span>Visualising matrix data<a class="headerlink" href="#visualising-matrix-data" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="visualising-matrix-data">
+<h3><span class="section-number">15.3.2. </span>Visualising matrix data<a class="headerlink" href="#visualising-matrix-data" title="Permalink to this heading">#</a></h3>
 <p>The program below demonstrates how to create a bitmap-plot of the entries of a matrix.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1114,7 +1080,7 @@ marker, linestyle, and markercolor with::
 <span class="c1"># as of August 2018)</span>
 <span class="k">def</span> <span class="nf">bivariate_normal</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">sigmax</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">sigmay</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
                      <span class="n">mux</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">muy</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">sigmaxy</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Bivariate Gaussian distribution for equal shape *X*, *Y*.</span>
 <span class="sd">    See `bivariate normal</span>
 <span class="sd">    &lt;https://mathworld.wolfram.com/BivariateNormalDistribution.html&gt;`_</span>
@@ -1150,7 +1116,7 @@ marker, linestyle, and markercolor with::
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/15-visualising-data_40_0.svg" src="_images/15-visualising-data_40_0.svg" /></div>
+<img alt="_images/e57d5645dd6be1083c635baeedf09f5e4d8d4c4d68fa788069b8b9a88584b12f.svg" src="_images/e57d5645dd6be1083c635baeedf09f5e4d8d4c4d68fa788069b8b9a88584b12f.svg" /></div>
 </div>
 <p>To use different colourmaps, we make use of the <code class="docutils literal notranslate"><span class="pre">matplotlib.cm</span></code> module (where cm stands for Colour Map). The code below demonstrates how we can select colourmaps from the set of already provided maps, and how we can modify them (here by reducing the number of colours in the map). The last example mimics the behaviour of the more sophisticated <code class="docutils literal notranslate"><span class="pre">contour</span></code> command that also comes with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.</p>
 <div class="cell docutils container">
@@ -1199,29 +1165,33 @@ marker, linestyle, and markercolor with::
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/15-visualising-data_42_0.svg" src="_images/15-visualising-data_42_0.svg" /></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_235/332518464.py:36: MatplotlibDeprecationWarning: The get_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap(obj)`` instead.
+  mycmap = cm.get_cmap(&#39;viridis&#39;, 10)    # 10 discrete colors
+</pre></div>
 </div>
+<img alt="_images/70acd58da4b1a03b0fd45dbda7e61f505f85739b1cecb5c6d4c4fb043fc75b9a.svg" src="_images/70acd58da4b1a03b0fd45dbda7e61f505f85739b1cecb5c6d4c4fb043fc75b9a.svg" /></div>
 </div>
-<div class="section" id="what-colour-map-to-choose">
-<h3><span class="section-number">15.3.3. </span>What colour map to choose?<a class="headerlink" href="#what-colour-map-to-choose" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="what-colour-map-to-choose">
+<h3><span class="section-number">15.3.3. </span>What colour map to choose?<a class="headerlink" href="#what-colour-map-to-choose" title="Permalink to this heading">#</a></h3>
 <p>It is a non-trivial question which colour map one should use. There is a useful discussion as part of the <a class="reference external" href="https://matplotlib.org/stable/tutorials/colors/colormaps.html">matplotlib documentation</a>.</p>
 <p>By default a ‘perceptually uniform’ colourmap is a good choice: the perception of the colours follows the values we try to represent. <a class="reference external" href="https://matplotlib.org/stable/tutorials/colors/colormaps.html#sequential">Examples</a> are “viridis”, “plasma”, “inferno”, “magma”, “cividis”.</p>
 <p>This is a complex topic in its own right.</p>
-</div>
-<div class="section" id="plots-of-z-f-x-y-and-other-features-of-matplotlib">
-<h3><span class="section-number">15.3.4. </span>Plots of <em>z</em> = <em>f</em>(<em>x</em>, <em>y</em>) and other features of Matplotlib<a class="headerlink" href="#plots-of-z-f-x-y-and-other-features-of-matplotlib" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="plots-of-z-f-x-y-and-other-features-of-matplotlib">
+<h3><span class="section-number">15.3.4. </span>Plots of <em>z</em> = <em>f</em>(<em>x</em>, <em>y</em>) and other features of Matplotlib<a class="headerlink" href="#plots-of-z-f-x-y-and-other-features-of-matplotlib" title="Permalink to this heading">#</a></h3>
 <p>Matplotlib has a large number of features and can create all the standard (1d and 2d) plots such as histograms, pie charts, scatter plots, 2d-intensity plots (i.e. <em>z</em> = <em>f</em>(<em>x</em>, <em>y</em>)) and contour lines) and much more. The figure below shows such an example ([contour_demo.py]
 (https://matplotlib.org/stable/gallery/images_contours_and_fields/contour_demo.html)).</p>
 <p><a href="https://matplotlib.org/stable/gallery/images_contours_and_fields/contour_demo.html"><img alt="The output of contour_demo.py." src="_images/contour_demo.png" /> </a></p>
 <p>Some support for 3d plots is also available: https://matplotlib.org/stable/gallery/index.html#d-plotting</p>
-</div>
-<div class="section" id="how-to-learn-how-to-use-matplotlib">
-<h3><span class="section-number">15.3.5. </span>How to learn how to use Matplotlib?<a class="headerlink" href="#how-to-learn-how-to-use-matplotlib" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="how-to-learn-how-to-use-matplotlib">
+<h3><span class="section-number">15.3.5. </span>How to learn how to use Matplotlib?<a class="headerlink" href="#how-to-learn-how-to-use-matplotlib" title="Permalink to this heading">#</a></h3>
 <p>A common strategy is to scan the examples at <a class="reference external" href="https://matplotlib.org/stable/gallery/index.html">https://matplotlib.org/stable/gallery</a> to find a plot similar to the desired one, and then to modify the given example code. In the process, it may be worth learning more about the commands used in the example through reading the documentation.</p>
-</div>
-</div>
-<div class="section" id="visual-python">
-<h2><span class="section-number">15.4. </span>Visual Python<a class="headerlink" href="#visual-python" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="visual-python">
+<h2><span class="section-number">15.4. </span>Visual Python<a class="headerlink" href="#visual-python" title="Permalink to this heading">#</a></h2>
 <p>Visual Python is a Python module that makes it fairly easy to create and animate three-dimensional scenes.</p>
 <p>Further information:</p>
 <ul class="simple">
@@ -1232,8 +1202,8 @@ marker, linestyle, and markercolor with::
 <ul class="simple">
 <li><p>Shawn Weatherford, Jeff Polak (students of Ruth Chabay): <a class="reference external" href="https://www.youtube.com/vpythonvideos">https://www.youtube.com/vpythonvideos</a></p></li>
 </ul>
-<div class="section" id="basics-rotating-and-zooming">
-<h3><span class="section-number">15.4.1. </span>Basics, rotating and zooming<a class="headerlink" href="#basics-rotating-and-zooming" title="Permalink to this headline">¶</a></h3>
+<section id="basics-rotating-and-zooming">
+<h3><span class="section-number">15.4.1. </span>Basics, rotating and zooming<a class="headerlink" href="#basics-rotating-and-zooming" title="Permalink to this heading">#</a></h3>
 <p>Here is an example showing how to create a red and a blue sphere at two different positions together with a flat box (<code class="docutils literal notranslate"><span class="pre">vpythondemo1.py</span></code>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">visual</span>
 <span class="n">sphere1</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">sphere</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">visual</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">blue</span><span class="p">)</span>
@@ -1247,9 +1217,9 @@ marker, linestyle, and markercolor with::
 <li><p>rotate the scene by pressing the right mouse button and moving the mouse</p></li>
 <li><p>zoom in and out by pressing the middle mouse button (this could be the wheel) and moving the mouse up and down. (On some (Windows?) installations, one has to press the left and the right mouse button simultaneously and then move the move the mouse up and down to zoom.)</p></li>
 </ul>
-</div>
-<div class="section" id="setting-the-frame-rate-for-animations">
-<h3><span class="section-number">15.4.2. </span>Setting the frame rate for animations<a class="headerlink" href="#setting-the-frame-rate-for-animations" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="setting-the-frame-rate-for-animations">
+<h3><span class="section-number">15.4.2. </span>Setting the frame rate for animations<a class="headerlink" href="#setting-the-frame-rate-for-animations" title="Permalink to this heading">#</a></h3>
 <p>A particular strength of Visual Python is its ability to display time-dependent data:</p>
 <ul class="simple">
 <li><p>A very useful command is the <code class="docutils literal notranslate"><span class="pre">rate()</span></code> command which ensures that a loop is only executed at a certain frame rate. Here is an example printing exactly two “Hello World”s per second (<code class="docutils literal notranslate"><span class="pre">vpythondemo2.py</span></code>):</p></li>
@@ -1284,9 +1254,9 @@ marker, linestyle, and markercolor with::
 </pre></div>
 </div>
 <img alt="Snapshot of vpythondemo3.py." src="_images/vpythondemo3.png" />
-</div>
-<div class="section" id="tracking-trajectories">
-<h3><span class="section-number">15.4.3. </span>Tracking trajectories<a class="headerlink" href="#tracking-trajectories" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="tracking-trajectories">
+<h3><span class="section-number">15.4.3. </span>Tracking trajectories<a class="headerlink" href="#tracking-trajectories" title="Permalink to this heading">#</a></h3>
 <p>You can track the trajectory of an object using a “curve”. The basic idea is to append positions to that curve object as demonstrated in this example (<code class="docutils literal notranslate"><span class="pre">vpythondemo4.py</span></code>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">visual</span><span class="o">,</span> <span class="nn">math</span>
 
@@ -1309,9 +1279,9 @@ marker, linestyle, and markercolor with::
 </div>
 <img alt="Snapshot of vpythondemo4.py." src="_images/vpythondemo4.png" />
 <p>As with most visual Python objects, you can specify the colour of the curve (also per appended element!) and the radius.</p>
-</div>
-<div class="section" id="connecting-objects-cylinders-springs">
-<h3><span class="section-number">15.4.4. </span>Connecting objects (Cylinders, springs, …)<a class="headerlink" href="#connecting-objects-cylinders-springs" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="connecting-objects-cylinders-springs">
+<h3><span class="section-number">15.4.4. </span>Connecting objects (Cylinders, springs, …)<a class="headerlink" href="#connecting-objects-cylinders-springs" title="Permalink to this heading">#</a></h3>
 <p>Cylinders and helices can be used to “connect” two objects. In addition to the <code class="docutils literal notranslate"><span class="pre">pos</span></code> attribute (which stores the position of one end of the object), there is also an <code class="docutils literal notranslate"><span class="pre">axis</span></code> attribute which stores the vector pointing from <code class="docutils literal notranslate"><span class="pre">pos</span></code> to the other end of the object. Here is an example showing this for a cylinder: (<code class="docutils literal notranslate"><span class="pre">vpythondemo5py</span></code>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">visual</span><span class="o">,</span> <span class="nn">math</span>
 
@@ -1330,9 +1300,9 @@ marker, linestyle, and markercolor with::
     <span class="n">visual</span><span class="o">.</span><span class="n">rate</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="d-vision">
-<h3><span class="section-number">15.4.5. </span>3d vision<a class="headerlink" href="#d-vision" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="d-vision">
+<h3><span class="section-number">15.4.5. </span>3d vision<a class="headerlink" href="#d-vision" title="Permalink to this heading">#</a></h3>
 <p>If you have access to “anaglyphic” (<em>i.e.</em> colored) glasses (best red-cyan but red-green or red-blue works as well), then you can switch visual python into this stereo mode by adding these two lines to the beginning of your program:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">visual</span><span class="o">.</span><span class="n">scene</span><span class="o">.</span><span class="n">stereo</span><span class="o">=</span><span class="s1">&#39;redcyan&#39;</span>
 <span class="n">visual</span><span class="o">.</span><span class="n">scene</span><span class="o">.</span><span class="n">stereodepth</span><span class="o">=</span><span class="mi">1</span>
@@ -1345,18 +1315,18 @@ marker, linestyle, and markercolor with::
 <li><p><code class="docutils literal notranslate"><span class="pre">stereodepth=2</span></code>: 3d scene sticking out of the screen</p></li>
 </ul>
 <img alt="Snapshot of vpythondemo3.py in 3d mode (’redcyan’). With red/cyan glasses, this appears as a 3d image (with spatial depth)." src="_images/vpythondemo3_3d.png" />
-</div>
-</div>
-<div class="section" id="visualising-higher-dimensional-data-vtk">
-<h2><span class="section-number">15.5. </span>Visualising higher dimensional data (VTK)<a class="headerlink" href="#visualising-higher-dimensional-data-vtk" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="visualising-higher-dimensional-data-vtk">
+<h2><span class="section-number">15.5. </span>Visualising higher dimensional data (VTK)<a class="headerlink" href="#visualising-higher-dimensional-data-vtk" title="Permalink to this heading">#</a></h2>
 <p>Often, we need to understand data defined at 3d positions in space. The data itself is often a scalar field (such as temperature) or a 3d vector (such as velocity or magnetic field), or occasionally a tensor. For example for a 3d-vector field <em>f</em> defined in 3d-space (<span class="math notranslate nohighlight">\(\vec{f}(\vec{x})\)</span> where <span class="math notranslate nohighlight">\(\vec{x} \in I\!\!R^3\)</span> and <span class="math notranslate nohighlight">\(\vec{f}(\vec{x})
 \in I\!\!R^3\)</span>) we could draw a 3d-arrow at every (grid) point in space. It is common for these data sets to be time dependent.</p>
 <p>The probably most commonly used library in Science and Engineering to visualise such data sets is probably VTK, the Visualisation ToolKit (<a class="reference external" href="https://vtk.org">https://vtk.org</a>). This is a substantial C++ library with interfaces to high level languages, including Python.</p>
 <p>One can either call these routines directly from Python code, or write the data to disk in a format that the VTK library can read (so called vtk data files), and then use stand-alone programme such as Mayavi, ParaView and VisIt to read these data files and manipulate them (ofter with a GUI). All three of these are using the VTK library internally, and can read vtk data files.</p>
 <p>These package is very well suited to visualise static and timedependent 2d and 3d-fields (scalar, vector and tensor fields). Two examples are shown below.</p>
 <p>They can be used as a stand-alone executables with a GUI to visualise VTK files. It can also be scripted from a Python program, or used interactively from a Python session.</p>
-<div class="section" id="mayavi-paraview-visit">
-<h3><span class="section-number">15.5.1. </span>Mayavi, Paraview, Visit<a class="headerlink" href="#mayavi-paraview-visit" title="Permalink to this headline">¶</a></h3>
+<section id="mayavi-paraview-visit">
+<h3><span class="section-number">15.5.1. </span>Mayavi, Paraview, Visit<a class="headerlink" href="#mayavi-paraview-visit" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Mayavi Home page <a class="reference external" href="http://code.enthought.com/pages/mayavi-project.html">http://code.enthought.com/pages/mayavi-project.html</a></p></li>
 <li><p>Paraview Home page <a class="reference external" href="https://www.paraview.org">https://www.paraview.org</a></p></li>
@@ -1365,31 +1335,31 @@ marker, linestyle, and markercolor with::
 <img alt="image" src="_images/vector_field_combination.png" />
 <img alt="image" src="_images/mayavi-samp.png" />
 <p>Two examples from MayaVi visualisations.</p>
-</div>
-<div class="section" id="writing-vtk-files-from-python-pyvtk">
-<h3><span class="section-number">15.5.2. </span>Writing vtk files from Python (pyvtk)<a class="headerlink" href="#writing-vtk-files-from-python-pyvtk" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="writing-vtk-files-from-python-pyvtk">
+<h3><span class="section-number">15.5.2. </span>Writing vtk files from Python (pyvtk)<a class="headerlink" href="#writing-vtk-files-from-python-pyvtk" title="Permalink to this heading">#</a></h3>
 <p>A small but powerful Python library is pyvtk available at https://github.com/pearu/pyvtk. This allows to create vtk files from Python data structures very easily.</p>
 <p>Given a finite element mesh or a finite difference data set in Python, one can use pyvtk to write such data into files, and then use one of the visualisation applications listed above to load the vtk files and to display and investigate them.</p>
-</div>
-</div>
-<div class="section" id="further-tools-and-developments">
-<h2><span class="section-number">15.6. </span>Further tools and developments<a class="headerlink" href="#further-tools-and-developments" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="further-tools-and-developments">
+<h2><span class="section-number">15.6. </span>Further tools and developments<a class="headerlink" href="#further-tools-and-developments" title="Permalink to this heading">#</a></h2>
 <p>In addition to <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, there are a number of other libraries with similar or related visualisation functionality.</p>
 <p><a class="reference external" href="https://plot.ly/python">Plotly.py</a> and <a class="reference external" href="https://bokeh.org">Bokeh</a> – together with the veteran of python-based plotting <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> – form the basis for many tools that provide visualisation skills.</p>
 <p>A beautiful summary and <a class="reference external" href="https://pyviz.org/tools.html">categorisation</a> of these and other libraries is available at https://pyviz.org.</p>
-<div class="section" id="exploiting-self-describing-data-for-visualisation">
-<h3><span class="section-number">15.6.1. </span>Exploiting self-describing data for visualisation<a class="headerlink" href="#exploiting-self-describing-data-for-visualisation" title="Permalink to this headline">¶</a></h3>
+<section id="exploiting-self-describing-data-for-visualisation">
+<h3><span class="section-number">15.6.1. </span>Exploiting self-describing data for visualisation<a class="headerlink" href="#exploiting-self-describing-data-for-visualisation" title="Permalink to this heading">#</a></h3>
 <p>Some libraries, such as <a class="reference external" href="http://pandas.pydata.org">Pandas</a> (see also <a class="reference internal" href="17-pandas.html"><span class="doc std std-doc">Chapter on Pandas</span></a>), <a class="reference external" href="http://xarray.pydata.org">Xarray</a>, and <a class="reference external" href="https://holoviews.org">holoviews</a> make use of the idea of self-describing data to simplify the visualisation: while the data in a numpy array is ‘just’ a (multidimensional) matrix of data points, these libraries can store metadata – such as headings and coordinates – associated with these data points. We also talked about annotated or labelled data to describe the presence of such metadata.</p>
 <p>What is the benefit of having this meta-data available? An xarray, for example, may store a 2d-array (like a numpy array) but have the metadata store that one dimension refers to the x-position and the other direction to time. The x-array object provides convenience methods to select and plot the data in the xarray.</p>
-</div>
-<div class="section" id="the-future-of-data-visualisation">
-<h3><span class="section-number">15.6.2. </span>The future of data visualisation<a class="headerlink" href="#the-future-of-data-visualisation" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="the-future-of-data-visualisation">
+<h3><span class="section-number">15.6.2. </span>The future of data visualisation<a class="headerlink" href="#the-future-of-data-visualisation" title="Permalink to this heading">#</a></h3>
 <p>I would speculate that increasingly we will be using high-level plotting tools (such as pandas, xarray, holoviews) to explore data interactively.</p>
-<p>We can see a trend in data analysis libraries that data objects can be converted to such high-level annotated data objecs (such as European XFEL’s <a class="reference external" href="https://extra-data.readthedocs.io">extra-data</a> tools which can return a labelled xarray object). Other projects combine the metadata with the data in custom made objects to then provide convenience methods (such as <a class="reference external" href="http://ubermag.github.io">Ubermag</a>’s <a class="reference external" href="https://ubermag.github.io/documentation/ipynb/discretisedfield/field-matplotlib-visualisation.html">discretisedfield</a> object).</p>
+<p>We can see a trend in data analysis libraries that data objects can be converted to such high-level annotated data objecs (such as European XFEL’s <a class="reference external" href="https://extra-data.readthedocs.io">extra-data</a> tools which can return a labelled xarray object). Other projects combine the metadata with the data in custom made objects to then provide convenience methods (such as <a class="reference external" href="http://ubermag.github.io">Ubermag</a>’s <span class="xref myst">discretisedfield</span> object).</p>
 <p>Will we still need to learn the basics, such as the <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> interface? Probably yes: the very least to fine tune the plots provided by these high level libraries:</p>
-</div>
-<div class="section" id="fine-tuning-matplotlib-plots-that-are-generated-by-high-level-frame-works">
-<h3><span class="section-number">15.6.3. </span>Fine-tuning matplotlib plots that are generated by high level frame works<a class="headerlink" href="#fine-tuning-matplotlib-plots-that-are-generated-by-high-level-frame-works" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="fine-tuning-matplotlib-plots-that-are-generated-by-high-level-frame-works">
+<h3><span class="section-number">15.6.3. </span>Fine-tuning matplotlib plots that are generated by high level frame works<a class="headerlink" href="#fine-tuning-matplotlib-plots-that-are-generated-by-high-level-frame-works" title="Permalink to this heading">#</a></h3>
 <p>We show one example where pandas – as a representative for a high-level framework that can create plots – creates the plot, but we use <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> commands to tailor the resulting plot.</p>
 <p>Let’s define the pandas data series first (it is not importat to understand the details of this now):</p>
 <div class="cell docutils container">
@@ -1417,10 +1387,10 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="_images/15-visualising-data_68_1.svg" src="_images/15-visualising-data_68_1.svg" /></div>
+<img alt="_images/fae2a06d4e05bee3d7d644cdddfd3aa62754cb7820f986d0cb2c8ad5f4b93f13.svg" src="_images/fae2a06d4e05bee3d7d644cdddfd3aa62754cb7820f986d0cb2c8ad5f4b93f13.svg" /></div>
 </div>
 <p>Note how the bar chart is labelled appropriately: the metadata (here the labels ‘bananas’, ‘oranges’ and ‘potatoes’) have been used to label the x-axis in the plot.</p>
 <p>If we want to change this plot, the following strategy works, and is supported by other high-level frameworks as well:</p>
@@ -1443,12 +1413,12 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/15-visualising-data_72_0.svg" src="_images/15-visualising-data_72_0.svg" /></div>
+<img alt="_images/9990545b38aff64aec941097bca2c2b11b63bf08722a566208e8886e45a8836f.svg" src="_images/9990545b38aff64aec941097bca2c2b11b63bf08722a566208e8886e45a8836f.svg" /></div>
 </div>
-</div>
-</div>
-<div class="section" id="jupyter-notebooks">
-<h2><span class="section-number">15.7. </span>Jupyter Notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="jupyter-notebooks">
+<h2><span class="section-number">15.7. </span>Jupyter Notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this heading">#</a></h2>
 <p>The <a class="reference external" href="https://jupyter.org">Jupyter Notebook</a> has become a central tool for interactive data exploration and data analysis. I would go so far to say that most data scientists will see the Jupyter notebook as the default place to start a data exploration, analysis and machine learning project.</p>
 <p>Why is this so? The combination of annotation, code snippets, inlined results from computation or visualisation and the automatic logging of these steps in a notebook file can be of great use for research and development activities. A slightly longer summary is <a class="reference external" href="https://fangohr.github.io/blog/jupyter-for-computational-science-and-data-science.html">available here</a>.</p>
 <p>Some recent publications on the topic:</p>
@@ -1457,8 +1427,8 @@ dtype: int64
 <li><p>Hans Fangohr, Marijan Beg, et al, <a class="reference external" href="http://accelconf.web.cern.ch/icalepcs2019/doi/JACoW-ICALEPCS2019-TUCPR02.html"><em>Data exploration and analysis with Jupyter notebooks</em></a>, Proceedings of the 17th International Conference on Accelerator and Large Experimental Physics Control Systems ICALEPCS2019, TUCPR02, doi: 10.18429/JACoW-ICALEPCS2019-TUCPR02 (<a class="reference external" href="https://jacow.org/icalepcs2019/papers/tucpr02.pdf">pdf</a>) (2020)</p></li>
 <li><p>Marijan Beg; Juliette Belin; Thomas Kluyver; Alexander Konovalov; Min Ragan-Kelley; Nicolas Thiery; Hans Fangohr. <a class="reference external" href="https://ieeexplore.ieee.org/document/9325550"><em>Using Jupyter for Reproducible Scientific Workflows</em></a> in Computing in Science &amp; Engineering, vol. 23, no. 2, pp. 36-46, 1 March-April 2021, doi: 10.1109/MCSE.2021.3052101 <a class="reference external" href="https://arxiv.org/abs/2102.09562">arXiv preprint</a> (2021)</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1472,7 +1442,7 @@ dtype: int64
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -1480,46 +1450,155 @@ dtype: int64
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="14-numpy.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">14. </span>Numerical Python (numpy): arrays</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="14-numpy.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">14. </span>Numerical Python (numpy): arrays</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="16-scipy.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="16-scipy.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"><span class="section-number">16. </span>Numerical Methods using Python (scipy)</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-        
-        </div>
-    </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Hans Fangohr<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-      </div>
-    </div>
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib-plotting-y-f-x-and-a-bit-more">15.1. Matplotlib – plotting y=f(x), (and a bit more)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib-and-pylab">15.1.1. Matplotlib and Pylab</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-example">15.1.2. First example</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-pyplot-interface">15.1.2.1. The pyplot interface</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-import-matplotlib-pylab-pyplot-numpy-and-all-that">15.1.3. How to import matplotlib, pylab, pyplot, numpy and all that</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-pylab-interface">15.1.3.1. The Pylab interface</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipythons-inline-mode">15.1.4. IPython’s inline mode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-the-figure-to-a-file">15.1.5. Saving the figure to a file</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">15.2. The pylab interface</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fine-tuning-your-plot">15.2.1. Fine tuning your plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-more-than-one-curve">15.2.2. Plotting more than one curve</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#two-or-more-curves-in-one-graph">15.2.2.1. Two (or more) curves in one graph</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#two-or-more-graphs-in-one-figure-window">15.2.2.2. Two (or more graphs) in one figure window</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#two-or-more-figure-windows">15.2.2.3. Two (or more) figure windows</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-mode">15.2.3. Interactive mode</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-matplotlib-pyplot-interface">15.3. The matplotlib.pyplot interface</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histograms">15.3.1. Histograms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualising-matrix-data">15.3.2. Visualising matrix data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-colour-map-to-choose">15.3.3. What colour map to choose?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plots-of-z-f-x-y-and-other-features-of-matplotlib">15.3.4. Plots of <em>z</em> = <em>f</em>(<em>x</em>, <em>y</em>) and other features of Matplotlib</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-learn-how-to-use-matplotlib">15.3.5. How to learn how to use Matplotlib?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-python">15.4. Visual Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basics-rotating-and-zooming">15.4.1. Basics, rotating and zooming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-the-frame-rate-for-animations">15.4.2. Setting the frame rate for animations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tracking-trajectories">15.4.3. Tracking trajectories</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-objects-cylinders-springs">15.4.4. Connecting objects (Cylinders, springs, …)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-vision">15.4.5. 3d vision</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualising-higher-dimensional-data-vtk">15.5. Visualising higher dimensional data (VTK)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mayavi-paraview-visit">15.5.1. Mayavi, Paraview, Visit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-vtk-files-from-python-pyvtk">15.5.2. Writing vtk files from Python (pyvtk)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-tools-and-developments">15.6. Further tools and developments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exploiting-self-describing-data-for-visualisation">15.6.1. Exploiting self-describing data for visualisation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-future-of-data-visualisation">15.6.2. The future of data visualisation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fine-tuning-matplotlib-plots-that-are-generated-by-high-level-frame-works">15.6.3. Fine-tuning matplotlib plots that are generated by high level frame works</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebooks">15.7. Jupyter Notebooks</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+By Hans Fangohr
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

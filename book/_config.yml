@@ -63,4 +63,6 @@ sphinx:
   config:
     linkcheck_anchors: false
     linkcheck_workers: 10
-    linkcheck_ignore        : https://jacow.org/icalepcs2019/papers/tucpr02.pdf
+    linkcheck_ignore        : [https://jacow.org/icalepcs2019/papers/tucpr02.pdf,
+                               https://doi.org/10.1109/MCSE.2021.3059263,
+                               https://ieeexplore.ieee.org/document/9325550]

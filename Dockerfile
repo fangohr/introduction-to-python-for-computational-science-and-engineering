@@ -3,8 +3,8 @@ FROM debian:bookworm-slim
 #RUN apt-get update -y && apt-get install -y texlive-xetex latexmk texlive-xetex \
 #	texlive-fonts-extra fonts-freefont-otf python3 python3-pip git zile wget
 
-RUN apt-get update -y && apt-get install -y python3 python3-pip texlive-xetex latexmk git zile wget
-RUN apt-get install -y python3-venv
+RUN apt-get update -y && apt-get install -y python3 python3-pip texlive-xetex \
+    latexmk git zile wget texlive-fonts-extra python3-venv
 
 COPY requirements.txt /opt/
 

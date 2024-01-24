@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
@@ -39,9 +39,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
-  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -116,7 +116,6 @@ const thebe_selector_output = ".output, .cell_output"
   <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -156,20 +155,15 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
-  <header>
   
-    <div class="bd-header navbar navbar-expand-lg bd-navbar">
-    </div>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
-  </header>
 
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -511,6 +505,18 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_295/4080736814.py:1: DeprecationWarning: 
+Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
+(to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
+but was not found to be installed on your system.
+If this would cause problems for you,
+please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
+        
+  import pandas as pd
+</pre></div>
+</div>
+</div>
 </div>
 <section id="motivational-example-series">
 <h2><span class="section-number">17.1. </span>Motivational example (Series)<a class="headerlink" href="#motivational-example-series" title="Permalink to this heading">#</a></h2>
@@ -799,7 +805,7 @@ dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="_images/e7a95b947d4fce05a62325e9063cbe2184a9d7f377c8bd340747f0a9cbea810e.svg" src="_images/e7a95b947d4fce05a62325e9063cbe2184a9d7f377c8bd340747f0a9cbea810e.svg" /></div>
+<img alt="_images/ee19018b34918d52fc9c4b898125f1209786c398c66d691c8c6db6d8d862fa6c.svg" src="_images/ee19018b34918d52fc9c4b898125f1209786c398c66d691c8c6db6d8d862fa6c.svg" /></div>
 </div>
 <p>We can sort the data according to the values in the Series (and then plot to visualise):</p>
 <div class="cell docutils container">
@@ -812,7 +818,7 @@ dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="_images/0181f249f089c18cc438e149e6c23b6a4a08a50e6f2c3db373e1e4bf82b55a74.svg" src="_images/0181f249f089c18cc438e149e6c23b6a4a08a50e6f2c3db373e1e4bf82b55a74.svg" /></div>
+<img alt="_images/1da4e28e5f62b7e977de1aaee9486e2c415e6396cd7ba7e58cd5ee44d942c21c.svg" src="_images/1da4e28e5f62b7e977de1aaee9486e2c415e6396cd7ba7e58cd5ee44d942c21c.svg" /></div>
 </div>
 <p>Or sort the index to get alphabetical order of our fruit and vegetables:</p>
 <div class="cell docutils container">
@@ -825,7 +831,7 @@ dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="_images/7386a0939e64835834877a02c01a3084351cfc28ec69abcaa4a967e1bd6e4437.svg" src="_images/7386a0939e64835834877a02c01a3084351cfc28ec69abcaa4a967e1bd6e4437.svg" /></div>
+<img alt="_images/7d40237f0644a2cbbaf5869715eacee4f712618f66bd922082630f1efe73cf44.svg" src="_images/7d40237f0644a2cbbaf5869715eacee4f712618f66bd922082630f1efe73cf44.svg" /></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">Series</span></code> object has a number of numerical methods available, including <code class="docutils literal notranslate"><span class="pre">mean</span></code> and <code class="docutils literal notranslate"><span class="pre">sum</span></code>:</p>
 <div class="cell docutils container">
@@ -1034,7 +1040,7 @@ dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="_images/7f182d3c74a3cd4080a21259937da0df3eb9982e354e9dae7069bb2c480319d4.svg" src="_images/7f182d3c74a3cd4080a21259937da0df3eb9982e354e9dae7069bb2c480319d4.svg" /></div>
+<img alt="_images/4b837e9ed04c6fe97b570a0a61014749fdd5691457fdc867181e795a7210e93e.svg" src="_images/4b837e9ed04c6fe97b570a0a61014749fdd5691457fdc867181e795a7210e93e.svg" /></div>
 </div>
 <p>To tailor the plot, we can either get the axis object and modify it subsequently:</p>
 <div class="cell docutils container">
@@ -1047,7 +1053,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/bf9ea2b203f06eda177f2578736926c4050487698cf93574f5b915ce55128a4c.svg" src="_images/bf9ea2b203f06eda177f2578736926c4050487698cf93574f5b915ce55128a4c.svg" /></div>
+<img alt="_images/8eadc96aecf2c34fd5edaba75f0aad3732458a6a2a9ee50ae0099367797e8fc5.svg" src="_images/8eadc96aecf2c34fd5edaba75f0aad3732458a6a2a9ee50ae0099367797e8fc5.svg" /></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1059,7 +1065,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/91b898a30469e63ca4be8820aaef6c9c99365dbc477f2229c050deefc6759f92.svg" src="_images/91b898a30469e63ca4be8820aaef6c9c99365dbc477f2229c050deefc6759f92.svg" /></div>
+<img alt="_images/151e59005e860a5030ebd8a0c7f6eed8873c7aa850120066ce244dd9b9d6b9ec.svg" src="_images/151e59005e860a5030ebd8a0c7f6eed8873c7aa850120066ce244dd9b9d6b9ec.svg" /></div>
 </div>
 <p>We can also fetch the data from the series and drive the plotting “manually” ourselves:</p>
 <div class="cell docutils container">
@@ -1076,7 +1082,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/bc613209cbd0d14898f415defa5d0ed2e70fd1a6337aa072450d7dc57ba710ba.svg" src="_images/bc613209cbd0d14898f415defa5d0ed2e70fd1a6337aa072450d7dc57ba710ba.svg" /></div>
+<img alt="_images/2ad8f52ea7dfa06626ff090cc85a7ce8484dbd2dec53b40972ed425b364eedd1.svg" src="_images/2ad8f52ea7dfa06626ff090cc85a7ce8484dbd2dec53b40972ed425b364eedd1.svg" /></div>
 </div>
 </section>
 <section id="missing-values">
@@ -2022,13 +2028,13 @@ Name: apple, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2024-01-18 22:39:12--  https://fangohr.github.io/data/eurostat/population2017/eu-pop-2017.csv
-Resolving fangohr.github.io (fangohr.github.io)... 185.199.111.153, 185.199.110.153, 185.199.109.153, ...
-Connecting to fangohr.github.io (fangohr.github.io)|185.199.111.153|:443... connected.
-HTTP request sent, awaiting response... 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2024-01-24 08:47:08--  https://fangohr.github.io/data/eurostat/population2017/eu-pop-2017.csv
+Resolving fangohr.github.io (fangohr.github.io)... 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 OK
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>185.199.108.153, 185.199.109.153, 185.199.110.153, ...
+Connecting to fangohr.github.io (fangohr.github.io)|185.199.108.153|:443... connected.
+HTTP request sent, awaiting response... 200 OK
 Length: 1087 (1.1K) [text/csv]
 Saving to: ‘eu-pop-2017.csv’
 
@@ -2036,7 +2042,7 @@ Saving to: ‘eu-pop-2017.csv’
 eu-pop-2017.csv       0%[                    ]       0  --.-KB/s               
 eu-pop-2017.csv     100%[===================&gt;]   1.06K  --.-KB/s    in 0s      
 
-2024-01-18 22:39:12 (91.7 MB/s) - ‘eu-pop-2017.csv’ saved [1087/1087]
+2024-01-24 08:47:09 (88.4 MB/s) - ‘eu-pop-2017.csv’ saved [1087/1087]
 </pre></div>
 </div>
 </div>
@@ -2605,7 +2611,7 @@ Spain,46527039,46659302,390024,421269
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;geo&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/74c79f617bd420ce4936a4145fe35db5f84f4d6288a8f435d651d9f00d0bc431.svg" src="_images/74c79f617bd420ce4936a4145fe35db5f84f4d6288a8f435d651d9f00d0bc431.svg" /></div>
+<img alt="_images/de89613bb08cbdce20c16c3a716b1ecee384ba904e35a5377b8d2118b1209f83.svg" src="_images/de89613bb08cbdce20c16c3a716b1ecee384ba904e35a5377b8d2118b1209f83.svg" /></div>
 </div>
 <p>The above shows the population as of 1 Jan 2017.</p>
 <p>We’ll try to improve this in two ways:</p>
@@ -2630,7 +2636,7 @@ Spain,46527039,46659302,390024,421269
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;geo&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/b561343980a9d58e25aef8b0e7ed216b6512a560af61394bc3446c8a8c552e87.svg" src="_images/b561343980a9d58e25aef8b0e7ed216b6512a560af61394bc3446c8a8c552e87.svg" /></div>
+<img alt="_images/766d8540577495e7f7cafd2406826e16249effbec6cc287658e42e7de46b7b59.svg" src="_images/766d8540577495e7f7cafd2406826e16249effbec6cc287658e42e7de46b7b59.svg" /></div>
 </div>
 <p>The example above selects one column from the data frame (<code class="docutils literal notranslate"><span class="pre">['pop17'</span></code>) and that returns a <code class="docutils literal notranslate"><span class="pre">Series</span></code> object. Then we sort this <code class="docutils literal notranslate"><span class="pre">Series</span></code> object using <code class="docutils literal notranslate"><span class="pre">sort_values()</span></code> according to the values (that’s the number of poeple in each country), then we plot this.</p>
 <p>Alternatively, we could also create a plot for the whole data frame, but say that the <code class="docutils literal notranslate"><span class="pre">pop17</span></code> is the column for sorting, and that we want to plot only the column with <code class="docutils literal notranslate"><span class="pre">pop17</span></code>:</p>
@@ -2644,7 +2650,7 @@ Spain,46527039,46659302,390024,421269
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;geo&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/aee13f4bc89a13f51e09905de0685875b6133ffbf91a73de8a49ebb4437811d8.svg" src="_images/aee13f4bc89a13f51e09905de0685875b6133ffbf91a73de8a49ebb4437811d8.svg" /></div>
+<img alt="_images/19451eb6d03b650ada0e96def2650d930bda3da1cecd58c781ed6afa56c0e196.svg" src="_images/19451eb6d03b650ada0e96def2650d930bda3da1cecd58c781ed6afa56c0e196.svg" /></div>
 </div>
 <p>We can also plot more than one column at the same time:</p>
 <div class="cell docutils container">
@@ -2654,7 +2660,7 @@ Spain,46527039,46659302,390024,421269
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/251dcf29b5e7fa681c442691bc23bb35eb059a10129cbb58fffccea6e32ee7f1.svg" src="_images/251dcf29b5e7fa681c442691bc23bb35eb059a10129cbb58fffccea6e32ee7f1.svg" /></div>
+<img alt="_images/4d537f13ce73cbbffee35b41888791e2f8b3851d54001d7dcc1e0617557b4fee.svg" src="_images/4d537f13ce73cbbffee35b41888791e2f8b3851d54001d7dcc1e0617557b4fee.svg" /></div>
 </div>
 <p>We can also fine tune the plot with the usual <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> commands:</p>
 <div class="cell docutils container">
@@ -2667,7 +2673,7 @@ Spain,46527039,46659302,390024,421269
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1e83dd3741edb098949a56381db304375072828c422aa7918899758aa8e75fae.svg" src="_images/1e83dd3741edb098949a56381db304375072828c422aa7918899758aa8e75fae.svg" /></div>
+<img alt="_images/7c26e283943b60fc9885cc35eeb46a9cb3b95a5447ae5822b75b7a44d3503a94.svg" src="_images/7c26e283943b60fc9885cc35eeb46a9cb3b95a5447ae5822b75b7a44d3503a94.svg" /></div>
 </div>
 <p>Based on the number of births and deaths, we can compute change in population for each country for 2017. This is sometimes called the “natural-change”:</p>
 <div class="cell docutils container">
@@ -2845,7 +2851,7 @@ Name: natural-change, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/35c2ca9c6f46397352478570f6593bf1b077948e4d3fc54c6efc3ca78a17674f.svg" src="_images/35c2ca9c6f46397352478570f6593bf1b077948e4d3fc54c6efc3ca78a17674f.svg" /></div>
+<img alt="_images/954649f75c4ede9ca835b821d337e3943e7aee610c49ae7b70f87b29e2dd521f.svg" src="_images/954649f75c4ede9ca835b821d337e3943e7aee610c49ae7b70f87b29e2dd521f.svg" /></div>
 </div>
 <p>We can show the data together with the underlying birth and death rate data:</p>
 <div class="cell docutils container">
@@ -2864,7 +2870,7 @@ Name: natural-change, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;geo&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/526aa1f2fbe667cf5c344535af3f374e3b64e98f3dbd845f08cc4f43545da5ff.svg" src="_images/526aa1f2fbe667cf5c344535af3f374e3b64e98f3dbd845f08cc4f43545da5ff.svg" /></div>
+<img alt="_images/6a8edbf808c39b8a017fb1d08836f9e26e473659bd11ad3ef81cb03175328cfe.svg" src="_images/6a8edbf808c39b8a017fb1d08836f9e26e473659bd11ad3ef81cb03175328cfe.svg" /></div>
 </div>
 <p>We haven’t used the information we have about the population on 1 January 2018 yet.</p>
 <p>Let’s first look at the absolute changes in the population based on the (census?) data from 1 Jan 2017 and 1 Jan 2018:</p>
@@ -2883,7 +2889,7 @@ Name: natural-change, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/86ee8ba643a863adaa48e3659c3ede0df5d8437cbe80b18bf6e00aec6d8eaaf9.svg" src="_images/86ee8ba643a863adaa48e3659c3ede0df5d8437cbe80b18bf6e00aec6d8eaaf9.svg" /></div>
+<img alt="_images/4e9d11abea43ec59ca3b8edbbb016a5746322e4be4ab4f617b850a2f2d13e27a.svg" src="_images/4e9d11abea43ec59ca3b8edbbb016a5746322e4be4ab4f617b850a2f2d13e27a.svg" /></div>
 </div>
 <p>With that information, we can estimate migration. (It is important to note that this estimated number will also absorb all inaccuracies or changes of the data gathering method, in the original data described as “statistical adjustment”.)</p>
 <div class="cell docutils container">
@@ -3029,7 +3035,7 @@ Name: natural-change, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e97e7d48b65de330a3d1e6a35b3ac8fe003a273973d51d809c4f57b18692b561.svg" src="_images/e97e7d48b65de330a3d1e6a35b3ac8fe003a273973d51d809c4f57b18692b561.svg" /></div>
+<img alt="_images/bbc8d44243dbbd12220146efb92dbad78e4673daca9e58445a807c29708ee3c7.svg" src="_images/bbc8d44243dbbd12220146efb92dbad78e4673daca9e58445a807c29708ee3c7.svg" /></div>
 </div>
 </section>
 <section id="further-reading">
@@ -3181,8 +3187,8 @@ By Hans Fangohr
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

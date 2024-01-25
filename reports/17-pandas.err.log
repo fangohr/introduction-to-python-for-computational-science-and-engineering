@@ -1,0 +1,38 @@
+Traceback (most recent call last):
+  File "/opt/venv/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/opt/venv/lib/python3.11/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.11/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/opt/venv/lib/python3.11/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/venv/lib/python3.11/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+%matplotlib inline
+# settings for Jupyter book: svg for html version, high-resolution png for pdf
+import matplotlib
+import matplotlib_inline
+matplotlib_inline.backend_inline.set_matplotlib_formats('svg', 'png')
+mpl.rcParams['figure.dpi'] = 400
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[21], line 6[0m
+[1;32m      4[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib_inline[39;00m
+[1;32m      5[0m matplotlib_inline[38;5;241m.[39mbackend_inline[38;5;241m.[39mset_matplotlib_formats([38;5;124m'[39m[38;5;124msvg[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mpng[39m[38;5;124m'[39m)
+[0;32m----> 6[0m [43mmpl[49m[38;5;241m.[39mrcParams[[38;5;124m'[39m[38;5;124mfigure.dpi[39m[38;5;124m'[39m] [38;5;241m=[39m [38;5;241m400[39m
+
+[0;31mNameError[0m: name 'mpl' is not defined
+

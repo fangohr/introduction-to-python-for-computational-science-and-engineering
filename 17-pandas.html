@@ -784,19 +784,7 @@ dtype: int64
 <span class="kn">import</span> <span class="nn">matplotlib</span>
 <span class="kn">import</span> <span class="nn">matplotlib_inline</span>
 <span class="n">matplotlib_inline</span><span class="o">.</span><span class="n">backend_inline</span><span class="o">.</span><span class="n">set_matplotlib_formats</span><span class="p">(</span><span class="s1">&#39;svg&#39;</span><span class="p">,</span> <span class="s1">&#39;png&#39;</span><span class="p">)</span>
-<span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.dpi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">400</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">21</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">matplotlib_inline</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">matplotlib_inline</span><span class="o">.</span><span class="n">backend_inline</span><span class="o">.</span><span class="n">set_matplotlib_formats</span><span class="p">(</span><span class="s1">&#39;svg&#39;</span><span class="p">,</span> <span class="s1">&#39;png&#39;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.dpi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">400</span>
-
-<span class="ne">NameError</span>: name &#39;mpl&#39; is not defined
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.dpi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">400</span>
 </pre></div>
 </div>
 </div>
@@ -807,6 +795,11 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
+</pre></div>
+</div>
+<img alt="_images/59f1dfef8f7e35f7f2f688db26ae4aeb283626c58f60017b8882da3e6ef5d8b2.svg" src="_images/59f1dfef8f7e35f7f2f688db26ae4aeb283626c58f60017b8882da3e6ef5d8b2.svg" /></div>
 </div>
 <p>We can sort the data according to the values in the Series (and then plot to visualise):</p>
 <div class="cell docutils container">
@@ -815,6 +808,11 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
+</pre></div>
+</div>
+<img alt="_images/38d073f55dc19216aa0614c013aa6192d5abc44ed8cbcf22c804012cdbb3c324.svg" src="_images/38d073f55dc19216aa0614c013aa6192d5abc44ed8cbcf22c804012cdbb3c324.svg" /></div>
 </div>
 <p>Or sort the index to get alphabetical order of our fruit and vegetables:</p>
 <div class="cell docutils container">
@@ -823,11 +821,21 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
+</pre></div>
+</div>
+<img alt="_images/3a3b88edc805bf0a0cdd35f1d6cffc0d7af460fefb721e4a9a4569fc8ceeb5ca.svg" src="_images/3a3b88edc805bf0a0cdd35f1d6cffc0d7af460fefb721e4a9a4569fc8ceeb5ca.svg" /></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">Series</span></code> object has a number of numerical methods available, including <code class="docutils literal notranslate"><span class="pre">mean</span></code> and <code class="docutils literal notranslate"><span class="pre">sum</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stock</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>137
 </pre></div>
 </div>
 </div>
@@ -838,11 +846,21 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>27.4
+</pre></div>
+</div>
+</div>
 </div>
 <p>It also behaves like a sequence in that the <code class="docutils literal notranslate"><span class="pre">len</span></code> function returns the number of data points in the Series object:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">stock</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
 </pre></div>
 </div>
 </div>
@@ -857,11 +875,21 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>40
+</pre></div>
+</div>
+</div>
 </div>
 <p>or from the underlying numpy array directly:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stock</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">nbytes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>40
 </pre></div>
 </div>
 </div>
@@ -873,11 +901,21 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dtype(&#39;int64&#39;)
+</pre></div>
+</div>
+</div>
 </div>
 <p>The Series object needs additional memory. This can be queried using:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stock</span><span class="o">.</span><span class="n">memory_usage</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>252
 </pre></div>
 </div>
 </div>
@@ -889,6 +927,19 @@ dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stock</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count      5.000000
+mean      27.400000
+std       41.955929
+min        1.000000
+25%        3.000000
+50%       10.000000
+75%       22.000000
+max      101.000000
+dtype: float64
 </pre></div>
 </div>
 </div>
@@ -913,6 +964,14 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>apple     10
+orange     3
+banana    22
+dtype: int64
+</pre></div>
+</div>
+</div>
 </div>
 <p>If we omit the <code class="docutils literal notranslate"><span class="pre">index</span></code> argument, the Series will assume an integer index:</p>
 <div class="cell docutils container">
@@ -925,6 +984,14 @@ dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stock</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    10
+1     3
+2    22
+dtype: int64
 </pre></div>
 </div>
 </div>
@@ -943,6 +1010,14 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>apple     10
+orange     3
+banana    22
+dtype: int64
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="plotting-data">
@@ -955,6 +1030,11 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
+</pre></div>
+</div>
+<img alt="_images/3769da2645a3247617f5a1fc967fb8c6a03e654b48baa351053e9234b5835253.svg" src="_images/3769da2645a3247617f5a1fc967fb8c6a03e654b48baa351053e9234b5835253.svg" /></div>
 </div>
 <p>To tailor the plot, we can either get the axis object and modify it subsequently:</p>
 <div class="cell docutils container">
@@ -966,6 +1046,8 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/a50f0eebad9f61e52579fb0426a8f9adc53b8594e918ff0e519ba88f435bfe4d.svg" src="_images/a50f0eebad9f61e52579fb0426a8f9adc53b8594e918ff0e519ba88f435bfe4d.svg" /></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -976,6 +1058,8 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/583c2d4ae8919fb7abb91e1faccf64cdc4322ccb3f9542d1048130ab9af30b5c.svg" src="_images/583c2d4ae8919fb7abb91e1faccf64cdc4322ccb3f9542d1048130ab9af30b5c.svg" /></div>
 </div>
 <p>We can also retrieve the data from the series and drive the plotting “manually” ourselves:</p>
 <div class="cell docutils container">
@@ -991,6 +1075,8 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/5b9061e82efa99d93d71d03e8dd80fcefa8a73fc16238c6bbe83f4e4905dd0eb.svg" src="_images/5b9061e82efa99d93d71d03e8dd80fcefa8a73fc16238c6bbe83f4e4905dd0eb.svg" /></div>
 </div>
 </section>
 <section id="missing-values">
@@ -1010,6 +1096,14 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>apple      NaN
+orange     3.0
+banana    22.0
+dtype: float64
+</pre></div>
+</div>
+</div>
 </div>
 <p>Note that the <code class="docutils literal notranslate"><span class="pre">dtype</span></code> of the <code class="docutils literal notranslate"><span class="pre">stock</span></code> Series object has changed from <code class="docutils literal notranslate"><span class="pre">int64</span></code> to <code class="docutils literal notranslate"><span class="pre">float64</span></code> when we assigned <code class="docutils literal notranslate"><span class="pre">NaN</span></code> to <code class="docutils literal notranslate"><span class="pre">apple</span></code>: the whole series has been converted to float, because <code class="docutils literal notranslate"><span class="pre">NaN</span></code> is only defined for floating point numbers.</p>
 <p>(There is a proposal to create a <code class="docutils literal notranslate"><span class="pre">NaN</span></code> object as part of pandas - this would overcome the above limitation.)</p>
@@ -1017,6 +1111,11 @@ dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stock</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([nan,  3., 22.])
 </pre></div>
 </div>
 </div>
@@ -1028,12 +1127,24 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25.0
+</pre></div>
+</div>
+</div>
 </div>
 <p>The above example <code class="docutils literal notranslate"><span class="pre">sum</span></code> shows that <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values are simply ignored, which can be convenient.</p>
 <p>We can also ‘tidy up’ the Series object, by removing all entries that have a <code class="docutils literal notranslate"><span class="pre">NaN</span></code> value:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stock</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>orange     3.0
+banana    22.0
+dtype: float64
 </pre></div>
 </div>
 </div>
@@ -1058,6 +1169,16 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>apple        10
+orange        3
+banana       22
+cucumber      1
+potato      110
+dtype: int64
+</pre></div>
+</div>
+</div>
 </div>
 <section id="indexing">
 <h3><span class="section-number">17.6.1. </span>Indexing<a class="headerlink" href="#indexing" title="Permalink to this heading">#</a></h3>
@@ -1068,11 +1189,21 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22
+</pre></div>
+</div>
+</div>
 </div>
 <p>There is an equivalent and recommended way of using this retrieval using the <code class="docutils literal notranslate"><span class="pre">loc</span></code> (for LOCation?) attribute:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stock</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;banana&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22
 </pre></div>
 </div>
 </div>
@@ -1085,11 +1216,25 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_295/4060357290.py:1: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  stock[2]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22
+</pre></div>
+</div>
+</div>
 </div>
 <p>In this example, this works fine and seems convenient, but can become very confusing if the actual index of the object consists of integers. For that reason, the explicit (and recommended way) of using the indirect indexing is through the <code class="docutils literal notranslate"><span class="pre">iloc</span></code> (ImplicitLOCation) attribute:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stock</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22
 </pre></div>
 </div>
 </div>
@@ -1103,6 +1248,16 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>apple        10
+orange        3
+banana       22
+cucumber      1
+potato      110
+dtype: int64
+</pre></div>
+</div>
+</div>
 </div>
 <p>We can also slice the Series:</p>
 <div class="cell docutils container">
@@ -1111,11 +1266,27 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>orange        3
+banana       22
+cucumber      1
+potato      110
+dtype: int64
+</pre></div>
+</div>
+</div>
 </div>
 <p>Or skip every second entry:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stock</span><span class="p">[</span><span class="s1">&#39;orange&#39;</span><span class="p">:</span><span class="s1">&#39;potato&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>orange      3
+cucumber    1
+dtype: int64
 </pre></div>
 </div>
 </div>
@@ -1130,6 +1301,16 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>apple      -19.2
+orange     -26.2
+banana      -7.2
+cucumber   -28.2
+potato      80.8
+dtype: float64
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1141,6 +1322,16 @@ dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">stock</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>apple        3.162278
+orange       1.732051
+banana       4.690416
+cucumber     1.000000
+potato      10.488088
+dtype: float64
 </pre></div>
 </div>
 </div>
@@ -1159,10 +1350,20 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>numpy.ndarray
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">-</span> <span class="n">data</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-19.2, -26.2,  -7.2, -28.2,  80.8])
 </pre></div>
 </div>
 </div>
@@ -1186,11 +1387,25 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>apple,10
+orange,3
+banana,22
+cucumber,1
+potato,110
+</pre></div>
+</div>
+</div>
 </div>
 <p>We can also create a LaTeX representation of the table:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stock</span><span class="o">.</span><span class="n">to_latex</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\\begin{tabular}{lr}\n\\toprule\n &amp; 0 \\\\\n\\midrule\napple &amp; 10 \\\\\norange &amp; 3 \\\\\nbanana &amp; 22 \\\\\ncucumber &amp; 1 \\\\\npotato &amp; 110 \\\\\n\\bottomrule\n\\end{tabular}\n&#39;
 </pre></div>
 </div>
 </div>
@@ -1212,12 +1427,32 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>apple        10
+orange        3
+banana       22
+cucumber      1
+potato      110
+dtype: int64
+</pre></div>
+</div>
+</div>
 </div>
 <p>In addition to tracking how many objects of each type we have stocked, we have a second Series object that provides the price per item at which the item is sold:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">price</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s1">&#39;apple&#39;</span><span class="p">:</span> <span class="mf">0.55</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">:</span> <span class="mf">0.50</span><span class="p">,</span> <span class="s1">&#39;cucumber&#39;</span> <span class="p">:</span> <span class="mf">0.99</span><span class="p">,</span> <span class="s1">&#39;potato&#39;</span> <span class="p">:</span> <span class="mf">0.17</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">:</span> <span class="mf">1.76</span><span class="p">})</span>
 <span class="n">price</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>apple       0.55
+banana      0.50
+cucumber    0.99
+potato      0.17
+orange      1.76
+dtype: float64
 </pre></div>
 </div>
 </div>
@@ -1230,6 +1465,58 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>stock</th>
+      <th>price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>apple</th>
+      <td>10</td>
+      <td>0.55</td>
+    </tr>
+    <tr>
+      <th>banana</th>
+      <td>22</td>
+      <td>0.50</td>
+    </tr>
+    <tr>
+      <th>cucumber</th>
+      <td>1</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>orange</th>
+      <td>3</td>
+      <td>1.76</td>
+    </tr>
+    <tr>
+      <th>potato</th>
+      <td>110</td>
+      <td>0.17</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Because both <code class="docutils literal notranslate"><span class="pre">Series</span></code> objects had the same <code class="docutils literal notranslate"><span class="pre">index</span></code> elements, our data is nicely aligned in the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> with name <code class="docutils literal notranslate"><span class="pre">shop</span></code>, even though the data was stored in different order in the <code class="docutils literal notranslate"><span class="pre">price</span></code> and <code class="docutils literal notranslate"><span class="pre">stock</span></code>.</p>
 <p>If one Series is missing a data point, pandas will insert a <code class="docutils literal notranslate"><span class="pre">NaN</span></code> entry into that field:</p>
@@ -1247,6 +1534,17 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>apple         0.55
+banana        0.50
+cucumber      0.99
+potato        0.17
+orange        1.76
+grapefruit    1.99
+dtype: float64
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1254,6 +1552,63 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>stock</th>
+      <th>price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>apple</th>
+      <td>10.0</td>
+      <td>0.55</td>
+    </tr>
+    <tr>
+      <th>banana</th>
+      <td>22.0</td>
+      <td>0.50</td>
+    </tr>
+    <tr>
+      <th>cucumber</th>
+      <td>1.0</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>grapefruit</th>
+      <td>NaN</td>
+      <td>1.99</td>
+    </tr>
+    <tr>
+      <th>orange</th>
+      <td>3.0</td>
+      <td>1.76</td>
+    </tr>
+    <tr>
+      <th>potato</th>
+      <td>110.0</td>
+      <td>0.17</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="accessing-data-in-a-dataframea">
@@ -1264,6 +1619,58 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>stock</th>
+      <th>price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>apple</th>
+      <td>10</td>
+      <td>0.55</td>
+    </tr>
+    <tr>
+      <th>banana</th>
+      <td>22</td>
+      <td>0.50</td>
+    </tr>
+    <tr>
+      <th>cucumber</th>
+      <td>1</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>orange</th>
+      <td>3</td>
+      <td>1.76</td>
+    </tr>
+    <tr>
+      <th>potato</th>
+      <td>110</td>
+      <td>0.17</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>The data frame has an <em>index</em> which is the same for all columns, and shown in bold in the left most column. We can also ask for it:</p>
 <div class="cell docutils container">
@@ -1272,11 +1679,21 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;apple&#39;, &#39;banana&#39;, &#39;cucumber&#39;, &#39;orange&#39;, &#39;potato&#39;], dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
 </div>
 <p>Each column has name (here <code class="docutils literal notranslate"><span class="pre">stock</span></code> and <code class="docutils literal notranslate"><span class="pre">price</span></code>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shop</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;stock&#39;, &#39;price&#39;], dtype=&#39;object&#39;)
 </pre></div>
 </div>
 </div>
@@ -1291,10 +1708,30 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>apple        10
+banana       22
+cucumber      1
+orange        3
+potato      110
+Name: stock, dtype: int64
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shop</span><span class="p">[</span><span class="s1">&#39;price&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>apple       0.55
+banana      0.50
+cucumber    0.99
+orange      1.76
+potato      0.17
+Name: price, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -1310,6 +1747,13 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stock    10.00
+price     0.55
+Name: apple, dtype: float64
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1317,11 +1761,55 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>stock</th>
+      <th>price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>banana</th>
+      <td>22</td>
+      <td>0.50</td>
+    </tr>
+    <tr>
+      <th>cucumber</th>
+      <td>1</td>
+      <td>0.99</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Second, we can use the implicit indexing (as for Series objects):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shop</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stock    10.00
+price     0.55
+Name: apple, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -1332,6 +1820,43 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>stock</th>
+      <th>price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>banana</th>
+      <td>22</td>
+      <td>0.50</td>
+    </tr>
+    <tr>
+      <th>cucumber</th>
+      <td>1</td>
+      <td>0.99</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p><strong>Warning</strong></p>
 <p>Note that there are some inconsistencies here: the explicit slicing with index labels (such as <code class="docutils literal notranslate"><span class="pre">.loc['banana':'cucumber']</span></code>) is inclusive of <code class="docutils literal notranslate"><span class="pre">cucumber</span></code>, whereas in the implicit slicing (such as <code class="docutils literal notranslate"><span class="pre">.iloc[1:3]</span></code>) the row with index <code class="docutils literal notranslate"><span class="pre">3</span></code> is <em>not</em> included.</p>
@@ -1349,11 +1874,74 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>stock</th>
+      <th>price</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>apple</th>
+      <td>10</td>
+      <td>0.55</td>
+      <td>5.50</td>
+    </tr>
+    <tr>
+      <th>banana</th>
+      <td>22</td>
+      <td>0.50</td>
+      <td>11.00</td>
+    </tr>
+    <tr>
+      <th>cucumber</th>
+      <td>1</td>
+      <td>0.99</td>
+      <td>0.99</td>
+    </tr>
+    <tr>
+      <th>orange</th>
+      <td>3</td>
+      <td>1.76</td>
+      <td>5.28</td>
+    </tr>
+    <tr>
+      <th>potato</th>
+      <td>110</td>
+      <td>0.17</td>
+      <td>18.70</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Of course we can compute the sum, for example, to estimate the value of the total stock:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shop</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>41.47
 </pre></div>
 </div>
 </div>
@@ -1365,6 +1953,60 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>apple</th>
+      <th>banana</th>
+      <th>cucumber</th>
+      <th>orange</th>
+      <th>potato</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>stock</th>
+      <td>10.00</td>
+      <td>22.0</td>
+      <td>1.00</td>
+      <td>3.00</td>
+      <td>110.00</td>
+    </tr>
+    <tr>
+      <th>price</th>
+      <td>0.55</td>
+      <td>0.5</td>
+      <td>0.99</td>
+      <td>1.76</td>
+      <td>0.17</td>
+    </tr>
+    <tr>
+      <th>value</th>
+      <td>5.50</td>
+      <td>11.0</td>
+      <td>0.99</td>
+      <td>5.28</td>
+      <td>18.70</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 </section>
@@ -1379,12 +2021,42 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2024-01-25 22:29:02--  https://fangohr.github.io/data/eurostat/population2017/eu-pop-2017.csv
+Resolving fangohr.github.io (fangohr.github.io)... 185.199.108.153, 185.199.109.153, 185.199.110.153, ...
+Connecting to fangohr.github.io (fangohr.github.io)|185.199.108.153|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1087 (1.1K) [text/csv]
+Saving to: ‘eu-pop-2017.csv’
+
+
+eu-pop-2017.csv       0%[                    ]       0  --.-KB/s               
+eu-pop-2017.csv     100%[===================&gt;]   1.06K  --.-KB/s    in 0s      
+
+2024-01-25 22:29:02 (95.0 MB/s) - ‘eu-pop-2017.csv’ saved [1087/1087]
+</pre></div>
+</div>
+</div>
 </div>
 <p>The data source is a comma-separated-value file (CSV), which looks like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#NBVAL_IGNORE_OUTPUT</span>
 <span class="o">!</span>head<span class="w"> </span>eu-pop-2017.csv
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>geo,pop17,pop18,births,deaths
+Belgium ,11351727,11413058,119690,109666
+Bulgaria,7101859,7050034,63955,109791
+Czechia,10578820,10610055,114405,111443
+Denmark,5748769,5781190,61397,53261
+Germany,82521653,82850000,785000,933000
+Estonia ,1315634,1319133,13784,15543
+Ireland,4784383,4838259,62084,30324
+Greece,10768193,10738868,88523,124530
+Spain,46527039,46659302,390024,421269
 </pre></div>
 </div>
 </div>
@@ -1404,6 +2076,260 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>geo</th>
+      <th>pop17</th>
+      <th>pop18</th>
+      <th>births</th>
+      <th>deaths</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Belgium</td>
+      <td>11351727</td>
+      <td>11413058</td>
+      <td>119690</td>
+      <td>109666</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Bulgaria</td>
+      <td>7101859</td>
+      <td>7050034</td>
+      <td>63955</td>
+      <td>109791</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Czechia</td>
+      <td>10578820</td>
+      <td>10610055</td>
+      <td>114405</td>
+      <td>111443</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Denmark</td>
+      <td>5748769</td>
+      <td>5781190</td>
+      <td>61397</td>
+      <td>53261</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Germany</td>
+      <td>82521653</td>
+      <td>82850000</td>
+      <td>785000</td>
+      <td>933000</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Estonia</td>
+      <td>1315634</td>
+      <td>1319133</td>
+      <td>13784</td>
+      <td>15543</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Ireland</td>
+      <td>4784383</td>
+      <td>4838259</td>
+      <td>62084</td>
+      <td>30324</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Greece</td>
+      <td>10768193</td>
+      <td>10738868</td>
+      <td>88523</td>
+      <td>124530</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Spain</td>
+      <td>46527039</td>
+      <td>46659302</td>
+      <td>390024</td>
+      <td>421269</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>France</td>
+      <td>66989083</td>
+      <td>67221943</td>
+      <td>767691</td>
+      <td>603141</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Croatia</td>
+      <td>4154212</td>
+      <td>4105493</td>
+      <td>36556</td>
+      <td>53477</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Italy</td>
+      <td>60589445</td>
+      <td>60483973</td>
+      <td>458151</td>
+      <td>649061</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Cyprus</td>
+      <td>854802</td>
+      <td>864236</td>
+      <td>9229</td>
+      <td>5997</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Latvia</td>
+      <td>1950116</td>
+      <td>1934379</td>
+      <td>20828</td>
+      <td>28757</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Lithuania</td>
+      <td>2847904</td>
+      <td>2808901</td>
+      <td>28696</td>
+      <td>40142</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Luxembourg</td>
+      <td>590667</td>
+      <td>602005</td>
+      <td>6174</td>
+      <td>4263</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Hungary</td>
+      <td>9797561</td>
+      <td>9778371</td>
+      <td>94646</td>
+      <td>131877</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Malta</td>
+      <td>460297</td>
+      <td>475701</td>
+      <td>4319</td>
+      <td>3571</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Netherlands</td>
+      <td>17081507</td>
+      <td>17181084</td>
+      <td>169200</td>
+      <td>150027</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Austria</td>
+      <td>8772865</td>
+      <td>8822267</td>
+      <td>87633</td>
+      <td>83270</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Poland</td>
+      <td>37972964</td>
+      <td>37976687</td>
+      <td>401982</td>
+      <td>402852</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Portugal</td>
+      <td>10309573</td>
+      <td>10291027</td>
+      <td>86154</td>
+      <td>109586</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Romania</td>
+      <td>19644350</td>
+      <td>19523621</td>
+      <td>189474</td>
+      <td>260599</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Slovenia</td>
+      <td>2065895</td>
+      <td>2066880</td>
+      <td>20241</td>
+      <td>20509</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Slovakia</td>
+      <td>5435343</td>
+      <td>5443120</td>
+      <td>57969</td>
+      <td>53914</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Finland</td>
+      <td>5503297</td>
+      <td>5513130</td>
+      <td>50321</td>
+      <td>53722</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Sweden</td>
+      <td>9995153</td>
+      <td>10120242</td>
+      <td>115416</td>
+      <td>91972</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>United Kingdom</td>
+      <td>65808573</td>
+      <td>66238007</td>
+      <td>755043</td>
+      <td>607172</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>We look at the dataframe as it is, and use the ‘head()’ command which will only show the first 5 lines of data:</p>
 <div class="cell docutils container">
@@ -1412,6 +2338,76 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>geo</th>
+      <th>pop17</th>
+      <th>pop18</th>
+      <th>births</th>
+      <th>deaths</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Belgium</td>
+      <td>11351727</td>
+      <td>11413058</td>
+      <td>119690</td>
+      <td>109666</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Bulgaria</td>
+      <td>7101859</td>
+      <td>7050034</td>
+      <td>63955</td>
+      <td>109791</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Czechia</td>
+      <td>10578820</td>
+      <td>10610055</td>
+      <td>114405</td>
+      <td>111443</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Denmark</td>
+      <td>5748769</td>
+      <td>5781190</td>
+      <td>61397</td>
+      <td>53261</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Germany</td>
+      <td>82521653</td>
+      <td>82850000</td>
+      <td>785000</td>
+      <td>933000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>The meaning of the colums, we have to get from metada information. In this case, we have the following description of the data:</p>
 <ul class="simple">
@@ -1436,6 +2432,77 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pop17</th>
+      <th>pop18</th>
+      <th>births</th>
+      <th>deaths</th>
+    </tr>
+    <tr>
+      <th>geo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Belgium</th>
+      <td>11351727</td>
+      <td>11413058</td>
+      <td>119690</td>
+      <td>109666</td>
+    </tr>
+    <tr>
+      <th>Bulgaria</th>
+      <td>7101859</td>
+      <td>7050034</td>
+      <td>63955</td>
+      <td>109791</td>
+    </tr>
+    <tr>
+      <th>Czechia</th>
+      <td>10578820</td>
+      <td>10610055</td>
+      <td>114405</td>
+      <td>111443</td>
+    </tr>
+    <tr>
+      <th>Denmark</th>
+      <td>5748769</td>
+      <td>5781190</td>
+      <td>61397</td>
+      <td>53261</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>82521653</td>
+      <td>82850000</td>
+      <td>785000</td>
+      <td>933000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Note that we cannot change the index in a given DataFrame, so the <code class="docutils literal notranslate"><span class="pre">set_index()</span></code> method returns a new DataFrame. (This happens for many operations.)</p>
 <p>An as alternative, we can also modify the import statement to already indicate which column we want to use as the index:</p>
@@ -1452,6 +2519,77 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pop17</th>
+      <th>pop18</th>
+      <th>births</th>
+      <th>deaths</th>
+    </tr>
+    <tr>
+      <th>geo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Belgium</th>
+      <td>11351727</td>
+      <td>11413058</td>
+      <td>119690</td>
+      <td>109666</td>
+    </tr>
+    <tr>
+      <th>Bulgaria</th>
+      <td>7101859</td>
+      <td>7050034</td>
+      <td>63955</td>
+      <td>109791</td>
+    </tr>
+    <tr>
+      <th>Czechia</th>
+      <td>10578820</td>
+      <td>10610055</td>
+      <td>114405</td>
+      <td>111443</td>
+    </tr>
+    <tr>
+      <th>Denmark</th>
+      <td>5748769</td>
+      <td>5781190</td>
+      <td>61397</td>
+      <td>53261</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>82521653</td>
+      <td>82850000</td>
+      <td>785000</td>
+      <td>933000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>We explore the data by plotting some of it:</p>
 <div class="cell docutils container">
@@ -1460,6 +2598,11 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;geo&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/e0f75d44c8cdc1054beba585e15742cf20976e69a28548f3596e7169cb41302b.svg" src="_images/e0f75d44c8cdc1054beba585e15742cf20976e69a28548f3596e7169cb41302b.svg" /></div>
 </div>
 <p>The above shows the population as of 1 Jan 2017.</p>
 <p>We’ll try to improve this in two ways:</p>
@@ -1480,6 +2623,11 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;geo&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/1aa667ff7a8ef47cf7b05d66a63e6e408027e4d58618bef44b477e17e61ba51c.svg" src="_images/1aa667ff7a8ef47cf7b05d66a63e6e408027e4d58618bef44b477e17e61ba51c.svg" /></div>
 </div>
 <p>The example above selects one column from the data frame (<code class="docutils literal notranslate"><span class="pre">['pop17'</span></code>) and that returns a <code class="docutils literal notranslate"><span class="pre">Series</span></code> object. Then we sort this <code class="docutils literal notranslate"><span class="pre">Series</span></code> object using <code class="docutils literal notranslate"><span class="pre">sort_values()</span></code> according to the values (that’s the number of poeple in each country), then we plot this.</p>
 <p>Alternatively, we could also create a plot for the whole data frame, but say that the <code class="docutils literal notranslate"><span class="pre">pop17</span></code> is the column for sorting, and that we want to plot only the column with <code class="docutils literal notranslate"><span class="pre">pop17</span></code>:</p>
@@ -1489,6 +2637,11 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;geo&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/9ba926c8107a28d96b5331a8d04114aec129881c03a30861b146cf816256646c.svg" src="_images/9ba926c8107a28d96b5331a8d04114aec129881c03a30861b146cf816256646c.svg" /></div>
 </div>
 <p>We can also plot more than one column at the same time:</p>
 <div class="cell docutils container">
@@ -1497,6 +2650,8 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/7485774613970735f40b8532829f000e5ed6f14e5ae7111aac0ebd422d2914fe.svg" src="_images/7485774613970735f40b8532829f000e5ed6f14e5ae7111aac0ebd422d2914fe.svg" /></div>
 </div>
 <p>We can also fine tune the plot with the usual <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> commands:</p>
 <div class="cell docutils container">
@@ -1508,6 +2663,8 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/15d4673530a63721b545001dbce6536e621bebf297ea624bf909d3a3580f666e.svg" src="_images/15d4673530a63721b545001dbce6536e621bebf297ea624bf909d3a3580f666e.svg" /></div>
 </div>
 <p>Based on the number of births and deaths, we can compute change in population for each country for 2017. This is sometimes called the “natural-change”:</p>
 <div class="cell docutils container">
@@ -1520,6 +2677,40 @@ dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;natural-change&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>geo
+Italy            -190910
+Germany          -148000
+Romania           -71125
+Bulgaria          -45836
+Hungary           -37231
+Greece            -36007
+Spain             -31245
+Portugal          -23432
+Croatia           -16921
+Lithuania         -11446
+Latvia             -7929
+Finland            -3401
+Estonia            -1759
+Poland              -870
+Slovenia            -268
+Malta                748
+Luxembourg          1911
+Czechia             2962
+Cyprus              3232
+Slovakia            4055
+Austria             4363
+Denmark             8136
+Belgium            10024
+Netherlands        19173
+Sweden             23444
+Ireland            31760
+United Kingdom    147871
+France            164550
+Name: natural-change, dtype: int64
 </pre></div>
 </div>
 </div>
@@ -1542,6 +2733,105 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pop17</th>
+      <th>pop18</th>
+      <th>births</th>
+      <th>deaths</th>
+      <th>natural-change</th>
+      <th>birth-rate</th>
+      <th>death-rate</th>
+      <th>natural-change-rate</th>
+    </tr>
+    <tr>
+      <th>geo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Belgium</th>
+      <td>11351727</td>
+      <td>11413058</td>
+      <td>119690</td>
+      <td>109666</td>
+      <td>10024</td>
+      <td>10.543770</td>
+      <td>9.660733</td>
+      <td>0.883037</td>
+    </tr>
+    <tr>
+      <th>Bulgaria</th>
+      <td>7101859</td>
+      <td>7050034</td>
+      <td>63955</td>
+      <td>109791</td>
+      <td>-45836</td>
+      <td>9.005389</td>
+      <td>15.459473</td>
+      <td>-6.454085</td>
+    </tr>
+    <tr>
+      <th>Czechia</th>
+      <td>10578820</td>
+      <td>10610055</td>
+      <td>114405</td>
+      <td>111443</td>
+      <td>2962</td>
+      <td>10.814533</td>
+      <td>10.534540</td>
+      <td>0.279993</td>
+    </tr>
+    <tr>
+      <th>Denmark</th>
+      <td>5748769</td>
+      <td>5781190</td>
+      <td>61397</td>
+      <td>53261</td>
+      <td>8136</td>
+      <td>10.680026</td>
+      <td>9.264766</td>
+      <td>1.415260</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>82521653</td>
+      <td>82850000</td>
+      <td>785000</td>
+      <td>933000</td>
+      <td>-148000</td>
+      <td>9.512655</td>
+      <td>11.306123</td>
+      <td>-1.793469</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>We can now look at the natural rate of change of population for each country, which is normalised by the population in that country.</p>
 <div class="cell docutils container">
@@ -1551,6 +2841,8 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/67685233551261d2405030412815f8368774188c09d41274b87a08c9307af990.svg" src="_images/67685233551261d2405030412815f8368774188c09d41274b87a08c9307af990.svg" /></div>
 </div>
 <p>We can show the data together with the underlying birth and death rate data:</p>
 <div class="cell docutils container">
@@ -1565,6 +2857,11 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;geo&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/06d5332a929ed51b245e0967864eaccfb9aa5b9cb9a95c852c8f006422798ef4.svg" src="_images/06d5332a929ed51b245e0967864eaccfb9aa5b9cb9a95c852c8f006422798ef4.svg" /></div>
 </div>
 <p>We haven’t used the information we have about the population on 1 January 2018 yet.</p>
 <p>Let’s first look at the absolute changes in the population based on the (census?) data from 1 Jan 2017 and 1 Jan 2018:</p>
@@ -1582,6 +2879,8 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/889e0f9c5022bb32ad4ea3be2a23f26aa33d680e6f4c3829be4ac56bba551e6f.svg" src="_images/889e0f9c5022bb32ad4ea3be2a23f26aa33d680e6f4c3829be4ac56bba551e6f.svg" /></div>
 </div>
 <p>With that information, we can estimate migration. (It is important to note that this estimated number will also absorb all inaccuracies or changes of the data gathering method, in the original data described as “statistical adjustment”.)</p>
 <div class="cell docutils container">
@@ -1597,6 +2896,119 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pop17</th>
+      <th>pop18</th>
+      <th>births</th>
+      <th>deaths</th>
+      <th>natural-change</th>
+      <th>birth-rate</th>
+      <th>death-rate</th>
+      <th>natural-change-rate</th>
+      <th>change</th>
+      <th>migration</th>
+    </tr>
+    <tr>
+      <th>geo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Belgium</th>
+      <td>11351727</td>
+      <td>11413058</td>
+      <td>119690</td>
+      <td>109666</td>
+      <td>10024</td>
+      <td>10.543770</td>
+      <td>9.660733</td>
+      <td>0.883037</td>
+      <td>61331</td>
+      <td>51307</td>
+    </tr>
+    <tr>
+      <th>Bulgaria</th>
+      <td>7101859</td>
+      <td>7050034</td>
+      <td>63955</td>
+      <td>109791</td>
+      <td>-45836</td>
+      <td>9.005389</td>
+      <td>15.459473</td>
+      <td>-6.454085</td>
+      <td>-51825</td>
+      <td>-5989</td>
+    </tr>
+    <tr>
+      <th>Czechia</th>
+      <td>10578820</td>
+      <td>10610055</td>
+      <td>114405</td>
+      <td>111443</td>
+      <td>2962</td>
+      <td>10.814533</td>
+      <td>10.534540</td>
+      <td>0.279993</td>
+      <td>31235</td>
+      <td>28273</td>
+    </tr>
+    <tr>
+      <th>Denmark</th>
+      <td>5748769</td>
+      <td>5781190</td>
+      <td>61397</td>
+      <td>53261</td>
+      <td>8136</td>
+      <td>10.680026</td>
+      <td>9.264766</td>
+      <td>1.415260</td>
+      <td>32421</td>
+      <td>24285</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>82521653</td>
+      <td>82850000</td>
+      <td>785000</td>
+      <td>933000</td>
+      <td>-148000</td>
+      <td>9.512655</td>
+      <td>11.306123</td>
+      <td>-1.793469</td>
+      <td>328347</td>
+      <td>476347</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Let’s plot the total change of the population per country in the top subfigure, and the contribution from natural changes and migration in the lower subfigure:</p>
 <div class="cell docutils container">
@@ -1613,6 +3025,8 @@ dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/0b91faceddcfe01ecd58b7575b87ed9c2806dd45564e4a9723d2f1207f4b2ba8.svg" src="_images/0b91faceddcfe01ecd58b7575b87ed9c2806dd45564e4a9723d2f1207f4b2ba8.svg" /></div>
 </div>
 </section>
 <section id="further-reading">

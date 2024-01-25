@@ -37,6 +37,9 @@ html:
       crossorigin: "anonymous"
 
 
+launch_buttons:
+  binderhub_url: "https://mybinder.org"  # The URL for your BinderHub (e.g., https://mybinder.org)
+
 # Allow parsing of "<img src=..." tags in markdown cells (used in Chapter 15 on visualisation)
 parse:
   myst_enable_extensions:  # default extensions to enable in the myst parser. See https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html
@@ -60,4 +63,6 @@ sphinx:
   config:
     linkcheck_anchors: false
     linkcheck_workers: 10
-    linkcheck_ignore        : https://jacow.org/icalepcs2019/papers/tucpr02.pdf
+    linkcheck_ignore        : [https://jacow.org/icalepcs2019/papers/tucpr02.pdf,
+                               https://doi.org/10.1109/MCSE.2021.3059263,
+                               https://ieeexplore.ieee.org/document/9325550]

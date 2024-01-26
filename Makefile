@@ -3,7 +3,7 @@ all:
 	make pdf
 
 install:
-	poetry install -vvv 
+	pip install -r requirements.txt
 
 clean:
 	cd book; rm -rf \
@@ -13,20 +13,20 @@ clean:
 		_build .ipynb_checkpoints
 
 html:
-	poetry run jupyter-book build book --builder html
+	jupyter-book build book --builder html
 
 linkcheck:
-	poetry run jupyter-book build book --builder linkcheck
+	jupyter-book build book --builder linkcheck
 
 pdf: book/*-*.ipynb
-	poetry run jupyter-book build book --builder pdflatex
+	jupyter-book build book --builder pdflatex
 
 nbval:
 	@echo "Testing all chapters (apart from 18) with --nbval"
-	poetry run pytest -v --nbval book --sanitize-with book/static/nbval_sanitize.cfg \
+	pytest -v --nbval book --sanitize-with book/static/nbval_sanitize.cfg \
 	    --ignore=book/18-environments.ipynb --ignore=book/_build
 	@echo "Testing chapter 18 with --nbval-lax"
-	poetry run pytest -v --nbval-lax book/18-environments.ipynb
+	pytest -v --nbval-lax book/18-environments.ipynb
 
 
 
@@ -44,16 +44,8 @@ docker-build:
 docker-build-nocache:
 	docker build -t python4compscience2 --no-cache .
 
-# Here we only bind the required directories and files into the docker container
-# at runtime to avoid potential conflicts with local files
-
 define DOCKER_RUN
-docker run --workdir=/io  \
-	-v $(CURDIR)/book:/io/book \
-	-v $(CURDIR)/Makefile:/io/Makefile \
-	-v $(CURDIR)/poetry.lock:/io/poetry.lock \
-	-v $(CURDIR)/pyproject.toml:/io/pyproject.toml \
-	python4compscience
+docker run --rm -v $(CURDIR):/io	python4compscience
 endef
 
 docker-bash:

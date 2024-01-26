@@ -20,5 +20,6 @@ chapters:
 - file: 15-visualising-data
 - file: 16-scipy
 - file: 17-pandas
-- file: 18-next-steps
+- file: 18-environments
+- file: 19-next-steps
 - file: 99-changes

@@ -1,0 +1,15 @@
+* TODO
+- [X] building natively on OSX works (make html, make pdf)
+- [X] Binder link is included
+- [X] nbval shows some failures
+- [X] building through docker fails for pdf
+- [ ] check github actions
+- [ ] make pdf available?
+- [ ] JupyterLite version
+- [X] check CI
+- [ ] run black over notebooks
+- [ ] run spell checker over notebooks
+  - see https://stackoverflow.com/questions/39324039/highlight-typos-in-the-jupyter-notebook-markdown
+- [X] review content
+  - [X] pandas 
+

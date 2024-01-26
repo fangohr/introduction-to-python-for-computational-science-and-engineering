@@ -1,14 +1,12 @@
-name: Book Deploy
+name: nbval
 
 on:
-  release:
-    types: [created]
   push:
     # all
   workflow_dispatch:
 
 jobs:
-  docker-build-and-deploy:
+  docker-build-and-nbval:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -39,30 +37,5 @@ jobs:
     - name: List Available Images
       run: docker images
 
-    - name: Make Docker HTML
-      run: make docker-html
-
-    - name: Check links - Markdown
-      uses: gaurav-nelson/github-action-markdown-link-check@v1
-
-    - name: Make Docker Linkcheck
-      run: make docker-linkcheck
-
-    - name: Make Docker PDF
-      run: |
-        make docker-pdf
-        sudo cp book/_build/latex/book.pdf book/_build/html/book.pdf
-
-    # Deploy the book's HTML to gh-pages branch
-    - name: GitHub Pages action
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./book/_build/html
-
-    - uses: marvinpinto/action-automatic-releases@10bdce64abdb4558a2ee6983192242be40d631d8
-      with:
-        repo_token: "${{ secrets.GITHUB_TOKEN }}"
-        automatic_release_tag: "latest"
-        title: "Development Build"
-        files: book/_build/latex/book.pdf
+    - name: Run NBVAL over all chapters
+      run: make docker-nbval

@@ -488,21 +488,22 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="where-to-go-from-here">
 <h1><span class="section-number">19. </span>Where to go from here?<a class="headerlink" href="#where-to-go-from-here" title="Link to this heading">#</a></h1>
-<p>Learning a programming language is the first step towards becoming a computationalists who advances science and engineering through computational modelling and simulation.</p>
+<p>Learning a programming language is the first step towards becoming a computationalist who advances science and engineering through computational modelling and simulation.</p>
 <p>We list some additional skills that can be very beneficial for day-to-day computational science work, but is of course not exhaustive.</p>
 <section id="advanced-programming">
 <h2><span class="section-number">19.1. </span>Advanced programming<a class="headerlink" href="#advanced-programming" title="Link to this heading">#</a></h2>
-<p>This text has put emphasis on providing a robust foundation in terms of programming, covering control flow, data structures and elements from function and procedural programming. We have not touch Object Orientation in great detail, nor have we discussed some of Python’s more advanced features such as iterators, and decorators, for example.</p>
+<p>This text has put emphasis on providing a robust foundation in terms of programming, covering control flow, data structures and elements from function and procedural programming. We have not touch Object Orientation in great detail, nor have we discussed some of Python’s more advanced features such as iterators, and decorators, type hinting, nor many of the fantastic (standard) libraries available.</p>
 </section>
 <section id="compiled-programming-language">
 <h2><span class="section-number">19.2. </span>Compiled programming language<a class="headerlink" href="#compiled-programming-language" title="Link to this heading">#</a></h2>
 <p>When performance starts to be the highest priority, we may need to use compiled code, and likely embed this in a Python code to carry out the computational that are the performance bottle neck.</p>
-<p>Fortran, C and C++ are sensible choices here; maybe Julia in the near future.</p>
-<p>We also need to learn how to integrate the compiled code with Python using tools such as Cython, Boost, Ctypes and Swig.</p>
+<p>Fortran, C and C++ are sensible choices here; maybe Rust in the near future.</p>
+<p>We may also need to learn how to integrate the compiled code with Python using tools such as Cython, Boost, Ctypes and Swig.</p>
+<p>With the rise of GPUs as cheap and powerful compute resources, it is likely we want to drive computation carried out on the GPU. This can be done through GPU-specific libraries and languages (CUDA and OpenCL, for example). For some use cases, it may be sufficient to use frameworks that translate computational work from a higher level language (ideally as high as Python) to the GPUs.</p>
 </section>
 <section id="testing">
 <h2><span class="section-number">19.3. </span>Testing<a class="headerlink" href="#testing" title="Link to this heading">#</a></h2>
-<p>Good coding is supported by a range of unit and system tests that can be run routinely to check that the code works correctly. Tools such as doctest, nose and pytest are invaluable, and we should learn at least how to use pytest (or nose).</p>
+<p>Good software development is supported by a range of unit and system tests that can be run routinely to check that the code works correctly. Tools such as pytest, doctest and others are invaluable, and we should at least learn at least how to use pytest for automated tests.</p>
 </section>
 <section id="simulation-models">
 <h2><span class="section-number">19.4. </span>Simulation models<a class="headerlink" href="#simulation-models" title="Link to this heading">#</a></h2>
@@ -510,20 +511,20 @@ document.write(`
 </section>
 <section id="software-engineering-for-research-codes">
 <h2><span class="section-number">19.5. </span>Software engineering for research codes<a class="headerlink" href="#software-engineering-for-research-codes" title="Link to this heading">#</a></h2>
-<p>Research codes bring particular challenges: the requirements may change during the run time of the project, we need great flexibility yet reproducibility. A number of techniques are available to support effectively.</p>
+<p>Research codes bring particular challenges: the requirements may change during the run time of the project, we need great flexibility yet reproducibility. A number of techniques are available to support effectively, including version control (see below), automatic tests and continous integration.</p>
 </section>
 <section id="data-and-visualisation">
 <h2><span class="section-number">19.6. </span>Data and visualisation<a class="headerlink" href="#data-and-visualisation" title="Link to this heading">#</a></h2>
-<p>Dealing with large amounts of data, processing and visualising it can be a challenge. Fundamental knowledge of database design, 3d visualisation and modern data processing tools such as the Pandas Python package help with this.</p>
+<p>Dealing with large amounts of data, processing and visualising it can be a challenge. Fundamental knowledge of database design, 3d visualisation and modern data processing tools such as the Pandas and xarray Python package help with this. For interactive 3d visualisation VTK remains an important tool, although WebGL starts to be an interesting alternative.</p>
 </section>
 <section id="version-control">
 <h2><span class="section-number">19.7. </span>Version control<a class="headerlink" href="#version-control" title="Link to this heading">#</a></h2>
-<p>Using a version control tool, such as git or mercurial, should be a standard approach and improves code writing effectiveness significantly, helps with working in teams, and - maybe most importantly - supports reproducibility of computational results.</p>
+<p>Using a version control tool, such as git, should be a standard approach and improves code writing effectiveness significantly, helps with working in teams, and - maybe most importantly - supports reproducibility of computational results.</p>
 </section>
 <section id="parallel-execution">
 <h2><span class="section-number">19.8. </span>Parallel execution<a class="headerlink" href="#parallel-execution" title="Link to this heading">#</a></h2>
 <p>Parallel execution of code is a way to make it run orders of magnitude faster. This could be using MPI for inter-node communication or OpenMP for intra-node parallelisation or a hybrid mode bringing both together.</p>
-<p>The recent rise of GPU computing provides yet another avenue of parallelisation, and so do the many-core chips such as the Intel Phi.</p>
+<p>The recent rise of GPU computing provides yet another avenue of parallelisation.</p>
 </section>
 <section id="acknowledgements">
 <h2><span class="section-number">19.9. </span>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Link to this heading">#</a></h2>

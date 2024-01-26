@@ -5,6 +5,7 @@ on:
     types: [created]
   push:
     # all
+  workflow_dispatch:
 
 jobs:
   docker-build-and-deploy:

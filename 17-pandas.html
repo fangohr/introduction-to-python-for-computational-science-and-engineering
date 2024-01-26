@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>17. Pandas - Data Science with Python &#8212; Introduction to Python for Computational Science and Engineering</title>
   
@@ -29,32 +28,30 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=b749d676" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -90,13 +87,19 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '17-pandas';</script>
@@ -197,7 +200,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -493,7 +507,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pandas-data-science-with-python">
-<h1><span class="section-number">17. </span>Pandas - Data Science with Python<a class="headerlink" href="#pandas-data-science-with-python" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">17. </span>Pandas - Data Science with Python<a class="headerlink" href="#pandas-data-science-with-python" title="Link to this heading">#</a></h1>
 <p>Numpy and numpy arrays are our tool of choice for numeric data that resembles vectors, matrices (and higher dimensional tensors).</p>
 <p>Where data is gathered from experiments, and in particular where we want to extract meaning from the combination of different data sources, and where data is often incomplete, the pandas library offers a number of useful tools (and has become a standard tool for data scientists).</p>
 <p>In this section, we introduce the basics of Pandas.</p>
@@ -507,7 +521,7 @@ document.write(`
 </div>
 </div>
 <section id="motivational-example-series">
-<h2><span class="section-number">17.1. </span>Motivational example (Series)<a class="headerlink" href="#motivational-example-series" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">17.1. </span>Motivational example (Series)<a class="headerlink" href="#motivational-example-series" title="Link to this heading">#</a></h2>
 <p>Imagine we are working on software for a greengrocer or supermarket, and need to track the number of apples (10), oranges(3) and bananas (22) that are available in the supermarket.</p>
 <p>We could use a python list (or a numpy array) to track these numbers:</p>
 <div class="cell docutils container">
@@ -630,9 +644,9 @@ banana     :   22
 </ul>
 </section>
 <section id="pandas-series">
-<h2><span class="section-number">17.2. </span>Pandas <code class="docutils literal notranslate"><span class="pre">Series</span></code><a class="headerlink" href="#pandas-series" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">17.2. </span>Pandas <code class="docutils literal notranslate"><span class="pre">Series</span></code><a class="headerlink" href="#pandas-series" title="Link to this heading">#</a></h2>
 <section id="stock-example-series">
-<h3><span class="section-number">17.2.1. </span>Stock example - <code class="docutils literal notranslate"><span class="pre">Series</span></code><a class="headerlink" href="#stock-example-series" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">17.2.1. </span>Stock example - <code class="docutils literal notranslate"><span class="pre">Series</span></code><a class="headerlink" href="#stock-example-series" title="Link to this heading">#</a></h3>
 <p>We can create a <code class="docutils literal notranslate"><span class="pre">Series</span></code> object - for example - from a dictionary:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -787,7 +801,7 @@ dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="_images/ee18e7b51bef9bcc29475be7ce3884565e2073347da9121ee3e41106c1d96ae1.svg" src="_images/ee18e7b51bef9bcc29475be7ce3884565e2073347da9121ee3e41106c1d96ae1.svg" /></div>
+<img alt="_images/92584d5d6660d8f7af8d447d26c4d1ff00f1e4feb1ce903be9e83b153eec4447.svg" src="_images/92584d5d6660d8f7af8d447d26c4d1ff00f1e4feb1ce903be9e83b153eec4447.svg" /></div>
 </div>
 <p>We can sort the data according to the values in the Series (and then plot to visualise):</p>
 <div class="cell docutils container">
@@ -800,7 +814,7 @@ dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="_images/52d1370fe6ce1a1a8e7dcf83de78a5c053a67b675adba8335f140e9e8c6d569a.svg" src="_images/52d1370fe6ce1a1a8e7dcf83de78a5c053a67b675adba8335f140e9e8c6d569a.svg" /></div>
+<img alt="_images/f848117aa606eecc14260026d167808e78948ec4815afbc95ddfd1744a50fdba.svg" src="_images/f848117aa606eecc14260026d167808e78948ec4815afbc95ddfd1744a50fdba.svg" /></div>
 </div>
 <p>Or sort the index to get alphabetical order of our fruit and vegetables:</p>
 <div class="cell docutils container">
@@ -813,7 +827,7 @@ dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="_images/3d7b30c0bbde1a855ec2d5b42bbab4fa68efa9558af1bb0693450ec09848bc22.svg" src="_images/3d7b30c0bbde1a855ec2d5b42bbab4fa68efa9558af1bb0693450ec09848bc22.svg" /></div>
+<img alt="_images/ae132a00cccc3458718f8cf606acd20e4a6fff513a46ce06d3647dd912b7f95b.svg" src="_images/ae132a00cccc3458718f8cf606acd20e4a6fff513a46ce06d3647dd912b7f95b.svg" /></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">Series</span></code> object has a number of numerical methods available, including <code class="docutils literal notranslate"><span class="pre">mean</span></code> and <code class="docutils literal notranslate"><span class="pre">sum</span></code>:</p>
 <div class="cell docutils container">
@@ -855,7 +869,7 @@ dtype: int64
 </div>
 </section>
 <section id="memory-usage">
-<h3><span class="section-number">17.2.2. </span>memory usage<a class="headerlink" href="#memory-usage" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">17.2.2. </span>memory usage<a class="headerlink" href="#memory-usage" title="Link to this heading">#</a></h3>
 <p>For larger data sets, it might be important to know how many bytes storing the Series costs. The bytes required to store the actual series data are available as</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -910,7 +924,7 @@ dtype: int64
 </div>
 </section>
 <section id="statistics">
-<h3><span class="section-number">17.2.3. </span>Statistics<a class="headerlink" href="#statistics" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">17.2.3. </span>Statistics<a class="headerlink" href="#statistics" title="Link to this heading">#</a></h3>
 <p>A number of statistical descriptors of the data in the <code class="docutils literal notranslate"><span class="pre">stock</span></code> Series object is available using <code class="docutils literal notranslate"><span class="pre">describe()</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -936,7 +950,7 @@ dtype: float64
 </section>
 </section>
 <section id="create-series-from-list">
-<h2><span class="section-number">17.3. </span>Create Series from list<a class="headerlink" href="#create-series-from-list" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">17.3. </span>Create Series from list<a class="headerlink" href="#create-series-from-list" title="Link to this heading">#</a></h2>
 <p>In the example above, we showed how to create a Series from a dictionary where the keys of the dictionary entries served as the index for the Series object.</p>
 <p>We can also create a Series from a list, an provide an additional index:</p>
 <div class="cell docutils container">
@@ -1009,7 +1023,7 @@ dtype: int64
 </div>
 </section>
 <section id="plotting-data">
-<h2><span class="section-number">17.4. </span>Plotting data<a class="headerlink" href="#plotting-data" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">17.4. </span>Plotting data<a class="headerlink" href="#plotting-data" title="Link to this heading">#</a></h2>
 <p>Commonly used plots are easily accessible via the <code class="docutils literal notranslate"><span class="pre">plot()</span></code> method of the Series object. We have seen a bar plot above already. The <code class="docutils literal notranslate"><span class="pre">Series.plot()</span></code> method accepts an argument <code class="docutils literal notranslate"><span class="pre">kind</span></code> such as <code class="docutils literal notranslate"><span class="pre">kind=&quot;bar&quot;</span></code>, but there is an equivalent method <code class="docutils literal notranslate"><span class="pre">Series.plot.bar()</span></code> available.</p>
 <p>Further examples:</p>
 <div class="cell docutils container">
@@ -1022,7 +1036,7 @@ dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="_images/dc831a58b41288a1d0615d45212a61885f0e1b37fe059302c11c196af56120b4.svg" src="_images/dc831a58b41288a1d0615d45212a61885f0e1b37fe059302c11c196af56120b4.svg" /></div>
+<img alt="_images/195d404f82197b86c9a48d4fb5036b9f4bd75c5d36d9cfdc4c8cd17a8340ac23.svg" src="_images/195d404f82197b86c9a48d4fb5036b9f4bd75c5d36d9cfdc4c8cd17a8340ac23.svg" /></div>
 </div>
 <p>To tailor the plot, we can either get the axis object and modify it subsequently:</p>
 <div class="cell docutils container">
@@ -1035,7 +1049,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/00b3233fa711ee1468a8554d7c88decdcb075b787ce1d07846b45dcfaf2ec3f0.svg" src="_images/00b3233fa711ee1468a8554d7c88decdcb075b787ce1d07846b45dcfaf2ec3f0.svg" /></div>
+<img alt="_images/8ba3c93ebaee20221a9151af8d75d64bddae1c692ecdd6d2ed22e32d6659c208.svg" src="_images/8ba3c93ebaee20221a9151af8d75d64bddae1c692ecdd6d2ed22e32d6659c208.svg" /></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1047,7 +1061,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/101bcda3c1dc7d6716047b28395336af63879083d53eb36d20a27f3320518fda.svg" src="_images/101bcda3c1dc7d6716047b28395336af63879083d53eb36d20a27f3320518fda.svg" /></div>
+<img alt="_images/e9ad76e0397672a882fd4b2d31dfbec99033745e7a83daaefd5d321f99712bb9.svg" src="_images/e9ad76e0397672a882fd4b2d31dfbec99033745e7a83daaefd5d321f99712bb9.svg" /></div>
 </div>
 <p>We can also retrieve the data from the series and drive the plotting “manually” ourselves:</p>
 <div class="cell docutils container">
@@ -1064,11 +1078,11 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/88c3b3007dfc7a2e598da39aaa98bfba8afd1212078da9ddcf6ce959bb4faaa6.svg" src="_images/88c3b3007dfc7a2e598da39aaa98bfba8afd1212078da9ddcf6ce959bb4faaa6.svg" /></div>
+<img alt="_images/ec4d03abec2aa2ce2e26c02ebc397b4ad242ae06d2f515a4f7aa60e3a83f1c93.svg" src="_images/ec4d03abec2aa2ce2e26c02ebc397b4ad242ae06d2f515a4f7aa60e3a83f1c93.svg" /></div>
 </div>
 </section>
 <section id="missing-values">
-<h2><span class="section-number">17.5. </span>Missing values<a class="headerlink" href="#missing-values" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">17.5. </span>Missing values<a class="headerlink" href="#missing-values" title="Link to this heading">#</a></h2>
 <p>“Real” data sets tend to be incomplete. Dealing with missing values is an important topic in data science. The agreement in Pandas is that the special floating point value “NaN” (standing for <code class="docutils literal notranslate"><span class="pre">N</span></code>ot <code class="docutils literal notranslate"><span class="pre">a</span></code> <code class="docutils literal notranslate"><span class="pre">N</span></code>umber) represents missing data points. For example, if we have a table for the stock, but we don’t know the value for <code class="docutils literal notranslate"><span class="pre">apple</span></code>, we would replace it with <code class="docutils literal notranslate"><span class="pre">NaN</span></code>.</p>
 <p>The special <code class="docutils literal notranslate"><span class="pre">Nan</span></code> value in Python can be created using <code class="docutils literal notranslate"><span class="pre">float('nan')</span></code> or using <code class="docutils literal notranslate"><span class="pre">numpy.nan</span></code> if the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> module is imported.</p>
 <div class="cell docutils container">
@@ -1139,7 +1153,7 @@ dtype: float64
 </div>
 </section>
 <section id="series-data-access-explicit-and-implicit-loc-and-iloc">
-<h2><span class="section-number">17.6. </span>Series data access: explicit and implicit (<code class="docutils literal notranslate"><span class="pre">loc</span></code> and <code class="docutils literal notranslate"><span class="pre">iloc</span></code>)<a class="headerlink" href="#series-data-access-explicit-and-implicit-loc-and-iloc" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">17.6. </span>Series data access: explicit and implicit (<code class="docutils literal notranslate"><span class="pre">loc</span></code> and <code class="docutils literal notranslate"><span class="pre">iloc</span></code>)<a class="headerlink" href="#series-data-access-explicit-and-implicit-loc-and-iloc" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stock</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s1">&#39;apple&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> 
@@ -1169,7 +1183,7 @@ dtype: int64
 </div>
 </div>
 <section id="indexing">
-<h3><span class="section-number">17.6.1. </span>Indexing<a class="headerlink" href="#indexing" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">17.6.1. </span>Indexing<a class="headerlink" href="#indexing" title="Link to this heading">#</a></h3>
 <p>We can access single values through their index as if the stock Series object would be a dictionary:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1229,7 +1243,7 @@ dtype: int64
 </div>
 </section>
 <section id="slicing">
-<h3><span class="section-number">17.6.2. </span>Slicing<a class="headerlink" href="#slicing" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">17.6.2. </span>Slicing<a class="headerlink" href="#slicing" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stock</span>
@@ -1281,7 +1295,7 @@ dtype: int64
 </div>
 </section>
 <section id="data-manipulation">
-<h3><span class="section-number">17.6.3. </span>Data manipulation<a class="headerlink" href="#data-manipulation" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">17.6.3. </span>Data manipulation<a class="headerlink" href="#data-manipulation" title="Link to this heading">#</a></h3>
 <p>Numerical operations on the series object can be carried for all data values at the same time inthe same way that numpy arrays are processed:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1358,7 +1372,7 @@ dtype: float64
 </div>
 </section>
 <section id="import-and-export">
-<h3><span class="section-number">17.6.4. </span>Import and Export<a class="headerlink" href="#import-and-export" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">17.6.4. </span>Import and Export<a class="headerlink" href="#import-and-export" title="Link to this heading">#</a></h3>
 <p>Pandas (and its objects <code class="docutils literal notranslate"><span class="pre">Series</span></code> and <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>) support export to and import from a number of useful formats.</p>
 <p>For example, we can write a <code class="docutils literal notranslate"><span class="pre">Series</span></code> object into a comma separated value file:</p>
 <div class="cell docutils container">
@@ -1402,9 +1416,9 @@ potato,110
 </section>
 </section>
 <section id="data-frame">
-<h2><span class="section-number">17.7. </span>Data Frame<a class="headerlink" href="#data-frame" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">17.7. </span>Data Frame<a class="headerlink" href="#data-frame" title="Link to this heading">#</a></h2>
 <section id="stock-example-dataframe">
-<h3><span class="section-number">17.7.1. </span>Stock Example - <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#stock-example-dataframe" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">17.7.1. </span>Stock Example - <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#stock-example-dataframe" title="Link to this heading">#</a></h3>
 <p>After having introduced the <code class="docutils literal notranslate"><span class="pre">Series</span></code> object above, we will focus on the second important type in pandas: the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
 <p>As a first description, we could say that the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> is similar to a (2d) spreadsheet: it contains rows and columns.</p>
 <p>The series object we have studied above is a special case of the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, where the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> has only one column.</p>
@@ -1600,7 +1614,7 @@ dtype: float64
 </div>
 </section>
 <section id="accessing-data-in-a-dataframea">
-<h3><span class="section-number">17.7.2. </span>Accessing data in a DataFramea<a class="headerlink" href="#accessing-data-in-a-dataframea" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">17.7.2. </span>Accessing data in a DataFramea<a class="headerlink" href="#accessing-data-in-a-dataframea" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shop</span>
@@ -1688,7 +1702,7 @@ dtype: float64
 </div>
 </section>
 <section id="extracting-columns-of-data">
-<h3><span class="section-number">17.7.3. </span>Extracting columns of data<a class="headerlink" href="#extracting-columns-of-data" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">17.7.3. </span>Extracting columns of data<a class="headerlink" href="#extracting-columns-of-data" title="Link to this heading">#</a></h3>
 <p>Using the column names, we can extract one column into a Series object using the index operator (<code class="docutils literal notranslate"><span class="pre">[]</span></code>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1726,7 +1740,7 @@ Name: price, dtype: float64
 </div>
 </section>
 <section id="extracting-rows-of-data">
-<h3><span class="section-number">17.7.4. </span>Extracting rows of data<a class="headerlink" href="#extracting-rows-of-data" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">17.7.4. </span>Extracting rows of data<a class="headerlink" href="#extracting-rows-of-data" title="Link to this heading">#</a></h3>
 <p>We have two options of extracting a row of data.</p>
 <p>First, explicit indexing using the label of the index in that row:</p>
 <div class="cell docutils container">
@@ -1852,7 +1866,7 @@ Name: apple, dtype: float64
 <p>It is thus understandable how we have arrived at the situation.</p>
 </section>
 <section id="data-manipulation-with-shop">
-<h3><span class="section-number">17.7.5. </span>Data manipulation with <code class="docutils literal notranslate"><span class="pre">shop</span></code><a class="headerlink" href="#data-manipulation-with-shop" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">17.7.5. </span>Data manipulation with <code class="docutils literal notranslate"><span class="pre">shop</span></code><a class="headerlink" href="#data-manipulation-with-shop" title="Link to this heading">#</a></h3>
 <p>The real strength of the DataFrames is that we can continue to process the data conveniently.</p>
 <p>For example, we could work out the financial value of the items we have in stock, and add this as an extra column:</p>
 <div class="cell docutils container">
@@ -1999,7 +2013,7 @@ Name: apple, dtype: float64
 </section>
 </section>
 <section id="example-european-population-2017">
-<h2><span class="section-number">17.8. </span>Example: European population 2017<a class="headerlink" href="#example-european-population-2017" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">17.8. </span>Example: European population 2017<a class="headerlink" href="#example-european-population-2017" title="Link to this heading">#</a></h2>
 <p>Here is a second example to demonstrate some use cases of pandas DataFrames.</p>
 <p>First, we get the data. It is originally from EUROSTAT (reference “demo_gind”)</p>
 <div class="cell docutils container">
@@ -2010,12 +2024,13 @@ Name: apple, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2024-01-26 13:38:45--  https://fangohr.github.io/data/eurostat/population2017/eu-pop-2017.csv
-Resolving fangohr.github.io (fangohr.github.io)... 185.199.110.153, 185.199.111.153, 185.199.109.153, ...
-Connecting to fangohr.github.io (fangohr.github.io)|185.199.110.153|:443... connected.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2024-01-26 15:24:25--  https://fangohr.github.io/data/eurostat/population2017/eu-pop-2017.csv
+Resolving fangohr.github.io (fangohr.github.io)... 185.199.108.153, 185.199.109.153, 185.199.110.153, ...
+Connecting to fangohr.github.io (fangohr.github.io)|185.199.108.153|:443... connected.
+HTTP request sent, awaiting response... 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HTTP request sent, awaiting response... 200 OK
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 OK
 Length: 1087 (1.1K) [text/csv]
 Saving to: ‘eu-pop-2017.csv’
 
@@ -2023,7 +2038,7 @@ Saving to: ‘eu-pop-2017.csv’
 eu-pop-2017.csv       0%[                    ]       0  --.-KB/s               
 eu-pop-2017.csv     100%[===================&gt;]   1.06K  --.-KB/s    in 0s      
 
-2024-01-26 13:38:45 (85.9 MB/s) - ‘eu-pop-2017.csv’ saved [1087/1087]
+2024-01-26 15:24:25 (55.1 MB/s) - ‘eu-pop-2017.csv’ saved [1087/1087]
 </pre></div>
 </div>
 </div>
@@ -2592,7 +2607,7 @@ Spain,46527039,46659302,390024,421269
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;geo&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/31deab297949e6ca90fb9049e190827e08a43b55e2aef37cee3765f41cba486a.svg" src="_images/31deab297949e6ca90fb9049e190827e08a43b55e2aef37cee3765f41cba486a.svg" /></div>
+<img alt="_images/91976d8ae78c93faac02cbba4b61e60a0671b274c9ea59bec3e70edbf76ac65d.svg" src="_images/91976d8ae78c93faac02cbba4b61e60a0671b274c9ea59bec3e70edbf76ac65d.svg" /></div>
 </div>
 <p>The above shows the population as of 1 Jan 2017.</p>
 <p>We’ll try to improve this in two ways:</p>
@@ -2617,7 +2632,7 @@ Spain,46527039,46659302,390024,421269
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;geo&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/943b4d442a16cf68bc01346e613668bf59d1572db289874c72756d0a4107bf4a.svg" src="_images/943b4d442a16cf68bc01346e613668bf59d1572db289874c72756d0a4107bf4a.svg" /></div>
+<img alt="_images/29e17f6135b39c251a0c9e0eb80b72c7c9ff5624fd8e978d6ce974cdba8ebdf6.svg" src="_images/29e17f6135b39c251a0c9e0eb80b72c7c9ff5624fd8e978d6ce974cdba8ebdf6.svg" /></div>
 </div>
 <p>The example above selects one column from the data frame (<code class="docutils literal notranslate"><span class="pre">['pop17'</span></code>) and that returns a <code class="docutils literal notranslate"><span class="pre">Series</span></code> object. Then we sort this <code class="docutils literal notranslate"><span class="pre">Series</span></code> object using <code class="docutils literal notranslate"><span class="pre">sort_values()</span></code> according to the values (that’s the number of poeple in each country), then we plot this.</p>
 <p>Alternatively, we could also create a plot for the whole data frame, but say that the <code class="docutils literal notranslate"><span class="pre">pop17</span></code> is the column for sorting, and that we want to plot only the column with <code class="docutils literal notranslate"><span class="pre">pop17</span></code>:</p>
@@ -2631,7 +2646,7 @@ Spain,46527039,46659302,390024,421269
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;geo&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/c3891c948f37bf073837a9ed3439c420f00bd10bfcaaaea143b3e2e93c2be508.svg" src="_images/c3891c948f37bf073837a9ed3439c420f00bd10bfcaaaea143b3e2e93c2be508.svg" /></div>
+<img alt="_images/9eef9711124643b01595dc45ed1fff683e21393a4f6d54430128b3608d480603.svg" src="_images/9eef9711124643b01595dc45ed1fff683e21393a4f6d54430128b3608d480603.svg" /></div>
 </div>
 <p>We can also plot more than one column at the same time:</p>
 <div class="cell docutils container">
@@ -2641,7 +2656,7 @@ Spain,46527039,46659302,390024,421269
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6c7a8eb986aca24e4be331d90a50a275045217dda29f6e2552955c08d4cdd8d9.svg" src="_images/6c7a8eb986aca24e4be331d90a50a275045217dda29f6e2552955c08d4cdd8d9.svg" /></div>
+<img alt="_images/da72eee82537b1ef195d4972f0cfa83d3416b610e9cff98ad6c799626376e8fe.svg" src="_images/da72eee82537b1ef195d4972f0cfa83d3416b610e9cff98ad6c799626376e8fe.svg" /></div>
 </div>
 <p>We can also fine tune the plot with the usual <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> commands:</p>
 <div class="cell docutils container">
@@ -2654,7 +2669,7 @@ Spain,46527039,46659302,390024,421269
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/0a8e0909b03b107c0f97e0a01267395071136c15e0cfe4cee499eae0dc4badd9.svg" src="_images/0a8e0909b03b107c0f97e0a01267395071136c15e0cfe4cee499eae0dc4badd9.svg" /></div>
+<img alt="_images/321232c039e759630498822c882c3289e18ff5a8f9277a7181b8d50b6aa582fa.svg" src="_images/321232c039e759630498822c882c3289e18ff5a8f9277a7181b8d50b6aa582fa.svg" /></div>
 </div>
 <p>Based on the number of births and deaths, we can compute change in population for each country for 2017. This is sometimes called the “natural-change”:</p>
 <div class="cell docutils container">
@@ -2832,7 +2847,7 @@ Name: natural-change, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5f12abcd46c0e4654a1a0f6ef9ec0ce5bc3532cd65ddb3c46e14f43ee3aca223.svg" src="_images/5f12abcd46c0e4654a1a0f6ef9ec0ce5bc3532cd65ddb3c46e14f43ee3aca223.svg" /></div>
+<img alt="_images/834c9994f0ac1ec221ff6ffa73fafce3818b8bf15a24eb1485c78cfea1296d7a.svg" src="_images/834c9994f0ac1ec221ff6ffa73fafce3818b8bf15a24eb1485c78cfea1296d7a.svg" /></div>
 </div>
 <p>We can show the data together with the underlying birth and death rate data:</p>
 <div class="cell docutils container">
@@ -2851,7 +2866,7 @@ Name: natural-change, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;geo&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/6a2ff19524e2877bf37f21b8e359629256c7897a27f64999917f669bc8a99767.svg" src="_images/6a2ff19524e2877bf37f21b8e359629256c7897a27f64999917f669bc8a99767.svg" /></div>
+<img alt="_images/559dd451de9e7cfa955ddcb78db9eb295ef99c0369aef0140eaa97fd60117796.svg" src="_images/559dd451de9e7cfa955ddcb78db9eb295ef99c0369aef0140eaa97fd60117796.svg" /></div>
 </div>
 <p>We haven’t used the information we have about the population on 1 January 2018 yet.</p>
 <p>Let’s first look at the absolute changes in the population based on the (census?) data from 1 Jan 2017 and 1 Jan 2018:</p>
@@ -2870,7 +2885,7 @@ Name: natural-change, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/09fffe5b1e144964081a31d7b7503e1834022ac54acf87e478221384090e07af.svg" src="_images/09fffe5b1e144964081a31d7b7503e1834022ac54acf87e478221384090e07af.svg" /></div>
+<img alt="_images/03944dbd006d75eae0f2e529e793ea3da3164528c3c31e5e0460bddb153d7e74.svg" src="_images/03944dbd006d75eae0f2e529e793ea3da3164528c3c31e5e0460bddb153d7e74.svg" /></div>
 </div>
 <p>With that information, we can estimate migration. (It is important to note that this estimated number will also absorb all inaccuracies or changes of the data gathering method, in the original data described as “statistical adjustment”.)</p>
 <div class="cell docutils container">
@@ -3016,11 +3031,11 @@ Name: natural-change, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/3836bc709e52bacd0d1ff0f6c2f70b85ac8a43d743088fd90fad563fcb6fbc50.svg" src="_images/3836bc709e52bacd0d1ff0f6c2f70b85ac8a43d743088fd90fad563fcb6fbc50.svg" /></div>
+<img alt="_images/817710f8e64a5966310eab18a73ea5566ebc41863e7220aedded05d84d89fbe8.svg" src="_images/817710f8e64a5966310eab18a73ea5566ebc41863e7220aedded05d84d89fbe8.svg" /></div>
 </div>
 </section>
 <section id="further-reading">
-<h2><span class="section-number">17.9. </span>Further reading<a class="headerlink" href="#further-reading" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">17.9. </span>Further reading<a class="headerlink" href="#further-reading" title="Link to this heading">#</a></h2>
 <p>There is a lot more to say about Pandas. The following resources may be useful but there are countless others available:</p>
 <ul class="simple">
 <li><p>Further reading on <code class="docutils literal notranslate"><span class="pre">[]</span></code>, <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> and <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code> from Ted Petrou as a <a class="reference external" href="https://github.com/tdpetrou/Learn-Pandas/blob/master/Selecting%20Subsets/01%20Selecting%20Subsets%20with%20%5B%20%5D%2C%20.loc%20and%20.iloc.ipynb">Jupyter Notebook</a> and <a class="reference external" href="https://medium.com/dunder-data/selecting-subsets-of-data-in-pandas-6fcd0170be9c">blog entry</a>.</p></li>
@@ -3144,7 +3159,7 @@ By Hans Fangohr
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>

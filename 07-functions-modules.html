@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>7. Functions and modules &#8212; Introduction to Python for Computational Science and Engineering</title>
   
@@ -29,32 +28,30 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=b749d676" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -90,13 +87,19 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '07-functions-modules';</script>
@@ -197,7 +200,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -479,17 +493,17 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="functions-and-modules">
-<h1><span class="section-number">7. </span>Functions and modules<a class="headerlink" href="#functions-and-modules" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">7. </span>Functions and modules<a class="headerlink" href="#functions-and-modules" title="Link to this heading">#</a></h1>
 <section id="introduction">
-<h2><span class="section-number">7.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">7.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>Functions allow us to group a number of statements into a logical block. We communicate with a function through a clearly defined interface, providing certain parameters to the function, and receiving some information back. Apart from this interface, we generally do not how exactly a function does the work to obtain the value it returns</p>
 <p>For example the function <code class="docutils literal notranslate"><span class="pre">math.sqrt</span></code>: we do not know how exactly it computes the square root, but we know about the interface: if we pass <em>x</em> into the function, it will return (an approximation of) <span class="math notranslate nohighlight">\(\sqrt{x}\)</span>.</p>
 <p>This abstraction is a useful thing: it is a common technique in engineering to break down a system into smaller (black-box) components that all work together through well defined interfaces, but which do not need to know about the internal realisations of each other’s functionality. In fact, not having to care about these implementation details can help to have a clearer view of the system composed of many of these components.</p>
 <p>Functions provide the basic building blocks of functionality in larger programs (and computer simulations), and help to control the inherent complexity of the process.</p>
-<p>We can group functions together into a Python module (see <span class="xref myst">modules</span>), and in this way create our own libraries of functionality.</p>
+<p>We can group functions together into a Python module (see <a class="reference internal" href="#Modules"><span class="xref myst">modules</span></a>), and in this way create our own libraries of functionality.</p>
 </section>
 <section id="using-functions">
-<h2><span class="section-number">7.2. </span>Using functions<a class="headerlink" href="#using-functions" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">7.2. </span>Using functions<a class="headerlink" href="#using-functions" title="Link to this heading">#</a></h2>
 <p>The word “function” has different meanings in mathematics and programming. In programming it refers to a named sequence of operations that perform a computation. For example, the function <code class="docutils literal notranslate"><span class="pre">sqrt()</span></code> which is defined in the <code class="docutils literal notranslate"><span class="pre">math</span></code> module computes the square root of a given value:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -546,7 +560,7 @@ document.write(`
 </ul>
 </section>
 <section id="defining-functions">
-<h2><span class="section-number">7.3. </span>Defining functions<a class="headerlink" href="#defining-functions" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">7.3. </span>Defining functions<a class="headerlink" href="#defining-functions" title="Link to this heading">#</a></h2>
 <p>The generic format of a function definitions:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_function</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">argn</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Optional docstring.&quot;&quot;&quot;</span>
@@ -710,11 +724,11 @@ document.write(`
 </ul>
 </section>
 <section id="default-values-and-optional-parameters">
-<h2><span class="section-number">7.4. </span>Default values and optional parameters<a class="headerlink" href="#default-values-and-optional-parameters" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">7.4. </span>Default values and optional parameters<a class="headerlink" href="#default-values-and-optional-parameters" title="Link to this heading">#</a></h2>
 <p>Python allows to define <em>default</em> values for function parameters. Here is an example: This program will print the following output when executed: So how does it work? The function <code class="docutils literal notranslate"><span class="pre">print_mult_table</span></code> takes two arguments: <code class="docutils literal notranslate"><span class="pre">n</span></code> and <code class="docutils literal notranslate"><span class="pre">upto</span></code>. The first argument <code class="docutils literal notranslate"><span class="pre">n</span></code> is a “normal” variable. The second argument <code class="docutils literal notranslate"><span class="pre">upto</span></code> has a default value of 10. In other words: should the user of this function only provide one argument, then this provides the value for <code class="docutils literal notranslate"><span class="pre">n</span></code> and <code class="docutils literal notranslate"><span class="pre">upto</span></code> will default to 10. If two arguments are provided, the first one will be for <code class="docutils literal notranslate"><span class="pre">n</span></code> and the second for <code class="docutils literal notranslate"><span class="pre">upto</span></code> (as shown in the code example above).</p>
 </section>
 <section id="modules">
-<h2><span class="section-number">7.5. </span>Modules<a class="headerlink" href="#modules" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">7.5. </span>Modules<a class="headerlink" href="#modules" title="Link to this heading">#</a></h2>
 <p>Modules</p>
 <ul class="simple">
 <li><p>Group together functionality</p></li>
@@ -724,7 +738,7 @@ document.write(`
 <li><p>Means of extending Python</p></li>
 </ul>
 <section id="importing-modules">
-<h3><span class="section-number">7.5.1. </span>Importing modules<a class="headerlink" href="#importing-modules" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">7.5.1. </span>Importing modules<a class="headerlink" href="#importing-modules" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
@@ -789,7 +803,7 @@ document.write(`
 </ul>
 </section>
 <section id="creating-modules">
-<h3><span class="section-number">7.5.2. </span>Creating modules<a class="headerlink" href="#creating-modules" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">7.5.2. </span>Creating modules<a class="headerlink" href="#creating-modules" title="Link to this heading">#</a></h3>
 <p>A module is in principle nothing else than a python file.
 We create an example of a module file which is saved in <code class="docutils literal notranslate"><span class="pre">module1.py</span></code>:</p>
 <div class="cell docutils container">
@@ -839,7 +853,7 @@ We create an example of a module file which is saved in <code class="docutils li
 <p>Note the difference to the output if we <em>import</em> <code class="docutils literal notranslate"><span class="pre">module1.py</span></code> rather than executing it on its own: <code class="docutils literal notranslate"><span class="pre">__name__</span></code> inside a module takes the value of the module name if the file is imported.</p>
 </section>
 <section id="use-of-name">
-<h3><span class="section-number">7.5.3. </span>Use of __name__<a class="headerlink" href="#use-of-name" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">7.5.3. </span>Use of __name__<a class="headerlink" href="#use-of-name" title="Link to this heading">#</a></h3>
 <p>In summary,</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">__name__</span></code> is <code class="docutils literal notranslate"><span class="pre">__main__</span></code> if the module file is run on its own</p></li>
@@ -848,7 +862,7 @@ We create an example of a module file which is saved in <code class="docutils li
 <p>We can therefor use the following <code class="docutils literal notranslate"><span class="pre">if</span></code> statement in <code class="docutils literal notranslate"><span class="pre">module1.py</span></code> to write code that is <em>only run</em> when the module is executed on its own: This is useful to keep test programs or demonstrations of the abilities of a module in this “conditional” main program. It is common practice for any module files to have such a conditional main program which demonstrates its capabilities.</p>
 </section>
 <section id="example-1">
-<h3><span class="section-number">7.5.4. </span>Example 1<a class="headerlink" href="#example-1" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">7.5.4. </span>Example 1<a class="headerlink" href="#example-1" title="Link to this heading">#</a></h3>
 <p>The next example shows a main program for the another file <code class="docutils literal notranslate"><span class="pre">vectools.py</span></code> that is used to demonstrate the capabilities of the functions defined in that file:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -905,7 +919,7 @@ The unitvector in direction of [0 1 2] is [0.         0.4472136  0.89442719].
 <p>This is quite a common way to conditionally execute code in files providing library-like functions. The code that is executed if the file is run on its own, often consists of a series of tests (to check that the file’s functions carry out the right operations – <em>regression tests</em> or <em>unit tests</em> ), or some examples of how the library functions in the file can be used.</p>
 </section>
 <section id="example-2">
-<h3><span class="section-number">7.5.5. </span>Example 2<a class="headerlink" href="#example-2" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">7.5.5. </span>Example 2<a class="headerlink" href="#example-2" title="Link to this heading">#</a></h3>
 <p>Even if a Python program is not intended to be used as a module file, it is good practice to always use a conditional main program:</p>
 <ul class="simple">
 <li><p>often, it turns out later that functions in the file can be reused (and saves work then)</p></li>
@@ -968,11 +982,11 @@ The unitvector in direction of [0 1 2] is [0.         0.4472136  0.89442719].
 </div>
 </div>
 <p>but either of the last two options is good.</p>
-<p>The example in <span class="xref myst">Many ways to compute a series</span> demonstrates this technique. Including functions with names starting with <code class="docutils literal notranslate"><span class="pre">test_</span></code> is compatible with the very useful py.test regression testing framework (see <a class="reference external" href="https://docs.pytest.org/en/stable//">https://docs.pytest.org/en/stable//</a>).</p>
+<p>The example in <a class="reference internal" href="#Many-ways-to-compute-a-series"><span class="xref myst">Many ways to compute a series</span></a> demonstrates this technique. Including functions with names starting with <code class="docutils literal notranslate"><span class="pre">test_</span></code> is compatible with the very useful py.test regression testing framework (see <a class="reference external" href="https://docs.pytest.org/en/stable//">https://docs.pytest.org/en/stable//</a>).</p>
 </section>
 </section>
 <section id="further-reading">
-<h2><span class="section-number">7.6. </span>Further Reading<a class="headerlink" href="#further-reading" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">7.6. </span>Further Reading<a class="headerlink" href="#further-reading" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.python.org/3/tutorial/modules.html#modules">Python Tutorial Section 6</a></p></li>
 </ul>
@@ -1080,7 +1094,7 @@ By Hans Fangohr
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>

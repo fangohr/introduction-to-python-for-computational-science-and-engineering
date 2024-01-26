@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>11. Python shells &#8212; Introduction to Python for Computational Science and Engineering</title>
   
@@ -29,32 +28,30 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=b749d676" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -90,13 +87,19 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = '11-python-shells';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -195,7 +198,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -473,9 +487,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python-shells">
-<h1><span class="section-number">11. </span>Python shells<a class="headerlink" href="#python-shells" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">11. </span>Python shells<a class="headerlink" href="#python-shells" title="Link to this heading">#</a></h1>
 <section id="idle">
-<h2><span class="section-number">11.1. </span>IDLE<a class="headerlink" href="#idle" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">11.1. </span>IDLE<a class="headerlink" href="#idle" title="Link to this heading">#</a></h2>
 <p>IDLE comes with every Python distribution and is a useful tool for everyday programming. Its editor provides syntax highlighting.</p>
 <p>There are two reasons why you might want to use another Python shell, for example:</p>
 <ul class="simple">
@@ -485,13 +499,13 @@ document.write(`
 <p>Recently, some auto-completion has been added to Idle as well (press tab after having typed the first few letters of object names and keywords).</p>
 </section>
 <section id="python-command-line">
-<h2><span class="section-number">11.2. </span>Python (command line)<a class="headerlink" href="#python-command-line" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">11.2. </span>Python (command line)<a class="headerlink" href="#python-command-line" title="Link to this heading">#</a></h2>
 <p>This is the most basic face of the Python shell. It is very similar to the Python prompt in IDLE but there are no menus to click on and no facilities to edit files.</p>
 </section>
 <section id="interactive-python-ipython">
-<h2><span class="section-number">11.3. </span>Interactive Python (IPython)<a class="headerlink" href="#interactive-python-ipython" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">11.3. </span>Interactive Python (IPython)<a class="headerlink" href="#interactive-python-ipython" title="Link to this heading">#</a></h2>
 <section id="ipython-console">
-<h3><span class="section-number">11.3.1. </span>IPython console<a class="headerlink" href="#ipython-console" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.3.1. </span>IPython console<a class="headerlink" href="#ipython-console" title="Link to this heading">#</a></h3>
 <p>IPython is an improved version of the Python command line. It is a valuable tool and worth exploring it’s capabilities (see <a class="reference external" href="https://ipython.org/ipython-doc/stable/interactive/qtconsole.html">https://ipython.org/ipython-doc/stable/interactive/qtconsole.html</a>)</p>
 <p>You will find the following features very useful:</p>
 <ul class="simple">
@@ -525,7 +539,7 @@ This works also for variable names and modules.</p></li>
 <p>If you have access to this shell, you may want to consider it as your default Python prompt.</p>
 </section>
 <section id="jupyter-notebook">
-<h3><span class="section-number">11.3.2. </span>Jupyter Notebook<a class="headerlink" href="#jupyter-notebook" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.3.2. </span>Jupyter Notebook<a class="headerlink" href="#jupyter-notebook" title="Link to this heading">#</a></h3>
 <p>The Jupyter Notebook (formerly IPython Notebook) allows you to execute, store, load, re-execute a sequence of Python commands, and to include explanatory text, images and other media in between.</p>
 <p>This is a recent and exciting development that has the potential to develop into a tool of great significance, for example for</p>
 <ul class="simple">
@@ -549,7 +563,7 @@ This works also for variable names and modules.</p></li>
 </section>
 </section>
 <section id="spyder">
-<h2><span class="section-number">11.4. </span>Spyder<a class="headerlink" href="#spyder" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">11.4. </span>Spyder<a class="headerlink" href="#spyder" title="Link to this heading">#</a></h2>
 <p>Spyder is the Scientific PYthon Development EnviRonment: a powerful interactive development environment for the Python language with advanced editing, interactive testing, debugging and introspection features and a numerical computing environment thanks to the support of IPython (enhanced interactive Python interpreter) and popular Python libraries such as NumPy (linear algebra), SciPy (signal and image processing) or matplotlib (interactive 2D/3D plotting). See <a class="reference external" href="https://www.spyder-ide.org/">https://www.spyder-ide.org/</a> for more.</p>
 <p>Some important features of Spyder:</p>
 <ul class="simple">
@@ -565,7 +579,7 @@ This works also for variable names and modules.</p></li>
 <p>Spyder is currently (as of 2014) on the way to develop into a powerful and robust multi-platform integrated environment for Python development, with particular emphasis on Python for scientific computing and engineering.</p>
 </section>
 <section id="editors">
-<h2><span class="section-number">11.5. </span>Editors<a class="headerlink" href="#editors" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">11.5. </span>Editors<a class="headerlink" href="#editors" title="Link to this heading">#</a></h2>
 <p>All major editors that are used for programming, provide Python modes (such as Emacs, Vim, Sublime Text), some Integrated Development Enviroments (IDEs) come with their own editor (Spyder, Eclipse). Which of these is best, is partly a matter of choice.</p>
 <p>For beginners, Spyder seems a sensible choice as it provides an IDE, allows execution of chunks of code in an interpreter session and is easy to pick up.</p>
 </section>
@@ -668,7 +682,7 @@ By Hans Fangohr
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>

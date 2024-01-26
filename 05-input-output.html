@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>5. Input and Output &#8212; Introduction to Python for Computational Science and Engineering</title>
   
@@ -29,32 +28,30 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=b749d676" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -90,13 +87,19 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = '05-input-output';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -195,7 +198,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -483,14 +497,14 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="input-and-output">
-<h1><span class="section-number">5. </span>Input and Output<a class="headerlink" href="#input-and-output" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">5. </span>Input and Output<a class="headerlink" href="#input-and-output" title="Link to this heading">#</a></h1>
 <p>In this section, we describe printing, which includes the use of the <code class="docutils literal notranslate"><span class="pre">print</span></code> function, the old-style <code class="docutils literal notranslate"><span class="pre">%</span></code> format specifiers  and the new style <code class="docutils literal notranslate"><span class="pre">{}</span></code> format specifiers.</p>
 <section id="printing-to-standard-output-normally-the-screen">
-<h2><span class="section-number">5.1. </span>Printing to standard output (normally the screen)<a class="headerlink" href="#printing-to-standard-output-normally-the-screen" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.1. </span>Printing to standard output (normally the screen)<a class="headerlink" href="#printing-to-standard-output-normally-the-screen" title="Link to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">print</span></code> function is the most commonly used command to print information to the “standard output device” which is normally the screen.</p>
 <p>There are two modes to use print.</p>
 <section id="simple-print">
-<h3><span class="section-number">5.1.1. </span>Simple print<a class="headerlink" href="#simple-print" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.1.1. </span>Simple print<a class="headerlink" href="#simple-print" title="Link to this heading">#</a></h3>
 <p>The easiest way to use the print command is to list the variables to be printed, separated by comma. Here are a few examples:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -583,7 +597,7 @@ document.write(`
 </div>
 </section>
 <section id="formatted-printing">
-<h3><span class="section-number">5.1.2. </span>Formatted printing<a class="headerlink" href="#formatted-printing" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.1.2. </span>Formatted printing<a class="headerlink" href="#formatted-printing" title="Link to this heading">#</a></h3>
 <p>The more sophisticated way of formatting output uses a syntax very similar to Matlab’s <code class="docutils literal notranslate"><span class="pre">fprintf</span></code> (and therefor also similar to C’s <code class="docutils literal notranslate"><span class="pre">printf</span></code>).</p>
 <p>The overall structure is that there is a string containing format specifiers, followed by a percentage sign and a tuple that contains the variables to be printed in place of the format specifiers.</p>
 <div class="cell docutils container">
@@ -727,7 +741,7 @@ document.write(`
 </table>
 </section>
 <section id="str-and-str">
-<h3><span class="section-number">5.1.3. </span>“str” and “__str__”<a class="headerlink" href="#str-and-str" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.1.3. </span>“str” and “__str__”<a class="headerlink" href="#str-and-str" title="Link to this heading">#</a></h3>
 <p>All objects in Python should provide a method <code class="docutils literal notranslate"><span class="pre">__str__</span></code> which returns a nice string representation of the object. This method <code class="docutils literal notranslate"><span class="pre">a.__str__()</span></code> is called when we apply the <code class="docutils literal notranslate"><span class="pre">str</span></code> function to object <code class="docutils literal notranslate"><span class="pre">a</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -800,7 +814,7 @@ document.write(`
 </div>
 </section>
 <section id="repr-and-repr">
-<h3><span class="section-number">5.1.4. </span>“repr” and “__repr__”<a class="headerlink" href="#repr-and-repr" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.1.4. </span>“repr” and “__repr__”<a class="headerlink" href="#repr-and-repr" title="Link to this heading">#</a></h3>
 <p>A second function, <code class="docutils literal notranslate"><span class="pre">repr</span></code>, should convert a given object into a string presentation <em>so that this string can be used to re-created the object using the <code class="docutils literal notranslate"><span class="pre">eval</span></code> function</em>. The <code class="docutils literal notranslate"><span class="pre">repr</span></code> function will generally provide a more detailed string than <code class="docutils literal notranslate"><span class="pre">str</span></code>. Applying <code class="docutils literal notranslate"><span class="pre">repr</span></code> to the object <code class="docutils literal notranslate"><span class="pre">x</span></code> will attempt to call <code class="docutils literal notranslate"><span class="pre">x.__repr__()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -905,7 +919,7 @@ document.write(`
 </div>
 </section>
 <section id="new-style-string-formatting">
-<h3><span class="section-number">5.1.5. </span>New-style string formatting<a class="headerlink" href="#new-style-string-formatting" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.1.5. </span>New-style string formatting<a class="headerlink" href="#new-style-string-formatting" title="Link to this heading">#</a></h3>
 <p>A new system of built-in formatting allows more flexibility for complex cases, at the cost of being a bit longer.</p>
 <p>Basic ideas in examples:</p>
 <div class="cell docutils container">
@@ -1005,7 +1019,7 @@ document.write(`
 </ul>
 </section>
 <section id="changes-from-python-2-to-python-3-print">
-<h3><span class="section-number">5.1.6. </span>Changes from Python 2 to Python 3: <code class="docutils literal notranslate"><span class="pre">print</span></code><a class="headerlink" href="#changes-from-python-2-to-python-3-print" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.1.6. </span>Changes from Python 2 to Python 3: <code class="docutils literal notranslate"><span class="pre">print</span></code><a class="headerlink" href="#changes-from-python-2-to-python-3-print" title="Link to this heading">#</a></h3>
 <p>One (maybe the most obvious) change going from Python 2 to Python 3 is that the <code class="docutils literal notranslate"><span class="pre">print</span></code> command loses its special status. In Python 2, we could print “Hello World” using:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="s2">&quot;Hello world&quot;</span>             <span class="c1"># valid in Python 2.x</span>
 </pre></div>
@@ -1116,7 +1130,7 @@ And the second line.
 </section>
 </section>
 <section id="reading-and-writing-files">
-<h2><span class="section-number">5.2. </span>Reading and writing files<a class="headerlink" href="#reading-and-writing-files" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.2. </span>Reading and writing files<a class="headerlink" href="#reading-and-writing-files" title="Link to this heading">#</a></h2>
 <p>Here is a program that</p>
 <ol class="arabic simple">
 <li><p>writes some text to a file with name <code class="docutils literal notranslate"><span class="pre">test.txt</span></code>,</p></li>
@@ -1128,9 +1142,9 @@ And the second line.
 <span class="n">And</span> <span class="n">the</span> <span class="n">second</span> <span class="n">line</span><span class="o">.</span>
 </pre></div>
 </div>
-<p>In more detail, you have opened a file with the <code class="docutils literal notranslate"><span class="pre">open</span></code> command, and assigned this open file object to the variable <code class="docutils literal notranslate"><span class="pre">out_file</span></code>. We have then written data to the file using the <code class="docutils literal notranslate"><span class="pre">out_file.write</span></code> method. Note that in the example above, we have given a string to the <code class="docutils literal notranslate"><span class="pre">write</span></code> method. We can, of course, use all the formatting that we have discussed before—see <span class="xref myst">formatted printing</span> and <span class="xref myst">new style formatting</span>. For example, to write this file with name table <code class="docutils literal notranslate"><span class="pre">table.txt</span></code> we can use this Python program It is good practice to <code class="docutils literal notranslate"><span class="pre">close()</span></code> files when we have finished reading and writing. If a Python program is left in a controlled way (i.e. not through a power cut or an unlikely bug deep in the Python language or the operating system) then it will close all open files as soon as the file objects are destroyed. However, closing them actively as soon as possible is better style.</p>
+<p>In more detail, you have opened a file with the <code class="docutils literal notranslate"><span class="pre">open</span></code> command, and assigned this open file object to the variable <code class="docutils literal notranslate"><span class="pre">out_file</span></code>. We have then written data to the file using the <code class="docutils literal notranslate"><span class="pre">out_file.write</span></code> method. Note that in the example above, we have given a string to the <code class="docutils literal notranslate"><span class="pre">write</span></code> method. We can, of course, use all the formatting that we have discussed before—see <a class="reference internal" href="#Formatted-printing"><span class="xref myst">formatted printing</span></a> and <a class="reference internal" href="#New-style-string-formatting"><span class="xref myst">new style formatting</span></a>. For example, to write this file with name table <code class="docutils literal notranslate"><span class="pre">table.txt</span></code> we can use this Python program It is good practice to <code class="docutils literal notranslate"><span class="pre">close()</span></code> files when we have finished reading and writing. If a Python program is left in a controlled way (i.e. not through a power cut or an unlikely bug deep in the Python language or the operating system) then it will close all open files as soon as the file objects are destroyed. However, closing them actively as soon as possible is better style.</p>
 <section id="file-reading-examples">
-<h3><span class="section-number">5.2.1. </span>File reading examples<a class="headerlink" href="#file-reading-examples" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.2.1. </span>File reading examples<a class="headerlink" href="#file-reading-examples" title="Link to this heading">#</a></h3>
 <p>We use a file named <code class="docutils literal notranslate"><span class="pre">myfile.txt</span></code> containing the following 3 lines of text for the examples below:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>This is the first line.
 This is the second line.
@@ -1149,7 +1163,7 @@ This is a third and last line.
 </div>
 </div>
 <section id="fileobject-read">
-<h4><span class="section-number">5.2.1.1. </span>fileobject.read()<a class="headerlink" href="#fileobject-read" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">5.2.1.1. </span>fileobject.read()<a class="headerlink" href="#fileobject-read" title="Link to this heading">#</a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">fileobject.read()</span></code> method reads the whole file, and returns it as one string (including new line characters).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1173,7 +1187,7 @@ This is a third and last line.
 </div>
 </section>
 <section id="fileobject-readlines">
-<h4><span class="section-number">5.2.1.2. </span>fileobject.readlines()<a class="headerlink" href="#fileobject-readlines" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">5.2.1.2. </span>fileobject.readlines()<a class="headerlink" href="#fileobject-readlines" title="Link to this heading">#</a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">fileobject.readlines()</span></code> method returns a list of strings, where each element of the list corresponds to one line in the string:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1237,7 +1251,7 @@ This is a third and last line.
 </div>
 </section>
 <section id="iterating-over-lines-file-object">
-<h4><span class="section-number">5.2.1.3. </span>Iterating over lines (file object)<a class="headerlink" href="#iterating-over-lines-file-object" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">5.2.1.3. </span>Iterating over lines (file object)<a class="headerlink" href="#iterating-over-lines-file-object" title="Link to this heading">#</a></h4>
 <p>There is a neater possibility to read a file line by line which (i) will only read one line at a time (and is thus suitable for large files as well) and (ii) results in more compact code:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1261,7 +1275,7 @@ This is a third and last line.
 </section>
 </section>
 <section id="further-reading">
-<h2><span class="section-number">5.3. </span>Further reading<a class="headerlink" href="#further-reading" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.3. </span>Further reading<a class="headerlink" href="#further-reading" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://docs.python.org/3/tutorial/inputoutput.html#methods-of-file-objects">Methods of File objects, Tutorial, Section 7.2.1</a></p>
 </section>
 </section>
@@ -1373,7 +1387,7 @@ By Hans Fangohr
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>

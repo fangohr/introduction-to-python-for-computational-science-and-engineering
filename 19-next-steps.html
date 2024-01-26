@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>19. Where to go from here? &#8212; Introduction to Python for Computational Science and Engineering</title>
   
@@ -29,32 +28,30 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=b749d676" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -90,13 +87,19 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = '19-next-steps';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -195,7 +198,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -473,46 +487,46 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="where-to-go-from-here">
-<h1><span class="section-number">19. </span>Where to go from here?<a class="headerlink" href="#where-to-go-from-here" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">19. </span>Where to go from here?<a class="headerlink" href="#where-to-go-from-here" title="Link to this heading">#</a></h1>
 <p>Learning a programming language is the first step towards becoming a computationalists who advances science and engineering through computational modelling and simulation.</p>
 <p>We list some additional skills that can be very beneficial for day-to-day computational science work, but is of course not exhaustive.</p>
 <section id="advanced-programming">
-<h2><span class="section-number">19.1. </span>Advanced programming<a class="headerlink" href="#advanced-programming" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">19.1. </span>Advanced programming<a class="headerlink" href="#advanced-programming" title="Link to this heading">#</a></h2>
 <p>This text has put emphasis on providing a robust foundation in terms of programming, covering control flow, data structures and elements from function and procedural programming. We have not touch Object Orientation in great detail, nor have we discussed some of Python’s more advanced features such as iterators, and decorators, for example.</p>
 </section>
 <section id="compiled-programming-language">
-<h2><span class="section-number">19.2. </span>Compiled programming language<a class="headerlink" href="#compiled-programming-language" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">19.2. </span>Compiled programming language<a class="headerlink" href="#compiled-programming-language" title="Link to this heading">#</a></h2>
 <p>When performance starts to be the highest priority, we may need to use compiled code, and likely embed this in a Python code to carry out the computational that are the performance bottle neck.</p>
 <p>Fortran, C and C++ are sensible choices here; maybe Julia in the near future.</p>
 <p>We also need to learn how to integrate the compiled code with Python using tools such as Cython, Boost, Ctypes and Swig.</p>
 </section>
 <section id="testing">
-<h2><span class="section-number">19.3. </span>Testing<a class="headerlink" href="#testing" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">19.3. </span>Testing<a class="headerlink" href="#testing" title="Link to this heading">#</a></h2>
 <p>Good coding is supported by a range of unit and system tests that can be run routinely to check that the code works correctly. Tools such as doctest, nose and pytest are invaluable, and we should learn at least how to use pytest (or nose).</p>
 </section>
 <section id="simulation-models">
-<h2><span class="section-number">19.4. </span>Simulation models<a class="headerlink" href="#simulation-models" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">19.4. </span>Simulation models<a class="headerlink" href="#simulation-models" title="Link to this heading">#</a></h2>
 <p>A number of standard simulation tools such as Monte Carlo, Molecular Dynamics, lattice based models, agents, finite difference and finite element models are commonly used to solve particular simulation challenges – it is useful to have at least a broad overview of these.</p>
 </section>
 <section id="software-engineering-for-research-codes">
-<h2><span class="section-number">19.5. </span>Software engineering for research codes<a class="headerlink" href="#software-engineering-for-research-codes" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">19.5. </span>Software engineering for research codes<a class="headerlink" href="#software-engineering-for-research-codes" title="Link to this heading">#</a></h2>
 <p>Research codes bring particular challenges: the requirements may change during the run time of the project, we need great flexibility yet reproducibility. A number of techniques are available to support effectively.</p>
 </section>
 <section id="data-and-visualisation">
-<h2><span class="section-number">19.6. </span>Data and visualisation<a class="headerlink" href="#data-and-visualisation" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">19.6. </span>Data and visualisation<a class="headerlink" href="#data-and-visualisation" title="Link to this heading">#</a></h2>
 <p>Dealing with large amounts of data, processing and visualising it can be a challenge. Fundamental knowledge of database design, 3d visualisation and modern data processing tools such as the Pandas Python package help with this.</p>
 </section>
 <section id="version-control">
-<h2><span class="section-number">19.7. </span>Version control<a class="headerlink" href="#version-control" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">19.7. </span>Version control<a class="headerlink" href="#version-control" title="Link to this heading">#</a></h2>
 <p>Using a version control tool, such as git or mercurial, should be a standard approach and improves code writing effectiveness significantly, helps with working in teams, and - maybe most importantly - supports reproducibility of computational results.</p>
 </section>
 <section id="parallel-execution">
-<h2><span class="section-number">19.8. </span>Parallel execution<a class="headerlink" href="#parallel-execution" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">19.8. </span>Parallel execution<a class="headerlink" href="#parallel-execution" title="Link to this heading">#</a></h2>
 <p>Parallel execution of code is a way to make it run orders of magnitude faster. This could be using MPI for inter-node communication or OpenMP for intra-node parallelisation or a hybrid mode bringing both together.</p>
 <p>The recent rise of GPU computing provides yet another avenue of parallelisation, and so do the many-core chips such as the Intel Phi.</p>
 </section>
 <section id="acknowledgements">
-<h2><span class="section-number">19.9. </span>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">19.9. </span>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Link to this heading">#</a></h2>
 <p>Big thanks go to</p>
 <ul class="simple">
 <li><p>Marc Molinari for carefully proof reading this manuscript around 2007.</p></li>
@@ -629,7 +643,7 @@ By Hans Fangohr
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>

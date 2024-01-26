@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>3. Data Types and Data Structures &#8212; Introduction to Python for Computational Science and Engineering</title>
   
@@ -29,32 +28,30 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=b749d676" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -90,13 +87,19 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '03-data-types-structures';</script>
@@ -197,7 +200,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -502,9 +516,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="data-types-and-data-structures">
-<h1><span class="section-number">3. </span>Data Types and Data Structures<a class="headerlink" href="#data-types-and-data-structures" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">3. </span>Data Types and Data Structures<a class="headerlink" href="#data-types-and-data-structures" title="Link to this heading">#</a></h1>
 <section id="what-type-is-it">
-<h2><span class="section-number">3.1. </span>What type is it?<a class="headerlink" href="#what-type-is-it" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.1. </span>What type is it?<a class="headerlink" href="#what-type-is-it" title="Link to this heading">#</a></h2>
 <p>Python knows different data types. To find the type of a variable, use the <code class="docutils literal notranslate"><span class="pre">type()</span></code> function:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -560,17 +574,17 @@ document.write(`
 </div>
 </section>
 <section id="numbers">
-<h2><span class="section-number">3.2. </span>Numbers<a class="headerlink" href="#numbers" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.2. </span>Numbers<a class="headerlink" href="#numbers" title="Link to this heading">#</a></h2>
 <p><strong>Further information</strong></p>
 <ul class="simple">
 <li><p>Informal introduction to numbers. <a class="reference external" href="https://docs.python.org/3/tutorial/introduction.html#using-python-as-a-calculator">Python tutorial, section 3.1.1</a></p></li>
 <li><p>Python Library Reference: formal overview of numeric types, <a class="reference external" href="https://docs.python.org/3.8/library/stdtypes.html#numeric-types-int-float-complex">https://docs.python.org/3.8/library/stdtypes.html#numeric-types-int-float-complex</a></p></li>
 <li><p>Think Python, <a class="reference external" href="https://www.greenteapress.com/thinkpython/html/book003.html">Sec 2.1</a></p></li>
 </ul>
-<p>The in-built numerical types are integers and floating point numbers (see <span class="xref myst">floating point numbers</span>) and complex floating point numbers (<span class="xref myst">complex numbers</span>).</p>
+<p>The in-built numerical types are integers and floating point numbers (see <a class="reference internal" href="#Floating-Point-numbers"><span class="xref myst">floating point numbers</span></a>) and complex floating point numbers (<a class="reference internal" href="#Complex-numbers"><span class="xref myst">complex numbers</span></a>).</p>
 <section id="integers">
-<h3><span class="section-number">3.2.1. </span>Integers<a class="headerlink" href="#integers" title="Permalink to this heading">#</a></h3>
-<p>We have seen the use of integer numbers already in <a class="reference internal" href="02-powerful-calculator.html"><span class="doc std std-doc">Chapter 2</span></a>. Be aware of integer division problems (02 A Powerful Calculator, Integer Division).</p>
+<h3><span class="section-number">3.2.1. </span>Integers<a class="headerlink" href="#integers" title="Link to this heading">#</a></h3>
+<p>We have seen the use of integer numbers already in <a class="reference internal" href="02-powerful-calculator.html"><span class="std std-doc">Chapter 2</span></a>. Be aware of integer division problems (02 A Powerful Calculator, Integer Division).</p>
 <p>If we need to convert string containing an integer number to an integer we can use <code class="docutils literal notranslate"><span class="pre">int()</span></code> function:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -620,7 +634,7 @@ document.write(`
 </div>
 </section>
 <section id="integer-limits">
-<h3><span class="section-number">3.2.2. </span>Integer limits<a class="headerlink" href="#integer-limits" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">3.2.2. </span>Integer limits<a class="headerlink" href="#integer-limits" title="Link to this heading">#</a></h3>
 <p>Integers in Python 3 are unlimited; Python will automatically assign more memory as needed as the numbers get bigger. This means we can calculate very large numbers with no special steps.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -635,7 +649,7 @@ document.write(`
 </div>
 </div>
 <p>In many other programming languages, such as C and FORTRAN, integers are a fixed size—most frequently 4 bytes, which allows <span class="math notranslate nohighlight">\(2^{32}\)</span> different values—but different types are available with different sizes. For numbers that fit into these limits, calculations can be faster, but you may need to check that the numbers don’t go beyond the limits. Calculating a number beyond the limits is called <em>integer overflow</em>, and may produce bizarre results.</p>
-<p>Even in Python, we need to be aware of this when we use numpy (see <a class="reference internal" href="14-numpy.html"><span class="doc std std-doc">Chapter 14</span></a>). Numpy uses integers with a fixed size, because it stores many of them together and needs to calculate with them efficiently. <a class="reference external" href="https://numpy.org/doc/stable/user/basics.types.html">Numpy data types</a> include a range of integer types named for their size, so e.g. <code class="docutils literal notranslate"><span class="pre">int16</span></code> is a 16-bit integer, with <span class="math notranslate nohighlight">\(2^{16}\)</span> possible values.</p>
+<p>Even in Python, we need to be aware of this when we use numpy (see <a class="reference internal" href="14-numpy.html"><span class="std std-doc">Chapter 14</span></a>). Numpy uses integers with a fixed size, because it stores many of them together and needs to calculate with them efficiently. <a class="reference external" href="https://numpy.org/doc/stable/user/basics.types.html">Numpy data types</a> include a range of integer types named for their size, so e.g. <code class="docutils literal notranslate"><span class="pre">int16</span></code> is a 16-bit integer, with <span class="math notranslate nohighlight">\(2^{16}\)</span> possible values.</p>
 <p>Integer types can also be <em>signed</em> or <em>unsigned</em>. Signed integers allow positive or negative values, unsigned integers only allow positive ones. For instance:</p>
 <ul class="simple">
 <li><p>uint16 (unsigned) ranges from 0 to <span class="math notranslate nohighlight">\(2^{16}-1\)</span></p></li>
@@ -643,7 +657,7 @@ document.write(`
 </ul>
 </section>
 <section id="floating-point-numbers">
-<h3><span class="section-number">3.2.3. </span>Floating Point numbers<a class="headerlink" href="#floating-point-numbers" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">3.2.3. </span>Floating Point numbers<a class="headerlink" href="#floating-point-numbers" title="Link to this heading">#</a></h3>
 <p>A string containing a floating point number can be converted into a floating point number using the <code class="docutils literal notranslate"><span class="pre">float()</span></code> command:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -673,7 +687,7 @@ document.write(`
 </div>
 </section>
 <section id="complex-numbers">
-<h3><span class="section-number">3.2.4. </span>Complex numbers<a class="headerlink" href="#complex-numbers" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">3.2.4. </span>Complex numbers<a class="headerlink" href="#complex-numbers" title="Link to this heading">#</a></h3>
 <p>Python (as Fortran and Matlab) has built-in complex numbers. Here are some examples how to use these:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -776,7 +790,7 @@ document.write(`
 </div>
 </section>
 <section id="functions-applicable-to-all-types-of-numbers">
-<h3><span class="section-number">3.2.5. </span>Functions applicable to all types of numbers<a class="headerlink" href="#functions-applicable-to-all-types-of-numbers" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">3.2.5. </span>Functions applicable to all types of numbers<a class="headerlink" href="#functions-applicable-to-all-types-of-numbers" title="Link to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">abs()</span></code> function returns the absolute value of a number (also called modulus):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -795,7 +809,7 @@ document.write(`
 </section>
 </section>
 <section id="sequences">
-<h2><span class="section-number">3.3. </span>Sequences<a class="headerlink" href="#sequences" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.3. </span>Sequences<a class="headerlink" href="#sequences" title="Link to this heading">#</a></h2>
 <p>Strings, lists and tuples are <em>sequences</em>. They can be <em>indexed</em> and <em>sliced</em> in the same way.</p>
 <p>Tuples and strings are “immutable” (which basically means we can’t change individual elements within the tuple, and we cannot change individual characters within a string) whereas lists are “mutable” (<em>.i.e</em> we can change elements in a list.)</p>
 <p>Sequences share the following operations</p>
@@ -810,7 +824,7 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">*</span> <span class="pre">a</span></code> creates <code class="docutils literal notranslate"><span class="pre">n</span></code> copies of sequence <code class="docutils literal notranslate"><span class="pre">a</span></code></p></li>
 </ul>
 <section id="sequence-type-1-string">
-<h3><span class="section-number">3.3.1. </span>Sequence type 1: String<a class="headerlink" href="#sequence-type-1-string" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">3.3.1. </span>Sequence type 1: String<a class="headerlink" href="#sequence-type-1-string" title="Link to this heading">#</a></h3>
 <p><strong>Further information</strong></p>
 <ul class="simple">
 <li><p>Introduction to strings, <a class="reference external" href="https://docs.python.org/3/tutorial/introduction.html#strings">Python tutorial 3.1.2</a></p></li>
@@ -1028,7 +1042,7 @@ document.write(`
 </div>
 </section>
 <section id="sequence-type-2-list">
-<h3><span class="section-number">3.3.2. </span>Sequence type 2: List<a class="headerlink" href="#sequence-type-2-list" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">3.3.2. </span>Sequence type 2: List<a class="headerlink" href="#sequence-type-2-list" title="Link to this heading">#</a></h3>
 <p><strong>Further information</strong></p>
 <ul class="simple">
 <li><p>Introduction to Lists, <a class="reference external" href="https://docs.python.org/3/tutorial/introduction.html#lists">Python tutorial, section 3.1.4</a></p></li>
@@ -1156,7 +1170,7 @@ document.write(`
 </div>
 </div>
 <section id="the-range-command">
-<h4><span class="section-number">3.3.2.1. </span>The range() command<a class="headerlink" href="#the-range-command" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">3.3.2.1. </span>The range() command<a class="headerlink" href="#the-range-command" title="Link to this heading">#</a></h4>
 <p>A special type of list is frequently required (often together with <code class="docutils literal notranslate"><span class="pre">for-loops</span></code>) and therefor a command exists to generate that list: the <code class="docutils literal notranslate"><span class="pre">range(n)</span></code> command generates integers starting from 0 and going up to <em>but not including</em> n. Here are a few examples:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1249,7 +1263,7 @@ document.write(`
 </section>
 </section>
 <section id="sequence-type-3-tuples">
-<h3><span class="section-number">3.3.3. </span>Sequence type 3: Tuples<a class="headerlink" href="#sequence-type-3-tuples" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">3.3.3. </span>Sequence type 3: Tuples<a class="headerlink" href="#sequence-type-3-tuples" title="Link to this heading">#</a></h3>
 <p>A <em>tuple</em> is a (immutable) sequence of objects. Tuples are very similar in behaviour to lists with the exception that they cannot be modified (i.e. are immutable).</p>
 <p>For example, the objects in a sequence can be of any type:</p>
 <div class="cell docutils container">
@@ -1449,7 +1463,7 @@ document.write(`
 <p>Note that Python functions that return more than one value, return these in tuples (which makes sense because you don’t want these values be changed).</p>
 </section>
 <section id="indexing-sequences">
-<h3><span class="section-number">3.3.4. </span>Indexing sequences<a class="headerlink" href="#indexing-sequences" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">3.3.4. </span>Indexing sequences<a class="headerlink" href="#indexing-sequences" title="Link to this heading">#</a></h3>
 <p><strong>Further information</strong></p>
 <ul class="simple">
 <li><p>Introduction to strings and indexing in <a class="reference external" href="https://docs.python.org/3/tutorial/introduction.html#strings">Python tutorial, section 3.1.2</a>, the relevant section is starting after strings have been introduced.</p></li>
@@ -1584,7 +1598,7 @@ document.write(`
 </div>
 </section>
 <section id="slicing-sequences">
-<h3><span class="section-number">3.3.5. </span>Slicing sequences<a class="headerlink" href="#slicing-sequences" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">3.3.5. </span>Slicing sequences<a class="headerlink" href="#slicing-sequences" title="Link to this heading">#</a></h3>
 <p><strong>Further information</strong></p>
 <ul class="simple">
 <li><p>Introduction to strings, indexing and slicing in <a class="reference external" href="https://docs.python.org/3/tutorial/introduction.html#strings">Python tutorial, section 3.1.2</a></p></li>
@@ -1731,7 +1745,7 @@ document.write(`
 <p>If you are not sure what the right index is, it is always a good technique to play around with a small example at the Python prompt to test things before or while you write your program.</p>
 </section>
 <section id="dictionaries">
-<h3><span class="section-number">3.3.6. </span>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">3.3.6. </span>Dictionaries<a class="headerlink" href="#dictionaries" title="Link to this heading">#</a></h3>
 <p>Dictionaries are also called “associative arrays” and “hash tables”. Dictionaries are <em>unordered</em> sets of <em>key-value pairs</em>.</p>
 <p>An empty dictionary can be created using curly braces:</p>
 <div class="cell docutils container">
@@ -1969,12 +1983,12 @@ Ken works in room 1027
 </section>
 </section>
 <section id="passing-arguments-to-functions">
-<h2><span class="section-number">3.4. </span>Passing arguments to functions<a class="headerlink" href="#passing-arguments-to-functions" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.4. </span>Passing arguments to functions<a class="headerlink" href="#passing-arguments-to-functions" title="Link to this heading">#</a></h2>
 <p>This section contains some more advanced ideas and makes use of concepts that are only later introduced in this text. The section may be more easily accessible at a later stage.</p>
 <p>When objects are passed to a function, Python always passes (the value of) the reference to the object to the function. Effectively this is calling a function by reference, although one could refer to it as calling by value (of the reference).</p>
 <p>We review argument passing by value and reference before discussing the situation in Python in more detail.</p>
 <section id="call-by-value">
-<h3><span class="section-number">3.4.1. </span>Call by value<a class="headerlink" href="#call-by-value" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">3.4.1. </span>Call by value<a class="headerlink" href="#call-by-value" title="Link to this heading">#</a></h3>
 <p>One might expect that if we pass an object by value to a function, that modifications of that value inside the function will not affect the object (because we don’t pass the object itself, but only its value, which is a copy). Here is an example of this behaviour (in C):</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
@@ -2003,7 +2017,7 @@ global_m=1
 <p>The value <code class="docutils literal notranslate"><span class="pre">1</span></code> of the global variable <code class="docutils literal notranslate"><span class="pre">global_m</span></code> is not modified when the function <code class="docutils literal notranslate"><span class="pre">pass_by_value</span></code> changes its input argument to 42.</p>
 </section>
 <section id="call-by-reference">
-<h3><span class="section-number">3.4.2. </span>Call by reference<a class="headerlink" href="#call-by-reference" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">3.4.2. </span>Call by reference<a class="headerlink" href="#call-by-reference" title="Link to this heading">#</a></h3>
 <p>Calling a function by reference, on the other hand, means that the object given to a function is a reference to the object. This means that the function will see the same object as in the calling code (because they are referencing the same object: we can think of the reference as a pointer to the place in memory where the object is located). Any changes acting on the object inside the function, will then be visible in the object at the calling level (because the function does actually operate on the same object, not a copy of it).</p>
 <p>Here is one example showing this using pointers in C:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
@@ -2057,7 +2071,7 @@ global_m=42
 </div>
 </section>
 <section id="argument-passing-in-python">
-<h3><span class="section-number">3.4.3. </span>Argument passing in Python<a class="headerlink" href="#argument-passing-in-python" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">3.4.3. </span>Argument passing in Python<a class="headerlink" href="#argument-passing-in-python" title="Link to this heading">#</a></h3>
 <p>In Python, objects are passed as the value of a reference (think pointer) to the object. Depending on the way the reference is used in the function and depending on the type of object it references, this can result in pass-by-reference behaviour (where any changes to the object received as a function argument, are immediately reflected in the calling level).</p>
 <p>Here are three examples to discuss this. We start by passing a list to a function which iterates through all elements in the sequence and doubles the value of each element:</p>
 <div class="cell docutils container">
@@ -2139,13 +2153,13 @@ In main: s=42
 <p>In summary, Python’s behaviour of passing arguments to a function may appear to vary (if we view it from the pass by value versus pass by reference point of view). However, it is always call by value, where the value is a reference to the object in question, and the behaviour can be explained through the same reasoning in every case.</p>
 </section>
 <section id="performance-considerations">
-<h3><span class="section-number">3.4.4. </span>Performance considerations<a class="headerlink" href="#performance-considerations" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">3.4.4. </span>Performance considerations<a class="headerlink" href="#performance-considerations" title="Link to this heading">#</a></h3>
 <p>Call by value function calls require copying of the value before it is passed to the function. From a performance point of view (both execution time and memory requirements), this can be an expensive process if the value is large. (Imagine the value is a <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code> object which could be several Megabytes or Gigabytes in size.)</p>
 <p>One generally prefers call by reference for large data objects as in this case only a pointer to the data objects is passed, independent of the actual size of the object, and thus this is generally faster than call-by-value.</p>
 <p>Python’s approach of (effectively) calling by reference is thus efficient. However, we need to be careful that our function do not modify the data they have been given where this is undesired.</p>
 </section>
 <section id="inadvertent-modification-of-data">
-<h3><span class="section-number">3.4.5. </span>Inadvertent modification of data<a class="headerlink" href="#inadvertent-modification-of-data" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">3.4.5. </span>Inadvertent modification of data<a class="headerlink" href="#inadvertent-modification-of-data" title="Link to this heading">#</a></h3>
 <p>Generally, a function should not modify the data given as input to it.</p>
 <p>For example, the following code demonstrates the attempt to determine the maximum value of a list, and – inadvertently – modifies the list in the process:</p>
 <div class="cell docutils container">
@@ -2179,13 +2193,13 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 <p>The user of the <code class="docutils literal notranslate"><span class="pre">mymax()</span></code> function would not expect that the input argument is modified when the function executes. We should generally avoid this. There are several ways to find better solutions to the given problem:</p>
 <ul class="simple">
 <li><p>In this particular case, we could use the Python in-built function <code class="docutils literal notranslate"><span class="pre">max()</span></code> to obtain the maximum value of a sequence.</p></li>
-<li><p>If we felt we need to stick to storing temporary values inside the list [this is actually not necessary], we could create a copy of the incoming list <code class="docutils literal notranslate"><span class="pre">s</span></code> first, and then proceed with the algorithm (see <span class="xref myst">below</span> on Copying objects).</p></li>
+<li><p>If we felt we need to stick to storing temporary values inside the list [this is actually not necessary], we could create a copy of the incoming list <code class="docutils literal notranslate"><span class="pre">s</span></code> first, and then proceed with the algorithm (see <a class="reference internal" href="#Copying-objects"><span class="xref myst">below</span></a> on Copying objects).</p></li>
 <li><p>Use another algorithm which uses an extra temporary variable rather than abusing the list for this. For example:</p></li>
 <li><p>We could pass a tuple (instead of a list) to the function: a tuple is <em>immutable</em> and can thus never be modified (this would result in an exception being raised when the function tries to write to elements in the tuple).</p></li>
 </ul>
 </section>
 <section id="copying-objects">
-<h3><span class="section-number">3.4.6. </span>Copying objects<a class="headerlink" href="#copying-objects" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">3.4.6. </span>Copying objects<a class="headerlink" href="#copying-objects" title="Link to this heading">#</a></h3>
 <p>Python provides the <code class="docutils literal notranslate"><span class="pre">id()</span></code> function which returns an integer number that is unique for each object. (In the current CPython implementation, this is the memory address.) We can use this to identify whether two objects are the same.</p>
 <p>To copy a sequence object (including lists), we can slice it, <em>i.e.</em> if <code class="docutils literal notranslate"><span class="pre">a</span></code> is a list, then <code class="docutils literal notranslate"><span class="pre">a[:]</span></code> will return a copy of <code class="docutils literal notranslate"><span class="pre">a</span></code>. Here is a demonstration:</p>
 <div class="cell docutils container">
@@ -2223,7 +2237,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140169852245440
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140273018182784
 </pre></div>
 </div>
 </div>
@@ -2236,7 +2250,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140169852245440
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140273018182784
 </pre></div>
 </div>
 </div>
@@ -2250,7 +2264,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140169852075840
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140273018305792
 </pre></div>
 </div>
 </div>
@@ -2272,10 +2286,10 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </section>
 </section>
 <section id="equality-and-identity-sameness">
-<h2><span class="section-number">3.5. </span>Equality and Identity/Sameness<a class="headerlink" href="#equality-and-identity-sameness" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.5. </span>Equality and Identity/Sameness<a class="headerlink" href="#equality-and-identity-sameness" title="Link to this heading">#</a></h2>
 <p>A related question concerns the equality of objects.</p>
 <section id="equality">
-<h3><span class="section-number">3.5.1. </span>Equality<a class="headerlink" href="#equality" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">3.5.1. </span>Equality<a class="headerlink" href="#equality" title="Link to this heading">#</a></h3>
 <p>The operators <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, and <code class="docutils literal notranslate"><span class="pre">!=</span></code> compare the <em>values</em> of two objects. The objects need not have the same type. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2317,7 +2331,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 <p>So the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator checks whether the values of two objects are equal.</p>
 </section>
 <section id="identity-sameness">
-<h3><span class="section-number">3.5.2. </span>Identity / Sameness<a class="headerlink" href="#identity-sameness" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">3.5.2. </span>Identity / Sameness<a class="headerlink" href="#identity-sameness" title="Link to this heading">#</a></h3>
 <p>To see check whether two objects <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are the same (i.e. <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are references to the same place in memory), we can use the <code class="docutils literal notranslate"><span class="pre">is</span></code> operator (continued from example above):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2341,7 +2355,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140169851937264
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140273017856400
 </pre></div>
 </div>
 </div>
@@ -2362,7 +2376,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 <p>which shows that <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are stored in different places in memory.</p>
 </section>
 <section id="example-equality-and-identity">
-<h3><span class="section-number">3.5.3. </span>Example: Equality and identity<a class="headerlink" href="#example-equality-and-identity" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">3.5.3. </span>Example: Equality and identity<a class="headerlink" href="#example-equality-and-identity" title="Link to this heading">#</a></h3>
 <p>We close with an example involving lists:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2398,7 +2412,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140169852257152
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140272962798912
 </pre></div>
 </div>
 </div>
@@ -2411,7 +2425,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140169852257152
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140272962798912
 </pre></div>
 </div>
 </div>
@@ -2525,7 +2539,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140169693902976
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140272962605376
 </pre></div>
 </div>
 </div>
@@ -2538,7 +2552,7 @@ in main after calling mymax(s): s=[-45, 3, 6, 6, 6]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140169852257152
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140272962798912
 </pre></div>
 </div>
 </div>
@@ -2721,7 +2735,7 @@ By Hans Fangohr
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>

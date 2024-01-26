@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>4. Introspection &#8212; Introduction to Python for Computational Science and Engineering</title>
   
@@ -29,32 +28,30 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=b749d676" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -90,13 +87,19 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = '04-introspection';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -195,7 +198,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -472,10 +486,10 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introspection">
-<h1><span class="section-number">4. </span>Introspection<a class="headerlink" href="#introspection" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">4. </span>Introspection<a class="headerlink" href="#introspection" title="Link to this heading">#</a></h1>
 <p>A Python code can ask and answer questions about itself and the objects it is manipulating.</p>
 <section id="dir">
-<h2><span class="section-number">4.1. </span>dir<a class="headerlink" href="#dir" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.1. </span>dir<a class="headerlink" href="#dir" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">dir()</span></code> is a built-in function which returns a list of all the names belonging to some namespace.</p>
 <ul class="simple">
 <li><p>If no arguments are passed to dir (i.e. <code class="docutils literal notranslate"><span class="pre">dir()</span></code>), it inspects the namespace in which it was called.</p></li>
@@ -669,7 +683,7 @@ document.write(`
 </div>
 </div>
 <section id="magic-names">
-<h3><span class="section-number">4.1.1. </span>Magic names<a class="headerlink" href="#magic-names" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">4.1.1. </span>Magic names<a class="headerlink" href="#magic-names" title="Link to this heading">#</a></h3>
 <p>You will find many names which both start and end with a double underscore (e.g. <span><code class="docutils literal notranslate"><span class="pre">__name__</span></code></span>). These are called magic names. Functions with magic names provide the implementation of particular python functionality.</p>
 <p>For example, the application of the <span><code class="docutils literal notranslate"><span class="pre">str</span></code></span> to an object <span><code class="docutils literal notranslate"><span class="pre">a</span></code></span>, i.e. <span><code class="docutils literal notranslate"><span class="pre">str(a)</span></code></span>, will – internally – result in the method <span><code class="docutils literal notranslate"><span class="pre">a.__str__()</span></code></span> being called. This method <span><code class="docutils literal notranslate"><span class="pre">__str__</span></code></span> generally needs to return a string. The idea is that the <span><code class="docutils literal notranslate"><span class="pre">__str__()</span></code></span> method should be defined for all objects (including those that derive from new classes that a programmer may create) so that all objects (independent of their type or class) can be printed using the <span><code class="docutils literal notranslate"><span class="pre">str()</span></code></span> function. The actual conversion of some object <span><code class="docutils literal notranslate"><span class="pre">x</span></code></span> to the string is then done via the object specific method <span><code class="docutils literal notranslate"><span class="pre">x.__str__()</span></code></span>.</p>
 <p>We can demonstrate this by creating a class <span><code class="docutils literal notranslate"><span class="pre">my_int</span></code></span> which inherits from the Python’s integer base class, and overrides the <span><code class="docutils literal notranslate"><span class="pre">__str__</span></code></span> method. (It requires more Python knowledge than provided up to this point in the text to be able to understand this example.)</p>
@@ -702,7 +716,7 @@ Type b =  &lt;class &#39;int&#39;&gt; str(b) =  4
 </section>
 </section>
 <section id="type">
-<h2><span class="section-number">4.2. </span>type<a class="headerlink" href="#type" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.2. </span>type<a class="headerlink" href="#type" title="Link to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">type(&lt;object&gt;)</span></code>command returns the type of an object:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -767,7 +781,7 @@ Type b =  &lt;class &#39;int&#39;&gt; str(b) =  4
 </div>
 </section>
 <section id="isinstance">
-<h2><span class="section-number">4.3. </span>isinstance<a class="headerlink" href="#isinstance" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.3. </span>isinstance<a class="headerlink" href="#isinstance" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">isinstance(&lt;object&gt;,</span> <span class="pre">&lt;typespec&gt;)</span></code> returns True if the given object is an instance of the given type, or any of its superclasses. Use <code class="docutils literal notranslate"><span class="pre">help(isinstance)</span></code> for the full syntax.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -819,7 +833,7 @@ Type b =  &lt;class &#39;int&#39;&gt; str(b) =  4
 </div>
 </section>
 <section id="help">
-<h2><span class="section-number">4.4. </span>help<a class="headerlink" href="#help" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.4. </span>help<a class="headerlink" href="#help" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">help(&lt;object&gt;)</span></code> function will report the docstring (magic attritube with name <code class="docutils literal notranslate"><span class="pre">__doc__</span></code>) of the object that it is given, sometimes complemented with additional information. In the case of functions, <code class="docutils literal notranslate"><span class="pre">help</span></code> will also show the list of arguments that the function accepts (but it cannot provide the return value).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">help()</span></code> starts an interactive help environment.</p></li>
@@ -1215,7 +1229,7 @@ math.sqrt = sqrt(...)
 </ul>
 </section>
 <section id="docstrings">
-<h2><span class="section-number">4.5. </span>Docstrings<a class="headerlink" href="#docstrings" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.5. </span>Docstrings<a class="headerlink" href="#docstrings" title="Link to this heading">#</a></h2>
 <p>The command <code class="docutils literal notranslate"><span class="pre">help(&lt;object&gt;)</span></code> accesses the documentation strings of objects.</p>
 <p>Any literal string apparing as the first item in the definition of a class, function, method or module, is taken to be its <em>docstring</em>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">help</span></code> includes the docstring in the information it displays about the object.</p>
@@ -1422,7 +1436,7 @@ By Hans Fangohr
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>

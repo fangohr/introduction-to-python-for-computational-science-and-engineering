@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>14. Numerical Python (numpy): arrays &#8212; Introduction to Python for Computational Science and Engineering</title>
   
@@ -29,32 +28,30 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=b749d676" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -90,13 +87,19 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = '14-numpy';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -195,7 +198,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -483,9 +497,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="numerical-python-numpy-arrays">
-<h1><span class="section-number">14. </span>Numerical Python (numpy): arrays<a class="headerlink" href="#numerical-python-numpy-arrays" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">14. </span>Numerical Python (numpy): arrays<a class="headerlink" href="#numerical-python-numpy-arrays" title="Link to this heading">#</a></h1>
 <section id="numpy-introduction">
-<h2><span class="section-number">14.1. </span>Numpy introduction<a class="headerlink" href="#numpy-introduction" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">14.1. </span>Numpy introduction<a class="headerlink" href="#numpy-introduction" title="Link to this heading">#</a></h2>
 <p>The NumPy package (read as NUMerical PYthon) provides access to</p>
 <ul class="simple">
 <li><p>a new data structure called <code class="docutils literal notranslate"><span class="pre">array</span></code>s which allow</p></li>
@@ -493,7 +507,7 @@ document.write(`
 <li><p>a number of linear algebra operations (such as solving of systems of linear equations, computation of Eigenvectors and Eigenvalues).</p></li>
 </ul>
 <section id="history">
-<h3><span class="section-number">14.1.1. </span>History<a class="headerlink" href="#history" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">14.1.1. </span>History<a class="headerlink" href="#history" title="Link to this heading">#</a></h3>
 <p>Some background information: There are two other implementations that provide nearly the same functionality as NumPy. These are called “Numeric” and “numarray”:</p>
 <ul class="simple">
 <li><p>Numeric was the first provision of a set of numerical methods (similar to Matlab) for Python. It evolved from a PhD project.</p></li>
@@ -503,11 +517,11 @@ document.write(`
 <p>We will use in the following materials the “NumPy” package as provided by (new) SciPy. If for some reason this doesn’t work for you, chances are that your SciPy is too old. In that case, you will find that either “Numeric” or “numarray” is installed and should provide nearly the same capabilities.[5]</p>
 </section>
 <section id="arrays">
-<h3><span class="section-number">14.1.2. </span>Arrays<a class="headerlink" href="#arrays" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">14.1.2. </span>Arrays<a class="headerlink" href="#arrays" title="Link to this heading">#</a></h3>
 <p>We introduce a new data type (provided by NumPy) which is called “<code class="docutils literal notranslate"><span class="pre">array</span></code>”. An array <em>appears</em> to be very similar to a list but an array can keep only elements of the same type (whereas a list can mix different kinds of objects). This means arrays are more efficient to store (because we don’t need to store the type for every element). It also makes arrays the data structure of choice for numerical calculations where we often deal with vectors and matricies.</p>
 <p>Vectors and matrices (and matrices with more than two indices) are all called “arrays” in NumPy.</p>
 <section id="vectors-1d-arrays">
-<h4><span class="section-number">14.1.2.1. </span>Vectors (1d-arrays)<a class="headerlink" href="#vectors-1d-arrays" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">14.1.2.1. </span>Vectors (1d-arrays)<a class="headerlink" href="#vectors-1d-arrays" title="Link to this heading">#</a></h4>
 <p>The data structure we will need most often is a vector. Here are a few examples of how we can generate one:</p>
 <ul class="simple">
 <li><p>Conversion of a list (or tuple) into an array using <span><code class="docutils literal notranslate"><span class="pre">numpy.array</span></code></span>:</p></li>
@@ -600,7 +614,7 @@ document.write(`
 </div>
 </section>
 <section id="matrices-2d-arrays">
-<h4><span class="section-number">14.1.2.2. </span>Matrices (2d-arrays)<a class="headerlink" href="#matrices-2d-arrays" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">14.1.2.2. </span>Matrices (2d-arrays)<a class="headerlink" href="#matrices-2d-arrays" title="Link to this heading">#</a></h4>
 <p>Here are two ways to create a 2d-array:</p>
 <ul class="simple">
 <li><p>By converting a list of lists (or tuples) into an array:</p></li>
@@ -735,7 +749,7 @@ document.write(`
 </section>
 </section>
 <section id="convert-from-array-to-list-or-tuple">
-<h3><span class="section-number">14.1.3. </span>Convert from array to list or tuple<a class="headerlink" href="#convert-from-array-to-list-or-tuple" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">14.1.3. </span>Convert from array to list or tuple<a class="headerlink" href="#convert-from-array-to-list-or-tuple" title="Link to this heading">#</a></h3>
 <p>To create an array back to a list or tuple, we can use the standard python functions <span><code class="docutils literal notranslate"><span class="pre">list(s)</span></code></span> and <span><code class="docutils literal notranslate"><span class="pre">tuple(s)</span></code></span> which take a sequence <span><code class="docutils literal notranslate"><span class="pre">s</span></code></span> as the input argument and return a list and tuple, respectively:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -776,9 +790,9 @@ document.write(`
 </div>
 </section>
 <section id="standard-linear-algebra-operations">
-<h3><span class="section-number">14.1.4. </span>Standard Linear Algebra operations<a class="headerlink" href="#standard-linear-algebra-operations" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">14.1.4. </span>Standard Linear Algebra operations<a class="headerlink" href="#standard-linear-algebra-operations" title="Link to this heading">#</a></h3>
 <section id="maxtrix-multiplication">
-<h4><span class="section-number">14.1.4.1. </span>Maxtrix multiplication<a class="headerlink" href="#maxtrix-multiplication" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">14.1.4.1. </span>Maxtrix multiplication<a class="headerlink" href="#maxtrix-multiplication" title="Link to this heading">#</a></h4>
 <p>Two arrays can be multiplied in the usual linear-algebra way using <span><code class="docutils literal notranslate"><span class="pre">numpy.matrixmultiply</span></code></span>. Here is an example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -793,7 +807,7 @@ document.write(`
 </div>
 </section>
 <section id="solving-systems-of-linear-equations">
-<h4><span class="section-number">14.1.4.2. </span>Solving systems of linear equations<a class="headerlink" href="#solving-systems-of-linear-equations" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">14.1.4.2. </span>Solving systems of linear equations<a class="headerlink" href="#solving-systems-of-linear-equations" title="Link to this heading">#</a></h4>
 <p>To solve a system of equations <em>A</em><strong>x</strong> = <strong>b</strong> that is given in matrix form (<em>i.e</em> <em>A</em> is a matrix and <strong>x</strong> and <strong>b</strong> are vectors where <em>A</em> and <strong>b</strong> are known and we want to find the unknown vector <strong>x</strong>), we can use the linear algebra package (<span><code class="docutils literal notranslate"><span class="pre">linalg</span></code></span>) of <span><code class="docutils literal notranslate"><span class="pre">numpy</span></code></span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -805,7 +819,7 @@ document.write(`
 </div>
 </section>
 <section id="computing-eigenvectors-and-eigenvalues">
-<h4><span class="section-number">14.1.4.3. </span>Computing Eigenvectors and Eigenvalues<a class="headerlink" href="#computing-eigenvectors-and-eigenvalues" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">14.1.4.3. </span>Computing Eigenvectors and Eigenvalues<a class="headerlink" href="#computing-eigenvectors-and-eigenvalues" title="Link to this heading">#</a></h4>
 <p>Here is a small example that computes the [trivial] Eigenvectors and Eigenvalues (<span><code class="docutils literal notranslate"><span class="pre">eig</span></code></span>) of the unity matrix (<span><code class="docutils literal notranslate"><span class="pre">eye</span></code></span>)):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -854,7 +868,7 @@ document.write(`
 <p>Note that each of these commands provides its own documentation. For example, <span><code class="docutils literal notranslate"><span class="pre">help(LA.eig)</span></code></span> will tell you all about the eigenvector and eigenvalue function (once you have imported <code class="docutils literal notranslate"><span class="pre">numpy.linalg</span></code> as <code class="docutils literal notranslate"><span class="pre">LA</span></code>).</p>
 </section>
 <section id="curve-fitting-of-polynomials">
-<h4><span class="section-number">14.1.4.4. </span>Curve fitting of polynomials<a class="headerlink" href="#curve-fitting-of-polynomials" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">14.1.4.4. </span>Curve fitting of polynomials<a class="headerlink" href="#curve-fitting-of-polynomials" title="Link to this heading">#</a></h4>
 <p>Let’s assume we have x-y data to which we like to fit a curve (to minimise the least square deviation of the fit from the data).</p>
 <p>Numpy provides the routine <span><code class="docutils literal notranslate"><span class="pre">polyfit(x,y,n)</span></code></span> (which is similar to Matlab’s <code class="docutils literal notranslate"><span class="pre">polyfit</span></code> function which takes a list <span><code class="docutils literal notranslate"><span class="pre">x</span></code></span> of x-values for data points, a list <span><code class="docutils literal notranslate"><span class="pre">y</span></code></span> of y-values of the same data points and a desired order of the polynomial that will be determined to fit the data in the least-square sense as well as possible.</p>
 <div class="cell docutils container">
@@ -899,11 +913,11 @@ document.write(`
 </section>
 </section>
 <section id="more-numpy-examples">
-<h3><span class="section-number">14.1.5. </span>More numpy examples…<a class="headerlink" href="#more-numpy-examples" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">14.1.5. </span>More numpy examples…<a class="headerlink" href="#more-numpy-examples" title="Link to this heading">#</a></h3>
 <p>…can be found here: <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.html">https://numpy.org/doc/stable/reference/routines.html</a></p>
 </section>
 <section id="numpy-for-matlab-users">
-<h3><span class="section-number">14.1.6. </span>Numpy for Matlab users<a class="headerlink" href="#numpy-for-matlab-users" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">14.1.6. </span>Numpy for Matlab users<a class="headerlink" href="#numpy-for-matlab-users" title="Link to this heading">#</a></h3>
 <p>There is a dedicated webpage that explains Numpy from the perspective of a (experienced) Matlab user at https://numpy.org/doc/stable/user/numpy-for-matlab-users.html.</p>
 </section>
 </section>
@@ -1016,7 +1030,7 @@ By Hans Fangohr
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>

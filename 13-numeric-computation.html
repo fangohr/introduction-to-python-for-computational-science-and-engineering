@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>13. Numerical Computation &#8212; Introduction to Python for Computational Science and Engineering</title>
   
@@ -29,32 +28,30 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=b749d676" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -90,13 +87,19 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = '13-numeric-computation';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -195,7 +198,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -480,9 +494,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="numerical-computation">
-<h1><span class="section-number">13. </span>Numerical Computation<a class="headerlink" href="#numerical-computation" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">13. </span>Numerical Computation<a class="headerlink" href="#numerical-computation" title="Link to this heading">#</a></h1>
 <section id="numbers-and-numbers">
-<h2><span class="section-number">13.1. </span>Numbers and numbers<a class="headerlink" href="#numbers-and-numbers" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">13.1. </span>Numbers and numbers<a class="headerlink" href="#numbers-and-numbers" title="Link to this heading">#</a></h2>
 <p>We have already seen (03 Data Types Structures, Numbers) that Python knows different <em>types</em> of numbers:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">float</span></code>ing point numbers such as 3.14</p></li>
@@ -490,9 +504,9 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">complex</span></code> numbers such as 3.14 + 1<em>j</em></p></li>
 </ul>
 <section id="limitations-of-number-types">
-<h3><span class="section-number">13.1.1. </span>Limitations of number types<a class="headerlink" href="#limitations-of-number-types" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">13.1.1. </span>Limitations of number types<a class="headerlink" href="#limitations-of-number-types" title="Link to this heading">#</a></h3>
 <section id="limitations-of-ints">
-<h4><span class="section-number">13.1.1.1. </span>Limitations of <code class="docutils literal notranslate"><span class="pre">int</span></code>s<a class="headerlink" href="#limitations-of-ints" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">13.1.1.1. </span>Limitations of <code class="docutils literal notranslate"><span class="pre">int</span></code>s<a class="headerlink" href="#limitations-of-ints" title="Link to this heading">#</a></h4>
 <p>Mathematics provides the infinite set of natural numbers ℕ = {1, 2, 3, …}. Because the computer has <em>finite</em> size, it is impossible to represent all of these numbers in the computer. Instead, only a small subset of numbers is represented.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">int</span></code>-type can (usually[3]) represent numbers between -2147483648 and +2147483647 and corresponds to 4 bytes (that’s 4*8 bit, and 2<sup>32</sup> = 4294967296 which is the range from -2147483648 and +2147483647).</p>
 <p>You can imagine that the hardware uses a table like this to encode integers using bits (suppose for simplicity we use only 8 bits for this):</p>
@@ -537,8 +551,8 @@ document.write(`
 <p>This is <em>in principle</em> how integers are represented in the computer. Depending on the number of bytes used, only integer numbers between a minimum and a maximum value can be represented. On today’s hardware, it is common to use 4 or 8 bytes to represent one integer, which leads exactly to the minimum and maximum values of -2147483648 and +2147483647 as shown above for 4 bytes, and +9223372036854775807 as the maximum integer for 8 bytes (that’s ≈9.2 ⋅ 10<sup>18</sup>).</p>
 </section>
 <section id="limitations-of-floats">
-<h4><span class="section-number">13.1.1.2. </span>Limitations of <code class="docutils literal notranslate"><span class="pre">float</span></code>s<a class="headerlink" href="#limitations-of-floats" title="Permalink to this heading">#</a></h4>
-<p>The floating point numbers in a computer are not the same as the mathematical floating point numbers. (This is exactly the same as the (mathematical) integer numbers not being the same as the integer numbers in a computer: only a <em>subset</em> of the infinite set of integer numbers can be represented by the <code class="docutils literal notranslate"><span class="pre">int</span></code> data type as shown in <span class="xref myst">Numbers and numbers</span>). So how are floating point numbers represented in the computer?</p>
+<h4><span class="section-number">13.1.1.2. </span>Limitations of <code class="docutils literal notranslate"><span class="pre">float</span></code>s<a class="headerlink" href="#limitations-of-floats" title="Link to this heading">#</a></h4>
+<p>The floating point numbers in a computer are not the same as the mathematical floating point numbers. (This is exactly the same as the (mathematical) integer numbers not being the same as the integer numbers in a computer: only a <em>subset</em> of the infinite set of integer numbers can be represented by the <code class="docutils literal notranslate"><span class="pre">int</span></code> data type as shown in <a class="reference internal" href="#Numbers-and-numbers"><span class="xref myst">Numbers and numbers</span></a>). So how are floating point numbers represented in the computer?</p>
 <ul class="simple">
 <li><p>Any real number <em>x</em> can be written as
 <em>x</em> = <em>a</em> ⋅ 10<sup><em>b</em></sup>
@@ -589,11 +603,11 @@ where <em>a</em> is the mantissa and <em>b</em> the exponent.</p></li>
 <p>Note that this is <em>in principle</em> how floating point numbers are stored (it is actually a bit more complicated).</p>
 </section>
 <section id="limitations-of-complex-numbers">
-<h4><span class="section-number">13.1.1.3. </span>Limitations of <code class="docutils literal notranslate"><span class="pre">complex</span></code> numbers<a class="headerlink" href="#limitations-of-complex-numbers" title="Permalink to this heading">#</a></h4>
-<p>The <code class="docutils literal notranslate"><span class="pre">complex</span></code> number type has essentially the same limitations as the <code class="docutils literal notranslate"><span class="pre">float</span></code> data type (see <span class="xref myst">limitations of floats</span>) because a complex number consists of two <code class="docutils literal notranslate"><span class="pre">floats</span></code>: one represents the real part, the other one the imaginary part.</p>
+<h4><span class="section-number">13.1.1.3. </span>Limitations of <code class="docutils literal notranslate"><span class="pre">complex</span></code> numbers<a class="headerlink" href="#limitations-of-complex-numbers" title="Link to this heading">#</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">complex</span></code> number type has essentially the same limitations as the <code class="docutils literal notranslate"><span class="pre">float</span></code> data type (see <a class="reference internal" href="#Limitations-of-floats"><span class="xref myst">limitations of floats</span></a>) because a complex number consists of two <code class="docutils literal notranslate"><span class="pre">floats</span></code>: one represents the real part, the other one the imaginary part.</p>
 </section>
 <section id="are-these-number-types-of-practical-value">
-<h4><span class="section-number">13.1.1.4. </span>…are these number types of practical value?<a class="headerlink" href="#are-these-number-types-of-practical-value" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">13.1.1.4. </span>…are these number types of practical value?<a class="headerlink" href="#are-these-number-types-of-practical-value" title="Link to this heading">#</a></h4>
 <p>In practice, we do not usually find numbers in our daily life that exceed 10<sup>300</sup> (this is a number with 300 zeros!), and therefore the floating point numbers cover the range of numbers we usually need.</p>
 <p>However, be warned that in scientific computation small and large numbers are used which may (often in intermediate results) exceed the range of floating point numbers.</p>
 <ul class="simple">
@@ -604,7 +618,7 @@ where <em>a</em> is the mantissa and <em>b</em> the exponent.</p></li>
 </section>
 </section>
 <section id="using-floating-point-numbers-carelessly">
-<h3><span class="section-number">13.1.2. </span>Using floating point numbers (carelessly)<a class="headerlink" href="#using-floating-point-numbers-carelessly" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">13.1.2. </span>Using floating point numbers (carelessly)<a class="headerlink" href="#using-floating-point-numbers-carelessly" title="Link to this heading">#</a></h3>
 <p>We know already that we need to take care that our floating point values do not exceed the range of floating point numbers that can be represented in the computer.</p>
 <p>There is another complication due to the way floating point numbers have to be represented internally: not all floating point numbers can be represented exactly in the computer. The number 1.0 can be represented exactly but the numbers 0.1, 0.2 and 0.3 cannot:</p>
 <div class="cell docutils container">
@@ -681,7 +695,7 @@ x=1.09999999999999987
 <p>Thus: <em>Never compare two floating point numbers for equality.</em></p>
 </section>
 <section id="using-floating-point-numbers-carefully-1">
-<h3><span class="section-number">13.1.3. </span>Using floating point numbers carefully 1<a class="headerlink" href="#using-floating-point-numbers-carefully-1" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">13.1.3. </span>Using floating point numbers carefully 1<a class="headerlink" href="#using-floating-point-numbers-carefully-1" title="Link to this heading">#</a></h3>
 <p>There are a number of alternative ways to solve this problem. For example, we can compare the distance between two floating point numbers:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -709,7 +723,7 @@ x=1.09999999999999987
 </div>
 </section>
 <section id="using-floating-point-numbers-carefully-2">
-<h3><span class="section-number">13.1.4. </span>Using floating point numbers carefully 2<a class="headerlink" href="#using-floating-point-numbers-carefully-2" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">13.1.4. </span>Using floating point numbers carefully 2<a class="headerlink" href="#using-floating-point-numbers-carefully-2" title="Link to this heading">#</a></h3>
 <p>Alternatively, we can (for this example) iterate over a sequence of integers and compute the floating point number from the integer:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -750,10 +764,10 @@ x=1.09999999999999987
 </div>
 </div>
 </div>
-<p>If we compare this with the output from the program in <span class="xref myst">Using floating point numbers (carelessly)</span>, we can see that the floating point numbers differ. This means that – in a numerical calculation – it is not true that 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 = 1.0.</p>
+<p>If we compare this with the output from the program in <a class="reference internal" href="#Using-floating-point-numbers-(carelessly)"><span class="xref myst">Using floating point numbers (carelessly)</span></a>, we can see that the floating point numbers differ. This means that – in a numerical calculation – it is not true that 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 = 1.0.</p>
 </section>
 <section id="symbolic-calculation">
-<h3><span class="section-number">13.1.5. </span>Symbolic calculation<a class="headerlink" href="#symbolic-calculation" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">13.1.5. </span>Symbolic calculation<a class="headerlink" href="#symbolic-calculation" title="Link to this heading">#</a></h3>
 <p>Using the sympy package we have arbitrary precision. Using <span><code class="docutils literal notranslate"><span class="pre">sympy.Rational</span></code></span>, we can define the fraction 1/10 exactly symbolically. Adding this 10 times will lead exactly to the value 1, as demonstrated by this script</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -834,13 +848,13 @@ Current x=   1 = 1.0
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>loop using float dx:
  deviation is -1.88483681995422e-08
-float loop n=100000 takes 0.00247 seconds
+float loop n=100000 takes 0.00241 seconds
 loop using sympy symbolic dx:
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> deviation is                0
-sympy loop n = 100000 takes 0.19935 seconds
-Symbolic loop is a factor 80.6 slower.
+sympy loop n = 100000 takes 0.19727 seconds
+Symbolic loop is a factor 81.9 slower.
 </pre></div>
 </div>
 </div>
@@ -848,7 +862,7 @@ Symbolic loop is a factor 80.6 slower.
 <p>This is of course an artificial example: we have added the symbolic code to demonstrate that these round off errors originate from the approximative representation of floating point numbers in the hardware (and thus programming languages). We can, in principle, avoid these complications by computing using symbolic expressions, but this is in practice too slow.[4]</p>
 </section>
 <section id="summary">
-<h3><span class="section-number">13.1.6. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">13.1.6. </span>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h3>
 <p>In summary, we have learned that</p>
 <ul class="simple">
 <li><p>floating point numbers and integers used in numeric computation are generally quite different from “mathematical numbers” (symbolic calculations are exact and use the “mathematical numbers”):</p>
@@ -867,7 +881,7 @@ Symbolic loop is a factor 80.6 slower.
 </ul>
 </section>
 <section id="exercise-infinite-or-finite-loop">
-<h3><span class="section-number">13.1.7. </span>Exercise: infinite or finite loop<a class="headerlink" href="#exercise-infinite-or-finite-loop" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">13.1.7. </span>Exercise: infinite or finite loop<a class="headerlink" href="#exercise-infinite-or-finite-loop" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>What does the following piece of code compute? Will the loop ever finish? Why?</p></li>
 </ol>
@@ -985,7 +999,7 @@ By Hans Fangohr
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>

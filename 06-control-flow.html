@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>6. Control Flow &#8212; Introduction to Python for Computational Science and Engineering</title>
   
@@ -29,32 +28,30 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=b749d676" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -90,13 +87,19 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = '06-control-flow';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -195,7 +198,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -459,7 +473,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-then-else">6.2. If-then-else</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loop">6.3. For loop</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loop">6.4. While loop</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relational-operators-comparisons-in-span-if-span-and-span-while-span-statements">6.5. Relational operators (comparisons) in <span><code class="docutils literal notranslate"><span class="pre">if</span></code></span> and <span><code class="docutils literal notranslate"><span class="pre">while</span></code></span> statements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relational-operators-comparisons-in-if-and-while-statements">6.5. Relational operators (comparisons) in <span><code class="docutils literal notranslate"><span class="pre">if</span></code></span> and <span><code class="docutils literal notranslate"><span class="pre">while</span></code></span> statements</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exceptions">6.6. Exceptions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#raising-exceptions">6.6.1. Raising Exceptions</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exception-hierarchy">6.6.1.1. Exception hierarchy</a></li>
@@ -481,9 +495,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="control-flow">
-<h1><span class="section-number">6. </span>Control Flow<a class="headerlink" href="#control-flow" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">6. </span>Control Flow<a class="headerlink" href="#control-flow" title="Link to this heading">#</a></h1>
 <section id="basics">
-<h2><span class="section-number">6.1. </span>Basics<a class="headerlink" href="#basics" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.1. </span>Basics<a class="headerlink" href="#basics" title="Link to this heading">#</a></h2>
 <p>For a given file with a python program, the python interpreter will start at the top and then process the file. We demonstrate this with a simple program, for example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -511,7 +525,7 @@ In last line of program -- bye
 <p>The interpreter then moves on to line 7 before the program ends.</p>
 <p>We will now learn about different possibilities to direct this control flow further.</p>
 <section id="conditionals">
-<h3><span class="section-number">6.1.1. </span>Conditionals<a class="headerlink" href="#conditionals" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.1.1. </span>Conditionals<a class="headerlink" href="#conditionals" title="Link to this heading">#</a></h3>
 <p>The python values <span><code class="docutils literal notranslate"><span class="pre">True</span></code></span> and <span><code class="docutils literal notranslate"><span class="pre">False</span></code></span> are special inbuilt objects:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -775,7 +789,7 @@ In last line of program -- bye
 </section>
 </section>
 <section id="if-then-else">
-<h2><span class="section-number">6.2. </span>If-then-else<a class="headerlink" href="#if-then-else" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.2. </span>If-then-else<a class="headerlink" href="#if-then-else" title="Link to this heading">#</a></h2>
 <p><strong>Further information</strong></p>
 <ul class="simple">
 <li><p>Introduction to If-then in <a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html#if-statements">Python tutorial, section 4.1</a></p></li>
@@ -833,7 +847,7 @@ In last line of program -- bye
 </div>
 </section>
 <section id="for-loop">
-<h2><span class="section-number">6.3. </span>For loop<a class="headerlink" href="#for-loop" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.3. </span>For loop<a class="headerlink" href="#for-loop" title="Link to this heading">#</a></h2>
 <p><strong>Further information</strong></p>
 <ul class="simple">
 <li><p>Introduction to for-loops in <a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html#for-statements">Python tutorial, section 4.2</a></p></li>
@@ -874,7 +888,7 @@ mouse MOUSE
 </div>
 </section>
 <section id="while-loop">
-<h2><span class="section-number">6.4. </span>While loop<a class="headerlink" href="#while-loop" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.4. </span>While loop<a class="headerlink" href="#while-loop" title="Link to this heading">#</a></h2>
 <p>The <span><code class="docutils literal notranslate"><span class="pre">while</span></code></span> keyword allows to repeat an operation while a condition is true. Suppose we’d like to know for how many years we have to keep 100 pounds on a savings account to reach 200 pounds simply due to annual payment of interest at a rate of 5%. Here is a program to compute that this will take 15 years:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -895,8 +909,8 @@ mouse MOUSE
 </div>
 </div>
 </section>
-<section id="relational-operators-comparisons-in-span-if-span-and-span-while-span-statements">
-<h2><span class="section-number">6.5. </span>Relational operators (comparisons) in <span><code class="docutils literal notranslate"><span class="pre">if</span></code></span> and <span><code class="docutils literal notranslate"><span class="pre">while</span></code></span> statements<a class="headerlink" href="#relational-operators-comparisons-in-span-if-span-and-span-while-span-statements" title="Permalink to this heading">#</a></h2>
+<section id="relational-operators-comparisons-in-if-and-while-statements">
+<h2><span class="section-number">6.5. </span>Relational operators (comparisons) in <span><code class="docutils literal notranslate"><span class="pre">if</span></code></span> and <span><code class="docutils literal notranslate"><span class="pre">while</span></code></span> statements<a class="headerlink" href="#relational-operators-comparisons-in-if-and-while-statements" title="Link to this heading">#</a></h2>
 <p>The general form of <span><code class="docutils literal notranslate"><span class="pre">if</span></code></span> statements and <span><code class="docutils literal notranslate"><span class="pre">while</span></code></span> loops is the same: following the keyword <span><code class="docutils literal notranslate"><span class="pre">if</span></code></span> or <span><code class="docutils literal notranslate"><span class="pre">while</span></code></span>, there is a <em>condition</em> followed by a colon. In the next line, a new (and thus indented!) block of commands starts that is executed if the condition is True).</p>
 <p>For example, the condition could be equality of two variables <span><code class="docutils literal notranslate"><span class="pre">a1</span></code></span> and <span><code class="docutils literal notranslate"><span class="pre">a2</span></code></span> which is expressed as <span><code class="docutils literal notranslate"><span class="pre">a1==a2</span></code></span>:</p>
 <div class="cell docutils container">
@@ -994,7 +1008,7 @@ mouse MOUSE
 </div>
 </section>
 <section id="exceptions">
-<h2><span class="section-number">6.6. </span>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.6. </span>Exceptions<a class="headerlink" href="#exceptions" title="Link to this heading">#</a></h2>
 <p>Even if a statement or expression is syntactically correct, it may cause an error when an attempt is made to execute it. Errors detected during execution are called <em>exceptions</em> and are not necessarily fatal: exceptions can be <em>caught</em> and dealt with within the program. Most exceptions are not handled by programs, however, and result in error messages as shown here</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
@@ -1130,7 +1144,7 @@ mouse MOUSE
 </div>
 <p>There is a lot more to be said about exceptions and their use in larger programs. Start reading <a class="reference external" href="https://docs.python.org/3/tutorial/errors.html#errors-and-exceptions">Python Tutorial Chapter 8: Errors and Exceptions</a> if you are interested.</p>
 <section id="raising-exceptions">
-<h3><span class="section-number">6.6.1. </span>Raising Exceptions<a class="headerlink" href="#raising-exceptions" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.6.1. </span>Raising Exceptions<a class="headerlink" href="#raising-exceptions" title="Link to this heading">#</a></h3>
 <p>Raising exception is also referred to as ’throwing an exception’.</p>
 <p>Possibilities of raising an Exception</p>
 <ul class="simple">
@@ -1140,20 +1154,20 @@ mouse MOUSE
 <li><p><code class="docutils literal notranslate"><span class="pre">e</span> <span class="pre">=</span> <span class="pre">OverflowError(&quot;Bath</span> <span class="pre">is</span> <span class="pre">full&quot;);</span> <span class="pre">raise</span> <span class="pre">e</span></code></p></li>
 </ul>
 <section id="exception-hierarchy">
-<h4><span class="section-number">6.6.1.1. </span>Exception hierarchy<a class="headerlink" href="#exception-hierarchy" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">6.6.1.1. </span>Exception hierarchy<a class="headerlink" href="#exception-hierarchy" title="Link to this heading">#</a></h4>
 <p>The standard exceptions are organized in an inheritance hierarchy e.g. OverflowError is a subclass of ArithmeticError (not BathroomError); this can be seen when looking at <span><code class="docutils literal notranslate"><span class="pre">help(’exceptions’)</span></code></span> for example.</p>
 <p>You can derive your own exceptions from any of the standard ones. It is good style to have each module define its own base exception.</p>
 </section>
 </section>
 <section id="creating-our-own-exceptions">
-<h3><span class="section-number">6.6.2. </span>Creating our own exceptions<a class="headerlink" href="#creating-our-own-exceptions" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.6.2. </span>Creating our own exceptions<a class="headerlink" href="#creating-our-own-exceptions" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>You can and should derive your own exceptions from the built-in Exception.</p></li>
 <li><p>To see what built-in exceptions exist, look in the module exceptions (try <span><code class="docutils literal notranslate"><span class="pre">help(’exceptions’)</span></code></span>), or go to <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#bltin-exceptions">https://docs.python.org/3/library/exceptions.html#bltin-exceptions</a>.</p></li>
 </ul>
 </section>
 <section id="lbyl-vs-eafp">
-<h3><span class="section-number">6.6.3. </span>LBYL vs EAFP<a class="headerlink" href="#lbyl-vs-eafp" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">6.6.3. </span>LBYL vs EAFP<a class="headerlink" href="#lbyl-vs-eafp" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>LBYL (Look Before You Leap) vs</p></li>
 <li><p>EAFP (Easier to ask forgiveness than permission)</p></li>
@@ -1285,7 +1299,7 @@ mouse MOUSE
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-then-else">6.2. If-then-else</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loop">6.3. For loop</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loop">6.4. While loop</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relational-operators-comparisons-in-span-if-span-and-span-while-span-statements">6.5. Relational operators (comparisons) in <span><code class="docutils literal notranslate"><span class="pre">if</span></code></span> and <span><code class="docutils literal notranslate"><span class="pre">while</span></code></span> statements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relational-operators-comparisons-in-if-and-while-statements">6.5. Relational operators (comparisons) in <span><code class="docutils literal notranslate"><span class="pre">if</span></code></span> and <span><code class="docutils literal notranslate"><span class="pre">while</span></code></span> statements</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exceptions">6.6. Exceptions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#raising-exceptions">6.6.1. Raising Exceptions</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exception-hierarchy">6.6.1.1. Exception hierarchy</a></li>
@@ -1319,7 +1333,7 @@ By Hans Fangohr
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>

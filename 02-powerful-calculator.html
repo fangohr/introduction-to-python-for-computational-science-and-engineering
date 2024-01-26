@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>2. A powerful calculator &#8212; Introduction to Python for Computational Science and Engineering</title>
   
@@ -29,32 +28,30 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=b749d676" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -90,13 +87,19 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '02-powerful-calculator';</script>
@@ -197,7 +200,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -482,9 +496,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="a-powerful-calculator">
-<h1><span class="section-number">2. </span>A powerful calculator<a class="headerlink" href="#a-powerful-calculator" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">2. </span>A powerful calculator<a class="headerlink" href="#a-powerful-calculator" title="Link to this heading">#</a></h1>
 <section id="python-prompt-and-read-eval-print-loop-repl">
-<h2><span class="section-number">2.1. </span>Python prompt and Read-Eval-Print Loop (REPL)<a class="headerlink" href="#python-prompt-and-read-eval-print-loop-repl" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.1. </span>Python prompt and Read-Eval-Print Loop (REPL)<a class="headerlink" href="#python-prompt-and-read-eval-print-loop-repl" title="Link to this heading">#</a></h2>
 <p>Python is an <em>interpreted</em> language. We can collect sequences of commands into text files and save this to file as a <em>Python program</em>. It is convention that these files have the file extension “<code class="docutils literal notranslate"><span class="pre">.py</span></code>”, for example <code class="docutils literal notranslate"><span class="pre">hello.py</span></code>.</p>
 <p>We can also enter individual commands at the Python prompt which are immediately evaluated and carried out by the Python interpreter. This is very useful for the programmer/learner to understand how to use certain commands (often before one puts these commands together in a longer Python program). Python’s role can be described as Reading the command, Evaluating it, Printing the evaluated value and repeating (Loop) the cycle – this is the origin of the REPL abbreviation.</p>
 <p>Python comes with a basic terminal prompt; you may see examples from this with <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> marking the input:</p>
@@ -508,7 +522,7 @@ document.write(`
 <p>To edit the code, click inside the code area. You should get a green border around it. To run it, press Shift-Enter.</p>
 </section>
 <section id="calculator">
-<h2><span class="section-number">2.2. </span>Calculator<a class="headerlink" href="#calculator" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.2. </span>Calculator<a class="headerlink" href="#calculator" title="Link to this heading">#</a></h2>
 <p>Basic operations such as addition (<code class="docutils literal notranslate"><span class="pre">+</span></code>), subtraction (<code class="docutils literal notranslate"><span class="pre">-</span></code>), multiplication (<code class="docutils literal notranslate"><span class="pre">*</span></code>), division (<code class="docutils literal notranslate"><span class="pre">/</span></code>) and exponentiation (<code class="docutils literal notranslate"><span class="pre">**</span></code>) work (mostly) as expected:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -671,7 +685,7 @@ document.write(`
 </div>
 </section>
 <section id="integer-division">
-<h2><span class="section-number">2.3. </span>Integer division<a class="headerlink" href="#integer-division" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.3. </span>Integer division<a class="headerlink" href="#integer-division" title="Link to this heading">#</a></h2>
 <p>In Python 3, division works as you’d expect:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -686,10 +700,10 @@ document.write(`
 </div>
 </div>
 <p>In Python 2, however, <code class="docutils literal notranslate"><span class="pre">15/6</span></code> will give you <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p>
-<p>This phenomenon is known (in many programming languages, including C) as <em>integer division</em>: because we provide two integer numbers (<code class="docutils literal notranslate"><span class="pre">15</span></code> and <code class="docutils literal notranslate"><span class="pre">6</span></code>) to the division operator (<code class="docutils literal notranslate"><span class="pre">/</span></code>), the assumption is that we seek a return value of type integer. The mathematically correct answer is (the floating point number) 2.5. (→ numerical data types in <a class="reference internal" href="13-numeric-computation.html"><span class="doc std std-doc">Chapter 13</span></a>.)</p>
+<p>This phenomenon is known (in many programming languages, including C) as <em>integer division</em>: because we provide two integer numbers (<code class="docutils literal notranslate"><span class="pre">15</span></code> and <code class="docutils literal notranslate"><span class="pre">6</span></code>) to the division operator (<code class="docutils literal notranslate"><span class="pre">/</span></code>), the assumption is that we seek a return value of type integer. The mathematically correct answer is (the floating point number) 2.5. (→ numerical data types in <a class="reference internal" href="13-numeric-computation.html"><span class="std std-doc">Chapter 13</span></a>.)</p>
 <p>The convention for integer division is to truncate the fractional digits and to return the integer part only (i.e. <code class="docutils literal notranslate"><span class="pre">2</span></code> in this example). It is also called “floor division”.</p>
 <section id="how-to-avoid-integer-division">
-<h3><span class="section-number">2.3.1. </span>How to avoid integer division<a class="headerlink" href="#how-to-avoid-integer-division" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.3.1. </span>How to avoid integer division<a class="headerlink" href="#how-to-avoid-integer-division" title="Link to this heading">#</a></h3>
 <p>There are two ways to avoid the problem of integer division:</p>
 <ol class="arabic">
 <li><p>Use Python 3 style division: this is available even in Python 2 with a special import statement:</p>
@@ -717,7 +731,7 @@ document.write(`
 <p>If we really want integer division, we can use <code class="docutils literal notranslate"><span class="pre">//</span></code>: <code class="docutils literal notranslate"><span class="pre">1//2</span></code> returns 0, in both Python 2 and 3.</p>
 </section>
 <section id="why-should-i-care-about-this-division-problem">
-<h3><span class="section-number">2.3.2. </span>Why should I care about this division problem?<a class="headerlink" href="#why-should-i-care-about-this-division-problem" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.3.2. </span>Why should I care about this division problem?<a class="headerlink" href="#why-should-i-care-about-this-division-problem" title="Link to this heading">#</a></h3>
 <p>Integer division can result in surprising bugs: suppose you are writing code to compute the mean value <em>m</em> = (<em>x</em> + <em>y</em>)/2 of two numbers <em>x</em> and <em>y</em>. The first attempt of writing this may read:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
 </pre></div>
@@ -735,7 +749,7 @@ document.write(`
 </section>
 </section>
 <section id="mathematical-functions">
-<h2><span class="section-number">2.4. </span>Mathematical functions<a class="headerlink" href="#mathematical-functions" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.4. </span>Mathematical functions<a class="headerlink" href="#mathematical-functions" title="Link to this heading">#</a></h2>
 <p>Because Python is a general purpose programming language, commonly used mathematical functions such as sin, cos, exp, log and many others are located in the mathematics module with name <code class="docutils literal notranslate"><span class="pre">math</span></code>. We can make use of this as soon as we <em>import</em> the math module:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -896,7 +910,7 @@ exp(x, /)
 </div>
 </section>
 <section id="variables">
-<h2><span class="section-number">2.5. </span>Variables<a class="headerlink" href="#variables" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.5. </span>Variables<a class="headerlink" href="#variables" title="Link to this heading">#</a></h2>
 <p>A <em>variable</em> can be used to store a certain value or object. In Python, all numbers (and everything else, including functions, modules and files) are objects. A variable is created through assignement:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1061,7 +1075,7 @@ exp(x, /)
 </div>
 <p>This variable should be treated as read-only by the user. Don’t explicitly assign a value to it — you would create an independent local variable with the same name masking the built-in variable with its magic behavior.</p>
 <section id="terminology">
-<h3><span class="section-number">2.5.1. </span>Terminology<a class="headerlink" href="#terminology" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.5.1. </span>Terminology<a class="headerlink" href="#terminology" title="Link to this heading">#</a></h3>
 <p>Strictly speaking, the following happens when we write</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1071,11 +1085,11 @@ exp(x, /)
 </div>
 </div>
 <p>First, Python creates the object <code class="docutils literal notranslate"><span class="pre">0.5</span></code>. Everything in Python is an object, and so is the floating point number 0.5. This object is stored somewhere in memory. Next, Python <em>binds a name to the object</em>. The name is <code class="docutils literal notranslate"><span class="pre">x</span></code>, and we often refer casually to <code class="docutils literal notranslate"><span class="pre">x</span></code> as a variable, an object, or even the value 0.5. However, technically, <code class="docutils literal notranslate"><span class="pre">x</span></code> is a name that is bound to the object <code class="docutils literal notranslate"><span class="pre">0.5</span></code>. Another way to say this is that <code class="docutils literal notranslate"><span class="pre">x</span></code> is a reference to the object.</p>
-<p>While it is often sufficient to think about assigning 0.5 to a variable x, there are situations where we need to remember what actually happens. In particular, when we pass references to objects to functions, we need to realise that the function may operate on the object (rather than a copy of the object). This is discussed in more detail in <a class="reference internal" href="03-data-types-structures.html"><span class="doc std std-doc">the next chapter</span></a>.</p>
+<p>While it is often sufficient to think about assigning 0.5 to a variable x, there are situations where we need to remember what actually happens. In particular, when we pass references to objects to functions, we need to realise that the function may operate on the object (rather than a copy of the object). This is discussed in more detail in <a class="reference internal" href="03-data-types-structures.html"><span class="std std-doc">the next chapter</span></a>.</p>
 </section>
 </section>
 <section id="impossible-equations">
-<h2><span class="section-number">2.6. </span>Impossible equations<a class="headerlink" href="#impossible-equations" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.6. </span>Impossible equations<a class="headerlink" href="#impossible-equations" title="Link to this heading">#</a></h2>
 <p>In computer programs we often find statements like</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1118,7 +1132,7 @@ We know this is not true, so something is wrong here.</p>
 </div>
 </div>
 <section id="the-notation">
-<h3><span class="section-number">2.6.1. </span>The <code class="docutils literal notranslate"><span class="pre">+=</span></code> notation<a class="headerlink" href="#the-notation" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.6.1. </span>The <code class="docutils literal notranslate"><span class="pre">+=</span></code> notation<a class="headerlink" href="#the-notation" title="Link to this heading">#</a></h3>
 <p>Because it is a quite a common operation to increase a variable <code class="docutils literal notranslate"><span class="pre">x</span></code> by some fixed amount <code class="docutils literal notranslate"><span class="pre">c</span></code>, we can write</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">+=</span> <span class="n">c</span>
 </pre></div>
@@ -1268,7 +1282,7 @@ By Hans Fangohr
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>

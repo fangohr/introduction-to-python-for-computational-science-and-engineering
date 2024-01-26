@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>16. Numerical Methods using Python (scipy) &#8212; Introduction to Python for Computational Science and Engineering</title>
   
@@ -29,32 +28,30 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=b749d676" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -90,13 +87,19 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '16-scipy';</script>
@@ -197,7 +200,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -489,9 +503,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="numerical-methods-using-python-scipy">
-<h1><span class="section-number">16. </span>Numerical Methods using Python (scipy)<a class="headerlink" href="#numerical-methods-using-python-scipy" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">16. </span>Numerical Methods using Python (scipy)<a class="headerlink" href="#numerical-methods-using-python-scipy" title="Link to this heading">#</a></h1>
 <section id="overview">
-<h2><span class="section-number">16.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">16.1. </span>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
 <p>The core Python language (including the standard libraries) provide enough functionality to carry out computational research tasks. However, there are dedicated (third-party) Python libraries that provide extended functionality which</p>
 <ul class="simple">
 <li><p>provide numerical tools for frequently occurring tasks</p></li>
@@ -500,15 +514,15 @@ document.write(`
 </ul>
 <p>We list three such modules in particular:</p>
 <ul class="simple">
-<li><p>The <code class="docutils literal notranslate"><span class="pre">numpy</span></code> module provides a data type specialised for “number crunching” of vectors and matrices (this is the <code class="docutils literal notranslate"><span class="pre">array</span></code> type provided by “<code class="docutils literal notranslate"><span class="pre">numpy</span></code>” as introduced in <a class="reference internal" href="14-numpy.html"><span class="doc std std-doc">14-numpy.ipynb</span></a>), and linear algebra tools.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> package (also knows as <code class="docutils literal notranslate"><span class="pre">pylab</span></code>) provides plotting and visualisation capabilities (see <a class="reference internal" href="15-visualising-data.html"><span class="doc std std-doc">15-visualising-data.ipynb</span></a>) and the</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">numpy</span></code> module provides a data type specialised for “number crunching” of vectors and matrices (this is the <code class="docutils literal notranslate"><span class="pre">array</span></code> type provided by “<code class="docutils literal notranslate"><span class="pre">numpy</span></code>” as introduced in <a class="reference internal" href="14-numpy.html"><span class="std std-doc">14-numpy.ipynb</span></a>), and linear algebra tools.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> package (also knows as <code class="docutils literal notranslate"><span class="pre">pylab</span></code>) provides plotting and visualisation capabilities (see <a class="reference internal" href="15-visualising-data.html"><span class="std std-doc">15-visualising-data.ipynb</span></a>) and the</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">scipy</span></code> package (SCIentific PYthon) which provides a multitude of numerical algorithms and which is introduced in this chapter.</p></li>
 </ul>
 <p>Many of the numerical algorithms available through <code class="docutils literal notranslate"><span class="pre">scipy</span></code> and <code class="docutils literal notranslate"><span class="pre">numpy</span></code> are provided by established compiled libraries which are often written in Fortran or C. They will thus execute much faster than pure Python code (which is interpreted). As a rule of thumb, we expect compiled code to be two orders of magnitude faster than pure Python code.</p>
 <p>You can use the help function for each numerical method to find out more about the source of the implementation.</p>
 </section>
 <section id="scipy">
-<h2><span class="section-number">16.2. </span>SciPy<a class="headerlink" href="#scipy" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">16.2. </span>SciPy<a class="headerlink" href="#scipy" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Scipy</span></code> provides many scientific computing functions and is generally complementary to the the functionality of <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p>
 <p>First we need to import <code class="docutils literal notranslate"><span class="pre">scipy</span></code>:</p>
 <div class="cell docutils container">
@@ -625,7 +639,7 @@ The solvers are implemented as individual classes which can be used directly
 <p>The following sections show examples which demonstrate how to employ the algorithms provided by <code class="docutils literal notranslate"><span class="pre">scipy</span></code>.</p>
 </section>
 <section id="numerical-integration">
-<h2><span class="section-number">16.3. </span>Numerical integration<a class="headerlink" href="#numerical-integration" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">16.3. </span>Numerical integration<a class="headerlink" href="#numerical-integration" title="Link to this heading">#</a></h2>
 <p>Scientific Python provides a number of integration routines. A general purpose tool to solve integrals <em>I</em> of the kind</p>
 <div class="math notranslate nohighlight">
 \[I=\int_a^b f(x) \mathrm{d} x\]</div>
@@ -658,7 +672,7 @@ The solvers are implemented as individual classes which can be used directly
 </div>
 <p>Note that <code class="docutils literal notranslate"><span class="pre">quad()</span></code> takes optional parameters <code class="docutils literal notranslate"><span class="pre">epsabs</span></code> and <code class="docutils literal notranslate"><span class="pre">epsrel</span></code> to increase or decrease the accuracy of its computation. (Use <code class="docutils literal notranslate"><span class="pre">help(quad)</span></code> to learn more.) The default values are <code class="docutils literal notranslate"><span class="pre">epsabs=1.5e-8</span></code> and <code class="docutils literal notranslate"><span class="pre">epsrel=1.5e-8</span></code>. For the next exercise, the default values are sufficient.</p>
 <section id="exercise-integrate-a-function">
-<h3><span class="section-number">16.3.1. </span>Exercise: integrate a function<a class="headerlink" href="#exercise-integrate-a-function" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">16.3.1. </span>Exercise: integrate a function<a class="headerlink" href="#exercise-integrate-a-function" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Using scipy’s <code class="docutils literal notranslate"><span class="pre">quad</span></code> function, write a program that solves the following integral numerically: <span class="math notranslate nohighlight">\(I = \int
 _0^1\cos(2\pi x) dx\)</span>.</p></li>
@@ -667,7 +681,7 @@ _0^1\cos(2\pi x) dx\)</span>.</p></li>
 </ol>
 </section>
 <section id="exercise-plot-before-you-integrate">
-<h3><span class="section-number">16.3.2. </span>Exercise: plot before you integrate<a class="headerlink" href="#exercise-plot-before-you-integrate" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">16.3.2. </span>Exercise: plot before you integrate<a class="headerlink" href="#exercise-plot-before-you-integrate" title="Link to this heading">#</a></h3>
 <p>It is good practice to plot the integrand function to check whether it is “well behaved” before you attempt to integrate. Singularities (i.e. <span class="math notranslate nohighlight">\(x\)</span> values where the <span class="math notranslate nohighlight">\(f(x)\)</span> tends towards minus or plus infinity) or other irregular behaviour (such as <span class="math notranslate nohighlight">\(f(x)=\sin(\frac{1}{x}\)</span>) close to <span class="math notranslate nohighlight">\(x = 0\)</span> are difficult to handle numerically.</p>
 <ol class="arabic simple">
 <li><p>Write a function with name <code class="docutils literal notranslate"><span class="pre">plotquad</span></code> which takes the same arguments as the quad command (<em>i.e.</em> <span class="math notranslate nohighlight">\(f\)</span>, <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>) and which</p></li>
@@ -693,7 +707,7 @@ _0^1\cos(2\pi x) dx\)</span>.</p></li>
 </section>
 </section>
 <section id="solving-ordinary-differential-equations-odes">
-<h2><span class="section-number">16.4. </span>Solving Ordinary Differential Equations (ODEs)<a class="headerlink" href="#solving-ordinary-differential-equations-odes" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">16.4. </span>Solving Ordinary Differential Equations (ODEs)<a class="headerlink" href="#solving-ordinary-differential-equations-odes" title="Link to this heading">#</a></h2>
 <p>To solve an ordinary differential equation of the type
 $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}y}{\mathrm{d}t}(t) = f(t, y)\)</span>$</p>
 <p>with a given <span class="math notranslate nohighlight">\(y(t_0)=y_0\)</span>, we can use <code class="docutils literal notranslate"><span class="pre">scipy</span></code>’s <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> function. Here is a (self explaining) example program (<code class="docutils literal notranslate"><span class="pre">usesolve_ivp.py</span></code>) to find</p>
@@ -726,7 +740,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}y}{\mathrm{d}t}(t)
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;y(t)&#39;)
 </pre></div>
 </div>
-<img alt="_images/9ac0265f7296d9a0e728eccf5da1eb0c2ed73325ae4b65b43076912aed41a71c.svg" src="_images/9ac0265f7296d9a0e728eccf5da1eb0c2ed73325ae4b65b43076912aed41a71c.svg" /></div>
+<img alt="_images/c8b06985a204775e222f58531370dc9630afa0e635794a2598bf3dc73dc1e063.svg" src="_images/c8b06985a204775e222f58531370dc9630afa0e635794a2598bf3dc73dc1e063.svg" /></div>
 </div>
 <p>We have not given the <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> command any guidance for which values of <span class="math notranslate nohighlight">\(t\)</span> we would like to know the solution <span class="math notranslate nohighlight">\(y(t)\)</span>: we have only specified that <span class="math notranslate nohighlight">\(t_0 = 0\)</span> and that we would like to know the solution between <span class="math notranslate nohighlight">\(t_0=0\)</span> and <span class="math notranslate nohighlight">\(t_y=2\)</span>. The solver itself has determined the number of required function evaluations, and returns the corresponding values in <code class="docutils literal notranslate"><span class="pre">sol.t</span></code> and <code class="docutils literal notranslate"><span class="pre">sol.y[0]</span></code>.</p>
 <p>We can obtain more data points in a number of ways:</p>
@@ -746,7 +760,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}y}{\mathrm{d}t}(t)
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;y(t)&#39;)
 </pre></div>
 </div>
-<img alt="_images/af6e8199e372a698ac6187a9be679ef72a2b19909403cb3dd8d32963a8ec10c8.svg" src="_images/af6e8199e372a698ac6187a9be679ef72a2b19909403cb3dd8d32963a8ec10c8.svg" /></div>
+<img alt="_images/93bf53515bab73b1199c62986821afc61076cdc574ef900da1aaa267019aea81.svg" src="_images/93bf53515bab73b1199c62986821afc61076cdc574ef900da1aaa267019aea81.svg" /></div>
 </div>
 <ol class="arabic simple" start="2">
 <li><p>We can also prescribe the precise locations for which we like to know the solutions <span class="math notranslate nohighlight">\(y(t)\)</span>:</p></li>
@@ -769,7 +783,7 @@ $<span class="math notranslate nohighlight">\(\frac{\mathrm{d}y}{\mathrm{d}t}(t)
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;y(t)&#39;)
 </pre></div>
 </div>
-<img alt="_images/63449676370ae25c94b3ea6a423241de2dfa58e8fba2dab6e8311e87416a3ed3.svg" src="_images/63449676370ae25c94b3ea6a423241de2dfa58e8fba2dab6e8311e87416a3ed3.svg" /></div>
+<img alt="_images/deed04b8a13ae07d4725e3fcaff080f9da838035c48c0c2efa881bdf0d951c09.svg" src="_images/deed04b8a13ae07d4725e3fcaff080f9da838035c48c0c2efa881bdf0d951c09.svg" /></div>
 </div>
 <p>If we use <code class="docutils literal notranslate"><span class="pre">t_eval</span></code> - and thus request values of the solution at particular points - <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> will not generally change the way it computes the solution, but rather use interpolation to map the way it has internally computed the solution to the values of t for which we would like to know the solution. There is thus no (significant) computational penalty if we use <code class="docutils literal notranslate"><span class="pre">t_eval</span></code> to get smoother looking plots.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> command returns a <code class="docutils literal notranslate"><span class="pre">OdeResult</span></code> object, which we have called <code class="docutils literal notranslate"><span class="pre">sol</span></code> in the example above.</p>
@@ -1098,7 +1112,7 @@ solve_ivp(fun, t_span, y0, method=&#39;RK45&#39;, t_eval=None, dense_output=Fals
 </pre></div>
 </div>
 <section id="systems-of-coupled-odes">
-<h3><span class="section-number">16.4.1. </span>Systems of coupled ODEs<a class="headerlink" href="#systems-of-coupled-odes" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">16.4.1. </span>Systems of coupled ODEs<a class="headerlink" href="#systems-of-coupled-odes" title="Link to this heading">#</a></h3>
 <p>We want to show one example of two first-order ODEs that are coupled. This helps to understand why the initial value <code class="docutils literal notranslate"><span class="pre">y0</span></code> in the above example had to be provided in a list (<code class="docutils literal notranslate"><span class="pre">[y0]</span></code>) and why the solution is <code class="docutils literal notranslate"><span class="pre">sol.y[0]</span></code> rather than just <code class="docutils literal notranslate"><span class="pre">sol.y</span></code>.</p>
 <p>We use the <a class="reference external" href="http://www.scholarpedia.org/article/Predator-prey_model">Predator and prey example</a>. Let</p>
 <ul class="simple">
@@ -1165,18 +1179,18 @@ solve_ivp(fun, t_span, y0, method=&#39;RK45&#39;, t_eval=None, dense_output=Fals
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c861f5a14c12db5d12e443ee1ce7c838e866accf11e2184fe8e989072317a81a.svg" src="_images/c861f5a14c12db5d12e443ee1ce7c838e866accf11e2184fe8e989072317a81a.svg" /></div>
+<img alt="_images/2b732cfc14bd15575ecbc2698f9278cce1c102d9abc02450faef217e64cb58e5.svg" src="_images/2b732cfc14bd15575ecbc2698f9278cce1c102d9abc02450faef217e64cb58e5.svg" /></div>
 </div>
 </section>
 </section>
 <section id="root-finding">
-<h2><span class="section-number">16.5. </span>Root finding<a class="headerlink" href="#root-finding" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">16.5. </span>Root finding<a class="headerlink" href="#root-finding" title="Link to this heading">#</a></h2>
 <p>If you try to find a <span class="math notranslate nohighlight">\(x\)</span> such that
 $<span class="math notranslate nohighlight">\(f(x)=0\)</span><span class="math notranslate nohighlight">\(
 then this is called *root finding*. Note that problems like \)</span>g(x)=h(x)<span class="math notranslate nohighlight">\( fall in this category as you can rewrite them as \)</span>f(x)=g(x)−h(x)=0$.</p>
 <p>A number of root finding tools are available in <code class="docutils literal notranslate"><span class="pre">scipy</span></code>’s <code class="docutils literal notranslate"><span class="pre">optimize</span></code> module.</p>
 <section id="root-finding-using-the-bisection-method">
-<h3><span class="section-number">16.5.1. </span>Root finding using the bisection method<a class="headerlink" href="#root-finding-using-the-bisection-method" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">16.5.1. </span>Root finding using the bisection method<a class="headerlink" href="#root-finding-using-the-bisection-method" title="Link to this heading">#</a></h3>
 <p>First we introduce the <code class="docutils literal notranslate"><span class="pre">bisect</span></code> algorithm which is (i) robust and (ii) slow but conceptually very simple.</p>
 <p>Suppose we need to compute the roots of <em>f</em>(<em>x</em>)=<em>x</em><sup>3</sup> − 2<em>x</em><sup>2</sup>. This function has a (double) root at <em>x</em> = 0 (this is trivial to see) and another root which is located between <em>x</em> = 1.5 (where <em>f</em>(1.5)= − 1.125) and <em>x</em> = 3 (where <em>f</em>(3)=9). It is pretty straightforward to see that this other root is located at <em>x</em> = 2. Here is a program that determines this root numerically:</p>
 <div class="cell docutils container">
@@ -1209,7 +1223,7 @@ The exact error is -2.38419e-07.
 <p>One of the requirements of the bisection method is that the interval [<em>a</em>, <em>b</em>] has to be chosen such that the function is either positive at <em>a</em> and negative at <em>b</em>, or that the function is negative at <em>a</em> and postive at <em>b</em>. In other words: <em>a</em> and <em>b</em> have to enclose a root.</p>
 </section>
 <section id="exercise-root-finding-using-the-bisect-method">
-<h3><span class="section-number">16.5.2. </span>Exercise: root finding using the bisect method<a class="headerlink" href="#exercise-root-finding-using-the-bisect-method" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">16.5.2. </span>Exercise: root finding using the bisect method<a class="headerlink" href="#exercise-root-finding-using-the-bisect-method" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Write a program with name <code class="docutils literal notranslate"><span class="pre">sqrttwo.py</span></code> to determine an approximation of <span class="math notranslate nohighlight">\(\sqrt{2}\)</span> by finding a root <em>x</em> of the function <span class="math notranslate nohighlight">\(f(x)=2 − x^2\)</span> using the bisection algorithm. Choose a tolerance for the approximation of the root of 10<sup>−8</sup>.</p></li>
 <li><p>Document your choice of the initial bracket <span class="math notranslate nohighlight">\([a, b]\)</span> for the root: which values have you chosen for <em>a</em> and for <em>b</em> and why?</p></li>
@@ -1222,7 +1236,7 @@ The exact error is -2.38419e-07.
 </ol>
 </section>
 <section id="root-finding-using-the-fsolve-funcion">
-<h3><span class="section-number">16.5.3. </span>Root finding using the <code class="docutils literal notranslate"><span class="pre">fsolve</span></code> funcion<a class="headerlink" href="#root-finding-using-the-fsolve-funcion" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">16.5.3. </span>Root finding using the <code class="docutils literal notranslate"><span class="pre">fsolve</span></code> funcion<a class="headerlink" href="#root-finding-using-the-fsolve-funcion" title="Link to this heading">#</a></h3>
 <p>A (often) better (in the sense of “more efficient”) algorithm than the bisection algorithm is implemented in the general purpose <code class="docutils literal notranslate"><span class="pre">fsolve()</span></code> function for root finding of (multidimensional) functions. This algorithm needs only one starting point close to the suspected location of the root (but is not garanteed to converge).</p>
 <p>Here is an example:</p>
 <div class="cell docutils container">
@@ -1256,7 +1270,7 @@ The exact error is -6.66134e-15.
 </section>
 </section>
 <section id="interpolation">
-<h2><span class="section-number">16.6. </span>Interpolation<a class="headerlink" href="#interpolation" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">16.6. </span>Interpolation<a class="headerlink" href="#interpolation" title="Link to this heading">#</a></h2>
 <p>Given a set of <em>N</em> points <span class="math notranslate nohighlight">\((x_i, y_i)\)</span> with <span class="math notranslate nohighlight">\(i = 1, 2, …N\)</span>, we sometimes need a function <span class="math notranslate nohighlight">\(\hat{f}(x)\)</span> which returns <span class="math notranslate nohighlight">\(y_i = f(x_i)\)</span> where <span class="math notranslate nohighlight">\(x == x_i\)</span>, and which in addition provides some interpolation of the data <span class="math notranslate nohighlight">\((x_i, y_i)\)</span> for all <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <p>The function <code class="docutils literal notranslate"><span class="pre">y0</span> <span class="pre">=</span> <span class="pre">scipy.interpolate.interp1d(x,y,kind=’nearest’)</span></code> does this interpolation based on splines of varying order. Note that the function <code class="docutils literal notranslate"><span class="pre">interp1d</span></code> returns <em>a function</em> <code class="docutils literal notranslate"><span class="pre">y0</span></code> which will then interpolate the x-y data for any given <span class="math notranslate nohighlight">\(x\)</span> when called as <span class="math notranslate nohighlight">\(y0(x)\)</span>.</p>
 <p>The code below demonstrates this, and shows the different interpolation kinds.</p>
@@ -1302,12 +1316,12 @@ The exact error is -6.66134e-15.
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;x&#39;)
 </pre></div>
 </div>
-<img alt="_images/cdaa74ff8cd80ec2804eba6bbd766b37eecfb6a01d4d80e7d031ab67894aa072.svg" src="_images/cdaa74ff8cd80ec2804eba6bbd766b37eecfb6a01d4d80e7d031ab67894aa072.svg" /></div>
+<img alt="_images/dc874feb244b4673f923643507380c2e0354fbe0c404c94c4d60645dff734897.svg" src="_images/dc874feb244b4673f923643507380c2e0354fbe0c404c94c4d60645dff734897.svg" /></div>
 </div>
 </section>
 <section id="curve-fitting">
-<h2><span class="section-number">16.7. </span>Curve fitting<a class="headerlink" href="#curve-fitting" title="Permalink to this heading">#</a></h2>
-<p>We have already seen in <a class="reference internal" href="14-numpy.html"><span class="doc std std-doc">the numpy chapter</span></a> that we can fit polynomial functions through a data set using the <code class="docutils literal notranslate"><span class="pre">numpy.polyfit</span></code> function. Here, we introduce a more generic curve fitting algorithm.</p>
+<h2><span class="section-number">16.7. </span>Curve fitting<a class="headerlink" href="#curve-fitting" title="Link to this heading">#</a></h2>
+<p>We have already seen in <a class="reference internal" href="14-numpy.html"><span class="std std-doc">the numpy chapter</span></a> that we can fit polynomial functions through a data set using the <code class="docutils literal notranslate"><span class="pre">numpy.polyfit</span></code> function. Here, we introduce a more generic curve fitting algorithm.</p>
 <p>Scipy provides a somewhat generic function (based on the Levenburg-Marquardt algorithm )through <code class="docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit</span></code> to fit a given (Python) function to a given data set. The assumption is that we have been given a set of data with points <span class="math notranslate nohighlight">\(x_1, x_2, …x_N\)</span> and with corresponding function values <span class="math notranslate nohighlight">\(y_i\)</span> and a dependence of <span class="math notranslate nohighlight">\(y_i\)</span> on <span class="math notranslate nohighlight">\(x_i\)</span> such that <span class="math notranslate nohighlight">\(y_i=f(x_i,\vec{p})\)</span>. We want to determine the parameter vector <span class="math notranslate nohighlight">\(\vec{p}=(p_1, p_2, \ldots,
 p_k)\)</span> so that <span class="math notranslate nohighlight">\(r\)</span>, the sum of the residuals, is as small as possible:</p>
 <div class="math notranslate nohighlight">
@@ -1348,13 +1362,13 @@ $<span class="math notranslate nohighlight">\(f(x,\vec{p}) = a \exp(-b x) + c, \
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimal parameters are a=2.50984, b=1.48219, and c=0.575206
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimal parameters are a=2.50445, b=1.22267, and c=0.477453
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f26340e78d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f78c0585450&gt;
 </pre></div>
 </div>
-<img alt="_images/b8cb95ecbfc9d2b7f15d131df126e3654196ba42e8417f1df6736c49077a67a0.svg" src="_images/b8cb95ecbfc9d2b7f15d131df126e3654196ba42e8417f1df6736c49077a67a0.svg" /></div>
+<img alt="_images/d011585f53028078cf6ff3ceeec8fd5d156b02d570b4c5a1e22cd82327f3775f.svg" src="_images/d011585f53028078cf6ff3ceeec8fd5d156b02d570b4c5a1e22cd82327f3775f.svg" /></div>
 </div>
 <p>Note that in the source code above we define the fitting function <span class="math notranslate nohighlight">\(y = f(x)\)</span> through Python code. We can thus fit (nearly) arbitrary functions using the <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> method.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> function returns a tuple <code class="docutils literal notranslate"><span class="pre">popt,</span> <span class="pre">pcov</span></code>. The first entry <code class="docutils literal notranslate"><span class="pre">popt</span></code> contains a tuple of the OPTimal Parameters (in the sense that these minimise equation ([eq:1]). The second entry contains the covariance matrix for all parameters. The diagonals provide the variance of the parameter estimations.</p>
@@ -1370,7 +1384,7 @@ $<span class="math notranslate nohighlight">\(f(x,\vec{p}) = a \exp(-b x) + c, \
 <p>if our initial guesses would be <em>a</em> = 2, <em>b</em> = 1 and <em>c</em> = 0.6. Once we take the algorithm “roughly in the right area” in parameter space, the fitting usually works well.</p>
 </section>
 <section id="fourier-transforms">
-<h2><span class="section-number">16.8. </span>Fourier transforms<a class="headerlink" href="#fourier-transforms" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">16.8. </span>Fourier transforms<a class="headerlink" href="#fourier-transforms" title="Link to this heading">#</a></h2>
 <p>In the next example, we create a signal as a superposition of a 50 Hz and 70 Hz sine wave (with a slight phase shift between them). We then Fourier transform the signal and plot the absolute value of the (complex) discrete Fourier transform coefficients against frequency, and expect to see peaks at 50Hz and 70Hz.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1414,12 +1428,12 @@ $<span class="math notranslate nohighlight">\(f(x,\vec{p}) = a \exp(-b x) + c, \
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d6d73c5109bbf5b1c977fbb64fb696811b899a6c841affe087546826ad0f6860.svg" src="_images/d6d73c5109bbf5b1c977fbb64fb696811b899a6c841affe087546826ad0f6860.svg" /></div>
+<img alt="_images/7e306cac87a39818d4fd2925872efd421ed1e3fd36023dcef6fef00fa3bde9bd.svg" src="_images/7e306cac87a39818d4fd2925872efd421ed1e3fd36023dcef6fef00fa3bde9bd.svg" /></div>
 </div>
 <p>The lower plot shows the discrete Fourier transform computed from the data shown in the upper plot.</p>
 </section>
 <section id="optimisation">
-<h2><span class="section-number">16.9. </span>Optimisation<a class="headerlink" href="#optimisation" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">16.9. </span>Optimisation<a class="headerlink" href="#optimisation" title="Link to this heading">#</a></h2>
 <p>Often we need to find the maximum or minimum of a particular function <em>f</em>(<em>x</em>) where <em>f</em> is a scalar function but <em>x</em> could be a vector. Typical applications are the minimisation of entities such as cost, risk and error, or the maximisation of productivity, efficiency and profit. Optimisation routines typically provide a method to minimise a given function: if we need to maximise <em>f</em>(<em>x</em>) we create a new function <em>g</em>(<em>x</em>) that reverses the sign of <em>f</em>, i.e. <em>g</em>(<em>x</em>)= − <em>f</em>(<em>x</em>) and we minimise <em>g</em>(<em>x</em>).</p>
 <p>Below, we provide an example showing (i) the definition of the test function and (ii) the call of the <code class="docutils literal notranslate"><span class="pre">scipy.optimize.fmin</span></code> function which takes as argument a function <em>f</em> to minimise and an initial value <em>x</em><sub>0</sub> from which to start the search for the minimum, and which returns the value of <em>x</em> for which <em>f</em>(<em>x</em>) is (locally) minimised. Typically, the search for the minimum is a local search, i.e. the algorithm follows the local gradient. We repeat the search for the minimum for two values (<em>x</em><sub>0</sub> = 1.0 and <em>x</em><sub>0</sub> = 2.0, respectively) to demonstrate that depending on the starting value we may find different minimar of the function <em>f</em>.</p>
 <p>The majority of the commands (after the two calls to <code class="docutils literal notranslate"><span class="pre">fmin</span></code>) in the file <code class="docutils literal notranslate"><span class="pre">fmin1.py</span></code> creates the plot of the function, the start points for the searches and the minima obtained:</p>
@@ -1476,21 +1490,21 @@ Optimization terminated successfully.
 Start search at x=2., minimum is [3.13847656]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f2633f16650&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f78c05982d0&gt;
 </pre></div>
 </div>
-<img alt="_images/512e0e5b59d766a7c92a8451cce798b62af15c7d8d90fff9cfa53e5ce936c658.svg" src="_images/512e0e5b59d766a7c92a8451cce798b62af15c7d8d90fff9cfa53e5ce936c658.svg" /></div>
+<img alt="_images/6dca6983db20470f8eea57d4015aa8e8bd15bc7a7d46c5a78e119e1e2fc3483d.svg" src="_images/6dca6983db20470f8eea57d4015aa8e8bd15bc7a7d46c5a78e119e1e2fc3483d.svg" /></div>
 </div>
 <p>Calling the <code class="docutils literal notranslate"><span class="pre">fmin</span></code> function will produce some diagnostic output, which you can also see above.</p>
 <p><strong>Return value of <code class="docutils literal notranslate"><span class="pre">fmin</span></code></strong></p>
 <p>Note that the return value from the <code class="docutils literal notranslate"><span class="pre">fmin</span></code> function is a numpy <code class="docutils literal notranslate"><span class="pre">array</span></code> which – for the example above – contains only one number as we have only one parameter (here <em>x</em>) to vary. In general, <code class="docutils literal notranslate"><span class="pre">fmin</span></code> can be used to find the minimum in a higher-dimensional parameter space if there are several parameters. In that case, the numpy array would contain those parameters that minimise the objective function. The objective function <span class="math notranslate nohighlight">\(f(x)\)</span> has to return a scalar even if there are more parameters, i.e. even if <span class="math notranslate nohighlight">\(x\)</span> is a vector as in <span class="math notranslate nohighlight">\(f(\mathbf{x})\)</span>.</p>
 </section>
 <section id="other-numerical-methods">
-<h2><span class="section-number">16.10. </span>Other numerical methods<a class="headerlink" href="#other-numerical-methods" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">16.10. </span>Other numerical methods<a class="headerlink" href="#other-numerical-methods" title="Link to this heading">#</a></h2>
 <p>Scientific Python and Numpy provide access to a large number of other numerical algorithms including function interpolation, Fourier transforms, optimisation, special functions (such as Bessel functions), signal processing and filters, random number generation, and more. Start to explore <code class="docutils literal notranslate"><span class="pre">scipy</span></code>’s and <code class="docutils literal notranslate"><span class="pre">numpy</span></code>’s capabilities using the <code class="docutils literal notranslate"><span class="pre">help</span></code> function and the documentation provided on the web.</p>
 </section>
 <section id="scipy-io-scipy-input-output">
-<h2><span class="section-number">16.11. </span>scipy.io: Scipy-input output<a class="headerlink" href="#scipy-io-scipy-input-output" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">16.11. </span>scipy.io: Scipy-input output<a class="headerlink" href="#scipy-io-scipy-input-output" title="Link to this heading">#</a></h2>
 <p>Scipy provides routines to read and write Matlab <code class="docutils literal notranslate"><span class="pre">mat</span></code> files. Here is an example where we create a Matlab compatible file storing a (1x11) matrix, and then read this data into a numpy array from Python using the scipy Input-Output library:</p>
 <p>First we create a mat file in Octave (Octave is [mostly] compatible with Matlab):</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">octave</span><span class="p">:</span><span class="mi">1</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">=</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mf">0.5</span><span class="p">:</span><span class="mi">4</span>
@@ -1726,7 +1740,7 @@ By Hans Fangohr
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>

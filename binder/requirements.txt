@@ -3,5 +3,6 @@ scipy
 sympy
 matplotlib
 pandas
+pyarrow
 ipython
 pytest

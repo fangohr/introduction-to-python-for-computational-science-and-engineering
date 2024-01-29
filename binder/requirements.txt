@@ -6,3 +6,4 @@ pandas
 pyarrow
 ipython
 pytest
+nbval

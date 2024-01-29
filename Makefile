@@ -29,6 +29,13 @@ nbval:
 	pytest -v --nbval-lax book/18-environments.ipynb
 
 
+nbval-native:
+	@echo "Testing all chapters (apart from 18) with --nbval"
+	pytest -v --nbval book --sanitize-with book/static/nbval_sanitize.cfg \
+	    --ignore=book/18-environments.ipynb --ignore=book/_build
+	@echo "Testing chapter 18 with --nbval-lax"
+	pytest -v --nbval-lax book/18-environments.ipynb
+
 
 docker-all:
 	make docker-build
@@ -65,6 +72,9 @@ docker-nbval:
 
 docker-clean:
 	$(DOCKER_RUN) make clean
+
+docker-binder-nbval:
+	$(DOCKER_RUN) make nbval-native
 
 # to update the title page:
 # - screenshot first page of pdf

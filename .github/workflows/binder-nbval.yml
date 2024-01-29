@@ -1,0 +1,27 @@
+name: NBVAL on binder container
+
+# We use `repo2docker` to build the docker image. Same as would happen on myBinder (or other Binder instances)
+
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  repo2docker-build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Build Docker Container with repo2docker
+      uses: jupyterhub/repo2docker-action@master
+      with:
+        NO_PUSH: 'true'
+        IMAGE_NAME: "python4compscience"
+
+    - name: List Available Images
+      run: docker images
+
+    - name: Test with nbval
+      run: make docker-binder-nbval
+

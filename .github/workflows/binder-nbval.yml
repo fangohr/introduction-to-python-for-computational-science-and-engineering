@@ -1,5 +1,7 @@
 name: NBVAL on binder container
 
+# We use `repo2docker` to build the docker image. Same as would happen on myBinder (or other Binder instances)
+
 on:
   pull_request:
     branches: [ master ]

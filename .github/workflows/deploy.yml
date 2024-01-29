@@ -60,7 +60,7 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./book/_build/html
 
-    - uses: marvinpinto/action-automatic-releases@10bdce64abdb4558a2ee6983192242be40d631d8
+    - uses: marvinpinto/action-automatic-releases@latest
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
         automatic_release_tag: "latest"

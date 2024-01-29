@@ -3,6 +3,7 @@ name: Book Staging
 on:
   pull_request:
     branches: [ master ]
+  workflow_dispatch:
 
 jobs:
   docker-build-and-stage:

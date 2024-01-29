@@ -6,4 +6,5 @@ pandas
 pyarrow
 ipython
 pytest
+jupyter-book
 nbval

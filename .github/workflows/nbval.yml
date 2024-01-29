@@ -1,6 +1,9 @@
 name: nbval
 
-on: [push]
+on:
+  push:
+    # all
+  workflow_dispatch:
 
 jobs:
   docker-build-and-nbval:

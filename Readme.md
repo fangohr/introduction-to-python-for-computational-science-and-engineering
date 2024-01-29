@@ -119,7 +119,7 @@ and schools. Please send a message to the author if you do so.
 
 Hans Fangohr is a researcher and teacher (see
 [homepage](https://fangohr.github.io), [blog](https://fangohr.github.io/blog),
-[twitter](https://twitter.com/ProfCompMod)). His interests include effective
+[mastodon](https://fosstodon.org/@ProfCompMod)). His interests include effective
 software engineering for computational science and data science, researching
 computational modelling and data analysis methods, and education. He is a
 Professor at the [University of Southampton (UK)](https://www.southampton.ac.uk)

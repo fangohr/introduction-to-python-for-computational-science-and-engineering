@@ -2,6 +2,7 @@
 <!-- markdown-link-check-disable -->
 <!-- TODO: Enable this AFTER first merge and deploy to master! -->
 ![Book Deploy](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/workflows/Book%20Deploy/badge.svg)
+[![nbval in repo2docker container](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/actions/workflows/binder-nbval.yml/badge.svg)](https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/actions/workflows/binder-nbval.yml)
 <!-- markdown-link-check-enable -->
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1411868.svg)](https://doi.org/10.5281/zenodo.1411868)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)

@@ -11,13 +11,13 @@ jobs:
   docker-build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
     - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v1
+      uses: docker/setup-buildx-action@v3
 
     - name: Cache Docker layers
-      uses: actions/cache@v2
+      uses: actions/cache@v4
       with:
         path: /tmp/.buildx-cache
         key: ${{ runner.os }}-buildx-${{ hashFiles('poetry.lock') }}
@@ -27,7 +27,7 @@ jobs:
     #  This build and push step does the same thing as `make docker-build`, but
     #  makes it easier to store and load caches, which is why we use it instead
     - name: Build and Save Layers Locally
-      uses: docker/build-push-action@v2
+      uses: docker/build-push-action@v5
       with:
         context: ./
         file: ./Dockerfile
@@ -60,7 +60,7 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./book/_build/html
 
-    - uses: marvinpinto/action-automatic-releases@10bdce64abdb4558a2ee6983192242be40d631d8
+    - uses: marvinpinto/action-automatic-releases@latest
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
         automatic_release_tag: "latest"

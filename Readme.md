@@ -14,7 +14,7 @@
 </a>
 
 An Introduction to Python for Computational Science and Engineering, developed
-by Hans Fangohr (2003-2021).
+by Hans Fangohr since 2003.
 
 The content and methods taught are intended for a target audience of scientists
 and engineers who need to use computational methods and data processing in their
@@ -123,7 +123,9 @@ Hans Fangohr is a researcher and teacher (see
 [mastodon](https://fosstodon.org/@ProfCompMod)). His interests include effective
 software engineering for computational science and data science, researching
 computational modelling and data analysis methods, and education. He is a
+<!-- markdown-link-check-disable -->
 Professor at the [University of Southampton (UK)](https://www.southampton.ac.uk)
+<!-- markdown-link-check-enable -->
 and Head of the Scientific Support Unit for Computational Science at the  [Max Planck Institute for Structure and Dynamics of Matter (Germany)](https://www.mpsd.mpg.de/research/ssus/comput-science).
 
 ----

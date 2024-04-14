@@ -1,4 +1,4 @@
-name: Book Deploy
+name: Create and deploy html and pdf on gh-pages
 
 on:
   release:

@@ -39,7 +39,7 @@ jobs:
     - name: List Available Images
       run: docker images
 
-    - name: Make Docker HTML
+    - name: Make Docker HTML (JBook: create html)
       run: make docker-html
 
     - name: Check links - Markdown
@@ -48,17 +48,23 @@ jobs:
     - name: Make Docker Linkcheck
       run: make docker-linkcheck
 
-    - name: Make Docker PDF
+    - name: Make Docker PDF  (JBook: create pdf)
       run: |
         make docker-pdf
         sudo cp book/_build/latex/book.pdf book/_build/html/book.pdf
 
-    # Deploy the book's HTML to gh-pages branch
+    - name: Gather outputs in pages
+      run: |
+        mkdir -p pages
+        cp -a book/_build/html/* pages
+        cp -a book/_build/latex/book.pdf pages
+
+    # Deploy output to gh-pages branch
     - name: GitHub Pages action
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./book/_build/html
+        publish_dir: ./pages
 
     - uses: marvinpinto/action-automatic-releases@latest
       with:
